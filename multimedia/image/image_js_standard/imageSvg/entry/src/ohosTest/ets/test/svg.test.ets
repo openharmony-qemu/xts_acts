@@ -233,15 +233,12 @@ export default function imageSvg() {
         }
       };
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_0100
-     * @tc.name      : createPixelMap - promise
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -261,15 +258,12 @@ export default function imageSvg() {
         packingPromise, packOpts);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_0100
-     * @tc.name      : createPixelMap - callback
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     *                 4.packing
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       let decodeOpts: ESObject = {
@@ -290,14 +284,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0100
-     * @tc.name      : createPixelMap - callback-sampleSize: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0100", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -320,14 +312,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0200
-     * @tc.name      : createPixelMap - callback-index: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0200", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -350,14 +340,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0300
-     * @tc.name      : createPixelMap - callback-rotate: 500
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0300", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -380,14 +368,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0400
-     * @tc.name      : createPixelMap - callback-desiredPixelFormat: 33
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0400", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -410,14 +396,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0500
-     * @tc.name      : createPixelMap - callback-{x: 10000, y: 0 }
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0500", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -440,14 +424,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0600
-     * @tc.name      : createPixelMap - callback-{x: 0, y: 10000 }
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_CALLBACK_ERR_0600", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -470,14 +452,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0100
-     * @tc.name      : createPixelMap - promise-sampleSize: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0100
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0100", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -499,14 +479,12 @@ export default function imageSvg() {
         decodingOption);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0200
-     * @tc.name      : createPixelMap - promise-index: -1
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0200
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0200", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -529,14 +507,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0300
-     * @tc.name      : createPixelMap - promise-rotate: 500
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0300
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0300", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -558,14 +534,12 @@ export default function imageSvg() {
         decodingOption);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0400
-     * @tc.name      : createPixelMap - promise-desiredPixelFormat: 33
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0400
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0400", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -588,14 +562,12 @@ export default function imageSvg() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0500
-     * @tc.name      : createPixelMap - promise-{x: 10000, y: 0}
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0500
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0500", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {
@@ -617,14 +589,12 @@ export default function imageSvg() {
         decodingOption);
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0600
-     * @tc.name      : createPixelMap - promise-{x: 0, y: 10000}
-     * @tc.desc      : 1.create imagesource
-     *                 2.set DecodeOptions
-     *                 3.create PixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0600
+     * @tc.desc   1.create imagesource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_SVG_PROMISE_ERR_0600", Level.LEVEL0, async (done: Function) => {
       let decodingOption: ESObject = {

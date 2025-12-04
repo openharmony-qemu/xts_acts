@@ -39,9 +39,12 @@ protected:
 };
 
 /**
- * @tc.name: SetThreadQoSNdkTest
- * @tc.desc: Verify the Set QoSLevel function.
- * @tc.type: FUNC
+ * @tc.name   SetThreadQoSNdkTest
+ * @tc.number SetThreadQoSNdkTest
+ * @tc.desc   Verify the Set QoSLevel function.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, SetThreadQoSNdkTest, Function | MediumTest | Level1)
 {
@@ -66,9 +69,12 @@ HWTEST_F(QoSTestSuite, SetThreadQoSNdkTest, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.name: ResetThreadQoSNdkTest
- * @tc.desc: Verify the Reset QoSLevel function.
- * @tc.type: FUNC
+ * @tc.name   ResetThreadQoSNdkTest
+ * @tc.number ResetThreadQoSNdkTest
+ * @tc.desc   Verify the Reset QoSLevel function.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, ResetThreadQoSNdkTest, Function | MediumTest | Level1)
 {
@@ -104,9 +110,12 @@ HWTEST_F(QoSTestSuite, ResetThreadQoSNdkTest, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.name: GetThreadQoSNdkTest
- * @tc.desc: Verify the Get QoSLevel function.
- * @tc.type: FUNC
+ * @tc.name   GetThreadQoSNdkTest
+ * @tc.number GetThreadQoSNdkTest
+ * @tc.desc   Verify the Get QoSLevel function.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, GetThreadQoSNdkTest, Function | MediumTest | Level1)
 {
@@ -157,9 +166,12 @@ HWTEST_F(QoSTestSuite, GetThreadQoSNdkTest, Function | MediumTest | Level1)
 }
 
 /**
- * @tc.name: ThreadQoSNdkTest
- * @tc.desc: Double Test ThreadQoSNDKTest function.
- * @tc.type: FUNC
+ * @tc.name   ThreadQoSNdkTest
+ * @tc.number ThreadQoSNdkTest
+ * @tc.desc   Double Test ThreadQoSNDKTest function.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, ThreadQoSNdkTest, Function | MediumTest | Level1)
 {
@@ -182,13 +194,13 @@ HWTEST_F(QoSTestSuite, ThreadQoSNdkTest, Function | MediumTest | Level1)
     EXPECT_EQ(ret, -1);
 }
 
-/*
- * @tc.number:SUB_RESOURCESCHEDULE_QOS_0100
- * @tc.name: GewuCreateSessionTest
- * @tc.desc: Verify the GewuCreateSession function
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level: Level 1
+/**
+ * @tc.name   GewuCreateSessionTest
+ * @tc.number SUB_RESOURCESCHEDULE_QOS_0100
+ * @tc.desc   Verify the GewuCreateSession function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, GewuCreateSessionTest, Function | MediumTest | Level1)
 {
@@ -216,13 +228,13 @@ void MockCallback(void *context, const char *response)
     printf("Mock callback called. Response: %s\n", response);
 }
 
-/*
- * @tc.number:SUB_RESOURCESCHEDULE_QOS_0200
- * @tc.name: GewuSubmitRequestTest
- * @tc.desc: Verify the GewuSubmitRequest function
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level: Level 1
+/**
+ * @tc.name   GewuSubmitRequestTest
+ * @tc.number SUB_RESOURCESCHEDULE_QOS_0200
+ * @tc.desc   Verify the GewuSubmitRequest function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
 {
@@ -261,17 +273,17 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         requestResult = OH_QoS_GewuSubmitRequest(0, "", cb, fakeContext);
-        EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 
-/*
- * @tc.number:SUB_RESOURCESCHEDULE_QOS_0300
- * @tc.name: GewuAbortRequestTest
- * @tc.desc: Verify the GewuAbortRequest function
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level: Level 1
+/**
+ * @tc.name   GewuAbortRequestTest
+ * @tc.number SUB_RESOURCESCHEDULE_QOS_0300
+ * @tc.desc   Verify the GewuAbortRequest function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
 {
@@ -293,17 +305,17 @@ HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         error = OH_QoS_GewuAbortRequest(0, 0);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 
-/*
- * @tc.number:SUB_RESOURCESCHEDULE_QOS_0400
- * @tc.name: GewuDestroySessionTest
- * @tc.desc: Verify the GewuDestroySession function
- * @tc.size: MediumTest
- * @tc.type: Function
- * @tc.level: Level 1
+/**
+ * @tc.name   GewuDestroySessionTest
+ * @tc.number SUB_RESOURCESCHEDULE_QOS_0400
+ * @tc.desc   Verify the GewuDestroySession function
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(QoSTestSuite, GewuDestroySessionTest, Function | MediumTest | Level1)
 {
@@ -322,7 +334,7 @@ HWTEST_F(QoSTestSuite, GewuDestroySessionTest, Function | MediumTest | Level1)
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
         error = OH_QoS_GewuDestroySession(0);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
+        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
 

@@ -35,12 +35,12 @@ export default function MultimodalTouchNdkTest() {
     }
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
-     * @tc.name: SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
-     * @tc.desc: OH_Input_QueryMaxTouchPoints Interface testing to set count as nullptr.
-     * @tc.level 2
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
+     * @tc.number SUB_MMI_Input_Api_QueryMaxTouchPoints_0100
+     * @tc.desc   OH_Input_QueryMaxTouchPoints Interface testing to set count as nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MMI_Input_Api_QueryMaxTouchPoints_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_QueryMaxTouchPoints_0100';
@@ -59,12 +59,12 @@ export default function MultimodalTouchNdkTest() {
     });    
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
-     * @tc.name: SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
-     * @tc.desc: OH_Input_QueryMaxTouchPoints Interface testing.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
+     * @tc.number SUB_MMI_Input_Api_QueryMaxTouchPoints_0200
+     * @tc.desc   OH_Input_QueryMaxTouchPoints Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_QueryMaxTouchPoints_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_QueryMaxTouchPoints_0200';
@@ -83,12 +83,12 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
-     * @tc.name: SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
-     * @tc.desc: OH_Input_InjectTouchEventGlobal Interface testing to set globalX globalY as 100.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
+     * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0100
+     * @tc.desc   OH_Input_InjectTouchEventGlobal Interface testing to set globalX globalY as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_InjectTouchEventGlobal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectTouchEventGlobal_0100';
@@ -107,12 +107,12 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
-     * @tc.name: SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
-     * @tc.desc: OH_Input_GetTouchEventGlobalX Interface testing to set globalX as 100.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
+     * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0200
+     * @tc.desc   OH_Input_GetTouchEventGlobalX Interface testing to set globalX as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_InjectTouchEventGlobal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectTouchEventGlobal_0200';
@@ -131,12 +131,12 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
-     * @tc.name: SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
-     * @tc.desc: OH_Input_GetTouchEventGlobalY Interface testing to set globalY as 100.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
+     * @tc.number SUB_MMI_Input_Api_InjectTouchEventGlobal_0300
+     * @tc.desc   OH_Input_GetTouchEventGlobalY Interface testing to set globalY as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_InjectTouchEventGlobal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_InjectTouchEventGlobal_0300';
@@ -155,12 +155,12 @@ export default function MultimodalTouchNdkTest() {
     });
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_AxisEventGlobal_0100
-     * @tc.name: SUB_MMI_Input_Api_AxisEventGlobal_0100
-     * @tc.desc: OH_Input_GetAxisEventGlobalX Interface testing to set globalX as 100 .
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_AxisEventGlobal_0100
+     * @tc.number SUB_MMI_Input_Api_AxisEventGlobal_0100
+     * @tc.desc   OH_Input_GetAxisEventGlobalX Interface testing to set globalX as 100 .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_AxisEventGlobal_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_AxisEventGlobal_0100';
@@ -179,12 +179,12 @@ export default function MultimodalTouchNdkTest() {
     });    
 
     /**
-     * @tc.number: SUB_MMI_Input_Api_AxisEventGlobal_0200
-     * @tc.name: SUB_MMI_Input_Api_AxisEventGlobal_0200
-     * @tc.desc: OH_Input_SetAxisEventGlobalY Interface testing to set globalY as 100.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.name   SUB_MMI_Input_Api_AxisEventGlobal_0200
+     * @tc.number SUB_MMI_Input_Api_AxisEventGlobal_0200
+     * @tc.desc   OH_Input_SetAxisEventGlobalY Interface testing to set globalY as 100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MMI_Input_Api_AxisEventGlobal_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_MMI_Input_Api_AxisEventGlobal_0200';
@@ -200,6 +200,102 @@ export default function MultimodalTouchNdkTest() {
         done();
       }
       console.info(`${caseName} end to test OH_Input_SetAxisEventGlobalY`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_GetKeyEventId_0100
+     * @tc.number SUB_MMI_Input_Api_GetKeyEventId_0100
+     * @tc.desc   OH_Input_GetKeyEventId Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_GetKeyEventId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_GetKeyEventId_0100';
+      console.info(`${caseName} start to test OH_Input_GetKeyEventId`);
+      try {
+        let data = touch.GetKeyEventId1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_GetKeyEventId`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_AddKeyEventHook_0100
+     * @tc.number SUB_MMI_Input_Api_AddKeyEventHook_0100
+     * @tc.desc   OH_Input_AddKeyEventHook Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_AddKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_AddKeyEventHook_0100';
+      console.info(`${caseName} start to test OH_Input_AddKeyEventHook`);
+      try {
+        let data = touch.AddKeyEventHook1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_AddKeyEventHook`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_RemoveKeyEventHook_0100
+     * @tc.number SUB_MMI_Input_Api_RemoveKeyEventHook_0100
+     * @tc.desc   OH_Input_RemoveKeyEventHook Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_RemoveKeyEventHook_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_RemoveKeyEventHook_0100';
+      console.info(`${caseName} start to test OH_Input_RemoveKeyEventHook`);
+      try {
+        let data = touch.RemoveKeyEventHook1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_RemoveKeyEventHook`);
+    });
+
+    /**
+     * @tc.name   SUB_MMI_Input_Api_DispatchToNextHandler_0100
+     * @tc.number SUB_MMI_Input_Api_DispatchToNextHandler_0100
+     * @tc.desc   OH_Input_DispatchToNextHandler Interface testing.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MMI_Input_Api_DispatchToNextHandler_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'SUB_MMI_Input_Api_DispatchToNextHandler_0100';
+      console.info(`${caseName} start to test OH_Input_DispatchToNextHandler`);
+      try {
+        let data = touch.DispatchToNextHandler1();
+        console.info(`${caseName} success, test NAPI data= ${JSON.stringify(data)}`);
+        ExpectTrue(data == 1);
+        done();
+      } catch (err) {
+        console.info(`${caseName} fail, error is ${JSON.stringify(err)}`);
+        ExpectFalse(true);
+        done();
+      }
+      console.info(`${caseName} end to test OH_Input_DispatchToNextHandler`);
     });
   });
 }

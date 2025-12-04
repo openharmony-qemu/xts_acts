@@ -23,13 +23,12 @@ export default function fileioDirRead() {
 describe('fileio_dir_read', function () {
 
   /**
+   * @tc.name   fileio_test_dir_read_async_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_0000
-   * @tc.name fileio_test_dir_read_async_000
-   * @tc.desc Test Dir read() interface,return in promise mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir read() interface,return in promise mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_dir_read_async_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_read_async_000') + 'd';
@@ -52,13 +51,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_dir_read_async_001
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_0100
-   * @tc.name fileio_test_dir_read_async_001
-   * @tc.desc Test Dir read() interface,return in callback mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir read() interface,return in callback mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_dir_read_async_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_read_async_001') + 'd';
@@ -80,15 +78,14 @@ describe('fileio_dir_read', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_0200
-   * @tc.name fileio_test_dir_read_async_002
-   * @tc.desc Test Dir read() interface,there are multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+   /**
+    * @tc.name   fileio_test_dir_read_async_002
+    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_0200
+    * @tc.desc   Test Dir read() interface,there are multiple parameters.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('fileio_test_dir_read_async_002', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_test_dir_read_async_002') + 'd';
     let fpath = dpath + '/f1';
@@ -111,13 +108,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_0000
-   * @tc.name fileio_dir_read_sync_000
-   * @tc.desc Test Dir readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_000', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileio_dir_read_sync_000') + 'd';
@@ -138,13 +134,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_001
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_0100
-   * @tc.name fileio_dir_read_sync_001
-   * @tc.desc Test Dir.readSync() interface,there are multiple parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface,there are multiple parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_001', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileio_dir_read_sync_001') + 'd';
@@ -165,13 +160,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_name_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_NAME_0000
-   * @tc.name fileio_dir_read_sync_name_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_name_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_name_000') + 'd';
@@ -193,13 +187,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_name_001
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_NAME_0100
-   * @tc.name fileio_dir_read_sync_name_001
-   * @tc.desc Test Dir.readSync() interface. Synchronous loop reads next directory entry.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface. Synchronous loop reads next directory entry.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_name_001', Level.LEVEL0, async function () {
     let dpath = await nextFileName('fileio_dir_read_sync_name_001') + 'd';
@@ -227,13 +220,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isBlockDevice_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISBLOCKDEVICE_0000
-   * @tc.name fileio_dir_read_sync_isBlockDevice_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isBlockDevice_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isBlockDevice_000') + 'd';
@@ -255,13 +247,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isCharacterDevice_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISCHARACTERDEVICE_0000
-   * @tc.name fileio_dir_read_sync_isCharacterDevice_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isCharacterDevice_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isCharacterDevice_000') + 'd';
@@ -282,13 +273,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isDirectory_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISDIRECTORY_0000
-   * @tc.name fileio_dir_read_sync_isDirectory_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isDirectory_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isDirectory_000') + 'd';
@@ -310,13 +300,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isFIFO_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISFIFO_0000
-   * @tc.name fileio_dir_read_sync_isFIFO_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isFIFO_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isFIFO_000') + 'd';
@@ -338,13 +327,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isFile_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISFILE_0000
-   * @tc.name fileio_dir_read_sync_isFile_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isFile_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isFile_000') + 'd';
@@ -366,13 +354,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isSocket_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISCOCKET_0000
-   * @tc.name fileio_dir_read_sync_isSocket_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isSocket_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isSocket_000') + 'd';
@@ -394,13 +381,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_sync_isSymbolicLink_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_SYNC_ISSYMBOLICLINK_0000
-   * @tc.name fileio_dir_read_sync_isSymbolicLink_000
-   * @tc.desc Test Dir.readSync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_sync_isSymbolicLink_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_sync_isSymbolicLink_000') + 'd';
@@ -422,13 +408,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_name_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_NAME_0000
-   * @tc.name fileio_dir_read_async_name_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_name_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_name_000') + 'd';
@@ -450,13 +435,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_name_001
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_NAME_0100
-   * @tc.name fileio_dir_read_async_name_001
-   * @tc.desc Test Dir.readAsync() interface. Asynchronously loop to read next directory item.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface. Asynchronously loop to read next directory item.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_name_001', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_name_001') + 'd';
@@ -485,13 +469,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isBlockDevice_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISBLOCKDEVICE_0000
-   * @tc.name fileio_dir_read_async_isBlockDevice_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isBlockDevice_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isBlockDevice_000') + 'd';
@@ -512,16 +495,15 @@ describe('fileio_dir_read', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISCHARACTERDEVICE_0000
-   * @tc.name fileio_dir_read_async_isCharacterDevice_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
 
+  /**
+   * @tc.name   fileio_dir_read_async_isCharacterDevice_000
+   * @tc.number fileio_dir_read_async_isCharacterDevice_000
+   * @tc.desc   fileio_dir_read_async_isCharacterDevice_000
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('fileio_dir_read_async_isCharacterDevice_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isCharacterDevice_000') + 'd';
     let fpath = dpath + '/f1';
@@ -541,13 +523,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isDirectory_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISDIRECTORY_0000
-   * @tc.name fileio_dir_read_async_isDirectory_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isDirectory_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isDirectory_000') + 'd';
@@ -569,13 +550,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isFIFO_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISFIFO_0000
-   * @tc.name fileio_dir_read_async_isFIFO_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isFIFO_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isFIFO_000') + 'd';
@@ -597,13 +577,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isFile_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISFILE_0000
-   * @tc.name fileio_dir_read_async_isFile_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isFile_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isFile_000') + 'd';
@@ -625,13 +604,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isSocket_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISSOCKET_0000
-   * @tc.name fileio_dir_read_async_isSocket_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isSocket_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isSocket_000') + 'd';
@@ -653,13 +631,12 @@ describe('fileio_dir_read', function () {
   });
 
   /**
+   * @tc.name   fileio_dir_read_async_isSymbolicLink_000
    * @tc.number SUB_DF_FILEIO_DIR_READ_ASYNC_ISSYMBOLICLINK_0000
-   * @tc.name fileio_dir_read_async_isSymbolicLink_000
-   * @tc.desc Test Dir.readAsync() interface.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test Dir.readAsync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_dir_read_async_isSymbolicLink_000', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('fileio_dir_read_async_isSymbolicLink_000') + 'd';

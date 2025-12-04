@@ -51,25 +51,25 @@ struct SetCircle {
                 .blockBorderWidth('1vp')
                 .onChange((value: number, mode: SliderChangeMode) => {
                   this.X = value;
-                  this.context.clearRect(100, 100, 250, 200);
+                  this.context.clearRect(0, 0, 250, 200);
                   this.context.globalAlpha = (this.X) * 0.01;
                   this.context.fillStyle = 'rgb(255,0,0)';
-                  this.context.fillRect(150, 150, 50, 50);
+                  this.context.fillRect(50, 20, 50, 50);
                   this.context.globalAlpha = (this.X) * 0.01;
                   this.context.fillStyle = 'rgb(0,0,255)';
-                  this.context.fillRect(200, 200, 50, 50);
+                  this.context.fillRect(100, 70, 50, 50);
                   if (value >= 100) {
                     this.Vue = true;
                   }
                 })
             }
-          }.width('70%').height('25%')
+          }.width('70%').height('20%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-            Text('透明度: ' + (this.X) * 0.01)
+            Text('透明度: ' + (this.X) * 0.01).fontSize(10).fontColor(Color.Black)
           }
           .width('100%')
-          .height('20%')
+          .height('10%')
 
           Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
             Canvas(this.context)
@@ -79,14 +79,14 @@ struct SetCircle {
               .onReady(() => {
                 this.context.globalAlpha = 0.05;
                 this.context.fillStyle = 'rgb(255,0,0)';
-                this.context.fillRect(150, 150, 50, 50);
+                this.context.fillRect(50, 20, 50, 50);
                 this.context.globalAlpha = 0.05;
                 this.context.fillStyle = 'rgb(0,0,255)';
-                this.context.fillRect(200, 200, 50, 50);
+                this.context.fillRect(100, 70, 50, 50);
               })
           }
           .width('100%')
-          .height('55%')
+          .height('70%')
         }
       }
       .scrollBarWidth('6vp')
@@ -108,7 +108,7 @@ struct SetCircle {
         X: $X,
         name: $name,
         Vue: $Vue,
-      })
+      }).margin({ bottom: '20vp' })
     }
     .width('100%')
     .height('100%')

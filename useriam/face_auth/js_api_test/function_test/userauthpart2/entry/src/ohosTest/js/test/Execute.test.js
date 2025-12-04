@@ -108,13 +108,14 @@ export default function signNormalAccessBiometricExecute() {
       })
     }
     
-    /*
-      * @tc.number    : Security_IAM_getUserAuthInstance_Func_0043
-      * @tc.name      : execute_getUserAuthInstance_params_onResult_offResult_start_cancel
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      * @tc.level     : Level.LEVEL0
-    */
+    /**
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_0043
+     * @tc.number Security_IAM_getUserAuthInstance_Func_0043
+     * @tc.desc   Security_IAM_getUserAuthInstance_Func_0043
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Security_IAM_getUserAuthInstance_Func_0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("Security_IAM_getUserAuthInstance_Func_0043 start");
       const authParams = [
@@ -233,13 +234,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
   
-    /*
-        * @tc.number    : Security_IAM_getUserAuthInstance_Func_0107
-        * @tc.name      : execute_getUserAuthInstance_params
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_0107
+     * @tc.number Security_IAM_getUserAuthInstance_Func_0107
+     * @tc.desc   Security_IAM_getUserAuthInstance_Func_0107
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_getUserAuthInstance_Func_0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_getUserAuthInstance_Func_0107 start");
       const authParamWithoutType = {
@@ -426,13 +428,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0004
-        * @tc.name      : execute_userAuthInstance_on_is_aaaa_null_undefined
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0004
+     * @tc.number Security_IAM_UserAuthInstance_Func_0004
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0004 start");
       const eventParams = [
@@ -478,13 +481,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0005
-        * @tc.name      : execute_userAuthInstance_off_is_aaaa_null_undefined_callbackUndefined
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0005
+     * @tc.number Security_IAM_UserAuthInstance_Func_0005
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0005 start");
       const eventParams = [
@@ -526,13 +530,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0007
-        * @tc.name      : execute_userAuthInstance_start_is_aaaa_null
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0007
+     * @tc.number Security_IAM_UserAuthInstance_Func_0007
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0007 start");
       const startParams = [ "aaaa", null ];
@@ -551,13 +556,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_UserAuthInstance_Func_0009
-        * @tc.name      : execute_userAuthInstance_cancel_is_aaaa_null
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_UserAuthInstance_Func_0009
+     * @tc.number Security_IAM_UserAuthInstance_Func_0009
+     * @tc.desc   Security_IAM_UserAuthInstance_Func_0009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_UserAuthInstance_Func_0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_UserAuthInstance_Func_0009 start");
       const cancelParams = [ "aaaa", null ];
@@ -577,13 +583,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_getUserAuthInstance_Func_0088
-        * @tc.name      : execute_userAuthInstance_off
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_0088
+     * @tc.number Security_IAM_getUserAuthInstance_Func_0088
+     * @tc.desc   Security_IAM_getUserAuthInstance_Func_0088
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_getUserAuthInstance_Func_0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_getUserAuthInstance_Func_0088 start");
       try {
@@ -598,13 +605,14 @@ export default function signNormalAccessBiometricExecute() {
       done();
     });
 
-    /*
-        * @tc.number    : Security_IAM_getUserAuthInstance_Func_0089
-        * @tc.name      : execute_userAuthInstance_cancel
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level.LEVEL2
-    */
+    /**
+     * @tc.name   Security_IAM_getUserAuthInstance_Func_0089
+     * @tc.number Security_IAM_getUserAuthInstance_Func_0089
+     * @tc.desc   Security_IAM_getUserAuthInstance_Func_0089
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_getUserAuthInstance_Func_0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info("Security_IAM_getUserAuthInstance_Func_0089 start");
       try {

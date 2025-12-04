@@ -19,12 +19,12 @@ import { SyscapChecker } from './SyscapChecker.test';
 export default function CApiGameDeviceTest() {
   describe('CApiGameDeviceTest', () => {
     /**
+     * @tc.name   OH_GameDevice_GetAllDeviceInfos
      * @tc.number OH_GameDevice_GetAllDeviceInfos
-     * @tc.name OH_GameDevice_GetAllDeviceInfos
-     * @tc.desc get AllDeviceInfos success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get AllDeviceInfos success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_GetAllDeviceInfos', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -35,12 +35,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_RegisterDeviceMonitor01
      * @tc.number OH_GameDevice_RegisterDeviceMonitor01
-     * @tc.name OH_GameDevice_RegisterDeviceMonitor01
-     * @tc.desc registerDeviceMonitor success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   registerDeviceMonitor success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_RegisterDeviceMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -51,12 +51,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_RegisterDeviceMonitor02
      * @tc.number OH_GameDevice_RegisterDeviceMonitor02
-     * @tc.name OH_GameDevice_RegisterDeviceMonitor02
-     * @tc.desc registerDeviceMonitor failed when deviceMonitorCallback is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   registerDeviceMonitor failed when deviceMonitorCallback is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_RegisterDeviceMonitor02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -67,12 +67,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_UnregisterDeviceMonitor01
      * @tc.number OH_GameDevice_UnregisterDeviceMonitor01
-     * @tc.name OH_GameDevice_UnregisterDeviceMonitor01
-     * @tc.desc UnregisterDeviceMonitor success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   UnregisterDeviceMonitor success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_UnregisterDeviceMonitor01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -83,12 +83,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_DestroyAllDeviceInfos01
      * @tc.number OH_GameDevice_DestroyAllDeviceInfos01
-     * @tc.name OH_GameDevice_DestroyAllDeviceInfos01
-     * @tc.desc destroy allDeviceInfos success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   destroy allDeviceInfos success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_DestroyAllDeviceInfos01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -99,12 +99,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_DestroyAllDeviceInfos02
      * @tc.number OH_GameDevice_DestroyAllDeviceInfos02
-     * @tc.name OH_GameDevice_DestroyAllDeviceInfos02
-     * @tc.desc destroy allDeviceInfos failed when allDeviceInfos is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   destroy allDeviceInfos failed when allDeviceInfos is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_DestroyAllDeviceInfos02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -115,12 +115,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetCount01
      * @tc.number OH_GameDevice_AllDeviceInfos_GetCount01
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount01
-     * @tc.desc get count success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get count success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetCount01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -131,12 +131,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetCount02
      * @tc.number OH_GameDevice_AllDeviceInfos_GetCount02
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetCount02
-     * @tc.desc get count failed when allDeviceInfos is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get count failed when allDeviceInfos is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetCount02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       if (SyscapChecker.canNotUse()) {
@@ -147,12 +147,12 @@ export default function CApiGameDeviceTest() {
     });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo01
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo01
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo01
-     * @tc.desc get deviceInfo success
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get deviceInfo success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -164,12 +164,12 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo02
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo02
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo02
-     * @tc.desc get deviceInfo failed, when allDeviceInfos is null
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get deviceInfo failed, when allDeviceInfos is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -181,12 +181,12 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo03
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo03
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo03
-     * @tc.desc get deviceInfo failed,  when index is more than count
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get deviceInfo failed,  when index is more than count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -198,12 +198,12 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo04
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo04
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo04
-     * @tc.desc get deviceInfo failed, when index is less than 0
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get deviceInfo failed, when index is less than 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {
@@ -215,12 +215,12 @@ export default function CApiGameDeviceTest() {
       });
 
     /**
+     * @tc.name   OH_GameDevice_AllDeviceInfos_GetDeviceInfo05
      * @tc.number OH_GameDevice_AllDeviceInfos_GetDeviceInfo05
-     * @tc.name OH_GameDevice_AllDeviceInfos_GetDeviceInfo05
-     * @tc.desc get deviceInfo failed, when index is equal with count
-     * @tc.level Level0
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   get deviceInfo failed, when index is equal with count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OH_GameDevice_AllDeviceInfos_GetDeviceInfo05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async () => {

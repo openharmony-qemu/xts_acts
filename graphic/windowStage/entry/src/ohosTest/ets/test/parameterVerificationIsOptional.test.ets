@@ -107,12 +107,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2360
-     * @tc.name      : testTouchOutsideBaseTest
-     * @tc.desc      : Enable listening for click events outside the area of this window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testTouchOutsideBaseTest
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2360
+     * @tc.desc   Enable listening for click events outside the area of this window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testTouchOutsideBaseTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testTouchOutsideBaseTest';
@@ -148,12 +148,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2370
-     * @tc.name      : testWindowOffTouchOutsideCancelAll
-     * @tc.desc      : Turns off listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindowOffTouchOutsideCancelAll
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2370
+     * @tc.desc   Turns off listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOffTouchOutsideCancelAll', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindowOffTouchOutsideCancelAll';
@@ -268,12 +268,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2380
-     * @tc.name      : Test testWindowOffTouchOutsideCancelSingle
-     * @tc.desc      : Turns off listening for click events outside this window area.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindowOffTouchOutsideCancelSingle
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2380
+     * @tc.desc   Turns off listening for click events outside this window area.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindowOffTouchOutsideCancelSingle', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindowOffTouchOutsideCancelSingle';
@@ -370,14 +370,14 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2170
-     * @tc.name      : testWindowStage_loadContent_Test_001
-     * @tc.desc      : Verify The optional parameter is undefined
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindowStage_loadContent_Test_001
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2170
+     * @tc.desc   Verify The optional parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWindowStage_loadContent_Test_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testWindowStage_loadContent_Test_001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'windowStage_loadContent_Test_001';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -391,12 +391,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2280
-     * @tc.name      : testWindow_off_WindowSizeChange_No_Callback
-     * @tc.desc      : Turn off listening for window size changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_WindowSizeChange_No_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2280
+     * @tc.desc   Turn off listening for window size changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_WindowSizeChange_No_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_WindowSizeChange_No_Callback';
@@ -455,12 +455,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2290
-     * @tc.name      : testWindow_off_WindowSizeChange_SecondCall_Callback
-     * @tc.desc      : Turn off listening for window size changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_WindowSizeChange_SecondCall_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2290
+     * @tc.desc   Turn off listening for window size changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_WindowSizeChange_SecondCall_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName = 'testWindow_off_WindowSizeChange_SecondCall_Callback';
@@ -518,12 +518,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
-     * @tc.name      : testWindow_off_AvoidAreaChange_AllListening_LogOut
-     * @tc.desc      : Disable listening for system avoidance zone changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_AvoidAreaChange_AllListening_LogOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
+     * @tc.desc   Disable listening for system avoidance zone changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_AvoidAreaChange_AllListening_LogOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_AvoidAreaChange_AllListening_LogOut';
@@ -604,12 +604,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2210
-     * @tc.name      : testWindow_off_AvoidAreaChange_FirstCall_LogOut
-     * @tc.desc      : Disable listening for system avoidance zone changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_AvoidAreaChange_FirstCall_LogOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2210
+     * @tc.desc   Disable listening for system avoidance zone changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_AvoidAreaChange_FirstCall_LogOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_AvoidAreaChange_FirstCall_LogOut';
@@ -681,12 +681,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2220
-     * @tc.name      : testWindow_off_dialogTargetTouch_AllListening_LogOut
-     * @tc.desc      : Turns on modal window listener for click events on target Windows.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_dialogTargetTouch_AllListening_LogOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2220
+     * @tc.desc   Turns on modal window listener for click events on target Windows.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_dialogTargetTouch_AllListening_LogOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_dialogTargetTouch_AllListening_LogOut';
@@ -781,12 +781,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2230
-     * @tc.name      : testWindow_off_dialogTargetTouch_FirstCall_LogOut
-     * @tc.desc      : Turns on modal window listener for click events on target Windows.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_dialogTargetTouch_FirstCall_LogOut
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2230
+     * @tc.desc   Turns on modal window listener for click events on target Windows.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_dialogTargetTouch_FirstCall_LogOut', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_dialogTargetTouch_FirstCall_LogOut';
@@ -879,12 +879,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2240
-     * @tc.name      : testWindow_off_keyboardHeightChange_All
-     * @tc.desc      : Turn off listening for keyboard height changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_keyboardHeightChange_All
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2240
+     * @tc.desc   Turn off listening for keyboard height changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_keyboardHeightChange_All', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_keyboardHeightChange_All';
@@ -945,12 +945,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2250
-     * @tc.name      : testWindow_off_keyboardHeightChange_FirstCall
-     * @tc.desc      : Turn off listening for keyboard height changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testWindow_off_keyboardHeightChange_FirstCall
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2250
+     * @tc.desc   Turn off listening for keyboard height changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testWindow_off_keyboardHeightChange_FirstCall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testWindow_off_keyboardHeightChange_FirstCall';
@@ -1014,14 +1014,14 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0610
-     * @tc.name      : testGetUIContext_Instances
-     * @tc.desc      : Get the UIContext instance.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testGetUIContext_Instances
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0610
+     * @tc.desc   Get the UIContext instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetUIContext_Instances', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testGetUIContext_Instances', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetUIContext_Instances';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1037,12 +1037,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
-     * @tc.name      : testGetLastWindow_CreateSubWindow
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_CreateSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_CreateSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetLastWindow_CreateSubWindow';
@@ -1083,12 +1083,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       await (subWindow as ohosWindow.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4490
-     * @tc.name      : testGetLastWindow_CreateDialogWindow
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_CreateDialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4490
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_CreateDialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetLastWindow_CreateDialogWindow';
@@ -1134,12 +1134,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       await (tempWnd as ohosWindow.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
-     * @tc.name      : testLoadContent_NotExistPage_Callback
-     * @tc.desc      : The page does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLoadContent_NotExistPage_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
+     * @tc.desc   The page does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_NotExistPage_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testLoadContent_NotExistPage_Callback';
@@ -1171,12 +1171,12 @@ export default function parameterVerificationIsOptionalTest(context: common.UIAb
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4510
-     * @tc.name      : testLoadContent_NotExistPage_Promise
-     * @tc.desc      : The page does not exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLoadContent_NotExistPage_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4510
+     * @tc.desc   The page does not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testLoadContent_NotExistPage_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testLoadContent_NotExistPage_Promise';

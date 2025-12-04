@@ -98,9 +98,12 @@ long GetCurrentTimeMillis()
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6200
- * @tc.name       Update permission flags
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6200
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6200
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6200, Function | MediumTest | Level2)
 {
@@ -130,9 +133,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6200, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6300
- * @tc.name       Update permission flags (No reminds after rejection)
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6300
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6300
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6300, Function | MediumTest | Level2)
 {
@@ -162,9 +168,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6300, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6400
- * @tc.name       Update permission flags (Name does not exist)
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6400
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6400
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6400, Function | MediumTest | Level2)
 {
@@ -199,9 +208,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6400, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6500
- * @tc.name       Update permission flags (Name empty)
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6500
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6500
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6500, Function | MediumTest | Level2)
 {
@@ -236,9 +248,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6500, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6600
- * @tc.name       Update permission flags (Name invalid)
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6600
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6600
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6600, Function | MediumTest | Level2)
 {
@@ -269,9 +284,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6600, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6700
- * @tc.name       Updatepermissionflags interface stability test
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6700
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6700
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6700, Function | MediumTest | Level2)
 {
@@ -302,9 +320,12 @@ HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6700, Function | Me
 }
 
 /**
- * @tc.number     SUB_SEC_AppSEC_PermissionMgmt_PMS_6800
- * @tc.name       Updatepermissionflags interface performace test
- * @tc.desc       [C- SECURITY -1000]
+ * @tc.name   testSecPMUpdatePMFlags_6800
+ * @tc.number SUB_SEC_AppSEC_PermissionMgmt_PMS_6800
+ * @tc.desc   [C- SECURITY -1000]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(ActsPMSUpdatePermissionTest, testSecPMUpdatePMFlags_6800, Function | MediumTest | Level2)
 {

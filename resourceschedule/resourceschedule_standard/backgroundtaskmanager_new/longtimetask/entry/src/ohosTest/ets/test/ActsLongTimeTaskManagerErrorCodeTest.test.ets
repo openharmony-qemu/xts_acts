@@ -100,13 +100,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterEach called');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001
-     * @tc.desc:Test that the stopBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001
+     * @tc.desc   Test that the stopBackgroundRunning function interface does not request ohos.permission.KEEP_BACKGROUND_RUNNING permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -150,13 +150,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning callback function error call with bgMode and errocode is 202
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 202
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -200,13 +200,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_002 end---');
       })
 
-      /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_003
-     * @tc.desc:Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_003
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -247,13 +247,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
       })
       
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004
-     * @tc.desc:Test that the startBackgroundRunning promise function error call with bgModeList and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgModeList and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -318,13 +318,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005
-     * @tc.desc:Test that the startBackgroundRunning callback function error call with bgMode and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005
+     * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -383,13 +383,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_005 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006
-     * @tc.desc:Test that the updateBackgroundRunning promise function error call with bgModeList and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006
+     * @tc.desc   Test that the updateBackgroundRunning promise function error call with bgModeList and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -440,13 +440,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007
-     * @tc.desc:Test that the stopBackgroundRunning promise function error call and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007
+     * @tc.desc   Test that the stopBackgroundRunning promise function error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -489,13 +489,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_007 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008
-     * @tc.desc:Test that the startBackgroundRunning promise function error call with bgMode and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -549,13 +549,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_008 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_009
-     * @tc.desc:Test that the requestSuspendDelay callback function error call and errocode is 9900002
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_009
+     * @tc.desc   Test that the requestSuspendDelay callback function error call and errocode is 9900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -623,13 +623,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_006 end---');
       }) 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010
-     * @tc.desc:Test that the getRemainingDelayTime promise function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010
+     * @tc.desc   Test that the getRemainingDelayTime promise function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -654,13 +654,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_010 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011
-     * @tc.desc:Test that the getRemainingDelayTime callback function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011
+     * @tc.desc   Test that the getRemainingDelayTime callback function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -687,13 +687,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_011 end---');
       }) 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012
-     * @tc.desc:Test that the cancelSuspendDelay callback function error call and errocode is 9900001
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012
+     * @tc.desc   Test that the cancelSuspendDelay callback function error call and errocode is 9900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -717,13 +717,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_012 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013
-     * @tc.desc:Test that the  api12 updateBackgroundRunning function error call and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013
+     * @tc.desc   Test that the  api12 updateBackgroundRunning function error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -769,13 +769,13 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_013 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014
-     * @tc.desc:Test that the api12 stopBackgroundRunning function error call and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014
+     * @tc.desc   Test that the api12 stopBackgroundRunning function error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -815,14 +815,14 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_014 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015
-     * @tc.desc:Test that the api12 startBackgroundRunning function error call and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
-     */
+     /**
+      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015
+      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015
+      * @tc.desc   Test that the api12 startBackgroundRunning function error call and errocode is 9800005
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015 begin---');
@@ -865,6 +865,82 @@ export default function LongTimeTaskManagerErrorCodeTest() {
         }
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_015 end---');
+      })
+
+      
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016
+     * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 begin---');
+
+        try {
+          let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+          wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+            let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+            delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+              continuousTaskRequest.checkSpecialScenarioAuth(ability.context).then((res: backgroundTaskManager.UserAuthResult) => {
+                console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth succeeded. data: " + JSON.stringify(res));
+              }).catch((error: BusinessError) => {
+                console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${error.code} message is ${error.message}`);
+                expect(error.code).assertEqual(9800005);
+                done();
+            });
+            }).catch((error: BusinessError) => {
+              hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+            });
+        }).catch((error: BusinessError) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 getWantAgent error: %{public}s', JSON.stringify(error));
+        })
+        } catch (error) {
+          console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_016 Operation checkSpecialScenarioAuth failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+        }
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017
+     * @tc.desc   Test that the continuousTaskRequest function requestAuthFromUser error call and errocode is 9800005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 begin---');
+
+        let callbackAuth = (authResult: backgroundTaskManager.UserAuthResult) => {
+          console.info("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser success. auth result: " + JSON.stringify(authResult));
+        };
+
+        let continuousTaskRequest = new backgroundTaskManager.ContinuousTaskRequest();
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 try begin---');
+        wantAgent.getWantAgent(wantAgentInfo).then((want: WantAgent) => {
+          let delegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+          delegator.getCurrentTopAbility().then((ability: UIAbility) => {
+            try {
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 requestAuthFromUser try begin---');
+              continuousTaskRequest.requestAuthFromUser(ability.context, callbackAuth);
+            } catch (error) {
+              console.error(`SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 Operation requestAuthFromUser failed. code is ${(error as BusinessError).code} message is ${(error as BusinessError).message}`);
+              expect(error.code == 9800005).assertTrue();
+              done();
+              hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 requestAuthFromUser try end---');
+            }
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 getCurrentTopAbility error: %{public}s', JSON.stringify(error));
+          });
+        }).catch((error: BusinessError) => {
+        hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 getWantAgent error: %{public}s', JSON.stringify(error));
+        })
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_XTS_017 end---');
       })
 
   })

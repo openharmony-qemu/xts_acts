@@ -46,10 +46,12 @@ export default function Image_QRCode_Api() {
     });
 
     /**
-     * @tc.number      Image_QRCode_Api_001
-     * @tc.name        Image_QRCode_Api_001
-     * @tc.desc        QRCode test
-     * @tc.level       Level 2
+     * @tc.name   Image_QRCode_Api_001
+     * @tc.number Image_QRCode_Api_001
+     * @tc.desc   QRCode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Image_QRCode_Api_001', Level.LEVEL2, async (done: Function) => {
       console.info('[Image_QRCode_Api_001] START');
@@ -66,10 +68,12 @@ export default function Image_QRCode_Api() {
     });
 
     /**
-     * @tc.number      Image_QRCode_Api_002
-     * @tc.name        Image_QRCode_Api_002
-     * @tc.desc        Image test
-     * @tc.level       Level 2
+     * @tc.name   Image_QRCode_Api_002
+     * @tc.number Image_QRCode_Api_002
+     * @tc.desc   Image test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Image_QRCode_Api_002', Level.LEVEL2, async (done: Function) => {
       console.info('[Image_QRCode_Api_002] START');

@@ -134,12 +134,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PREMISSION_CREATEPLAYER_ERROR_0100
-     * @tc.name      : CREATEPLAYER_ERROR
-     * @tc.desc      : CREATEPLAYER_ERROR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PREMISSION_CREATEPLAYER_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PREMISSION_CREATEPLAYER_ERROR_0100
+     * @tc.desc   CREATEPLAYER_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PREMISSION_CREATEPLAYER_ERROR_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
@@ -161,12 +161,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_ERROR_0200
-     * @tc.name      : CREATEPLAYER_LESS_PARA
-     * @tc.desc      : CREATEPLAYER_LESS_PARA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_LESS_PARA_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_ERROR_0200
+     * @tc.desc   CREATEPLAYER_LESS_PARA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_LESS_PARA_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
@@ -186,12 +186,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_START_ERROR_0100
-     * @tc.name      : START_ERROR
-     * @tc.desc      : START_ERROR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_START_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_START_ERROR_0100
+     * @tc.desc   START_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_START_ERROR_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();
@@ -225,12 +225,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_STOP_ERROR_0100
-     * @tc.name      : STOP_ERROR
-     * @tc.desc      : STOP_ERROR
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_STOP_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_STOP_ERROR_0100
+     * @tc.desc   STOP_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_STOP_ERROR_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         let audioHapticManagerInstance: audioHaptic.AudioHapticManager = audioHaptic.getAudioHapticManager();

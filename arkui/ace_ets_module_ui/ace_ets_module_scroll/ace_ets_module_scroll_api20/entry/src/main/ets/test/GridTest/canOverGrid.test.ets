@@ -43,12 +43,12 @@ export default function canOverGrid() {
     });
 
     /**
-     * @tc.number    canOverGrid_001
-     * @tc.name      canOverGrid_0100
-     * @tc.desc      Set the canOverscroll property value to true.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverGrid_0100
+     * @tc.number canOverGrid_001
+     * @tc.desc   Set the canOverscroll property value to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverGrid_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverGrid_0100] START');
@@ -73,12 +73,12 @@ export default function canOverGrid() {
     });
 
     /**
-     * @tc.number    canOverGrid_002
-     * @tc.name      canOverGrid_0200
-     * @tc.desc      Set the canOverscroll property value to false.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverGrid_0200
+     * @tc.number canOverGrid_002
+     * @tc.desc   Set the canOverscroll property value to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverGrid_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverGrid_0200] START');
@@ -100,12 +100,12 @@ export default function canOverGrid() {
     });
 
     /**
-     * @tc.number    canOverGrid_003
-     * @tc.name      canOverGrid_0300
-     * @tc.desc      Set the canOverscroll property value to null.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverGrid_0300
+     * @tc.number canOverGrid_003
+     * @tc.desc   Set the canOverscroll property value to null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverGrid_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverGrid_0300] START');
@@ -127,12 +127,12 @@ export default function canOverGrid() {
     });
 
     /**
-     * @tc.number    canOverGrid_004
-     * @tc.name      canOverGrid_0400
-     * @tc.desc      Set the canOverscroll property value to undefined.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   canOverGrid_0400
+     * @tc.number canOverGrid_004
+     * @tc.desc   Set the canOverscroll property value to undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('canOverGrid_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[canOverGrid_0400] START');

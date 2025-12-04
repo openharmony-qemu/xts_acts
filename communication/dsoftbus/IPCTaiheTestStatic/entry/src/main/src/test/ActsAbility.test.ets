@@ -1,16 +1,22 @@
-import { describe, it, expect, TestType, Size, Level, beforeAll} from '../../../hypium/index';
-import { BusinessError } from '@ohos.base'
-import hilog from '@ohos.hilog'
+import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, afterEach, afterAll} from '../../../hypium/index';
+import { BusinessError } from '@ohos.base';
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
 import rpc from '@ohos.rpc';
 import common from '@ohos.app.ability.common';
 import fileIo from '@ohos.file.fs';
-import { AppStorage } from '@ohos.arkui.stateManagement'
+import { AppStorage } from '@ohos.arkui.stateManagement';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
+import Want from '@ohos.app.ability.Want';
+import bundleManager from '@ohos.bundle.bundleManager';
+
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-
+let gIRemoteObject: rpc.IRemoteObject;
 let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
+let bundleNameRpc: string = "com.example.actsipctaiheservicetest.static";
+let abilityNameRpc: string = "ServiceAbility";
+let connectId: long;
 
 class MyParcelable implements rpc.Parcelable {
     num: int = 0;
@@ -85,7 +91,7 @@ class TestStub extends rpc.RemoteObject {
 
 
 class MyDeathRecipient implements rpc.DeathRecipient {
-    onRemoteDied(): void {
+    onRemoteDied: () => void = () => {
         hilog.info(domain, tag, '%{public}s', 'into onRemoteDied');
     }
 }
@@ -145,7 +151,6 @@ function sendMessageRequestCallback_Proxy(err: BusinessError | null, result: rpc
         if (result != null) {
             hilog.info(domain, tag, '%{public}s', 'sendMessageRequestCallback_Proxy Callback');
             expect(result.errCode).assertEqual(0);
-           // let res: undefined;
             let res = result.reply.readRemoteObject();
         }
     } catch(error) {
@@ -154,30 +159,86 @@ function sendMessageRequestCallback_Proxy(err: BusinessError | null, result: rpc
     }
 }
 
+function sendMessageRequestCallback_Proxy_ReadAndWrite(err: BusinessError | null, result: rpc.RequestResult | undefined) {
+    try {
+        if (result != null) {
+            hilog.info(domain, tag, '%{public}s', 'sendMessageRequestCallback_Proxy_ReadAndWrite Callback');
+            expect(result.errCode).assertEqual(0);
+            let res = result.reply.readInt();
+            hilog.info(domain, tag, '%{public}s', 'sendMessageRequest Callback readInt is ' + res);
+            expect(res).assertEqual(112233);
+            let res_s = result.reply.readString();
+            hilog.info(domain, tag, '%{public}s', 'sendMessageRequest Callback readString is ' + res_s);
+            expect(res_s).assertEqual("ipctest");
+        }
+    } catch(error) {
+        hilog.info(domain, tag, '%{public}s', 'sendMessageRequest Callback err is ' + error);
+        expect(error != null).assertTrue();
+    }
+}
+
+
+async function toConnectAbility() {
+    hilog.info(domain, tag, '%{public}s', " -----toConnectAbility-----");
+    let want: Want = {
+        bundleName: bundleNameRpc,
+        abilityName: abilityNameRpc
+    };
+    try {
+        hilog.info(domain, tag, '%{public}s', '-----connectServiceExtensionAbility is begin-----');
+        let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+        hilog.info(domain, tag, '%{public}s', 'connectServiceExtensionAbility, context: ' + context);
+        connectId = context.connectServiceExtensionAbility(want, {
+            onConnect: (elementName: bundleManager.ElementName, remote: rpc.IRemoteObject) =>  {
+                hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onConnect");
+                gIRemoteObject = remote;
+                hilog.info(domain, tag, '%{public}s', "ConnectOptions gIRemoteObject is " + gIRemoteObject);
+            },
+            onDisconnect: (elementName: bundleManager.ElementName) =>  {
+                hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onDisconnect");
+            },
+            onFailed: (code: int) => {
+                hilog.info(domain, tag, '%{public}s', "ConnectOptions is  onFailed");
+            }
+        });
+        hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectId);
+    } catch (err) {
+        hilog.error(domain, tag, '%{public}s', "connectServiceExtensionAbility failed: " + err);
+    } finally {
+        hilog.info(domain, tag, '%{public}s', "connectServiceExtensionAbility success. got id: " + connectId);
+    }
+}
+
 export default function abilityTest() {
 
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        beforeAll(() => {
-            await Utils.msSleep(1000)
-            hilog.info(domain, tag, '%{public}s', 'beforeAll in')
-            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsipctaihetest.static")
-            await Utils.msSleep(1000)
+        beforeAll(async() => {
+            hilog.info(domain, tag, '%{public}s', 'beforeAll in');
+            try {
+              await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actsipctaihetest.static");
+              await Utils.msSleep(6000);
+              await  toConnectAbility();
+              await Utils.msSleep(4000);
+              hilog.info(domain, tag, '%{public}s', 'beforeAll gIRemoteObject is ' + gIRemoteObject);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'beforeAll error is: ' + error);
+            }
+            hilog.info(domain, tag, '%{public}s', 'beforeAll done');
         })
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
-         * @tc.name     SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
-         * @tc.desc     test MessageSequence WriteInt and ReadInt
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
+         * @tc.number SUB_IPC_MessageSequence_WriteInt_ReadInt_0100
+         * @tc.desc   test MessageSequence WriteInt and ReadInt
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_WriteInt_ReadInt_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = 123;
@@ -185,27 +246,27 @@ export default function abilityTest() {
                 let res = data.readInt();
                 expect(res == input).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_WriteInt_ReadInt_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
-         * @tc.name     SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
-         * @tc.desc     test MessageSequence WriteInterfaceToken and ReadInterfaceToken
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
+         * @tc.number SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100
+         * @tc.desc   test MessageSequence WriteInterfaceToken and ReadInterfaceToken
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = "this is interfaceToken";
@@ -213,27 +274,27 @@ export default function abilityTest() {
                 let res = data.readInterfaceToken();
                 expect(res == input).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_WriteInterfaceToken_ReadInterfaceToken_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
-         * @tc.name     SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
-         * @tc.desc     test MessageSequence setCapacity and getCapacity
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
+         * @tc.number SUB_IPC_MessageSequence_setCapacity_getCapacity_0100
+         * @tc.desc   test MessageSequence setCapacity and getCapacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_setCapacity_getCapacity_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = 666;
@@ -241,53 +302,53 @@ export default function abilityTest() {
                 let res = data.getCapacity();
                 expect(res == input).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_setCapacity_getCapacity_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeNoException_readException_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeNoException_readException_0100
-         * @tc.desc     test MessageSequence writeNoException and readException
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeNoException_readException_0100
+         * @tc.number SUB_IPC_MessageSequence_writeNoException_readException_0100
+         * @tc.desc   test MessageSequence writeNoException and readException
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeNoException_readException_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_readException_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_readException_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 data.writeNoException();
                 data.readException();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_readException_0100 error is: ' + error)
-                expect(error != null).assertTrue();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_readException_0100 error is: ' + error);
+                expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_readException_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_readException_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeNoException_readException_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeNoException_readException_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeLong_readLong_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeLong_readLong_0100
-         * @tc.desc     test MessageSequence writeLong and readLong
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeLong_readLong_0100
+         * @tc.number SUB_IPC_MessageSequence_writeLong_readLong_0100
+         * @tc.desc   test MessageSequence writeLong and readLong
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeLong_readLong_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_readLong_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_readLong_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = 99999999999;
@@ -295,27 +356,27 @@ export default function abilityTest() {
                 let res = data.readLong();
                 expect(res == input).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_readLong_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_readLong_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_readLong_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_readLong_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeLong_readLong_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeLong_readLong_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
-         * @tc.desc     test MessageSequence writeBoolean and readBoolean
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100
+         * @tc.desc   test MessageSequence writeBoolean and readBoolean
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = true;
@@ -323,27 +384,27 @@ export default function abilityTest() {
                 let res = data.readBoolean();
                 expect(res).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_readBoolean_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
-         * @tc.desc     test MessageSequence writeBoolean and readBoolean
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200
+         * @tc.desc   test MessageSequence writeBoolean and readBoolean
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = false;
@@ -351,27 +412,27 @@ export default function abilityTest() {
                 let res = data.readBoolean();
                 expect(res).assertFalse();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_readBoolean_0200 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeString_readString_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeString_readString_0100
-         * @tc.desc     test MessageSequence writeString and readString
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeString_readString_0100
+         * @tc.number SUB_IPC_MessageSequence_writeString_readString_0100
+         * @tc.desc   test MessageSequence writeString and readString
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeString_readString_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-           await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_readString_0100 --------------------')
+           await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_readString_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input = "this is test write and read string";
@@ -379,53 +440,53 @@ export default function abilityTest() {
                 let res = data.readString();
                 expect(res == input).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_readString_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_readString_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_readString_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeByteArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeByteArray_0100
-         * @tc.desc     test MessageSequence writeByteArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeByteArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeByteArray_0100
+         * @tc.desc   test MessageSequence writeByteArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeByteArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
                 data.writeByteArray(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeByteArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeByteArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
-         * @tc.desc     test MessageSequence writeIntArray and readIntArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100
+         * @tc.desc   test MessageSequence writeIntArray and readIntArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -433,27 +494,27 @@ export default function abilityTest() {
                 let res = data.readIntArray();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_readIntArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
-         * @tc.desc     test MessageSequence writeIntArray and readIntArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200
+         * @tc.desc   test MessageSequence writeIntArray and readIntArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -462,27 +523,27 @@ export default function abilityTest() {
                 data.readIntArray(res);
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_readIntArray_0200 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
-         * @tc.desc     test MessageSequence writeDoubleArray and readDoubleArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100
+         * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<double> = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9];
@@ -490,27 +551,27 @@ export default function abilityTest() {
                 let res = data.readDoubleArray();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
-         * @tc.desc     test MessageSequence writeDoubleArray and readDoubleArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200
+         * @tc.desc   test MessageSequence writeDoubleArray and readDoubleArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<double> = [1.1, 2.2, 3.3, 4.4, 5.5, 6.6, 7.7, 8.8, 9.9];
@@ -519,27 +580,27 @@ export default function abilityTest() {
                 data.readDoubleArray(res);
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_readDoubleArray_0200 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
-         * @tc.desc     test MessageSequence writeStringArray and readStringArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100
+         * @tc.desc   test MessageSequence writeStringArray and readStringArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
@@ -547,27 +608,27 @@ export default function abilityTest() {
                 let res = data.readStringArray();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_readStringArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
-         * @tc.desc     test MessageSequence writeStringArray and readStringArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200
+         * @tc.desc   test MessageSequence writeStringArray and readStringArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<string> = ["this", "is", "a", "test", "stirng", "array"];
@@ -576,27 +637,27 @@ export default function abilityTest() {
                 data.readStringArray(res);
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_readStringArray_0200 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
-         * @tc.desc     test MessageSequence writeBooleanArray and readBooleanArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100
+         * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<boolean> = [true, false, true, false, true, false, true, false, true, false];
@@ -604,27 +665,27 @@ export default function abilityTest() {
                 let res = data.readBooleanArray();
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
-         * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
-         * @tc.desc     test MessageSequence writeBooleanArray and readBooleanArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200
+         * @tc.desc   test MessageSequence writeBooleanArray and readBooleanArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 let input: Array<boolean> = [false, true, false, true, false, true, false, true, false, true];
@@ -633,27 +694,27 @@ export default function abilityTest() {
                 data.readBooleanArray(res);
                 expect(res).assertDeepEquals(input);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_readBooleanArray_0200 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
-         * @tc.desc     test MessageSequence writeParcelable and readParcelable
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100
+         * @tc.desc   test MessageSequence writeParcelable and readParcelable
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             try {
@@ -664,27 +725,27 @@ export default function abilityTest() {
                 expect(res.num).assertEqual(1);
                 expect(res.str).assertEqual("this is a test parcelable");
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelable_readParcelable_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
-         * @tc.desc     test MessageSequence writeParcelableArray and readParcelableArray
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100
+         * @tc.desc   test MessageSequence writeParcelableArray and readParcelableArray
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             try {
@@ -700,27 +761,27 @@ export default function abilityTest() {
                     expect((res[i] as MyParcelable).str).assertEqual((input[i] as MyParcelable).str);
                 }
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 reclaim done');
                 data.reclaim();
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelableArray_readParcelableArray_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with int32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with int32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(4 * 10);
@@ -736,28 +797,28 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_int32_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with int32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(4 * 10);
@@ -773,7 +834,7 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             }
 
@@ -783,28 +844,28 @@ export default function abilityTest() {
                 let assertE = isEqualArrayBuffer(readInt32View, int32View);
                 expect(assertE).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int32_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with uint8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with uint8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(1 * 10);
@@ -817,28 +878,28 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_uint8_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with uint8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with uint8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(1 * 10);
@@ -851,7 +912,7 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             }
 
@@ -861,28 +922,28 @@ export default function abilityTest() {
                 let assertE = isEqualArrayBuffer(readUint8View, uint8View);
                 expect(assertE).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_uint8_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with int8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with int8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(1 * 10);
@@ -898,28 +959,28 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_int8_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with int8
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with int8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(1 * 10);
@@ -935,7 +996,7 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             }
 
@@ -945,28 +1006,28 @@ export default function abilityTest() {
                 let assertE = isEqualArrayBuffer(readInt8View, int8View);
                 expect(assertE).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_int8_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer with float32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer with float32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(4 * 10);
@@ -982,28 +1043,28 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_float32_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer and readRawDataBuffer with float32
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer and readRawDataBuffer with float32
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             let buffer = new ArrayBuffer(4 * 10);
@@ -1019,7 +1080,7 @@ export default function abilityTest() {
             try {
                 data.writeRawDataBuffer(buffer, size);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             }
 
@@ -1029,409 +1090,409 @@ export default function abilityTest() {
                 let assertE = isEqualArrayBuffer(readFloat32View, float32View);
                 expect(assertE).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_readRawDataBuffer_float32_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_create_0100
-         * @tc.name     SUB_IPC_Ashmem_create_0100
-         * @tc.desc     test create Ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_create_0100
+         * @tc.number SUB_IPC_Ashmem_create_0100
+         * @tc.desc   test create Ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_create_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_0100 --------------------');
 
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_getAshmemSize_0100
-         * @tc.name     SUB_IPC_Ashmem_getAshmemSize_0100
-         * @tc.desc     test Ashmem getAshmemSize
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_getAshmemSize_0100
+         * @tc.number SUB_IPC_Ashmem_getAshmemSize_0100
+         * @tc.desc   test Ashmem getAshmemSize
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_getAshmemSize_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_getAshmemSize_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_getAshmemSize_0100 --------------------');
 
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
                 let size = ashmem.getAshmemSize();
                 expect(size == 1024 * 1024).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_getAshmemSize_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_getAshmemSize_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_getAshmemSize_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_getAshmemSize_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_getAshmemSize_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_getAshmemSize_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
-         * @tc.desc     test MessageSequence writeAshmem Ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
                 data.writeAshmem(ashmem);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 reclaim done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_Ashmem_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
-         * @tc.desc     test MessageSequence writeAshmem and readAshmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100
+         * @tc.desc   test MessageSequence writeAshmem and readAshmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
             try {
                 data.writeAshmem(ashmem);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 finally done');
             }
 
             try {
                 let res = data.readAshmem();
                 expect(res.getAshmemSize() == ashmem.getAshmemSize()).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 finally done');
                 data.reclaim();
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_readAshmem_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_create_0100
-         * @tc.name     SUB_IPC_MessageOption_create_0100
-         * @tc.desc     test MessageOption create
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_create_0100
+         * @tc.number SUB_IPC_MessageOption_create_0100
+         * @tc.desc   test MessageOption create
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_create_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_0100 --------------------');
 
             try {
                 let option = new rpc.MessageOption();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_create_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_create_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_create_one_value_0100
-         * @tc.name     SUB_IPC_MessageOption_create_one_value_0100
-         * @tc.desc     test MessageOption create with ont input
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_create_one_value_0100
+         * @tc.number SUB_IPC_MessageOption_create_one_value_0100
+         * @tc.desc   test MessageOption create with ont input
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_create_one_value_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_one_value_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_create_one_value_0100 --------------------');
 
             try {
                 let option = new rpc.MessageOption(true);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_one_value_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_one_value_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_one_value_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_create_one_value_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_create_one_value_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_create_one_value_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_isAsync_0100
-         * @tc.name     SUB_IPC_MessageOption_isAsync_0100
-         * @tc.desc     test MessageOption is async
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_isAsync_0100
+         * @tc.number SUB_IPC_MessageOption_isAsync_0100
+         * @tc.desc   test MessageOption is async
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_isAsync_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_0100 --------------------');
 
             try {
                 let option = new rpc.MessageOption(true);
                 let res = option.isAsync();
                 expect(res).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_isAsync_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_isAsync_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageOption_isAsync_false_0100
-         * @tc.name     SUB_IPC_MessageOption_isAsync_false_0100
-         * @tc.desc     test MessageOption is async false
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageOption_isAsync_false_0100
+         * @tc.number SUB_IPC_MessageOption_isAsync_false_0100
+         * @tc.desc   test MessageOption is async false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageOption_isAsync_false_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_false_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageOption_isAsync_false_0100 --------------------');
 
             try {
                 let option = new rpc.MessageOption(false);
                 let res = option.isAsync();
                 expect(res).assertFalse();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_false_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_false_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_false_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageOption_isAsync_false_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_isAsync_false_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageOption_isAsync_false_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_create_with_other_ashmem_0100
-         * @tc.name     SUB_IPC_Ashmem_create_with_other_ashmem_0100
-         * @tc.desc     test create Ashmem with other ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_create_with_other_ashmem_0100
+         * @tc.number SUB_IPC_Ashmem_create_with_other_ashmem_0100
+         * @tc.desc   test create Ashmem with other ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_create_with_other_ashmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_with_other_ashmem_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_create_with_other_ashmem_0100 --------------------');
 
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
                 let newAshmem = rpc.Ashmem.create(ashmem);
                 expect(ashmem.getAshmemSize() == newAshmem.getAshmemSize()).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_with_other_ashmem_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_with_other_ashmem_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_with_other_ashmem_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_create_with_other_ashmem_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_with_other_ashmem_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_create_with_other_ashmem_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_Ashmem_mapReadWriteAshmem_0100
-         * @tc.name     SUB_IPC_Ashmem_mapReadWriteAshmem_0100
-         * @tc.desc     test create Ashmem with other ashmem
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_Ashmem_mapReadWriteAshmem_0100
+         * @tc.number SUB_IPC_Ashmem_mapReadWriteAshmem_0100
+         * @tc.desc   test create Ashmem with other ashmem
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_Ashmem_mapReadWriteAshmem_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_mapReadWriteAshmem_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_Ashmem_mapReadWriteAshmem_0100 --------------------');
 
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
-                ashmem.mapReadWriteAshmem()
+                ashmem.mapReadWriteAshmem();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_mapReadWriteAshmem_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_mapReadWriteAshmem_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_mapReadWriteAshmem_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_Ashmem_mapReadWriteAshmem_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_mapReadWriteAshmem_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_Ashmem_mapReadWriteAshmem_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingPid_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingPid_0100
-         * @tc.desc     test IPCSkeleton getCallingPid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingPid_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingPid_0100
+         * @tc.desc   test IPCSkeleton getCallingPid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingPid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingPid_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingPid_0100 --------------------');
 
             try {
                 let callerPid = rpc.IPCSkeleton.getCallingPid();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 callerPid is: ' + callerPid)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 callerPid is: ' + callerPid);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingPid_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingPid_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingPid_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingUid_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingUid_0100
-         * @tc.desc     test IPCSkeleton getCallingUid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingUid_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingUid_0100
+         * @tc.desc   test IPCSkeleton getCallingUid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingUid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingUid_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingUid_0100 --------------------');
 
             try {
                 let callerUid = rpc.IPCSkeleton.getCallingUid();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 callerUid is: ' + callerUid)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 callerUid is: ' + callerUid);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingUid_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingUid_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingUid_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_IPCSkeleton_getCallingTokenId_0100
-         * @tc.name     SUB_IPC_IPCSkeleton_getCallingTokenId_0100
-         * @tc.desc     test IPCSkeleton getCallingTokenId
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_IPCSkeleton_getCallingTokenId_0100
+         * @tc.number SUB_IPC_IPCSkeleton_getCallingTokenId_0100
+         * @tc.desc   test IPCSkeleton getCallingTokenId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_IPCSkeleton_getCallingTokenId_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingTokenId_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IPCSkeleton_getCallingTokenId_0100 --------------------');
 
             try {
                 let callerTokenId = rpc.IPCSkeleton.getCallingTokenId();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 callerTokenId is: ' + callerTokenId)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 callerTokenId is: ' + callerTokenId);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IPCSkeleton_getCallingTokenId_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingTokenId_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IPCSkeleton_getCallingTokenId_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_0100
-         * @tc.desc     test MessageSequence writeRemoteObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_0100
+         * @tc.desc   test MessageSequence writeRemoteObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRemoteObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
                 data.writeRemoteObject(testRemoteObject);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_0100 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
-         * @tc.desc     test MessageSequence writeRemoteObject and readRemoteObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100
+         * @tc.desc   test MessageSequence writeRemoteObject and readRemoteObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 --------------------');
 
             let data =  rpc.MessageSequence.create();
             try {
@@ -1439,28 +1500,121 @@ export default function abilityTest() {
                 data.writeRemoteObject(testRemoteObject);
                 let res = data.readRemoteObject();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_readRemoteObject_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0100
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0100
-         * @tc.desc     test RemoteObject sendMessageRequest
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_0100
+         * @tc.desc   test MessageSequence readFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_readFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFileDescriptor_0100 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test1.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                data.writeFileDescriptor(file.fd);
+                let res = data.readFileDescriptor();
+                expect(res >= file.fd).assertTrue();
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_0100 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_0100 error is: ' + err.code);
+                expect(err == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_0100 reclaim done');
+            }
+
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readFileDescriptor_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_0100
+         * @tc.desc   test MessageSequence writeFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_0100 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test4.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                data.writeFileDescriptor(file.fd);
+
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_0100 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_0100 reclaim done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeFileDescriptor_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_0100
+         * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_0100
+         * @tc.desc   test MessageSequence closeFileDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_closeFileDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_0100 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test4.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                data.writeFileDescriptor(file.fd);
+                rpc.MessageSequence.closeFileDescriptor(file.fd);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_0100 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_0100 reclaim done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_closeFileDescriptor_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0100
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0100
+         * @tc.desc   test RemoteObject sendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0100 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1468,35 +1622,41 @@ export default function abilityTest() {
                 let testRemoteObject = new TestRemoteObject("testObject");
                 let option = new rpc.MessageOption();
                 data.writeInt(666);
-                testRemoteObject.sendMessageRequest(1, data, reply, option);
-                await Utils.msSleep(1000)
-                let res = reply.readInt();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 res is: ' + res)
-                expect(res == 999).assertTrue();
+                await testRemoteObject.sendMessageRequest(1, data, reply, option)
+                    .then((ret: rpc.RequestResult) => {
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 errCode is: ' + JSON.stringify(ret.errCode) );
+                        let res = ret.reply.readInt();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 res is: ' + res);
+                        expect(res == 999).assertTrue();
+                    }).catch((err) => {
+                        expect(err == null).assertTrue();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 err in catch is: ' + err);
+                        expect(err == null).assertTrue();
+                    })
+                    .finally(() => {
+                        data.reclaim();
+                        reply.reclaim();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 reclaim done');
+                    })
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 error is: ' + error);
                 expect(error == null).assertTrue();
-            } finally {
-                data.reclaim();
-                reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0100 reclaim done')
             }
-
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0200
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0200
-         * @tc.desc     test RemoteObject sendMessageRequest SYNC
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0200
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0200
+         * @tc.desc   test RemoteObject sendMessageRequest SYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0200 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0200 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1506,34 +1666,34 @@ export default function abilityTest() {
                 option.setAsync(false);
                 data.writeInt(666);
                 testRemoteObject.sendMessageRequest(1, data, reply, option);
-                await Utils.msSleep(1000)
+                await Utils.msSleep(3000);
                 let res = reply.readInt();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 res is: ' + res)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 res is: ' + res);
                 expect(res == 999).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0200 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0300
-        * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0300
-        * @tc.desc     test RemoteObject sendMessageRequest ASYNC
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-       */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0300
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0300
+         * @tc.desc   test RemoteObject sendMessageRequest ASYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0300 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0300 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1543,34 +1703,34 @@ export default function abilityTest() {
                 option.setAsync(true);
                 data.writeInt(666);
                 testRemoteObject.sendMessageRequest(1, data, reply, option);
-                await Utils.msSleep(1000)
+                await Utils.msSleep(3000);
                 let res = reply.readInt();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 res is: ' + res)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 res is: ' + res);
                 expect(res == 999).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0300 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0300 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0300 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_0400
-         * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_0400
-         * @tc.desc     test RemoteObject sendMessageRequest SYNC
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_0400
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_0400
+         * @tc.desc   test RemoteObject sendMessageRequest SYNC
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_0400", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1584,35 +1744,36 @@ export default function abilityTest() {
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 .then.data is: ' + JSON.stringify(ret.data) );
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 .then.reply is: ' + JSON.stringify(ret.reply) );
                         let res = reply.readInt();
-                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 res is: ' + res)
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 res is: ' + res);
                         expect(res == 999).assertTrue();
                     }).catch((err) => {
-                    hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 err in catch is: ' + err);
-                });
-
+                        expect(err == null).assertTrue();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 err in catch is: ' + err);
+                    })
+                    .finally(() => {
+                        data.reclaim();
+                        reply.reclaim();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 reclaim done');
+                    })
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 error is: ' + error);
                 expect(error == null).assertTrue();
-            } finally {
-                data.reclaim();
-                reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_0400 reclaim done')
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_0400 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
-        * @tc.name     SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
-        * @tc.desc     test RemoteObject sendMessageRequest
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
+         * @tc.number SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100
+         * @tc.desc   test RemoteObject sendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1621,63 +1782,63 @@ export default function abilityTest() {
                 let option = new rpc.MessageOption();
                 data.writeInt(666);
                 testRemoteObject.sendMessageRequest(1, data, reply, option, sendMessageRequestCallback);
-                await Utils.msSleep(1000)
+                await Utils.msSleep(1000);
 
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_sendMessageRequest_Callback_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getDescriptor_0100
-         * @tc.name     SUB_IPC_RemoteObject_getDescriptor_0100
-         * @tc.desc     test RemoteObject getDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getDescriptor_0100
+         * @tc.number SUB_IPC_RemoteObject_getDescriptor_0100
+         * @tc.desc   test RemoteObject getDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getDescriptor_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getDescriptor_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
                 let res = testRemoteObject.getDescriptor();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 res is: ' + res)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 res is: ' + res);
                 expect(res == "testObject").assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getDescriptor_0100 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getDescriptor_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getDescriptor_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getCallingPid_0100
-         * @tc.name     SUB_IPC_RemoteObject_getCallingPid_0100
-         * @tc.desc     test RemoteObject getCallingPid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getCallingPid_0100
+         * @tc.number SUB_IPC_RemoteObject_getCallingPid_0100
+         * @tc.desc   test RemoteObject getCallingPid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getCallingPid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingPid_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingPid_0100 --------------------');
 
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
@@ -1685,27 +1846,27 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingPid_0100 res is: ' + res);
                 expect(res == rpc.IPCSkeleton.getCallingPid()).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingPid_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingPid_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingPid_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingPid_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getCallingPid_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getCallingPid_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteObject_getCallingUid_0100
-         * @tc.name     SUB_IPC_RemoteObject_getCallingUid_0100
-         * @tc.desc     test RemoteObject getCallingUid
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteObject_getCallingUid_0100
+         * @tc.number SUB_IPC_RemoteObject_getCallingUid_0100
+         * @tc.desc   test RemoteObject getCallingUid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteObject_getCallingUid_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingUid_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteObject_getCallingUid_0100 --------------------');
 
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
@@ -1713,27 +1874,27 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingUid_0100 res is: ' + res);
                 expect(res == rpc.IPCSkeleton.getCallingUid()).assertTrue();
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingUid_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingUid_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingUid_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteObject_getCallingUid_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getCallingUid_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteObject_getCallingUid_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_registerDeathRecipient_0100
-         * @tc.name     SUB_IPC_registerDeathRecipient_0100
-         * @tc.desc     test registerDeathRecipient
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_registerDeathRecipient_0100
+         * @tc.number SUB_IPC_registerDeathRecipient_0100
+         * @tc.desc   test registerDeathRecipient
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_registerDeathRecipient_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_registerDeathRecipient_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_registerDeathRecipient_0100 --------------------');
 
             try {
                 let deathRecipient = new MyDeathRecipient();
@@ -1741,27 +1902,52 @@ export default function abilityTest() {
                 samgr.registerDeathRecipient(deathRecipient, 0);
                 samgr.unregisterDeathRecipient(deathRecipient, 0);
             } catch (error) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0100 error is: ' + error)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0100 error is: ' + error);
                 expect(error == null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0100 finally done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0100 finally done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_registerDeathRecipient_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_registerDeathRecipient_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_0100
-         * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_0100
-         * @tc.desc     test RemoteProxy SendMessageRequest
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_registerDeathRecipient_0200
+         * @tc.number SUB_IPC_registerDeathRecipient_0200
+         * @tc.desc   test registerDeathRecipient
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_registerDeathRecipient_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_registerDeathRecipient_0200 --------------------');
+            try {
+                let deathRecipient = new MyDeathRecipient();
+                gIRemoteObject?.registerDeathRecipient(deathRecipient, 0);
+                gIRemoteObject?.unregisterDeathRecipient(deathRecipient, 0);
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0200 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_registerDeathRecipient_0200 finally done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_registerDeathRecipient_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             let reply = rpc.MessageSequence.create();
@@ -1780,32 +1966,34 @@ export default function abilityTest() {
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 .then.code is: ' + ret.code);
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 .then.reply is: ' + ret.reply);
                     }).catch((err) => {
+                        expect(err == null).assertTrue();
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 err in catch is: ' + err);
-                    });
+                    })
+                    .finally(() => {
+                        data.reclaim();
+                        reply.reclaim();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 reclaim done');
+                    })
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 error is: ' + error);
                 expect(error == null).assertTrue();
-            } finally {
-                data.reclaim();
-                reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_0100 reclaim done')
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
-         * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
-         * @tc.desc     test RemoteProxy SendMessageRequest after write and read Proxy
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 --------------------')
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 --------------------');
 
             let dataM = rpc.MessageSequence.create();
 
@@ -1831,32 +2019,76 @@ export default function abilityTest() {
                         expect(ret.data != null).assertTrue();
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 .then.reply is: ' + JSON.stringify(ret.reply) );
                     }).catch((err) => {
+                        expect(err == null).assertTrue();
                         hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 err in catch is: ' + err);
-                    });
+                    })
+                    .finally(() => {
+                        data.reclaim();
+                        reply.reclaim();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 reclaim done');
+                    })
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 error is: ' + error);
                 expect(error == null).assertTrue();
-            } finally {
-                data.reclaim();
-                reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 reclaim done')
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
-        * @tc.name     SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
-        * @tc.desc     test RemoteProxy SendMessageRequest  callback after write and read Proxy
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 --------------------');
+            try {
+                let data = rpc.MessageSequence.create();
+                let reply = rpc.MessageSequence.create();
+                let option = new rpc.MessageOption();
+                data.writeInt(4700);
+                data.writeBoolean(true);
+
+                gIRemoteObject?.sendMessageRequest(1, data, reply, option)
+                    .then((ret: rpc.RequestResult) => {
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 .then.errCode is: ' + ret.errCode);
+                        let res = reply.readInt();
+                        expect(res).assertEqual(4700);
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 reply res is: ' + res);
+                    })
+                    .catch((err) => {
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 err in catch is: ' + err);
+                        expect(err == null).assertTrue();
+                    })
+                    .finally(() => {
+                        data.reclaim();
+                        reply.reclaim();
+                        hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 reclaim done');
+                    })
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 error is: ' + error);
+                expect(error == null).assertTrue();
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_WriteAndRead_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100
+         * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 --------------------');
 
             let dataM = rpc.MessageSequence.create();
 
@@ -1875,6 +2107,7 @@ export default function abilityTest() {
                 let res = dataM.readRemoteObject();
 
                 res.sendMessageRequest(12, data, reply, option, sendMessageRequestCallback_Proxy);
+                await Utils.msSleep(2000);
 
             } catch (error) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 error is: ' + error);
@@ -1882,24 +2115,57 @@ export default function abilityTest() {
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_RemoteProxy_IsObjectDead_0100
-        * @tc.name     SUB_IPC_RemoteProxy_IsObjectDead_0100
-        * @tc.desc     test RemoteProxy IsObjectDead
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
+         * @tc.number SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest  callback after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200 --------------------');
+            let data = rpc.MessageSequence.create();
+            let reply = rpc.MessageSequence.create();
+            try {
+                let option = new rpc.MessageOption();
+                data.writeInt(112233);
+                data.writeString("ipctest");
+
+                gIRemoteObject?.sendMessageRequest(2, data, reply, option, sendMessageRequestCallback_Proxy_ReadAndWrite);
+                await Utils.msSleep(2000);
+
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                data.reclaim();
+                reply.reclaim();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200 reclaim done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_SendMessageRequest_Callback_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_RemoteProxy_IsObjectDead_0100
+         * @tc.number SUB_IPC_RemoteProxy_IsObjectDead_0100
+         * @tc.desc   test RemoteProxy IsObjectDead
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_RemoteProxy_IsObjectDead_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_IsObjectDead_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_IsObjectDead_0100 --------------------');
 
             let dataM = rpc.MessageSequence.create();
 
@@ -1926,24 +2192,24 @@ export default function abilityTest() {
             } finally {
                 data.reclaim();
                 reply.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_IsObjectDead_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_IsObjectDead_0100 reclaim done');
             }
 
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_IsObjectDead_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_IsObjectDead_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_RemoteProxy_getDescriptor_0100
-         * @tc.name     SUB_IPC_RemoteProxy_getDescriptor_0100
-         * @tc.desc     test RemoteProxy getDescriptor
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0100
+         * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0100
+         * @tc.desc   test RemoteProxy getDescriptor
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_RemoteProxy_getDescriptor_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-          await Utils.msSleep(200)
-          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_getDescriptor_0100 --------------------')
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_getDescriptor_0100 --------------------');
 
           let dataM = rpc.MessageSequence.create();
 
@@ -1966,23 +2232,48 @@ export default function abilityTest() {
             expect(error == null).assertTrue();
           } finally {
             data.reclaim();
-            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_getDescriptor_0100 reclaim done')
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_getDescriptor_0100 reclaim done');
           }
-          done()
-          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_getDescriptor_0100 --------------------')
+          done();
+          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_getDescriptor_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_IRemoteBroker_asObject_0100
-         * @tc.name     SUB_IPC_IRemoteBroker_asObject_0100
-         * @tc.desc     test asObject
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_RemoteProxy_getDescriptor_0200
+         * @tc.number SUB_IPC_RemoteProxy_getDescriptor_0200
+         * @tc.desc   test RemoteProxy getDescriptor RemoteProxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_RemoteProxy_getDescriptor_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_RemoteProxy_getDescriptor_0200 --------------------');
+            try {
+                let reult = gIRemoteObject?.getDescriptor();
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_getDescriptor_0200 getDescriptor is: ' + reult);
+                expect(reult).assertEqual("rpcTestAbility");
+            } catch (error) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_getDescriptor_0200 error is: ' + error);
+                expect(error == null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_RemoteProxy_getDescriptor_0200 reclaim done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_RemoteProxy_getDescriptor_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.number SUB_IPC_IRemoteBroker_asObject_0100
+         * @tc.desc   test asObject
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_IRemoteBroker_asObject_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-          await Utils.msSleep(200)
-          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
+          await Utils.msSleep(500);
+          hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_IRemoteBroker_asObject_0100 --------------------');
 
           let data = rpc.MessageSequence.create();
           let reply = rpc.MessageSequence.create();
@@ -1997,9 +2288,10 @@ export default function abilityTest() {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.data is: ' + JSON.stringify(ret.data) );
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 .then.reply is: ' + JSON.stringify(ret.reply) );
                 let res = reply.readInt();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 res is: ' + res)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 res is: ' + res);
                 expect(res == 123).assertTrue();
               }).catch((err) => {
+                expect(err == null).assertTrue();
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 err in catch is: ' + err);
               });
           } catch (error) {
@@ -2007,51 +2299,51 @@ export default function abilityTest() {
             expect(error == null).assertTrue();
           } finally {
             data.reclaim();
-            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 reclaim done')
+            hilog.info(domain, tag, '%{public}s', 'SUB_IPC_IRemoteBroker_asObject_0100 reclaim done');
           }
-          done()
-          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IRemoteBroker_asObject_0100 --------------------')
+          done();
+          hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_IRemoteBroker_asObject_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
-         * @tc.desc     test writeRemoteObject errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100
+         * @tc.desc   test writeRemoteObject errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
                 data.reclaim();
-                data.writeRemoteObject(testRemoteObject)
+                data.writeRemoteObject(testRemoteObject);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 error is: ' + err);
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 error code is: ' + err.code);
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
-        * @tc.desc     test readRemoteObject errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100
+         * @tc.desc   test readRemoteObject errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let testRemoteObject = new TestRemoteObject("testObject");
@@ -2064,23 +2356,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRemoteObject_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRemoteObject_ErrorCode_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
-        * @tc.desc     test writeInterfaceToken errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100
+         * @tc.desc   test writeInterfaceToken errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2091,23 +2383,50 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
-        * @tc.desc     test readInterfaceToken errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200
+         * @tc.desc   test RemoteProxy SendMessageRequest after write and read Proxy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it("SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 --------------------');
+            let data = rpc.MessageSequence.create();
+            try {
+                data.reclaim();
+                data.writeInterfaceToken("");
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 error code is: ' + err.code);
+                expect(err.code == 1900009).assertTrue();
+                expect(err.message != null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 reclaim done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeInterfaceToken_ErrorCode_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100
+         * @tc.desc   test readInterfaceToken errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.writeInterfaceToken("testRemoteObject");
@@ -2119,23 +2438,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readInterfaceToken_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
-        * @tc.desc     test setCapacity errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100
+         * @tc.desc   test setCapacity errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2146,23 +2465,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_setCapacity_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
-        * @tc.desc     test writeNoException errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100
+         * @tc.desc   test writeNoException errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2173,23 +2492,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeNoException_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readException_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readException_ErrorCode_0100
-        * @tc.desc     test readException errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readException_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readException_ErrorCode_0100
+         * @tc.desc   test readException errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readException_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readException_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readException_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2200,23 +2519,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readException_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readException_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readException_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readException_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
-        * @tc.desc     test writeInt errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeInt_ErrorCode_0100
+         * @tc.desc   test writeInt errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeInt_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2227,23 +2546,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeInt_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readInt_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readInt_ErrorCode_0100
-        * @tc.desc     test readInt errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readInt_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readInt_ErrorCode_0100
+         * @tc.desc   test readInt errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readInt_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInt_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readInt_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.writeInt(0);
@@ -2255,23 +2574,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInt_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readInt_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readInt_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readInt_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
-        * @tc.desc     test writeLong errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeLong_ErrorCode_0100
+         * @tc.desc   test writeLong errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeLong_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2282,23 +2601,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeLong_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readLong_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readLong_ErrorCode_0100
-        * @tc.desc     test readLong errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readLong_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readLong_ErrorCode_0100
+         * @tc.desc   test readLong errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readLong_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readLong_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readLong_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.writeLong(0);
@@ -2310,23 +2629,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLong_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readLong_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readLong_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readLong_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
-        * @tc.desc     test writeBoolean errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100
+         * @tc.desc   test writeBoolean errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2337,23 +2656,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBoolean_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
-        * @tc.desc     test readBoolean errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100
+         * @tc.desc   test readBoolean errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.writeBoolean(true);
@@ -2365,23 +2684,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBoolean_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeString_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeString_ErrorCode_0100
-        * @tc.desc     test writeString errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeString_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeString_ErrorCode_0100
+         * @tc.desc   test writeString errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeString_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeString_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.reclaim();
@@ -2392,23 +2711,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeString_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeString_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readString_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readString_ErrorCode_0100
-        * @tc.desc     test readString errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readString_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readString_ErrorCode_0100
+         * @tc.desc   test readString errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readString_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 data.writeString("test");
@@ -2420,23 +2739,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readString_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readString_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readString_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
-        * @tc.desc     test writeParcelable errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100
+         * @tc.desc   test writeParcelable errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let parcelable = new MyParcelable(1, "this is a test parcelable");
@@ -2448,23 +2767,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelable_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
-        * @tc.desc     test readParcelable errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100
+         * @tc.desc   test readParcelable errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
 
@@ -2479,23 +2798,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readParcelable_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
-        * @tc.desc     test writeIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100
+         * @tc.desc   test writeIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -2507,23 +2826,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeIntArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
-        * @tc.desc     test readIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100
+         * @tc.desc   test readIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -2537,23 +2856,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readIntArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
-        * @tc.desc     test readIntArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200
+         * @tc.desc   test readIntArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -2567,23 +2886,23 @@ export default function abilityTest() {
                 expect(err.message != null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readIntArray_ErrorCode_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
-        * @tc.desc     test writeDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100
+         * @tc.desc   test writeDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
@@ -2595,23 +2914,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeDoubleArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
-        * @tc.desc     test readDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100
+         * @tc.desc   test readDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
@@ -2625,23 +2944,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
-        * @tc.desc     test readDoubleArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200
+         * @tc.desc   test readDoubleArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<double> = [1.1, 2.1, 3.1, 4.1, 5.1, 6.1, 7.1, 8.1, 9.1];
@@ -2655,23 +2974,23 @@ export default function abilityTest() {
                 expect(err.message != null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readDoubleArray_ErrorCode_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
-        * @tc.desc     test writeBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100
+         * @tc.desc   test writeBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
@@ -2683,23 +3002,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeBooleanArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
-        * @tc.desc     test readBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100
+         * @tc.desc   test readBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
@@ -2713,23 +3032,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
-        * @tc.desc     test readBooleanArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200
+         * @tc.desc   test readBooleanArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<Boolean> = [false, true, false, true, false, true, false, true, false, true];
@@ -2743,23 +3062,23 @@ export default function abilityTest() {
                 expect(err.message != null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readBooleanArray_ErrorCode_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
-        * @tc.desc     test writeStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100
+         * @tc.desc   test writeStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
@@ -2771,23 +3090,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeStringArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
-        * @tc.desc     test readStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100
+         * @tc.desc   test readStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
@@ -2801,23 +3120,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readStringArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
-        * @tc.name     SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
-        * @tc.desc     test readStringArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200
+         * @tc.desc   test readStringArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<String> = ["this", "is", "a", "test", "stirng", "array"];
@@ -2831,23 +3150,23 @@ export default function abilityTest() {
                 expect(err.message != null).assertTrue();
             } finally {
                 data.reclaim();
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readStringArray_ErrorCode_0200 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
-        * @tc.desc     test writeParcelableArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100
+         * @tc.desc   test writeParcelableArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let parcelable1 = new MyParcelable(1, "this is a test parcelable 1");
@@ -2862,23 +3181,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeParcelableArray_ErrorCode_0100 --------------------');
         });
 
         /**
-        * @tc.number   SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
-        * @tc.desc     test readParcelableArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100
+         * @tc.desc   test readParcelableArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let parcelable1 = new MyParcelable(1, "this is a test parcelable 1");
@@ -2896,23 +3215,23 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readParcelableArray_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
-        * @tc.desc     test writeByteArray errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100
+         * @tc.desc   test writeByteArray errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it("SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             try {
                 let input: Array<int> = [1, 2, 3, 4, 5, 6, 7, 8, 9];
@@ -2924,23 +3243,23 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeByteArray_ErrorCode_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
-         * @tc.desc     test MessageSequence writeAshmem Ashmem errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             try {
@@ -2953,28 +3272,28 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeAshmem_ErrorCode_0100 --------------------');
         });
 
-       /**
-        * @tc.number   SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
-        * @tc.name     SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
-        * @tc.desc     test MessageSequence writeAshmem Ashmem errCode
-        * @tc.level    LEVEL1
-        * @tc.size     MEDIUMTEST
-        * @tc.type     FUNCTION
-        */
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeAshmem Ashmem errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 --------------------');
 
             let data = rpc.MessageSequence.create();
             try {
                 let ashmem = rpc.Ashmem.create("ashmem", 1024 * 1024);
-                data.writeAshmem(ashmem)
+                data.writeAshmem(ashmem);
                 data.reclaim();
                 let res = data.readAshmem();
             } catch (err: BusinessError) {
@@ -2983,30 +3302,30 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readAshmem_ErrorCode_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
-         * @tc.desc     test MessageSequence writeRawDataBuffer errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeRawDataBuffer errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             let TEST_LEN_128M = 128 * 1024 * 1024;
             try {
                 let buffer = new ArrayBuffer(TEST_LEN_128M + 4);
                 let size = buffer.byteLength;
                 let int32View = new Int32Array(buffer);
-                int32View.fill(1)
+                int32View.fill(1);
                 data.writeRawDataBuffer(buffer, size);
             } catch (err: BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 error is: ' + err);
@@ -3014,30 +3333,30 @@ export default function abilityTest() {
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeRawDataBuffer_ErrorCode_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
-         * @tc.desc     test MessageSequence readRawDataBuffer errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
+         * @tc.name   SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100
+         * @tc.desc   test MessageSequence readRawDataBuffer errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 --------------------');
             let data = rpc.MessageSequence.create();
             let TEST_LEN_128M = 128 * 1024 * 1024;
             try {
                 let buffer = new ArrayBuffer(TEST_LEN_128M);
                 let size = buffer.byteLength;
                 let int32View = new Int32Array(buffer);
-                int32View.fill(1)
+                int32View.fill(1);
                 data.writeRawDataBuffer(buffer, size);
                 let readBuffer = data.readRawDataBuffer(TEST_LEN_128M + 1)
             } catch (err: BusinessError) {
@@ -3046,64 +3365,162 @@ export default function abilityTest() {
                 expect(err.code == 1900010).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 reclaim done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 reclaim done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readRawDataBuffer_ErrorCode_0100 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
-         * @tc.name     SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
-         * @tc.desc     test MessageSequence writeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence readFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test1.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                data.writeFileDescriptor(file.fd);
+                data.reclaim();
+                let res = data.readFileDescriptor();
+
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 error is: ' + err.code);
+                expect(err.code == 1900010).assertTrue();
+                expect(err.message != null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 reclaim done');
+            }
+
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_readFileDescriptor_ErrorCode_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test3.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+                data.reclaim();
+                data.writeFileDescriptor(file.fd);
+
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100 error is: ' + err.code);
+                expect(err.code == 1900009).assertTrue();
+                expect(err.message != null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0100  done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeFileDescriptor_0100 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 --------------------');
+            let data =  rpc.MessageSequence.create();
+            try {
+                let context = AppStorage.get<common.UIAbilityContext>("context") as common.UIAbilityContext;
+                let pathDir = context.filesDir;
+                let filePath = pathDir + "/test3.txt";
+                let file = fileIo.openSync(filePath, fileIo.OpenMode.READ_WRITE | fileIo.OpenMode.CREATE);
+
+                rpc.MessageSequence.closeFileDescriptor(file.fd);
+                data.writeFileDescriptor(file.fd);
+            } catch (err: BusinessError) {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 error is: ' + err.code);
+                expect(err.code == 1900009).assertTrue();
+                expect(err.message != null).assertTrue();
+            } finally {
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200  done');
+            }
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0200 --------------------');
+        });
+
+        /**
+         * @tc.name   SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
+         * @tc.number SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300
+         * @tc.desc   test MessageSequence writeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
                 data.writeFileDescriptor(-1);
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err)
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err.code)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 error is: ' + err.code);
                 expect(err.code == 1900009).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300  done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300  done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_writeFileDescriptor_ErrorCode_0300 --------------------');
         });
 
         /**
-         * @tc.number   SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
-         * @tc.name     SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
-         * @tc.desc     test MessageSequence closeFileDescriptor errCode
-         * @tc.level    LEVEL1
-         * @tc.size     MEDIUMTEST
-         * @tc.type     FUNCTION
-        */
+         * @tc.name   SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
+         * @tc.number SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100
+         * @tc.desc   test MessageSequence closeFileDescriptor errCode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(200)
-            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------')
+            await Utils.msSleep(500);
+            hilog.info(domain, tag, '%{public}s', '-------------------- start SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------');
             let data =  rpc.MessageSequence.create();
             try {
 
                 rpc.MessageSequence.closeFileDescriptor(-1);
 
             } catch (err: BusinessError) {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err)
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err.code)
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err);
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 error is: ' + err.code);
                 expect(err.code == 401).assertTrue();
                 expect(err.message != null).assertTrue();
             } finally {
-                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100  done')
+                hilog.info(domain, tag, '%{public}s', 'SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100  done');
             }
-            done()
-            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------')
+            done();
+            hilog.info(domain, tag, '%{public}s', '-------------------- end SUB_IPC_MessageSequence_closeFileDescriptor_ErrorCode_0100 --------------------');
         });
     })
 }

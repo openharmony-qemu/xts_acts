@@ -30,9 +30,12 @@ export default function callJsunit() {
     console.log("==========> call Test start ==========>");
 
     /**
+     * @tc.name   Telephony_Call_HasVoiceCapability_HasVoiceCapability
      * @tc.number Telephony_Call_HasVoiceCapability_HasVoiceCapability
-     * @tc.name Checks whether a device supports voice calls.
-     * @tc.desc Return type test
+     * @tc.desc   Return type test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_Call_HasVoiceCapability_HasVoiceCapability", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName = 'Telephony_Call_HasVoiceCapability_HasVoiceCapability';
@@ -43,21 +46,26 @@ export default function callJsunit() {
         console.info(`${caseName} test end`);
         done();
       } else {
-        let ret = false;
         let voiceCapablity = call.hasVoiceCapability();
-        if (voiceCapablity === true || voiceCapablity === false) {
-          ret = true;
+        if (voiceCapablity) {
+          expect(voiceCapablity).assertEqual(true);
+          console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
+        } else {
+          expect(voiceCapablity).assertEqual(false);
+          console.info(`${caseName}  :voiceCapablity is ${JSON.stringify(voiceCapablity)}`);
         }
-        expect(ret).assertTrue();
         console.log(`==========> ${caseName} Test end ==========>`);
         done();
       }
     });
 
     /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0100
      * @tc.number Telephony_Call_Call_MakeCall_0100
-     * @tc.name Make a call.
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_Call_Call_MakeCall_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCall_0100";
@@ -89,9 +97,12 @@ export default function callJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0200
      * @tc.number Telephony_Call_Call_MakeCall_0200
-     * @tc.name Makes a call.
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_Call_Call_MakeCall_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let caseName: string = "Telephony_Call_Call_MakeCall_0200";

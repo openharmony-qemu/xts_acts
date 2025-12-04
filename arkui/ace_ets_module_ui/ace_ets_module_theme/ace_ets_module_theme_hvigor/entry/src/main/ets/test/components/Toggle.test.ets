@@ -78,13 +78,13 @@ export default function toggleThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsToggleThemeColors_0100 
-      * @tc.name      : ActsToggleThemeColors_0100
-      * @tc.desc      : Check system colors values of the Toggle component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsToggleThemeColors_0100
+     * @tc.number ActsToggleThemeColors_0100
+     * @tc.desc   Check system colors values of the Toggle component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsToggleThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsToggleThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -119,13 +119,13 @@ export default function toggleThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsToggleThemeColors_0200 
-      * @tc.name      : ActsToggleThemeColors_0200
-      * @tc.desc      : Check custom colors values of the Toggle component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsToggleThemeColors_0200
+     * @tc.number ActsToggleThemeColors_0200
+     * @tc.desc   Check custom colors values of the Toggle component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsToggleThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsToggleThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -161,14 +161,13 @@ export default function toggleThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsToggleThemeColors_0300 
-      * @tc.name      : ActsToggleThemeColors_0300
-      * @tc.desc      : Check custom colors values of the Toggle component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsToggleThemeColors_0300
+     * @tc.number ActsToggleThemeColors_0300
+     * @tc.desc   Check custom colors values of the Toggle component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsToggleThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsToggleThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

@@ -18,7 +18,7 @@ import  hilog  from '@ohos.hilog'
 import { Utils, startAbility, stopApplication } from './Util.test';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'uitestTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
-const waitUiReadyMs : number = 1000;
+const waitUiReadyMs : int = 1000;
 const DeviceErrorCode = 17000005;
 
 async function exitInputMethod() {
@@ -46,11 +46,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0001
-    * @tc.name: testClearText_static
-    * @tc.desc: clear text of the target UiComponent.
-    */
+    /**
+     * @tc.name   testClearText_static
+     * @tc.number uitestComponentTest_0001
+     * @tc.desc   clear text of the target UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClearText_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testClearText_static start `);
       try {
@@ -83,11 +86,14 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, `testClearText_static end `);
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0002
-    * @tc.name: testScrollToBottom_static
-    * @tc.desc: scroll on this UiComponent to the bottom.
-    */
+    /**
+     * @tc.name   testScrollToBottom_static
+     * @tc.number uitestComponentTest_0002
+     * @tc.desc   scroll on this UiComponent to the bottom.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollToBottom_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
         hilog.info(domain, tag, "testScrollToBottom_static Start!!!!!!!!!!!!!!!!!!!!!!!!!！")
@@ -117,11 +123,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0003
-    * @tc.name: testScrollToBottom_speed_static
-    * @tc.desc: scroll on this UiComponent to the bottom.
-    */
+    /**
+     * @tc.name   testScrollToBottom_speed_static
+     * @tc.number uitestComponentTest_0003
+     * @tc.desc   scroll on this UiComponent to the bottom.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollToBottom_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
         hilog.info(domain, tag, "testScrollToBottom_speed_static Start!!!!!!!!!!!!!!!!!!!!!!!!!！")
@@ -151,11 +160,14 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, "testScrollToBottom_speed_static end ")
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0004
-    * @tc.name: testScrollToTop_static
-    * @tc.desc: scroll on this UiComponent to the top.
-    */
+    /**
+     * @tc.name   testScrollToTop_static
+     * @tc.number uitestComponentTest_0004
+     * @tc.desc   scroll on this UiComponent to the top.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollToTop_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
         hilog.info(domain, tag, "testScrollToTop_static Start")
@@ -187,11 +199,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0005
-    * @tc.name: testScrollToTop_speed_static
-    * @tc.desc: scroll on this UiComponent to the top.
-    */
+    /**
+     * @tc.name   testScrollToTop_speed_static
+     * @tc.number uitestComponentTest_0005
+     * @tc.desc   scroll on this UiComponent to the top.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollToTop_speed_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
         hilog.info(domain, tag, "testScrollToTop_speed_static Start")
@@ -219,11 +234,14 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, "testScrollToTop_speed_static end");
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0006
-    * @tc.name: testScrollSearch_static
-    * @tc.desc: scroll on this UiComponent to find matched UiComponent.
-    */
+    /**
+     * @tc.name   testScrollSearch_static
+     * @tc.number uitestComponentTest_0006
+     * @tc.desc   scroll on this UiComponent to find matched UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollSearch_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScrollSearch_static start `);
       try {
@@ -251,11 +269,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0007
-    * @tc.name: testScrollSearchVertical_static
-    * @tc.desc: scroll vertically on this UiComponent to find matched UiComponent.
-    */
+    /**
+     * @tc.name   testScrollSearchVertical_static
+     * @tc.number uitestComponentTest_0007
+     * @tc.desc   scroll vertically on this UiComponent to find matched UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollSearchVertical_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScrollSearchVertical start `);
       try {
@@ -309,11 +330,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0008
-    * @tc.name: testPinch_static
-    * @tc.desc: pinch enlarge this UiComponent to the target scale.
-    */
+    /**
+     * @tc.name   testPinch_static
+     * @tc.number uitestComponentTest_0008
+     * @tc.desc   pinch enlarge this UiComponent to the target scale.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPinch_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testPinch_static start `);
       try {
@@ -358,11 +382,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0009
-    * @tc.name: testPinchOut_static
-    * @tc.desc: pinch enlarge this UiComponent to the target scale.
-    */
+    /**
+     * @tc.name   testPinchOut_static
+     * @tc.number uitestComponentTest_0009
+     * @tc.desc   pinch enlarge this UiComponent to the target scale.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPinchOut_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testPinchOut_static start `);
       try {
@@ -407,11 +434,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0010
-    * @tc.name: testUiComponentLongClick_static
-    * @tc.desc: longClick this ComponentClick.
-    */
+    /**
+     * @tc.name   testUiComponentLongClick_static
+     * @tc.number uitestComponentTest_0010
+     * @tc.desc   longClick this ComponentClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testUiComponentLongClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testUiComponentLongClick_static start `);
       try {
@@ -442,11 +472,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0011
-    * @tc.name: testInputText_static
-    * @tc.desc: inject text to the target UiComponent.
-    */
+    /**
+     * @tc.name   testInputText_static
+     * @tc.number uitestComponentTest_0011
+     * @tc.desc   inject text to the target UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInputText_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testInputText_static start !!!!")
       try {
@@ -485,11 +518,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0012
-    * @tc.name: testGetUiComponentBoundsCenter_static
-    * @tc.desc: get the boundsCenter of this @link UiComponent.
-    */
+    /**
+     * @tc.name   testGetUiComponentBoundsCenter_static
+     * @tc.number uitestComponentTest_0012
+     * @tc.desc   get the boundsCenter of this @link UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetUiComponentBoundsCenter_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetUiComponentBoundsCenter_static start`);
       try {
@@ -512,11 +548,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0013
-    * @tc.name: testGetUiComponentBounds_static
-    * @tc.desc: get the bounds of this UiComponent.
-    */
+    /**
+     * @tc.name   testGetUiComponentBounds_static
+     * @tc.number uitestComponentTest_0013
+     * @tc.desc   get the bounds of this UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testGetUiComponentBounds_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetUiComponentBounds_static start`);
       try {
@@ -539,11 +578,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0015
-    * @tc.name: testUiComponentDoubleClick_static
-    * @tc.desc: doubleClick this UiComponentClick.
-    */
+    /**
+     * @tc.name   testUiComponentDoubleClick_static
+     * @tc.number uitestComponentTest_0015
+     * @tc.desc   doubleClick this UiComponentClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testUiComponentDoubleClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       try {
         let driver = Driver.create();
@@ -573,11 +615,14 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestComponentTest_0016
-    * @tc.name: testUiComponentClick_static
-    * @tc.desc: click this UiComponentClick.
-    */
+    /**
+     * @tc.name   testUiComponentClick_static
+     * @tc.number uitestComponentTest_0016
+     * @tc.desc   click this UiComponentClick.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testUiComponentClick_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testUiComponentClick_static start`);
       try {
@@ -606,10 +651,13 @@ export default function uitestComponentTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestComponentTest_0017
-     * @tc.name: testComponentInputText_static
-     * @tc.desc: enter '123',the values of both paste and addition are false
+    /**
+     * @tc.name   testComponentInputText_static
+     * @tc.number uitestComponentTest_0017
+     * @tc.desc   enter '123',the values of both paste and addition are false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentInputText_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testComponentInputText_static start`);
@@ -654,10 +702,13 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, `testComponentInputText_static end`);
     })
 
-    /*
-     * @tc.number: uitestComponentTest_0018
-     * @tc.name: testComponentInputText1_static
-     * @tc.desc: enter '长贵儿',the values of both paste and addition are false
+    /**
+     * @tc.name   testComponentInputText1_static
+     * @tc.number uitestComponentTest_0018
+     * @tc.desc   enter '长贵儿',the values of both paste and addition are false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentInputText1_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testComponentInputText1_static start`);
@@ -717,10 +768,13 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, `testComponentInputText1_static end`);
     })
 
-    /*
-     * @tc.number: uitestComponentTest_0019
-     * @tc.name: testComponentInputText2_static
-     * @tc.desc: enter '123',the values of paste is true,the values of addition is false
+    /**
+     * @tc.name   testComponentInputText2_static
+     * @tc.number uitestComponentTest_0019
+     * @tc.desc   enter '123',the values of paste is true,the values of addition is false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentInputText2_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testComponentInputText2_static start`);
@@ -780,10 +834,13 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, `testComponentInputText2_static end`);
     })
 
-    /*
-     * @tc.number: uitestComponentTest_0020
-     * @tc.name: testComponentInputText3_static
-     * @tc.desc: enter '123',the values of paste is false,the values of addition is true
+    /**
+     * @tc.name   testComponentInputText3_static
+     * @tc.number uitestComponentTest_0020
+     * @tc.desc   enter '123',the values of paste is false,the values of addition is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentInputText3_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testComponentInputText3_static start`);
@@ -828,10 +885,13 @@ export default function uitestComponentTest() {
       hilog.info(domain, tag, `testComponentInputText3_static end`);
     })
 
-    /*
-     * @tc.number: uitestComponentTest_0021
-     * @tc.name: testComponentInputText4_static
-     * @tc.desc: enter '123',the values of paste is true,the values of addition is true
+    /**
+     * @tc.name   testComponentInputText4_static
+     * @tc.number uitestComponentTest_0021
+     * @tc.desc   enter '123',the values of paste is true,the values of addition is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testComponentInputText4_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testComponentInputText4_static start`);

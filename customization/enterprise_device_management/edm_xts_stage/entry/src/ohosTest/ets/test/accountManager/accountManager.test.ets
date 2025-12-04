@@ -55,12 +55,12 @@ export default function accountManagerTest() {
     // ------------- accountManager --------------------
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_001
      * @tc.number disallowOsAccountAddition_test_001
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with inactive admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with inactive admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -77,12 +77,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_002
      * @tc.number disallowOsAccountAddition_test_002
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with inactive admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with inactive admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -99,16 +99,16 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_003
      * @tc.number disallowOsAccountAddition_test_003
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with normal admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with normal admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_003  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true);
         console.info(' --- disallowOsAccountAddition_test_003 error is expected, but it done.');
@@ -124,16 +124,16 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_004
      * @tc.number disallowOsAccountAddition_test_004
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with normal admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with normal admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_004  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.disallowOsAccountAddition(SELFWANT, true, DEFAULT_USER_ID);
         console.info(' --- disallowOsAccountAddition_test_004 error is expected, but it done.');
@@ -149,12 +149,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_005
      * @tc.number disallowOsAccountAddition_test_005
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition without admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_005", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_005  -------- START --------');
@@ -174,12 +174,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_006
      * @tc.number disallowOsAccountAddition_test_006
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with super admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with super admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_006", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_006  -------- START --------');
@@ -209,12 +209,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_007
      * @tc.number disallowOsAccountAddition_test_007
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with super admin and with current accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with super admin and with current accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_007", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_007  -------- START --------');
@@ -243,12 +243,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_008
      * @tc.number disallowOsAccountAddition_test_008
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with super admin and with another accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   disallowOsAccountAddition with super admin and with another accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_008", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_008  -------- START --------');
@@ -289,12 +289,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_009
      * @tc.number disallowOsAccountAddition_test_009
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc disallowOsAccountAddition with super admin and with non-exist accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   disallowOsAccountAddition with super admin and with non-exist accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_009", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_009  -------- START --------');
@@ -313,12 +313,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_0010
      * @tc.number disallowOsAccountAddition_test_0010
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc repeat call disallowOsAccountAddition with super admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   repeat call disallowOsAccountAddition with super admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_0010", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_0010  -------- START --------');
@@ -340,12 +340,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   disallowOsAccountAddition_test_0011
      * @tc.number disallowOsAccountAddition_test_0011
-     * @tc.name test disallowOsAccountAddition method
-     * @tc.desc repeat call disallowOsAccountAddition with super admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   repeat call disallowOsAccountAddition with super admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("disallowOsAccountAddition_test_0011", Level.LEVEL2, async (done: Function) => {
       console.info(' --- disallowOsAccountAddition_test_0011  -------- START --------');
@@ -368,12 +368,12 @@ export default function accountManagerTest() {
 
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_001
      * @tc.number isOsAccountAdditionDisallowed_test_001
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with inactive admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with inactive admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -390,12 +390,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_002
      * @tc.number isOsAccountAdditionDisallowed_test_002
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with inactive admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with inactive admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_002", Level.LEVEL2, async (done: Function) => {
       try {
@@ -412,16 +412,16 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_003
      * @tc.number isOsAccountAdditionDisallowed_test_003
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with normal admin and without accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with normal admin and without accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_003  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.isOsAccountAdditionDisallowed(SELFWANT);
         console.info(' --- isOsAccountAdditionDisallowed_test_003 error is expected, but it done.');
@@ -437,16 +437,16 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_004
      * @tc.number isOsAccountAdditionDisallowed_test_004
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with normal admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with normal admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_004  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         accountManager.isOsAccountAdditionDisallowed(SELFWANT, DEFAULT_USER_ID);
         console.info(' --- isOsAccountAdditionDisallowed_test_004 error is expected, but it done.');
@@ -462,12 +462,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_005
      * @tc.number isOsAccountAdditionDisallowed_test_005
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with normal admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with normal admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_005", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_005  -------- START --------');
@@ -484,12 +484,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   isOsAccountAdditionDisallowed_test_006
      * @tc.number isOsAccountAdditionDisallowed_test_006
-     * @tc.name test isOsAccountAdditionDisallowed method
-     * @tc.desc isOsAccountAdditionDisallowed with normal admin and with accountId
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   isOsAccountAdditionDisallowed with normal admin and with accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("isOsAccountAdditionDisallowed_test_006", Level.LEVEL2, async (done: Function) => {
       console.info(' --- isOsAccountAdditionDisallowed_test_006  -------- START --------');
@@ -506,12 +506,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_001
      * @tc.number addOsAccountAsync_test_001
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with inactive admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   addOsAccountAsync with inactive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -528,16 +528,16 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_002
      * @tc.number addOsAccountAsync_test_002
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with normal admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   addOsAccountAsync with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_002", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_002  -------- START --------');
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         await accountManager.addOsAccountAsync(SELFWANT, "test_name", osAccount.OsAccountType.ADMIN);
         console.info(' --- addOsAccountAsync_test_002 error is expected, but it done.');
@@ -553,12 +553,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_003
      * @tc.number addOsAccountAsync_test_003
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync without admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   addOsAccountAsync without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_003  -------- START --------');
@@ -578,12 +578,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_004
      * @tc.number addOsAccountAsync_test_004
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with super admin to create admin account
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   addOsAccountAsync with super admin to create admin account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_004  -------- START --------');
@@ -611,12 +611,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_005
      * @tc.number addOsAccountAsync_test_005
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with super admin to create normal account
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   addOsAccountAsync with super admin to create normal account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_005", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_005  -------- START --------');
@@ -644,12 +644,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_006
      * @tc.number addOsAccountAsync_test_006
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with super admin to create guest account
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   addOsAccountAsync with super admin to create guest account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_006", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_006  -------- START --------');
@@ -677,12 +677,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_007
      * @tc.number addOsAccountAsync_test_007
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with invalid account name
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   addOsAccountAsync with invalid account name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_007", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_007  -------- START --------');
@@ -707,12 +707,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   addOsAccountAsync_test_008
      * @tc.number addOsAccountAsync_test_008
-     * @tc.name test addOsAccountAsync method
-     * @tc.desc addOsAccountAsync with invalid account type
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   addOsAccountAsync with invalid account type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("addOsAccountAsync_test_008", Level.LEVEL2, async (done: Function) => {
       console.info(' --- addOsAccountAsync_test_008  -------- START --------');
@@ -734,12 +734,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_001
      * @tc.number setDomainAccountPolicy_test_001
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with inactive admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   setDomainAccountPolicy with inactive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -757,17 +757,17 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_002
      * @tc.number setDomainAccountPolicy_test_002
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with normal admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   setDomainAccountPolicy with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_002", Level.LEVEL2, async (done: Function) => {
       try {
         console.info(' --- setDomainAccountPolicy_test_002  -------- START --------');
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await accountManager.setDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1, DOMAIN_ACCOUNT_POLICY1);
         console.info(' --- setDomainAccountPolicy_test_002 error is expected, but it done.');
         expect(false).assertTrue();
@@ -783,12 +783,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_003
      * @tc.number setDomainAccountPolicy_test_003
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy without admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   setDomainAccountPolicy without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_003  -------- START --------');
@@ -809,12 +809,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_004
      * @tc.number setDomainAccountPolicy_test_004
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with super admin to set empty domain account policy
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with super admin to set empty domain account policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_004", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_004  -------- START --------');
@@ -838,12 +838,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_005
      * @tc.number setDomainAccountPolicy_test_005
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with error domain admin info to set domain account
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with error domain admin info to set domain account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_005", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_005  -------- START --------');
@@ -869,12 +869,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_006
      * @tc.number setDomainAccountPolicy_test_006
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with super admin to set domain account policy by decimals
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with super admin to set domain account policy by decimals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_006", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_006  -------- START --------');
@@ -902,12 +902,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_007
      * @tc.number setDomainAccountPolicy_test_007
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with super admin to set domain account policy below lower limit
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with super admin to set domain account policy below lower limit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_007", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_007  -------- START --------');
@@ -932,12 +932,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_008
      * @tc.number setDomainAccountPolicy_test_008
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with super admin to set domain account policy exceeds the int32_t validity range
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with super admin to set domain account policy exceeds the int32_t validity range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_008", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_008  -------- START --------');
@@ -975,13 +975,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   setDomainAccountPolicy_test_009
      * @tc.number setDomainAccountPolicy_test_009
-     * @tc.name test setDomainAccountPolicy method
-     * @tc.desc setDomainAccountPolicy with super admin to set domain account policy
-     *   whose passwordExpirationNotification is greater than passwordValidityPeriod
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size LargeTest
+     * @tc.desc   setDomainAccountPolicy with super admin to set domain account policy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("setDomainAccountPolicy_test_009", Level.LEVEL2, async (done: Function) => {
       console.info(' --- setDomainAccountPolicy_test_009  -------- START --------');
@@ -1008,12 +1007,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   getDomainAccountPolicy_test_001
      * @tc.number getDomainAccountPolicy_test_001
-     * @tc.name test getDomainAccountPolicy method
-     * @tc.desc getDomainAccountPolicy with inactive admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   getDomainAccountPolicy with inactive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("getDomainAccountPolicy_test_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1031,17 +1030,17 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   getDomainAccountPolicy_test_002
      * @tc.number getDomainAccountPolicy_test_002
-     * @tc.name test getDomainAccountPolicy method
-     * @tc.desc getDomainAccountPolicy with normal admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   getDomainAccountPolicy with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("getDomainAccountPolicy_test_002", Level.LEVEL2, async (done: Function) => {
       try {
         console.info(' --- getDomainAccountPolicy_test_002  -------- START --------');
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await accountManager.getDomainAccountPolicy(SELFWANT, DOMAIN_ACCOUNT_INFO1);
         console.info(' --- getDomainAccountPolicy_test_002 error is expected, but it done.');
         expect(false).assertTrue();
@@ -1057,12 +1056,12 @@ export default function accountManagerTest() {
     })
 
     /**
+     * @tc.name   getDomainAccountPolicy_test_003
      * @tc.number getDomainAccountPolicy_test_003
-     * @tc.name test getDomainAccountPolicy method
-     * @tc.desc getDomainAccountPolicy without admin
-     * @tc.level Level 2
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   getDomainAccountPolicy without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("getDomainAccountPolicy_test_003", Level.LEVEL2, async (done: Function) => {
       console.info(' --- getDomainAccountPolicy_test_003  -------- START --------');

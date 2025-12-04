@@ -164,12 +164,12 @@ export default function rdbStoreSendableTest() {
     });
 
     /**
+     * @tc.name   testRdbStoreSendable0001
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0100
-     * @tc.name testRdbStoreSendable0001
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStoreSendable0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.log(TAG + "************* testRdbStoreSendable0001 start *************");
@@ -190,12 +190,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0002
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0200
-     * @tc.name testRdbStoreSendable0002
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log(TAG + "************* testRdbStoreSendable0002 start *************");
@@ -265,12 +265,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0003
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0300
-     * @tc.name testRdbStoreSendable0003
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void) => {
       console.log(TAG + "************* testRdbStoreSendable0003 start *************");
@@ -334,12 +334,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0004
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0400
-     * @tc.name testRdbStoreSendable0004
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreSendable0004 start *************");
@@ -398,12 +398,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0005
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0500
-     * @tc.name testRdbStoreSendable0005
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreSendable0005 start *************");
@@ -467,12 +467,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0006
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0600
-     * @tc.name testRdbStoreSendable0006
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRdbStoreSendable0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       console.log(TAG + "************* testRdbStoreSendable0006 start *************");
@@ -489,12 +489,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0007
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0700
-     * @tc.name testRdbStoreSendable0007
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreSendable0007 start *************");
@@ -510,12 +510,12 @@ export default function rdbStoreSendableTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreSendable0008
      * @tc.number SUB_DistributedData_SendableRelationStore_SDK_RelationalStoreEtsApiPromiseTest_0800
-     * @tc.name testRdbStoreSendable0008
-     * @tc.desc Normal test case of sendableRelationalStore
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Normal test case of sendableRelationalStore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreSendable0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log(TAG + "************* testRdbStoreSendable0008 start *************");

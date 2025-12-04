@@ -25,12 +25,12 @@ export default function ipcNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_IPC_FTOK_0100
-     * @tc.name       : testMuslIpcFtok001
-     * @tc.desc       : test ftok
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslIpcFtok001
+     * @tc.number SUB_THIRDPARTY_MUSL_IPC_FTOK_0100
+     * @tc.desc   test ftok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslIpcFtok001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;

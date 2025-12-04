@@ -46,13 +46,13 @@ export default function ContainerSpanModifierTest() {
       console.info("ContainerSpanModifierTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         ContainerSpanModifierTest0001
-    * @tc.desic        test ContainerSpanModifier
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   ContainerSpanModifierTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   ContainerSpanModifierTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ContainerSpanModifierTest0001',  Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();

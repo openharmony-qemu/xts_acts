@@ -46,9 +46,12 @@ export default function ColumnSetMargin_SubChange() {
     });
 
     /**
+     * @tc.name   testColumnParentMarginPadSubMarPad
      * @tc.number SUB_ACE_COLUMN_SUBCOMPONENTCHANGED_0800
-     * @tc.name testColumnParentMarginPadSubMarPad
-     * @tc.desc Parent component set margin,subcomponent set margin and paddding.
+     * @tc.desc   Parent component set margin,subcomponent set margin and paddding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnParentMarginPadSubMarPad',  Level.LEVEL0, async () => {
       console.info('new testColumnParentMarginPadSubMarPad START');

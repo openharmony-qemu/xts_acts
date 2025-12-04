@@ -74,12 +74,12 @@ export default function adsTestPart1() {
   describe('ActsAdsTest', () => {
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_AD_0100
-     * @tc.name: testLoadAdByCallback
-     * @tc.desc: Load ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testLoadAdByCallback
+     * @tc.number SUB_CLOUD_ADS_LOAD_AD_0100
+     * @tc.desc   Load ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testLoadAdByCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let adLoaderListener: advertising.AdLoadListener = {
@@ -101,12 +101,12 @@ export default function adsTestPart1() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_AD_SHOW_AD_0200
-     * @tc.name: testShowAd
-     * @tc.desc: start show ability success.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testShowAd
+     * @tc.number SUB_CLOUD_AD_SHOW_AD_0200
+     * @tc.desc   start show ability success.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testShowAd", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, (done: Function) => {
       try {
@@ -122,12 +122,12 @@ export default function adsTestPart1() {
     })
 
     /**
-     * @tc.number: SUB_CLOUD_ADS_LOAD_MULTI_AD_0300
-     * @tc.name: testLoadMultiAdByCallback
-     * @tc.desc: Load multi ad by callback is not null.
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testLoadMultiAdByCallback
+     * @tc.number SUB_CLOUD_ADS_LOAD_MULTI_AD_0300
+     * @tc.desc   Load multi ad by callback is not null.
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testLoadMultiAdByCallback", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let adLoaderListener: advertising.MultiSlotsAdLoadListener = {

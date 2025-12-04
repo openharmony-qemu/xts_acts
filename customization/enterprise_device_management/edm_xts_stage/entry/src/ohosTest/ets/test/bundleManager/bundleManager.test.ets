@@ -28,7 +28,9 @@ import {
   HAP_FILE_PATH,
   EDM_INSTALL_PARAM,
   EDM_INSTALL_PARAM_FOR_ALL_USER,
-  HAP_FILE_PATH_ERROR
+  HAP_FILE_PATH_ERROR,
+  MARKET_APPS,
+  ERROR_MARKET_APPS
 } from '../commom.ets';
 
 import adminManager from '@ohos.enterprise.adminManager';
@@ -39,12 +41,12 @@ import { BmsBundleInfo, BmsBundleResourceInfo, BundleManagerHelper } from './Bun
 export default function bundleManagerTest() {
   describe('bundleManager_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_addAllowedInstallBundlesSync_001
-     * @tc.desc      : test addAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test addAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -57,16 +59,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_addAllowedInstallBundlesSync_002
-     * @tc.desc      : test addAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test addAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -78,12 +80,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_addAllowedInstallBundlesSync_003
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -99,12 +101,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_addAllowedInstallBundlesSync_004
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -119,12 +121,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_addAllowedInstallBundlesSync_005
-     * @tc.desc      : test addAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test addAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -137,16 +139,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_addAllowedInstallBundlesSync_006
-     * @tc.desc      : test addAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test addAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addAllowedInstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -158,12 +160,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_addAllowedInstallBundlesSync_007
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -179,12 +181,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_addAllowedInstallBundlesSync_008
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_008
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -199,12 +201,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_addAllowedInstallBundlesSync_009
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_009
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -221,12 +223,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_addAllowedInstallBundlesSync_010
-     * @tc.desc      : test addAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addAllowedInstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDALLOWEDINSTALLBUNDLESSYNC_010
+     * @tc.desc   test addAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addAllowedInstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -244,12 +246,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_removeAllowedInstallBundlesSync_001
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test removeAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -262,16 +264,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_removeAllowedInstallBundlesSync_002
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test removeAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeAllowedInstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -283,12 +285,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_removeAllowedInstallBundlesSync_003
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -304,12 +306,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_removeAllowedInstallBundlesSync_004
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -324,12 +326,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_removeAllowedInstallBundlesSync_005
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test removeAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -342,16 +344,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_removeAllowedInstallBundlesSync_006
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test removeAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeAllowedInstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -363,12 +365,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_removeAllowedInstallBundlesSync_007
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -384,12 +386,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_removeAllowedInstallBundlesSync_008
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_008
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -404,12 +406,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_removeAllowedInstallBundlesSync_009
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_009
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -424,12 +426,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_removeAllowedInstallBundlesSync_010
-     * @tc.desc      : test removeAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeAllowedInstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEALLOWEDINSTALLBUNDLESSYNC_010
+     * @tc.desc   test removeAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeAllowedInstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -447,12 +449,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_getAllowedInstallBundlesSync_001
-     * @tc.desc      : test getAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test getAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -465,16 +467,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_getAllowedInstallBundlesSync_002
-     * @tc.desc      : test getAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test getAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getAllowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -486,12 +488,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_getAllowedInstallBundlesSync_003
-     * @tc.desc      : test getAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test getAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -507,12 +509,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_getAllowedInstallBundlesSync_004
-     * @tc.desc      : test getAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test getAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -532,12 +534,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_getAllowedInstallBundlesSync_005
-     * @tc.desc      : test getAllowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test getAllowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -550,16 +552,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_getAllowedInstallBundlesSync_006
-     * @tc.desc      : test getAllowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test getAllowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getAllowedInstallBundlesSync(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
@@ -571,12 +573,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_getAllowedInstallBundlesSync_007
-     * @tc.desc      : test getAllowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getAllowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test getAllowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getAllowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -592,15 +594,15 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0100
-     * @tc.name      : test_add_installation_allowed_app_distribution_types_0100
-     * @tc.desc      : test addInstallationAllowedAppDistributionTypes method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0100
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_installation_allowed_app_distribution_types_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let resBefor: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
         expect(resBefor.length == 0).assertTrue();
@@ -619,12 +621,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0200
-     * @tc.name test_add_installation_allowed_app_distribution_types_0200
-     * @tc.desc test addInstallationAllowedAppDistributionTypes method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_installation_allowed_app_distribution_types_0200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -643,12 +645,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0300
      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0300
-     * @tc.name test_add_installation_allowed_app_distribution_types_0300
-     * @tc.desc test addInstallationAllowedAppDistributionTypes method with null admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_installation_allowed_app_distribution_types_0300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -663,12 +665,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0400
-     * @tc.name test_add_installation_allowed_app_distribution_types_0400
-     * @tc.desc test addInstallationAllowedAppDistributionTypes method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_installation_allowed_app_distribution_types_0400', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -691,12 +693,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_add_installation_allowed_app_distribution_types_0500
      * @tc.number SUB_CUSTOMIZATION_EDM_ADD_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0500
-     * @tc.name test_add_installation_allowed_app_distribution_types_0500
-     * @tc.desc test addInstallationAllowedAppDistributionTypes type out of scope
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test addInstallationAllowedAppDistributionTypes type out of scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_add_installation_allowed_app_distribution_types_0500', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -717,15 +719,15 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_installation_allowed_app_distribution_types_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0100
-     * @tc.name test_get_installation_allowed_app_distribution_types_0100
-     * @tc.desc test getInstallationAllowedAppDistributionTypes method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getInstallationAllowedAppDistributionTypes method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_installation_allowed_app_distribution_types_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
       } catch(error) {
@@ -737,12 +739,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_installation_allowed_app_distribution_types_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0200
-     * @tc.name test_get_installation_allowed_app_distribution_types_0200
-     * @tc.desc test getInstallationAllowedAppDistributionTypes method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getInstallationAllowedAppDistributionTypes method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_installation_allowed_app_distribution_types_0200', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -757,12 +759,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_installation_allowed_app_distribution_types_0300
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0300
-     * @tc.name test_get_installation_allowed_app_distribution_types_0300
-     * @tc.desc test getInstallationAllowedAppDistributionTypes method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getInstallationAllowedAppDistributionTypes method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_installation_allowed_app_distribution_types_0300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -775,12 +777,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_installation_allowed_app_distribution_types_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0400
-     * @tc.name test_get_installation_allowed_app_distribution_types_0400
-     * @tc.desc test getInstallationAllowedAppDistributionTypes method with null admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test getInstallationAllowedAppDistributionTypes method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_get_installation_allowed_app_distribution_types_0400', Level.LEVEL2, async (done: Function) => {
       try {
@@ -793,15 +795,15 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0100
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0100
-     * @tc.name test_remove_installation_allowed_app_distribution_types_0100
-     * @tc.desc test removeInstallationAllowedAppDistributionTypes method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_installation_allowed_app_distribution_types_0100', Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         let resBefor: Array<bundleManager.AppDistributionType> = await bundleManager.getInstallationAllowedAppDistributionTypes(SELFWANT);
         expect(resBefor.length == 0).assertTrue();
@@ -820,12 +822,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0200
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0200
-     * @tc.name test_remove_installation_allowed_app_distribution_types_0200
-     * @tc.desc test removeInstallationAllowedAppDistributionTypes method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_installation_allowed_app_distribution_types_0200', Level.LEVEL2, async (done: Function) => {
       try {
@@ -842,12 +844,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0300
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0300
-     * @tc.name test_remove_installation_allowed_app_distribution_types_0300
-     * @tc.desc test removeInstallationAllowedAppDistributionTypes method with null admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes method with null admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_installation_allowed_app_distribution_types_0300', Level.LEVEL2, async (done: Function) => {
       try {
@@ -864,12 +866,12 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0400
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0400
-     * @tc.name test_remove_installation_allowed_app_distribution_types_0400
-     * @tc.desc test removeInstallationAllowedAppDistributionTypes method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_installation_allowed_app_distribution_types_0400', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -897,12 +899,12 @@ export default function bundleManagerTest() {
     });
 
     /**
+     * @tc.name   test_remove_installation_allowed_app_distribution_types_0500
      * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_INSTALLATION_ALLOWED_APP_DISTRIBUTION_TYPES_0500
-     * @tc.name test_remove_installation_allowed_app_distribution_types_0500
-     * @tc.desc test removeInstallationAllowedAppDistributionTypes type out of scope
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.desc   test removeInstallationAllowedAppDistributionTypes type out of scope
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_remove_installation_allowed_app_distribution_types_0500', Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -921,12 +923,12 @@ export default function bundleManagerTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_addDisallowedInstallBundlesSync_001
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test addDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -939,16 +941,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_addDisallowedInstallBundlesSync_002
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test addDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -960,12 +962,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_addDisallowedInstallBundlesSync_003
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -981,12 +983,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_addDisallowedInstallBundlesSync_004
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1001,12 +1003,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_addDisallowedInstallBundlesSync_005
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test addDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1019,16 +1021,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_addDisallowedInstallBundlesSync_006
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test addDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -1040,12 +1042,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_addDisallowedInstallBundlesSync_007
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1061,12 +1063,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_addDisallowedInstallBundlesSync_008
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_008
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1081,12 +1083,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_addDisallowedInstallBundlesSync_009
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_009
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1103,12 +1105,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_addDisallowedInstallBundlesSync_010
-     * @tc.desc      : test addDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedInstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDINSTALLBUNDLESSYNC_010
+     * @tc.desc   test addDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedInstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1126,12 +1128,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_001
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1144,16 +1146,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_002
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -1165,12 +1167,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_003
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1186,12 +1188,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_004
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1206,12 +1208,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_005
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1224,16 +1226,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_006
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeDisallowedInstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -1245,12 +1247,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_007
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1266,12 +1268,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_008
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_008
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1286,12 +1288,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_009
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_009
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1306,12 +1308,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_removeDisallowedInstallBundlesSync_010
-     * @tc.desc      : test removeDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedInstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDINSTALLBUNDLESSYNC_010
+     * @tc.desc   test removeDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedInstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1329,12 +1331,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_getDisallowedInstallBundlesSync_001
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_001
+     * @tc.desc   test getDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1347,16 +1349,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_getDisallowedInstallBundlesSync_002
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_002
+     * @tc.desc   test getDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getDisallowedInstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -1368,12 +1370,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_getDisallowedInstallBundlesSync_003
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_003
+     * @tc.desc   test getDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1389,12 +1391,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_getDisallowedInstallBundlesSync_004
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_004
+     * @tc.desc   test getDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1414,12 +1416,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_getDisallowedInstallBundlesSync_005
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_005
+     * @tc.desc   test getDisallowedInstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1432,16 +1434,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_getDisallowedInstallBundlesSync_006
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_006
+     * @tc.desc   test getDisallowedInstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getDisallowedInstallBundlesSync(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
@@ -1453,12 +1455,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_getDisallowedInstallBundlesSync_007
-     * @tc.desc      : test getDisallowedInstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedInstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_007
+     * @tc.desc   test getDisallowedInstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedInstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1474,12 +1476,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_001
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_001
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1492,16 +1494,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_002
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_002
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -1513,12 +1515,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_003
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_003
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1534,12 +1536,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_004
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_004
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1554,12 +1556,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_005
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_005
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1572,16 +1574,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_006
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_006
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -1593,12 +1595,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_007
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_007
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1614,17 +1616,21 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_008
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_008
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+        let emptyRes = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(emptyRes.length == 0).assertTrue();
         bundleManager.addDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_AND_IDENTIFIER_1, DEFAULT_USER_ID);
+        let res = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length > 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1634,12 +1640,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_009
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_009
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1656,12 +1662,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_addDisallowedUninstallBundlesSync_010
-     * @tc.desc      : test addDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_addDisallowedUninstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADDDISALLOWEDUNINSTALLBUNDLESSYNC_010
+     * @tc.desc   test addDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_addDisallowedUninstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1679,12 +1685,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_001
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_001
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1697,16 +1703,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_002
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_002
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -1718,12 +1724,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_003
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_003
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1739,12 +1745,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_004
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_004
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1759,12 +1765,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_005
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_005
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1777,16 +1783,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_006
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_006
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.removeDisallowedUninstallBundlesSync(SELFWANT, APP_IDS_1);
         expect(false).assertTrue();
       } catch (error) {
@@ -1798,12 +1804,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_007
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_007
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1819,12 +1825,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_008
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_008
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_008
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1839,12 +1845,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_009
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_009
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_009
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1859,12 +1865,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_010
-     * @tc.name      : test_removeDisallowedUninstallBundlesSync_010
-     * @tc.desc      : test removeDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_removeDisallowedUninstallBundlesSync_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_REMOVEDISALLOWEDUNINSTALLBUNDLESSYNC_010
+     * @tc.desc   test removeDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_removeDisallowedUninstallBundlesSync_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1882,12 +1888,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_001
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_001
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_001
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1900,16 +1906,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_002
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_002
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_002
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -1921,12 +1927,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_003
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_003
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_003
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1942,17 +1948,18 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_004
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_004
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_004
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_004", Level.LEVEL2, async (done: Function) => {
       try {
         await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
-        bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        let res = bundleManager.getDisallowedUninstallBundlesSync(SELFWANT, DEFAULT_USER_ID);
+        expect(res.length == 0).assertTrue();
       } catch (error) {
         expect(false).assertTrue();
       } finally {
@@ -1962,12 +1969,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_005
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_005
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_005
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -1980,16 +1987,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_006
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_006
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_006
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         bundleManager.getDisallowedUninstallBundlesSync(SELFWANT);
         expect(false).assertTrue();
       } catch (error) {
@@ -2001,12 +2008,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_007
-     * @tc.name      : test_getDisallowedUninstallBundlesSync_007
-     * @tc.desc      : test getDisallowedUninstallBundlesSync method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_getDisallowedUninstallBundlesSync_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDUNINSTALLBUNDLESSYNC_007
+     * @tc.desc   test getDisallowedUninstallBundlesSync method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_getDisallowedUninstallBundlesSync_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2022,12 +2029,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_001
-     * @tc.name      : test_uninstall_001
-     * @tc.desc      : test uninstall method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_001
+     * @tc.desc   test uninstall method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2043,16 +2050,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_002
-     * @tc.name      : test_uninstall_002
-     * @tc.desc      : test uninstall method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_002
+     * @tc.desc   test uninstall method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await bundleManager.uninstall(SELFWANT, BUNDLENAME1, DEFAULT_USER_ID, true);
         expect(false).assertTrue();
       } catch (error) {
@@ -2064,12 +2071,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_003
-     * @tc.name      : test_uninstall_003
-     * @tc.desc      : test uninstall method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_003
+     * @tc.desc   test uninstall method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2085,12 +2092,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_004
-     * @tc.name      : test_uninstall_004
-     * @tc.desc      : test uninstall method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_004
+     * @tc.desc   test uninstall method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2105,12 +2112,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_005
-     * @tc.name      : test_uninstall_005
-     * @tc.desc      : test uninstall method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_005
+     * @tc.desc   test uninstall method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2126,16 +2133,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_006
-     * @tc.name      : test_uninstall_006
-     * @tc.desc      : test uninstall method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_006
+     * @tc.desc   test uninstall method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await bundleManager.uninstall(SELFWANT, BUNDLENAME1, DEFAULT_USER_ID);
         expect(false).assertTrue();
       } catch (error) {
@@ -2147,12 +2154,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_007
-     * @tc.name      : test_uninstall_007
-     * @tc.desc      : test uninstall method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_007
+     * @tc.desc   test uninstall method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2168,12 +2175,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_008
-     * @tc.name      : test_uninstall_008
-     * @tc.desc      : test uninstall method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_008
+     * @tc.desc   test uninstall method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2189,16 +2196,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_009
-     * @tc.name      : test_uninstall_009
-     * @tc.desc      : test uninstall method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_009
+     * @tc.desc   test uninstall method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_009", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await bundleManager.uninstall(SELFWANT, BUNDLENAME1);
         expect(false).assertTrue();
       } catch (error) {
@@ -2210,12 +2217,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_UNINSTALL_010
-     * @tc.name      : test_uninstall_010
-     * @tc.desc      : test uninstall method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_uninstall_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_UNINSTALL_010
+     * @tc.desc   test uninstall method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_uninstall_010", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2231,12 +2238,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_001
-     * @tc.name      : test_install_001
-     * @tc.desc      : test install method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_001
+     * @tc.desc   test install method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2252,16 +2259,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_002
-     * @tc.name      : test_install_002
-     * @tc.desc      : test install method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_002
+     * @tc.desc   test install method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_002", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await bundleManager.install(SELFWANT, HAP_FILE_PATH, EDM_INSTALL_PARAM);
         expect(false).assertTrue();
       } catch (error) {
@@ -2273,12 +2280,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_003
-     * @tc.name      : test_install_003
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_003
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_003", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2294,12 +2301,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_004
-     * @tc.name      : test_install_004
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_004
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_004", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2315,12 +2322,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_005
-     * @tc.name      : test_install_005
-     * @tc.desc      : test install method with unActive admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_005
+     * @tc.desc   test install method with unActive admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_005", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2336,16 +2343,16 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_006
-     * @tc.name      : test_install_006
-     * @tc.desc      : test install method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_006
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_006
+     * @tc.desc   test install method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_006", Level.LEVEL2, async (done: Function) => {
       try {
-        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
         await bundleManager.install(SELFWANT, HAP_FILE_PATH);
         expect(false).assertTrue();
       } catch (error) {
@@ -2357,12 +2364,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_007
-     * @tc.name      : test_install_007
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_007
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_007
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_007", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2378,12 +2385,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_008
-     * @tc.name      : test_install_008
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_008
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_008
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_008", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2399,12 +2406,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_009
-     * @tc.name      : test_install_009
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_009
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_009
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_009", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2420,12 +2427,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_INSTALL_010
-     * @tc.name      : test_install_010
-     * @tc.desc      : test install method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_install_010
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_010
+     * @tc.desc   test install method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_install_010", Level.LEVEL2, async (done: Function) => {
       let isEnterprise: string = systemparameter.getSync('const.edm.is_enterprise_device');
@@ -2447,12 +2454,12 @@ export default function bundleManagerTest() {
     })
     
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_001
-     * @tc.name      : test_get_installed_bundle_list_001
-     * @tc.desc      : test get installed bundle list method without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_installed_bundle_list_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_001
+     * @tc.desc   test get installed bundle list method without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_installed_bundle_list_001", Level.LEVEL2, async (done: Function) => {
       try {
@@ -2465,15 +2472,15 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_002
-     * @tc.name      : test_get_installed_bundle_list_002
-     * @tc.desc      : test get installed bundle list method with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_installed_bundle_list_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_002
+     * @tc.desc   test get installed bundle list method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_installed_bundle_list_002", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID);
         expect(false).assertTrue();
@@ -2486,12 +2493,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_003
-     * @tc.name      : test_get_installed_bundle_list_003
-     * @tc.desc      : test get installed bundle list method unsupported accountId
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_installed_bundle_list_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_003
+     * @tc.desc   test get installed bundle list method unsupported accountId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_installed_bundle_list_003", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2507,12 +2514,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_004
-     * @tc.name      : test_get_installed_bundle_list_004
-     * @tc.desc      : test get installed bundle list method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_installed_bundle_list_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_004
+     * @tc.desc   test get installed bundle list method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_installed_bundle_list_004", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2529,12 +2536,12 @@ export default function bundleManagerTest() {
     })
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_005
-     * @tc.name      : test_get_installed_bundle_list_005
-     * @tc.desc      : test get installed bundle list method with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_installed_bundle_list_005
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_005
+     * @tc.desc   test get installed bundle list method with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_installed_bundle_list_005", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2542,6 +2549,7 @@ export default function bundleManagerTest() {
         let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
             DEFAULT_USER_ID);
         expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
         let edmBundleInfo = bundleInfos.find((bundleInfo) => {
           return bundleInfo.name === 'com.edm.acts.normal';
         })
@@ -2604,6 +2612,87 @@ export default function bundleManagerTest() {
         expect(edmBundleInfo?.signatureInfo?.certificate === bmsBundleInfo?.signatureInfo?.certificate).assertTrue();
       } catch (error) {
         expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_001
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_001
+     * @tc.desc   test install market apps method without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_001", Level.LEVEL2, async (done: Function) => {
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_002
+     * @tc.desc   test install market apps method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_002", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_003
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_003
+     * @tc.desc   test market apps method with Super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_003", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error.code == 9201002) || (error.code == 801)).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   test_install_market_apps_004
+     * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_004
+     * @tc.desc   test market apps method with Super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_install_market_apps_004", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        await bundleManager.installMarketApps(SELFWANT, ERROR_MARKET_APPS);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect((error.code == 9200012) || (error.code == 801)).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }

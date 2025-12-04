@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -14,33 +14,21 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
-import Want from '@ohos.app.ability.Want';
 import { BusinessError } from '@ohos.base';
 
 
 let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function AbilityStageMonitorTest() {
-  const factoryWant = (
-    bundleName: string,
-    abilityName: string,
-    moduleName: string
-  ): Want => {
-    return {
-      bundleName: bundleName,
-      abilityName: abilityName,
-      moduleName: moduleName,
-    };
-  };
 
   describe("AbilityStageMonitorTest", () => {
     /**
+     * @tc.name   ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0100
      * @tc.number ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0100
-     * @tc.name actsAddAbilityStageMonitorCallback0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0100",
@@ -78,22 +66,17 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200
      * @tc.number ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200
-     * @tc.name actsAddAbilityStageMonitorCallback0200
-     * @tc.desc Pass in a stagemonitor and perform add, wait, and remove operations respectively.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stagemonitor and perform add, wait, and remove operations respectively.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_ADD_ABILITY_STAGE_MONITOR_CALLBACK_0200 :start");
         abilityDelegator.addAbilityStageMonitor({
           moduleName: "featureassist",
@@ -129,12 +112,12 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0100
      * @tc.number ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0100
-     * @tc.name actsAddAbilityStageMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
@@ -164,19 +147,14 @@ export default function AbilityStageMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200
      * @tc.number ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200
-     * @tc.name actsAddAbilityStageMonitorPromise0200
-     * @tc.desc Pass in a stagemonitor and perform add, wait, and remove operations respectively.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stagemonitor and perform add, wait, and remove operations respectively.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "MainAbility",
-        "featureassist"
-      );
       console.log("ACTS_ADD_ABILITY_STAGE_MONITOR_PROMISE_0200 :start");
       abilityDelegator
         .addAbilityStageMonitor({
@@ -235,12 +213,12 @@ export default function AbilityStageMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0100
      * @tc.number ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0100
-     * @tc.name actsRemoveAbilityStageMonitorCallback0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0100",
@@ -281,22 +259,17 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200
      * @tc.number ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200
-     * @tc.name actsRemoveAbilityStageMonitorCallback0200
-     * @tc.desc Pass in a stagemonitor and perform wait and remove operations, respectively.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stagemonitor and perform wait and remove operations, respectively.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0200 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
@@ -322,22 +295,17 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300
      * @tc.number ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300
-     * @tc.name actsRemoveAbilityStageMonitorCallback0300
-     * @tc.desc Pass in a stagemonitor and perform wait (6 seconds) and remove operations, respectively.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stagemonitor and perform wait (6 seconds) and remove operations, respectively.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_CALLBACK_0300 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
@@ -363,12 +331,12 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0100
      * @tc.number ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0100
-     * @tc.name actsRemoveAbilityStageMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0100",
@@ -405,22 +373,17 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200
      * @tc.number ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200
-     * @tc.name actsRemoveAbilityStageMonitorPromise0200
-     * @tc.desc Pass in a stagemonitor and perform wait and remove operations, respectively.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stagemonitor and perform wait and remove operations, respectively.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_REMOVE_ABILITY_STAGE_MONITOR_PROMISE_0200 :start 1");
         abilityDelegator
           .waitAbilityStageMonitor({
@@ -462,12 +425,12 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0100
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0100
-     * @tc.name actsWaitAbilityStageMonitorCallback0100
-     * @tc.desc Pass in a null stagemonitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   Pass in a null stagemonitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0100",
@@ -501,12 +464,12 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0200
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0200
-     * @tc.name actsWaitAbilityStageMonitorCallback0200
-     * @tc.desc Pass in null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   Pass in null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0200",
@@ -550,27 +513,22 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300
-     * @tc.name actsWaitAbilityStageMonitorCallback0300
-     * @tc.desc Pass in a stage monitor and perform the wait operation.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stage monitor and perform the wait operation.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
           srcEntrance: "./ets/Application/AbilityStage.ts",
-        }, (err, data) => {
+        }, 100, (err, data) => {
           abilityDelegator.printSync(
             "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0300 err code: " +
             err.code
@@ -585,27 +543,22 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400
-     * @tc.name actsWaitAbilityStageMonitorCallback0400
-     * @tc.desc Pass in a stage monitor and perform the wait operation(6 seconds).(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stage monitor and perform the wait operation(6 seconds).(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400 :start");
         abilityDelegator.waitAbilityStageMonitor({
           moduleName: "featureassist",
           srcEntrance: "./ets/Application/AbilityStage.ts",
-        }, 6000, (err, data) => {
+        }, 100, (err, data) => {
           abilityDelegator.printSync(
             "ACTS_WAIT_ABILITY_STAGE_MONITOR_CALLBACK_0400 err code: " +
             err.code
@@ -619,12 +572,12 @@ export default function AbilityStageMonitorTest() {
       }
     );
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0100
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0100
-     * @tc.name actsWaitAbilityStageMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0100",
@@ -657,28 +610,23 @@ export default function AbilityStageMonitorTest() {
     );
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200
      * @tc.number ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200
-     * @tc.name actsWaitAbilityStageMonitorPromise0200
-     * @tc.desc Pass in a stage monitor and perform the wait operation.(incomplete)
-     * @tc.size      : MediumTest
-     * @tc.type      : Method
-     * @tc.level     : Level 2
+     * @tc.desc   Pass in a stage monitor and perform the wait operation.(incomplete)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200",
       0,
       async (done: Function) => {
-        const want = factoryWant(
-          "com.example.delegatortest",
-          "MainAbility",
-          "featureassist"
-        );
         console.log("ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200 :start");
         abilityDelegator
           .waitAbilityStageMonitor({
             moduleName: "featureassist",
             srcEntrance: "./ets/Application/AbilityStage.ts",
-          })
+          }, 100)
           .then((data) => {
             abilityDelegator.printSync(
               "ACTS_WAIT_ABILITY_STAGE_MONITOR_PROMISE_0200 pass data: " + data

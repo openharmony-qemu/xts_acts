@@ -54,9 +54,12 @@ export default function I18NTest() {
     });
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0100
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0100
-     * @tc.name i18n_i18nutil_test_static_0100
-     * @tc.desc test unitConvert interface from cup to liter unit with long style
+     * @tc.desc   test unitConvert interface from cup to liter unit with long style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('i18n_i18nutil_test_static_0100', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0100 ' + 'start');
@@ -74,9 +77,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0200
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0200
-     * @tc.name i18n_i18nutil_test_static_0200
-     * @tc.desc test unitConvert interface from cup to liter unit with undefined style
+     * @tc.desc   test unitConvert interface from cup to liter unit with undefined style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0200', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0200 ' + 'start');
@@ -99,9 +105,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0300
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0300
-     * @tc.name i18n_i18nutil_test_static_0300
-     * @tc.desc test unitConvert interface from cup to liter unit with null style
+     * @tc.desc   test unitConvert interface from cup to liter unit with null style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0300', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0300 ' + 'start');
@@ -123,9 +132,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0400
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0400
-     * @tc.name i18n_i18nutil_test_static_0400
-     * @tc.desc test unitConvert interface from cup to liter unit with medium style
+     * @tc.desc   test unitConvert interface from cup to liter unit with medium style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0400', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0400 ' + 'start');
@@ -148,9 +160,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0500
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0500
-     * @tc.name i18n_i18nutil_test_static_0500
-     * @tc.desc test unitConvert interface from cup to liter unit with narrow style
+     * @tc.desc   test unitConvert interface from cup to liter unit with narrow style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0500', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0500 ' + 'start');
@@ -168,9 +183,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0600
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0600
-     * @tc.name i18n_i18nutil_test_static_0600
-     * @tc.desc test unitConvert interface from cup to liter unit with short style
+     * @tc.desc   test unitConvert interface from cup to liter unit with short style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0600', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0600 ' + 'start');
@@ -188,9 +206,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0700
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0700
-     * @tc.name i18n_i18nutil_test_static_0700
-     * @tc.desc test unitConvert interface from meter to mile unit
+     * @tc.desc   test unitConvert interface from meter to mile unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0700', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0700 ' + 'start');
@@ -208,9 +229,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0800
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0800
-     * @tc.name i18n_i18nutil_test_static_0800
-     * @tc.desc test unitConvert interface from hour to second unit
+     * @tc.desc   test unitConvert interface from hour to second unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0800', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0800 ' + 'start');
@@ -233,9 +257,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_0900
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_0900
-     * @tc.name i18n_i18nutil_test_static_0900
-     * @tc.desc test unitConvert interface from celsius to fahrenheit unit
+     * @tc.desc   test unitConvert interface from celsius to fahrenheit unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_0900', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_0900 ' + 'start');
@@ -253,9 +280,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1000
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1000
-     * @tc.name i18n_i18nutil_test_static_1000
-     * @tc.desc test unitConvert interface from acre to hectare unit
+     * @tc.desc   test unitConvert interface from acre to hectare unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1000', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1000 ' + 'start');
@@ -273,9 +303,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1100
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1100
-     * @tc.name i18n_i18nutil_test_static_1100
-     * @tc.desc test unitConvert interface from acre to square-meter unit
+     * @tc.desc   test unitConvert interface from acre to square-meter unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1100', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1100 ' + 'start');
@@ -293,9 +326,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1200
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1200
-     * @tc.name i18n_i18nutil_test_static_1200
-     * @tc.desc test unitConvert interface from kilometer-per-hour to knot unit
+     * @tc.desc   test unitConvert interface from kilometer-per-hour to knot unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1200', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1200 ' + 'start');
@@ -313,9 +349,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1300
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1300
-     * @tc.name i18n_i18nutil_test_static_1300
-     * @tc.desc test unitConvert interface from kilometer-per-hour to meter-per-second unit
+     * @tc.desc   test unitConvert interface from kilometer-per-hour to meter-per-second unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1300', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1300 ' + 'start');
@@ -333,9 +372,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1400
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1400
-     * @tc.name i18n_i18nutil_test_static_1400
-     * @tc.desc test unitConvert interface from meter to kilometer unit
+     * @tc.desc   test unitConvert interface from meter to kilometer unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1400', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1400 ' + 'start');
@@ -353,9 +395,12 @@ export default function I18NTest() {
     })
 
     /**
+     * @tc.name   i18n_i18nutil_test_static_1500
      * @tc.number SUB_GLOBAL_I18N_I18NUTIL_JS_static_1500
-     * @tc.name i18n_i18nutil_test_static_1500
-     * @tc.desc test unitConvert interface from meter to meter-per-second unit
+     * @tc.desc   test unitConvert interface from meter to meter-per-second unit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('i18n_i18nutil_test_static_1500', Level.LEVEL2, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_static_1500 ' + 'start');
@@ -372,11 +417,14 @@ export default function I18NTest() {
       expect(value).assertEqual('1,000米');
     })
     
-    /* *
-    * @tc.number  i18n_i18nutil_test_staic_1600
-    * @tc.name    i18n_i18nutil_test_staic_1600
-    * @tc.desc    test getDateOrder method with zh param,get the DateOrder value
-    */
+    /**
+     * @tc.name   i18n_i18nutil_test_staic_1600
+     * @tc.number i18n_i18nutil_test_staic_1600
+     * @tc.desc   test getDateOrder method with zh param,get the DateOrder value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_i18nutil_test_staic_1600', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_staic_1600 ' + 'start');
       let value = i18n.I18NUtil.getDateOrder('zh');
@@ -384,11 +432,14 @@ export default function I18NTest() {
       expect(value).assertEqual('y-L-d');
     })
 
-    /* *
-    * @tc.number  i18n_i18nutil_test_staic_1700
-    * @tc.name    i18n_i18nutil_test_staic_1700
-    * @tc.desc    test getDateOrder method with en param,get the DateOrder value
-    */
+    /**
+     * @tc.name   i18n_i18nutil_test_staic_1700
+     * @tc.number i18n_i18nutil_test_staic_1700
+     * @tc.desc   test getDateOrder method with en param,get the DateOrder value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_i18nutil_test_staic_1700', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_staic_1700 ' + 'start');
       let value = i18n.I18NUtil.getDateOrder('en');
@@ -396,11 +447,14 @@ export default function I18NTest() {
       expect(value).assertEqual('LLL-d-y');
     })
 
-    /* *
-    * @tc.number  i18n_i18nutil_test_staic_1800
-    * @tc.name    i18n_i18nutil_test_staic_1800
-    * @tc.desc    test getDateOrder method with th param,get the DateOrder value
-    */
+    /**
+     * @tc.name   i18n_i18nutil_test_staic_1800
+     * @tc.number i18n_i18nutil_test_staic_1800
+     * @tc.desc   test getDateOrder method with th param,get the DateOrder value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_i18nutil_test_staic_1800', Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_staic_1800 ' + 'start');
       let value = i18n.I18NUtil.getDateOrder('th');
@@ -408,11 +462,14 @@ export default function I18NTest() {
       expect(value).assertEqual('d-LLL-y');
     })
 
-    /* *
-    * @tc.number  i18n_i18nutil_test_staic_1900
-    * @tc.name    i18n_i18nutil_test_staic_1900
-    * @tc.desc    test getDateOrder method with jp param,get the DateOrder value
-    */
+    /**
+     * @tc.name   i18n_i18nutil_test_staic_1900
+     * @tc.number i18n_i18nutil_test_staic_1900
+     * @tc.desc   test getDateOrder method with jp param,get the DateOrder value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('i18n_i18nutil_test_staic_1900',Level.LEVEL0, async (): Promise<void> => {
       console.log('i18n_i18nutil_test_staic_1900 ' + 'start');
       let value = i18n.I18NUtil.getDateOrder('ja');

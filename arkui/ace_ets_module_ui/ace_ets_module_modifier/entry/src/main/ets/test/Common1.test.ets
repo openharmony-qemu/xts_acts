@@ -46,12 +46,12 @@ export default function common1Jsunit() {
     })
 
     /**
+     * @tc.name   Common1001
      * @tc.number Common001
-     * @tc.name Test the properties of components
-     * @tc.desc Set outlineRadius values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set outlineRadius values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1001', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1001] START');
@@ -67,12 +67,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1002
      * @tc.number Common1002
-     * @tc.name Test the properties of components
-     * @tc.desc Set outlineStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set outlineStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1002', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1002] START');
@@ -88,12 +88,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1003
      * @tc.number Common1003
-     * @tc.name Test the properties of components
-     * @tc.desc Set outlineWidth values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set outlineWidth values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1003', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1003] START');
@@ -109,12 +109,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1004
      * @tc.number Common1004
-     * @tc.name Test the properties of components
-     * @tc.desc Set outlineColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set outlineColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1004', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1004] START');
@@ -130,12 +130,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1005
      * @tc.number Common1005
-     * @tc.name Test the properties of components
-     * @tc.desc Set align values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set align values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1005', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1005] START');
@@ -147,12 +147,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1006
      * @tc.number Common1006
-     * @tc.name Test the properties of components
-     * @tc.desc Set direction values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set direction values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1006', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1006] START');
@@ -164,12 +164,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1007
      * @tc.number Common1007
-     * @tc.name Test the properties of components
-     * @tc.desc Set backdropBlur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backdropBlur values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1007', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1007] START');
@@ -181,12 +181,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1008
      * @tc.number Common1008
-     * @tc.name Test the properties of components
-     * @tc.desc Set invert values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set invert values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1008', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1008] START');
@@ -198,12 +198,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1009
      * @tc.number Common1009
-     * @tc.name Test the properties of components
-     * @tc.desc Set blur values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set blur values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1009', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1009] START');
@@ -215,12 +215,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1010
      * @tc.number Common1010
-     * @tc.name Test the properties of components
-     * @tc.desc Set outline values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set outline values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1010', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1010] START');
@@ -236,12 +236,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1011
      * @tc.number Common1011
-     * @tc.name Test the properties of components
-     * @tc.desc Set useShadowBatching values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set useShadowBatching values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1011', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1011] START');
@@ -253,12 +253,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1012
      * @tc.number Common1012
-     * @tc.name Test the properties of components
-     * @tc.desc Set obscured values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set obscured values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1012', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1012] START');
@@ -270,12 +270,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1013
      * @tc.number Common1013
-     * @tc.name Test the properties of components
-     * @tc.desc Set shadow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set shadow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1013', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1013] START');
@@ -288,12 +288,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1014
      * @tc.number Common1014
-     * @tc.name Test the properties of components
-     * @tc.desc Set renderFit values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set renderFit values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1014', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1014] START');
@@ -305,12 +305,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1015
      * @tc.number Common1015
-     * @tc.name Test the properties of components
-     * @tc.desc Set clip values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set clip values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1015', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1015] START');
@@ -322,12 +322,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1016
      * @tc.number Common1016
-     * @tc.name Test the properties of components
-     * @tc.desc Set radialGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set radialGradient values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1016', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1016] START');
@@ -340,12 +340,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1017
      * @tc.number Common1017
-     * @tc.name Test the properties of components
-     * @tc.desc Set sweepGradient values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sweepGradient values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1017', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1017] START');
@@ -359,12 +359,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1018
      * @tc.number Common1018
-     * @tc.name Test the properties of components
-     * @tc.desc Set mask values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set mask values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1018', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1018] START');
@@ -376,12 +376,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1019
      * @tc.number Common1019
-     * @tc.name Test the properties of components
-     * @tc.desc Set id values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set id values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1019', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1019] START');
@@ -392,12 +392,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1020
      * @tc.number Common1020
-     * @tc.name Test the properties of components
-     * @tc.desc Set key values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set key values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1020', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1020] START');
@@ -407,12 +407,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1021
      * @tc.number Common1021
-     * @tc.name Test the properties of components
-     * @tc.desc Set overlay values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set overlay values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1021', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1021] START');
@@ -424,12 +424,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1022
      * @tc.number Common1022
-     * @tc.name Test the properties of components
-     * @tc.desc Set draggable values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set draggable values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1022', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1022] START');
@@ -441,12 +441,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1023
      * @tc.number Common1023
-     * @tc.name Test the properties of components
-     * @tc.desc Set aspectRatio values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set aspectRatio values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1023', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1023] START');
@@ -458,12 +458,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1024
      * @tc.number Common1024
-     * @tc.name Test the properties of components
-     * @tc.desc Set aspectRatio values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set aspectRatio values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1024', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1024] START');
@@ -475,12 +475,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1025
      * @tc.number Common1025
-     * @tc.name Test the properties of components
-     * @tc.desc Set offset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set offset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1025', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1025] START');
@@ -493,12 +493,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1026
      * @tc.number Common1026
-     * @tc.name Test the properties of components
-     * @tc.desc Set markAnchor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set markAnchor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1026', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1026] START');
@@ -511,12 +511,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1027
      * @tc.number Common1027
-     * @tc.name Test the properties of components
-     * @tc.desc Set position values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set position values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1027', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1027] START');
@@ -529,12 +529,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1028
      * @tc.number Common1028
-     * @tc.name Test the properties of components
-     * @tc.desc Set zIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set zIndex values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1028', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1028] START');
@@ -546,12 +546,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1029
      * @tc.number Common1029
-     * @tc.name Test the properties of components
-     * @tc.desc Set alignSelf values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set alignSelf values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1029', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1029] START');
@@ -563,12 +563,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1030
      * @tc.number Common1030
-     * @tc.name Test the properties of components
-     * @tc.desc Set flexBasis values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set flexBasis values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1030', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1030] START');
@@ -580,12 +580,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1031
      * @tc.number Common1031
-     * @tc.name Test the properties of components
-     * @tc.desc Set flexGrow values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set flexGrow values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1031', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1031] START');
@@ -598,12 +598,12 @@ export default function common1Jsunit() {
 
 
     /**
+     * @tc.name   Common1032
      * @tc.number Common1032
-     * @tc.name Test the properties of components
-     * @tc.desc Set flexShrink values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set flexShrink values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1032', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1032] START');
@@ -615,12 +615,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1033
      * @tc.number Common1033
-     * @tc.name Test the properties of components
-     * @tc.desc Set displayPriority values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set displayPriority values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1033', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1033] START');
@@ -632,12 +632,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1034
      * @tc.number Common1034
-     * @tc.name Test the properties of components
-     * @tc.desc Set backgroundEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set backgroundEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1034', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1034] START');
@@ -649,12 +649,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1035
      * @tc.number Common1035
-     * @tc.name Test the properties of components
-     * @tc.desc Set transform values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set transform values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1035', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1035] START');
@@ -666,12 +666,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1036
      * @tc.number Common1036
-     * @tc.name Test the properties of components
-     * @tc.desc Set translate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set translate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1036', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1036] START');
@@ -684,12 +684,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1037
      * @tc.number Common1037
-     * @tc.name Test the properties of components
-     * @tc.desc Set rotate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set rotate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1037', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1037] START');
@@ -701,12 +701,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1038
      * @tc.number Common1038
-     * @tc.name Test the properties of components
-     * @tc.desc Set renderGroup values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set renderGroup values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1038', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1038] START');
@@ -719,12 +719,12 @@ export default function common1Jsunit() {
 
 
     /**
+     * @tc.name   Common1039
      * @tc.number Common1039
-     * @tc.name Test the properties of components
-     * @tc.desc Set gridOffset values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set gridOffset values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1039', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1039] START');
@@ -736,12 +736,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1040
      * @tc.number Common1040
-     * @tc.name Test the properties of components
-     * @tc.desc Set gridSpan values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set gridSpan values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1040', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1040] START');
@@ -753,12 +753,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1041
      * @tc.number Common1041
-     * @tc.name Test the properties of components
-     * @tc.desc Set hueRotate values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set hueRotate values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1041', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1041] START');
@@ -770,12 +770,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1042
      * @tc.number Common1042
-     * @tc.name Test the properties of components
-     * @tc.desc Set sepia values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set sepia values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1042', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1042] START');
@@ -787,12 +787,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1043
      * @tc.number Common1043
-     * @tc.name Test the properties of components
-     * @tc.desc Set clickEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set clickEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1043', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1043] START');
@@ -806,12 +806,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1044
      * @tc.number Common1044
-     * @tc.name Test the properties of components
-     * @tc.desc Set hoverEffect values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set hoverEffect values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1044', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1044] START');
@@ -823,12 +823,12 @@ export default function common1Jsunit() {
     });
 
     /**
+     * @tc.name   Common1046
      * @tc.number Common1046
-     * @tc.name Test the properties of components
-     * @tc.desc change zIndex values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   change zIndex values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Common1046', Level.LEVEL0, async (done: Function) => {
       console.info('[Common1046] START');

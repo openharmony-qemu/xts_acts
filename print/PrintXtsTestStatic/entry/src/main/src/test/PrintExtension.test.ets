@@ -18,7 +18,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll} from "../../../
 import Want from '@ohos.app.ability.Want';
 import PrintExtension from '../testability/PrintExtension';
 
-const DOMAIN: number = 0x0023
+const DOMAIN: int = 0x0023
 const TAG: string = 'printExtensionTestXTS';
 let printExtension = new PrintExtension();
 
@@ -26,12 +26,12 @@ export default function printExtensionTest() {
   describe('printExtensionTest', (): void => {
 
     /**
+     * @tc.name   printExtension_function_0100
      * @tc.number printExtension_function_0100
-     * @tc.name printExtension_function_0100
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0100', Level.LEVEL2, ():void => {
         hilog.info(DOMAIN, TAG, 'printExtension_function_0100 onCreate begin');
@@ -48,12 +48,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0200
      * @tc.number printExtension_function_0200
-     * @tc.name printExtension_function_0200
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0200', Level.LEVEL2, ():void => {
         try {
@@ -66,12 +66,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0300
      * @tc.number printExtension_function_0300
-     * @tc.name printExtension_function_0300
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0300', Level.LEVEL2, ():void => {
         try {
@@ -84,12 +84,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0400
      * @tc.number printExtension_function_0400
-     * @tc.name printExtension_function_0400
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0400', Level.LEVEL2, ():void => {
         try {
@@ -102,12 +102,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0500
      * @tc.number printExtension_function_0500
-     * @tc.name printExtension_function_0500
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0500', Level.LEVEL2, ():void => {
         try {
@@ -120,12 +120,12 @@ export default function printExtensionTest() {
     })
 
     /**
+     * @tc.name   printExtension_function_0600
      * @tc.number printExtension_function_0600
-     * @tc.name printExtension_function_0600
-     * @tc.desc check the printExtension function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   check the printExtension function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('printExtension_function_0600', Level.LEVEL2, ():void => {
         try {

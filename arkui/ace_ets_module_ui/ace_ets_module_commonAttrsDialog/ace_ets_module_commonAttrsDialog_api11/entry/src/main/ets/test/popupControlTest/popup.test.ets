@@ -44,12 +44,12 @@ export default function popup() {
       console.info("bindPopup after each called");
     });
     /**
+     * @tc.name   popup_0100
      * @tc.number SUB_ACE_popup_0100
-     * @tc.name popup_0100
-     * @tc.desc arrowWidth,arrowHeight,arrowPointPosition
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   arrowWidth,arrowHeight,arrowPointPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('popup_0100', Level.LEVEL0, async (done: Function) => {
       console.info('popup_0100 START');

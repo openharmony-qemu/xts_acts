@@ -37,6 +37,7 @@ import drawingTsCanvasPart3Test from './CanvasPart3.test';
 import drawingTsCanvasPart4Test from './CanvasPart4.test';
 import drawingTsCanvasPart5Test from './CanvasPart5.test';
 import drawingTsCanvasPart7Test from './CanvasPart7.test';
+import drawingTsCanvasPart8Test from './CanvasPart8.test';
 import drawingTsRegionTest from './Region.test';
 import drawingTsMatrixTest from './Matrix.test';
 import drawingTsMatrixPart2Test from './MatrixPart2.test';
@@ -45,6 +46,11 @@ import shadowEffectTest from './ShaderEffect.test'
 import toolTest from './Tool.test'
 import typefaceArguments from './TypefaceArguments.test'
 import rectUtils from './RectUtils.test'
+import BrushPart2 from './BrushPart2.test';
+import FontPart4 from './FontPart4.test';
+import PathEffect2 from './PathEffect2.test';
+import PathIterator from './PathIterator.test';
+import PenPart3 from './PenPart3.test';
 
 export default function testsuite() {
   samplingOptionsTest();
@@ -74,10 +80,16 @@ export default function testsuite() {
   drawingTsCanvasPart4Test();
   drawingTsCanvasPart5Test();
   drawingTsCanvasPart7Test();
+  drawingTsCanvasPart8Test();
   drawingTsRegionTest();
   roundRectTest();
   shadowEffectTest();
   toolTest();
   typefaceArguments();
   rectUtils();
+  BrushPart2();
+  FontPart4();
+  PathEffect2();
+  PathIterator();
+  PenPart3();
 }

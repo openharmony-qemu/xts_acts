@@ -34,6 +34,14 @@ let HuksOptions63kb = {
 
 export default function SecurityHuksDeriveHKDFPromiseJsunit() {
     describe('SecurityHuksDeriveHKDFPromiseJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_Derive_API9_HKDF_101
+         * @tc.number Security_HUKS_Derive_API9_HKDF_101
+         * @tc.desc   Security_HUKS_Derive_API9_HKDF_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Derive_API9_HKDF_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize192SHA256Finish63KBDeriveKeyAlias_01_101';
             let huksOptionsFinish = {
@@ -58,6 +66,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Derive_API9_HKDF_102
+         * @tc.number Security_HUKS_Derive_API9_HKDF_102
+         * @tc.desc   Security_HUKS_Derive_API9_HKDF_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Derive_API9_HKDF_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize192SHA256Abort63KBDeriveKeyAlias_01_101';
             let huksOptionsFinish = {
@@ -82,6 +98,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize192SHA256Finish63KBDerive108
+         * @tc.number testDeriveHKDFSize192SHA256Finish63KBDerive108
+         * @tc.desc   testDeriveHKDFSize192SHA256Finish63KBDerive108
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize192SHA256Finish63KBDerive108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize192SHA256Finish63KBDeriveKeyAlias_01_108';
             let huksOptionsFinish = {
@@ -104,6 +128,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize192SHA256Finish63KBDerive130
+         * @tc.number testDeriveHKDFSize192SHA256Finish63KBDerive130
+         * @tc.desc   testDeriveHKDFSize192SHA256Finish63KBDerive130
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize192SHA256Finish63KBDerive130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize192SHA256Finish63KBDeriveKeyAlias_01_130';
             let huksOptionsFinish = {
@@ -126,6 +158,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA256Finish63KBDerive101
+         * @tc.number testDeriveHKDFSize256SHA256Finish63KBDerive101
+         * @tc.desc   testDeriveHKDFSize256SHA256Finish63KBDerive101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA256Finish63KBDerive101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA256Finish63KBDeriveKeyAlias_01_101';
             HuksOptions63kb.properties.splice(3, 1, HuksDeriveHKDF.HuksKeyHKDFSize256);
@@ -151,6 +191,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA256Finish63KBDerive108
+         * @tc.number testDeriveHKDFSize256SHA256Finish63KBDerive108
+         * @tc.desc   testDeriveHKDFSize256SHA256Finish63KBDerive108
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA256Finish63KBDerive108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA256Finish63KBDeriveKeyAlias_01_108';
             let huksOptionsFinish = {
@@ -173,6 +221,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA256Finish63KBDerive130
+         * @tc.number testDeriveHKDFSize256SHA256Finish63KBDerive130
+         * @tc.desc   testDeriveHKDFSize256SHA256Finish63KBDerive130
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA256Finish63KBDerive130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA256Finish63KBDeriveKeyAlias_01_130';
             let huksOptionsFinish = {
@@ -195,6 +251,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA384Finish63KBDerive101
+         * @tc.number testDeriveHKDFSize256SHA384Finish63KBDerive101
+         * @tc.desc   testDeriveHKDFSize256SHA384Finish63KBDerive101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA384Finish63KBDerive101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA384Finish63KBDeriveKeyAlias_01_101';
             HuksOptions63kb.properties.splice(2, 1, HuksDeriveHKDF.HuksTagHKDFDigestSHA384);
@@ -220,6 +284,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA384Finish63KBDerive108
+         * @tc.number testDeriveHKDFSize256SHA384Finish63KBDerive108
+         * @tc.desc   testDeriveHKDFSize256SHA384Finish63KBDerive108
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA384Finish63KBDerive108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA384Finish63KBDeriveKeyAlias_01_108';
             let huksOptionsFinish = {
@@ -242,6 +314,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA384Finish63KBDerive130
+         * @tc.number testDeriveHKDFSize256SHA384Finish63KBDerive130
+         * @tc.desc   testDeriveHKDFSize256SHA384Finish63KBDerive130
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA384Finish63KBDerive130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA384Finish63KBDeriveKeyAlias_01_130';
             let huksOptionsFinish = {
@@ -264,6 +344,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA512Finish63KBDerive101
+         * @tc.number testDeriveHKDFSize256SHA512Finish63KBDerive101
+         * @tc.desc   testDeriveHKDFSize256SHA512Finish63KBDerive101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA512Finish63KBDerive101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA512Finish63KBDeriveKeyAlias_01_101';
             HuksOptions63kb.properties.splice(2, 1, HuksDeriveHKDF.HuksTagHKDFDigestSHA512);
@@ -289,6 +377,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA512Finish63KBDerive108
+         * @tc.number testDeriveHKDFSize256SHA512Finish63KBDerive108
+         * @tc.desc   testDeriveHKDFSize256SHA512Finish63KBDerive108
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA512Finish63KBDerive108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA512Finish63KBDeriveKeyAlias_01_108';
             let huksOptionsFinish = {
@@ -311,6 +407,14 @@ export default function SecurityHuksDeriveHKDFPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testDeriveHKDFSize256SHA512Finish63KBDerive130
+         * @tc.number testDeriveHKDFSize256SHA512Finish63KBDerive130
+         * @tc.desc   testDeriveHKDFSize256SHA512Finish63KBDerive130
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testDeriveHKDFSize256SHA512Finish63KBDerive130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliesFirst = 'testDeriveHKDFSize256SHA512Finish63KBDeriveKeyAlias_01_130';
             let huksOptionsFinish = {

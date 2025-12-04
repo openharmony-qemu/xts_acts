@@ -17,6 +17,7 @@ group("pageInteraction") {
     deps = [
       "JS_dialog_box:ActsWebJSDialogBoxTest",
       "JS_dialog_box_static:ActsWebJSDialogBoxStaticTest",
+      "base_rendering:ActsWebPageBaseRenderingTest",
       "focus_processing:ActsWebFocusProcessingTest",
       "focus_processing_static:ActsWebFocusProcessingStaticTest",
       "gesture_operation:ActsWebGestureOperationTest",
@@ -24,13 +25,15 @@ group("pageInteraction") {
       "keyboard_mouse_operations:ActsWebKeyboardMouseOperationsTest",
       "keyboard_mouse_operations_static:ActsWebKeyboardMouseOperationsStaticTest",
       "page_scrolling:ActsWebPageScrollingTest",
-      "page_scrolling_static:ActsWebPageScrollingStaticTest",
       "page_scrollingOne:ActsWebPageScrollingOneTest",
       "page_scrollingOne_static:ActsWebPageScrollingOneStaticTest",
       "page_scrollingTwo:ActsWebPageScrollingTwoTest",
+      "page_scrolling_static:ActsWebPageScrollingStaticTest",
       "picture_text_selection:ActsWebPictureTextSelectionTest",
-      "picture_text_selection_static:ActsWebPictureTextSelectionStaticTest",
+      "picture_text_selectionThree:ActsWebPictureTextSelectionThreeTest",
       "picture_text_selectionTwo:ActsWebPictureTextSelectionTwoTest",
+      "picture_text_selectionTwo_static:ActsWebPictureTextSelectionTwoStaticTest",
+      "picture_text_selection_static:ActsWebPictureTextSelectionStaticTest",
       "soft_keyboard_avoidance:ActsWebSoftKeyboardAvoidanceTest",
     ]
   }

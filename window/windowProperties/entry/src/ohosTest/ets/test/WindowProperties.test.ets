@@ -142,12 +142,12 @@ export default function windowPropertiesTest() {
         })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0100
-       * @tc.name      : testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize
-       * @tc.desc      : 验证设置进程水印入参pixelmap大小超过屏幕大小时抛出错误码1300016
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 3
+       * @tc.name   testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize
+       * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0100
+       * @tc.desc   验证设置进程水印入参pixelmap大小超过屏幕大小时抛出错误码1300016
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithSizeExceedsScreenSize';
@@ -187,12 +187,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0200
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindow
-       * @tc.desc      : 验证主窗设置和取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 0
+       * @tc.name   testSetWatermarkImageForAppWindowswithMainWindow
+       * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0200
+       * @tc.desc   验证主窗设置和取消水印成功
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testSetWatermarkImageForAppWindowswithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindow';
@@ -241,12 +241,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0300
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSubWindow
-       * @tc.desc      : 验证主窗设置，子窗取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
+       * @tc.name   testSetWatermarkImageForAppWindowswithMainWindowandSubWindow
+       * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0300
+       * @tc.desc   验证主窗设置，子窗取消水印成功
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testSetWatermarkImageForAppWindowswithMainWindowandSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSubWindow';
@@ -299,12 +299,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0400
-       * @tc.name      : testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow
-       * @tc.desc      : 验证主窗设置，系统窗取消水印成功
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
+       * @tc.name   testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow
+       * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0400
+       * @tc.desc   验证主窗设置，系统窗取消水印成功
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowswithMainWindowandSystemWindow';
@@ -362,12 +362,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0500
-       * @tc.name      : testSetWatermarkImageForAppWindowsBeforeLoadContent
-       * @tc.desc      : 验证设置进程水印在子窗loadcontent之前调用
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
+       * @tc.name   testSetWatermarkImageForAppWindowsBeforeLoadContent
+       * @tc.number SUB_BASIC_WMS_SET_WATERMARKIMAGE_FOR_APPWINDOWS_0500
+       * @tc.desc   验证设置进程水印在子窗loadcontent之前调用
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testSetWatermarkImageForAppWindowsBeforeLoadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName = 'testSetWatermarkImageForAppWindowsBeforeLoadContent';
@@ -424,15 +424,15 @@ export default function windowPropertiesTest() {
         });
       })
 
-      /**
-     * @tc.number    : SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_0200
-     * @tc.name      : test_getAllWindowLayoutInfo_mainWindow
-     * @tc.desc      : test_getAllWindowLayoutInfo_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_mainWindow
+     * @tc.number SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_0200
+     * @tc.desc   test_getAllWindowLayoutInfo_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('test_getAllWindowLayoutInfo_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('test_getAllWindowLayoutInfo_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_getAllWindowLayoutInfo_mainWindow';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -463,15 +463,16 @@ export default function windowPropertiesTest() {
       }
 
     });
-        /** 
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0100
-        * @tc.name      : testGetWindowDensityInfo
-        * @tc.desc      : getWindowDensityInfo
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
-        it('testGetWindowDensityInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+  
+        /**
+         * @tc.name   testGetWindowDensityInfo
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0100
+         * @tc.desc   getWindowDensityInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testGetWindowDensityInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testGetWindowDensityInfo';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -496,13 +497,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0200
-        * @tc.name      : testSetCustomDensityParamCheck
-        * @tc.desc      : getWindowDensityInfo, DPI-1 getWindowDensityInfo
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensityParamCheck
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0200
+         * @tc.desc   getWindowDensityInfo, DPI-1 getWindowDensityInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensityParamCheck', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -533,14 +534,14 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0300
-        * @tc.name      : testSetCustomDensityParamCheck1
-        * @tc.desc      : 有效左边界校验
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
-        it('testSetCustomDensityParamCheck1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+         * @tc.name   testSetCustomDensityParamCheck1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0300
+         * @tc.desc   有效左边界校验
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testSetCustomDensityParamCheck1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck1';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -563,14 +564,14 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0400
-        * @tc.name      : testSetCustomDensityParamCheck2
-        * @tc.desc      : effective right boundary
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
-        it('testSetCustomDensityParamCheck2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+         * @tc.name   testSetCustomDensityParamCheck2
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0400
+         * @tc.desc   effective right boundary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testSetCustomDensityParamCheck2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck2';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
         console.log(msgStr + 'begin');
@@ -593,13 +594,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0500
-        * @tc.name      : testSetCustomDensityParamCheck5
-        * @tc.desc      : testGetWindowDensityInfo with aruguments null
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level2
-        */
+         * @tc.name   testSetCustomDensityParamCheck5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0500
+         * @tc.desc   testGetWindowDensityInfo with aruguments null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensityParamCheck5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck5';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -625,13 +626,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0600
-        * @tc.name      : testSetCustomDensityParamCheck6
-        * @tc.desc      : testGetWindowDensityInfo with arguments undefined
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensityParamCheck6
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0600
+         * @tc.desc   testGetWindowDensityInfo with arguments undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensityParamCheck6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_testSetCustomDensityParamCheck6';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -656,13 +657,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0700
-        * @tc.name      : testSetCustomDensity
-        * @tc.desc      : new ability set dpi
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensity
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0700
+         * @tc.desc   new ability set dpi
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_SetCustomDensity';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -717,13 +718,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0800
-        * @tc.name      : testSetCustomDensity1
-        * @tc.desc      : new abilty setDefaultDensityEnabled true
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensity1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0800
+         * @tc.desc   new abilty setDefaultDensityEnabled true
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensity1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_SetCustomDensity1';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -781,13 +782,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0900
-        * @tc.name      : testSetCustomDensity2
-        * @tc.desc      : new abilty setDefaultDensityEnabled false
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensity2
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_0900
+         * @tc.desc   new abilty setDefaultDensityEnabled false
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensity2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_SetCustomDensity2';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -841,13 +842,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1000
-        * @tc.name      : testSetCustomDensity3
-        * @tc.desc      : multi ability,set ability with diffrent dpi
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testSetCustomDensity3
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1000
+         * @tc.desc   multi ability,set ability with diffrent dpi
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testSetCustomDensity3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_SetCustomDensity3';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -925,13 +926,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1100
-        * @tc.name      : testOnSetCustomDensity
-        * @tc.desc      : on systemDensityChange
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testOnSetCustomDensity
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1100
+         * @tc.desc   on systemDensityChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testOnSetCustomDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_testOnSetCustomDensity';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -1010,13 +1011,13 @@ export default function windowPropertiesTest() {
         });
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
-        * @tc.name      : testOnSetCustomDensity1
-        * @tc.desc      : off systemDensityChange event
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level3
-        */
+         * @tc.name   testOnSetCustomDensity1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_1200
+         * @tc.desc   off systemDensityChange event
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testOnSetCustomDensity1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName: string = 'test_testOnSetCustomDensity1';
         let msgStr: string = 'jsUnittest ' + caseName + ' ';
@@ -1050,12 +1051,12 @@ export default function windowPropertiesTest() {
         done();
         });
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8000
-         * @tc.name      : testSetGestureBackEnabledTrue
-         * @tc.desc      : Set whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+         * @tc.name   testSetGestureBackEnabledTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8000
+         * @tc.desc   Set whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetGestureBackEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             let caseName = 'TestSetGestureBackEnabledTrue';
@@ -1079,12 +1080,12 @@ export default function windowPropertiesTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8100
-         * @tc.name      : testSetGestureBackEnabledFalse
-         * @tc.desc      : Set whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+         * @tc.name   testSetGestureBackEnabledFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8100
+         * @tc.desc   Set whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testSetGestureBackEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             let caseName = 'TestSetGestureBackEnabledFalse';
@@ -1108,12 +1109,12 @@ export default function windowPropertiesTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8200
-         * @tc.name      : testSetGestureBackEnabledInSubWindow
-         * @tc.desc      : Set whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testSetGestureBackEnabledInSubWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8200
+         * @tc.desc   Set whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetGestureBackEnabledInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetGestureBackEnabledInSubWindow';
@@ -1144,12 +1145,12 @@ export default function windowPropertiesTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8300
-         * @tc.name      : testSetGestureBackEnabledInSysSubWindow
-         * @tc.desc      : Set whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testSetGestureBackEnabledInSysSubWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8300
+         * @tc.desc   Set whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetGestureBackEnabledInSysSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetGestureBackEnabledInSysSubWindow';
@@ -1185,12 +1186,12 @@ export default function windowPropertiesTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8400
-         * @tc.name      : testSetGestureBackEnabledInDestroyWindow
-         * @tc.desc      : Set whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testSetGestureBackEnabledInDestroyWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8400
+         * @tc.desc   Set whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetGestureBackEnabledInDestroyWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetGestureBackEnabledInDestroyWindow';
@@ -1220,12 +1221,12 @@ export default function windowPropertiesTest() {
             });
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8500
-         * @tc.name      : testGetGestureBackEnabledInSubWindow
-         * @tc.desc      : get whether to disable the gesture back function.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetGestureBackEnabledInSubWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8500
+         * @tc.desc   get whether to disable the gesture back function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetGestureBackEnabledInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetGestureBackEnabledInSubWindow';
@@ -1255,12 +1256,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8600
-         * @tc.name      : testGetWindowPropertiesInMainWindow
-         * @tc.desc      : get the current window properties
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level2
+         * @tc.name   testGetWindowPropertiesInMainWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8600
+         * @tc.desc   get the current window properties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testGetWindowPropertiesInMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
             let caseName = 'TestGetWindowPropertiesInMainWindow';
@@ -1277,12 +1278,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8700
-         * @tc.name      : testGetWindowPropertiesInSubWindow
-         * @tc.desc      : get the current window properties
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetWindowPropertiesInSubWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_8700
+         * @tc.desc   get the current window properties
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetWindowPropertiesInSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestGetWindowPropertiesInSubWindow';
@@ -1306,12 +1307,12 @@ export default function windowPropertiesTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0300
-         * @tc.name      : testSetWindowGrayScale0
-         * @tc.desc      : test setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowGrayScale0
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0300
+         * @tc.desc   test setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSetWindowGrayScale0", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSetWindowGrayScale0";
@@ -1341,12 +1342,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0400
-         * @tc.name      : testSetWindowGrayScale0.5
-         * @tc.desc      : test setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowGrayScale0.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0400
+         * @tc.desc   test setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSetWindowGrayScale0.5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSetWindowGrayScale0.5";
@@ -1376,12 +1377,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0500
-         * @tc.name      : testSetWindowGrayScale1
-         * @tc.desc      : test setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowGrayScale1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0500
+         * @tc.desc   test setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSetWindowGrayScale1",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSetWindowGrayScale1";
@@ -1411,12 +1412,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0600
-         * @tc.name      : testSetWindowGrayScaleNegative1
-         * @tc.desc      : test setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowGrayScaleNegative1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0600
+         * @tc.desc   test setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSetWindowGrayScaleNegative1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSetWindowGrayScaleNegative1";
@@ -1447,12 +1448,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0700
-         * @tc.name      : testSetWindowGrayScale2
-         * @tc.desc      : test setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowGrayScale2
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0700
+         * @tc.desc   test setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSetWindowGrayScale2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSetWindowGrayScale2";
@@ -1483,12 +1484,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0800
-         * @tc.name      : testSubWindowSetWindowGrayScale1
-         * @tc.desc      : test subWindow setWindowGrayScale
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSetWindowGrayScale1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0800
+         * @tc.desc   test subWindow setWindowGrayScale
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testSubWindowSetWindowGrayScale1",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestSubWindowSetWindowGrayScale1";
@@ -1525,12 +1526,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
-         * @tc.name      : testOnRectChangeOptionsResizeSubWindow
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOnRectChangeOptionsResizeSubWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsResizeSubWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOnRectChangeOptionsResizeSubWindow";
@@ -1556,12 +1557,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1000
-         * @tc.name      : testOnRectChangeOptionsResizeMainWindow
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOnRectChangeOptionsResizeMainWindow
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1000
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsResizeMainWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOnRectChangeOptionsResizeMainWindow";
@@ -1608,12 +1609,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1100
-         * @tc.name      : testOnRectChangeOptionsMove
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOnRectChangeOptionsMove
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1100
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnRectChangeOptionsMove", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOnRectChangeOptionsMove";
@@ -1650,12 +1651,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1200
-         * @tc.name      : testOffRectChangeOptions
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOffRectChangeOptions
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1200
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOffRectChangeOptions", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOffRectChangeOptions";
@@ -1693,12 +1694,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1300
-         * @tc.name      : testOffOneRectChangeOptions
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOffOneRectChangeOptions
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1300
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOffOneRectChangeOptions", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOffOneRectChangeOptions";
@@ -1745,12 +1746,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1400
-         * @tc.name      : testOnTwoRectChangeOptions
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOnTwoRectChangeOptions
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1400
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOnTwoRectChangeOptions", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOnTwoRectChangeOptions";
@@ -1796,12 +1797,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1500
-         * @tc.name      : testOffTwoRectChangeOptions
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testOffTwoRectChangeOptions
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1500
+         * @tc.desc   Test the function value of testRectChangeOptions
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testOffTwoRectChangeOptions", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = "TestOffTwoRectChangeOptions";
@@ -1847,12 +1848,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
-         * @tc.name      : testIsSubWindowSupportWideGamutCallback
-         * @tc.desc      : Check whether the subwindow supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testIsSubWindowSupportWideGamutCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1600
+         * @tc.desc   Check whether the subwindow supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsSubWindowSupportWideGamutCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestIsSubWindowSupportWideGamutCallback';
@@ -1884,12 +1885,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
-         * @tc.name      : testIsSubWindowSupportWideGamutPromise
-         * @tc.desc      : Check whether the subwindow supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testIsSubWindowSupportWideGamutPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1700
+         * @tc.desc   Check whether the subwindow supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsSubWindowSupportWideGamutPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestIsSubWindowSupportWideGamutPromise';
@@ -1918,12 +1919,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
-         * @tc.name      : testIsMainWindowSupportWideGamutCallback
-         * @tc.desc      : Check whether the mainWindow supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testIsMainWindowSupportWideGamutCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1800
+         * @tc.desc   Check whether the mainWindow supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsMainWindowSupportWideGamutCallback',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestIsMainWindowSupportWideGamutCallback';
@@ -1947,12 +1948,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1900
-         * @tc.name      : testIsMainWindowSupportWideGamutPromise
-         * @tc.desc      : Check whether the mainWindow supports the wide color gamut mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testIsMainWindowSupportWideGamutPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1900
+         * @tc.desc   Check whether the mainWindow supports the wide color gamut mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testIsMainWindowSupportWideGamutPromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestIsMainWindowSupportWideGamutPromise';
@@ -1973,12 +1974,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2000
-         * @tc.name      : testSetMainWindowColorSpaceDefaultCallback
-         * @tc.desc      : set window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetMainWindowColorSpaceDefaultCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2000
+         * @tc.desc   set window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetMainWindowColorSpaceDefaultCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetMainWindowColorSpaceDefaultCallback';
@@ -2005,12 +2006,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2100
-         * @tc.name      : testSetSubWindowColorSpaceDefaultCallback
-         * @tc.desc      : set window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowColorSpaceDefaultCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2100
+         * @tc.desc   set window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowColorSpaceDefaultCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowColorSpaceDefaultCallback';
@@ -2045,12 +2046,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
-         * @tc.name      : testSetMainWindowColorSpaceWideGamutPromise
-         * @tc.desc      : set window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetMainWindowColorSpaceWideGamutPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2200
+         * @tc.desc   set window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetMainWindowColorSpaceWideGamutPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetMainWindowColorSpaceDefaultPromise';
@@ -2074,12 +2075,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
-         * @tc.name      : testSetSubWindowColorSpaceWideGamutCallback
-         * @tc.desc      : set window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowColorSpaceWideGamutCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2300
+         * @tc.desc   set window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowColorSpaceWideGamutCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowColorSpaceWideGamutCallback';
@@ -2114,12 +2115,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
-         * @tc.name      : testSetMainWindowBackgroundColor
-         * @tc.desc      : set main window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetMainWindowBackgroundColor
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2400
+         * @tc.desc   set main window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetMainWindowBackgroundColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetMainWindowBackgroundColor';
@@ -2137,12 +2138,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
-         * @tc.name      : testSetSubWindowBackgroundColor
-         * @tc.desc      : set sub window colorSpace
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowBackgroundColor
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2500
+         * @tc.desc   set sub window colorSpace
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowBackgroundColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestSetSubWindowBackgroundColor';
@@ -2169,12 +2170,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2600
-         * @tc.name      : testSetSubWindowBackgroundColorNoUIContent
-         * @tc.desc      : set sub window colorSpace no set UIContent
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowBackgroundColorNoUIContent
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2600
+         * @tc.desc   set sub window colorSpace no set UIContent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowBackgroundColorNoUIContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowBackgroundColorNoUIContent';
@@ -2193,12 +2194,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2700
-         * @tc.name      : testSetWindowBrightnessCallbackNegative2
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallbackNegative2
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2700
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallbackNegative2',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessCallbackNegative2';
@@ -2223,12 +2224,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
-         * @tc.name      : testSetWindowBrightnessCallback1.5
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallback1.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2800
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallback1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessCallback1.5';
@@ -2253,12 +2254,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2900
-         * @tc.name      : testSetWindowBrightnessCallback0
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallback0
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2900
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallback0',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessCallback0';
@@ -2282,12 +2283,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
-         * @tc.name      : testSetWindowBrightnessCallback0.5
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallback0.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3000
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallback0.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessCallback0.5';
@@ -2311,12 +2312,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
-         * @tc.name      : testSetWindowBrightnessCallback1
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallback1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3100
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'testSetWindowBrightnessCallback1';
@@ -2340,12 +2341,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
-         * @tc.name      : testSetWindowBrightnessCallbackDefault
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessCallbackDefault
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3200
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessCallbackDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessCallbackDefault';
@@ -2369,12 +2370,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
-         * @tc.name      : testSetWindowBrightnessPromiseNegative1.5
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromiseNegative1.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3300
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromiseNegative1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessPromise_1.5';
@@ -2397,12 +2398,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
-         * @tc.name      : testSetWindowBrightnessPromise1.5
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromise1.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3400
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromise1.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessPromise1.5';
@@ -2430,12 +2431,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
-         * @tc.name      : testSetWindowBrightnessPromise0
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromise0
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3500
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromise0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessPromise_0';
@@ -2456,12 +2457,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
-         * @tc.name      : testSetWindowBrightnessPromise0.5
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromise0.5
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3600
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromise0.5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessPromise_0.5';
@@ -2482,12 +2483,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
-         * @tc.name      : testSetWindowBrightnessPromise1
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromise1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3700
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromise1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'testSetWindowBrightnessPromise1';
@@ -2508,12 +2509,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
-         * @tc.name      : testSetWindowBrightnessPromiseNegative1
-         * @tc.desc      : set window brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowBrightnessPromiseNegative1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3800
+         * @tc.desc   set window brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowBrightnessPromiseNegative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowBrightnessPromiseNegative1';
@@ -2534,12 +2535,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3900
-         * @tc.name      : testSetSubWindowBrightnessPromiseNegative1
-         * @tc.desc      : set subwindow brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowBrightnessPromiseNegative1
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3900
+         * @tc.desc   set subwindow brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowBrightnessPromiseNegative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestSetSubWindowBrightnessPromiseNegative1';
@@ -2568,12 +2569,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
-         * @tc.name      : testSetSubWindowBrightnessPromiseNegative2
-         * @tc.desc      : set subwindow brightness
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowBrightnessPromiseNegative2
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4000
+         * @tc.desc   set subwindow brightness
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowBrightnessPromiseNegative2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestSetSubWindowBrightnessPromiseNegative2';
@@ -2603,12 +2604,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
-         * @tc.name      : testSetSubWindowKeepScreenOnCallbackFalse
-         * @tc.desc      : set subwindow screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowKeepScreenOnCallbackFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
+         * @tc.desc   set subwindow screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowKeepScreenOnCallbackFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestSetSubWindowKeepScreenOnCallbackFalse';
@@ -2640,12 +2641,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
-         * @tc.name      : testSetSubWindowKeepScreenOnCallbackTrue
-         * @tc.desc      : set subwindow screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowKeepScreenOnCallbackTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
+         * @tc.desc   set subwindow screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowKeepScreenOnCallbackTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
             let caseName = 'TestSetSubWindowKeepScreenOnCallbackTrue';
@@ -2677,12 +2678,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
-         * @tc.name      : testSetWindowKeepScreenOnCallbackFalse
-         * @tc.desc      : set window screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowKeepScreenOnCallbackFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
+         * @tc.desc   set window screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowKeepScreenOnCallbackFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowKeepScreenOnCallbackFalse';
@@ -2706,12 +2707,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
-         * @tc.name      : testSetWindowKeepScreenOnCallbackTrue
-         * @tc.desc      : set window screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowKeepScreenOnCallbackTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
+         * @tc.desc   set window screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowKeepScreenOnCallbackTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowKeepScreenOnCallbackTrue';
@@ -2735,12 +2736,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
-         * @tc.name      : testSetWindowKeepScreenOnPromiseTrue
-         * @tc.desc      : set window screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowKeepScreenOnPromiseTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
+         * @tc.desc   set window screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowKeepScreenOnPromiseTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowKeepScreenOnPromiseTrue';
@@ -2761,12 +2762,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
-         * @tc.name      : testSetWindowKeepScreenOnPromiseFalse
-         * @tc.desc      : set window screen to be always on
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowKeepScreenOnPromiseFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
+         * @tc.desc   set window screen to be always on
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowKeepScreenOnPromiseFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowKeepScreenOnPromiseFalse';
@@ -2787,12 +2788,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4700
-         * @tc.name      : testSetSubWindowPrivacyModeTrue
-         * @tc.desc      : set subwindow screen to be privacy mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowPrivacyModeTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4700
+         * @tc.desc   set subwindow screen to be privacy mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowPrivacyModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowPrivacyModeTrue';
@@ -2825,12 +2826,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4800
-         * @tc.name      : testSetSubWindowPrivacyModeFalse
-         * @tc.desc      : set subwindow screen to be privacy mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowPrivacyModeFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4800
+         * @tc.desc   set subwindow screen to be privacy mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowPrivacyModeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowPrivacyModeFalse';
@@ -2863,12 +2864,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4900
-         * @tc.name      : testSetWindowPrivacyModeTrue
-         * @tc.desc      : set window screen to be privacy mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowPrivacyModeTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4900
+         * @tc.desc   set window screen to be privacy mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModeTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowPrivacyModeTrue';
@@ -2899,12 +2900,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5000
-         * @tc.name      : testSetWindowPrivacyModeFalse
-         * @tc.desc      : set window screen to be privacy mode
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetWindowPrivacyModeFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5000
+         * @tc.desc   set window screen to be privacy mode
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetWindowPrivacyModeFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetWindowPrivacyModeFalse';
@@ -2935,12 +2936,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
-         * @tc.name      : testWindowSnapshotCallback
-         * @tc.desc      : snapshot window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testWindowSnapshotCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5100
+         * @tc.desc   snapshot window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowSnapshotCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestWindowSnapshotCallback';
@@ -2979,12 +2980,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
-         * @tc.name      : testSubWindowSnapshotCallback
-         * @tc.desc      : snapshot subwindow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSnapshotCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5200
+         * @tc.desc   snapshot subwindow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowSnapshotCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowSnapshotCallback';
@@ -3025,12 +3026,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5300
-         * @tc.name      : testWindowSnapshotPromise
-         * @tc.desc      : snapshot window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testWindowSnapshotPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5300
+         * @tc.desc   snapshot window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowSnapshotPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestWindowSnapshotPromise';
@@ -3066,12 +3067,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5400
-         * @tc.name      : testSubWindowSnapshotPromise
-         * @tc.desc      : snapshot subwindow
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSnapshotPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5400
+         * @tc.desc   snapshot subwindow
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowSnapshotPromise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowSnapshotPromise';
@@ -3109,12 +3110,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5500
-         * @tc.name      : testWindowGetUIContext
-         * @tc.desc      : get window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
+         * @tc.name   testWindowGetUIContext
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5500
+         * @tc.desc   get window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testWindowGetUIContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             let caseName = 'TestWindowGetUIContext';
@@ -3137,12 +3138,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5600
-         * @tc.name      : testSubWindowGetUIContext
-         * @tc.desc      : get subwindow ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowGetUIContext
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5600
+         * @tc.desc   get subwindow ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowGetUIContext', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowGetUIContext';
@@ -3167,12 +3168,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5700
-         * @tc.name      : testWindowSetUIContextCallback
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testWindowSetUIContextCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5700
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowSetUIContextCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestWindowSetUIContextCallback';
@@ -3196,12 +3197,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5800
-         * @tc.name      : testWindowSetUIContextErrorPathCallback
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testWindowSetUIContextErrorPathCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5800
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowSetUIContextErrorPathCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestWindowSetUIContextErrorPathCallback';
@@ -3227,12 +3228,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5900
-         * @tc.name      : testSubWindowSetUIContextCallback
-         * @tc.desc      : set subwindow ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSetUIContextCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_5900
+         * @tc.desc   set subwindow ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowSetUIContextCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowSetUIContextCallback';
@@ -3258,12 +3259,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6000
-         * @tc.name      : testSubWindowSetUIContextErrorPathCallback
-         * @tc.desc      : set subwindow ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSetUIContextErrorPathCallback
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6000
+         * @tc.desc   set subwindow ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowSetUIContextErrorPathCallback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowSetUIContextErrorPathCallback';
@@ -3291,12 +3292,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6100
-         * @tc.name      : testWindowSetUIContextPromise
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testWindowSetUIContextPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6100
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testWindowSetUIContextPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestWindowSetUIContextPromise';
@@ -3317,12 +3318,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6200
-         * @tc.name      : testSubWindowSetUIContextErrorPathPromise
-         * @tc.desc      : set subwindow ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSubWindowSetUIContextErrorPathPromise
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6200
+         * @tc.desc   set subwindow ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSubWindowSetUIContextErrorPathPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSubWindowSetUIContextErrorPathPromise';
@@ -3345,12 +3346,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6300
-         * @tc.name      : testSetDefaultDensityEnabledTrue
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetDefaultDensityEnabledTrue
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6300
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDefaultDensityEnabledTrue',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetDefaultDensityEnabledTrue';
@@ -3371,12 +3372,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6400
-         * @tc.name      : testSetDefaultDensityEnabledFalse
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetDefaultDensityEnabledFalse
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6400
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetDefaultDensityEnabledFalse';
@@ -3397,12 +3398,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6500
-         * @tc.name      : testSetMainWindowMask
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetMainWindowMask
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6500
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetMainWindowMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetMainWindowMask';
@@ -3426,12 +3427,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6600
-         * @tc.name      : testSetSubWindowMask
-         * @tc.desc      : set window ui context
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
+         * @tc.name   testSetSubWindowMask
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6600
+         * @tc.desc   set window ui context
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testSetSubWindowMask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestSetSubWindowMask';
@@ -3464,12 +3465,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6700
-         * @tc.name      : testGetWindowStatusInDefault
-         * @tc.desc      : get the window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetWindowStatusInDefault
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6700
+         * @tc.desc   get the window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetWindowStatusInDefault', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetWindowStatusInDefault';
@@ -3513,12 +3514,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6800
-         * @tc.name      : testGetWindowStatusInFullScreen
-         * @tc.desc      : get the window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetWindowStatusInFullScreen
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6800
+         * @tc.desc   get the window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetWindowStatusInFullScreen', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetWindowStatusInFullScreen';
@@ -3550,12 +3551,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6900
-         * @tc.name      : testGetWindowStatusInMaximize
-         * @tc.desc      : get the window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetWindowStatusInMaximize
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_6900
+         * @tc.desc   get the window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetWindowStatusInMaximize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetWindowStatusInMaximize';
@@ -3582,12 +3583,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7000
-         * @tc.name      : testGetDialogWindowStatus
-         * @tc.desc      : get the window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetDialogWindowStatus
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7000
+         * @tc.desc   get the window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDialogWindowStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetDialogWindowStatus';
@@ -3622,12 +3623,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7100
-         * @tc.name      : testGetDestroyedDialogWindowStatus
-         * @tc.desc      : get the window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetDestroyedDialogWindowStatus
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7100
+         * @tc.desc   get the window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDestroyedDialogWindowStatus',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetDestroyedDialogWindowStatus';
@@ -3662,12 +3663,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7200
-         * @tc.name      : testGetDestroyedSubWindowStatus
-         * @tc.desc      : get the sub window status of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetDestroyedSubWindowStatus
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7200
+         * @tc.desc   get the sub window status of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDestroyedSubWindowStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetDestroyedSubWindowStatus';
@@ -3696,12 +3697,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7300
-         * @tc.name      : testGetSubWindowFocused
-         * @tc.desc      : get the sub window focused of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetSubWindowFocused
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7300
+         * @tc.desc   get the sub window focused of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetSubWindowFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetSubWindowFocused';
@@ -3734,12 +3735,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7400
-         * @tc.name      : testGetDialogWindowFocused
-         * @tc.desc      : get the window focused of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetDialogWindowFocused
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7400
+         * @tc.desc   get the window focused of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDialogWindowFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetDialogWindowFocused';
@@ -3773,12 +3774,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7500
-         * @tc.name      : testGetTopSubWindowFocused
-         * @tc.desc      : get the top sub window focused of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetTopSubWindowFocused
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7500
+         * @tc.desc   get the top sub window focused of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetTopSubWindowFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetTopSubWindowFocused';
@@ -3813,12 +3814,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7600
-         * @tc.name      : testGetShiftWindowFocused
-         * @tc.desc      : get the main window focused by shift from sub window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetShiftWindowFocused
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7600
+         * @tc.desc   get the main window focused by shift from sub window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetShiftWindowFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetShiftWindowFocused';
@@ -3858,12 +3859,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7700
-         * @tc.name      : testGetDestroyedSubWindowFocused
-         * @tc.desc      : get the sub window focused of current window
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testGetDestroyedSubWindowFocused
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7700
+         * @tc.desc   get the sub window focused of current window
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testGetDestroyedSubWindowFocused', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestGetDestroyedSubWindowFocused';
@@ -3886,12 +3887,12 @@ export default function windowPropertiesTest() {
             }
         })
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7800
-         * @tc.name      : testmoveWindowToGlobal_401
-         * @tc.desc      : get the global rect.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testmoveWindowToGlobal_401
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7800
+         * @tc.desc   get the global rect.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testmoveWindowToGlobal_401',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestmoveWindowToGlobal_401';
@@ -3921,13 +3922,13 @@ export default function windowPropertiesTest() {
                 done();
             }
         })
-        /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7900
-     * @tc.name      : testmoveWindowToGlobal_moveConfiguration
-     * @tc.desc      : testmoveWindowToGlobal_moveConfiguration
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testmoveWindowToGlobal_moveConfiguration
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_7900
+     * @tc.desc   testmoveWindowToGlobal_moveConfiguration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testmoveWindowToGlobal_moveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testmoveWindowToGlobal_moveConfiguration';
@@ -3959,13 +3960,13 @@ export default function windowPropertiesTest() {
         done();
       }
     })
-     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0100
-         * @tc.name      : testsetWindowLayoutFullScreen_callback_401
-         * @tc.desc      : testsetWindowLayoutFullScreen_callback_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+        /**
+         * @tc.name   testsetWindowLayoutFullScreen_callback_401
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0100
+         * @tc.desc   testsetWindowLayoutFullScreen_callback_401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testsetWindowLayoutFullScreen_callback_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'testsetWindowLayoutFullScreen_callback_401';
@@ -3991,13 +3992,13 @@ export default function windowPropertiesTest() {
                 done();
             }
         })
-         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0200
-         * @tc.name      : testsetWindowLayoutFullScreen_promise_401
-         * @tc.desc      : testsetWindowLayoutFullScreen_promise_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+        /**
+         * @tc.name   testsetWindowLayoutFullScreen_promise_401
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_ERRORCODE_0200
+         * @tc.desc   testsetWindowLayoutFullScreen_promise_401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testsetWindowLayoutFullScreen_promise_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'testsetWindowLayoutFullScreen_promise_401';
@@ -4023,12 +4024,12 @@ export default function windowPropertiesTest() {
         })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
-         * @tc.name      : testgetGlobalRect
-         * @tc.desc      : get the global rect.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testgetGlobalRect
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_DET_GLOBAL_RECT_0100
+         * @tc.desc   get the global rect.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testgetGlobalRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'testgetGlobalRect';
@@ -4051,14 +4052,14 @@ export default function windowPropertiesTest() {
                 }
             }
         })
-        /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0100
-         * @tc.name      : testRestoreByMinimize
-         * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+      /**
+       * @tc.name   testRestoreByMinimize
+       * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0100
+       * @tc.desc   After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('testRestoreByMinimize', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
         let caseName = 'TestRestoreByMinimize';
         try {
@@ -4111,12 +4112,12 @@ export default function windowPropertiesTest() {
       })
 
         /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0200
-         * @tc.name      : testRestoreByMinimizeBtn
-         * @tc.desc      : After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
+         * @tc.name   testRestoreByMinimizeBtn
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_RSSTORE_0200
+         * @tc.desc   After the app main window is minimized, if the Ability is not in the background state, you can restore app main window.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testRestoreByMinimizeBtn', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             let caseName = 'TestRestoreByMinimizeBtn';
@@ -4179,13 +4180,13 @@ export default function windowPropertiesTest() {
 
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_DISPLAYIDCHANGE_JS_API_0100
-        * @tc.name      : testOnDisplayIdChangeTest
-        * @tc.desc      : On DisplayChange
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level0
-        */
+         * @tc.name   testOnDisplayIdChangeTest
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_DISPLAYIDCHANGE_JS_API_0100
+         * @tc.desc   On DisplayChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testOnDisplayIdChangeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
             let caseName = 'testOnDisplayIdChangeTest';
             console.log(caseName + 'start run');
@@ -4207,13 +4208,13 @@ export default function windowPropertiesTest() {
 
 
         /**
-        * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_DISPLAYIDCHANGE_JS_API_0200
-        * @tc.name      : testOffDisplayIdChangeTest
-        * @tc.desc      : Off DisplayChange
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        * @tc.level     : Level2
-        */
+         * @tc.name   testOffDisplayIdChangeTest
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOW_DISPLAYIDCHANGE_JS_API_0200
+         * @tc.desc   Off DisplayChange
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testOffDisplayIdChangeTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
             let caseName = 'testOffDisplayIdChangeTest';
             console.log(caseName + 'start run');
@@ -4235,13 +4236,13 @@ export default function windowPropertiesTest() {
             done();
         })
 
-            /**
-     * @tc.number    : SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_0100
-     * @tc.name      : test_getAllWindowLayoutInfo_401
-     * @tc.desc      : test_getAllWindowLayoutInfo_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   test_getAllWindowLayoutInfo_401
+     * @tc.number SUB_BASIC_WMS_GET_ALL_WINDOW_LAYOUT_INFO_0100
+     * @tc.desc   test_getAllWindowLayoutInfo_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getAllWindowLayoutInfo_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_getAllWindowLayoutInfo_401';
@@ -4274,12 +4275,12 @@ export default function windowPropertiesTest() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_START_MOVING_0100
-     * @tc.name      : test_startMoving_mainWindow
-     * @tc.desc      : test_startMoving_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_startMoving_mainWindow
+     * @tc.number SUB_BASIC_WMS_START_MOVING_0100
+     * @tc.desc   test_startMoving_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startMoving_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_startMoving_mainWindow';
@@ -4312,12 +4313,12 @@ export default function windowPropertiesTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_STOP_MOVING_0100
-     * @tc.name      : test_stopMoving_mainWindow
-     * @tc.desc      : test_stopMoving_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_stopMoving_mainWindow
+     * @tc.number SUB_BASIC_WMS_STOP_MOVING_0100
+     * @tc.desc   test_stopMoving_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_stopMoving_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_stopMoving_mainWindow';
@@ -4350,12 +4351,12 @@ export default function windowPropertiesTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_LIMITS_0100
-     * @tc.name      : test_SetWindowLimits_40vp
-     * @tc.desc      : test_SetWindowLimits_40vp
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SetWindowLimits_40vp
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_LIMITS_0100
+     * @tc.desc   test_SetWindowLimits_40vp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SetWindowLimits_40vp', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
       let msg = ' test_SetWindowLimits_40vp ';
@@ -4399,13 +4400,13 @@ export default function windowPropertiesTest() {
     })
      
     
-      /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0010
-     * @tc.name      : testSetDefaultDensityEnabled_true
-     * @tc.desc      : Test the function value of setDefaultDensityEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+    /**
+     * @tc.name   testSetDefaultDensityEnabled_true
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0010
+     * @tc.desc   Test the function value of setDefaultDensityEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSetDefaultDensityEnabled_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let msgStr = "testSetDefaultDensityEnabled_true";
@@ -4422,13 +4423,13 @@ export default function windowPropertiesTest() {
     })
 
 
-       /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0020
-     * @tc.name      : testSetDefaultDensityEnabled_false
-     * @tc.desc      : Test the function value of setDefaultDensityEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+    /**
+     * @tc.name   testSetDefaultDensityEnabled_false
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0020
+     * @tc.desc   Test the function value of setDefaultDensityEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testSetDefaultDensityEnabled_false", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let msgStr = "testSetDefaultDensityEnabled_false";
@@ -4445,12 +4446,12 @@ export default function windowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0030
-     * @tc.name      : testRectChangeOptions_on
-     * @tc.desc      : Test the function value of testRectChangeOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectChangeOptions_on
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0030
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRectChangeOptions_on", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testRectChangeOptions_on";
@@ -4485,14 +4486,14 @@ export default function windowPropertiesTest() {
       }
     })
 
-     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0900
-         * @tc.name      : test_setWindowGrayScale_0
-         * @tc.desc      : test_setWindowGrayScale_0
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+    /**
+     * @tc.name   test_setWindowGrayScale_0
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_0900
+     * @tc.desc   test_setWindowGrayScale_0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_setWindowGrayScale_0", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_0";
       console.log(msgStr + "begin");
@@ -4521,13 +4522,13 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1000
-         * @tc.name      : test_setWindowGrayScale_0.5
-         * @tc.desc      : test_setWindowGrayScale_0.5
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   test_setWindowGrayScale_0.5
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1000
+     * @tc.desc   test_setWindowGrayScale_0.5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_setWindowGrayScale_0.5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_0.5";
       console.log(msgStr + "begin");
@@ -4556,13 +4557,13 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1100
-         * @tc.name      : test_setWindowGrayScale_1
-         * @tc.desc      : test_setWindowGrayScale_1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   test_setWindowGrayScale_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1100
+     * @tc.desc   test_setWindowGrayScale_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_setWindowGrayScale_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_1";
       console.log(msgStr + "begin");
@@ -4592,13 +4593,13 @@ export default function windowPropertiesTest() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1200
-         * @tc.name      : test_setWindowGrayScale_-1
-         * @tc.desc      : test_setWindowGrayScale_-1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 3
-         */
+     * @tc.name   test_setWindowGrayScale_-1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1200
+     * @tc.desc   test_setWindowGrayScale_-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setWindowGrayScale_-1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_-1";
       console.log(msgStr + "begin");
@@ -4627,13 +4628,13 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1300
-         * @tc.name      : test_setWindowGrayScale_2
-         * @tc.desc      : test_setWindowGrayScale_2
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   test_setWindowGrayScale_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1300
+     * @tc.desc   test_setWindowGrayScale_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_setWindowGrayScale_2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_setWindowGrayScale_2";
       console.log(msgStr + "begin");
@@ -4663,13 +4664,13 @@ export default function windowPropertiesTest() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1400
-         * @tc.name      : test_subWindow_setWindowGrayScale_1
-         * @tc.desc      : test_subWindow_setWindowGrayScale_1
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   test_subWindow_setWindowGrayScale_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOW_GRAYSCALE_1400
+     * @tc.desc   test_subWindow_setWindowGrayScale_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_subWindow_setWindowGrayScale_1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_subWindow_setWindowGrayScale_1";
       console.log(msgStr + "begin");
@@ -4715,12 +4716,12 @@ export default function windowPropertiesTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_snapshotIgnorePrivacy_0100
-     * @tc.name      : test_snapshotIgnorePrivacy_1300002
-     * @tc.desc      :  test_snapshotIgnorePrivacy_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_snapshotIgnorePrivacy_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_snapshotIgnorePrivacy_0100
+     * @tc.desc   test_snapshotIgnorePrivacy_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_snapshotIgnorePrivacy_1300002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_snapshotIgnorePrivacy_1300002";
@@ -4778,12 +4779,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_snapshotIgnorePrivacy_0200
-     * @tc.name      : test_snapshotIgnorePrivacy
-     * @tc.desc      :  test_snapshotIgnorePrivacy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_snapshotIgnorePrivacy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_snapshotIgnorePrivacy_0200
+     * @tc.desc   test_snapshotIgnorePrivacy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_snapshotIgnorePrivacy", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_snapshotIgnorePrivacy";
@@ -4822,12 +4823,12 @@ export default function windowPropertiesTest() {
     })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWRECT_0100
-       * @tc.desc      : 无标题栏子窗可绘制区域等于窗口区域
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0100
+       * @tc.desc   无标题栏子窗可绘制区域等于窗口区域
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWRECT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWRECT_0100 ';
@@ -4900,12 +4901,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWRECT_0200
-       * @tc.desc      : 有装饰栏子窗可绘制区域等于窗口区域减去装饰栏区域
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_0200
+       * @tc.desc   有装饰栏子窗可绘制区域等于窗口区域减去装饰栏区域
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWRECT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWRECT_0200 ';
@@ -4984,12 +4985,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWTYPE_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWTYPE_0100
-       * @tc.desc      : test_GETWINDOWPROPERTIES_WINDOWTYPE_0100
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWTYPE_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWTYPE_0100
+       * @tc.desc   test_GETWINDOWPROPERTIES_WINDOWTYPE_0100
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWTYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWTYPE_0100 ';
@@ -5031,12 +5032,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWTYPE_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWTYPE_0200
-       * @tc.desc      : 查询模态窗窗口类型
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWTYPE_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWTYPE_0200
+       * @tc.desc   查询模态窗窗口类型
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWTYPE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWTYPE_0200 ';
@@ -5065,12 +5066,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_FULLSCREEN_0100
-       * @tc.desc      : 最大化主窗查询isFullScreen和isLayoutFullScreen属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_FULLSCREEN_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0100
+       * @tc.desc   最大化主窗查询isFullScreen和isLayoutFullScreen属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_FULLSCREEN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FULLSCREEN_0100 ';
@@ -5109,12 +5110,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_FULLSCREEN_0200
-       * @tc.desc      : 最大化非沉浸式主窗查询isFullScreen和isLayoutFullScreen属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_FULLSCREEN_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0200
+       * @tc.desc   最大化非沉浸式主窗查询isFullScreen和isLayoutFullScreen属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_FULLSCREEN_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FULLSCREEN_0200 ';
@@ -5153,12 +5154,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_FULLSCREEN_0300
-       * @tc.desc      : 最大化且沉浸式主窗查询isFullScreen和isLayoutFullScreen属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_FULLSCREEN_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0300
+       * @tc.desc   最大化且沉浸式主窗查询isFullScreen和isLayoutFullScreen属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_FULLSCREEN_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FULLSCREEN_0300 ';
@@ -5197,12 +5198,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0400
-       * @tc.name      : test_GETWINDOWPROPERTIES_FULLSCREEN_0400
-       * @tc.desc      : 最大化且沉浸式不可hover回显标题栏和dock栏主窗查询isFullScreen和isLayoutFullScreen属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_FULLSCREEN_0400
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0400
+       * @tc.desc   最大化且沉浸式不可hover回显标题栏和dock栏主窗查询isFullScreen和isLayoutFullScreen属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_FULLSCREEN_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FULLSCREEN_0400 ';
@@ -5241,12 +5242,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0500
-       * @tc.name      : test_GETWINDOWPROPERTIES_FULLSCREEN_0500
-       * @tc.desc      : 开启/关闭沉浸式布局后，主窗查询isLayoutFullScreen属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_FULLSCREEN_0500
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FULLSCREEN_0500
+       * @tc.desc   开启/关闭沉浸式布局后，主窗查询isLayoutFullScreen属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_FULLSCREEN_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FULLSCREEN_0500 ';
@@ -5274,12 +5275,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_FOCUSABLE_0100
-       * @tc.desc      : 开启/关闭窗口获焦能力后，主窗查询focusable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0100
+       * @tc.desc   开启/关闭窗口获焦能力后，主窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_FOCUSABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_0100 ';
@@ -5327,12 +5328,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_FOCUSABLE_0200
-       * @tc.desc      : 开启/关闭窗口获焦能力后，子窗查询focusable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0200
+       * @tc.desc   开启/关闭窗口获焦能力后，子窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_FOCUSABLE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_0200 ';
@@ -5384,12 +5385,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_FOCUSABLE_0300
-       * @tc.desc      : 开启/关闭窗口获焦能力后，dialog窗查询focusable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_FOCUSABLE_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_FOCUSABLE_0300
+       * @tc.desc   开启/关闭窗口获焦能力后，dialog窗查询focusable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_FOCUSABLE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_FOCUSABLE_0300 ';
@@ -5446,12 +5447,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_TOUCHABLE_0100
-       * @tc.desc      : 设置主窗可触/不可触后，主窗查询touchable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_TOUCHABLE_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0100
+       * @tc.desc   设置主窗可触/不可触后，主窗查询touchable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_TOUCHABLE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TOUCHABLE_0100 ';
@@ -5499,12 +5500,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_TOUCHABLE_0200
-       * @tc.desc      : 设置子窗可触/不可触后，子窗查询touchable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_TOUCHABLE_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0200
+       * @tc.desc   设置子窗可触/不可触后，子窗查询touchable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_TOUCHABLE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TOUCHABLE_0200 ';
@@ -5556,12 +5557,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_TOUCHABLE_0300
-       * @tc.desc      : 设置dialog窗可触/不可触后，dialog窗查询touchable属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_TOUCHABLE_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TOUCHABLE_0300
+       * @tc.desc   设置dialog窗可触/不可触后，dialog窗查询touchable属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_TOUCHABLE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TOUCHABLE_0300 ';
@@ -5619,12 +5620,12 @@ export default function windowPropertiesTest() {
 
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_BRIGHTNESS_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_BRIGHTNESS_0100
-       * @tc.desc      : 主窗设置亮度后，主子窗dialog窗查询brightness属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_BRIGHTNESS_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_BRIGHTNESS_0100
+       * @tc.desc   主窗设置亮度后，主子窗dialog窗查询brightness属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_BRIGHTNESS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_BRIGHTNESS_0100 ';
@@ -5692,12 +5693,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_BRIGHTNESS_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_BRIGHTNESS_0200
-       * @tc.desc      : 未设置过亮度的主窗，主窗查询brightness属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_BRIGHTNESS_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_BRIGHTNESS_0200
+       * @tc.desc   未设置过亮度的主窗，主窗查询brightness属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_BRIGHTNESS_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = 'test_GETWINDOWPROPERTIES_BRIGHTNESS_0200';
@@ -5721,12 +5722,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_KEEPSCREENON_0100
-       * @tc.desc      : 主窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_KEEPSCREENON_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0100
+       * @tc.desc   主窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_KEEPSCREENON_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_KEEPSCREENON_0100 ';
@@ -5774,12 +5775,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_KEEPSCREENON_0200
-       * @tc.desc      : 子窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_KEEPSCREENON_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0200
+       * @tc.desc   子窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_KEEPSCREENON_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_KEEPSCREENON_0200 ';
@@ -5831,12 +5832,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_KEEPSCREENON_0300
-       * @tc.desc      : dialog窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_KEEPSCREENON_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_KEEPSCREENON_0300
+       * @tc.desc   dialog窗设置常亮/非常亮后，主窗查询isKeepScreenOn属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_KEEPSCREENON_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_KEEPSCREENON_0300 ';
@@ -5893,12 +5894,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_PRIVACYMODE_0100
-       * @tc.desc      : 主窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_PRIVACYMODE_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0100
+       * @tc.desc   主窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_PRIVACYMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_PRIVACYMODE_0100 ';
@@ -5946,12 +5947,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_PRIVACYMODE_0200
-       * @tc.desc      : 子窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_PRIVACYMODE_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0200
+       * @tc.desc   子窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_PRIVACYMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_PRIVACYMODE_0200 ';
@@ -6003,12 +6004,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_PRIVACYMODE_0300
-       * @tc.desc      : dialog窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_PRIVACYMODE_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_PRIVACYMODE_0300
+       * @tc.desc   dialog窗设置隐私模式/非隐私模式，主窗查询isPrivacyMode属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_PRIVACYMODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_PRIVACYMODE_0300 ';
@@ -6065,12 +6066,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_TRANSPARENT_0100
-       * @tc.desc      : 主窗设置透明/非透明背景色后查询isTransparent属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_TRANSPARENT_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0100
+       * @tc.desc   主窗设置透明/非透明背景色后查询isTransparent属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_TRANSPARENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TRANSPARENT_0100 ';
@@ -6096,12 +6097,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_TRANSPARENT_0200
-       * @tc.desc      : 子窗设置透明/非透明背景色后查询isTransparent属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_TRANSPARENT_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0200
+       * @tc.desc   子窗设置透明/非透明背景色后查询isTransparent属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_TRANSPARENT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TRANSPARENT_0200 ';
@@ -6134,12 +6135,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_TRANSPARENT_0300
-       * @tc.desc      : 系统窗设置透明/非透明背景色后查询isTransparent属性
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_TRANSPARENT_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_TRANSPARENT_0300
+       * @tc.desc   系统窗设置透明/非透明背景色后查询isTransparent属性
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_TRANSPARENT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_TRANSPARENT_0300 ';
@@ -6177,12 +6178,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWID_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWID_0100
-       * @tc.desc      : 主窗查询windowid
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWID_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWID_0100
+       * @tc.desc   主窗查询windowid
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWID_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWID_0100 ';
@@ -6215,12 +6216,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_DISPLAYID_1900
-       * @tc.name      : test_GETWINDOWPROPERTIES_DISPLAYID_1900
-       * @tc.desc      : 主窗查询所在displayid
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_DISPLAYID_1900
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_DISPLAYID_1900
+       * @tc.desc   主窗查询所在displayid
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_DISPLAYID_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_DISPLAYID_1900 ';
@@ -6241,12 +6242,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0100
-       * @tc.name      : test_GETWINDOWPROPERTIES_NAME_0100
-       * @tc.desc      : 主窗查询name
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_NAME_0100
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0100
+       * @tc.desc   主窗查询name
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_NAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_NAME_0100 ';
@@ -6267,12 +6268,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0200
-       * @tc.name      : test_GETWINDOWPROPERTIES_NAME_0200
-       * @tc.desc      : 子窗查询name
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_NAME_0200
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0200
+       * @tc.desc   子窗查询name
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_NAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_NAME_0200 ';
@@ -6324,12 +6325,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0300
-       * @tc.name      : test_GETWINDOWPROPERTIES_NAME_0300
-       * @tc.desc      : test_GETWINDOWPROPERTIES_NAME_0300
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_NAME_0300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0300
+       * @tc.desc   test_GETWINDOWPROPERTIES_NAME_0300
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_NAME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_NAME_0300 ';
@@ -6373,12 +6374,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0400
-       * @tc.name      : test_GETWINDOWPROPERTIES_NAME_0400
-       * @tc.desc      : dialog窗查询name
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   test_GETWINDOWPROPERTIES_NAME_0400
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_NAME_0400
+       * @tc.desc   dialog窗查询name
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('test_GETWINDOWPROPERTIES_NAME_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_NAME_0400 ';
@@ -6409,12 +6410,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_2300
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWRECT_2300
-       * @tc.desc      : 子窗在loadcontent之前getWindowProperties
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_2300
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_2300
+       * @tc.desc   子窗在loadcontent之前getWindowProperties
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWRECT_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = ' test_GETWINDOWPROPERTIES_WINDOWRECT_2300 ';
@@ -6460,12 +6461,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_2400
-       * @tc.name      : test_GETWINDOWPROPERTIES_WINDOWRECT_2400
-       * @tc.desc      : 主窗在loadcontent之前getWindowProperties
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   test_GETWINDOWPROPERTIES_WINDOWRECT_2400
+       * @tc.number SUB_BASIC_WMS_GETWINDOWPROPERTIES_WINDOWRECT_2400
+       * @tc.desc   主窗在loadcontent之前getWindowProperties
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('test_GETWINDOWPROPERTIES_WINDOWRECT_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let msgStr = 'test_GETWINDOWPROPERTIES_WINDOWRECT_2400';      
@@ -6519,12 +6520,12 @@ export default function windowPropertiesTest() {
 
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0100
-       * @tc.name      : testGetGlobalWindowMode_Null_1300016
-       * @tc.desc      : testGetGlobalWindowMode_Null_1300016
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level3
+       * @tc.name   testGetGlobalWindowMode_Null_1300016
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0100
+       * @tc.desc   testGetGlobalWindowMode_Null_1300016
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testGetGlobalWindowMode_Null_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Null_1300016';
@@ -6551,12 +6552,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0200
-       * @tc.name      : testGetGlobalWindowMode_NegativeId_1300016
-       * @tc.desc      : testGetGlobalWindowMode_NegativeId_1300016
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level3
+       * @tc.name   testGetGlobalWindowMode_NegativeId_1300016
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0200
+       * @tc.desc   testGetGlobalWindowMode_NegativeId_1300016
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testGetGlobalWindowMode_NegativeId_1300016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_NegativeId_1300016';
@@ -6578,12 +6579,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0300
-       * @tc.name      : testGetGlobalWindowMode_UnexistedId
-       * @tc.desc      : testGetGlobalWindowMode_UnexistedId
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level3
+       * @tc.name   testGetGlobalWindowMode_UnexistedId
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0300
+       * @tc.desc   testGetGlobalWindowMode_UnexistedId
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('testGetGlobalWindowMode_UnexistedId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_UnexistedId';
@@ -6610,12 +6611,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0400
-       * @tc.name      : testGetGlobalWindowMode_Fullscreen_And_Subwindow
-       * @tc.desc      : testGetGlobalWindowMode_Fullscreen_And_Subwindow
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Subwindow
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0400
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Subwindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetGlobalWindowMode_Fullscreen_And_Subwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Subwindow';
@@ -6666,12 +6667,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0500
-       * @tc.name      : testGetGlobalWindowMode_Fullscreen_And_Float
-       * @tc.desc      : testGetGlobalWindowMode_Fullscreen_And_Float
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level1
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Float
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0500
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Float
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testGetGlobalWindowMode_Fullscreen_And_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Float';
@@ -6739,6 +6740,14 @@ export default function windowPropertiesTest() {
         }
       })
 
+      /**
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Hide_Subwindow
+       * @tc.number testGetGlobalWindowMode_Fullscreen_And_Hide_Subwindow
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Hide_Subwindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       // it('testGetGlobalWindowMode_Fullscreen_And_Hide_Subwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
       //   let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Hide_Subwindow';
       //   let subWindowClass: window.Window | undefined;
@@ -6787,12 +6796,12 @@ export default function windowPropertiesTest() {
       // })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0700
-       * @tc.name      : testGetGlobalWindowMode_Fullscreen_And_Pip
-       * @tc.desc      : testGetGlobalWindowMode_Fullscreen_And_Pip
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Pip
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0700
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Pip
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetGlobalWindowMode_Fullscreen_And_Pip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Pip';
@@ -6861,12 +6870,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0800
-       * @tc.name      : testGetGlobalWindowMode_Fullscreen_And_Dialog
-       * @tc.desc      : testGetGlobalWindowMode_Fullscreen_And_Dialog
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level2
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Dialog
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0800
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Dialog
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('testGetGlobalWindowMode_Fullscreen_And_Dialog', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Dialog';
@@ -6932,12 +6941,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0900
-       * @tc.name      : testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float
-       * @tc.desc      : testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level2
+       * @tc.name   testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_0900
+       * @tc.desc   testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float';
@@ -6978,12 +6987,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1000
-       * @tc.name      : testGetGlobalWindowMode_Empty
-       * @tc.desc      : testGetGlobalWindowMode_Empty
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGetGlobalWindowMode_Empty
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1000
+       * @tc.desc   testGetGlobalWindowMode_Empty
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetGlobalWindowMode_Empty', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Empty';
@@ -7014,12 +7023,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1100
-       * @tc.name      : testGetGlobalWindowMode_Pip_And_Float
-       * @tc.desc      : testGetGlobalWindowMode_Pip_And_Float
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGetGlobalWindowMode_Pip_And_Float
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1100
+       * @tc.desc   testGetGlobalWindowMode_Pip_And_Float
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetGlobalWindowMode_Pip_And_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_Pip_And_Float';
@@ -7073,12 +7082,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1200
-       * @tc.name      : testGetGlobalWindowMode_FullScreeen_Pip_And_Float
-       * @tc.desc      : testGetGlobalWindowMode_FullScreeen_Pip_And_Float
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGetGlobalWindowMode_FullScreeen_Pip_And_Float
+       * @tc.number SUB_BASIC_WMS_GETGLOBALWINDOWMODE_1200
+       * @tc.desc   testGetGlobalWindowMode_FullScreeen_Pip_And_Float
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
        */
       it('testGetGlobalWindowMode_FullScreeen_Pip_And_Float', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async(done: Function) => {
         let caseName = 'testGetGlobalWindowMode_FullScreeen_Pip_And_Float';
@@ -7155,12 +7164,12 @@ export default function windowPropertiesTest() {
       })
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_GLOBALWINDOWMODE_ENUM_0100
-       * @tc.name      : testGlobalWindowModeEnum
-       * @tc.desc      : testGlobalWindowModeEnum
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level0
+       * @tc.name   testGlobalWindowModeEnum
+       * @tc.number SUB_BASIC_WMS_GLOBALWINDOWMODE_ENUM_0100
+       * @tc.desc   testGlobalWindowModeEnum
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testGlobalWindowModeEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async(done: Function) => {
         let caseName = 'testGlobalWindowModeEnum';
@@ -7181,13 +7190,13 @@ export default function windowPropertiesTest() {
           }
         }
       })
-      /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0100
-     * @tc.name      : testSnapShotSync_subWindow_Destroy_1300002
-     * @tc.desc      : snapshot 1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   testSnapShotSync_subWindow_Destroy_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0100
+     * @tc.desc   snapshot 1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapShotSync_subWindow_Destroy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow_Destroy_1300002';
@@ -7207,12 +7216,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0200
-     * @tc.name      : testSnapShotSync_subWindow_not_loadContent_1300002
-     * @tc.desc      : snapshot 1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapShotSync_subWindow_not_loadContent_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0200
+     * @tc.desc   snapshot 1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapShotSync_subWindow_not_loadContent_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow_not_loadContent_1300002';
@@ -7236,12 +7245,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0300
-     * @tc.name      : testSnapShotSync_subWindow_not_showWindow_1300002
-     * @tc.desc      : snapshot 1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapShotSync_subWindow_not_showWindow_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0300
+     * @tc.desc   snapshot 1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapShotSync_subWindow_not_showWindow_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow_not_showWindow_1300002';
@@ -7266,12 +7275,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0400
-     * @tc.name      : testSnapShotSync_mainWindow
-     * @tc.desc      : snapshot mainWIndow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSnapShotSync_mainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0400
+     * @tc.desc   snapshot mainWIndow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSnapShotSync_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_mainWindow';
@@ -7302,12 +7311,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0500
-     * @tc.name      : testSnapShotSync_mainWindow_Privacy
-     * @tc.desc      : snapshot mainWIndow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testSnapShotSync_mainWindow_Privacy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0500
+     * @tc.desc   snapshot mainWIndow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSnapShotSync_mainWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_mainWindow_Privacy';
@@ -7339,12 +7348,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0600
-     * @tc.name      : testSnapShotSync_subWindow
-     * @tc.desc      : snapshot subWIndow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSnapShotSync_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0600
+     * @tc.desc   snapshot subWIndow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSnapShotSync_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow';
@@ -7379,14 +7388,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0700
-     * @tc.name      : testSnapShotSync_subWindow_Privacy
-     * @tc.desc      : snapshot testSnapShotSync_subWindow_Privacy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSnapShotSync_subWindow_Privacy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0700
+     * @tc.desc   snapshot testSnapShotSync_subWindow_Privacy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testSnapShotSync_subWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSnapShotSync_subWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_subWindow_Privacy';
       let subWindow = await windowStage.createSubWindow('testSnapShotSync_subWindow_Privacy');
       console.info(`${caseName} Succeeded in creating the subwindow. Data: ` + JSON.stringify(subWindow));
@@ -7420,14 +7429,14 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0800
-     * @tc.name      : testSnapShotSync_dialogWindow
-     * @tc.desc      : snapshot testSnapShotSync_dialogWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSnapShotSync_dialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0800
+     * @tc.desc   snapshot testSnapShotSync_dialogWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testSnapShotSync_dialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testSnapShotSync_dialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSnapShotSync_dialogWindow';
       let config : window.Configuration = {
         name: "testSnapShotSync_dialogWindow",
@@ -7465,12 +7474,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0900
-     * @tc.name      : testSnapShotSync_dialogWindow_Privacy
-     * @tc.desc      : snapshot testSnapShotSync_dialogWindow_Privacy
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSnapShotSync_dialogWindow_Privacy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_0900
+     * @tc.desc   snapshot testSnapShotSync_dialogWindow_Privacy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSnapShotSync_dialogWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSnapShotSync_dialogWindow_Privacy';
@@ -7511,12 +7520,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_1000
-     * @tc.name      : testSnapShotSync_floatWindow
-     * @tc.desc      : snapshot testSnapShotSync_floatWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapShotSync_floatWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_1000
+     * @tc.desc   snapshot testSnapShotSync_floatWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapShotSync_floatWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapShotSync_floatWindow';
@@ -7559,12 +7568,12 @@ export default function windowPropertiesTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_1100
-     * @tc.name      : testSnapShotSync_floatWindow_Privacy
-     * @tc.desc      : snapshot testSnapShotSync_floatWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSnapShotSync_floatWindow_Privacy
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SNAPSHOTSYNC_1100
+     * @tc.desc   snapshot testSnapShotSync_floatWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapShotSync_floatWindow_Privacy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSnapShotSync_floatWindow_Privacy';

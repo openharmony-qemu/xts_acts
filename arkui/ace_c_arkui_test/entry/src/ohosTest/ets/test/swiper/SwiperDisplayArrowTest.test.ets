@@ -26,52 +26,52 @@ export default function swiperDisplayArrowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0100
-     * @tc.name       : testSwiperDisplayArrow001
-     * @tc.desc       : testing displayArrow for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisplayArrow001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0100
+     * @tc.desc   testing displayArrow for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayArrow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayArrow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0200
-     * @tc.name       : testSwiperDisplayArrow002
-     * @tc.desc       : testing displayArrow for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisplayArrow002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0200
+     * @tc.desc   testing displayArrow for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayArrow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayArrow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0300
-     * @tc.name       : testSwiperDisplayArrow003
-     * @tc.desc       : testing displayArrow for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDisplayArrow003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0300
+     * @tc.desc   testing displayArrow for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayArrow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayArrow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0400
-     * @tc.name       : testSwiperDisplayArrow004
-     * @tc.desc       : testing displayArrow for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperDisplayArrow004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DISPLAYARROW_0400
+     * @tc.desc   testing displayArrow for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperDisplayArrow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperDisplayArrow004()).assertEqual(0)

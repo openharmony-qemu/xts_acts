@@ -27,12 +27,12 @@ export default function uioNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_READV_0100
-     * @tc.name       : testMuslUioReadv001
-     * @tc.desc       : test readv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUioReadv001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_READV_0100
+     * @tc.desc   test readv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioReadv001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -43,12 +43,12 @@ export default function uioNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_READV_0200
-     * @tc.name       : testMuslUioReadv002
-     * @tc.desc       : test readv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUioReadv002
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_READV_0200
+     * @tc.desc   test readv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioReadv002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = 0;
@@ -59,12 +59,12 @@ export default function uioNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_WRITEV_0100
-     * @tc.name       : testMuslUioWritev001
-     * @tc.desc       : test writev
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslUioWritev001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_WRITEV_0100
+     * @tc.desc   test writev
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioWritev001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let param = -1;
@@ -74,12 +74,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PREADV_0100
-     * @tc.name       : testMuslUioPReadV001
-     * @tc.desc       : test preadv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioPReadV001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PREADV_0100
+     * @tc.desc   test preadv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioPReadV001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.pReadV();
@@ -88,12 +88,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PREADV64_0100
-     * @tc.name       : testMuslUioPReadV64001
-     * @tc.desc       : test preadv64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioPReadV64001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PREADV64_0100
+     * @tc.desc   test preadv64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioPReadV64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.pReadV64();
@@ -102,12 +102,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PWRITEV_0100
-     * @tc.name       : testMuslUioPWriteV001
-     * @tc.desc       : test pwritev
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioPWriteV001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PWRITEV_0100
+     * @tc.desc   test pwritev
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioPWriteV001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.pWriteV();
@@ -116,12 +116,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PWRITEV64_0100
-     * @tc.name       : testMuslUioPWriteV64001
-     * @tc.desc       : test pwritev64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioPWriteV64001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PWRITEV64_0100
+     * @tc.desc   test pwritev64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioPWriteV64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.pWriteV64();
@@ -130,12 +130,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PROCESSVMREADV_0100
-     * @tc.name       : testMuslUioProcessVmReadV001
-     * @tc.desc       : test process_vm_readv
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioProcessVmReadV001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PROCESSVMREADV_0100
+     * @tc.desc   test process_vm_readv
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioProcessVmReadV001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.processVmReadV();
@@ -144,12 +144,12 @@ export default function uioNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_UIO_PROCESSVMWRITEV_0100
-     * @tc.name       : testMuslUioProcessVmWriteV001
-     * @tc.desc       : test process_vm_writev
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslUioProcessVmWriteV001
+     * @tc.number SUB_THIRDPARTY_MUSL_UIO_PROCESSVMWRITEV_0100
+     * @tc.desc   test process_vm_writev
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslUioProcessVmWriteV001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = uio.processVmWriteV();

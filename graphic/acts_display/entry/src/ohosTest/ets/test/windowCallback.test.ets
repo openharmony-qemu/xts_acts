@@ -55,14 +55,14 @@ export default function windowCallbackTest() {
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0490
-     * @tc.name      : testGetCutoutInfo_Callbcak
-     * @tc.desc      : Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testGetCutoutInfo_Callbcak
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0490
+     * @tc.desc   Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetCutoutInfo_Callbcak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testGetCutoutInfo_Callbcak', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetCutoutInfo_Callbcak';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin context==' + JSON.stringify(context));
@@ -80,14 +80,14 @@ export default function windowCallbackTest() {
       })
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2310
-     * @tc.name      : testOrientation_Enum
-     * @tc.desc      : Test the enumeration value of Orientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOrientation_Enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_2310
+     * @tc.desc   Test the enumeration value of Orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testOrientation_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testOrientation_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testOrientation_Enum';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -106,12 +106,12 @@ export default function windowCallbackTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name      : testGetCutoutInfo_Promise
-     * @tc.desc      : Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testGetCutoutInfo_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   Obtain information about unavailable screen areas such as the hole screen, fringe screen, and waterfall screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetCutoutInfo_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetCutoutInfo_Promise';

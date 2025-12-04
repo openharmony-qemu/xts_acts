@@ -100,12 +100,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0010
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-	 * @tc.size MediumTest
-	 * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0010 start *************');
@@ -131,14 +131,14 @@ describe('relationalStoreErrorCodeTest', () => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0010 end *************');
     })
 
-	/**
-   * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0020
-   * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8300
-   * @tc.desc resultSet getRow normal test
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 2
-   */
+    /**
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0020
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8300
+     * @tc.desc   resultSet getRow normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0020 start *************');
       let predicates = new dataRdb.RdbPredicates('test');
@@ -162,12 +162,12 @@ describe('relationalStoreErrorCodeTest', () => {
       console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0020 end *************');
     })
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_RESULTSET_0030
+     * @tc.name   SUB_DDM_RELATIONALETS_RESULTSET_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8500
-     * @tc.desc resultSet getRow normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getRow normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_RESULTSET_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_RESULTSET_0030 start *************');
@@ -198,12 +198,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0010
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-	 * @tc.size MediumTest
-	 * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0010 start *************');
@@ -245,12 +245,12 @@ describe('relationalStoreErrorCodeTest', () => {
 
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0020
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0020
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-	 * @tc.size MediumTest
-	 * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0020 start *************');
@@ -336,12 +336,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0030
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0030
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0030 start *************');
@@ -399,12 +399,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0040
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0040
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0040 start *************');
@@ -446,12 +446,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0050
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0050 start *************');
@@ -508,12 +508,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0060
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0060 start *************');
@@ -663,12 +663,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0070
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0070
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0070 start *************');
@@ -879,12 +879,12 @@ describe('relationalStoreErrorCodeTest', () => {
     })
 
     /**
-     * @tc.name SUB_DDM_RELATIONALETS_ERRORCODETSET_0010
+     * @tc.name   SUB_DDM_RELATIONALETS_ERRORCODETSET_0080
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ResultSetJsApiTest_8400
-     * @tc.desc resultSet getBlob normal test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   resultSet getBlob normal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DDM_RELATIONALETS_ERRORCODETSET_0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         console.info(TAG + '************* SUB_DDM_RELATIONALETS_ERRORCODETSET_0080 start *************');

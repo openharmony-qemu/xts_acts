@@ -45,9 +45,12 @@ export default function grid_RowCol_ItemVisibilityTest() {
       console.info("Grid_RowCol_ItemVisibilityTest after each called");
     });
     /**
+     * @tc.name   testGridRowColItemVisibilityNone
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0600
-     * @tc.name testGridRowColItemVisibilityNone
-     * @tc.desc The second griditem set visibility to Visibility.None
+     * @tc.desc   The second griditem set visibility to Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemVisibilityNone',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemVisibilityNone] START');
@@ -86,9 +89,12 @@ export default function grid_RowCol_ItemVisibilityTest() {
       done();
     });
     /**
+     * @tc.name   testGridRowColItemVisibilityHidden
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0700
-     * @tc.name testGridRowColItemVisibilityHidden
-     * @tc.desc The second griditem set visibility to Visibility.Hidden
+     * @tc.desc   The second griditem set visibility to Visibility.Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemVisibilityHidden',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemVisibilityHidden] START');
@@ -130,9 +136,12 @@ export default function grid_RowCol_ItemVisibilityTest() {
       done();
     });
     /**
+     * @tc.name   testGridRowColItemVisibilityVisible
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDITEMCHANGE_0800
-     * @tc.name testGridRowColItemVisibilityVisible
-     * @tc.desc The second griditem set visibility to Visibility.Visible
+     * @tc.desc   The second griditem set visibility to Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColItemVisibilityVisible',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColItemVisibilityVisible] START');

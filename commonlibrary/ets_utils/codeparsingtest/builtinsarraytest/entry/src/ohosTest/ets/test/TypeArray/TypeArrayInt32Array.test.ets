@@ -58,7 +58,7 @@ export default function typeArrayInt32ArrayTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+      await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -74,12 +74,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0001
-     * @tc.name TypeArrayInt32Array0001
-     * @tc.desc Verify Int32Array creation from different sources
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array creation from different sources
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr1 = new Int32Array(3);
@@ -99,12 +99,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0002
-     * @tc.name TypeArrayInt32Array0002
-     * @tc.desc Verify Int32Array properties
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let arr = new Int32Array(1);
@@ -117,12 +117,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0003
-     * @tc.name TypeArrayInt32Array0003
-     * @tc.desc Verify Int32Array with basic operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with basic operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let arr = new Int32Array([10, 20, 30]);
@@ -141,12 +141,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0004
-     * @tc.name TypeArrayInt32Array0004
-     * @tc.desc Verify Int32Array set method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array set method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let arr = new Int32Array(5);
@@ -163,12 +163,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0005
-     * @tc.name TypeArrayInt32Array0005
-     * @tc.desc Verify Int32Array subarray method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let arr = new Int32Array([1, 2, 3, 4, 5]);
@@ -192,12 +192,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0006
-     * @tc.name TypeArrayInt32Array0006
-     * @tc.desc Verify Int32Array with ArrayBuffer sharing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with ArrayBuffer sharing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let buffer = new ArrayBuffer(16);
@@ -227,12 +227,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0007
-     * @tc.name TypeArrayInt32Array0007
-     * @tc.desc Verify Int32Array with DataView interaction
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with DataView interaction
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let buffer = new ArrayBuffer(16);
@@ -252,12 +252,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0008
-     * @tc.name TypeArrayInt32Array0008
-     * @tc.desc Verify Int32Array conversion to and from regular arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array conversion to and from regular arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let original = [1, 2, 3, 4];
@@ -285,12 +285,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(spreadArr[3]).assertEqual(4);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0009
-     * @tc.name TypeArrayInt32Array0009
-     * @tc.desc Verify Int32Array with boundary values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with boundary values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let minValue = -2147483648;
@@ -308,12 +308,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0010
-     * @tc.name TypeArrayInt32Array0010
-     * @tc.desc Verify Int32Array with higher-order functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with higher-order functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let arr = new Int32Array([1, 2, 3, 4, 5]);
@@ -345,12 +345,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0011
-     * @tc.name TypeArrayInt32Array0011
-     * @tc.desc Verify Int32Array with fill and copyWithin
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with fill and copyWithin
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let arr = new Int32Array(5);
@@ -378,12 +378,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0012
-     * @tc.name TypeArrayInt32Array0012
-     * @tc.desc Verify Int32Array with SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let buffer = new SharedArrayBuffer(16);
@@ -403,12 +403,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0013
-     * @tc.name TypeArrayInt32Array0013
-     * @tc.desc Verify Int32Array with bitwise operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -444,12 +444,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0014
-     * @tc.name TypeArrayInt32Array0014
-     * @tc.desc Verify Int32Array with byte order conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with byte order conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -472,12 +472,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0015
-     * @tc.name TypeArrayInt32Array0015
-     * @tc.desc Verify Int32Array with data chunking
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data chunking
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -517,12 +517,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0016
-     * @tc.name TypeArrayInt32Array0016
-     * @tc.desc Verify Int32Array with checksum calculation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with checksum calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -555,12 +555,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0017
-     * @tc.name TypeArrayInt32Array0017
-     * @tc.desc Verify Int32Array with data encryption using XOR
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using XOR
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -578,12 +578,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0018
-     * @tc.name TypeArrayInt32Array0018
-     * @tc.desc Verify Int32Array with bit field manipulation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bit field manipulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -613,12 +613,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0019
-     * @tc.name TypeArrayInt32Array0019
-     * @tc.desc Verify Int32Array with sliding window average
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window average
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -647,12 +647,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0020
-     * @tc.name TypeArrayInt32Array0020
-     * @tc.desc Verify Int32Array with data serialization
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data serialization
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -685,12 +685,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(original.toString()).assertEqual('123,-456,789,305419896');
     })
     /**
+     * @tc.name   TypeArrayInt32Array0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0021
-     * @tc.name TypeArrayInt32Array0021
-     * @tc.desc Verify Int32Array with data interpolation using cubic spline
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data interpolation using cubic spline
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -723,12 +723,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0022
-     * @tc.name TypeArrayInt32Array0022
-     * @tc.desc Verify Int32Array with bitwise rotation operations
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise rotation operations
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -754,12 +754,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0023
-     * @tc.name TypeArrayInt32Array0023
-     * @tc.desc Verify Int32Array with data validation using checksums
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data validation using checksums
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let calculateChecksum = (data: Int32Array): number => {
@@ -785,12 +785,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0024
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0024
-     * @tc.name TypeArrayInt32Array0024
-     * @tc.desc Verify Int32Array with data transformation using z-score
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using z-score
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
 
@@ -823,12 +823,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0025
-     * @tc.name TypeArrayInt32Array0025
-     * @tc.desc Verify Int32Array with data encryption using additive cipher
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using additive cipher
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let additiveCipher = (data: Int32Array, key: number): Int32Array => {
@@ -860,12 +860,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0026
-     * @tc.name TypeArrayInt32Array0026
-     * @tc.desc Verify Int32Array with sliding window maximum
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window maximum
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let slidingWindowMax = (data: Int32Array, windowSize: number): Int32Array => {
@@ -892,12 +892,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0027
-     * @tc.name TypeArrayInt32Array0027
-     * @tc.desc Verify Int32Array with bitwise sign extension
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise sign extension
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let signExtend = (value: number, bits: number): number => {
@@ -921,12 +921,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0028
-     * @tc.name TypeArrayInt32Array0028
-     * @tc.desc Verify Int32Array with data segmentation based on thresholds
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data segmentation based on thresholds
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let segmentData = (data: Int32Array, thresholds: number[]): number[][] => {
@@ -959,12 +959,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0029
-     * @tc.name TypeArrayInt32Array0029
-     * @tc.desc Verify Int32Array with data compression using delta encoding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data compression using delta encoding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let deltaEncode = (data: Int32Array): Int32Array => {
@@ -1006,12 +1006,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0030
-     * @tc.name TypeArrayInt32Array0030
-     * @tc.desc Verify Int32Array with data encryption using transposition cipher
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using transposition cipher
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let transpose = (data: Int32Array, permutation: number[]): Int32Array => {
@@ -1046,12 +1046,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(original.toString()).assertEqual('10,20,30,40,50,60,70');
     })
     /**
+     * @tc.name   TypeArrayInt32Array0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0031
-     * @tc.name TypeArrayInt32Array0031
-     * @tc.desc Verify Int32Array with data filtering using Kalman filter
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data filtering using Kalman filter
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let kalmanFilter = (data: Int32Array, processNoise: number, measurementNoise: number): Int32Array => {
@@ -1093,12 +1093,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0032
-     * @tc.name TypeArrayInt32Array0032
-     * @tc.desc Verify Int32Array with bitwise bit counting
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise bit counting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayInt32Array0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       let countSetBits = (value: number): number => {
@@ -1128,12 +1128,12 @@ export default function typeArrayInt32ArrayTest() {
   })
 
     /**
+     * @tc.name   TypeArrayInt32Array0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0033
-     * @tc.name TypeArrayInt32Array0033
-     * @tc.desc Verify Int32Array with data normalization using robust scaling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data normalization using robust scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let robustScale = (data: Int32Array, newMin: number, newMax: number): Int32Array => {
@@ -1166,12 +1166,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(scaled.length).assertEqual(6);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0034
-     * @tc.name TypeArrayInt32Array0034
-     * @tc.desc Verify Int32Array with sliding window correlation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window correlation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let slidingCorrelation = (data: Int32Array, pattern: Int32Array): Int32Array => {
@@ -1213,12 +1213,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0035
-     * @tc.name TypeArrayInt32Array0035
-     * @tc.desc Verify Int32Array with bitwise bit plane extraction
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise bit plane extraction
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let extractBitPlane = (data: Int32Array, bit: number): Int32Array => {
@@ -1248,12 +1248,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0036
-     * @tc.name TypeArrayInt32Array0036
-     * @tc.desc Verify Int32Array with data transformation using logit function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using logit function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let logitTransform = (data: Int32Array, minVal: number, maxVal: number): Int32Array => {
@@ -1278,12 +1278,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0037
-     * @tc.name TypeArrayInt32Array0037
-     * @tc.desc Verify Int32Array with data aggregation using sliding window
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data aggregation using sliding window
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let windowAggregate = (data: Int32Array, windowSize: number): GeneratedTypeLiteralInterface_3 => {
@@ -1337,12 +1337,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0038
-     * @tc.name TypeArrayInt32Array0038
-     * @tc.desc Verify Int32Array with data encryption using Feistel network (simplified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using Feistel network (simplified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let feistelEncrypt = (value: number, key: number, rounds: number): number => {
@@ -1381,12 +1381,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0039
-     * @tc.name TypeArrayInt32Array0039
-     * @tc.desc Verify Int32Array with data validation using range and pattern checks
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data validation using range and pattern checks
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let validateData = (
@@ -1418,12 +1418,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0040
-     * @tc.name TypeArrayInt32Array0040
-     * @tc.desc Verify Int32Array with data transformation using wavelet transform (simplified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using wavelet transform (simplified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1467,12 +1467,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(reconstructed.toString()).assertEqual(original.toString());
     })
     /**
+     * @tc.name   TypeArrayInt32Array0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0041
-     * @tc.name TypeArrayInt32Array0041
-     * @tc.desc Verify Int32Array with data interpolation using linear regression
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data interpolation using linear regression
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1509,12 +1509,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0042
-     * @tc.name TypeArrayInt32Array0042
-     * @tc.desc Verify Int32Array with bitwise bit reversal for 32-bit values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise bit reversal for 32-bit values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1547,12 +1547,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0043
-     * @tc.name TypeArrayInt32Array0043
-     * @tc.desc Verify Int32Array with data normalization using z-score with outliers removed
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data normalization using z-score with outliers removed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let normalizeWithOutlierRemoval =
@@ -1601,12 +1601,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0044
-     * @tc.name TypeArrayInt32Array0044
-     * @tc.desc Verify Int32Array with sliding window Fourier transform (simplified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window Fourier transform (simplified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1643,12 +1643,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0045
-     * @tc.name TypeArrayInt32Array0045
-     * @tc.desc Verify Int32Array with bitwise byte extraction and manipulation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise byte extraction and manipulation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1688,12 +1688,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0046
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0046
-     * @tc.name TypeArrayInt32Array0046
-     * @tc.desc Verify Int32Array with data transformation using Box-Cox transform
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using Box-Cox transform
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1732,12 +1732,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0047
-     * @tc.name TypeArrayInt32Array0047
-     * @tc.desc Verify Int32Array with data encryption using block cipher (simplified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using block cipher (simplified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let blockCipher = (data: Int32Array, key: number, encrypt: boolean): Int32Array => {
@@ -1778,12 +1778,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0048
-     * @tc.name TypeArrayInt32Array0048
-     * @tc.desc Verify Int32Array with sliding window entropy calculation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window entropy calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1833,12 +1833,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0049
-     * @tc.name TypeArrayInt32Array0049
-     * @tc.desc Verify Int32Array with data validation using check digits
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data validation using check digits
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1884,12 +1884,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0050
-     * @tc.name TypeArrayInt32Array0050
-     * @tc.desc Verify Int32Array with data transformation using principal component analysis (simplified)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using principal component analysis (simplified)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1932,12 +1932,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(transformed.length).assertEqual(5);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0051
-     * @tc.name TypeArrayInt32Array0051
-     * @tc.desc Verify Int32Array with data encryption using Vigenère cipher for 32-bit values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data encryption using Vigenère cipher for 32-bit values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
 
@@ -1969,12 +1969,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0052
-     * @tc.name TypeArrayInt32Array0052
-     * @tc.desc Verify Int32Array with data validation using cyclic redundancy check (CRC)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data validation using cyclic redundancy check (CRC)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let calculateCRC32 = (data: Int32Array): number => {
@@ -2011,12 +2011,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0053
-     * @tc.name TypeArrayInt32Array0053
-     * @tc.desc Verify Int32Array with sliding window median calculation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with sliding window median calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let slidingWindowMedian = (data: Int32Array, windowSize: number): Int32Array => {
@@ -2048,12 +2048,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(medians.length).assertEqual(7);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0054
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0054
-     * @tc.name TypeArrayInt32Array0054
-     * @tc.desc Verify Int32Array with data transformation using min-max scaling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data transformation using min-max scaling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let minMaxScale = (data: Int32Array, newMin: number, newMax: number): Int32Array => {
@@ -2077,12 +2077,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0055
-     * @tc.name TypeArrayInt32Array0055
-     * @tc.desc Verify Int32Array with bitwise parity calculation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with bitwise parity calculation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let calculateParity = (value: number): number => {
@@ -2119,12 +2119,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0056
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0056
-     * @tc.name TypeArrayInt32Array0056
-     * @tc.desc Verify Int32Array with data aggregation using moving average
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Int32Array with data aggregation using moving average
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('TypeArrayInt32Array0056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, () => {
       let cumulativeMovingAverage = (data: Int32Array): Int32Array => {
@@ -2149,12 +2149,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(averages.length).assertEqual(5);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0057
-     * @tc.name TypeArrayInt32Array0057
-     * @tc.desc Verify Int32Array with value clamping
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with value clamping
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let clampValues = (data: Int32Array, min: number, max: number): Int32Array => {
@@ -2168,12 +2168,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0058
-     * @tc.name TypeArrayInt32Array0058
-     * @tc.desc Verify Int32Array with element reversal
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with element reversal
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let reverseArray = (data: Int32Array): Int32Array => {
@@ -2191,12 +2191,12 @@ export default function typeArrayInt32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayInt32Array0059
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0059
-     * @tc.name TypeArrayInt32Array0059
-     * @tc.desc Verify Int32Array with unique values extraction
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with unique values extraction
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let getUniqueValues = (data: Int32Array): Int32Array => {
@@ -2212,12 +2212,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(Array.from(unique).sort().toString()).assertEqual('2,3,5,7');
     })
     /**
+     * @tc.name   TypeArrayInt32Array0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0060
-     * @tc.name TypeArrayInt32Array0060
-     * @tc.desc Verify Int32Array with element frequency counting
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with element frequency counting
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let countFrequencies = (data: Int32Array): Map<number, number> => {
@@ -2235,12 +2235,12 @@ export default function typeArrayInt32ArrayTest() {
       expect(frequencies.get(4)).assertEqual(4);
     })
     /**
+     * @tc.name   TypeArrayInt32Array0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_INT32ARRAY_0061
-     * @tc.name TypeArrayInt32Array0061
-     * @tc.desc Verify Int32Array with multiple combined operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Int32Array with multiple combined operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayInt32Array0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let base = new Int32Array([1, 2, 3, 4, 5]);

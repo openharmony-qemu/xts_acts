@@ -212,12 +212,12 @@ export default function PhotoOutputTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_001
-     * @tc.name      : capture_callback_001
-     * @tc.desc      : No abnormal scenarios-capture-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_001
+     * @tc.desc   No abnormal scenarios-capture-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_001';
@@ -253,12 +253,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_002
-     * @tc.name      : capture_promise_001
-     * @tc.desc      : No abnormal scenarios-capture-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_002
+     * @tc.desc   No abnormal scenarios-capture-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_001';
@@ -292,12 +292,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_003
-     * @tc.name      : capture_callback_with_setting_001
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_HIGH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_003
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_001';
@@ -311,12 +311,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_004
-     * @tc.name      : capture_callback_with_setting_002
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_MEDIUM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_004
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_002';
@@ -330,12 +330,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_005
-     * @tc.name      : capture_callback_with_setting_003
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_LOW
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_003
+     * @tc.number CAMERA_OUTPUT_PHOTO_005
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_003';
@@ -349,12 +349,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_006
-     * @tc.name      : capture_callback_with_setting_004
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_90
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_004
+     * @tc.number CAMERA_OUTPUT_PHOTO_006
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_004';
@@ -368,12 +368,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_007
-     * @tc.name      : capture_callback_with_setting_005
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_180
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_005
+     * @tc.number CAMERA_OUTPUT_PHOTO_007
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_005';
@@ -387,12 +387,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_008
-     * @tc.name      : capture_callback_with_setting_006
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_270
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_006
+     * @tc.number CAMERA_OUTPUT_PHOTO_008
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_006';
@@ -406,12 +406,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_009
-     * @tc.name      : capture_callback_with_setting_007
-     * @tc.desc      : No abnormal scenarios-location
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_007
+     * @tc.number CAMERA_OUTPUT_PHOTO_009
+     * @tc.desc   No abnormal scenarios-location
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_007';
@@ -422,12 +422,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_010
-     * @tc.name      : capture_callback_with_setting_008
-     * @tc.desc      : No abnormal scenarios-mirror-true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_008
+     * @tc.number CAMERA_OUTPUT_PHOTO_010
+     * @tc.desc   No abnormal scenarios-mirror-true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_008';
@@ -440,12 +440,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_011
-     * @tc.name      : capture_promise_with_setting_001
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_HIGH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_011
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_001';
@@ -459,12 +459,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_012
-     * @tc.name      : capture_promise_with_setting_002
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_MEDIUM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_012
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_002';
@@ -478,12 +478,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_013
-     * @tc.name      : capture_promise_with_setting_003
-     * @tc.desc      : No abnormal scenarios-quality-QUALITY_LEVEL_LOW
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_003
+     * @tc.number CAMERA_OUTPUT_PHOTO_013
+     * @tc.desc   No abnormal scenarios-quality-QUALITY_LEVEL_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_003';
@@ -497,12 +497,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_014
-     * @tc.name      : capture_promise_with_setting_004
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_90
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_004
+     * @tc.number CAMERA_OUTPUT_PHOTO_014
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_90
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_004';
@@ -516,12 +516,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_015
-     * @tc.name      : capture_promise_with_setting_005
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_180
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_005
+     * @tc.number CAMERA_OUTPUT_PHOTO_015
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_180
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_005';
@@ -535,12 +535,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_016
-     * @tc.name      : capture_promise_with_setting_006
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_006
+     * @tc.number CAMERA_OUTPUT_PHOTO_016
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_006';
@@ -554,12 +554,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_017
-     * @tc.name      : capture_promise_with_setting_007
-     * @tc.desc      : No abnormal scenarios-rotation-ROTATION_270
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_007
+     * @tc.number CAMERA_OUTPUT_PHOTO_017
+     * @tc.desc   No abnormal scenarios-rotation-ROTATION_270
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_007';
@@ -573,12 +573,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_018
-     * @tc.name      : capture_promise_with_setting_008
-     * @tc.desc      : No abnormal scenarios-mirror-true
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_008
+     * @tc.number CAMERA_OUTPUT_PHOTO_018
+     * @tc.desc   No abnormal scenarios-mirror-true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_008';
@@ -592,12 +592,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_019
-     * @tc.name      : on_photoAvailable_listen_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_photoAvailable_listen_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_019
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_photoAvailable_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_photoAvailable_listen_001';
@@ -633,12 +633,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_020
-     * @tc.name      : off_photoAvailable_listen_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_photoAvailable_listen_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_020
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_photoAvailable_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_photoAvailable_listen_001';
@@ -685,12 +685,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_021
-     * @tc.name      : on_photoAssetAvailable_listen_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   on_photoAssetAvailable_listen_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_021
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_photoAssetAvailable_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_photoAssetAvailable_listen_001';
@@ -727,12 +727,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_022
-     * @tc.name      : off_photoAssetAvailable_listen_001
-     * @tc.desc      : No abnormal scenarios
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   off_photoAssetAvailable_listen_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_022
+     * @tc.desc   No abnormal scenarios
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('off_photoAssetAvailable_listen_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'off_photoAssetAvailable_listen_001';
@@ -781,12 +781,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_023
-     * @tc.name      : release_callback_photo_001
-     * @tc.desc      : No abnormal scenarios-release-callback
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_callback_photo_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_023
+     * @tc.desc   No abnormal scenarios-release-callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_callback_photo_001';
@@ -823,12 +823,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_024
-     * @tc.name      : release_promise_photo_001
-     * @tc.desc      : No abnormal scenarios-release-promise
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_promise_photo_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_024
+     * @tc.desc   No abnormal scenarios-release-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_promise_photo_001';
@@ -863,12 +863,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_025
-     * @tc.name      : capture_callback_with_setting_abnormal_001
-     * @tc.desc      : callback, settings-undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_abnormal_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_025
+     * @tc.desc   callback, settings-undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_abnormal_001';
@@ -877,12 +877,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_026
-     * @tc.name      : capture_callback_with_setting_abnormal_002
-     * @tc.desc      : callback, settings quality-abnormal -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_abnormal_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_026
+     * @tc.desc   callback, settings quality-abnormal -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_abnormal_002';
@@ -896,12 +896,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_027
-     * @tc.name      : capture_callback_with_setting_abnormal_003
-     * @tc.desc      : callback, settings rotation-abnormal -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_abnormal_003
+     * @tc.number CAMERA_OUTPUT_PHOTO_027
+     * @tc.desc   callback, settings rotation-abnormal -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_abnormal_003';
@@ -915,12 +915,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_028
-     * @tc.name      : capture_callback_with_setting_abnormal_004
-     * @tc.desc      : callback, settings location-abnormal -> passed
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_abnormal_004
+     * @tc.number CAMERA_OUTPUT_PHOTO_028
+     * @tc.desc   callback, settings location-abnormal -> passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_abnormal_004';
@@ -934,12 +934,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_029
-     * @tc.name      : capture_callback_with_setting_abnormal_005
-     * @tc.desc      : callback, settings-null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_abnormal_005
+     * @tc.number CAMERA_OUTPUT_PHOTO_029
+     * @tc.desc   callback, settings-null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_abnormal_005';
@@ -948,12 +948,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_030
-     * @tc.name      : capture_promise_with_setting_abnormal_001
-     * @tc.desc      : promise, settings-undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_abnormal_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_030
+     * @tc.desc   promise, settings-undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_abnormal_001';
@@ -962,12 +962,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_031
-     * @tc.name      : capture_promise_with_setting_abnormal_002
-     * @tc.desc      : promise, settings quality-abnormal -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_abnormal_002
+     * @tc.number CAMERA_OUTPUT_PHOTO_031
+     * @tc.desc   promise, settings quality-abnormal -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_abnormal_002';
@@ -981,12 +981,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_032
-     * @tc.name      : capture_promise_with_setting_abnormal_003
-     * @tc.desc      : promise, settings rotation-abnormal -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_abnormal_003
+     * @tc.number CAMERA_OUTPUT_PHOTO_032
+     * @tc.desc   promise, settings rotation-abnormal -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_abnormal_003';
@@ -1000,12 +1000,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_033
-     * @tc.name      : capture_promise_with_setting_abnormal_004
-     * @tc.desc      : promise, settings location-abnormal -> passed
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_abnormal_004
+     * @tc.number CAMERA_OUTPUT_PHOTO_033
+     * @tc.desc   promise, settings location-abnormal -> passed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_abnormal_004';
@@ -1019,12 +1019,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_034
-     * @tc.name      : capture_promise_with_setting_abnormal_005
-     * @tc.desc      : settings-undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_abnormal_005
+     * @tc.number CAMERA_OUTPUT_PHOTO_034
+     * @tc.desc   settings-undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_abnormal_005';
@@ -1033,12 +1033,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_035
-     * @tc.name      : capture_callback_error_001
-     * @tc.desc      : No session, only capture-callback -> error_code: 7400104
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_error_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_035
+     * @tc.desc   No session, only capture-callback -> error_code: 7400104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_error_001';
@@ -1073,12 +1073,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_036
-     * @tc.name      : capture_promise_error_001
-     * @tc.desc      : No session, only capture-promise -> error_code: 7400104
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_error_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_036
+     * @tc.desc   No session, only capture-promise -> error_code: 7400104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_error_001';
@@ -1111,12 +1111,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_037
-     * @tc.name      : capture_callback_with_setting_error_001
-     * @tc.desc      : No session, only capture with settings-callback -> error_code: 7400104
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_callback_with_setting_error_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_037
+     * @tc.desc   No session, only capture with settings-callback -> error_code: 7400104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_callback_with_setting_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_callback_with_setting_error_001';
@@ -1155,12 +1155,12 @@ export default function PhotoOutputTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_OUTPUT_PHOTO_038
-     * @tc.name      : capture_promise_with_setting_error_001
-     * @tc.desc      : No session, only capture with settings-promise -> error_code: 7400104
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   capture_promise_with_setting_error_001
+     * @tc.number CAMERA_OUTPUT_PHOTO_038
+     * @tc.desc   No session, only capture with settings-promise -> error_code: 7400104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('capture_promise_with_setting_error_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'capture_promise_with_setting_error_001';

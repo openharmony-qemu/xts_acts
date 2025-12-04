@@ -19,12 +19,12 @@ export default function singleKvStoreEnumTest(){
 describe('singleKvStoreEnumTest', function () {
 
     /**
+     * @tc.name   testUsertypeSameUserId_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2300
-     * @tc.name testUsertypeSameUserId_001
-     * @tc.desc Test Js Enum Value Usertype.SAME_USER_ID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Usertype.SAME_USER_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUsertypeSameUserId_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var sameUserId = factory.UserType.SAME_USER_ID;
@@ -33,12 +33,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxKeyLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0300
-     * @tc.name testConstantsMaxKeyLength_001
-     * @tc.desc Test Js Enum Value Constants.MAX_KEY_LENGTH
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxKeyLength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxKeyLength = factory.Constants.MAX_KEY_LENGTH;
@@ -47,12 +47,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxValueLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0600
-     * @tc.name testConstantsMaxValueLength_001
-     * @tc.desc Test Js Enum Value Constants.MAX_VALUE_LENGTH
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxValueLength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxValueLength = factory.Constants.MAX_VALUE_LENGTH;
@@ -62,12 +62,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxValueLength_002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0700
-     * @tc.name testConstantsMaxValueLength_002
-     * @tc.desc Test Js Enum Value Constants.MAX_VALUE_LENGTH
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_VALUE_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxValueLength_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         try {
@@ -79,12 +79,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxKeyLengthDevice_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0200
-     * @tc.name testConstantsMaxKeyLengthDevice_001
-     * @tc.desc Test Js Enum Value Constants.MAX_KEY_LENGTH_DEVICE
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_KEY_LENGTH_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxKeyLengthDevice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxKeyLengthDevice = factory.Constants.MAX_KEY_LENGTH_DEVICE;
@@ -93,12 +93,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxStoreIdLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0500
-     * @tc.name testConstantsMaxStoreIdLength_001
-     * @tc.desc Test Js Enum Value Constants.MAX_STORE_ID_LENGTH
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_STORE_ID_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxStoreIdLength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxStoreIdLength = factory.Constants.MAX_STORE_ID_LENGTH;
@@ -107,12 +107,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxQueryLength_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0400
-     * @tc.name testConstantsMaxQueryLength_001
-     * @tc.desc Test Js Enum Value Constants.MAX_QUERY_LENGTH
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_QUERY_LENGTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxQueryLength_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxQueryLength = factory.Constants.MAX_QUERY_LENGTH;
@@ -121,12 +121,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testConstantsMaxBatchSize_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0100
-     * @tc.name testConstantsMaxBatchSize_001
-     * @tc.desc Test Js Enum Value Constants.MAX_BATCH_SIZE
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Constants.MAX_BATCH_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testConstantsMaxBatchSize_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var maxBatchSize = factory.Constants.MAX_BATCH_SIZE;
@@ -135,12 +135,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeString_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2900
-     * @tc.name testValuetypeString_001
-     * @tc.desc Test Js Enum Value Valuetype.STRING
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.STRING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeString_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var string = factory.ValueType.STRING;
@@ -149,12 +149,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeInteger_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2800
-     * @tc.name testValuetypeInteger_001
-     * @tc.desc Test Js Enum Value Valuetype.INTEGER
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.INTEGER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeInteger_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var integer = factory.ValueType.INTEGER;
@@ -163,12 +163,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeFloat_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2700
-     * @tc.name testValuetypeFloat_001
-     * @tc.desc Test Js Enum Value Valuetype.FLOAT
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.FLOAT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeFloat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var float = factory.ValueType.FLOAT;
@@ -177,12 +177,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeByteArray_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2500
-     * @tc.name testValuetypeByteArray_001
-     * @tc.desc Test Js Enum Value Valuetype.BYTEARRAY
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.BYTEARRAY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeByteArray_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var byteArray = factory.ValueType.BYTE_ARRAY;
@@ -191,12 +191,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeBoolean_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2400
-     * @tc.name testValuetypeBoolean_001
-     * @tc.desc Test Js Enum Value Valuetype.BOOLEAN
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.BOOLEAN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeBoolean_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var boolean = factory.ValueType.BOOLEAN;
@@ -205,12 +205,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testValuetypeDouble_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2600
-     * @tc.name testValuetypeDouble_001
-     * @tc.desc Test Js Enum Value Valuetype.DOUBLE
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Valuetype.DOUBLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testValuetypeDouble_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var double = factory.ValueType.DOUBLE;
@@ -219,12 +219,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSyncmodePullOnly_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2000
-     * @tc.name testSyncmodePullOnly_001
-     * @tc.desc Test Js Enum Value Syncmode.PULL_ONLY
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Syncmode.PULL_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSyncmodePullOnly_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var pullonly = factory.SyncMode.PULL_ONLY;
@@ -233,12 +233,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSyncmodePushOnly_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2100
-     * @tc.name testSyncmodePushOnly_001
-     * @tc.desc Test Js Enum Value Syncmode.PUSH_ONLY
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Syncmode.PUSH_ONLY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSyncmodePushOnly_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var pushonly = factory.SyncMode.PUSH_ONLY;
@@ -247,12 +247,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSyncmodePushPull_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_2200
-     * @tc.name testSyncmodePushPull_001
-     * @tc.desc Test Js Enum Value Syncmode.PUSH_PULL
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Syncmode.PUSH_PULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSyncmodePushPull_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var pushpull = factory.SyncMode.PUSH_PULL;
@@ -261,12 +261,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSubscribetypeSubscribeTypeLocal_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1800
-     * @tc.name testSubscribetypeSubscribeTypeLocal_001
-     * @tc.desc Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_LOCAL
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_LOCAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSubscribetypeSubscribeTypeLocal_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var local = factory.SubscribeType.SUBSCRIBE_TYPE_LOCAL;
@@ -275,12 +275,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSubscribetypeSubscribeTypeRemote_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1900
-     * @tc.name testSubscribetypeSubscribeTypeRemote_001
-     * @tc.desc Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_REMOTE
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_REMOTE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSubscribetypeSubscribeTypeRemote_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var remote = factory.SubscribeType.SUBSCRIBE_TYPE_REMOTE;
@@ -289,12 +289,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSubscribetypeSubscribeTypeAll_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1700
-     * @tc.name testSubscribetypeSubscribeTypeAll_001
-     * @tc.desc Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_ALL
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Subscribetype.SUBSCRIBE_TYPE_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSubscribetypeSubscribeTypeAll_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var all = factory.SubscribeType.SUBSCRIBE_TYPE_ALL;
@@ -303,12 +303,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testKvstoretypeDeviceCollaboration_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0800
-     * @tc.name testKvstoretypeDeviceCollaboration_001
-     * @tc.desc Test Js Enum Value Kvstoretype.DEVICE_COLLABORATION
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Kvstoretype.DEVICE_COLLABORATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKvstoretypeDeviceCollaboration_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var collaboration = factory.KVStoreType.DEVICE_COLLABORATION;
@@ -317,12 +317,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testKvstoretypeSingleVersion_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1000
-     * @tc.name testKvstoretypeSingleVersion_001
-     * @tc.desc Test Js Enum Value Kvstoretype.SINGLE_VERSION
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Kvstoretype.SINGLE_VERSION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKvstoretypeSingleVersion_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var single = factory.KVStoreType.SINGLE_VERSION;
@@ -331,12 +331,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testKvstoretypeMultiVersion_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_0900
-     * @tc.name testKvstoretypeMultiVersion_001
-     * @tc.desc Test Js Enum Value Kvstoretype.MULTI_VERSION
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Kvstoretype.MULTI_VERSION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testKvstoretypeMultiVersion_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var multi = factory.KVStoreType.MULTI_VERSION;
@@ -345,12 +345,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelNoLevel_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1100
-     * @tc.name testSecuritylevelNoLevel_001
-     * @tc.desc Test Js Enum Value Securitylevel.NO_LEVEL
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.NO_LEVEL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelNoLevel_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var nolevel = factory.SecurityLevel.NO_LEVEL;
@@ -359,12 +359,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelS0_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1200
-     * @tc.name testSecuritylevelS0_001
-     * @tc.desc Test Js Enum Value Securitylevel.S0
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.S0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelS0_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var s0 = factory.SecurityLevel.S0;
@@ -373,12 +373,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelS1_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1300
-     * @tc.name testSecuritylevelS1_001
-     * @tc.desc Test Js Enum Value Securitylevel.S1
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.S1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelS1_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var s1 = factory.SecurityLevel.S1;
@@ -387,12 +387,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelS2_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1400
-     * @tc.name testSecuritylevelS2_001
-     * @tc.desc Test Js Enum Value Securitylevel.S2
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.S2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelS2_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var s2 = factory.SecurityLevel.S2;
@@ -401,12 +401,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelS3_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1500
-     * @tc.name testSecuritylevelS3_001
-     * @tc.desc Test Js Enum Value Securitylevel.S3
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.S3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelS3_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var s3 = factory.SecurityLevel.S3;
@@ -415,12 +415,12 @@ describe('singleKvStoreEnumTest', function () {
     })
 
     /**
+     * @tc.name   testSecuritylevelS4_001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreEnumJsApiTest_1600
-     * @tc.name testSecuritylevelS4_001
-     * @tc.desc Test Js Enum Value Securitylevel.S4
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.desc   Test Js Enum Value Securitylevel.S4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSecuritylevelS4_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function () {
         var s4 = factory.SecurityLevel.S4;

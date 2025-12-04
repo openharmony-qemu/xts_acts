@@ -39,12 +39,12 @@ export default function wifiManagerTest() {
 
 function testIsWifiActiveSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0100
-   * @tc.name      : test_is_wifi_active_sync_0100
-   * @tc.desc      : test wifiManager isWifiActiveSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_wifi_active_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0100
+   * @tc.desc   test wifiManager isWifiActiveSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_wifi_active_sync_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -57,15 +57,15 @@ function testIsWifiActiveSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0101
-   * @tc.name      : test_is_wifi_active_sync_0101
-   * @tc.desc      : test wifiManager isWifiActiveSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_wifi_active_sync_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0101
+   * @tc.desc   test wifiManager isWifiActiveSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_wifi_active_sync_0101", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.isWifiActiveSync(SELFWANT);
       expect(false).assertTrue();
@@ -78,12 +78,12 @@ function testIsWifiActiveSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0102
-   * @tc.name      : test_is_wifi_active_sync_0102
-   * @tc.desc      : test wifiManager isWifiActiveSync with invalid admin param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_wifi_active_sync_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0102
+   * @tc.desc   test wifiManager isWifiActiveSync with invalid admin param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_wifi_active_sync_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -99,12 +99,12 @@ function testIsWifiActiveSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0103
-   * @tc.name      : test_is_wifi_active_sync_0103
-   * @tc.desc      : test wifiManager isWifiActiveSync
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_is_wifi_active_sync_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_IS_WIFI_ACTIVE_SYNC_JS_0103
+   * @tc.desc   test wifiManager isWifiActiveSync
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_is_wifi_active_sync_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -122,12 +122,12 @@ function testIsWifiActiveSync() {
 
 function testSetWifiProfileSync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0100
-   * @tc.name      : test_set_wifi_profile_sync_0100
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0100
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -145,12 +145,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0101
-   * @tc.name      : test_set_wifi_profile_sync_0101
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0101
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0101", Level.LEVEL2, async (done: Function) => {
     try {
@@ -168,12 +168,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0102
-   * @tc.name      : test_set_wifi_profile_sync_0102
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0102
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0102", Level.LEVEL2, async (done: Function) => {
     try {
@@ -191,12 +191,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0103
-   * @tc.name      : test_set_wifi_profile_sync_0103
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0103
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0103", Level.LEVEL2, async (done: Function) => {
     try {
@@ -214,12 +214,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0104
-   * @tc.name      : test_set_wifi_profile_sync_0104
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0104
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0104", Level.LEVEL2, async (done: Function) => {
     try {
@@ -237,12 +237,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0105
-   * @tc.name      : test_set_wifi_profile_sync_0105
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0105
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0105", Level.LEVEL2, async (done: Function) => {
     try {
@@ -260,12 +260,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0106
-   * @tc.name      : test_set_wifi_profile_sync_0106
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0106
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0106", Level.LEVEL2, async (done: Function) => {
     try {
@@ -283,12 +283,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0107
-   * @tc.name      : test_set_wifi_profile_sync_0107
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0107
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0107", Level.LEVEL2, async (done: Function) => {
     try {
@@ -306,12 +306,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0108
-   * @tc.name      : test_set_wifi_profile_sync_0108
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0108
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0108", Level.LEVEL2, async (done: Function) => {
     try {
@@ -329,12 +329,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0109
-   * @tc.name      : test_set_wifi_profile_sync_0109
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0109
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0109", Level.LEVEL2, async (done: Function) => {
     try {
@@ -352,12 +352,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0110
-   * @tc.name      : test_set_wifi_profile_sync_0110
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0110
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0110", Level.LEVEL2, async (done: Function) => {
     try {
@@ -410,12 +410,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0111
-   * @tc.name      : test_set_wifi_profile_sync_0111
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0111
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0111", Level.LEVEL2, async (done: Function) => {
     try {
@@ -461,12 +461,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0112
-   * @tc.name      : test_set_wifi_profile_sync_0112
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0112
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0112", Level.LEVEL2, async (done: Function) => {
     try {
@@ -512,12 +512,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0113
-   * @tc.name      : test_set_wifi_profile_sync_0113
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0113
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0113", Level.LEVEL2, async (done: Function) => {
     try {
@@ -554,12 +554,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0114
-   * @tc.name      : test_set_wifi_profile_sync_0114
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0114
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0114
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0114", Level.LEVEL2, async (done: Function) => {
     try {
@@ -596,12 +596,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0115
-   * @tc.name      : test_set_wifi_profile_sync_0115
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0115
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0115
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0115", Level.LEVEL2, async (done: Function) => {
     try {
@@ -638,12 +638,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0116
-   * @tc.name      : test_set_wifi_profile_sync_0116
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0116
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0116
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0116", Level.LEVEL2, async (done: Function) => {
     try {
@@ -680,12 +680,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0117
-   * @tc.name      : test_set_wifi_profile_sync_0117
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0117
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0117
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0117", Level.LEVEL2, async (done: Function) => {
     try {
@@ -722,12 +722,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0118
-   * @tc.name      : test_set_wifi_profile_sync_0118
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0118
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0118
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0118", Level.LEVEL2, async (done: Function) => {
     try {
@@ -764,12 +764,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0119
-   * @tc.name      : test_set_wifi_profile_sync_0119
-   * @tc.desc      : test wifiManager setWifiProfileSync without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0119
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0119
+   * @tc.desc   test wifiManager setWifiProfileSync without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0119", Level.LEVEL2, async (done: Function) => {
     try {
@@ -806,15 +806,15 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0120
-   * @tc.name      : test_set_wifi_profile_sync_0120
-   * @tc.desc      : test wifiManager setWifiProfileSync with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0120
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0120
+   * @tc.desc   test wifiManager setWifiProfileSync with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0120", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiProfile: wifiManager.WifiProfile = {
         ssid: 'name',
@@ -832,12 +832,12 @@ function testSetWifiProfileSync() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0121
-   * @tc.name      : test_set_wifi_profile_sync_0121
-   * @tc.desc      : test wifiManager setWifiProfileSync with param staticIp
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_wifi_profile_sync_0121
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_WIFI_PROFILE_SYNC_JS_0121
+   * @tc.desc   test wifiManager setWifiProfileSync with param staticIp
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_wifi_profile_sync_0121", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -869,12 +869,12 @@ function testSetWifiProfileSync() {
 
 function testAddAllowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0001
-   * @tc.name      : test_add_allowed_wifi_list_0001
-   * @tc.desc      : test wifiManager addAllowedWifiList without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager addAllowedWifiList without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -891,15 +891,15 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0002
-   * @tc.name      : test_add_allowed_wifi_list_0002
-   * @tc.desc      : test wifiManager addAllowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager addAllowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -916,12 +916,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0003
-   * @tc.name      : test_add_allowed_wifi_list_0003
-   * @tc.desc      : test wifiManager addAllowedWifiList with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager addAllowedWifiList with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -945,12 +945,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0004
-   * @tc.name      : test_add_allowed_wifi_list_0004
-   * @tc.desc      : test wifiManager addAllowedWifiList with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager addAllowedWifiList with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -977,12 +977,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0005
-   * @tc.name      : test_add_allowed_wifi_list_0005
-   * @tc.desc      : test wifiManager addAllowedWifiList with list length > 200
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager addAllowedWifiList with list length > 200
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1006,12 +1006,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0006
-   * @tc.name      : test_add_allowed_wifi_list_0006
-   * @tc.desc      : test wifiManager addAllowedWifiList without bssid
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0006
+   * @tc.desc   test wifiManager addAllowedWifiList without bssid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1030,12 +1030,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0007
-   * @tc.name      : test_add_allowed_wifi_list_0007
-   * @tc.desc      : test wifiManager addAllowedWifiList ssid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0007
+   * @tc.desc   test wifiManager addAllowedWifiList ssid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1052,12 +1052,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0008
-   * @tc.name      : test_add_allowed_wifi_list_0008
-   * @tc.desc      : test wifiManager addAllowedWifiList ssid length > 32
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0008
+   * @tc.desc   test wifiManager addAllowedWifiList ssid length > 32
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1075,12 +1075,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0009
-   * @tc.name      : test_add_allowed_wifi_list_0009
-   * @tc.desc      : test wifiManager addAllowedWifiList bssid length != 17
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_0009
+   * @tc.desc   test wifiManager addAllowedWifiList bssid length != 17
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1097,12 +1097,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00010
-   * @tc.name      : test_add_allowed_wifi_list_00010
-   * @tc.desc      : test wifiManager addAllowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_00010
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00010
+   * @tc.desc   test wifiManager addAllowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_00010", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1116,12 +1116,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00011
-   * @tc.name      : test_add_allowed_wifi_list_00011
-   * @tc.desc      : test wifiManager addAllowedWifiList with list length = 200
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_00011
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00011
+   * @tc.desc   test wifiManager addAllowedWifiList with list length = 200
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_00011", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1148,12 +1148,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00012
-   * @tc.name      : test_add_allowed_wifi_list_00012
-   * @tc.desc      : test wifiManager addAllowedWifiList conflict
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_00012
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00012
+   * @tc.desc   test wifiManager addAllowedWifiList conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_00012", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1174,12 +1174,12 @@ function testAddAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00013
-   * @tc.name      : test_add_allowed_wifi_list_00013
-   * @tc.desc      : test wifiManager addAllowedWifiList without bssid
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_wifi_list_00013
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_WIFI_LIST_JS_00013
+   * @tc.desc   test wifiManager addAllowedWifiList without bssid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_wifi_list_00013", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1207,12 +1207,12 @@ function testAddAllowedWifiList() {
 
 function testRemoveAllowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0001
-   * @tc.name      : test_remove_allowed_wifi_list_0001
-   * @tc.desc      : test wifiManager removeAllowedWifiList activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager removeAllowedWifiList activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1229,15 +1229,15 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0002
-   * @tc.name      : test_remove_allowed_wifi_list_0002
-   * @tc.desc      : test wifiManager removeAllowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager removeAllowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1254,12 +1254,12 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0003
-   * @tc.name      : test_remove_allowed_wifi_list_0003
-   * @tc.desc      : test wifiManager removeAllowedWifiList without bssid
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager removeAllowedWifiList without bssid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1287,12 +1287,12 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0004
-   * @tc.name      : test_remove_allowed_wifi_list_0004
-   * @tc.desc      : test wifiManager removeAllowedWifiList ssid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager removeAllowedWifiList ssid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1309,12 +1309,12 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0005
-   * @tc.name      : test_remove_allowed_wifi_list_0005
-   * @tc.desc      : test wifiManager removeAllowedWifiList ssid length > 32
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager removeAllowedWifiList ssid length > 32
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1332,12 +1332,12 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0006
-   * @tc.name      : test_remove_allowed_wifi_list_0006
-   * @tc.desc      : test wifiManager removeAllowedWifiList bssid length != 17
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0006
+   * @tc.desc   test wifiManager removeAllowedWifiList bssid length != 17
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1354,12 +1354,12 @@ function testRemoveAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0007
-   * @tc.name      : test_remove_allowed_wifi_list_0007
-   * @tc.desc      : test wifiManager removeAllowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_wifi_list_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_WIFI_LIST_JS_0007
+   * @tc.desc   test wifiManager removeAllowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_wifi_list_0007", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1375,12 +1375,12 @@ function testRemoveAllowedWifiList() {
 
 function testGetAllowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0001
-   * @tc.name      : test_get_allowed_wifi_list_0001
-   * @tc.desc      : test wifiManager getAllowedWifiList without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_allowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager getAllowedWifiList without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_allowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1393,15 +1393,15 @@ function testGetAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0002
-   * @tc.name      : test_get_allowed_wifi_list_0002
-   * @tc.desc      : test wifiManager getAllowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_allowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager getAllowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_allowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.getAllowedWifiList(SELFWANT);
       expect(false).assertTrue();
@@ -1414,12 +1414,12 @@ function testGetAllowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0003
-   * @tc.name      : test_get_allowed_wifi_list_0003
-   * @tc.desc      : test wifiManager getAllowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_allowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager getAllowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_allowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1435,12 +1435,12 @@ function testGetAllowedWifiList() {
 
 function testAddDisallowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0001
-   * @tc.name      : test_add_disallowed_wifi_list_0001
-   * @tc.desc      : test wifiManager addDisallowedWifiList without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager addDisallowedWifiList without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1457,15 +1457,15 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0002
-   * @tc.name      : test_add_disallowed_wifi_list_0002
-   * @tc.desc      : test wifiManager addDisallowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager addDisallowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1482,12 +1482,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0003
-   * @tc.name      : test_add_disallowed_wifi_list_0003
-   * @tc.desc      : test wifiManager addDisallowedWifiList with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager addDisallowedWifiList with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1511,12 +1511,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0004
-   * @tc.name      : test_add_disallowed_wifi_list_0004
-   * @tc.desc      : test wifiManager addDisallowedWifiList with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager addDisallowedWifiList with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1543,12 +1543,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0005
-   * @tc.name      : test_add_disallowed_wifi_list_0005
-   * @tc.desc      : test wifiManager addDisallowedWifiList with with list length > 200
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager addDisallowedWifiList with with list length > 200
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1572,12 +1572,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0006
-   * @tc.name      : test_add_disallowed_wifi_list_0006
-   * @tc.desc      : test wifiManager addDisallowedWifiList without bssid
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0006
+   * @tc.desc   test wifiManager addDisallowedWifiList without bssid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1598,12 +1598,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0007
-   * @tc.name      : test_add_disallowed_wifi_list_0007
-   * @tc.desc      : test wifiManager addDisallowedWifiList ssid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0007
+   * @tc.desc   test wifiManager addDisallowedWifiList ssid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1620,12 +1620,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0008
-   * @tc.name      : test_add_disallowed_wifi_list_0008
-   * @tc.desc      : test wifiManager addDisallowedWifiList ssid length > 32
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0008
+   * @tc.desc   test wifiManager addDisallowedWifiList ssid length > 32
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1643,12 +1643,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0009
-   * @tc.name      : test_add_disallowed_wifi_list_0009
-   * @tc.desc      : test wifiManager addDisallowedWifiList bssid length != 17
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0009
+   * @tc.desc   test wifiManager addDisallowedWifiList bssid length != 17
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1665,12 +1665,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0010
-   * @tc.name      : test_add_disallowed_wifi_list_0010
-   * @tc.desc      : test wifiManager addDisallowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_0010
+   * @tc.desc   test wifiManager addDisallowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_0010", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1684,12 +1684,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_00011
-   * @tc.name      : test_add_disallowed_wifi_list_00011
-   * @tc.desc      : test wifiManager addDisallowedWifiList with list length = 200
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_00011
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_00011
+   * @tc.desc   test wifiManager addDisallowedWifiList with list length = 200
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_00011", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1716,12 +1716,12 @@ function testAddDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_00012
-   * @tc.name      : test_add_disallowed_wifi_list_00012
-   * @tc.desc      : test wifiManager addDisallowedWifiList conflict
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_wifi_list_00012
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_WIFI_LIST_JS_00012
+   * @tc.desc   test wifiManager addDisallowedWifiList conflict
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_wifi_list_00012", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1744,12 +1744,12 @@ function testAddDisallowedWifiList() {
 
 function testRemoveDisallowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0001
-   * @tc.name      : test_remove_disallowed_wifi_list_0001
-   * @tc.desc      : test wifiManager removeDisallowedWifiList activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager removeDisallowedWifiList activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1766,15 +1766,15 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0002
-   * @tc.name      : test_remove_disallowed_wifi_list_0002
-   * @tc.desc      : test wifiManager removeDisallowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager removeDisallowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let wifiAccessInfos: Array<wifiManager.WifiAccessInfo> = [
         {ssid: "wifi1", bssid: "68:77:24:77:A6:D6"},
@@ -1791,12 +1791,12 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0003
-   * @tc.name      : test_remove_disallowed_wifi_list_0003
-   * @tc.desc      : test wifiManager removeDisallowedWifiList without bssid
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager removeDisallowedWifiList without bssid
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1814,12 +1814,12 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0004
-   * @tc.name      : test_remove_disallowed_wifi_list_0004
-   * @tc.desc      : test wifiManager removeDisallowedWifiList ssid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager removeDisallowedWifiList ssid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1836,12 +1836,12 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0005
-   * @tc.name      : test_remove_disallowed_wifi_list_0005
-   * @tc.desc      : test wifiManager removeDisallowedWifiList ssid length > 32
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager removeDisallowedWifiList ssid length > 32
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1859,12 +1859,12 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0006
-   * @tc.name      : test_remove_disallowed_wifi_list_0006
-   * @tc.desc      : test wifiManager removeAllowedWifiList bssid length != 17
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0006
+   * @tc.desc   test wifiManager removeAllowedWifiList bssid length != 17
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1881,12 +1881,12 @@ function testRemoveDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0007
-   * @tc.name      : test_remove_disallowed_wifi_list_0007
-   * @tc.desc      : test wifiManager removeDisallowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_wifi_list_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_WIFI_LIST_JS_0007
+   * @tc.desc   test wifiManager removeDisallowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_wifi_list_0007", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1902,12 +1902,12 @@ function testRemoveDisallowedWifiList() {
 
 function testGetDisallowedWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0001
-   * @tc.name      : test_get_disallowed_wifi_list_0001
-   * @tc.desc      : test wifiManager getDisallowedWifiList without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager getDisallowedWifiList without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1920,15 +1920,15 @@ function testGetDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0002
-   * @tc.name      : test_get_disallowed_wifi_list_0002
-   * @tc.desc      : test wifiManager getDisallowedWifiList with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager getDisallowedWifiList with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.getDisallowedWifiList(SELFWANT);
       expect(false).assertTrue();
@@ -1941,12 +1941,12 @@ function testGetDisallowedWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0003
-   * @tc.name      : test_get_disallowed_wifi_list_0003
-   * @tc.desc      : test wifiManager getDisallowedWifiList without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager getDisallowedWifiList without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1962,12 +1962,12 @@ function testGetDisallowedWifiList() {
 
 function testTurnOnWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0001
-   * @tc.name      : test_turnon_wifi_list_0001
-   * @tc.desc      : test wifiManager turnOnWifi without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager turnOnWifi without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1980,12 +1980,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0002
-   * @tc.name      : test_turnon_wifi_list_0002
-   * @tc.desc      : test wifiManager turnOnWifi without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager turnOnWifi without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1998,15 +1998,15 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0003
-   * @tc.name      : test_turnon_wifi_list_0003
-   * @tc.desc      : test wifiManager turnOnWifi with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager turnOnWifi with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOnWifi(SELFWANT, true);
       expect(false).assertTrue();
@@ -2019,15 +2019,15 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0004
-   * @tc.name      : test_turnon_wifi_list_0004
-   * @tc.desc      : test wifiManager turnOnWifi with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager turnOnWifi with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOnWifi(SELFWANT, false);
       expect(false).assertTrue();
@@ -2040,12 +2040,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0005
-   * @tc.name      : test_turnon_wifi_list_0005
-   * @tc.desc      : test wifiManager turnOnWifi with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager turnOnWifi with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2062,12 +2062,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0006
-   * @tc.name      : test_turnon_wifi_list_0006
-   * @tc.desc      : test wifiManager turnOnWifi with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0006
+   * @tc.desc   test wifiManager turnOnWifi with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2082,12 +2082,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0007
-   * @tc.name      : test_turnon_wifi_list_0007
-   * @tc.desc      : test wifiManager turnOnWifi with super admin && disablewifi
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0007
+   * @tc.desc   test wifiManager turnOnWifi with super admin && disablewifi
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2106,12 +2106,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0008
-   * @tc.name      : test_turnon_wifi_list_0008
-   * @tc.desc      : test wifiManager turnOnWifi with super admin && disablewifi
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0008
+   * @tc.desc   test wifiManager turnOnWifi with super admin && disablewifi
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2130,12 +2130,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0009
-   * @tc.name      : test_turnon_wifi_list_0009
-   * @tc.desc      : test wifiManager turnOnWifi with error param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0009
+   * @tc.desc   test wifiManager turnOnWifi with error param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2151,12 +2151,12 @@ function testTurnOnWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0010
-   * @tc.name      : test_turnon_wifi_list_0010
-   * @tc.desc      : test wifiManager turnOnWifi with error param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnon_wifi_list_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNON_WIFI_LIST_JS_0010
+   * @tc.desc   test wifiManager turnOnWifi with error param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnon_wifi_list_0010", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2174,12 +2174,12 @@ function testTurnOnWifiList() {
 
 function testTurnOffWifiList() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0001
-   * @tc.name      : test_turnoff_wifi_list_0001
-   * @tc.desc      : test wifiManager turnOffWifi without activated admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_wifi_list_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0001
+   * @tc.desc   test wifiManager turnOffWifi without activated admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_wifi_list_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -2192,15 +2192,15 @@ function testTurnOffWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0002
-   * @tc.name      : test_turnoff_wifi_list_0002
-   * @tc.desc      : test wifiManager turnOffWifi with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_wifi_list_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0002
+   * @tc.desc   test wifiManager turnOffWifi with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_wifi_list_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       wifiManager.turnOffWifi(SELFWANT);
       expect(false).assertTrue();
@@ -2213,12 +2213,12 @@ function testTurnOffWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0003
-   * @tc.name      : test_turnoff_wifi_list_0003
-   * @tc.desc      : test wifiManager turnOffWifi with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_wifi_list_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0003
+   * @tc.desc   test wifiManager turnOffWifi with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_wifi_list_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2236,12 +2236,12 @@ function testTurnOffWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0004
-   * @tc.name      : test_turnoff_wifi_list_0004
-   * @tc.desc      : test wifiManager turnOffWifi with super admin && disablewifi
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_wifi_list_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0004
+   * @tc.desc   test wifiManager turnOffWifi with super admin && disablewifi
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_wifi_list_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -2260,12 +2260,12 @@ function testTurnOffWifiList() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0005
-   * @tc.name      : test_turnoff_wifi_list_0005
-   * @tc.desc      : test wifiManager turnOffWifi with error param
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_turnoff_wifi_list_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_TURNOFF_WIFI_LIST_JS_0005
+   * @tc.desc   test wifiManager turnOffWifi with error param
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_turnoff_wifi_list_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

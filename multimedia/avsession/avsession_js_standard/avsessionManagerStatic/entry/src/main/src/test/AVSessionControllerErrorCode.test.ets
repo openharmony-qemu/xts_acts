@@ -58,11 +58,8 @@ export default function abilityTest() {
         })
 
         beforeEach(async () => {
-            console.info(`TestLog: ghg, beforeEach in`);
-            console.info(`TestLog: ghg, createAVSession begin`);
             try{
                 session = await avSession.createAVSession(context, tag, 'video_call');
-                console.info(`TestLog: ghg, avSession create success`);
             }catch(err: BusinessError){
                 console.info(`TestLog: Session create error: code: ${err.code}, message: ${err.message}`);
             };
@@ -112,12 +109,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200
-         * @tc.desc        sendAVKeyEvent(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200
+         * @tc.desc   sendAVKeyEvent(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -141,12 +138,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0400
-         * @tc.desc        sendAVKeyEvent(callback) with deactivated session(errcode 6600106)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0400
+         * @tc.desc   sendAVKeyEvent(callback) with deactivated session(errcode 6600106)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -176,12 +173,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600
-         * @tc.desc        sendAVKeyEvent(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600
+         * @tc.desc   sendAVKeyEvent(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -198,12 +195,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0800
-         * @tc.desc        sendAVKeyEvent(promise) with deactivated session(errcode 6600106)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0800
+         * @tc.desc   sendAVKeyEvent(promise) with deactivated session(errcode 6600106)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_SENDAVKEYEVENT_ERRORCODE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -226,12 +223,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        getRealPlaybackPositionSync with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   getRealPlaybackPositionSync with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETREALPLAYBACKPOSITIONSYNC_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -248,12 +245,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100
-         * @tc.desc        getValidCommands(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100
+         * @tc.desc   getValidCommands(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -271,12 +268,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200
-         * @tc.desc        test getValidCommands(promise) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200
+         * @tc.desc   test getValidCommands(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -292,12 +289,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300
-         * @tc.desc        getValidCommands(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300
+         * @tc.desc   getValidCommands(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -322,12 +319,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400
-         * @tc.desc        test getValidCommands(callback) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400
+         * @tc.desc   test getValidCommands(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDS_ERRORCODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -352,12 +349,34 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
-         * @tc.desc        sendCommonCommand(promise) with avsession does not active(errcode 6600106)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400
+         * @tc.desc   test on('sessionEvent') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONSESSIONEVENT_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller.destroy();
+            try{
+                controller.onSessionEvent((command: string, args: Record<string, Object>) => {
+                    console.info(`controller on_sessionEvent Successfully`);
+                });
+            } catch(err: BusinessError) {
+                console.info(`controller on_sessionEvent BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600103);
+            };
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300
+         * @tc.desc   sendCommonCommand(promise) with avsession does not active(errcode 6600106)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -373,12 +392,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400
-         * @tc.desc        sendCommonCommand(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400
+         * @tc.desc   sendCommonCommand(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -396,12 +415,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0700
-         * @tc.desc        sendCommonCommand(callback) with avsession does not active(errcode 6600106)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0700
+         * @tc.desc   sendCommonCommand(callback) with avsession does not active(errcode 6600106)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -425,12 +444,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800
-         * @tc.desc        sendCommonCommand(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800
+         * @tc.desc   sendCommonCommand(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SENDCOMMONCOMMAND_ERRORCODE_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -455,12 +474,33 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
-         * @tc.desc        getExtras(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100
+         * @tc.desc   test getExtras(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await invalidSession(async () => {
+                await controller.getExtras().then(() => {
+                    console.info('getExtras Successfully');
+                    expect().assertFail();
+                }).catch(async(err: BusinessError) => {
+                    console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                    expect(err.code).assertEqual(6600102);
+                });
+            });
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200
+         * @tc.desc   getExtras(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -478,12 +518,41 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400
-         * @tc.desc        getExtras(callback) with avsession does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300
+         * @tc.desc   test getExtras(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await invalidSession(async (): Promise<void> => {
+                try {
+                    controller.getExtras(err => {
+                        if (err) {
+                            console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                            expect(err.code).assertEqual(6600102);
+                        } else {
+                            console.info('getExtras Successfully');
+                            expect().assertFail();
+                        }
+                        done();
+                    });
+                } catch (err: BusinessError) {
+                    console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
+                    expect().assertFail();
+                    done();
+                }
+            });
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400
+         * @tc.desc   getExtras(callback) with avsession does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETEXTRAS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -507,12 +576,34 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200
-         * @tc.desc        test skipToQueueItem(promise) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400
+         * @tc.desc   test on('extrasChange') errcode 6600103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it("SUB_MULTIMEDIA_AVSESSION_ONEXTRASCHANGE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            await controller.destroy();
+            try{
+                controller.onExtrasChange((extras: Record<string,Object>) => {
+                    console.info(`controller on_extrasChange Successfully`);
+                });
+            } catch(err: BusinessError) {
+                console.info(`controller on_extrasChange BusinessError: code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(6600103);
+            };
+            await Utils.msSleep(300);
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200
+         * @tc.desc   test skipToQueueItem(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -528,12 +619,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
-         * @tc.desc        skipToQueueItem(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300
+         * @tc.desc   skipToQueueItem(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -550,12 +641,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500
-         * @tc.desc        test skipToQueueItem(callback) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500
+         * @tc.desc   test skipToQueueItem(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -579,12 +670,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600
-         * @tc.desc        skipToQueueItem(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600
+         * @tc.desc   skipToQueueItem(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_SKIPTOQUEUEITEM_ERRORCODE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -608,12 +699,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVQueueItems(promise) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVQueueItems(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -629,12 +720,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVQueueItems(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVQueueItems(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -651,12 +742,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300
-         * @tc.desc        test getAVQueueItems(callback) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300
+         * @tc.desc   test getAVQueueItems(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -680,12 +771,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400
-         * @tc.desc        getAVQueueItems(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400
+         * @tc.desc   getAVQueueItems(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMS_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -709,12 +800,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVQueueTitle(promise) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVQueueTitle(promise) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -730,12 +821,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVQueueTitle(promise) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVQueueTitle(promise) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -752,12 +843,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300
-         * @tc.desc        test getAVQueueTitle(callback) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300
+         * @tc.desc   test getAVQueueTitle(callback) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -781,12 +872,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400
-         * @tc.desc        getAVQueueTitle(callback) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400
+         * @tc.desc   getAVQueueTitle(callback) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLE_ERRORCODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -810,12 +901,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVPlaybackStateSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVPlaybackStateSync(async) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -831,12 +922,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVPlaybackStateSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVPlaybackStateSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVPLAYBACKSTATESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -852,12 +943,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVMetadataSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVMetadataSync(async) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -873,12 +964,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVMetadataSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVMetadataSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVMETADATASYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -894,12 +985,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVQueueTitleSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVQueueTitleSync(async) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -915,12 +1006,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVQueueTitleSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVQueueTitleSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUETITLESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -936,12 +1027,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test getAVQueueItemsSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   test getAVQueueItemsSync(async) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -957,12 +1048,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        getAVQueueItemsSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   getAVQueueItemsSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETAVQUEUEITEMSYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -978,12 +1069,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        getOutputDeviceSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   getOutputDeviceSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_CONTROLLER_GETOUTPUTDEVICESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -999,12 +1090,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test isActiveSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100
+         * @tc.desc   test isActiveSync(async) errcode 6600102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             await invalidSession(async (): Promise<void> => {
@@ -1020,12 +1111,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        isActiveSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   isActiveSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_ISACTIVESYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -1040,14 +1131,14 @@ export default function abilityTest() {
             done();
         })
 
-        /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100
-         * @tc.desc        test getValidCommandsSync(async) errcode 6600102
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
-         */
+  /**
+   * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100
+   * @tc.desc   test getValidCommandsSync(async) errcode 6600102
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
 		it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
         await invalidSession(async (): Promise<void> => {
                 try {
@@ -1062,12 +1153,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200
-         * @tc.desc        getValidCommandsSync(async) with controller does not exist(errcode 6600103)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200
+         * @tc.desc   getValidCommandsSync(async) with controller does not exist(errcode 6600103)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it("SUB_MULTIMEDIA_AVSESSION_GETVALIDCOMMANDSSYNC_ERRORCODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

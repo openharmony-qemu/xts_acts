@@ -81,12 +81,12 @@ export default function relationalStoreInterfaceErrTest() {
     })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
-     * @tc.name RelationalStoreErrTest01
-     * @tc.desc Test isNotNull
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test isNotNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -103,12 +103,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_orderByAsc_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isNotNull_ErrTest_0100
-     * @tc.name RelationalStoreErrTest02
-     * @tc.desc Test orderByAsc
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test orderByAsc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_orderByAsc_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
@@ -125,12 +125,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_limitAs_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_limitAs_ErrTest_0100
-     * @tc.name RelationalStoreErrTest03
-     * @tc.desc Test limitAs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test limitAs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_limitAs_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -147,12 +147,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_offsetAs_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_offsetAs_ErrTest_0100
-     * @tc.name RelationalStoreErrTest04
-     * @tc.desc Test offsetAs
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test offsetAs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_offsetAs_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       () => {
@@ -169,12 +169,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getColumnName_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getColumnName_ErrTest_0100
-     * @tc.name RelationalStoreErrTest05
-     * @tc.desc Test getColumnName
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getColumnName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getColumnName_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -196,12 +196,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getAsset_ErrTest_0100
-     * @tc.name RelationalStoreErrTest06
-     * @tc.desc Test getAsset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getAsset_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -223,12 +223,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getAssets_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getAssets_ErrTest_0100
-     * @tc.name RelationalStoreErrTest07
-     * @tc.desc Test getAssets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getAssets_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -250,12 +250,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getValue_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getValue_ErrTest_0100
-     * @tc.name RelationalStoreErrTest08
-     * @tc.desc Test getValue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getValue_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -278,12 +278,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getRows_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getRows_ErrTest_0100
-     * @tc.name RelationalStoreErrTest09
-     * @tc.desc Test getRows
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getRows
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     // it('SUB_DistributedData_RelationalStore_getRows_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
     //   async () => {
@@ -306,12 +306,12 @@ export default function relationalStoreInterfaceErrTest() {
     // })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0100
-     * @tc.name RelationalStoreErrTest10
-     * @tc.desc Test querySql
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test querySql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_querySql_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -331,12 +331,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0200
-     * @tc.name RelationalStoreErrTest11
-     * @tc.desc Test querySql
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test querySql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_querySql_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -356,12 +356,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_querySql_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_querySql_ErrTest_0300
-     * @tc.name RelationalStoreErrTest12
-     * @tc.desc Test querySql
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test querySql
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_querySql_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -381,12 +381,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100
-     * @tc.name RelationalStoreErrTest13
-     * @tc.desc Test getModifyTime
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getModifyTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -414,12 +414,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0200
-     * @tc.name RelationalStoreErrTest14
-     * @tc.desc Test getModifyTime
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test getModifyTime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_getModifyTime_ErrTest_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
@@ -456,12 +456,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
-     * @tc.name RelationalStoreErrTest15
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -481,12 +481,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
-     * @tc.name RelationalStoreErrTest16
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -506,12 +506,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0200
-     * @tc.name RelationalStoreErrTest17
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -532,12 +532,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_execute_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_execute_ErrTest_0100
-     * @tc.name RelationalStoreErrTest18
-     * @tc.desc Test execute
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_execute_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -559,12 +559,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_beginTransaction_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_beginTransaction_ErrTest_0100
-     * @tc.name RelationalStoreErrTest19
-     * @tc.desc Test beginTransaction
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test beginTransaction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_beginTransaction_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -584,12 +584,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_beginTrans_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_beginTrans_ErrTest_0100
-     * @tc.name RelationalStoreErrTest20
-     * @tc.desc Test beginTrans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test beginTrans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_beginTrans_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -611,12 +611,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_commit_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_commit_ErrTest_0100
-     * @tc.name RelationalStoreErrTest21
-     * @tc.desc Test commit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test commit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_commit_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -648,12 +648,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_rollBack_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_rollBack_ErrTest_0100
-     * @tc.name RelationalStoreErrTest22
-     * @tc.desc Test rollBack
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test rollBack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_rollBack_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -682,12 +682,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0100
-     * @tc.name RelationalStoreErrTest23
-     * @tc.desc Test obtainDistributedTableName
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -721,12 +721,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0200
-     * @tc.name RelationalStoreErrTest24
-     * @tc.desc Test obtainDistributedTableName
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test obtainDistributedTableName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_obtainDistributedTableName_ErrTest_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -762,12 +762,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest25
-     * @tc.desc Test sync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -808,12 +808,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_sync_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_sync_ErrTest_0200
-     * @tc.name RelationalStoreErrTest26
-     * @tc.desc Test sync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_sync_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -854,12 +854,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest27
-     * @tc.desc Test cloudSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cloudSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -882,12 +882,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0200
-     * @tc.name RelationalStoreErrTest28
-     * @tc.desc Test cloudSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cloudSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -910,12 +910,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0300
-     * @tc.name RelationalStoreErrTest29
-     * @tc.desc Test cloudSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cloudSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -941,12 +941,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0400
-     * @tc.name RelationalStoreErrTest30
-     * @tc.desc Test cloudSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cloudSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cloudSync_ErrTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -971,12 +971,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100
-     * @tc.name RelationalStoreErrTest31
-     * @tc.desc Test remoteQuery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test remoteQuery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1013,12 +1013,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0200
-     * @tc.name RelationalStoreErrTest32
-     * @tc.desc Test remoteQuery
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test remoteQuery
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_remoteQuery_ErrTest_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1055,12 +1055,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0100
-     * @tc.name RelationalStoreErrTest33
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1088,12 +1088,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0200
-     * @tc.name RelationalStoreErrTest34
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1119,12 +1119,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0300
-     * @tc.name RelationalStoreErrTest35
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1147,12 +1147,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0400
-     * @tc.name RelationalStoreErrTest36
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1177,12 +1177,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0500
-     * @tc.name RelationalStoreErrTest37
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1207,12 +1207,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0600
-     * @tc.name RelationalStoreErrTest38
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1235,12 +1235,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0700
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0700
-     * @tc.name RelationalStoreErrTest39
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1260,12 +1260,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_on_ErrTest_0800
      * @tc.number SUB_DistributedData_RelationalStore_on_ErrTest_0800
-     * @tc.name RelationalStoreErrTest40
-     * @tc.desc Test on
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test on
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_on_ErrTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1293,12 +1293,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0100
-     * @tc.name RelationalStoreErrTest41
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1326,12 +1326,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0200
-     * @tc.name RelationalStoreErrTest42
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1352,12 +1352,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0300
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0300
-     * @tc.name RelationalStoreErrTest43
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1377,12 +1377,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0400
-     * @tc.name RelationalStoreErrTest44
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1405,12 +1405,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0500
-     * @tc.name RelationalStoreErrTest45
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1430,12 +1430,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0600
-     * @tc.name RelationalStoreErrTest46
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1458,12 +1458,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0700
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0700
-     * @tc.name RelationalStoreErrTest47
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1483,12 +1483,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_off_ErrTest_0800
      * @tc.number SUB_DistributedData_RelationalStore_off_ErrTest_0800
-     * @tc.name RelationalStoreErrTest48
-     * @tc.desc Test off
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_off_ErrTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1508,12 +1508,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0100
-     * @tc.name RelationalStoreErrTest49
-     * @tc.desc Test emit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test emit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_emit_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1533,12 +1533,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_emit_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_emit_ErrTest_0200
-     * @tc.name RelationalStoreErrTest50
-     * @tc.desc Test emit
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test emit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_emit_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1558,12 +1558,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100
-     * @tc.name RelationalStoreErrTest51
-     * @tc.desc Test queryLockedRow
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test queryLockedRow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_queryLockedRow_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1586,12 +1586,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_insert_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_insert_ErrTest_0100
-     * @tc.name RelationalStoreErrTest52
-     * @tc.desc Test insert
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test insert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_insert_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1619,12 +1619,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_insertSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_insertSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest53
-     * @tc.desc Test insertSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test insertSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_insertSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1653,12 +1653,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_batchInsert_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_batchInsert_ErrTest_0100
-     * @tc.name RelationalStoreErrTest54
-     * @tc.desc Test batchInsert
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test batchInsert
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_batchInsert_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1684,12 +1684,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_batchInsertSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_batchInsertSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest55
-     * @tc.desc Test batchInsertSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test batchInsertSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_batchInsertSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1717,12 +1717,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_update_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_update_ErrTest_0100
-     * @tc.name RelationalStoreErrTest56
-     * @tc.desc Test update
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test update
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_update_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1753,12 +1753,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_updateSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_updateSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest57
-     * @tc.desc Test updateSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test updateSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_updateSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1787,12 +1787,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_delete_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_delete_ErrTest_0100
-     * @tc.name RelationalStoreErrTest58
-     * @tc.desc Test delete
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test delete
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_delete_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1818,12 +1818,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_deleteSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_deleteSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest59
-     * @tc.desc Test deleteSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test deleteSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_deleteSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1851,12 +1851,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_query_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_query_ErrTest_0100
-     * @tc.name RelationalStoreErrTest60
-     * @tc.desc Test query
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_query_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1884,12 +1884,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_querySync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest61
-     * @tc.desc Test querySync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test querySync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_querySync_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1918,12 +1918,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_querySqlSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_querySqlSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest62
-     * @tc.desc Test querySqlSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test querySqlSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_querySqlSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -1951,12 +1951,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_execute_ErrTest_0200
      * @tc.number SUB_DistributedData_RelationalStore_execute_ErrTest_0200
-     * @tc.name RelationalStoreErrTest63
-     * @tc.desc Test execute
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test execute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_execute_ErrTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async () => {
@@ -1976,12 +1976,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_executeSync_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_executeSync_ErrTest_0100
-     * @tc.name RelationalStoreErrTest64
-     * @tc.desc Test executeSync
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test executeSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_executeSync_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2001,12 +2001,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100
-     * @tc.name RelationalStoreErrTest65
-     * @tc.desc Test isTokenizerSupported
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test isTokenizerSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
        console.info(TAG + "-----SUB_DistributedData_RelationalStore_isTokenizerSupported_ErrTest_0100 start-----")
@@ -2021,12 +2021,12 @@ export default function relationalStoreInterfaceErrTest() {
      })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_toSendableValuesBucket_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_toSendableValuesBucket_ErrTest_0100
-     * @tc.name RelationalStoreErrTest66
-     * @tc.desc Test toSendableValuesBucket
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toSendableValuesBucket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_toSendableValuesBucket_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2074,12 +2074,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_fromSendableValuesBucket_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_fromSendableValuesBucket_ErrTest_0100
-     * @tc.name RelationalStoreErrTest67
-     * @tc.desc Test fromSendableValuesBucket
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fromSendableValuesBucket
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_fromSendableValuesBucket_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2128,12 +2128,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_toSendableAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_toSendableAsset_ErrTest_0100
-     * @tc.name RelationalStoreErrTest68
-     * @tc.desc Test toSendableAsset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test toSendableAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_toSendableAsset_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2158,12 +2158,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_fromSendableAsset_ErrTest_0100
      * @tc.number SUB_DistributedData_RelationalStore_fromSendableAsset_ErrTest_0100
-     * @tc.name RelationalStoreErrTest69
-     * @tc.desc Test fromSendableAsset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test fromSendableAsset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_fromSendableAsset_ErrTest_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2190,12 +2190,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0100
-     * @tc.name RelationalStoreErrTest70
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2216,12 +2216,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500
-     * @tc.name RelationalStoreErrTest71
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
@@ -2242,12 +2242,12 @@ export default function relationalStoreInterfaceErrTest() {
       })
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600
      * @tc.number SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600
-     * @tc.name RelationalStoreErrTest72
-     * @tc.desc Test cleanDirtyData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test cleanDirtyData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_cleanDirtyData_ErrTest_0600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {

@@ -30,40 +30,40 @@ export default function VideoPlayerEnumTest() {
     afterAll(() => {
       console.info('afterAll case');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0100
-        * @tc.name      : SeekMode
-        * @tc.desc      : SeekMode Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0100
+     * @tc.desc   SeekMode Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.SeekMode.SEEK_NEXT_SYNC).assertEqual(0);
       expect(media.SeekMode.SEEK_PREV_SYNC).assertEqual(1);
       expect(media.SeekMode.SEEK_CLOSEST).assertEqual(2);
       done();
     });
-      /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0200
-        * @tc.name      : SeekMode
-        * @tc.desc      : SeekMode Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+      /**
+       * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0200
+       * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0200
+       * @tc.desc   SeekMode Enumeration test
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_SEEK_MODE_0200', Level.LEVEL0,async (done: Function) => {
         expect(media.SeekMode.SEEK_CONTINUOUS).assertEqual(3);
         done();
       });
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_ERROR_CODE_0100
-       * @tc.name      : MediaErrorCode
-       * @tc.desc      : MediaErrorCode Enumeration test
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level0
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_ERROR_CODE_0100
+     * @tc.desc   MediaErrorCode Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_ERROR_CODE_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.MediaErrorCode.MSERR_OK).assertEqual(0);
       expect(media.MediaErrorCode.MSERR_NO_MEMORY).assertEqual(1);
@@ -77,14 +77,14 @@ export default function VideoPlayerEnumTest() {
       expect(media.MediaErrorCode.MSERR_UNSUPPORTED).assertEqual(9);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_BUFFERING_INFO_TYPE_0100
-        * @tc.name      : BufferingInfoType
-        * @tc.desc      : BufferingInfoType Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_BUFFERING_INFO_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_BUFFERING_INFO_TYPE_0100
+     * @tc.desc   BufferingInfoType Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_BUFFERING_INFO_TYPE_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.BufferingInfoType.BUFFERING_START).assertEqual(1);
       expect(media.BufferingInfoType.BUFFERING_END).assertEqual(2);
@@ -92,14 +92,14 @@ export default function VideoPlayerEnumTest() {
       expect(media.BufferingInfoType.CACHED_DURATION).assertEqual(4);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_PLAYBACK_SPEED_0100
-        * @tc.name      : PlaybackSpeed
-        * @tc.desc      : PlaybackSpeed Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_PLAYBACK_SPEED_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_PLAYBACK_SPEED_0100
+     * @tc.desc   PlaybackSpeed Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_PLAYBACK_SPEED_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.PlaybackSpeed.SPEED_FORWARD_0_75_X).assertEqual(0);
       expect(media.PlaybackSpeed.SPEED_FORWARD_1_00_X).assertEqual(1);
@@ -108,14 +108,14 @@ export default function VideoPlayerEnumTest() {
       expect(media.PlaybackSpeed.SPEED_FORWARD_2_00_X).assertEqual(4);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_CONTAINER_FORMAT_TYPE_0100
-        * @tc.name      : ContainerFormatType
-        * @tc.desc      : ContainerFormatType Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_CONTAINER_FORMAT_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_CONTAINER_FORMAT_TYPE_0100
+     * @tc.desc   ContainerFormatType Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_CONTAINER_FORMAT_TYPE_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.ContainerFormatType.CFT_MPEG_4).assertEqual("mp4");
       expect(media.ContainerFormatType.CFT_MPEG_4A).assertEqual("m4a");
@@ -125,28 +125,28 @@ export default function VideoPlayerEnumTest() {
       expect(media.ContainerFormatType.CFT_AAC).assertEqual("aac");
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_TYPE_0100
-        * @tc.name      : MediaType
-        * @tc.desc      : MediaType Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_TYPE_0100
+     * @tc.desc   MediaType Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_TYPE_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.MediaType.MEDIA_TYPE_AUD).assertEqual(0);
       expect(media.MediaType.MEDIA_TYPE_VID).assertEqual(1);
       expect(media.MediaType.MEDIA_TYPE_SUBTITLE).assertEqual(2);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_DESCRIPTION_KEY_0100
-        * @tc.name      : MediaDescriptionKey
-        * @tc.desc      : MediaDescriptionKey Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_DESCRIPTION_KEY_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_DESCRIPTION_KEY_0100
+     * @tc.desc   MediaDescriptionKey Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_DESCRIPTION_KEY_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_INDEX).assertEqual("track_index");
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_TYPE).assertEqual("track_type");
@@ -161,14 +161,14 @@ export default function VideoPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH).assertEqual("sample_depth");
       done();
     });
-    /* *
-        * @tc.number    : SUB_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_SCALE_TYPE_00_0100
-        * @tc.name      : MediaType
-        * @tc.desc      : MediaType Enumeration test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_SCALE_TYPE_00_0100
+     * @tc.number SUB_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_SCALE_TYPE_00_0100
+     * @tc.desc   MediaType Enumeration test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MEDIA_VIDEO_PLAYER_ENUM_MEDIA_SCALE_TYPE_00_0100', Level.LEVEL0,async (done: Function) => {
       expect(media.VideoScaleType.VIDEO_SCALE_TYPE_FIT).assertEqual(0);
       expect(media.VideoScaleType.VIDEO_SCALE_TYPE_FIT_CROP).assertEqual(1);

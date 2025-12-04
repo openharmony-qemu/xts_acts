@@ -26,78 +26,78 @@ export default function imageSourceSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0100
-     * @tc.name       : testImageSourceSize001
-     * @tc.desc       : testing imageSourceSize for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0100
+     * @tc.desc   testing imageSourceSize for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0200
-     * @tc.name       : testImageSourceSize002
-     * @tc.desc       : testing imageSourceSize for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0200
+     * @tc.desc   testing imageSourceSize for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0300
-     * @tc.name       : testImageSourceSize003
-     * @tc.desc       : testing imageSourceSize for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0300
+     * @tc.desc   testing imageSourceSize for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0400
-     * @tc.name       : testImageSourceSize004
-     * @tc.desc       : testing imageSourceSize for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0400
+     * @tc.desc   testing imageSourceSize for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0500
-     * @tc.name       : testImageSourceSize005
-     * @tc.desc       : testing imageSourceSize for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0500
+     * @tc.desc   testing imageSourceSize for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0600
-     * @tc.name       : testImageSourceSize006
-     * @tc.desc       : testing resizable for image with set/get/reset attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSourceSize006
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_SOURCESIZE_0600
+     * @tc.desc   testing resizable for image with set/get/reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSourceSize006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSourceSize006()).assertEqual(0)

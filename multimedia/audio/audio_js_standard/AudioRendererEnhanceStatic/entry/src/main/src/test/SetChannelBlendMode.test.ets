@@ -31,7 +31,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererTest() {
   describe('setChannelBlendMode', () => {
-    let audioRen: audio.AudioRenderer;
+    let audioRen: audio.AudioRenderer | null;
     let Tag = "audioRendererEnhanceTest";
 
     beforeAll(async (): Promise<void> => {
@@ -74,10 +74,10 @@ export default function audioRendererTest() {
         rendererInfo: AudioRendererInfo
       }
       try {
-        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer) => {
+        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null) => {
           audioRen = data;
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data state: ' +
-          Object.keys(data));
+          Object.keys(data!));
           console.info('AudioFrameworkRenderLog: AudioRender Created : Success : Stream Type: SUCCESS data value: ' +
           JSON.stringify(data));
         }).catch((err: Error) => {
@@ -90,7 +90,7 @@ export default function audioRendererTest() {
     afterEach(async () => {
       console.info(`${Tag}: afterEach: Test case-level clearance conditions`);
       Utils.msSleep(2000);
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${Tag}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${Tag}: Renderer release :ERROR : ${err.message}`);
@@ -104,9 +104,9 @@ export default function audioRendererTest() {
     let renderPlay = async () => {
       let bufferSize: long;
       try {
-        bufferSize = await audioRen.getBufferSize()
+        bufferSize = await audioRen!.getBufferSize()
         console.info(`${Tag}: audioRenderer getBufferSize success,bufferSize:${bufferSize} \n`);
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag}: audioRenderer start success\n`);
       } catch (err) {
         console.info(`${Tag}: audioRenderer start : Error: ${JSON.stringify(err)}\n`);
@@ -142,7 +142,7 @@ export default function audioRendererTest() {
 
         let inputVolume = 0.5;
         try {
-          await audioRen.setVolume(inputVolume);
+          await audioRen!.setVolume(inputVolume);
           console.info(`${Tag}: setVolume to 0.5 : Success`);
         } catch (err: BusinessError) {
           console.info(`${Tag}: setVolume : ERROR : code: ${err.code}, mesage: ${err.message}`);
@@ -162,16 +162,16 @@ export default function audioRendererTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
-     * @tc.desc        AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MDOE_INPUT_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_DEFAULT)
+        audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_DEFAULT)
         console.info(`${Tag}: setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -183,16 +183,16 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
-     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_LEFT_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
+        audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -204,16 +204,16 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
-     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_ALL_LEFT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_LEFT)
+        audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_LEFT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -225,16 +225,16 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
-     * @tc.desc        AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400
+     * @tc.desc   AudioRenderer - setChannelBlendMode-MODE_ALL_RIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
-        audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_RIGHT)
+        audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_ALL_RIGHT)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -246,12 +246,12 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
-     * @tc.desc        AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800
+     * @tc.desc   AudioRenderer - setChannelBlendMode - USE_ALL_STREAMTYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -270,7 +270,7 @@ export default function audioRendererTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer;
+          let audioRender: audio.AudioRenderer | null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;
@@ -285,7 +285,7 @@ export default function audioRendererTest() {
           ];
           try {
             for (let index = 0; index < keysArray.length; index++) {
-              audioRender.setChannelBlendMode(keysArray[index])
+              audioRender!.setChannelBlendMode(keysArray[index])
               await Utils.msSleep(20);
             }
           } catch (error: BusinessError) {
@@ -294,7 +294,7 @@ export default function audioRendererTest() {
             done();
           }
           if (audioRender != null) {
-            await audioRender.release().then(() => {
+            await audioRender!.release().then(() => {
               // audioRender = null;
             }).catch((err: Error) => {
               console.info(`${Tag}: setChannelBlendMode Renderer release :fail :${err.message}`);
@@ -312,19 +312,18 @@ export default function audioRendererTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
-     * @tc.desc        AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900
+     * @tc.desc   AudioRenderer - setChannelBlendMode-RUNNING-STATE-MODE_LR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETCHANNELBLENMODE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        audioRen.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
+        audioRen!.setChannelBlendMode(audio.ChannelBlendMode.MODE_BLEND_LR)
         console.info(`${Tag}:  setChannelBlendMode :SUCCESS`);
         await renderPlay();
-        expect(true).assertTrue();
         done();
       } catch (error: BusinessError) {
         console.info(`${Tag}:  setChannelBlendMode : error ${error.message}, ${error.code}`);

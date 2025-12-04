@@ -148,12 +148,12 @@ export default function rdbStoreQuerySqlTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0970
-     * @tc.name   : testRdbStoreQuerySql001
-     * @tc.desc   : RdbStore querySql callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0970
+     * @tc.desc   RdbStore querySql callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "testRdbStoreQuerySql001 begin.");
@@ -181,12 +181,12 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1010
-     * @tc.name   : testRdbStoreQuerySql002
-     * @tc.desc   : RdbStore querySql callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1010
+     * @tc.desc   RdbStore querySql callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "testRdbStoreQuerySql002 begin.");
@@ -214,12 +214,12 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0980   8
-     * @tc.name   : testRdbStoreQuerySql003
-     * @tc.desc   : RdbStore querySql promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql003
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0980   8
+     * @tc.desc   RdbStore querySql promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "testRdbStoreQuerySql003 begin.");
@@ -239,12 +239,12 @@ export default function rdbStoreQuerySqlTest() {
       console.info(TAG + "testRdbStoreQuerySql003 end.");
     });
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1020
-     * @tc.name   : testRdbStoreQuerySql004
-     * @tc.desc   : RdbStore querySql promise test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql004
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1020
+     * @tc.desc   RdbStore querySql promise test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + "testRdbStoreQuerySql004 begin.");
@@ -265,12 +265,12 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0990
-     * @tc.name   : testRdbStoreQuerySql005
-     * @tc.desc   : RdbStore querySql callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql005
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0990
+     * @tc.desc   RdbStore querySql callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + " testRdbStoreQuerySql005 begin.");
@@ -296,12 +296,12 @@ export default function rdbStoreQuerySqlTest() {
     });
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1000
-     * @tc.name   : testRdbStoreQuerySql006
-     * @tc.desc   : RdbStore querySql callback test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testRdbStoreQuerySql006
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_1000
+     * @tc.desc   RdbStore querySql callback test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testRdbStoreQuerySql006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,  async (done: Function) => {
       console.info(TAG + " testRdbStoreQuerySql006 begin.");

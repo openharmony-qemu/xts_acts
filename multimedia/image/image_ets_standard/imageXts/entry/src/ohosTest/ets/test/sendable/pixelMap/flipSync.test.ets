@@ -79,12 +79,12 @@ export default function sendableFlipSyncTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_001
-     * @tc.name      : flipSync_sendable_promise_001
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_sendable_promise_001
+     * @tc.number PIXEL_MAP_FLIP_SYNC_001
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_sendable_promise_001';
@@ -96,12 +96,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_002
-     * @tc.name      : flipSync_sendable_promise_002
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_sendable_promise_002
+     * @tc.number PIXEL_MAP_FLIP_SYNC_002
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_sendable_promise_002';
@@ -113,12 +113,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_003
-     * @tc.name      : flipSync_sendable_promise_003
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_sendable_promise_003
+     * @tc.number PIXEL_MAP_FLIP_SYNC_003
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_sendable_promise_003';
@@ -130,12 +130,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_004
-     * @tc.name      : flipSync_sendable_promise_004
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_sendable_promise_004
+     * @tc.number PIXEL_MAP_FLIP_SYNC_004
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_sendable_promise_004';
@@ -147,12 +147,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_005
-     * @tc.name      : flipSync_abnormal_sendable_promise_001
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_abnormal_sendable_promise_001
+     * @tc.number PIXEL_MAP_FLIP_SYNC_005
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_abnormal_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_abnormal_sendable_promise_001';
@@ -164,12 +164,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_006
-     * @tc.name      : flipSync_abnormal_sendable_promise_002
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_abnormal_sendable_promise_002
+     * @tc.number PIXEL_MAP_FLIP_SYNC_006
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_abnormal_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_abnormal_sendable_promise_002';
@@ -181,12 +181,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_007
-     * @tc.name      : flipSync_abnormal_sendable_promise_003
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_abnormal_sendable_promise_003
+     * @tc.number PIXEL_MAP_FLIP_SYNC_007
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_abnormal_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_abnormal_sendable_promise_003';
@@ -198,12 +198,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_008
-     * @tc.name      : flipSync_abnormal_sendable_promise_004
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_abnormal_sendable_promise_004
+     * @tc.number PIXEL_MAP_FLIP_SYNC_008
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_abnormal_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_abnormal_sendable_promise_004';
@@ -215,12 +215,12 @@ export default function sendableFlipSyncTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_FLIP_SYNC_009
-     * @tc.name      : flipSync_abnormal_sendable_promise_005
-     * @tc.desc      : flipSync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   flipSync_abnormal_sendable_promise_005
+     * @tc.number PIXEL_MAP_FLIP_SYNC_009
+     * @tc.desc   flipSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('flipSync_abnormal_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'flipSync_abnormal_sendable_promise_005';

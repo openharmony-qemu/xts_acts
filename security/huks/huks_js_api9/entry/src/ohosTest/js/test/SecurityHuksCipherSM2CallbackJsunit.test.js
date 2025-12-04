@@ -401,6 +401,14 @@ async function publicCipherFunc(
 
 export default function SecurityHuksCipherSM2CallbackJsunit() {
     describe('SecurityHuksCipherSM2CallbackJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM2_001
+         * @tc.number Security_HUKS_Cipher_API9_SM2_001
+         * @tc.desc   Security_HUKS_Cipher_API9_SM2_001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM2_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             // init-update-finish
             const srcKeyAlies = 'Security_HUKS_Cipher_API9_SM2_001_001';
@@ -466,6 +474,14 @@ export default function SecurityHuksCipherSM2CallbackJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Cipher_API9_SM2_002
+         * @tc.number Security_HUKS_Cipher_API9_SM2_002
+         * @tc.desc   Security_HUKS_Cipher_API9_SM2_002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Cipher_API9_SM2_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             // init-finish
             const srcKeyAlies = 'Security_HUKS_Cipher_API9_SM2_002_001';

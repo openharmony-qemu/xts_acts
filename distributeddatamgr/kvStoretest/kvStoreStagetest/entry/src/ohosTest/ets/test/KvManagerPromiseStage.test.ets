@@ -52,16 +52,19 @@ export default function kvManagerPromiseStageTest(){
       kvManager.getKVStore(TEST_STORE_ID, options).then((store) => {
         console.info("beforeAll getKVStore success");
         kvStoreNew = store;
+        done();
       }).catch((err) => {
         console.info("beforeAll getKVStore err: "  + JSON.stringify(err));
+        done();
       });
-      console.info('beforeAll end');
-      done();
+
     })
 
     afterAll(async function (done) {
       console.info('afterAll');
       await sleep(500);
+      kvManager = null;
+      kvStore = null;
       done();
     })
 
@@ -76,23 +79,26 @@ export default function kvManagerPromiseStageTest(){
         console.info('afterEach closeKVStore success');
         await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
           console.info('afterEach deleteKVStore success');
+          kvStore = null;
+          done();
         }).catch((err) => {
           console.error('afterEach deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+          done();
         });
       }).catch((err) => {
         console.error('afterEach closeKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
+        done();
       });
-      kvStore = null;
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1800
-     * @tc.name   : testCreateValueObject001
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testEtsKVManagerGetKVStore001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1800
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEtsKVManagerGetKVStore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('testKVManagerGetKVStore001');
@@ -111,12 +117,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1900
-     * @tc.name   : testKVManagerGetKVStore002
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testEtsKVManagerGetKVStore002
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1900
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testEtsKVManagerGetKVStore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info('testKVManagerGetKVStore002');
@@ -134,12 +140,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2000
-     * @tc.name   : testKVManagerGetKVStore003
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore003
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2000
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore003');
@@ -156,20 +162,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore003 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore003 getKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         expect(err !=null ).assertTrue();
+        done();
       });
-      done();
+      
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2100
-     * @tc.name   : testKVManagerGetKVStore004
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore004
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2100
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore004');
@@ -192,12 +200,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2200
-     * @tc.name   : testKVManagerGetKVStore005
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore005
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2200
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore005');
@@ -214,20 +222,21 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore005 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore005 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2300
-     * @tc.name   : testKVManagerGetKVStore006
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 006
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore006
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2300
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore006');
@@ -244,20 +253,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore006 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore006 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2400
-     * @tc.name   : testKVManagerGetKVStore007
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 007
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore007
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2400
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore006');
@@ -274,20 +285,21 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore007 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore007 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2500
-     * @tc.name   : testKVManagerGetKVStore008
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 008
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore008
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2500
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore008');
@@ -303,20 +315,21 @@ export default function kvManagerPromiseStageTest(){
       await kvManager.getKVStore(TEST_STORE_ID, optionsInfo).then((store) => {
         console.info('testKVManagerGetKVStore008 getKVStore success' + store);
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore008 getKVStore err ' + err);
         expect(err !=null ).assertTrue();
+        done();
       });
-      done();
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2600
-     * @tc.name   : testKVManagerGetKVStore009
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 009
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore009
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2600
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore009');
@@ -332,20 +345,21 @@ export default function kvManagerPromiseStageTest(){
       await kvManager.getKVStore(TEST_STORE_ID, optionsInfo).then((store) => {
         console.info('testKVManagerGetKVStore009 getKVStore success' + store);
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore009 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2700
-     * @tc.name   : testKVManagerGetKVStore010
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 010
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore010
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2700
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore010');
@@ -362,20 +376,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore010 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore010 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2800
-     * @tc.name   : testKVManagerGetKVStore011
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 011
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore011
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2800
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore011');
@@ -392,20 +408,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore011 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore011 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2900
-     * @tc.name   : testKVManagerGetKVStore012
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 012
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore012
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_2900
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore012');
@@ -422,20 +440,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetKVStore012 getKVStore success');
         kvStore = store;
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore012 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3000
-     * @tc.name   : testKVManagerGetKVStore013
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 013
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore013
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3000
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore013');
@@ -451,23 +471,26 @@ export default function kvManagerPromiseStageTest(){
       try {
         await kvManager.getKVStore(TEST_STORE_ID, optionsInfo).then((store) => {
           console.info('testKVManagerGetKVStore013 getKVStore success');
+        done();
         }).catch((err) => {
           console.info('testKVManagerGetKVStore013 getKVStore err ' + err);
           expect(err != null).assertTrue();
+        done();
         });
       } catch (e) {
         console.info('testKVManagerGetKVStore013 getKVStore e ' + e);
+        done();
       }
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3100
-     * @tc.name   : testKVManagerGetKVStore014
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 014
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore014
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3100
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore014');
@@ -491,12 +514,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3200
-     * @tc.name   : testKVManagerGetKVStore015
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 015
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore015
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3200
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore015');
@@ -520,12 +543,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3300
-     * @tc.name   : testKVManagerGetKVStore016
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 016
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore016
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3300
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore016');
@@ -549,12 +572,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3400
-     * @tc.name   : testKVManagerGetKVStore017
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 017
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore017
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3400
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore017');
@@ -578,12 +601,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3500
-     * @tc.name   : testKVManagerGetKVStore018
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 018
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore018
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3500
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore018');
@@ -607,12 +630,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3600
-     * @tc.name   : testKVManagerGetKVStore019
-     * @tc.desc   : Test Js Api KVManager.GetKVStore testcase 019
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetKVStore019
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_3600
+     * @tc.desc   Test Js Api KVManager.GetKVStore testcase 019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetKVStore019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetKVStore019');
@@ -628,65 +651,72 @@ export default function kvManagerPromiseStageTest(){
       await kvManager.getKVStore(TEST_STORE_ID, optionsInfo).then((store) => {
         console.info('testKVManagerGetKVStore019 getKVStore success' + store);
         expect(store != null).assertTrue();
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetKVStore019 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0400
-     * @tc.name   : testKVManagerCloseKVStore001
-     * @tc.desc   : Test Js Api KVManager.CloseKVStore testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerCloseKVStore001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0400
+     * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerCloseKVStore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
-      console.info('testKVManagerCloseKVStore004');
+      console.info('testEtsKVManagerCloseKVStore001');
       kvManager.getKVStore(TEST_STORE_ID, options, async function (err, store) {
         kvStore = store;
         console.info('testKVManagerCloseKVStore001 getKVStore success');
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID);
         console.info('testKVManagerCloseKVStore001 closeKVStore redo.');
         await kvManager.closeKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then((err) => {
-        console.info('testKVManagerCloseKVStore001 closeKVStore twice ');
-        expect(err == null).assertTrue();
+          console.info('testKVManagerCloseKVStore001 closeKVStore twice ');
+          expect(err == null).assertTrue();
+          done();
         }).catch((err) => {
-        console.info('testKVManagerCloseKVStore001 err ' + err);
-        expect().assertFail();
+          console.info('testKVManagerCloseKVStore001 err ' + err);
+          expect().assertFail();
+          done();
         });
-        done();
+        
       });
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0900
-     * @tc.name   : testKVManagerDeleteKVStore001
-     * @tc.desc   : Test Js Api KVManager.DeleteKVStore testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerDeleteKVStore001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0900
+     * @tc.desc   Test Js Api KVManager.DeleteKVStore testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerDeleteKVStore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerDeleteKVStore001');
       await kvManager.deleteKVStore(TEST_BUNDLE_NAME, TEST_STORE_ID).then(() => {
         console.info('testKVManagerDeleteKVStore001 deleteKVStore success');
+        expect(null).assertFail();
+        done();
       }).catch((err) => {
         console.info('testKVManagerDeleteKVStore001 deleteKVStore err ' + `, error code is ${err.code}, message is ${err.message}`);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+      
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1400
-     * @tc.name   : testKVManagerGetAllKVStoreId001
-     * @tc.desc   : Test Js Api KVManager.GetAllKVStoreId testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetAllKVStoreId001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1400
+     * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetAllKVStoreId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetAllKVStoreId001');
@@ -694,20 +724,22 @@ export default function kvManagerPromiseStageTest(){
         console.info('testKVManagerGetAllKVStoreId001 getAllKVStoreId success');
         console.info('testKVManagerGetAllKVStoreId001 size = ' + data.length);
         expect(0).assertEqual(data.length);
+        done();
       }).catch((err) => {
         console.info('testKVManagerGetAllKVStoreId001 getAllKVStoreId err ' + err);
         expect(err == null).assertFail();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1500
-     * @tc.name   : testKVManagerGetAllKVStoreId002
-     * @tc.desc   : Test Js Api KVManager.GetAllKVStoreId testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerGetAllKVStoreId002
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_1500
+     * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerGetAllKVStoreId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVManagerGetAllKVStoreId002');
@@ -720,24 +752,27 @@ export default function kvManagerPromiseStageTest(){
           expect(1).assertEqual(data.length);
           console.info('testKVManagerGetAllKVStoreId002 data[0] = ' + data[0]);
           expect(TEST_STORE_ID).assertEqual(data[0]);
+        done();
         }).catch((err) => {
           console.info('testKVManagerGetAllKVStoreId002 getAllKVStoreId err ' + err);
           expect(err != null).assertTrue();
+        done();
         });
       }).catch((err) => {
         console.info('testKVManagerGetAllKVStoreId002 getKVStore err ' + err);
         expect(err != null).assertTrue();
+        done();
       });
-      done();
+
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
-     * @tc.name   : testKVManagerOn001
-     * @tc.desc   : Test Js Api KVManager.On testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOn001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
+     * @tc.desc   Test Js Api KVManager.On testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOn001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOn001');
@@ -755,12 +790,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
-     * @tc.name   : testKVManagerOn002
-     * @tc.desc   : Test Js Api KVManager.On testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOn002
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6100
+     * @tc.desc   Test Js Api KVManager.On testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOn002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOn002');
@@ -783,12 +818,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
-     * @tc.name   : testKVManagerOn003
-     * @tc.desc   : Test Js Api KVManager.On testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOn003
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
+     * @tc.desc   Test Js Api KVManager.On testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOn003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOn003');
@@ -807,12 +842,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
-     * @tc.name   : testKVManagerOff001
-     * @tc.desc   : Test Js Api KVManager.Off testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOff001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6300
+     * @tc.desc   Test Js Api KVManager.Off testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOff001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOff001');
@@ -829,12 +864,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5700
-     * @tc.name   : testKVManagerOff002
-     * @tc.desc   : Test Js Api KVManager.Off testcase 002
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOff002
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5700
+     * @tc.desc   Test Js Api KVManager.Off testcase 002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOff002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOff002');
@@ -852,12 +887,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5800
-     * @tc.name   : testKVManagerOff003
-     * @tc.desc   : Test Js Api KVManager.Off testcase 003
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOff003
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5800
+     * @tc.desc   Test Js Api KVManager.Off testcase 003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOff003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOff003');
@@ -880,12 +915,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5900
-     * @tc.name   : testKVManagerOff004
-     * @tc.desc   : Test Js Api KVManager.Off testcase 004
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOff004
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_5900
+     * @tc.desc   Test Js Api KVManager.Off testcase 004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOff004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOff004');
@@ -904,12 +939,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6000
-     * @tc.name   : testKVManagerOff005
-     * @tc.desc   : Test Js Api KVManager.Off testcase 005
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVManagerOff005
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_6000
+     * @tc.desc   Test Js Api KVManager.Off testcase 005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVManagerOff005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
       console.info('testKVManagerOff001');
@@ -927,12 +962,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0200
-     * @tc.name   : testKVStorePut001
-     * @tc.desc   : Test Js Api KVManager.Put testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVStorePut001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0200
+     * @tc.desc   Test Js Api KVManager.Put testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVStorePut001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVStorePut001');
@@ -951,12 +986,12 @@ export default function kvManagerPromiseStageTest(){
     })
 
     /**
-     * @tc.number : SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0300
-     * @tc.name   : testKVStoreDelete001
-     * @tc.desc   : Test Js Api KVManager.Delete testcase 001
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testEtsKVStoreDelete001
+     * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreEtsApiTest_0300
+     * @tc.desc   Test Js Api KVManager.Delete testcase 001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testEtsKVStoreDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
       console.info('testKVStoreDelete001');
@@ -965,13 +1000,16 @@ export default function kvManagerPromiseStageTest(){
           console.info('testKVStoreDelete001 getKVStore success');
           kvStoreNew.delete(STORE_KEY).then(() => {
             console.info("testKVStoreDelete001 promise delete success");
+            done();
           }).catch((err) => {
             console.info('testKVStoreDelete001 promise delete fail err' + err);
+            done();
           });
         }).catch((err) => {
           console.info('testKVStoreDelete001 promise delete fail err' + err);
+          done();
         });
-        done();
+        
       }catch (err) {
         console.info('testKVStoreDelete001 promise delete fail err' + err);
         expect( err != null).assertTrue();

@@ -45,10 +45,13 @@ export default function hitTestModeJsunit() {
       console.info("hitTestModeTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testhitTestMode0002
-     * @tc.desic         acehitTestModelEtsTest0002
+    /**
+     * @tc.name   testhitTestMode0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testhitTestMode0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testhitTestMode0002', Level.LEVEL2, async (done: Function) => {
       console.info('hitTestMode testhitTestMode0002 START');

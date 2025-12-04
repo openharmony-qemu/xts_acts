@@ -37,12 +37,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0100 start');
@@ -125,12 +125,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0200 start');
@@ -213,12 +213,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0300 start');
@@ -281,12 +281,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0400 start');
@@ -332,12 +332,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500 start');
@@ -382,12 +382,12 @@ export default function UDMFEntryTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFApiDataStructTest_2600 end");
     });
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0600 start');
@@ -428,12 +428,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0700 start');
@@ -478,12 +478,12 @@ export default function UDMFEntryTest() {
     });
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800 start');
@@ -523,12 +523,12 @@ export default function UDMFEntryTest() {
       console.log("SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0800 end");
     })
     /**
-     * @tc.name      : testSUBDistributedDataUDMFSDKUDMFApiDataStructTest2300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0900 start');
@@ -601,12 +601,12 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1000 start');
@@ -671,12 +671,12 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1100 start');
@@ -726,12 +726,12 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1200 start');
@@ -782,12 +782,12 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1300 start');
@@ -837,12 +837,12 @@ export default function UDMFEntryTest() {
       });
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1400 start');
@@ -894,12 +894,12 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1500 start');
@@ -979,12 +979,12 @@ export default function UDMFEntryTest() {
 
 
       /**
-       * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
-       * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
-       * @tc.desc      : Verify the properties of the contentForm type
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 2
+       * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
+       * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600
+       * @tc.desc   Verify the properties of the contentForm type
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL2
        */
       it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
         console.log('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600 start');
@@ -1043,13 +1043,13 @@ export default function UDMFEntryTest() {
         });
         console.log("SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1600 end");
       });
-  /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1120,12 +1120,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1200,12 +1200,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1303,12 +1303,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1493,12 +1493,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1689,12 +1689,12 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -1929,12 +1929,12 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2136,12 +2136,12 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2394,12 +2394,12 @@ export default function UDMFEntryTest() {
       });
     })
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let unifiedData = new unifiedDataChannel.UnifiedData();
@@ -2412,12 +2412,12 @@ export default function UDMFEntryTest() {
       }
     })
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let unifiedData = new unifiedDataChannel.UnifiedData();
@@ -2429,13 +2429,13 @@ export default function UDMFEntryTest() {
         expect(e.code).assertEqual("401");
       }
     })  
- /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2516,12 +2516,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2604,12 +2604,12 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2665,12 +2665,12 @@ export default function UDMFEntryTest() {
 
 
     /**
-     * @tc.name      : testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
-     * @tc.desc      : Verify the properties of the contentForm type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let options: unifiedDataChannel.Options = {
@@ -2724,12 +2724,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
-     * @tc.desc       Test UDMF unifiedData getTypes
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100
+     * @tc.desc   Test UDMF unifiedData getTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3100 start')
@@ -2740,28 +2740,29 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
-     * @tc.desc       Test UDMF UnifiedRecord getTypes
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200
+     * @tc.desc   Test UDMF UnifiedRecord getTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 start')
       let record = new unifiedDataChannel.UnifiedRecord();
       let types = record.getTypes();
-      expect(types.length).assertEqual(0);
+      expect(types.length).assertEqual(1);
+      expect(types[0]).assertEqual('')
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3200 end')
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
-     * @tc.desc       Test UDMF unifiedDataChannel queryData promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300
+     * @tc.desc   Test UDMF unifiedDataChannel queryData promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3300 start');
@@ -2774,12 +2775,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
-     * @tc.desc       Test UDMF unifiedDataChannel queryData callback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400
+     * @tc.desc   Test UDMF unifiedDataChannel queryData callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3400 start');
@@ -2798,12 +2799,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
-     * @tc.desc       Test UDMF unifiedDataChannel deleteData promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500
+     * @tc.desc   Test UDMF unifiedDataChannel deleteData promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3500 start');
@@ -2816,12 +2817,12 @@ export default function UDMFEntryTest() {
     })
 
     /**
-     * @tc.number     testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
-     * @tc.name       SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
-     * @tc.desc       Test UDMF unifiedDataChannel queryData callback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
+     * @tc.number testSUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600
+     * @tc.desc   Test UDMF unifiedDataChannel queryData callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_3600 start');

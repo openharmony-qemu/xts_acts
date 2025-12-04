@@ -47,13 +47,13 @@ export default function TextBindControllerTest() {
       console.info("TextBindControllerTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_BIND_CONTROLLER_ETS_API_0001
-    * @tc.name         TextBindControllerTest0001
-    * @tc.desc         test FrameNode BindController Text  callback success
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextBindControllerTest0001
+     * @tc.number SUB_ACE_BASIC_TEXT_BIND_CONTROLLER_ETS_API_0001
+     * @tc.desc   test FrameNode BindController Text  callback success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextBindControllerTest0001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
@@ -68,13 +68,13 @@ export default function TextBindControllerTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_TEXT_BIND_CONTROLLER_ETS_API_0002
-    * @tc.name         TextBindControllerTest0002
-    * @tc.desc         test FrameNode BindController Text  callback error code 100023
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   TextBindControllerTest0002
+     * @tc.number SUB_ACE_BASIC_TEXT_BIND_CONTROLLER_ETS_API_0002
+     * @tc.desc   test FrameNode BindController Text  callback error code 100023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TextBindControllerTest0002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();

@@ -159,6 +159,10 @@
     {
       "name": "test_stringLoopB",
       "value": "$string:test_stringLoopA"
+    },
+    {
+      "name": "override_test",
+      "value": "base str"
     }
   ]
 }

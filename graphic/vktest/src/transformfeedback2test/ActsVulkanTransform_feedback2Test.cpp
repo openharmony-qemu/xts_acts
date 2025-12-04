@@ -39,19 +39,19 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanTransform_feedbackTestCase002
-     * @tc.name  : TestVulkanTransform_feedbackTestCase002
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   TestVulkanTransform_feedbackTestCase002
+     * @tc.number TestVulkanTransform_feedbackTestCase002
+     * @tc.desc   test vulkan xts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsVulkanTransformfeedback2Test, TestVulkanTransform_feedbackTestCase002, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanTransformfeedback2Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/transform-feedback2.txt "
                 "--deqp-log-filename=ActsVulkanTransformfeedback2Test.qpa");
         }

@@ -108,12 +108,12 @@ export default function relationalStoreAssetResultSetTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0570
-     * @tc.name   : testAssetResultSetGetAsset0001
-     * @tc.desc   : AssetResultSet getAsset test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testAssetResultSetGetAsset0001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0570
+     * @tc.desc   AssetResultSet getAsset test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAssetResultSetGetAsset0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await createTest();
@@ -142,12 +142,12 @@ export default function relationalStoreAssetResultSetTest() {
     })
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0560
-     * @tc.name   : testAssetResultSetGetAsset0002
-     * @tc.desc   : AssetResultSet getAsset test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testAssetResultSetGetAsset0002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0560
+     * @tc.desc   AssetResultSet getAsset test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAssetResultSetGetAsset0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await createTest();
@@ -168,12 +168,12 @@ export default function relationalStoreAssetResultSetTest() {
     })
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0580
-     * @tc.name   : testAssetResultSetGetAssets0001
-     * @tc.desc   : AssetResultSet getAssets test
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testAssetResultSetGetAssets0001
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0580
+     * @tc.desc   AssetResultSet getAssets test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAssetResultSetGetAssets0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       await createTest();
@@ -205,12 +205,12 @@ export default function relationalStoreAssetResultSetTest() {
 
 
     /**
-     * @tc.number : SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0590
-     * @tc.name   : testAssetResultSetGetAssets0002
-     * @tc.desc   : AssetResultSet getAssets test: wrong colname
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testAssetResultSetGetAssets0002
+     * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_ResultSetJsAPITest_0590
+     * @tc.desc   AssetResultSet getAssets test: wrong colname
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testAssetResultSetGetAssets0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       await createTest();

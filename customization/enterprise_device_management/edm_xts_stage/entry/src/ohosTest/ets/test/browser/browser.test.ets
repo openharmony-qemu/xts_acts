@@ -35,13 +35,13 @@ export default function browserManagerTest() {
 
 function testSetPolicySync() {
   /**
-  * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0100
-  * @tc.name      : test_setpolicysync_0100
-  * @tc.desc      : test setPolicySync method without active administration
-  * @tc.level     : Level 2
-  * @tc.type      : Function
-  * @tc.size      : MediumTest
-  */ 
+   * @tc.name   test_setpolicysync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0100
+   * @tc.desc   test setPolicySync method without active administration
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
   it("test_setpolicysync_0100", Level.LEVEL2, async (done: Function) => {
     try {
       browser.setPolicySync(SELFWANT, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE);
@@ -53,15 +53,15 @@ function testSetPolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0200
-   * @tc.name      : test_setpolicysync_0200
-   * @tc.desc      : test setPolicySync method without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0200
+   * @tc.desc   test setPolicySync method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       browser.setPolicySync(SELFWANT, TEST_APP_ID_1, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
@@ -74,12 +74,12 @@ function testSetPolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0300
-   * @tc.name      : test_setpolicysync_0300
-   * @tc.desc      : test setPolicySync method with admin is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0300
+   * @tc.desc   test setPolicySync method with admin is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -92,12 +92,12 @@ function testSetPolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0400
-   * @tc.name      : test_setpolicysync_0400
-   * @tc.desc      : test setPolicySync method with appid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0400
+   * @tc.desc   test setPolicySync method with appid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -113,12 +113,12 @@ function testSetPolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0500
-   * @tc.name      : test_setpolicysync_0500
-   * @tc.desc      : test setPolicySync method
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0500
+   * @tc.desc   test setPolicySync method
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -139,12 +139,12 @@ function testSetPolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0600
-   * @tc.name      : test_setpolicysync_0600
-   * @tc.desc      : test setPolicySync method with empty policyName
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setpolicysync_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETPOLICYSYNC_0600
+   * @tc.desc   test setPolicySync method with empty policyName
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setpolicysync_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -163,12 +163,12 @@ function testSetPolicySync() {
 
 function testGetpolicySync() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0100
-   * @tc.name      : test_getpolicysync_0100
-   * @tc.desc      : test getPoliciesSync method without active administration
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getpolicysync_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0100
+   * @tc.desc   test getPoliciesSync method without active administration
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -181,12 +181,12 @@ function testGetpolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0200
-   * @tc.name      : test_getpolicysync_0200
-   * @tc.desc      : test getPoliciesSync method without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getpolicysync_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0200
+   * @tc.desc   test getPoliciesSync method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -201,12 +201,12 @@ function testGetpolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0300
-   * @tc.name      : test_getpolicysync_0300
-   * @tc.desc      : test getPoliciesSync method with admin is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getpolicysync_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0300
+   * @tc.desc   test getPoliciesSync method with admin is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -219,12 +219,12 @@ function testGetpolicySync() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0400
-   * @tc.name      : test_getpolicysync_0400
-   * @tc.desc      : test getPoliciesSync method with appid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getpolicysync_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETPOLICIESSYNC_0400
+   * @tc.desc   test getPoliciesSync method with appid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getpolicysync_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -242,12 +242,12 @@ function testGetpolicySync() {
 
 function testSetManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_setManagedBrowserPolicy_0100
-   * @tc.desc      : test setManagedBrowserPolicy method without active administration
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test setManagedBrowserPolicy method without active administration
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -260,15 +260,15 @@ function testSetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0200
-   * @tc.name      : test_setManagedBrowserPolicy_0200
-   * @tc.desc      : test setManagedBrowserPolicy method without permission
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0200
+   * @tc.desc   test setManagedBrowserPolicy method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0200", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       browser.setManagedBrowserPolicy(SELFWANT, SELFHAPNAME, TEST_POLICY_NAME, TEST_POLICY_VALUE);
       expect(false).assertTrue();
@@ -281,12 +281,12 @@ function testSetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0300
-   * @tc.name      : test_setManagedBrowserPolicy_0300
-   * @tc.desc      : test setManagedBrowserPolicy method with appid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0300
+   * @tc.desc   test setManagedBrowserPolicy method with appid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -302,12 +302,12 @@ function testSetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0400
-   * @tc.name      : test_setManagedBrowserPolicy_0400
-   * @tc.desc      : test setManagedBrowserPolicy method with policy name is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0400
+   * @tc.desc   test setManagedBrowserPolicy method with policy name is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -323,12 +323,12 @@ function testSetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0500
-   * @tc.name      : test_setManagedBrowserPolicy_0500
-   * @tc.desc      : test setManagedBrowserPolicy method with invalid want
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0500
+   * @tc.desc   test setManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0500", Level.LEVEL2, async (done: Function) => {
     try {
@@ -341,12 +341,12 @@ function testSetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0600
-   * @tc.name      : test_setManagedBrowserPolicy_0600
-   * @tc.desc      : test setManagedBrowserPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_setManagedBrowserPolicy_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SETMANAGEDBROWSERPOLICY_0600
+   * @tc.desc   test setManagedBrowserPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_setManagedBrowserPolicy_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -366,12 +366,12 @@ function testSetManagedBrowserPolicy() {
 
 function testGetManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_getManagedBrowserPolicy_0100
-   * @tc.desc      : test getManagedBrowserPolicy method without active administration
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test getManagedBrowserPolicy method without active administration
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     try {
@@ -384,12 +384,12 @@ function testGetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0200
-   * @tc.name      : test_getManagedBrowserPolicy_0200
-   * @tc.desc      : test getManagedBrowserPolicy method with appid is empty
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0200
+   * @tc.desc   test getManagedBrowserPolicy method with appid is empty
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -405,12 +405,12 @@ function testGetManagedBrowserPolicy() {
   })
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0300
-   * @tc.name      : test_getManagedBrowserPolicy_0300
-   * @tc.desc      : test getManagedBrowserPolicy method with invalid want
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getManagedBrowserPolicy_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETMANAGEDBROWSERPOLICY_0300
+   * @tc.desc   test getManagedBrowserPolicy method with invalid want
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getManagedBrowserPolicy_0300", Level.LEVEL2, async (done: Function) => {
     try {
@@ -425,12 +425,12 @@ function testGetManagedBrowserPolicy() {
 
 function testGetSelfManagedBrowserPolicyVersion() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICYVERSION_0100
-   * @tc.name      : test_getSelfManagedBrowserPolicyVersion_0100
-   * @tc.desc      : test getSelfManagedBrowserPolicyVersion
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getSelfManagedBrowserPolicyVersion_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICYVERSION_0100
+   * @tc.desc   test getSelfManagedBrowserPolicyVersion
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getSelfManagedBrowserPolicyVersion_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -447,12 +447,12 @@ function testGetSelfManagedBrowserPolicyVersion() {
 
 function testGetSelfManagedBrowserPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICY_0100
-   * @tc.name      : test_getSelfManagedBrowserPolicy_0100
-   * @tc.desc      : test getSelfManagedBrowserPolicy
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_getSelfManagedBrowserPolicy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GETSELFMANAGEDBROWSERPOLICY_0100
+   * @tc.desc   test getSelfManagedBrowserPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_getSelfManagedBrowserPolicy_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

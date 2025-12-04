@@ -25,12 +25,12 @@ export default function ftwNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_FTW_0200
-     * @tc.name       : testMuslFtwFtw002
-     * @tc.desc       : test ftw
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwFtw002
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_FTW_0200
+     * @tc.desc   test ftw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwFtw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = ftw.ftw(-1);
@@ -39,12 +39,12 @@ export default function ftwNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_FTW64_0200
-     * @tc.name       : testMuslFtwFtw64002
-     * @tc.desc       : test ftw64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwFtw64002
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_FTW64_0200
+     * @tc.desc   test ftw64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwFtw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = ftw.ftw64(-1);
@@ -53,12 +53,12 @@ export default function ftwNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_NFTW_0200
-     * @tc.name       : testMuslFtwNftw002
-     * @tc.desc       : nftw
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwNftw002
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_NFTW_0200
+     * @tc.desc   nftw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwNftw002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = ftw.nftw(-1);
@@ -67,12 +67,12 @@ export default function ftwNdk1Test() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_NFTW64_0200
-     * @tc.name       : testMuslFtwNftw64002
-     * @tc.desc       : nftw64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwNftw64002
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_NFTW64_0200
+     * @tc.desc   nftw64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwNftw64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = ftw.nftw64(-1);

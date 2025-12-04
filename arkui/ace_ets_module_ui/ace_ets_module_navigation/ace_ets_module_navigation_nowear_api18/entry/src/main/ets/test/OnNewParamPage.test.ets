@@ -49,10 +49,12 @@ export default function OnNewParamPage() {
 
 
     /**
-     * @tc.number    OnNewParamPage_0100
-     * @tc.name      OnNewParamPage_0100
-     * @tc.desc      Test OnNewParamPage LaunchMode.STANDARD\LaunchMode.NEW_INSTANCE\LaunchMode.POP_TO_SINGLETON\LaunchMode.MOVE_TO_TOP_SINGLETON
-     * @tc.level     Level 2
+     * @tc.name   OnNewParamPage_0100
+     * @tc.number OnNewParamPage_0100
+     * @tc.desc   Test OnNewParamPage LaunchMode.STANDARD\LaunchMode.NEW_INSTANCE\LaunchMode.POP_TO_SINGLETON\LaunchMode.MOVE_TO_TOP_SINGLETON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('OnNewParamPage_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('OnNewParamPage_0100 START');

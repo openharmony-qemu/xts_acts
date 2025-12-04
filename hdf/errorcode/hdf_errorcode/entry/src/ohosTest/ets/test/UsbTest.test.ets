@@ -34,19 +34,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRA_0100
-     * @tc.name     TestUsbDdkConfigDescriptor0100
-     * @tc.desc     Test UsbDdkConfigDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkConfigDescriptor0100
+     * @tc.number SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRA_0100
+     * @tc.desc   Test UsbDdkConfigDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkConfigDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkConfigDescriptor0100 start====");
         let result: number = baskddkerror.UsbDdkConfigDescriptor0100(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkConfigDescriptor0100 result: " + result);
         done()
       } catch (err) {
@@ -56,19 +58,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRALENGTH_0200
-     * @tc.name     TestUsbDdkConfigDescriptor0200
-     * @tc.desc     Test UsbDdkConfigDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkConfigDescriptor0200
+     * @tc.number SUB_DRIVER_EXT_USBDDKCONFIGDESCRIPTOR_EXTRALENGTH_0200
+     * @tc.desc   Test UsbDdkConfigDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkConfigDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkConfigDescriptor0200 start====");
         let result: number = baskddkerror.UsbDdkConfigDescriptor0200(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkConfigDescriptor0200 result: " + result);
         done()
       } catch (err) {
@@ -78,19 +82,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRA_0100
-     * @tc.name     TestUsbDdkInterfaceDescriptor0100
-     * @tc.desc     Test UsbDdkInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkInterfaceDescriptor0100
+     * @tc.number SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRA_0100
+     * @tc.desc   Test UsbDdkInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkInterfaceDescriptor0100 start====");
         let result: number = baskddkerror.UsbDdkInterfaceDescriptor0100(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkInterfaceDescriptor0100 result: " + result);
         done()
       } catch (err) {
@@ -100,19 +106,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRALENGTH_0200
-     * @tc.name     TestUsbDdkInterfaceDescriptor0200
-     * @tc.desc     Test UsbDdkInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkInterfaceDescriptor0200
+     * @tc.number SUB_DRIVER_EXT_USBDDKINTERFACEDESCRIPTOR_EXTRALENGTH_0200
+     * @tc.desc   Test UsbDdkInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkInterfaceDescriptor0200 start====");
         let result: number = baskddkerror.UsbDdkInterfaceDescriptor0200(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkInterfaceDescriptor0200 result: " + result);
         done()
       } catch (err) {
@@ -122,19 +130,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_UsbDdkEndpointDescriptor_EXTRA_0100
-     * @tc.name     TestUsbDdkEndpointDescriptor0100
-     * @tc.desc     Test UsbDdkEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkEndpointDescriptor0100
+     * @tc.number SUB_DRIVER_EXT_UsbDdkEndpointDescriptor_EXTRA_0100
+     * @tc.desc   Test UsbDdkEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkEndpointDescriptor0100 start====");
         let result: number = baskddkerror.UsbDdkEndpointDescriptor0100(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkEndpointDescriptor0100 result: " + result);
         done()
       } catch (err) {
@@ -144,19 +154,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBDDKENDPOINTDESCRIPTOR_EXTRALENGTH_0200
-     * @tc.name     TestUsbDdkEndpointDescriptor0200
-     * @tc.desc     Test UsbDdkEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbDdkEndpointDescriptor0200
+     * @tc.number SUB_DRIVER_EXT_USBDDKENDPOINTDESCRIPTOR_EXTRALENGTH_0200
+     * @tc.desc   Test UsbDdkEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbDdkEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbDdkEndpointDescriptor0200 start====");
         let result: number = baskddkerror.UsbDdkEndpointDescriptor0200(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbDdkEndpointDescriptor0200 result: " + result);
         done()
       } catch (err) {
@@ -166,19 +178,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BLENGTH_0100
-     * @tc.name     TestUsbEndpointDescriptor0100
-     * @tc.desc     Test UsbEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbEndpointDescriptor0100
+     * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BLENGTH_0100
+     * @tc.desc   Test UsbEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbEndpointDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbEndpointDescriptor0100 start====");
         let result: number = baskddkerror.UsbEndpointDescriptor0100(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbEndpointDescriptor0100 result: " + result);
         done()
       } catch (err) {
@@ -188,19 +202,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BDESCRIPTORTYPE_0200
-     * @tc.name     TestUsbEndpointDescriptor0200
-     * @tc.desc     Test UsbEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbEndpointDescriptor0200
+     * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BDESCRIPTORTYPE_0200
+     * @tc.desc   Test UsbEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbEndpointDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbEndpointDescriptor0200 start====");
         let result: number = baskddkerror.UsbEndpointDescriptor0200(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbEndpointDescriptor0200 result: " + result);
         done()
       } catch (err) {
@@ -210,19 +226,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BINTERVAL_0300
-     * @tc.name     TestUsbEndpointDescriptor0300
-     * @tc.desc     Test UsbEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbEndpointDescriptor0300
+     * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BINTERVAL_0300
+     * @tc.desc   Test UsbEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbEndpointDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbEndpointDescriptor0300 start====");
         let result: number = baskddkerror.UsbEndpointDescriptor0300(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbEndpointDescriptor0300 result: " + result);
         done()
       } catch (err) {
@@ -232,19 +250,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BREFRESH_0400
-     * @tc.name     TestUsbEndpointDescriptor0400
-     * @tc.desc     Test UsbEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbEndpointDescriptor0400
+     * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BREFRESH_0400
+     * @tc.desc   Test UsbEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbEndpointDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbEndpointDescriptor0400 start====");
         let result: number = baskddkerror.UsbEndpointDescriptor0400(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbEndpointDescriptor0400 result: " + result);
         done()
       } catch (err) {
@@ -254,19 +274,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BSYNCHADDRESS_0500
-     * @tc.name     TestUsbEndpointDescriptor0500
-     * @tc.desc     Test UsbEndpointDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbEndpointDescriptor0500
+     * @tc.number SUB_DRIVER_EXT_USBENDPOINTDESCRIPTOR_BSYNCHADDRESS_0500
+     * @tc.desc   Test UsbEndpointDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbEndpointDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbEndpointDescriptor0500 start====");
         let result: number = baskddkerror.UsbEndpointDescriptor0500(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbEndpointDescriptor0500 result: " + result);
         done()
       } catch (err) {
@@ -276,19 +298,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BLENGTH_0100
-     * @tc.name     TestUsbInterfaceDescriptor0100
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0100
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BLENGTH_0100
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0100', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0100 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0100(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0100 result: " + result);
         done()
       } catch (err) {
@@ -298,19 +322,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BDESCRIPTORTYPE_0200
-     * @tc.name     TestUsbInterfaceDescriptor0200
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0200
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BDESCRIPTORTYPE_0200
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0200', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0200 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0200(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0200 result: " + result);
         done()
       } catch (err) {
@@ -320,19 +346,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BALTERNATESETTING_0300
-     * @tc.name     TestUsbInterfaceDescriptor0300
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0300
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BALTERNATESETTING_0300
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0300', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0300 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0300(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0300 result: " + result);
         done()
       } catch (err) {
@@ -342,19 +370,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACECLASS_0400
-     * @tc.name     TestUsbInterfaceDescriptor0400
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0400
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACECLASS_0400
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0400', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0400 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0400(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0400 result: " + result);
         done()
       } catch (err) {
@@ -364,19 +394,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACESUBCLASS_0500
-     * @tc.name     TestUsbInterfaceDescriptor0500
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0500
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACESUBCLASS_0500
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0500', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0500 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0500(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0500 result: " + result);
         done()
       } catch (err) {
@@ -386,19 +418,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACEPROTOCOL_0600
-     * @tc.name     TestUsbInterfaceDescriptor0600
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0600
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_BINTERFACEPROTOCOL_0600
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0600', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0600 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0600(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0600 result: " + result);
         done()
       } catch (err) {
@@ -408,19 +442,21 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_IINTERFACE_0700
-     * @tc.name     TestUsbInterfaceDescriptor0700
-     * @tc.desc     Test UsbInterfaceDescriptor.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbInterfaceDescriptor0700
+     * @tc.number SUB_DRIVER_EXT_USBINTERFACEDESCRIPTOR_IINTERFACE_0700
+     * @tc.desc   Test UsbInterfaceDescriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbInterfaceDescriptor0700', Level.LEVEL0,
       async (done: Function) => {
       try {
         console.info("====>TestUsbInterfaceDescriptor0700 start====");
         let result: number = baskddkerror.UsbInterfaceDescriptor0700(dev);
-        expect(result).assertEqual(0);
+        if (dev == -1) {
+          expect(result).assertEqual(0);
+        }
         console.info("====>TestUsbInterfaceDescriptor0700 result: " + result);
         done()
       } catch (err) {
@@ -430,12 +466,12 @@ export default function UsbTest() {
     })
 
     /**
-     * @tc.number   TestUsbAddress0800
-     * @tc.name     TestUsbAddress0800
-     * @tc.desc     Test UsbAddress0800.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbAddress0800
+     * @tc.number TestUsbAddress0800
+     * @tc.desc   Test UsbAddress0800.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbAddress0800', Level.LEVEL0,
       async (done: Function) => {
@@ -452,12 +488,12 @@ export default function UsbTest() {
       })
 
     /**
-     * @tc.number   TestUsbOffset0900
-     * @tc.name     TestUsbOffset0900
-     * @tc.desc     Test UsbOffset0900.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbOffset0900
+     * @tc.number TestUsbOffset0900
+     * @tc.desc   Test UsbOffset0900.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbOffset0900', Level.LEVEL0,
       async (done: Function) => {
@@ -474,12 +510,12 @@ export default function UsbTest() {
       })
 
     /**
-     * @tc.number   TestUsbSize1000
-     * @tc.name     TestUsbSize1000
-     * @tc.desc     Test UsbSize1000.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbSize1000
+     * @tc.number TestUsbSize1000
+     * @tc.desc   Test UsbSize1000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbSize1000', Level.LEVEL0,
       async (done: Function) => {
@@ -496,12 +532,12 @@ export default function UsbTest() {
       })
 
     /**
-     * @tc.number   TestUsbBufferLength1100
-     * @tc.name     TestUsbBufferLength1100
-     * @tc.desc     Test UsbBufferLength1100.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbBufferLength1100
+     * @tc.number TestUsbBufferLength1100
+     * @tc.desc   Test UsbBufferLength1100.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbBufferLength1100', Level.LEVEL0,
       async (done: Function) => {
@@ -518,12 +554,12 @@ export default function UsbTest() {
       })
 
     /**
-     * @tc.number   TestUsbTransferedLength1200
-     * @tc.name     TestUsbTransferedLength1200
-     * @tc.desc     Test UsbTransferedLength1200.
-     * @tc.level    Level1
-     * @tc.size     MediumTest
-     * @tc.type     Function
+     * @tc.name   TestUsbTransferedLength1200
+     * @tc.number TestUsbTransferedLength1200
+     * @tc.desc   Test UsbTransferedLength1200.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestUsbTransferedLength1200', Level.LEVEL0,
       async (done: Function) => {

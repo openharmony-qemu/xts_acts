@@ -63,12 +63,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_start0100
      * @tc.number SUB_ACE_WEB_start_0100
-     * @tc.name testWebView_start0100
-     * @tc.desc test WebView_start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test WebView_start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_start0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -84,12 +84,12 @@ export default function webRequestHeaderList() {
     })
 
     /**
+     * @tc.name   testWebView_start0105
      * @tc.number SUB_ACE_WEB_start_0105
-     * @tc.name testWebView_start0105
-     * @tc.desc test WebDownloadState
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test WebDownloadState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_start0105',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

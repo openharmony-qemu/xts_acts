@@ -64,13 +64,13 @@ export default function developerModeTest() {
       done()
     })
     
-    /*
-     * @tc.number: G-TOOLS-0100
-     * @tc.name: testSupportDebuggingConsole0100
-     * @tc.desc: 【G-TOOLS-0100】必须支持 OpenHarmony 调试命令控制台
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testSupportDebuggingConsole0100
+     * @tc.number G-TOOLS-0100
+     * @tc.desc   【G-TOOLS-0100】必须支持 OpenHarmony 调试命令控制台
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportDebuggingConsole0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -105,13 +105,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-TOOLS-0101
-     * @tc.name: testSupportDebuggingCommand0100
-     * @tc.desc: 【G-TOOLS-0101】必须支持 OpenHarmony 调试命令集合
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testSupportDebuggingCommand0100
+     * @tc.number G-TOOLS-0101
+     * @tc.desc   【G-TOOLS-0101】必须支持 OpenHarmony 调试命令集合
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportDebuggingCommand0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let res = await taskpool.execute(hidebugTest)
@@ -119,13 +119,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-TOOLS-0102
-     * @tc.name: testSupportDebuggingPermission0100
-     * @tc.desc: 【G-TOOLS-0102】必须支持 OpenHarmony 调试所需权限
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testSupportDebuggingPermission0100
+     * @tc.number G-TOOLS-0102
+     * @tc.desc   【G-TOOLS-0102】必须支持 OpenHarmony 调试所需权限
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSupportDebuggingPermission0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let filesDir: string = applicationContext!.filesDir;
@@ -144,13 +144,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-TOOLS-0103
-     * @tc.name: testDebuggingNodesIntegrity0100
-     * @tc.desc: 【G-TOOLS-0103】必须支持 OpenHarmony 调试节点的完整性
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testDebuggingNodesIntegrity0100
+     * @tc.number G-TOOLS-0103
+     * @tc.desc   【G-TOOLS-0103】必须支持 OpenHarmony 调试节点的完整性
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDebuggingNodesIntegrity0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let hilogSupported = canIUse("SystemCapability.HiviewDFX.HiLog")
@@ -166,13 +166,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-TOOLS-0104
-     * @tc.name: testLogInputOutputRequirements0100
-     * @tc.desc: 【G-TOOLS-0104】必须满足 OpenHarmony 日志、trace 等格式输入输出要求
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testLogInputOutputRequirements0100
+     * @tc.number G-TOOLS-0104
+     * @tc.desc   【G-TOOLS-0104】必须满足 OpenHarmony 日志、trace 等格式输入输出要求
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testLogInputOutputRequirements0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -199,13 +199,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: STD-TOOLS-0105
-     * @tc.name: testTuningSystemDataAcquire0100
-     * @tc.desc: 【STD-TOOLS-0105】必须满足 OpenHarmony 调试调优相关系统数据获取格式
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testTuningSystemDataAcquire0100
+     * @tc.number STD-TOOLS-0105
+     * @tc.desc   【STD-TOOLS-0105】必须满足 OpenHarmony 调试调优相关系统数据获取格式
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTuningSystemDataAcquire0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -225,13 +225,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: G-TOOLS-0106
-     * @tc.name: testToolChainsNotChange0100
-     * @tc.desc: 【G-TOOLS-0106】必须满足 OpenHarmony 工具链 API 与工具行为不发生改变
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testToolChainsNotChange0100
+     * @tc.number G-TOOLS-0106
+     * @tc.desc   【G-TOOLS-0106】必须满足 OpenHarmony 工具链 API 与工具行为不发生改变
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testToolChainsNotChange0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let hilogSupported = canIUse("SystemCapability.HiviewDFX.HiLog")
@@ -247,13 +247,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-STD-TOOLS-0107
-     * @tc.name: testCommandAa0100
-     * @tc.desc: 【C-STD-TOOLS-0107】如果设备支持 ability_runtime，必须支持 aa 工具命令行。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testCommandAa0100
+     * @tc.number C-STD-TOOLS-0107
+     * @tc.desc   【C-STD-TOOLS-0107】如果设备支持 ability_runtime，必须支持 aa 工具命令行。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommandAa0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if(canIUse("SystemCapability.Ability.AbilityRuntime.Core")) {
@@ -266,13 +266,13 @@ export default function developerModeTest() {
       done()
     })
 
-    /*
-     * @tc.number: C-STD-TOOLS-0108
-     * @tc.name: testCommandBm0100
-     * @tc.desc: 【C-STD-TOOLS-0108】如果设备支持 bundle_framework，必须支持 bm 工具命令行。
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testCommandBm0100
+     * @tc.number C-STD-TOOLS-0108
+     * @tc.desc   【C-STD-TOOLS-0108】如果设备支持 bundle_framework，必须支持 bm 工具命令行。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCommandBm0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if(canIUse("SystemCapability.BundleManager.BundleFramework.Core")) {

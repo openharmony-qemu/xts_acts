@@ -311,7 +311,6 @@ export default function CameraSessionCameraRotationSuppTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
     beforeEach(() => {
       console.info('afterEach case');
@@ -326,12 +325,12 @@ export default function CameraSessionCameraRotationSuppTest() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0100
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0100
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0100', Level.LEVEL2,
       async (done: Function) => {
@@ -344,12 +343,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0200
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0200
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0200', Level.LEVEL2,
       async (done: Function) => {
@@ -362,12 +361,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0300
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0300
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0300', Level.LEVEL2,
       async (done: Function) => {
@@ -380,12 +379,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0400
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0400
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0400', Level.LEVEL2,
       async (done: Function) => {
@@ -398,12 +397,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0500
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0500
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0500', Level.LEVEL2,
       async (done: Function) => {
@@ -416,12 +415,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0600
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0600
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0600
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0600', Level.LEVEL2,
       async (done: Function) => {
@@ -434,12 +433,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0900
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0900
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0900
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0900
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_0900', Level.LEVEL2,
       async (done: Function) => {
@@ -452,12 +451,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1000
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1000
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1000
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1000
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1000', Level.LEVEL2,
       async (done: Function) => {
@@ -470,12 +469,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1100
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1100
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1100', Level.LEVEL2,
       async (done: Function) => {
@@ -488,12 +487,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1200
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1200
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1200', Level.LEVEL2,
       async (done: Function) => {
@@ -506,12 +505,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1300
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1300
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1300', Level.LEVEL2,
       async (done: Function) => {
@@ -524,12 +523,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1400
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1400
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1400', Level.LEVEL2,
       async (done: Function) => {
@@ -542,12 +541,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1500
-     * @tc.desc       Check capture session support video rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1500
+     * @tc.desc   Check capture session support video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_VIDEO_ROTATION_FUNC_getVideoRotation_1500', Level.LEVEL2,
       async (done: Function) => {
@@ -569,12 +568,12 @@ export default function CameraSessionCameraRotationSuppTest() {
     );
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0100
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0100
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0100', Level.LEVEL2,
       async (done: Function) => {
@@ -587,12 +586,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0200
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0200
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0200', Level.LEVEL2,
       async (done: Function) => {
@@ -605,12 +604,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0300
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0300
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0300', Level.LEVEL2,
       async (done: Function) => {
@@ -623,12 +622,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0400
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0400
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0400', Level.LEVEL2,
       async (done: Function) => {
@@ -641,12 +640,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0500
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0500
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0500', Level.LEVEL2,
       async (done: Function) => {
@@ -659,12 +658,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0600
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0600
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0600
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0600
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0600', Level.LEVEL2,
       async (done: Function) => {
@@ -677,12 +676,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0900
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0900
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0900
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0900
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_0900', Level.LEVEL2,
       async (done: Function) => {
@@ -695,12 +694,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1000
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1000
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1000
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1000
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1000', Level.LEVEL2,
       async (done: Function) => {
@@ -713,12 +712,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1100
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1100
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1100
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1100', Level.LEVEL2,
       async (done: Function) => {
@@ -731,12 +730,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1200
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1200
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1200
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1200', Level.LEVEL2,
       async (done: Function) => {
@@ -749,12 +748,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1300
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1300
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1300
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1300', Level.LEVEL2,
       async (done: Function) => {
@@ -767,12 +766,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1400
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1400
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1400
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1400', Level.LEVEL2,
       async (done: Function) => {
@@ -785,12 +784,12 @@ export default function CameraSessionCameraRotationSuppTest() {
       })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1500
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1500
-     * @tc.desc       Check capture session support photo rotation get success or not
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1500
+     * @tc.desc   Check capture session support photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_CAMERA_PHOTO_ROTATION_FUNC_getPhotoRotation_1500', Level.LEVEL2,
       async (done: Function) => {

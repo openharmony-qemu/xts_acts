@@ -26,182 +26,182 @@ export default function swiperCurveTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0100
-     * @tc.name       : testSwiperCurve001
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0100
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0200
-     * @tc.name       : testSwiperCurve002
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0200
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0300
-     * @tc.name       : testSwiperCurve003
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0300
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0400
-     * @tc.name       : testSwiperCurve004
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0400
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0500
-     * @tc.name       : testSwiperCurve005
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0500
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0600
-     * @tc.name       : testSwiperCurve006
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0600
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0700
-     * @tc.name       : testSwiperCurve007
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve007
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0700
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0800
-     * @tc.name       : testSwiperCurve008
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve008
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0800
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_0900
-     * @tc.name       : testSwiperCurve009
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve009
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_0900
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_1000
-     * @tc.name       : testSwiperCurve010
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve010
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_1000
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_1100
-     * @tc.name       : testSwiperCurve011
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve011
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_1100
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve011()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_1200
-     * @tc.name       : testSwiperCurve012
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve012
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_1200
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve012', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve012()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_1300
-     * @tc.name       : testSwiperCurve013
-     * @tc.desc       : testing curve for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperCurve013
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_1300
+     * @tc.desc   testing curve for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve013', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve013()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_CURVE_1400
-     * @tc.name       : testSwiperCurve014
-     * @tc.desc       : testing curve for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperCurve014
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_CURVE_1400
+     * @tc.desc   testing curve for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperCurve014', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperCurve014()).assertEqual(0)

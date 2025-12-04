@@ -48,12 +48,12 @@ export default function APISearchExample() {
     })
 
     /**
-     * @tc.number api
      * @tc.name   APISearchExample_0100
+     * @tc.number api
      * @tc.desc   APISearchExample_0100
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0100 START');
@@ -75,12 +75,12 @@ export default function APISearchExample() {
       done();
     });
     /**
-     * @tc.number api
      * @tc.name   APISearchExample_0200
+     * @tc.number api
      * @tc.desc   APISearchExample_0200
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
@@ -92,8 +92,6 @@ export default function APISearchExample() {
       await CommonFunc.sleep(1000);
       await textComponent.clearText();
       await CommonFunc.sleep(2000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('APISearchExample_Text02');
       let obj: ESObject = JSON.parse(strJson);
       console.info("[APISearchExample_0200] component obj is: " + JSON.stringify(obj), obj.$attrs.content);
@@ -102,12 +100,12 @@ export default function APISearchExample() {
       done();
     });
     /**
-     * @tc.number api
      * @tc.name   APISearchExample_0300
+     * @tc.number api
      * @tc.desc   APISearchExample_0300
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');
@@ -130,12 +128,12 @@ export default function APISearchExample() {
     });
 
     /**
-     * @tc.number api
      * @tc.name   APISearchExample_0400
+     * @tc.number api
      * @tc.desc   APISearchExample_0400
-     * @tc.size   APISearchExample
-     * @tc.type   Function
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APISearchExample_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('APISearchExample_0200 START');

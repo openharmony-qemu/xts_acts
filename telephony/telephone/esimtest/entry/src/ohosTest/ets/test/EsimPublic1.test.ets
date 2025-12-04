@@ -73,12 +73,12 @@ export default function EsimPublic1() {
     })
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0100
-     * @tc.name      : testTelephonyEsimIsSupported0100
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTelephonyEsimIsSupported0100
+     * @tc.number SUB_Telephony_Esim_IsSupported_0100
+     * @tc.desc   Whether embedded subscriptions are currently supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyEsimIsSupported0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0100';
@@ -88,10 +88,11 @@ export default function EsimPublic1() {
         if (isEsimSupport) {
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           console.info(`eSIM is supported`);
-          expect(true).assertTrue();
+          expect(isEsimSupport).assertTrue();
           console.info(`${caseName} test end`);
           done();
         } else {
+          expect(isEsimSupport).assertFalse();
           console.info(`${caseName} success : the data is:${isEsimSupport}`);
           expect(true).assertTrue();
           console.info(`${caseName} test end`);
@@ -107,12 +108,12 @@ export default function EsimPublic1() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0200
-     * @tc.name      : testTelephonyEsimIsSupported0200
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimIsSupported0200
+     * @tc.number SUB_Telephony_Esim_IsSupported_0200
+     * @tc.desc   Whether embedded subscriptions are currently supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimIsSupported0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0200';
@@ -135,12 +136,12 @@ export default function EsimPublic1() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0300
-     * @tc.name      : testTelephonyEsimIsSupported0300
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimIsSupported0300
+     * @tc.number SUB_Telephony_Esim_IsSupported_0300
+     * @tc.desc   Whether embedded subscriptions are currently supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimIsSupported0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0300';
@@ -160,12 +161,12 @@ export default function EsimPublic1() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0400
-     * @tc.name      : testTelephonyEsimIsSupported0400
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimIsSupported0400
+     * @tc.number SUB_Telephony_Esim_IsSupported_0400
+     * @tc.desc   Whether embedded subscriptions are currently supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimIsSupported0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0400';
@@ -184,12 +185,12 @@ export default function EsimPublic1() {
       }
     });
     /**
-     * @tc.number    : SUB_Telephony_Esim_IsSupported_0600
-     * @tc.name      : testTelephonyEsimIsSupported0600
-     * @tc.desc      : Whether embedded subscriptions are currently supported.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimIsSupported0600
+     * @tc.number SUB_Telephony_Esim_IsSupported_0600
+     * @tc.desc   Whether embedded subscriptions are currently supported.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimIsSupported0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimIsSupported0600';
@@ -209,22 +210,32 @@ export default function EsimPublic1() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_AddProfile_0700
-     * @tc.name      : testTelephonyEsimAddProfile0700
-     * @tc.desc      : Starts a page through an ability, on which users can touch the button to download a profile.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTelephonyEsimAddProfile0700
+     * @tc.number SUB_Telephony_Esim_AddProfile_0700
+     * @tc.desc   Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTelephonyEsimAddProfile0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimAddProfile0700';
       console.info(`${caseName} test start`);
       try {
         let data = await eSIM.addProfile(profile);
-        console.info(`${caseName} success : the data is:${data}`);
-        expect(true).assertTrue();
-        console.info(`${caseName} test end`);
-        done();
+        if(data){
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertTrue();
+          console.info(`${caseName} test end`);
+          done();
+        }
+        else{
+          console.info(`${caseName} success : the data is:${data}`);
+          expect(data).assertFalse();
+          expect().assertFail();
+          console.info(`${caseName} test end`);
+          done();
+        }
+
       } catch (err) {
         if (err.code === 801) {
           console.info(`${caseName} The current device type does not, promise: err->${JSON.stringify(err)}`);
@@ -242,12 +253,12 @@ export default function EsimPublic1() {
     });
 
     /**
-     * @tc.number    : SUB_Telephony_Esim_AddProfile_0800
-     * @tc.name      : testTelephonyEsimAddProfile0800
-     * @tc.desc      : Starts a page through an ability, on which users can touch the button to download a profile.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTelephonyEsimAddProfile0800
+     * @tc.number SUB_Telephony_Esim_AddProfile_0800
+     * @tc.desc   Starts a page through an ability, on which users can touch the button to download a profile.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTelephonyEsimAddProfile0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testTelephonyEsimAddProfile0800';

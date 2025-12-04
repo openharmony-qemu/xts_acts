@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange009() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015
-     * @tc.desc  : When the return value of onWillChange is true, change the typingstyle and enter text between the original spans to test the RichEditor onWillChange callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015
+     * @tc.desc   When the return value of onWillChange is true, change the typingstyle and enter text between the original spans to test the RichEditor onWillChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0015 START');
@@ -85,7 +85,7 @@ export default function RichEditorOnWillChange009() {
       expect(didText).assertEqual('onDidChange_callback:true');
 
       let set_style = await driver.findComponent(ON.id('set_style'));
-      set_style.click();
+      await set_style.click();
       await CommonFunc.sleep(500);
 
       await driver.triggerKey(KeyCode.KEYCODE_A);

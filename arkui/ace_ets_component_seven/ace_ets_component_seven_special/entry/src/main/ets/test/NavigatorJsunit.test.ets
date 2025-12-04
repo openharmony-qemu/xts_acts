@@ -42,12 +42,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   test_Navigator_0021
      * @tc.number test_Navigator_0021
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Navigator_0021', Level.LEVEL0, async (done: Function) => {
       console.info('[test_Navigator_0021] START');
@@ -61,12 +61,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   test_Navigator_0022
      * @tc.number test_Navigator_0022
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Navigator_0022', Level.LEVEL0, async (done: Function) => {
       console.info('[test_Navigator_0022] START');
@@ -80,12 +80,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   test_Navigator_0023
      * @tc.number test_Navigator_0023
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Navigator_0023', Level.LEVEL0, async (done: Function) => {
       console.info('[test_Navigator_0023] START');
@@ -99,12 +99,12 @@ export default function navigatorJsunit() {
     });
 
     /**
+     * @tc.name   test_Navigator_0024
      * @tc.number test_Navigator_0024
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Navigator_0024', Level.LEVEL0, async (done: Function) => {
       console.info('[test_Navigator_0024] START');

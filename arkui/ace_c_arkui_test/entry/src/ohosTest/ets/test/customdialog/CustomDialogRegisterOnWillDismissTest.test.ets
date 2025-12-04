@@ -27,13 +27,13 @@ export default function customDialogRegisterOnWillDismissTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0100
-     * @tc.name       : testCustomDialogRegisterOnWillDismiss001
-     * @tc.desc       : testing registerOnWillDismiss for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogRegisterOnWillDismiss001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0100
+     * @tc.desc   testing registerOnWillDismiss for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogRegisterOnWillDismiss001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`customdialog/CustomDialogRegisterOnWillDismissTest`)
@@ -46,26 +46,26 @@ export default function customDialogRegisterOnWillDismissTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0200
-     * @tc.name       : testCustomDialogRegisterOnWillDismiss002
-     * @tc.desc       : testing registerOnWillDismiss for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogRegisterOnWillDismiss002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0200
+     * @tc.desc   testing registerOnWillDismiss for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogRegisterOnWillDismiss002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogRegisterOnWillDismiss002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0300
-     * @tc.name       : testCustomDialogRegisterOnWillDismiss003
-     * @tc.desc       : testing registerOnWillDismiss for customDialog with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomDialogRegisterOnWillDismiss003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMDIALOG_REGISTERONWILLDISMISS_0300
+     * @tc.desc   testing registerOnWillDismiss for customDialog with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomDialogRegisterOnWillDismiss003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomDialogRegisterOnWillDismiss003()).assertEqual(0)

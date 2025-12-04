@@ -33,6 +33,12 @@
 				"./common_event.txt -> /data/app/el2/100/base/com.acts.pcs.arktstest/haps/entry/files/common_event.txt" 
 
             ]
+        },
+        {
+            "type": "ShellKit",
+            "run-command": [
+                "uitest dumpLayout"
+            ]
         }
     ]
 }

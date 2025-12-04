@@ -119,9 +119,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0100
-     * @tc.name     testConnectDevice002
-     * @tc.desc     Negative test: open device, error devAddress 2+10000
+     * @tc.name   testConnectDevice002
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0100
+     * @tc.desc   Negative test: open device, error devAddress 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb SUB_USB_HostManager_JS_Compatibility_0100 begin');
@@ -142,9 +145,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0200
-     * @tc.name     testConnectDevice003
-     * @tc.desc     Negative test: open device, error busNum 2+1000
+     * @tc.name   testConnectDevice003
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0200
+     * @tc.desc   Negative test: open device, error busNum 2+1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice003 begin');
@@ -167,9 +173,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0300
-     * @tc.name     testConnectDevice004
-     * @tc.desc     Negative test: open device, error serial 'asdfsd'
+     * @tc.name   testConnectDevice004
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0300
+     * @tc.desc   Negative test: open device, error serial 'asdfsd'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice004 begin');
@@ -192,9 +201,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0600
-     * @tc.name     testConnectDevice007
-     * @tc.desc     Negative test: open device, error productName 'sdfsdfe'
+     * @tc.name   testConnectDevice007
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0600
+     * @tc.desc   Negative test: open device, error productName 'sdfsdfe'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice007 begin');
@@ -217,9 +229,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0700
-     * @tc.name     testConnectDevice008
-     * @tc.desc     Negative test: open device, error version 'gwefsdf'
+     * @tc.name   testConnectDevice008
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0700
+     * @tc.desc   Negative test: open device, error version 'gwefsdf'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb connect_device_08 begin');
@@ -242,9 +257,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0800
-     * @tc.name     testConnectDevice009
-     * @tc.desc     Negative test: open device, error vendorId 2+10000
+     * @tc.name   testConnectDevice009
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0800
+     * @tc.desc   Negative test: open device, error vendorId 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice009 begin');
@@ -267,9 +285,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_0900
-     * @tc.name     testConnectDevice010
-     * @tc.desc     Negative test: open device, error productId 2+10000
+     * @tc.name   testConnectDevice010
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_0900
+     * @tc.desc   Negative test: open device, error productId 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice010 begin');
@@ -292,9 +313,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1000
-     * @tc.name     testConnectDevice011
-     * @tc.desc     Negative test: open device, error clazz 2+10000
+     * @tc.name   testConnectDevice011
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_1000
+     * @tc.desc   Negative test: open device, error clazz 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb connect_device_11 begin');
@@ -317,9 +341,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1100
-     * @tc.name     testConnectDevice012
-     * @tc.desc     Negative test: open device, error subClass 2+10000
+     * @tc.name   testConnectDevice012
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_1100
+     * @tc.desc   Negative test: open device, error subClass 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb connect_device_12 begin');
@@ -342,9 +369,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_1200
-     * @tc.name     testConnectDevice013
-     * @tc.desc     Negative test: open device, error protocol 2+10000
+     * @tc.name   testConnectDevice013
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_1200
+     * @tc.desc   Negative test: open device, error protocol 2+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectDevice013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testConnectDevice013 begin');
@@ -367,9 +397,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3400
-     * @tc.name     testHasRight002
-     * @tc.desc     Negative test: parameters exception, error deviceName add '$#'
+     * @tc.name   testHasRight002
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_3400
+     * @tc.desc   Negative test: parameters exception, error deviceName add '$#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testHasRight002 begin');
@@ -388,9 +421,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3500
-     * @tc.name     testHasRight003
-     * @tc.desc     Negative test: parameters exception, the device add 'abcdg'
+     * @tc.name   testHasRight003
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_3500
+     * @tc.desc   Negative test: parameters exception, the device add 'abcdg'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHasRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       console.info(TAG, 'usb testHasRight003 begin');
@@ -409,9 +445,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3200
-     * @tc.name     testRequestRight002
-     * @tc.desc     Negative test: Request permission, error deviceName add '@#'
+     * @tc.name   testRequestRight002
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_3200
+     * @tc.desc   Negative test: Request permission, error deviceName add '@#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestRight002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight002 begin');
@@ -435,9 +474,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Compatibility_3300
-     * @tc.name     testRequestRight003
-     * @tc.desc     Negative test: Request permission, the device name is a number
+     * @tc.name   testRequestRight003
+     * @tc.number SUB_USB_HostManager_JS_Compatibility_3300
+     * @tc.desc   Negative test: Request permission, the device name is a number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRequestRight003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testRequestRight003 begin');
@@ -462,9 +504,12 @@ export default function UsbCoreEtsTestEx() {
     })
 
     /**
-     * @tc.number   SUB_USB_HostManager_JS_Reset_0100
-     * @tc.name     testResetUsbDevice
-     * @tc.desc     Negative test: Reset device
+     * @tc.name   testResetUsbDevice
+     * @tc.number SUB_USB_HostManager_JS_Reset_0100
+     * @tc.desc   Negative test: Reset device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetUsbDevice', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testResetUsbDevice begin');
@@ -492,11 +537,14 @@ export default function UsbCoreEtsTestEx() {
       toClosePipe('testResetUsbDevice');
     })
 
-    /**
-     * @tc.number   SUB_USB_HostManager_JS_Reset_0200
-     * @tc.name     testResetUsbDeviceErrorCode
-     * @tc.desc     Negative test: resetUsbDevice error code 14400008 overwrite
-     */
+     /**
+      * @tc.name   testResetUsbDeviceErrorCode
+      * @tc.number SUB_USB_HostManager_JS_Reset_0200
+      * @tc.desc   Negative test: resetUsbDevice error code 14400008 overwrite
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testResetUsbDeviceErrorCode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testResetUsbDeviceErrorCode begin');
       if (!isDeviceConnected) {
@@ -526,11 +574,14 @@ export default function UsbCoreEtsTestEx() {
       }
     })
 
-    /**
-     * @tc.number   SUB_USB_HostManager_JS_Reset_0300
-     * @tc.name     testResetUsbDeviceErrorCode001
-     * @tc.desc     Negative test: resetUsbDevice error code 14400013 overwrite
-     */
+     /**
+      * @tc.name   testResetUsbDeviceErrorCode001
+      * @tc.number SUB_USB_HostManager_JS_Reset_0300
+      * @tc.desc   Negative test: resetUsbDevice error code 14400013 overwrite
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testResetUsbDeviceErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testResetUsbDeviceErrorCode001 begin');
       if (!isDeviceConnected) {
@@ -556,11 +607,14 @@ export default function UsbCoreEtsTestEx() {
       }
     })
 
-    /**
-     * @tc.number   SUB_USB_HostManager_JS_Reset_0400
-     * @tc.name     testResetUsbDeviceErrorCode002
-     * @tc.desc     Negative test: resetUsbDevice error code 14400001 overwrite
-     */
+     /**
+      * @tc.name   testResetUsbDeviceErrorCode002
+      * @tc.number SUB_USB_HostManager_JS_Reset_0400
+      * @tc.desc   Negative test: resetUsbDevice error code 14400001 overwrite
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('testResetUsbDeviceErrorCode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info(TAG, 'usb testResetUsbDeviceErrorCode002 begin');
       if (!isDeviceConnected) {

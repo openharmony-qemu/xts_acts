@@ -33,12 +33,12 @@ export default function windowErrCode201_1() {
     })
 
     /**
-     * @tc.number     : testsetWindowTopmostErrCode201_0100
-     * @tc.name       : testsetWindowTopmostErrCode201_0100
-     * @tc.desc       : testsetWindowTopmostErrCode201_0100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testsetWindowTopmostErrCode201_0100
+     * @tc.number testsetWindowTopmostErrCode201_0100
+     * @tc.desc   testsetWindowTopmostErrCode201_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testsetWindowTopmostErrCode201_0100', Level.LEVEL0, async (done: Function) => {
       let caseName = "testsetWindowTopmostErrCode201_0100";
@@ -72,12 +72,12 @@ export default function windowErrCode201_1() {
     })
 
     /**
-     * @tc.number    : test_startFloatingBall_ErrorCode_201
-     * @tc.name      : test_startFloatingBall_ErrorCode_201
-     * @tc.desc      : test_startFloatingBall_ErrorCode_201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_ErrorCode_201
+     * @tc.number test_startFloatingBall_ErrorCode_201
+     * @tc.desc   test_startFloatingBall_ErrorCode_201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_ErrorCode_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_ErrorCode_201';

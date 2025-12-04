@@ -209,12 +209,12 @@ export default function CameraManagerTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0100
-     * @tc.name       : testOHCameraManagerGetSupportedSceneModes0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedSceneModes in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedSceneModes0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0100
+     * @tc.desc   Test OH_CameraManager_GetSupportedSceneModes in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedSceneModes0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -225,13 +225,12 @@ export default function CameraManagerTest() {
       cameraObj.oHCameraManagerDeleteSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0200
-     * @tc.name       : testOHCameraManagerGetSupportedSceneModes0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the first parameter is
-     *                  null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedSceneModes0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0200
+     * @tc.desc   Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the first parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedSceneModes0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -241,13 +240,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0300
-     * @tc.name       : testOHCameraManagerGetSupportedSceneModes0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the second parameter is
-     *                  null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedSceneModes0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0300
+     * @tc.desc   Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the second parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedSceneModes0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -257,13 +255,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0400
-     * @tc.name       : testOHCameraManagerGetSupportedSceneModes0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the third parameter is
-     *                  null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedSceneModes0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedSceneModes0400
+     * @tc.desc   Test OH_CameraManager_GetSupportedSceneModes in abnormal condition, the third parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedSceneModes0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -273,12 +270,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0100
-     * @tc.name       : testOHCameraManagerDeleteSceneModes0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_DeleteSceneModes in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerDeleteSceneModes0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0100
+     * @tc.desc   Test OH_CameraManager_DeleteSceneModes in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerDeleteSceneModes0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -289,12 +286,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0200
-     * @tc.name       : testOHCameraManagerDeleteSceneModes0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_DeleteSceneModes in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerDeleteSceneModes0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0200
+     * @tc.desc   Test OH_CameraManager_DeleteSceneModes in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerDeleteSceneModes0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -306,12 +303,12 @@ export default function CameraManagerTest() {
       cameraObj.oHCameraManagerDeleteSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0300
-     * @tc.name       : testOHCameraManagerDeleteSceneModes0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_DeleteSceneModes in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerDeleteSceneModes0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerDeleteSceneModes0300
+     * @tc.desc   Test OH_CameraManager_DeleteSceneModes in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerDeleteSceneModes0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -323,12 +320,12 @@ export default function CameraManagerTest() {
       cameraObj.oHCameraManagerDeleteSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0100
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0100
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -340,12 +337,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0200
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0200
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -357,12 +354,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -381,13 +378,12 @@ export default function CameraManagerTest() {
       console.info(TAG+"testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0300 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0400
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0400
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -399,13 +395,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0500
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0500
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -417,13 +412,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0600
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
-     *                  the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0600
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -435,13 +429,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0700
-     * @tc.name       : testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
-     *                  the fourth parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0700
+     * @tc.desc   Test OH_CameraManager_GetSupportedCameraOutputCapabilityWithSceneMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -453,12 +446,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0100
-     * @tc.name       : testOHCameraManagerIsTorchSupported0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupported in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupported0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0100
+     * @tc.desc   Test OH_CameraManager_IsTorchSupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupported0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -469,13 +462,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0200
-     * @tc.name       : testOHCameraManagerIsTorchSupported0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupported in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupported0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0200
+     * @tc.desc   Test OH_CameraManager_IsTorchSupported in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupported0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -486,13 +478,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0300
-     * @tc.name       : testOHCameraManagerIsTorchSupported0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupported in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupported0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0300
+     * @tc.desc   Test OH_CameraManager_IsTorchSupported in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupported0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -503,12 +494,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0100
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0100
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -524,12 +515,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0200
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0200
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -545,12 +536,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0300
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0300
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -566,13 +557,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0400
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0400
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -585,13 +575,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0500
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  the second parameter is an exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0500
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -605,13 +594,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0600
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0600
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -625,13 +613,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0700
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  torch is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0700
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -649,13 +636,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0800
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  torch is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0800
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0800', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -673,13 +659,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0900
-     * @tc.name       : testOHCameraManagerIsTorchSupportedByTorchMode0900
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
-     *                  torch is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode0900
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerIsTorchSupportedByTorchMode0900', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -697,12 +682,200 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0100
-     * @tc.name       : testOHCameraManagerSetTorchMode0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_SetTorchMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1000
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1000
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1000', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == true){
+        torchMode(Torch_Mode.TORCH_MODE_OFF);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK).errorCode;
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1000:"+ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1100
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1100', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == true){
+        torchMode(Torch_Mode.TORCH_MODE_ON);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK).errorCode;
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1100:"+ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1200
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1200', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == true){
+        torchMode(Torch_Mode.TORCH_MODE_AUTO);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK).errorCode;
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1200:"+ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1300
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1300', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      isTorchSupported();
+      torchMode(Torch_Mode.TORCH_MODE_AUTO);
+      let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.FIRST_PARAMETER_ERROR).errorCode;
+      console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1300:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1400
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1400', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      isTorchSupported();
+      torchMode(Torch_Mode.TORCH_MODE_AUTO);
+      let ret =
+        cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.SECOND_PARAMETER_ERROR).errorCode;
+      console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1400:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1500
+     * @tc.desc   test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1500', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      isTorchSupported();
+      torchMode(Torch_Mode.TORCH_MODE_AUTO);
+      let ret =
+        cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.THIRD_PARAMETER_ERROR).errorCode;
+      console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1500:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1600
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1600
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1600', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == false){
+        torchMode(Torch_Mode.TORCH_MODE_OFF);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1600.errorCode:"+ret.errorCode);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1600.isTorchSupportedByTorchMode:"+
+            ret.isTorchSupportedByTorchMode);
+        expect(ret.errorCode).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1700
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1700
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == false){
+        torchMode(Torch_Mode.TORCH_MODE_ON);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1700.errorCode:"+ret.errorCode);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1700.isTorchSupportedByTorchMode:"+
+            ret.isTorchSupportedByTorchMode);
+        expect(ret.errorCode).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerIsTorchSupportedByTorchMode1800
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupportedByTorchMode1800
+     * @tc.desc   Test OH_CameraManager_IsTorchSupportedByTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerIsTorchSupportedByTorchMode1800', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if(isTorchSupported() == false){
+        torchMode(Torch_Mode.TORCH_MODE_AUTO);
+        let ret = cameraObj.oHCameraManagerIsTorchSupportedByTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1800.errorCode:"+ret.errorCode);
+        console.info(TAG+"testOHCameraManagerIsTorchSupportedByTorchMode1800.isTorchSupportedByTorchMode:"+
+            ret.isTorchSupportedByTorchMode);
+        expect(ret.errorCode).assertEqual(CAMERA_OK);
+      } else {
+        console.error(TAG+"isTorchSupported Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0100
+     * @tc.desc   test OH_CameraManager_SetTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -720,12 +893,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0200
-     * @tc.name       : testOHCameraManagerSetTorchMode0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_SetTorchMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0200
+     * @tc.desc   test OH_CameraManager_SetTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -743,13 +916,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0300
-     * @tc.name       : testOHCameraManagerSetTorchMode0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_SetTorchMode in abnormal condition,
-     *                  the first parameter torchMode is AUTO.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0300
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -767,13 +939,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0400
-     * @tc.name       : testOHCameraManagerSetTorchMode0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_SetTorchMode in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0400
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -787,13 +958,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0500
-     * @tc.name       : testOHCameraManagerSetTorchMode0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_SetTorchMode in abnormal condition,
-     *                  the second parameter is an exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0500
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -807,13 +977,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0600
-     * @tc.name       : testOHCameraManagerSetTorchMode0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_SetTorchMode in abnormal condition,
-     *                  torch is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0600
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -830,13 +999,12 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0700
-     * @tc.name       : testOHCameraManagerSetTorchMode0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_SetTorchMode in abnormal condition,
-     *                  torchmode ON is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0700
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerSetTorchMode0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -852,12 +1020,162 @@ export default function CameraManagerTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0100
-     * @tc.name       : testOHCameraManagerRegisterTorchStatusCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_RegisterTorchStatusCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerSetTorchMode0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0800
+     * @tc.desc   test OH_CameraManager_SetTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode0800', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if (isTorchSupported() == true) {
+        torchMode(Torch_Mode.TORCH_MODE_OFF);
+        if (isTorchSupportedByTorchMode() == true) {
+          let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+          console.info(TAG+"testOHCameraManagerSetTorchMode0800:"+ret);
+          expect(ret).assertEqual(CAMERA_OK);
+        }
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode0900
+     * @tc.desc   test OH_CameraManager_SetTorchMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode0900', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if (isTorchSupported() == true) {
+        torchMode(Torch_Mode.TORCH_MODE_ON);
+        if (isTorchSupportedByTorchMode() == true) {
+          let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+          console.info(TAG+"testOHCameraManagerSetTorchMode0900:"+ret);
+          expect(ret).assertEqual(CAMERA_OK);
+        }
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode1000
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode1000
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode1000', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if (isTorchSupported() == true) {
+        torchMode(Torch_Mode.TORCH_MODE_AUTO);
+        if (isTorchSupportedByTorchMode() == true) {
+          let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+          console.info(TAG+"testOHCameraManagerSetTorchMode1000:"+ret);
+          expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+        }
+      } else {
+        console.error(TAG+"isTorchSupported Not Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode1100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode1100
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode1100', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      isTorchSupported();
+      torchMode(Torch_Mode.TORCH_MODE_AUTO);
+      isTorchSupportedByTorchMode();
+      let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.FIRST_PARAMETER_ERROR);
+      console.info(TAG+"testOHCameraManagerSetTorchMode1100:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode1200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode1200
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode1200', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      isTorchSupported();
+      torchMode(Torch_Mode.TORCH_MODE_AUTO);
+      isTorchSupportedByTorchMode();
+      let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG+"testOHCameraManagerSetTorchMode1200:"+ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode1300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode1300
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode1300', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if (isTorchSupported() == false) {
+        torchMode(Torch_Mode.TORCH_MODE_AUTO);
+        isTorchSupportedByTorchMode();
+        let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCameraManagerSetTorchMode1300:"+ret);
+        expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+      } else {
+        console.error(TAG+"isTorchSupported Supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerSetTorchMode1400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerSetTorchMode1400
+     * @tc.desc   Test OH_CameraManager_SetTorchMode in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerSetTorchMode1400', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance()
+      getSupportedCameraOutputCapability();
+      if (isTorchSupported() == true) {
+        torchMode(Torch_Mode.TORCH_MODE_AUTO);
+        if (isTorchSupportedByTorchMode() == false) {
+          let ret = cameraObj.oHCameraManagerSetTorchMode(Parameter_Setting.ALL_PARAMETER_OK);
+          console.info(TAG+"testOHCameraManagerSetTorchMode1400:"+ret);
+          expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
+        }
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerRegisterTorchStatusCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0100
+     * @tc.desc   test OH_CameraManager_RegisterTorchStatusCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterTorchStatusCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -868,13 +1186,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0200
-     * @tc.name       : testOHCameraManagerRegisterTorchStatusCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_RegisterTorchStatusCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerRegisterTorchStatusCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0200
+     * @tc.desc   Test OH_CameraManager_RegisterTorchStatusCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterTorchStatusCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -885,13 +1202,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0300
-     * @tc.name       : testOHCameraManagerRegisterTorchStatusCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_RegisterTorchStatusCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerRegisterTorchStatusCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterTorchStatusCallback0300
+     * @tc.desc   Test OH_CameraManager_RegisterTorchStatusCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterTorchStatusCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -902,12 +1218,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0100
-     * @tc.name       : testOHCameraManagerUnregisterTorchStatusCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_UnregisterTorchStatusCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterTorchStatusCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0100
+     * @tc.desc   test OH_CameraManager_UnregisterTorchStatusCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterTorchStatusCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -918,13 +1234,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0200
-     * @tc.name       : testOHCameraManagerUnregisterTorchStatusCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_UnregisterTorchStatusCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterTorchStatusCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0200
+     * @tc.desc   Test OH_CameraManager_UnregisterTorchStatusCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterTorchStatusCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -935,13 +1250,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0300
-     * @tc.name       : testOHCameraManagerUnregisterTorchStatusCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_UnregisterTorchStatusCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterTorchStatusCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterTorchStatusCallback0300
+     * @tc.desc   Test OH_CameraManager_UnregisterTorchStatusCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterTorchStatusCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -953,12 +1267,12 @@ export default function CameraManagerTest() {
     })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0100
-     * @tc.name       : testOHCameraManagerRegisterFoldStatusCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_RegisterFoldStatusInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerRegisterFoldStatusCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0100
+     * @tc.desc   test OH_CameraManager_RegisterFoldStatusInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterFoldStatusCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -967,13 +1281,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0200
-     * @tc.name       : testOHCameraManagerRegisterFoldStatusCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_RegisterFoldStatusInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerRegisterFoldStatusCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0200
+     * @tc.desc   Test OH_CameraManager_RegisterFoldStatusInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterFoldStatusCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -982,13 +1295,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0300
-     * @tc.name       : testOHCameraManagerRegisterFoldStatusCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_RegisterFoldStatusInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerRegisterFoldStatusCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerRegisterFoldStatusCallback0300
+     * @tc.desc   Test OH_CameraManager_RegisterFoldStatusInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerRegisterFoldStatusCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -997,12 +1309,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0100
-     * @tc.name       : testOHCameraManagerUnregisterFoldStatusCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : test OH_CameraManager_UnregisterFoldStatusInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterFoldStatusCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0100
+     * @tc.desc   test OH_CameraManager_UnregisterFoldStatusInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterFoldStatusCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1011,13 +1323,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0200
-     * @tc.name       : testOHCameraManagerUnregisterFoldStatusCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_UnregisterFoldStatusInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterFoldStatusCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0200
+     * @tc.desc   Test OH_CameraManager_UnregisterFoldStatusInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterFoldStatusCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1026,13 +1337,12 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0300
-     * @tc.name       : testOHCameraManagerUnregisterFoldStatusCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_UnregisterFoldStatusInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerUnregisterFoldStatusCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerUnregisterFoldStatusCallback0300
+     * @tc.desc   Test OH_CameraManager_UnregisterFoldStatusInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerUnregisterFoldStatusCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1040,14 +1350,14 @@ export default function CameraManagerTest() {
       console.info(TAG+"testOHCameraManagerUnregisterFoldStatusCallback0300:"+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
-    /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevice0100
-     * @tc.name       : testOHCameraManagerGetCameraDevice0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
+     /**
+      * @tc.name   testOHCameraManagerGetCameraDevice0100
+      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraDevice0100
+      * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('testOHCameraManagerGetCameraDevice0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
       let ret = cameraObj.oHCameraManagerGetCameraDevice(0)
@@ -1056,12 +1366,12 @@ export default function CameraManagerTest() {
     })
  
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraConcurrentInfos0100
-     * @tc.name       : testOHCameraManagerGetCameraConcurrentInfos0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : The total duration of obtaining media files, accurate to milliseconds.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerGetCameraConcurrentInfos0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerGetCameraConcurrentInfos0100
+     * @tc.desc   The total duration of obtaining media files, accurate to milliseconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerGetCameraConcurrentInfos0100', Level.LEVEL0, () => {
       getCameraManagerInstance();

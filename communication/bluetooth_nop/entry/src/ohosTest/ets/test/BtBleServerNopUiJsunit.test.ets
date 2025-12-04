@@ -47,12 +47,12 @@ export default function btBleServerNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number: testGattServerSendResponseNop
-     * @tc.name: testSendResponse
-     * @tc.desc: test gatt server sendResponse without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerSendResponseNop
+     * @tc.number testGattServerSendResponseNop
+     * @tc.desc   test gatt server sendResponse without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerSendResponseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -77,12 +77,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGattServerNotifyCharacteristicChangedNop
-     * @tc.name: tesNotifyCharacteristicChanged
-     * @tc.desc: test gatt server notifyCharacteristicChanged by promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerNotifyCharacteristicChangedNop
+     * @tc.number testGattServerNotifyCharacteristicChangedNop
+     * @tc.desc   test gatt server notifyCharacteristicChanged by promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerNotifyCharacteristicChangedNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -105,12 +105,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGattServerNotifyCharacteristicChangedAsyncCallbackNop
-     * @tc.name: testNotifyCharacteristicChanged
-     * @tc.desc: test gatt server notifyCharacteristicChanged by async callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerNotifyCharacteristicChangedAsyncCallbackNop
+     * @tc.number testGattServerNotifyCharacteristicChangedAsyncCallbackNop
+     * @tc.desc   test gatt server notifyCharacteristicChanged by async callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerNotifyCharacteristicChangedAsyncCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let arrayBufferCCC = new ArrayBuffer(8);
@@ -145,12 +145,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGattServerCloseNop
-     * @tc.name: testClose
-     * @tc.desc: test gatt server close without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerCloseNop
+     * @tc.number testGattServerCloseNop
+     * @tc.desc   test gatt server close without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerCloseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -165,12 +165,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGattServerAddServiceNop
-     * @tc.name: testAddService
-     * @tc.desc: test gatt server addService without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerAddServiceNop
+     * @tc.number testGattServerAddServiceNop
+     * @tc.desc   test gatt server addService without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerAddServiceNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let descriptors : Array<ble.BLEDescriptor> = [];
@@ -206,12 +206,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGattServerRemoveServiceNop
-     * @tc.name: testRemoveService
-     * @tc.desc: test gatt server removeService without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattServerRemoveServiceNop
+     * @tc.number testGattServerRemoveServiceNop
+     * @tc.desc   test gatt server removeService without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattServerRemoveServiceNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -226,12 +226,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientConnectNop
-     * @tc.name: testConnect
-     * @tc.desc: test gatt client connect without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientConnectNop
+     * @tc.number testGattClientConnectNop
+     * @tc.desc   test gatt client connect without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientConnectNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -246,12 +246,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientDisconnectNop
-     * @tc.name: testDisconnect
-     * @tc.desc: test gatt client disconnect without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientDisconnectNop
+     * @tc.number testGattClientDisconnectNop
+     * @tc.desc   test gatt client disconnect without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientDisconnectNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -266,12 +266,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientCloseNop
-     * @tc.name: testClose
-     * @tc.desc: test gatt client close without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientCloseNop
+     * @tc.number testGattClientCloseNop
+     * @tc.desc   test gatt client close without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientCloseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -285,12 +285,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientGetDeviceNameCallbackNop
-     * @tc.name: testGetDeviceNameCallback
-     * @tc.desc: test gatt client getDeviceName callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientGetDeviceNameCallbackNop
+     * @tc.number testGattClientGetDeviceNameCallbackNop
+     * @tc.desc   test gatt client getDeviceName callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientGetDeviceNameCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let functionGetDeviceName = async ()=>{
@@ -317,12 +317,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientGetDeviceNamePromiseNop
-     * @tc.name: testGetDeviceNamePromise
-     * @tc.desc: test gatt client getDeviceName promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientGetDeviceNamePromiseNop
+     * @tc.number testGattClientGetDeviceNamePromiseNop
+     * @tc.desc   test gatt client getDeviceName promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientGetDeviceNamePromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -338,12 +338,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientGetServicesCallbackNop
-     * @tc.name: testGetServicesCallback
-     * @tc.desc: test gatt client getServices callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientGetServicesCallbackNop
+     * @tc.number testGattClientGetServicesCallbackNop
+     * @tc.desc   test gatt client getServices callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientGetServicesCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let functionGetServices = async ()=>{
@@ -370,12 +370,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientGetServicesPromiseNop
-     * @tc.name: testGetServicesPromise
-     * @tc.desc: test gatt client getServices promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientGetServicesPromiseNop
+     * @tc.number testGattClientGetServicesPromiseNop
+     * @tc.desc   test gatt client getServices promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientGetServicesPromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -391,12 +391,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientReadCharacteristicValueCallbackNop
-     * @tc.name: testReadCharacteristicValueCallback
-     * @tc.desc: test gatt client readCharacteristicValue callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientReadCharacteristicValueCallbackNop
+     * @tc.number testGattClientReadCharacteristicValueCallbackNop
+     * @tc.desc   test gatt client readCharacteristicValue callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientReadCharacteristicValueCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let descriptors :  Array<ble.BLEDescriptor> = [];
@@ -438,12 +438,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testGattClientReadCharacteristicValuePromiseNop
-     * @tc.name: testReadCharacteristicValuePromise
-     * @tc.desc: test gatt client readCharacteristicValue promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGattClientReadCharacteristicValuePromiseNop
+     * @tc.number testGattClientReadCharacteristicValuePromiseNop
+     * @tc.desc   test gatt client readCharacteristicValue promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGattClientReadCharacteristicValuePromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let descriptors :  Array<ble.BLEDescriptor> = [];
@@ -473,12 +473,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRssiValueCallbackNop
-     * @tc.name: testGetRssiValueCallback
-     * @tc.desc: test gatt client getRssiValue callback without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetRssiValueCallbackNop
+     * @tc.number testGetRssiValueCallbackNop
+     * @tc.desc   test gatt client getRssiValue callback without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRssiValueCallbackNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       let functionGetRssiValue = async ()=>{
@@ -504,12 +504,12 @@ export default function btBleServerNopUiJsunit() {
       done();
     })
     /**
-     * @tc.number: testGetRssiValuePromiseNop
-     * @tc.name: testGetRssiValuePromise
-     * @tc.desc: test gatt client getRssiValue promise without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testGetRssiValuePromiseNop
+     * @tc.number testGetRssiValuePromiseNop
+     * @tc.desc   test gatt client getRssiValue promise without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testGetRssiValuePromiseNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -525,12 +525,12 @@ export default function btBleServerNopUiJsunit() {
     })
 
     /**
-     * @tc.number: testSetBLEMtuSizeNop
-     * @tc.name: testSetBLEMtuSize
-     * @tc.desc: test gatt client setBLEMtuSize without permission
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level: Level0
+     * @tc.name   testSetBLEMtuSizeNop
+     * @tc.number testSetBLEMtuSizeNop
+     * @tc.desc   test gatt client setBLEMtuSize without permission
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL0
      */
     it("testSetBLEMtuSizeNop", TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done: Function) => {
       try {

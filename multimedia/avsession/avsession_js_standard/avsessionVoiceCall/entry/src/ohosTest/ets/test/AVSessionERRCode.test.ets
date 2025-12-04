@@ -38,13 +38,13 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_SERVICE_EXCEPTION
-     * @tc.desc      : Testing get error callMetadata - promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100
+     * @tc.desc   Testing get error callMetadata - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED
@@ -57,13 +57,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_REMOTE_ERROR
-     * @tc.desc      : Testing get error callMetadata - promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR_0100
+     * @tc.desc   Testing get error callMetadata - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_REMOTE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_REMOTE_ERROR
@@ -76,13 +76,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW
-     * @tc.desc      : Testing get error callMetadata - promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW_0100
+     * @tc.desc   Testing get error callMetadata - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_BEHIND_LIVE_WINDOW
@@ -95,13 +95,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_TIMEOUT_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_TIMEOUT
-     * @tc.desc      : Testing get error callMetadata - promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_TIMEOUT_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_TIMEOUT_0100
+     * @tc.desc   Testing get error callMetadata - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_TIMEOUT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_TIMEOUT
@@ -114,13 +114,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED
-     * @tc.desc      : Testing get error callMetadata - promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED_0100
+     * @tc.desc   Testing get error callMetadata - promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_RUNTIME_CHECK_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -134,13 +134,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAYER_NOT_WORKING
@@ -153,13 +153,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_SEEK_MODE_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -173,13 +173,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_ILLEGAL_SEEK_TARGET_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -193,13 +193,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_MODE_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -213,13 +213,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PLAY_SPEED_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -233,13 +233,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DEVICE_MISSING
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DEVICE_MISSING_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DEVICE_MISSING
@@ -252,13 +252,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_INVALID_PARAM
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_INVALID_PARAM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_INVALID_PARAM
@@ -271,13 +271,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_NO_MEMORY
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_NO_MEMORY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_NO_MEMORY
@@ -290,13 +290,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_OPERATION_NOT_ALLOWED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -310,13 +310,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_UNSPECIFIED
@@ -329,13 +329,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -349,13 +349,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_CONNECTION_TIMEOUT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -369,13 +369,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_INVALID_HTTP_CONTENT_TYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -389,13 +389,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_BAD_HTTP_STATUS
@@ -408,13 +408,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_FILE_NOT_FOUND
@@ -427,13 +427,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_PERMISSION
@@ -446,13 +446,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CLEARTEXT_NOT_PERMITTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -466,13 +466,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_POSITION_OUT_OF_RANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -486,13 +486,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NO_CONTENTS
@@ -505,13 +505,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_READ_ERROR
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_READ_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_READ_ERROR
@@ -524,13 +524,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_BUSY
@@ -543,13 +543,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_CONTENT_EXPIRED
@@ -562,13 +562,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_USE_FORBIDDEN
@@ -581,13 +581,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NOT_VERIFIED
@@ -600,13 +600,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_EXHAUSTED_ALLOWED_USES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -620,13 +620,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_IO_NETWORK_PACKET_SENDING_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -640,13 +640,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -660,13 +660,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_MALFORMED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -680,13 +680,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_MALFORMED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -700,13 +700,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_CONTAINER_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 ,async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -720,13 +720,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_PARSING_MANIFEST_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -740,13 +740,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -760,13 +760,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_INIT_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -780,13 +780,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_QUERY_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -800,13 +800,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FAILED
@@ -819,13 +819,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_EXCEEDS_CAPABILITIES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -839,13 +839,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DECODING_FORMAT_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -859,13 +859,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -879,13 +879,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_INIT_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -899,13 +899,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_AUDIO_RENDERER_WRITE_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -919,13 +919,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_UNSPECIFIED
@@ -938,13 +938,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SCHEME_UNSUPPORTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -958,13 +958,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVISIONING_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -978,13 +978,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_CONTENT_ERROR
@@ -997,13 +997,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_ACQUISITION_FAILED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -1017,13 +1017,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DISALLOWED_OPERATION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -1037,13 +1037,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_SYSTEM_ERROR
@@ -1056,13 +1056,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode = avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_DEVICE_REVOKED
@@ -1075,13 +1075,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_LICENSE_EXPIRED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let err_code: avSession.AVSessionErrorCode =
@@ -1095,13 +1095,13 @@ export default function abilityTest() {
       done();
     })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_0100
-     * @tc.name      : AVSessionErrorCode.ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR
-     * @tc.desc      : Testing get error code
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_0100
+     * @tc.desc   Testing get error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ERR_CODE_CAST_CONTROL_DRM_PROVIDE_KEY_RESPONSE_ERROR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let err_code: avSession.AVSessionErrorCode =
@@ -1115,13 +1115,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0100
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0100
-     * @tc.desc      : Testing DecoderType: video/avc enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0100
+     * @tc.desc   Testing DecoderType: video/avc enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_AVC;
@@ -1134,13 +1134,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0200
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0200
-     * @tc.desc      : Testing DecoderType: video/hevc enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0200
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0200
+     * @tc.desc   Testing DecoderType: video/hevc enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
@@ -1153,13 +1153,13 @@ export default function abilityTest() {
         done();
       })
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0300
-     * @tc.name      : SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0300
-     * @tc.desc      : Testing DecoderType: audio/av3a enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0300
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0300
+     * @tc.desc   Testing DecoderType: audio/av3a enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_DECODERTYPE_ENUM_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
         let decoderType = avSession.DecoderType.OH_AVCODEC_MIMETYPE_AUDIO_VIVID;
@@ -1171,6 +1171,48 @@ export default function abilityTest() {
         }
         done();
       })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_0100
+     * @tc.desc   compare all value in ResolutionLevel to number value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_RESOLUTION_ENUM_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+        console.info(`TestLog: RESOLUTION_480P is ${avSession.ResolutionLevel.RESOLUTION_480P}`);
+        expect(avSession.ResolutionLevel.RESOLUTION_480P).assertEqual(0 as avSession.ResolutionLevel);
+        console.info(`TestLog: RESOLUTION_720P is ${avSession.ResolutionLevel.RESOLUTION_720P}`);
+        expect(avSession.ResolutionLevel.RESOLUTION_720P).assertEqual(1 as avSession.ResolutionLevel);
+        console.info(`TestLog: RESOLUTION_1080P is ${avSession.ResolutionLevel.RESOLUTION_1080P}`);
+        expect(avSession.ResolutionLevel.RESOLUTION_1080P).assertEqual(2 as avSession.ResolutionLevel);
+        console.info(`TestLog: RESOLUTION_2K is ${avSession.ResolutionLevel.RESOLUTION_2K}`);
+        expect(avSession.ResolutionLevel.RESOLUTION_2K).assertEqual(3 as avSession.ResolutionLevel);
+        console.info(`TestLog: RESOLUTION_4K is ${avSession.ResolutionLevel.RESOLUTION_4K}`);
+        expect(avSession.ResolutionLevel.RESOLUTION_4K).assertEqual(4 as avSession.ResolutionLevel);
+        done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100
+     * @tc.number SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100
+     * @tc.desc   compare all value in ControlCommand to number value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AVSESSION_CASTCONTROLCOMMAND_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
+      try{
+        let avCommand: avSession.AVCastControlCommand = {command:'seek',parameter: 15};
+        console.info(`ControlCommand successfully ${JSON.stringify(avCommand)}`);
+      } catch(err){
+        expect(false).assertTrue();
+        console.error(`ControlCommand BusinessError: code: ${err.code}, message: ${err.message}`);
+      };
+        done();
+    })
+
 
 
   })

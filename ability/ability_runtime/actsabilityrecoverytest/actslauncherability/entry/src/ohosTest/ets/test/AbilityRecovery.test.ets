@@ -61,12 +61,12 @@ export default function abilityRecoveryTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_BackgroundRecovery_0800
-     * @tc.name: context.setRestoreEnabled
-     * @tc.desc: API test for context.setRestoreEnabled.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_BackgroundRecovery_0800
+     * @tc.number SUB_Ability_AbilityRuntime_BackgroundRecovery_0800
+     * @tc.desc   API test for context.setRestoreEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_BackgroundRecovery_0800', Level.LEVEL0, async () => {
       TAG = 'SUB_Ability_AbilityRuntime_BackgroundRecovery_0800 == ';
@@ -83,12 +83,12 @@ export default function abilityRecoveryTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_BackgroundRecovery_0700
-     * @tc.name: context.setRestoreEnabled
-     * @tc.desc: API test for context.setRestoreEnabled.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: 3
+     * @tc.name   SUB_Ability_AbilityRuntime_BackgroundRecovery_0700
+     * @tc.number SUB_Ability_AbilityRuntime_BackgroundRecovery_0700
+     * @tc.desc   API test for context.setRestoreEnabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_BackgroundRecovery_0700', Level.LEVEL0, async () => {
       TAG = 'SUB_Ability_AbilityRuntime_BackgroundRecovery_0700 == ';

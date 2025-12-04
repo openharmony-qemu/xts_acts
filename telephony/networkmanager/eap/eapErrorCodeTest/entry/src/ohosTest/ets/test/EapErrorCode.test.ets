@@ -68,12 +68,12 @@ export default function EapErrorCodeTest() {
   describe('EapErrorCodeTest', () => {
 
     /**
+     * @tc.name   testCommunicationEapRegCustomEapHandlerErrorCode0100
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_ErrorCode_0100
-     * @tc.name  testCommunicationEapRegCustomEapHandlerErrorCode0100
-     * @tc.desc verification parameter error
-     * @tc.level Level 0
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testCommunicationEapRegCustomEapHandlerErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName: string = "testCommunicationEapRegCustomEapHandlerErrorCode0100";
@@ -93,12 +93,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapRegCustomEapHandlerErrorCode0200
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_ErrorCode_0200
-     * @tc.name  testCommunicationEapRegCustomEapHandlerErrorCode0200
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapRegCustomEapHandlerErrorCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapRegCustomEapHandlerErrorCode0200";
@@ -118,12 +118,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapRegCustomEapHandlerErrorCode0300
      * @tc.number SUB_Communication_Eap_RegCustomEapHandler_ErrorCode_0300
-     * @tc.name  testCommunicationEapRegCustomEapHandlerErrorCode0300
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapRegCustomEapHandlerErrorCode0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapRegCustomEapHandlerErrorCode0300";
@@ -143,12 +143,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapUnregCustomEapHandlerErrorCode0100
      * @tc.number SUB_Communication_Eap_UnregCustomEapHandler_ErrorCode_0100
-     * @tc.name  testCommunicationEapUnregCustomEapHandlerErrorCode0100
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapUnregCustomEapHandlerErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0100";
@@ -168,12 +168,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapUnregCustomEapHandlerErrorCode0200
      * @tc.number SUB_Communication_Eap_UnregCustomEapHandler_ErrorCode_0200
-     * @tc.name  testCommunicationEapUnregCustomEapHandlerErrorCode0200
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapUnregCustomEapHandlerErrorCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0200";
@@ -193,12 +193,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapUnregCustomEapHandlerErrorCode0300
      * @tc.number SUB_Communication_Eap_UnregCustomEapHandler_ErrorCode_0300
-     * @tc.name  testCommunicationEapUnregCustomEapHandlerErrorCode0300
-     * @tc.desc  verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapUnregCustomEapHandlerErrorCode0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0300";
@@ -218,12 +218,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapUnregCustomEapHandlerErrorCode0400
      * @tc.number SUB_Communication_Eap_UnregCustomEapHandler_ErrorCode_0400
-     * @tc.name testCommunicationEapUnregCustomEapHandlerErrorCode0400
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapUnregCustomEapHandlerErrorCode0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapUnregCustomEapHandlerErrorCode0400";
@@ -244,12 +244,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0100
      * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0100
-     * @tc.name  testCommunicationEapReplyCustomEapDataErrorCode0100
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapReplyCustomEapDataErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0100";
@@ -269,12 +269,133 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0200
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0200
+     * @tc.desc   test verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapReplyCustomEapDataErrorCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0200";
+      console.info(`${caseName}---start`);
+      try {
+        let eapData:eap.EapData= {
+          msgId: 1,
+          eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+          bufferLen: 5,
+        };
+        eap.replyCustomEapData(1, eapData );
+        console.info(`${caseName } replyCustomEapData success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200099);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+
+    /**
+     * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0300
+     * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0300
+     * @tc.desc   test verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("testCommunicationEapReplyCustomEapDataErrorCode0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0300";
+      console.info(`${caseName}---start`);
+      try {
+        let eapData:eap.EapData= {
+          msgId: 1,
+          eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+          bufferLen: 5,
+        };
+        eap.replyCustomEapData(undefined, eapData);
+        console.info(`${caseName } replyCustomEapData success`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      } catch (error) {
+        console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+        ExpectTrue(error.code == 33200099);
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+      /**
+       * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0400
+       * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0400
+       * @tc.desc   test verification parameter error
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it("testCommunicationEapReplyCustomEapDataErrorCode0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+        let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0400";
+        console.info(`${caseName}---start`);
+        try {
+          let eapData:eap.EapData= {
+            msgId: 1,
+            eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+            bufferLen: 5,
+          };
+          eap.replyCustomEapData(10000, eapData);
+          console.info(`${caseName } replyCustomEapData success`);
+          ExpectFail();
+          console.info(`${caseName}---End`);
+          done();
+        } catch (error) {
+          console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+          ExpectTrue(error.code == 33200004);
+          console.info(`${caseName}---End`);
+          done();
+        }
+      })
+
+        /**
+         * @tc.name   testCommunicationEapReplyCustomEapDataErrorCode0500
+         * @tc.number SUB_Communication_Eap_ReplyCustomEapData_ErrorCode_0500
+         * @tc.desc   test verification parameter error
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
+        it("testCommunicationEapReplyCustomEapDataErrorCode0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+          let caseName: string = "testCommunicationEapReplyCustomEapDataErrorCode0500";
+          console.info(`${caseName}---start`);
+          try {
+            let eapData:eap.EapData= {
+              msgId: 1,
+              eapBuffer: new Uint8Array([1, 2, 3, 4, 5]),
+              bufferLen: 5,
+            };
+            eap.replyCustomEapData(undefined, eapData);
+            console.info(`${caseName } replyCustomEapData success`);
+            ExpectFail();
+            console.info(`${caseName}---End`);
+            done();
+          } catch (error) {
+            console.error(`${caseName} catch err ->${JSON.stringify(error)}`);
+            ExpectTrue(error.code == 33200099);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        })
+
+    /**
+     * @tc.name   testCommunicationEapStartEthEapErrorCode0100
      * @tc.number SUB_Communication_Eap_StartEthEap_ErrorCode_0100
-     * @tc.name  testCommunicationEapStartEthEapErrorCode0100
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapStartEthEapErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapStartEthEapErrorCode0100";
@@ -294,12 +415,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapStartEthEapErrorCode0200
      * @tc.number SUB_Communication_Eap_StartEthEap_ErrorCode_0200
-     * @tc.name  testCommunicationEapStartEthEapErrorCode0200
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapStartEthEapErrorCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapStartEthEapErrorCode0200";
@@ -319,12 +440,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapLogOffEthEapErrorCode0100
      * @tc.number SUB_Communication_Eap_LogOffEthEap_ErrorCode_0100
-     * @tc.name  testCommunicationEapLogOffEthEapErrorCode0100
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapLogOffEthEapErrorCode0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapLogOffEthEapErrorCode0100";
@@ -344,12 +465,12 @@ export default function EapErrorCodeTest() {
     })
 
     /**
+     * @tc.name   testCommunicationEapLogOffEthEapErrorCode0200
      * @tc.number SUB_Communication_Eap_LogOffEthEap_ErrorCode_0200
-     * @tc.name  testCommunicationEapLogOffEthEapErrorCode0200
-     * @tc.desc verification parameter error
-     * @tc.level Level 1
-     * @tc.type Function
-     * @tc.size MediumTest
+     * @tc.desc   verification parameter error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testCommunicationEapLogOffEthEapErrorCode0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       let caseName: string = "testCommunicationEapLogOffEthEapErrorCode0200";
@@ -367,6 +488,7 @@ export default function EapErrorCodeTest() {
         done();
       }
     })
+
 
   })
 }

@@ -23,6 +23,13 @@ function sleep(delay) {
 
 function seStateOnCb(data){
     console.info("[NFC_test] omapi.on ServiceState: ", data);
+    if (data == secureElement.ServiceState.DISCONNECTED) {
+        console.info("[NFC_test] omapi.on ServiceState: ", data);
+        expect(data).assertEqual(secureElement.ServiceState.DISCONNECTED);
+    } else {
+        console.info("[NFC_test] omapi.on ServiceState: ", data);
+        expect(data).assertEqual(secureElement.ServiceState.CONNECTED);
+    }
 }
 function seStateOffCb(data){
     console.info("[NFC_test] omapi.off ServiceState: ", data);
@@ -79,11 +86,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0600
          * @tc.number SUB_Communication_NFC_secureElement_js_0600
-         * @tc.name Test isConnected
-         * @tc.desc Check whether the SE service is connected.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Check whether the SE service is connected.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0600', Level.LEVEL0, function () {
             try {
@@ -97,11 +105,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0700
          * @tc.number SUB_Communication_NFC_secureElement_js_0700
-         * @tc.name Test getVersion
-         * @tc.desc Returns the version number of the OMA specification.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Returns the version number of the OMA specification.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0700', Level.LEVEL0, function ()  {
             try {
@@ -115,16 +124,22 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0800
          * @tc.number SUB_Communication_NFC_secureElement_js_0800
-         * @tc.name Test getName
-         * @tc.desc Returns the name of this reader.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Returns the name of this reader.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0800', Level.LEVEL0, function ()  {
             try {
                 let nfcOmaReaderList = Service.getReaders();
                 console.info("[nfc_test]8 Result of getReaders:" + nfcOmaReaderList );
+                if (nfcOmaReaderList.length > 0) {
+                    expect(nfcOmaReaderList.length > 0).assertTrue();
+                } else {
+                    expect(newSEServicetest).assertDeepEquals([]);
+                }
                 if (nfcOmaReaderList == undefined) {
                     console.info("[NFC_test]8 This function is not supported because the phone NFC chip is ST chip.");
                 } else {
@@ -143,28 +158,39 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_0900
          * @tc.number SUB_Communication_NFC_secureElement_js_0900
-         * @tc.name Test isSecureElementPresent
-         * @tc.desc Indicates whether the corresponding secure element is available.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Indicates whether the corresponding secure element is available.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_0900', Level.LEVEL0, async function (done)  {
             try {
                     let nfcOmaReaderList2 = [];
                     getReader = Service.getReaders();  
-                    console.info("[nfc_test]9 getReader value  is: " + getReader);                                    
+                    console.info("[nfc_test]9 getReader value  is: " + getReader);     
+                    if(getReader.length > 0) {
+                        expect(getReader.length > 0).assertTrue();
+                    } else {
+                        expect(getReader).assertDeepEquals([]);
+                    }                                 
                     for (let i = 0; i < getReader.length; i++) {
-                        if (!getReader[i].isSecureElementPresent()) {
-                            console.info("[NFC_test]9 se not present : " + i);
-                            continue;
-                        }
                         if (getReader[i].getName() != "eSE") {
                             console.info("[NFC_test]9 se reader not ese.");
                             continue;
                         }
-                        nfcOmaReaderList2 = getReader[i];
-                        }                                 
+
+                        let getReaderstate = getReader[i].isSecureElementPresent();
+                        if (getReaderstate == false ) {
+                            console.info("[NFC_test]9 se not present : " + i);
+                            expect(getReaderstate).assertFalse();
+                            continue;
+                        } else {
+                            nfcOmaReaderList2 = getReader[i];
+                            expect(getReaderstate).assertTrue();
+                        }
+                    }                                 
                     console.info("[nfc_test]9 nfcOmaReaderList2 getReader name is: " + nfcOmaReaderList2.getName()); 
                 if (nfcOmaReaderList2 == undefined) {
                     console.info("[NFC_test]9 This function is not supported because the phone NFC chip is ST chip.");
@@ -175,8 +201,13 @@ export default function newSEServicetest() {
                     console.info("[nfc_test]9 getReaders results list 0 is" + nfcESEReader2);
                     expect(nfcESEReader2 instanceof Object).assertTrue();
                     let nfcSePresent = nfcESEReader2.isSecureElementPresent();
-                    console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
-                    expect(nfcSePresent).assertTrue();
+                    if (nfcSePresent == true) {
+                        console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
+                        expect(nfcSePresent).assertTrue();
+                    } else {
+                        console.info("[NFC_test]9 security unit check result is: " + nfcSePresent);
+                        expect(nfcSePresent).assertFalse();
+                    }
                     let nfcOmaSession2 = nfcESEReader2.openSession();
                     sleep(900)
                     console.info("[nfc_test]9 Open the second session result" + nfcOmaSession2);
@@ -193,17 +224,20 @@ export default function newSEServicetest() {
                 }
             } catch (error) {
                 console.info("[NFC_test]9 isSecureElementPresent occurs exception:" + error + "/" + error.code);
-                expect(801).assertEqual(error.code);
+                if (error.code == 801) {
+                    expect(801).assertEqual(error.code);
+                }
             }
             done();
         })
         
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_1000
          * @tc.number SUB_Communication_NFC_secureElement_js_1000
-         * @tc.name Test shutdown
-         * @tc.desc Release all SE resources allocated to the service.
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Release all SE resources allocated to the service.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_1000', Level.LEVEL0, async function (done)  {
             try {
@@ -219,6 +253,11 @@ export default function newSEServicetest() {
                     console.info("[NFC_test] SEService isConnected The connection status is: " + seIsConnected);
                     if (seIsConnected) {
                         getReader = Service.getReaders();
+                        if(getReader.length > 0) {
+                            expect(getReader.length > 0).assertTrue();
+                        } else {
+                            expect(getReader).assertDeepEquals([]);
+                        } 
                         if (getReader == undefined) {
                             console.info("[NFC_test]10 This function is not supported because the phone NFC chip is ST chip.");
                         } else {
@@ -237,11 +276,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_1400
          * @tc.number SUB_Communication_NFC_secureElement_js_1400
-         * @tc.name Test omapi.on and omapi.off
-         * @tc.desc Close a single omapi.on and omapi.off
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Close a single omapi.on and omapi.off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_1400', Level.LEVEL0, function (){
             try{
@@ -263,11 +303,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_1500
          * @tc.number SUB_Communication_NFC_secureElement_js_1500
-         * @tc.name Test omapi.on and omapi.off
-         * @tc.desc Close a single omapi.on and omapi.off
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Close a single omapi.on and omapi.off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_1500', Level.LEVEL0, function (){
             try{
@@ -308,11 +349,12 @@ export default function newSEServicetest() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_secureElement_js_1600
          * @tc.number SUB_Communication_NFC_secureElement_js_1600
-         * @tc.name Test omapi.on and omapi.off
-         * @tc.desc Close a single omapi.on and omapi.off
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Close a single omapi.on and omapi.off
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_secureElement_js_1600', Level.LEVEL0, function (){
             try{

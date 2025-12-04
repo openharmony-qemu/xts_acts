@@ -25,12 +25,12 @@ export default function signalNdk1Test() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_TIME64_0100
-     * @tc.name       : testMuslSignalSigTimedWaitTime64001
-     * @tc.desc       : test sighold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigTimedWaitTime64001
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_TIME64_0100
+     * @tc.desc   test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigTimedWaitTime64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.__sigtimedwait_time641();
@@ -38,12 +38,12 @@ export default function signalNdk1Test() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_TIME64_0200
-     * @tc.name       : testMuslSignalSigTimedWaitTime64002
-     * @tc.desc       : test sighold
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslSignalSigTimedWaitTime64002
+     * @tc.number SUB_THIRDPARTY_MUSL_SIGNAL_SIGTIMEDWAIT_TIME64_0200
+     * @tc.desc   test sighold
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslSignalSigTimedWaitTime64002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = signal.__sigtimedwait_time642();

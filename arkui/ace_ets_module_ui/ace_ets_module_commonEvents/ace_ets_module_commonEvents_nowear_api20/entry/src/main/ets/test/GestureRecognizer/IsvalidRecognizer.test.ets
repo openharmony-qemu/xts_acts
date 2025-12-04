@@ -60,10 +60,12 @@ export default function IsvalidRecognizerTest() {
     });
 
     /**
-     * @tc.number : IsvalidRecognizer_0100
-     * @tc.name  : IsvalidRecognizer_0100
-     * @tc.desc  : To test whether IsvalidRecognizer is effective.
-     * @tc.level : Level 0
+     * @tc.name   IsvalidRecognizer_0100
+     * @tc.number IsvalidRecognizer_0100
+     * @tc.desc   To test whether IsvalidRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IsvalidRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('IsvalidRecognizer_0100 START');
@@ -74,6 +76,12 @@ export default function IsvalidRecognizerTest() {
       expect(AppStorage.get('isValid')).assertEqual(true);
       expect(AppStorage.get('isBuiltIn')).assertEqual(true);
       expect(AppStorage.get('getState4')).assertEqual(4);
+      expect(AppStorage.get('READY')).assertEqual(0);
+      expect(AppStorage.get('DETECTING')).assertEqual(1);
+      expect(AppStorage.get('PENDING')).assertEqual(2);
+      expect(AppStorage.get('BLOCKED')).assertEqual(3);
+      expect(AppStorage.get('SUCCESSFUL')).assertEqual(4);
+      expect(AppStorage.get('FAILED')).assertEqual(5);
 
       let Column = await driver.findComponent(ON.id('button'));
       await Column.click();

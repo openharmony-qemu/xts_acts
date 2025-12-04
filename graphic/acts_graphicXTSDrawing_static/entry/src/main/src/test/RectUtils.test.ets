@@ -50,12 +50,12 @@ export default function rectUtilsTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_0400
-     * @tc.name      : testRectUtilsGetWidthHeightNormalStatic
-     * @tc.desc      : Test for testRectUtilsGetWidthHeightNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsGetWidthHeightNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_0400
+     * @tc.desc   Test for testRectUtilsGetWidthHeightNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsGetWidthHeightNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsGetWidthHeightNormalStatic';
@@ -74,12 +74,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_0401
-     * @tc.name      : testRectUtilsGetWidthHeightMultipleCallsStatic
-     * @tc.desc      : testRectUtilsGetWidthHeightMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsGetWidthHeightMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_0401
+     * @tc.desc   testRectUtilsGetWidthHeightMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsGetWidthHeightMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsGetWidthHeightMultipleCallsStatic';
@@ -102,12 +102,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1000
-     * @tc.name      : testRectUtilsIntersectNormalStatic
-     * @tc.desc      : Test for testRectUtilsIntersectNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIntersectNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1000
+     * @tc.desc   Test for testRectUtilsIntersectNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIntersectNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIntersectNormalStatic';
@@ -138,12 +138,12 @@ export default function rectUtilsTest() {
       };
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1300
-     * @tc.name      : testRectUtilsIsEmptyNormalStatic
-     * @tc.desc      : Test for testRectUtilsIsEmptyNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIsEmptyNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1300
+     * @tc.desc   Test for testRectUtilsIsEmptyNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIsEmptyNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIsEmptyNormalStatic';
@@ -189,12 +189,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1400
-     * @tc.name      : testRectUtilsOffsetNormalStatic
-     * @tc.desc      : Test for testRectUtilsOffsetNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsOffsetNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1400
+     * @tc.desc   Test for testRectUtilsOffsetNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsOffsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsOffsetNormalStatic';
@@ -260,12 +260,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1401
-     * @tc.name      : testRectUtilsOffsetMultipleCallsStatic
-     * @tc.desc      : testRectUtilsOffsetMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsOffsetMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1401
+     * @tc.desc   testRectUtilsOffsetMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsOffsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsOffsetMultipleCallsStatic';
@@ -282,12 +282,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1900
-     * @tc.name      : testRectUtilsSortNormalStatic
-     * @tc.desc      : Test for testRectUtilsSortNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsSortNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_1900
+     * @tc.desc   Test for testRectUtilsSortNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsSortNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsSortNormalStatic';
@@ -336,12 +336,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2000
-     * @tc.name      : testRectUtilsIsEqualNormalStatic
-     * @tc.desc      : Test for testRectUtilsIsEqualNormalStatic.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testRectUtilsIsEqualNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2000
+     * @tc.desc   Test for testRectUtilsIsEqualNormalStatic.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRectUtilsIsEqualNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const msg = 'testRectUtilsIsEqualNormalStatic';
@@ -368,12 +368,12 @@ export default function rectUtilsTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2001
-     * @tc.name      : testRectUtilsIsEqualMultipleCallsStatic
-     * @tc.desc      : testRectUtilsIsEqualMultipleCallsStatic
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectUtilsIsEqualMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2001
+     * @tc.desc   testRectUtilsIsEqualMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRectUtilsIsEqualMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       const msg = 'testRectUtilsIsEqualMultipleCallsStatic';
@@ -387,6 +387,109 @@ export default function rectUtilsTest() {
           expect(isEqual).assertEqual(false);
         } catch (e: BusinessError) {
           console.info(msg + `RectUtils isEqual error. errorCode is: ${e.code} + errormsg is: ${e.message}} step: ${i}`);
+          expect().assertFail()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testRectContainsNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2100
+     * @tc.desc   testRectContainsNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectContainsNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRectContainsNormalStatic';
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+      let other: common2D.Rect = { left: 10, top: 10, right: 20, bottom: 20 };
+      try {
+        let isContains1 = drawing.RectUtils.contains(rect, other);
+        expect(isContains1 + '').assertEqual('true');
+        let isContains2 = drawing.RectUtils.contains(other, rect);
+        expect(isContains2 + '').assertEqual('false');
+      } catch (e: BusinessError) {
+        console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   testRectContainsMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2101
+     * @tc.desc   testRectContainsMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRectContainsMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRectContainsMultipleCallsStatic';
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+      let other: common2D.Rect = { left: 10, top: 10, right: 20, bottom: 20 };
+      for (let i = 0; i < 20; i ++) {
+        try {
+          let isContains = drawing.RectUtils.contains(rect, other);
+          console.info(msg + `isContains = ` + isContains);
+          expect(isContains + '').assertEqual('true');
+        } catch (e: BusinessError) {
+          console.info(msg + `RectContains errorCode is: ${e.code} + errormsg is: ${e.message}`);
+          expect().assertFail()
+        }
+      }
+    });
+
+    /**
+     * @tc.name   testRectInsetNormalStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2200
+     * @tc.desc   testRectInsetNormalStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testRectInsetNormalStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
+      const msg = 'testRectInsetNormalStatic';
+      let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+      let left = 10;
+      let top = 20;
+      let right = 30;
+      let bottom = 40;
+      try {
+        drawing.RectUtils.inset(rect, left, top, right, bottom);
+        expect(rect.left + '').assertEqual('10');
+        expect(rect.top + '').assertEqual('20');
+        expect(rect.right + '').assertEqual('70');
+        expect(rect.bottom + '').assertEqual('60');
+      } catch (e: BusinessError) {
+        console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail()
+      }
+    });
+
+    /**
+     * @tc.name   testRectInsetMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_RECTUTILS_STATIC_2201
+     * @tc.desc   testRectInsetMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testRectInsetMultipleCallsStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testRectInsetMultipleCallsStatic';
+      for (let i = 0; i < 20; i++) {
+        let rect: common2D.Rect = { left: 0, top: 0, right: 100, bottom: 100 };
+        let left = 10;
+        let top = 20;
+        let right = 30;
+        let bottom = 40;
+        try {
+          drawing.RectUtils.inset(rect, left, top, right, bottom);
+          expect(rect.left + '').assertEqual('10');
+          expect(rect.top + '').assertEqual('20');
+          expect(rect.right + '').assertEqual('70');
+          expect(rect.bottom + '').assertEqual('60');
+        } catch (e: BusinessError) {
+          console.info(msg + `RectInset errorCode is: ${e.code} + errormsg is: ${e.message}`);
           expect().assertFail()
         }
       }

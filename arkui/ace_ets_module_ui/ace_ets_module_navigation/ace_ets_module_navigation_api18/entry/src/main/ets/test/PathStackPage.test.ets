@@ -49,10 +49,12 @@ export default function PathStackPage() {
 
 
     /**
-     * @tc.number    PathStackPage_0100
-     * @tc.name      PathStackPage_0100
-     * @tc.desc      Test navDestinationId、setPathStack、getPathStack
-     * @tc.level     Level 2
+     * @tc.name   PathStackPage_0100
+     * @tc.number PathStackPage_0100
+     * @tc.desc   Test navDestinationId、setPathStack、getPathStack
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PathStackPage_0100', Level.LEVEL0, async (done: Function) => {
       console.info('PathStackPage_0100 START');

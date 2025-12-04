@@ -46,12 +46,12 @@ export default function EntryParamsTest() {
     });
 
     /**
-     * @tc.number    EntryParamsTest
-     * @tc.name      EntryParamsTest_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   EntryParamsTest_001
+     * @tc.number EntryParamsTest
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EntryParamsTest_001', Level.LEVEL0, async (done: Function) => {
       console.info('[EntryParamsTest_001] START');

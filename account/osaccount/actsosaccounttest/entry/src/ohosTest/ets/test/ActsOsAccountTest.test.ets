@@ -48,14 +48,14 @@ console.info("====>the value of the deviceinfo deviceType is: " + deviceType);
 export default function ActsOsAccountTest() {
   describe('ActsOsAccountTest', () => {
 
-    /*
-    * @tc.number  : ActsOsAccountGetForegroundOsAccountLocalId_0100
-    * @tc.name    : getForegroundOsAccountLocalId promise
-    * @tc.desc    : Gets the local ID of the foreground OS account.
-    * @tc.level   : Level0
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetForegroundOsAccountLocalId_0100
+     * @tc.number ActsOsAccountGetForegroundOsAccountLocalId_0100
+     * @tc.desc   Gets the local ID of the foreground OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountGetForegroundOsAccountLocalId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetForegroundOsAccountLocalId_0100 start====");
@@ -74,14 +74,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0100
-    * @tc.name    : getOsAccountDomainInfo promise test 401
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0100
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0100
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0100 start====");
@@ -100,14 +100,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0200
-    * @tc.name    : getOsAccountDomainInfo promise test 401
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0200
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0200
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0200 start====");
@@ -127,14 +127,14 @@ export default function ActsOsAccountTest() {
     });
 
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0300
-    * @tc.name    : getOsAccountDomainInfo promise test 13200003
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0300
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0300
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0300 start====");
@@ -153,14 +153,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0400
-    * @tc.name    : getOsAccountDomainInfo promise test 13200003
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0400
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0400
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0400 start====");
@@ -179,14 +179,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0500
-    * @tc.name    : getOsAccountDomainInfo promise test
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level0
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0500
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0500
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0500 start====");
@@ -205,14 +205,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0600
-    * @tc.name    : getOsAccountDomainInfo promise test
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level0
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0600
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0600
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0600 start====");
@@ -231,14 +231,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0700
-    * @tc.name    : getOsAccountDomainInfo promise test
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0700
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0700
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0700 start====");
@@ -286,14 +286,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountDomainInfo_0800
-    * @tc.name    : getOsAccountDomainInfo promise test
-    * @tc.desc    : Gets the domain account information associated with the specified OS account.
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0800
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0800
+     * @tc.desc   Gets the domain account information associated with the specified OS account.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetOsAccountDomainInfo_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
       console.info("====>ActsOsAccountGetOsAccountDomainInfo_0800 start====");
@@ -341,14 +341,14 @@ export default function ActsOsAccountTest() {
       }
     });
     
-    /*
-    * @tc.number    : OsAccountParamCheck_0100
-    * @tc.name      : test interface updateAccountInfo callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0100
+     * @tc.number OsAccountParamCheck_0100
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0100 ";
       console.info(tag + "start====");
@@ -368,14 +368,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0200
-    * @tc.name      : test interface updateAccountInfo promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0200
+     * @tc.number OsAccountParamCheck_0200
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0200 ";
       console.info(tag + "start====");
@@ -395,14 +395,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0300
-    * @tc.name      : test interface addServerConfig callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0300
+     * @tc.number OsAccountParamCheck_0300
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0300 ";
       console.info(tag + "start====");
@@ -422,14 +422,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0400
-    * @tc.name      : test interface addServerConfig promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0400
+     * @tc.number OsAccountParamCheck_0400
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0400 ";
       console.info(tag + "start====");
@@ -449,14 +449,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0500
-    * @tc.name      : test interface removeServerConfig callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0500
+     * @tc.number OsAccountParamCheck_0500
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0500 ";
       console.info(tag + "start====");
@@ -476,14 +476,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0600
-    * @tc.name      : test interface removeServerConfig promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0600
+     * @tc.number OsAccountParamCheck_0600
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0600 ";
       console.info(tag + "start====");
@@ -503,14 +503,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0700
-    * @tc.name      : test interface updateServerConfig callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0700
+     * @tc.number OsAccountParamCheck_0700
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0700 ";
       console.info(tag + "start====");
@@ -530,14 +530,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0800
-    * @tc.name      : test interface updateServerConfig promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0800
+     * @tc.number OsAccountParamCheck_0800
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0800 ";
       console.info(tag + "start====");
@@ -557,14 +557,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_0900
-    * @tc.name      : test interface getServerConfig callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_0900
+     * @tc.number OsAccountParamCheck_0900
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_0900 ";
       console.info(tag + "start====");
@@ -584,14 +584,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1000
-    * @tc.name      : test interface getServerConfig promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1000
+     * @tc.number OsAccountParamCheck_1000
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1000 ";
       console.info(tag + "start====");
@@ -611,14 +611,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1100
-    * @tc.name      : test interface getAccountServerConfig callback
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1100
+     * @tc.number OsAccountParamCheck_1100
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1100 ";
       console.info(tag + "start====");
@@ -638,14 +638,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1200
-    * @tc.name      : test interface getAccountServerConfig promise
-    * @tc.desc      : 401 param check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1200
+     * @tc.number OsAccountParamCheck_1200
+     * @tc.desc   401 param check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1200 ";
       console.info(tag + "start====");
@@ -665,14 +665,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1300
-    * @tc.name      : test interface updateAccountInfo callback
-    * @tc.desc      : check 12300003 The old account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1300
+     * @tc.number OsAccountParamCheck_1300
+     * @tc.desc   check 12300003 The old account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1300 ";
       console.info(tag + "start====");
@@ -701,14 +701,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1400
-    * @tc.name      : test interface updateAccountInfo promise
-    * @tc.desc      : check 12300002 Invalid server config parameters
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1400
+     * @tc.number OsAccountParamCheck_1400
+     * @tc.desc   check 12300002 Invalid server config parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1400 ";
       await getNameLimit();
@@ -741,14 +741,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1500
-    * @tc.name      : test interface updateAccountInfo callback
-    * @tc.desc      : check 12300003 The old account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1500
+     * @tc.number OsAccountParamCheck_1500
+     * @tc.desc   check 12300003 The old account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1500 ";
       console.info(tag + "start====");
@@ -777,14 +777,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1600
-    * @tc.name      : test interface updateAccountInfo promise
-    * @tc.desc      : check 12300002 Invalid server config parameters
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1600
+     * @tc.number OsAccountParamCheck_1600
+     * @tc.desc   check 12300002 Invalid server config parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1600 ";
       console.info(tag + "start====");
@@ -816,14 +816,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1700
-    * @tc.name      : test interface addServerConfig callback
-    * @tc.desc      : check 12300002 Invalid server config parameters
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1700
+     * @tc.number OsAccountParamCheck_1700
+     * @tc.desc   check 12300002 Invalid server config parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1700 ";
       console.info(tag + "start====");
@@ -847,14 +847,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1800
-    * @tc.name      : test interface addServerConfig promise
-    * @tc.desc      : check 12300211 Server unreachable
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1800
+     * @tc.number OsAccountParamCheck_1800
+     * @tc.desc   check 12300211 Server unreachable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1800 ";
       console.info(tag + "start====");
@@ -891,14 +891,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_1900
-    * @tc.name      : test interface addServerConfig promise
-    * @tc.desc      : check 12300211 Server unreachable
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_1900
+     * @tc.number OsAccountParamCheck_1900
+     * @tc.desc   check 12300211 Server unreachable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_1900 ";
       console.info(tag + "start====");
@@ -947,14 +947,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2000
-    * @tc.name      : test interface addServerConfig promise
-    * @tc.desc      : check 12300211 Server unreachable
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2000
+     * @tc.number OsAccountParamCheck_2000
+     * @tc.desc   check 12300211 Server unreachable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2000 ";
       console.info(tag + "start====");
@@ -1013,14 +1013,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2100
-    * @tc.name      : test interface removeServerConfig callback
-    * @tc.desc      : check 12300212 Server config not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2100
+     * @tc.number OsAccountParamCheck_2100
+     * @tc.desc   check 12300212 Server config not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2100 ";
       console.info(tag + "start====");
@@ -1044,14 +1044,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2200
-    * @tc.name      : test interface updateServerConfig callback
-    * @tc.desc      : check 12300212 Server config not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2200
+     * @tc.number OsAccountParamCheck_2200
+     * @tc.desc   check 12300212 Server config not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2200 ";
       console.info(tag + "start====");
@@ -1079,14 +1079,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2300
-    * @tc.name      : test interface updateServerConfig promise
-    * @tc.desc      : check 12300212 Invalid server config parameters
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2300
+     * @tc.number OsAccountParamCheck_2300
+     * @tc.desc   check 12300212 Invalid server config parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2300 ";
       console.info(tag + "start====");
@@ -1114,14 +1114,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2400
-    * @tc.name      : test interface updateServerConfig promise
-    * @tc.desc      : check 12300212 Invalid server config parameters
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2400
+     * @tc.number OsAccountParamCheck_2400
+     * @tc.desc   check 12300212 Invalid server config parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2400 ";
       console.info(tag + "start====");
@@ -1146,14 +1146,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2500
-    * @tc.name      : test interface getServerConfig callback
-    * @tc.desc      : check 12300212 Server config not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2500
+     * @tc.number OsAccountParamCheck_2500
+     * @tc.desc   check 12300212 Server config not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2500 ";
       console.info(tag + "start====");
@@ -1177,14 +1177,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2600
-    * @tc.name      : test interface getAccountServerConfig callback
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2600
+     * @tc.number OsAccountParamCheck_2600
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2600 ";
       await getNameLimit();
@@ -1214,14 +1214,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2700
-    * @tc.name      : test interface getAccountServerConfig callback
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2700
+     * @tc.number OsAccountParamCheck_2700
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2700 ";
       await getNameLimit();
@@ -1248,14 +1248,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2800
-    * @tc.name      : test interface getAccountServerConfig promise
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2800
+     * @tc.number OsAccountParamCheck_2800
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2800 ";
       console.info(tag + "start====");
@@ -1284,14 +1284,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_2900
-    * @tc.name      : test interface getAccountServerConfig promise
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_2900
+     * @tc.number OsAccountParamCheck_2900
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2900 ";
       console.info(tag + "start====");
@@ -1317,14 +1317,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_3000
-    * @tc.name      : test interface getAccountServerConfig promise
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_3000
+     * @tc.number OsAccountParamCheck_3000
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_3000 ";
       console.info(tag + "start====");
@@ -1353,14 +1353,14 @@ export default function ActsOsAccountTest() {
       }
     });
 
-    /*
-    * @tc.number    : OsAccountParamCheck_3100
-    * @tc.name      : test interface getAccountServerConfig promise
-    * @tc.desc      : check 12300003 Domain account not found
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   OsAccountParamCheck_3100
+     * @tc.number OsAccountParamCheck_3100
+     * @tc.desc   check 12300003 Domain account not found
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('OsAccountParamCheck_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_3100 ";
       console.info(tag + "start====");
@@ -1381,6 +1381,38 @@ export default function ActsOsAccountTest() {
           console.info(tag + "Current device not support API: getAccountServerConfig");
         } else {
           expect(err.code).assertEqual(12300003);
+        }
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountDomainInfo_0900
+     * @tc.number ActsOsAccountGetOsAccountDomainInfo_0900
+     * @tc.desc   getAllServerConfigs promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ActsOsAccountGetOsAccountDomainInfo_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let tag = "====>ActsOsAccountGetOsAccountDomainInfo_0900 ";
+      console.info(tag + "start====");
+      try {
+        console.info(tag + "start getAllServerConfigs");
+        let data: Array<osAccount.DomainServerConfig> = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+        console.info(tag + "getAllServerConfigs data: " + JSON.stringify(data));
+        if (data.length == 0) {
+          expect(data.length).assertEqual(0);
+        } else {
+          expect(data.length > 0).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.info(tag + "catch err: " + JSON.stringify(err));
+        if (err.code == 801) {
+          console.info(tag + "Current device not support API: getAllServerConfigs");
+        } else {
+          expect().assertFail();
         }
         done();
       }

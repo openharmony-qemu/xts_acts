@@ -22,12 +22,12 @@ export default function iPCCCApi20Test() {
   describe('iPCCCApi20Test', () => {
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelRewindReadPositionParamError_0100
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelRewindReadPositionParamError_0100
-     * @tc.desc        test OHIPCParcelRewindReadPositionParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelRewindReadPositionParamError_0100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelRewindReadPositionParamError_0100
+     * @tc.desc   test OHIPCParcelRewindReadPositionParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelRewindReadPositionParamError_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -45,12 +45,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelRewindWritePositionParamError_0200
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelRewindWritePositionParamError_0200
-     * @tc.desc        test OHIPCParcelRewindWritePositionParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelRewindWritePositionParamError_0200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelRewindWritePositionParamError_0200
+     * @tc.desc   test OHIPCParcelRewindWritePositionParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelRewindWritePositionParamError_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
@@ -67,12 +67,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt8WriteError_0300
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt8WriteError_0300
-     * @tc.desc        test OHIPCParcelWriteInt8WriteError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt8WriteError_0300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt8WriteError_0300
+     * @tc.desc   test OHIPCParcelWriteInt8WriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt8WriteError_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -89,12 +89,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt8ParamError_0400
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt8ParamError_0400
-     * @tc.desc        test OHIPCParcelWriteInt8ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt8ParamError_0400
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt8ParamError_0400
+     * @tc.desc   test OHIPCParcelWriteInt8ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt8ParamError_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -111,12 +111,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt8ReadError_0500
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt8ReadError_0500
-     * @tc.desc        test OHIPCParcelReadInt8ReadError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt8ReadError_0500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt8ReadError_0500
+     * @tc.desc   test OHIPCParcelReadInt8ReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt8ReadError_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -133,12 +133,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt8ParamError_0600
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt8ParamError_0600
-     * @tc.desc        test OHIPCParcelReadInt8ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt8ParamError_0600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt8ParamError_0600
+     * @tc.desc   test OHIPCParcelReadInt8ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt8ParamError_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -155,12 +155,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt16WriteError_0700
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt16WriteError_0700
-     * @tc.desc        test OHIPCParcelWriteInt16WriteError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt16WriteError_0700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt16WriteError_0700
+     * @tc.desc   test OHIPCParcelWriteInt16WriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt16WriteError_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -177,12 +177,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt16ParamError_0800
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt16ParamError_0800
-     * @tc.desc        test OHIPCParcelWriteInt16ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt16ParamError_0800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt16ParamError_0800
+     * @tc.desc   test OHIPCParcelWriteInt16ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt16ParamError_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -199,12 +199,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt16ReadError_0900
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt16ReadError_0900
-     * @tc.desc        test OHIPCParcelReadInt16ReadError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt16ReadError_0900
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt16ReadError_0900
+     * @tc.desc   test OHIPCParcelReadInt16ReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt16ReadError_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -221,12 +221,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt16ParamError_1000
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt16ParamError_1000
-     * @tc.desc        test OHIPCParcelReadInt16ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt16ParamError_1000
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt16ParamError_1000
+     * @tc.desc   test OHIPCParcelReadInt16ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt16ParamError_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -243,12 +243,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt32WriteError_1100
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt32WriteError_1100
-     * @tc.desc        test OHIPCParcelWriteInt32WriteError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt32WriteError_1100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt32WriteError_1100
+     * @tc.desc   test OHIPCParcelWriteInt32WriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt32WriteError_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -265,12 +265,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt32ParamError_1200
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt32ParamError_1200
-     * @tc.desc        test OHIPCParcelWriteInt32ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt32ParamError_1200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt32ParamError_1200
+     * @tc.desc   test OHIPCParcelWriteInt32ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt32ParamError_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -287,12 +287,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt32ReadError_1300
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt32ReadError_1300
-     * @tc.desc        test OHIPCParcelReadInt32ReadError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt32ReadError_1300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt32ReadError_1300
+     * @tc.desc   test OHIPCParcelReadInt32ReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt32ReadError_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -309,12 +309,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt32ParamError_1400
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt32ParamError_1400
-     * @tc.desc        test OHIPCParcelReadInt32ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt32ParamError_1400
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt32ParamError_1400
+     * @tc.desc   test OHIPCParcelReadInt32ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt32ParamError_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -331,12 +331,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt64WriteError_1500
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt64WriteError_1500
-     * @tc.desc        test OHIPCParcelWriteInt64WriteError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt64WriteError_1500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt64WriteError_1500
+     * @tc.desc   test OHIPCParcelWriteInt64WriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt64WriteError_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -353,12 +353,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteInt64ParamError_1600
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteInt64ParamError_1600
-     * @tc.desc        test OHIPCParcelWriteInt64ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInt64ParamError_1600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInt64ParamError_1600
+     * @tc.desc   test OHIPCParcelWriteInt64ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInt64ParamError_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -375,12 +375,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt64ReadError_1700
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt64ReadError_1700
-     * @tc.desc        test OHIPCParcelReadInt64ReadError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt64ReadError_1700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt64ReadError_1700
+     * @tc.desc   test OHIPCParcelReadInt64ReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt64ReadError_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -397,12 +397,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelReadInt64ParamError_1800
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelReadInt64ParamError_1800
-     * @tc.desc        test OHIPCParcelReadInt64ParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInt64ParamError_1800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInt64ParamError_1800
+     * @tc.desc   test OHIPCParcelReadInt64ParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInt64ParamError_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -419,12 +419,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteFloatWriteError_1900
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteFloatWriteError_1900
-     * @tc.desc        test OHIPCParcelWriteFloatWriteError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteFloatWriteError_1900
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteFloatWriteError_1900
+     * @tc.desc   test OHIPCParcelWriteFloatWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteFloatWriteError_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -441,12 +441,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number      SUB_DSoftbus_IPC_OHIPCParcelWriteFloatParamError_2000
-     * @tc.name        SUB_DSoftbus_IPC_OHIPCParcelWriteFloatParamError_2000
-     * @tc.desc        test OHIPCParcelWriteFloatParamError
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteFloatParamError_2000
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteFloatParamError_2000
+     * @tc.desc   test OHIPCParcelWriteFloatParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteFloatParamError_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -463,12 +463,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadFloatReadError_2100
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadFloatReadError_2100
-     * @tc.desc       : test OHIPCParcelReadFloatReadError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadFloatReadError_2100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadFloatReadError_2100
+     * @tc.desc   test OHIPCParcelReadFloatReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadFloatReadError_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -485,12 +485,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadFloatParamError_2200
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadFloatParamError_2200
-     * @tc.desc       : test OHIPCParcelReadFloatParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadFloatParamError_2200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadFloatParamError_2200
+     * @tc.desc   test OHIPCParcelReadFloatParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadFloatParamError_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -507,12 +507,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleWriteError_2300
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleWriteError_2300
-     * @tc.desc       : test OHIPCParcelWriteDoubleWriteError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleWriteError_2300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleWriteError_2300
+     * @tc.desc   test OHIPCParcelWriteDoubleWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleWriteError_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -529,12 +529,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleParamError_2400
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleParamError_2400
-     * @tc.desc       : test OHIPCParcelWriteDoubleParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleParamError_2400
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleParamError_2400
+     * @tc.desc   test OHIPCParcelWriteDoubleParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteDoubleParamError_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -551,12 +551,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadDoubleReadError_2500
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadDoubleReadError_2500
-     * @tc.desc       : test OHIPCParcelReadDoubleReadError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadDoubleReadError_2500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadDoubleReadError_2500
+     * @tc.desc   test OHIPCParcelReadDoubleReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadDoubleReadError_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -573,12 +573,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadDoubleParamError_2600
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadDoubleParamError_2600
-     * @tc.desc       : test OHIPCParcelReadDoubleParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadDoubleParamError_2600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadDoubleParamError_2600
+     * @tc.desc   test OHIPCParcelReadDoubleParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadDoubleParamError_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -595,12 +595,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteStringWriteError_2700
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteStringWriteError_2700
-     * @tc.desc       : test OHIPCParcelWriteStringWriteError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteStringWriteError_2700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteStringWriteError_2700
+     * @tc.desc   test OHIPCParcelWriteStringWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteStringWriteError_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -617,12 +617,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteStringParamError_2800
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteStringParamError_2800
-     * @tc.desc       : test OHIPCParcelWriteStringParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteStringParamError_2800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteStringParamError_2800
+     * @tc.desc   test OHIPCParcelWriteStringParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteStringParamError_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -639,12 +639,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteBufferWriteError_3300
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteBufferWriteError_3300
-     * @tc.desc       : test OHIPCParcelWriteBufferWriteError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteBufferWriteError_3300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteBufferWriteError_3300
+     * @tc.desc   test OHIPCParcelWriteBufferWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteBufferWriteError_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -661,12 +661,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteBufferParamError_2900
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteBufferParamError_2900
-     * @tc.desc       : test OHIPCParcelWriteBufferParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteBufferParamError_2900
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteBufferParamError_2900
+     * @tc.desc   test OHIPCParcelWriteBufferParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteBufferParamError_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -683,12 +683,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubSuccess_3000
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubSuccess_3000
-     * @tc.desc       : test OHIPCParcelWriteRemoteStubSuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubSuccess_3000
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubSuccess_3000
+     * @tc.desc   test OHIPCParcelWriteRemoteStubSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubSuccess_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -705,12 +705,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubWriteError_3100
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubWriteError_3100
-     * @tc.desc       : test OHIPCParcelWriteRemoteStubWriteError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubWriteError_3100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubWriteError_3100
+     * @tc.desc   test OHIPCParcelWriteRemoteStubWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubWriteError_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -727,12 +727,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubParamError_3200
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubParamError_3200
-     * @tc.desc       : test OHIPCParcelWriteRemoteStubParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubParamError_3200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubParamError_3200
+     * @tc.desc   test OHIPCParcelWriteRemoteStubParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteStubParamError_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -749,12 +749,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteProxyParamError_3500
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteProxyParamError_3500
-     * @tc.desc       : test OHIPCParcelWriteRemoteProxyParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteProxyParamError_3500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteProxyParamError_3500
+     * @tc.desc   test OHIPCParcelWriteRemoteProxyParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteRemoteProxyParamError_3500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -772,12 +772,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorSuccess_3600
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorSuccess_3600
-     * @tc.desc       : test OHIPCParcelWriteFileDescriptorSuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorSuccess_3600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorSuccess_3600
+     * @tc.desc   test OHIPCParcelWriteFileDescriptorSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorSuccess_3600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -795,12 +795,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorWriteError_3700
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorWriteError_3700
-     * @tc.desc       : test OHIPCParcelWriteFileDescriptorWriteError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorWriteError_3700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorWriteError_3700
+     * @tc.desc   test OHIPCParcelWriteFileDescriptorWriteError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorWriteError_3700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -818,12 +818,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorParamError_3800
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorParamError_3800
-     * @tc.desc       : test OHIPCParcelWriteFileDescriptorParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorParamError_3800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorParamError_3800
+     * @tc.desc   test OHIPCParcelWriteFileDescriptorParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteFileDescriptorParamError_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -841,12 +841,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorSuccess_3900
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorSuccess_3900
-     * @tc.desc       : test OHIPCParcelReadFileDescriptorSuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorSuccess_3900
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorSuccess_3900
+     * @tc.desc   test OHIPCParcelReadFileDescriptorSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorSuccess_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -864,12 +864,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorReadError_4000
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorReadError_4000
-     * @tc.desc       : test OHIPCParcelReadFileDescriptorReadError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorReadError_4000
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorReadError_4000
+     * @tc.desc   test OHIPCParcelReadFileDescriptorReadError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorReadError_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -887,12 +887,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorParamError_4100
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorParamError_4100
-     * @tc.desc       : test OHIPCParcelReadFileDescriptorParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorParamError_4100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorParamError_4100
+     * @tc.desc   test OHIPCParcelReadFileDescriptorParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadFileDescriptorParamError_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -910,12 +910,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCQuestModeAsync_4200
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCQuestModeAsync_4200
-     * @tc.desc       : test OHIPCQuestModeAsync
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCQuestModeAsync_4200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCQuestModeAsync_4200
+     * @tc.desc   test OHIPCQuestModeAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCQuestModeAsync_4200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -933,12 +933,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelAppendSuccess_4300
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelAppendSuccess_4300
-     * @tc.desc       : test OHIPCParcelAppendSuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelAppendSuccess_4300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelAppendSuccess_4300
+     * @tc.desc   test OHIPCParcelAppendSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelAppendSuccess_4300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -956,12 +956,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelAppendParamError_4500
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelAppendParamError_4500
-     * @tc.desc       : test OHIPCParcelAppendParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelAppendParamError_4500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelAppendParamError_4500
+     * @tc.desc   test OHIPCParcelAppendParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelAppendParamError_4500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -980,12 +980,12 @@ export default function iPCCCApi20Test() {
 
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelWriteInterfaceTokenParamError_4700
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelWriteInterfaceTokenParamError_4700
-     * @tc.desc       : test OHIPCParcelWriteInterfaceTokenParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelWriteInterfaceTokenParamError_4700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelWriteInterfaceTokenParamError_4700
+     * @tc.desc   test OHIPCParcelWriteInterfaceTokenParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelWriteInterfaceTokenParamError_4700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1003,12 +1003,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenSuccess_4800
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenSuccess_4800
-     * @tc.desc       : test OHIPCParcelReadInterfaceTokenSuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenSuccess_4800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenSuccess_4800
+     * @tc.desc   test OHIPCParcelReadInterfaceTokenSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenSuccess_4800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1026,12 +1026,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenParamError_5000
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenParamError_5000
-     * @tc.desc       : test OHIPCParcelReadInterfaceTokenParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenParamError_5000
+     * @tc.number SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenParamError_5000
+     * @tc.desc   test OHIPCParcelReadInterfaceTokenParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCParcelReadInterfaceTokenParamError_5000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1049,12 +1049,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCRemoteProxyGetInterfaceDescriptorParamError_5200
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCRemoteProxyGetInterfaceDescriptorParamError_5200
-     * @tc.desc       : test OHIPCRemoteProxyGetInterfaceDescriptorParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCRemoteProxyGetInterfaceDescriptorParamError_5200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCRemoteProxyGetInterfaceDescriptorParamError_5200
+     * @tc.desc   test OHIPCRemoteProxyGetInterfaceDescriptorParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCRemoteProxyGetInterfaceDescriptorParamError_5200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1072,12 +1072,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCRemoteProxyAddDeathRecipientParamError_5300
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCRemoteProxyAddDeathRecipientParamError_5300
-     * @tc.desc       : test OHIPCRemoteProxyAddDeathRecipientParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCRemoteProxyAddDeathRecipientParamError_5300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCRemoteProxyAddDeathRecipientParamError_5300
+     * @tc.desc   test OHIPCRemoteProxyAddDeathRecipientParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCRemoteProxyAddDeathRecipientParamError_5300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1095,12 +1095,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCRemoteProxyRemoveDeathRecipientParamError_5400
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCRemoteProxyRemoveDeathRecipientParamError_5400
-     * @tc.desc       : test OHIPCRemoteProxyRemoveDeathRecipientParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCRemoteProxyRemoveDeathRecipientParamError_5400
+     * @tc.number SUB_DSoftbus_IPC_OHIPCRemoteProxyRemoveDeathRecipientParamError_5400
+     * @tc.desc   test OHIPCRemoteProxyRemoveDeathRecipientParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCRemoteProxyRemoveDeathRecipientParamError_5400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1118,12 +1118,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCSkeletonSetMaxWorkThreadNumParamError_5500
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCSkeletonSetMaxWorkThreadNumParamError_5500
-     * @tc.desc       : test OHIPCSkeletonSetMaxWorkThreadNumParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCSkeletonSetMaxWorkThreadNumParamError_5500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCSkeletonSetMaxWorkThreadNumParamError_5500
+     * @tc.desc   test OHIPCSkeletonSetMaxWorkThreadNumParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCSkeletonSetMaxWorkThreadNumParamError_5500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1141,12 +1141,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentitySuccess_5600
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentitySuccess_5600
-     * @tc.desc       : test OHIPCSkeletonResetCallingIdentitySuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentitySuccess_5600
+     * @tc.number SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentitySuccess_5600
+     * @tc.desc   test OHIPCSkeletonResetCallingIdentitySuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentitySuccess_5600',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1164,12 +1164,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentityParamError_5700
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentityParamError_5700
-     * @tc.desc       : test OHIPCSkeletonResetCallingIdentityParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentityParamError_5700
+     * @tc.number SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentityParamError_5700
+     * @tc.desc   test OHIPCSkeletonResetCallingIdentityParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCSkeletonResetCallingIdentityParamError_5700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1187,12 +1187,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentitySuccess_5800
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentitySuccess_5800
-     * @tc.desc       : test OHIPCSkeletonSetCallingIdentitySuccess
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentitySuccess_5800
+     * @tc.number SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentitySuccess_5800
+     * @tc.desc   test OHIPCSkeletonSetCallingIdentitySuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentitySuccess_5800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1210,12 +1210,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentityParamError_5900
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentityParamError_5900
-     * @tc.desc       : test OHIPCSkeletonSetCallingIdentityParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentityParamError_5900
+     * @tc.number SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentityParamError_5900
+     * @tc.desc   test OHIPCSkeletonSetCallingIdentityParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCSkeletonSetCallingIdentityParamError_5900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1233,12 +1233,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCRemoteProxySendRequestParamError_6100
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCRemoteProxySendRequestParamError_6100
-     * @tc.desc       : test OHIPCRemoteProxySendRequestParamError
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCRemoteProxySendRequestParamError_6100
+     * @tc.number SUB_DSoftbus_IPC_OHIPCRemoteProxySendRequestParamError_6100
+     * @tc.desc   test OHIPCRemoteProxySendRequestParamError
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCRemoteProxySendRequestParamError_6100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1256,12 +1256,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCInvalidUserErrorCode_6200
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCInvalidUserErrorCode_6200
-     * @tc.desc       : test OHIPCInvalidUserErrorCode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCInvalidUserErrorCode_6200
+     * @tc.number SUB_DSoftbus_IPC_OHIPCInvalidUserErrorCode_6200
+     * @tc.desc   test OHIPCInvalidUserErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCInvalidUserErrorCode_6200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1279,12 +1279,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCErrorCodeMAX_6300
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCErrorCodeMAX_6300
-     * @tc.desc       : test OHIPCErrorCodeMAX
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCErrorCodeMAX_6300
+     * @tc.number SUB_DSoftbus_IPC_OHIPCErrorCodeMAX_6300
+     * @tc.desc   test OHIPCErrorCodeMAX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCErrorCodeMAX_6300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1302,12 +1302,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCUserErrorCodeMIN_6400
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCUserErrorCodeMIN_6400
-     * @tc.desc       : test OHIPCUserErrorCodeMIN
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCUserErrorCodeMIN_6400
+     * @tc.number SUB_DSoftbus_IPC_OHIPCUserErrorCodeMIN_6400
+     * @tc.desc   test OHIPCUserErrorCodeMIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCUserErrorCodeMIN_6400',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
@@ -1325,12 +1325,12 @@ export default function iPCCCApi20Test() {
       });
 
     /**
-     * @tc.number     : SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500
-     * @tc.name       : SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500
-     * @tc.desc       : test OHIPCUserErrorCodeMAX
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500
+     * @tc.number SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500
+     * @tc.desc   test OHIPCUserErrorCodeMAX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DSoftbus_IPC_OHIPCUserErrorCodeMAX_6500',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,

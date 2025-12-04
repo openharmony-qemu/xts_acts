@@ -24,12 +24,12 @@ export default function ConcatArrayTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0100
-     * @tc.name       : testCollectionsConcatArray0001
-     * @tc.desc       : Testing Collections of ConcatArray without param.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0100
+     * @tc.desc   Testing Collections of ConcatArray without param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0001";
@@ -44,12 +44,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0200
-     * @tc.name       : testCollectionsConcatArray0002
-     * @tc.desc       : Testing Collections of ConcatArray without param -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0200
+     * @tc.desc   Testing Collections of ConcatArray without param -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0002";
@@ -65,12 +65,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0300
-     * @tc.name       : testCollectionsConcatArray0003
-     * @tc.desc       : Testing Collections of ConcatArray without param 5.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0300
+     * @tc.desc   Testing Collections of ConcatArray without param 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0003";
@@ -86,12 +86,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0400
-     * @tc.name       : testCollectionsConcatArray0004
-     * @tc.desc       : Testing Collections of ConcatArray join without param.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0400
+     * @tc.desc   Testing Collections of ConcatArray join without param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0004";
@@ -107,12 +107,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0500
-     * @tc.name       : testCollectionsConcatArray0005
-     * @tc.desc       : Testing Collections of ConcatArray join ''.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0500
+     * @tc.desc   Testing Collections of ConcatArray join ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0005";
@@ -128,12 +128,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0600
-     * @tc.name       : testCollectionsConcatArray0006
-     * @tc.desc       : Testing Collections of ConcatArray join undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0600
+     * @tc.desc   Testing Collections of ConcatArray join undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0006";
@@ -149,12 +149,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0700
-     * @tc.name       : testCollectionsConcatArray0007
-     * @tc.desc       : Testing Collections of ConcatArray join 'ww'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0700
+     * @tc.desc   Testing Collections of ConcatArray join 'ww'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0007";
@@ -170,12 +170,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0800
-     * @tc.name       : testCollectionsConcatArray0008
-     * @tc.desc       : Testing Collections of ConcatArray join '分隔符'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0800
+     * @tc.desc   Testing Collections of ConcatArray join '分隔符'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0008";
@@ -191,12 +191,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0900
-     * @tc.name       : testCollectionsConcatArray0009
-     * @tc.desc       : Testing Collections of ConcatArray join ', '.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_0900
+     * @tc.desc   Testing Collections of ConcatArray join ', '.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0009";
@@ -212,12 +212,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1000
-     * @tc.name       : testCollectionsConcatArray0010
-     * @tc.desc       : Testing Collections of ConcatArray join '|'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1000
+     * @tc.desc   Testing Collections of ConcatArray join '|'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0010";
@@ -233,12 +233,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1100
-     * @tc.name       : testCollectionsConcatArray0011
-     * @tc.desc       : Testing Collections of ConcatArray join ',。\￥·'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1100
+     * @tc.desc   Testing Collections of ConcatArray join ',。\￥·'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0011";
@@ -254,12 +254,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1200
-     * @tc.name       : testCollectionsConcatArray0012
-     * @tc.desc       : Testing Collections of ConcatArray join '😊'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1200
+     * @tc.desc   Testing Collections of ConcatArray join '😊'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0012";
@@ -275,12 +275,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1300
-     * @tc.name       : testCollectionsConcatArray0013
-     * @tc.desc       : Testing Collections of ConcatArray join '녕하こんйте'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1300
+     * @tc.desc   Testing Collections of ConcatArray join '녕하こんйте'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0013";
@@ -296,12 +296,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1400
-     * @tc.name       : testCollectionsConcatArray0014
-     * @tc.desc       : Testing Collections of ConcatArray slice no start, no end.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1400
+     * @tc.desc   Testing Collections of ConcatArray slice no start, no end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0014";
@@ -319,12 +319,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1500
-     * @tc.name       : testCollectionsConcatArray0015
-     * @tc.desc       : Testing Collections of ConcatArray slice start index 0, no end.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1500
+     * @tc.desc   Testing Collections of ConcatArray slice start index 0, no end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0015";
@@ -342,12 +342,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1600
-     * @tc.name       : testCollectionsConcatArray0016
-     * @tc.desc       : Testing Collections of ConcatArray slice start index -1, no end.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1600
+     * @tc.desc   Testing Collections of ConcatArray slice start index -1, no end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0016";
@@ -365,12 +365,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1700
-     * @tc.name       : testCollectionsConcatArray0017
-     * @tc.desc       : Testing Collections of ConcatArray slice start index 2, no end.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1700
+     * @tc.desc   Testing Collections of ConcatArray slice start index 2, no end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0017";
@@ -388,12 +388,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1800
-     * @tc.name       : testCollectionsConcatArray0018
-     * @tc.desc       : Testing Collections of ConcatArray slice start index 10, no end.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1800
+     * @tc.desc   Testing Collections of ConcatArray slice start index 10, no end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0018";
@@ -409,12 +409,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1900
-     * @tc.name       : testCollectionsConcatArray0019
-     * @tc.desc       : Testing Collections of ConcatArray slice no start, end index -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_1900
+     * @tc.desc   Testing Collections of ConcatArray slice no start, end index -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0019";
@@ -432,12 +432,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2000
-     * @tc.name       : testCollectionsConcatArray0020
-     * @tc.desc       : Testing Collections of ConcatArray slice slice no start, end index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2000
+     * @tc.desc   Testing Collections of ConcatArray slice slice no start, end index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0020";
@@ -453,12 +453,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2100
-     * @tc.name       : testCollectionsConcatArray0021
-     * @tc.desc       : Testing Collections of ConcatArray slice slice no start, end index 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2100
+     * @tc.desc   Testing Collections of ConcatArray slice slice no start, end index 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0021";
@@ -476,12 +476,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2200
-     * @tc.name       : testCollectionsConcatArray0022
-     * @tc.desc       : Testing Collections of ConcatArray slice slice no start, end index 10.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2200
+     * @tc.desc   Testing Collections of ConcatArray slice slice no start, end index 10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0022";
@@ -499,12 +499,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2300
-     * @tc.name       : testCollectionsConcatArray0023
-     * @tc.desc       : Testing Collections of ConcatArray slice slice start index 2, end index 4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2300
+     * @tc.desc   Testing Collections of ConcatArray slice slice start index 2, end index 4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0023";
@@ -522,12 +522,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2400
-     * @tc.name       : testCollectionsConcatArray0024
-     * @tc.desc       : Testing Collections of ConcatArray slice slice start index 2, end index 2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2400
+     * @tc.desc   Testing Collections of ConcatArray slice slice start index 2, end index 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0024";
@@ -543,12 +543,12 @@ export default function ConcatArrayTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2500
-     * @tc.name       : testCollectionsConcatArray0025
-     * @tc.desc       : Testing Collections of ConcatArray slice slice start index 2, end index 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCollectionsConcatArray0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COLLECTIONS_CONCATARRAY_2500
+     * @tc.desc   Testing Collections of ConcatArray slice slice start index 2, end index 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCollectionsConcatArray0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const TAG = "testCollectionsConcatArray0025";

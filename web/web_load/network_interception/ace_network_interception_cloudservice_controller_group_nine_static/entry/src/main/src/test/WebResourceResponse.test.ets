@@ -68,10 +68,12 @@ export default function ActsAceWebDevCloudServiceWebControllerGroupNineTest() {
     * @tc.level      : Level 3
     */
     it('testGetResponseDataExReturnString', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       let emitKey = "testGetResponseDataExReturnString"
       Utils.emitEvent("testGetResponseDataExReturnString", 10)
       await Utils.msSleep(2000);
       Utils.registerEvent("testGetResponseDataExReturnString", true, 36010, done);
+      await Utils.msSleep(2000);
       inspector.sendEventByKey('WebResourceResponseButton', 10, '');
       await Utils.msSleep(6000);
       done()

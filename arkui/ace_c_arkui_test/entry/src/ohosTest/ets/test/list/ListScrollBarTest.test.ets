@@ -26,52 +26,52 @@ export default function listScrollBarTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_0100
-     * @tc.name       : testListScrollBar001
-     * @tc.desc       : testing scrollBar for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBar001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_0100
+     * @tc.desc   testing scrollBar for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBar001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBar001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_0200
-     * @tc.name       : testListScrollBar002
-     * @tc.desc       : testing scrollBar for list with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBar002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_0200
+     * @tc.desc   testing scrollBar for list with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBar002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBar002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_0300
-     * @tc.name       : testListScrollBar003
-     * @tc.desc       : testing scrollBar for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListScrollBar003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_0300
+     * @tc.desc   testing scrollBar for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBar003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBar003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SCROLLBAR_0400
-     * @tc.name       : testListScrollBar004
-     * @tc.desc       : testing scrollBar for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListScrollBar004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SCROLLBAR_0400
+     * @tc.desc   testing scrollBar for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListScrollBar004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListScrollBar004()).assertEqual(0)

@@ -18,7 +18,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Test
 import common from '@ohos.app.ability.common';
 import { BusinessError, settings } from '@kit.BasicServicesKit';
 import * as LoadContentByName from '../testability/pages/WindowTest/LoadContentByName';
-import { StartOptions } from '@kit.AbilityKit';
+import { abilityAccessCtrl, PermissionRequestResult, Permissions, StartOptions } from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -87,6 +88,30 @@ async function terminateAbility1(caseName: string) {
   await sleep(1000)
 }
 
+function getPermision(){
+  let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+  let context : common.UIAbilityContext = AppStorage.get('context') as common.UIAbilityContext;
+  let permissions: Permissions[] = ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+  atManager.requestPermissionsFromUser(context,permissions,(err:BusinessError,data:PermissionRequestResult)=>{
+    if(err){
+      console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }else {
+      console.info('capture requestPermissionsFromUser success: ' + JSON.stringify(data));
+    }
+  })
+}
+
+async function ClickButtonDriver(){
+  console.info(`come in permissionClick`);
+  let driver: Driver = Driver.create();
+  console.info(`come in Driver create`);
+  let buttonOne = await driver.findComponent(ON.text('允许'));
+  console.info(`buttonOne is ${JSON.stringify(buttonOne)}`);
+  if (buttonOne != undefined) {
+    await buttonOne.click();
+  }
+}
+
 export default function WindowLifecycle() {
   describe('WindowLifecycleTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -96,6 +121,7 @@ export default function WindowLifecycle() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let windowclassArr:Array<window.Window>;
+    let isFreeWindowMode = false;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -110,6 +136,15 @@ export default function WindowLifecycle() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      await getPermision();
+      await sleep(300);
+      await ClickButtonDriver();
+      await sleep(200);
       try{
           windowclassArr = await windowStage.getSubWindow();
           console.log(`brforeAll getSubWindow success. Cause: ${JSON.stringify(windowclassArr)}`);
@@ -145,12 +180,12 @@ export default function WindowLifecycle() {
     afterAll(() => {
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_0100
-     * @tc.name      : testgetSubWindow0_promise
-     * @tc.desc      : Test the function value of getSubWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testgetSubWindow0_promise
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_0100
+     * @tc.desc   Test the function value of getSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetSubWindow0_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testgetSubWindow0_promise';
@@ -166,14 +201,14 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_0200
-     * @tc.name      : testgetSubWindow0_callback
-     * @tc.desc      : Test the function value of getSubWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testgetSubWindow0_callback
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GETSUBWINDOW_0200
+     * @tc.desc   Test the function value of getSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testgetSubWindow0_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'testgetSubWindow0_callback';
       try {
 
@@ -197,12 +232,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0100
-     * @tc.name      : test_findWindow_null
-     * @tc.desc      : test_findWindow_null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_null
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0100
+     * @tc.desc   test_findWindow_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_findWindow_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_findWindow_null';
@@ -221,12 +256,12 @@ export default function WindowLifecycle() {
       };
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0200
-     * @tc.name      : test_findWindow_notExist
-     * @tc.desc      : test_findWindow_notExist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_notExist
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0200
+     * @tc.desc   test_findWindow_notExist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_findWindow_notExist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_findWindow_notExist';
@@ -245,14 +280,14 @@ export default function WindowLifecycle() {
       };
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0300
-     * @tc.name      : test_findWindow_subWindow
-     * @tc.desc      : test_findWindow_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0300
+     * @tc.desc   test_findWindow_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('test_findWindow_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_findWindow_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_findWindow_subWindow';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -286,12 +321,12 @@ export default function WindowLifecycle() {
       };
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0400
-     * @tc.name      : test_findWindow_subWindow_loadContent
-     * @tc.desc      : test_findWindow_subWindow_loadContent
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_subWindow_loadContent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0400
+     * @tc.desc   test_findWindow_subWindow_loadContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_findWindow_subWindow_loadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_findWindow_subWindow_loadContent';
@@ -338,14 +373,14 @@ export default function WindowLifecycle() {
       };
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0500
-     * @tc.name      : test_findWindow_mainWindow
-     * @tc.desc      : test_findWindow_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_mainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0500
+     * @tc.desc   test_findWindow_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('test_findWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('test_findWindow_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_findWindow_mainWindow';
       let msgStr = 'jsunittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -372,12 +407,12 @@ export default function WindowLifecycle() {
       ;
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0600
-     * @tc.name      : test_findWindow_mainWindow_isObscured
-     * @tc.desc      : test_findWindow_mainWindow_isObscured
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_findWindow_mainWindow_isObscured
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_FINDWINDOW_0600
+     * @tc.desc   test_findWindow_mainWindow_isObscured
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_findWindow_mainWindow_isObscured', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_findWindow_mainWindow_isObscured';
@@ -428,12 +463,12 @@ export default function WindowLifecycle() {
       ;
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSTAGEEVENT_0100
-     * @tc.name      : testOffWindowStageEvent_RepeatOff
-     * @tc.desc      : Turn off listening for Windows Stage lifecycle changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testOffWindowStageEvent_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSTAGEEVENT_0100
+     * @tc.desc   Turn off listening for Windows Stage lifecycle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffWindowStageEvent_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testOffWindowStageEvent_RepeatOff';
@@ -474,12 +509,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0100
-     * @tc.name      : testIsWindowShowing_WindowStateAbnormal
-     * @tc.desc      : Check whether the current window is displayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testIsWindowShowing_WindowStateAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0100
+     * @tc.desc   Check whether the current window is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsWindowShowing_WindowStateAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testIsWindowShowing_WindowStateAbnormal';
@@ -509,14 +544,14 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0200
-     * @tc.name      : testIsWindowShowingTest
-     * @tc.desc      : To verify the widow isshowing
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testIsWindowShowingTest
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0200
+     * @tc.desc   To verify the widow isshowing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testIsWindowShowingTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
+    it('testIsWindowShowingTest', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('windowTest testIsWindowShowingTest begin');
       // let wnd: window.Window | undefined = undefined;
       let msgStr = "testIsWindowShowingTest";
@@ -546,12 +581,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0300
-     * @tc.name      : testIsWindowShowing_Invoke_Interface_Two_Times
-     * @tc.desc      : Check whether the current window is displayed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testIsWindowShowing_Invoke_Interface_Two_Times
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0300
+     * @tc.desc   Check whether the current window is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testIsWindowShowing_Invoke_Interface_Two_Times', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testIsWindowShowing_Invoke_Interface_Two_Times';
@@ -592,12 +627,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0400
-     * @tc.name      : testIsWindowShowing_mainWindow
-     * @tc.desc      : testIsWindowShowing_mainWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testIsWindowShowing_mainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_IS_WINDOW_SHOWING_0400
+     * @tc.desc   testIsWindowShowing_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWindowShowing_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testIsWindowShowing_mainWindow';
@@ -616,12 +651,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0100
-     * @tc.name      : testOn_WindowSize_Change_subWindow
-     * @tc.desc      : testOn_WindowSize_Change_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testOn_WindowSize_Change_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0100
+     * @tc.desc   testOn_WindowSize_Change_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testOn_WindowSize_Change_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testOn_WindowSize_Change_subWindow';
@@ -668,12 +703,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0200
-     * @tc.name      : testOn_WindowSize_Change_Two_callback
-     * @tc.desc      : testOn_WindowSize_Change_Two_callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testOn_WindowSize_Change_Two_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0200
+     * @tc.desc   testOn_WindowSize_Change_Two_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testOn_WindowSize_Change_Two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testOn_WindowSize_Change_Two_callback';
@@ -720,12 +755,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0300
-     * @tc.name      : testOn_WindowSize_Change_off_callback1
-     * @tc.desc      : testOn_WindowSize_Change_off_callback1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testOn_WindowSize_Change_off_callback1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0300
+     * @tc.desc   testOn_WindowSize_Change_off_callback1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testOn_WindowSize_Change_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testOn_WindowSize_Change_off_callback1';
@@ -773,12 +808,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0400
-     * @tc.name      : testOn_WindowSize_Change_off_callback_all
-     * @tc.desc      : testOn_WindowSize_Change_off_callback_all
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testOn_WindowSize_Change_off_callback_all
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOWSIZE_CHANGE_0400
+     * @tc.desc   testOn_WindowSize_Change_off_callback_all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testOn_WindowSize_Change_off_callback_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testOn_WindowSize_Change_off_callback_all';
@@ -826,12 +861,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_SHOW_WINDOW_0100
-     * @tc.name      : test_showWindow_subWindow_top_promise
-     * @tc.desc      : test move the subWindow to the top
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   test_showWindow_subWindow_top_promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_SHOW_WINDOW_0100
+     * @tc.desc   test move the subWindow to the top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('test_showWindow_subWindow_top_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'test_showWindow_subWindow_top_promise';
@@ -904,12 +939,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_SHOW_WINDOW_0200
-     * @tc.name      : test_showWindow_subWindow_top_callback
-     * @tc.desc      : test move the subWindow to the top
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   test_showWindow_subWindow_top_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_SHOW_WINDOW_0200
+     * @tc.desc   test move the subWindow to the top
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('test_showWindow_subWindow_top_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'test_showWindow_subWindow_top_callback';
@@ -983,12 +1018,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_DESTORY_WINDOW_0100
-     * @tc.name      : testDestroyWindow_Promise
-     * @tc.desc      : Verification window destruction scenario.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testDestroyWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_DESTORY_WINDOW_0100
+     * @tc.desc   Verification window destruction scenario.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDestroyWindow_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDestroyWindow_Promise';
@@ -1025,12 +1060,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_DESTORY_WINDOW_0200
-     * @tc.name      : testDestroyWindow_Callback
-     * @tc.desc      : Verification window destruction scenario
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testDestroyWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_DESTORY_WINDOW_0200
+     * @tc.desc   Verification window destruction scenario
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDestroyWindow_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDestroyWindow_Callback';
@@ -1067,12 +1102,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0100
-     * @tc.name      : testWindowOffWindowEvent_RepeatOff
-     * @tc.desc      : Disable the monitoring of window life cycle changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowEvent_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0100
+     * @tc.desc   Disable the monitoring of window life cycle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffWindowEvent_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindowOffWindowEvent_RepeatOff';
@@ -1121,12 +1156,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0200
-     * @tc.name      : testWindow_on_WindowEvent_subWindow_shown
-     * @tc.desc      : Disable the monitoring of window life cycle changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_subWindow_shown
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0200
+     * @tc.desc   Disable the monitoring of window life cycle changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_subWindow_shown',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_subWindow_shown';
@@ -1167,12 +1202,12 @@ export default function WindowLifecycle() {
       });
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0300
-     * @tc.name      : testWindow_on_WindowEvent_subWindow_active
-     * @tc.desc      : testWindow_on_WindowEvent_subWindow_active
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_subWindow_active
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0300
+     * @tc.desc   testWindow_on_WindowEvent_subWindow_active
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_subWindow_active', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_subWindow_active';
@@ -1218,12 +1253,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0400
-     * @tc.name      : testWindow_on_WindowEvent_subWindow_inactive
-     * @tc.desc      : testWindow_on_WindowEvent_subWindow_inactive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_subWindow_inactive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0400
+     * @tc.desc   testWindow_on_WindowEvent_subWindow_inactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_subWindow_inactive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_subWindow_inactive';
@@ -1318,12 +1353,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0600
-     * @tc.name      : testWindow_on_WindowEvent_mainWindow_inactive
-     * @tc.desc      : testWindow_on_WindowEvent_mainWindow_inactive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_mainWindow_inactive
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0600
+     * @tc.desc   testWindow_on_WindowEvent_mainWindow_inactive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_mainWindow_inactive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_mainWindow_inactive';
@@ -1370,12 +1405,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0700
-     * @tc.name      : testWindow_on_WindowEvent_mainWindow_active
-     * @tc.desc      : testWindow_on_WindowEvent_mainWindow_active
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_mainWindow_active
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0700
+     * @tc.desc   testWindow_on_WindowEvent_mainWindow_active
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_mainWindow_active', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_mainWindow_active';
@@ -1426,12 +1461,12 @@ export default function WindowLifecycle() {
       });
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0800
-     * @tc.name      : testWindow_on_WindowEvent_Two_callback
-     * @tc.desc      : testWindow_on_WindowEvent_Two_callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_Two_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0800
+     * @tc.desc   testWindow_on_WindowEvent_Two_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_Two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_Two_callback';
@@ -1486,12 +1521,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0900
-     * @tc.name      : testWindow_on_WindowEvent_off_callback1
-     * @tc.desc      : testWindow_on_WindowEvent_off_callback1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_off_callback1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_0900
+     * @tc.desc   testWindow_on_WindowEvent_off_callback1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_off_callback1';
@@ -1542,12 +1577,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_1000
-     * @tc.name      : testWindow_on_WindowEvent_off_callback_All
-     * @tc.desc      : testWindow_on_WindowEvent_off_callback_All
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindow_on_WindowEvent_off_callback_All
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_ON_WINDOW_EVENT_1000
+     * @tc.desc   testWindow_on_WindowEvent_off_callback_All
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindow_on_WindowEvent_off_callback_All',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testWindow_on_WindowEvent_off_callback_All';
@@ -1598,14 +1633,14 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
-     * @tc.name      : testWindowOffWindowVisibilityChange_UnregisteredOff
-     * @tc.desc      : Enable this window to listen for status change events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowVisibilityChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0100
+     * @tc.desc   Enable this window to listen for status change events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testWindowOffWindowVisibilityChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it('testWindowOffWindowVisibilityChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName: string = 'testWindowOffWindowVisibilityChange_UnregisteredOff';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
@@ -1631,12 +1666,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
-     * @tc.name      : testWindowOffWindowVisibilityChange_RepeatOff
-     * @tc.desc      : Enable this window to listen for status change events
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testWindowOffWindowVisibilityChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0200
+     * @tc.desc   Enable this window to listen for status change events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowOffWindowVisibilityChange_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName: string = 'testWindowOffWindowVisibilityChange_RepeatOff';
@@ -1691,14 +1726,14 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
-     * @tc.name      : testWindowVisibilityChange_on_Function_Callback
-     * @tc.desc      : window type windowVisibilityChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowVisibilityChange_on_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0300
+     * @tc.desc   window type windowVisibilityChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("testWindowVisibilityChange_on_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testWindowVisibilityChange_on_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_on_Function_Callback";
       console.log(msgStr + "begin");
       try {
@@ -1725,14 +1760,14 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
-     * @tc.name      : testWindowVisibilityChange_off_Function_Callback
-     * @tc.desc      : window type windowVisibilityChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowVisibilityChange_off_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0400
+     * @tc.desc   window type windowVisibilityChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("testWindowVisibilityChange_off_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("testWindowVisibilityChange_off_Function_Callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_off_Function_Callback";
       console.log(msgStr + "begin");
       try {
@@ -1757,12 +1792,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0500
-     * @tc.name      : testWindowVisibilityChange_subWindow
-     * @tc.desc      : testWindowVisibilityChange_subWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowVisibilityChange_subWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_WINDOW_VISIBILITY_CHANGE_0500
+     * @tc.desc   testWindowVisibilityChange_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWindowVisibilityChange_subWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let msgStr = "testWindowVisibilityChange_subWindow";
@@ -1804,14 +1839,14 @@ export default function WindowLifecycle() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_API_REMOVE_STARTING_WINDOW_0100
-     * @tc.name      : testRemoveStartingWindow_Promise
-     * @tc.desc      : testRemoveStartingWindow_Promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testRemoveStartingWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_API_REMOVE_STARTING_WINDOW_0100
+     * @tc.desc   testRemoveStartingWindow_Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("testRemoveStartingWindow_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
+    it("testRemoveStartingWindow_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "testRemoveStartingWindow_Promise";
       console.log(msgStr + "begin");
       try {
@@ -1840,12 +1875,12 @@ export default function WindowLifecycle() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_EVENT_TYPE_0100
-     * @tc.name      : test_WindowEventType_enum
-     * @tc.desc      : test_WindowEventType_enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_WindowEventType_enum
+     * @tc.number SUB_BASIC_WMS_WINDOW_EVENT_TYPE_0100
+     * @tc.desc   test_WindowEventType_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_WindowEventType_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "test_WindowEventType_enum";
@@ -1862,14 +1897,14 @@ export default function WindowLifecycle() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_LOAD_CONTENT_BY_NAME_0100
-     * @tc.name      : test_loadContentByName
-     * @tc.desc      : test_loadContentByName
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_loadContentByName
+     * @tc.number SUB_BASIC_WMS_LOAD_CONTENT_BY_NAME_0100
+     * @tc.desc   test_loadContentByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it("test_loadContentByName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
+    it("test_loadContentByName", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msgStr = "test_loadContentByName";
       console.log(msgStr + "begin");
       try {
@@ -1893,12 +1928,12 @@ export default function WindowLifecycle() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0100
-     * @tc.name      : testWindowStageLifecycleEventTypeEnum
-     * @tc.desc      : 验证WindowStageLifecycleEventType枚举值
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindowStageLifecycleEventTypeEnum
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0100
+     * @tc.desc   验证WindowStageLifecycleEventType枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testWindowStageLifecycleEventTypeEnum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testWindowStageLifecycleEventTypeEnum";
@@ -1917,12 +1952,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0200
-     * @tc.name      : testOnWindowStageLifecycleEventwithDestoryedWindow
-     * @tc.desc      : 验证主窗销毁后调用OnWindowStageLifecycleEvent抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   testOnWindowStageLifecycleEventwithDestoryedWindow
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0200
+     * @tc.desc   验证主窗销毁后调用OnWindowStageLifecycleEvent抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testOnWindowStageLifecycleEventwithDestoryedWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "testOnWindowStageLifecycleEventwithDestoryedWindow";
@@ -1943,12 +1979,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number    : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0300
-     * @tc.name      : testOffWindowStageLifecycleEventwithDestoryedWindow
-     * @tc.desc      : 验证主窗销毁后调用OffWindowStageLifecycleEvent抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+    /**
+     * @tc.name   testOffWindowStageLifecycleEventwithDestoryedWindow
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0300
+     * @tc.desc   验证主窗销毁后调用OffWindowStageLifecycleEvent抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("testOffWindowStageLifecycleEventwithDestoryedWindow", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = "testOffWindowStageLifecycleEventwithDestoryedWindow";
@@ -1969,12 +2006,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0400
-     * @tc.name : testOnWindowStageLifecycleEventRegisterOne
-     * @tc.desc : WindowStageLifecycleEvent 一个callBack对象订阅监听验证
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testOnWindowStageLifecycleEventRegisterOne
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0400
+     * @tc.desc   WindowStageLifecycleEvent 一个callBack对象订阅监听验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testOnWindowStageLifecycleEventRegisterOne", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOnWindowStageLifecycleEventRegisterOne";
@@ -2025,12 +2063,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0500
-     * @tc.name : testOnWindowStageLifecycleEventRegisterTwo
-     * @tc.desc : WindowStageLifecycleEvent 多个callBack对象订阅监听验证
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testOnWindowStageLifecycleEventRegisterTwo
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0500
+     * @tc.desc   WindowStageLifecycleEvent 多个callBack对象订阅监听验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testOnWindowStageLifecycleEventRegisterTwo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOnWindowStageLifecycleEventRegisterTwo";
@@ -2092,12 +2131,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0600
-     * @tc.name : testOffWindowStageLifecycleEventwithUnregisterAll
-     * @tc.desc : WindowStageLifecycleEvent 多个callBack对象订阅取消监听验证
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testOffWindowStageLifecycleEventwithUnregisterAll
+     * @tc.number SUB_BASIC_WMS_XTS_WINDOWSTAGE_LIFECYCLE_EVENT_0600
+     * @tc.desc   WindowStageLifecycleEvent 多个callBack对象订阅取消监听验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testOffWindowStageLifecycleEventwithUnregisterAll", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testOffWindowStageLifecycleEventwithUnregisterAll";
@@ -2150,12 +2190,13 @@ export default function WindowLifecycle() {
       }
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_ISSHOWING_0100
-     * @tc.name : testisShowingTrue_callback
-     * @tc.desc : testisShowingTrue_callback
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testisShowingTrue_callback
+     * @tc.number SUB_BASIC_WMS_XTS_ISSHOWING_0100
+     * @tc.desc   testisShowingTrue_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testisShowingTrue_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testisShowingTrue_callback";
@@ -2175,12 +2216,13 @@ export default function WindowLifecycle() {
       })
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_ISSHOWING_0200
-     * @tc.name : testisShowingTrue_Promise
-     * @tc.desc : testisShowingTrue_Promise
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testisShowingTrue_Promise
+     * @tc.number SUB_BASIC_WMS_XTS_ISSHOWING_0200
+     * @tc.desc   testisShowingTrue_Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testisShowingTrue_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testisShowingTrue_Promise";
@@ -2199,12 +2241,13 @@ export default function WindowLifecycle() {
 
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_ISSHOWING_0300
-     * @tc.name : testisShowingFalse_callback
-     * @tc.desc : testisShowingFalse_callback
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testisShowingFalse_callback
+     * @tc.number SUB_BASIC_WMS_XTS_ISSHOWING_0300
+     * @tc.desc   testisShowingFalse_callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testisShowingFalse_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testisShowingFalse_callback";
@@ -2226,12 +2269,13 @@ export default function WindowLifecycle() {
       })
     });
 
-    /** @tc.number : SUB_BASIC_WMS_XTS_ISSHOWING_0400
-     * @tc.name : testisShowingFalse_Promise
-     * @tc.desc : testisShowingFalse_Promise
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+    /**
+     * @tc.name   testisShowingFalse_Promise
+     * @tc.number SUB_BASIC_WMS_XTS_ISSHOWING_0400
+     * @tc.desc   testisShowingFalse_Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testisShowingFalse_Promise", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = "testisShowingFalse_Promise";
@@ -2252,12 +2296,12 @@ export default function WindowLifecycle() {
 
     });
     /**
-     * @tc.number    : testWindowEvent_0100
-     * @tc.name      : testWindowEvent_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3 
+     * @tc.name   testWindowEvent_0100
+     * @tc.number testWindowEvent_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testWindowEvent_0100';
@@ -2292,8 +2336,8 @@ export default function WindowLifecycle() {
         expect(windoweventChange[1]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
         expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
         expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
-        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
-        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
         expect(windoweventChange[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
         done();
       }catch (err) {
@@ -2308,16 +2352,163 @@ export default function WindowLifecycle() {
 
 
     })
+    /**
+     * @tc.name   testWindowEvent_0200
+     * @tc.number testWindowEvent_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowEvent_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowEvent_0200';
+      let windoweventChange:Array<window.WindowEventType> = [];
+      let config1: window.Configuration = {
+        name: "testWindowEvent_0200_1",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      let config2: window.Configuration = {
+        name: "testWindowEvent_0200_2",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      }
+      try{
+        let windowClass = await window.createWindow(config1);
+        console.info(message + ' createSubWindow success ' + JSON.stringify(windowClass));
+        windowClass.on('windowEvent', (data) => {
+          console.info(message + ' Window event happened. Event:' + JSON.stringify(data));
+          windoweventChange.push(data);
+          console.info(message + ' windoweventChange:' + JSON.stringify(windoweventChange));
+        });
+        await windowClass.setUIContent('testability/pages/Index2')
+        await windowClass.showWindow();
+        console.info(message + ' windowClass showWindow success ');
+        await sleep(300)
+        let windowClass2 =await window.createWindow(config2)
+        await windowClass2.setUIContent('testability/pages/Index2')
+        await windowClass2.showWindow();
+        console.info(message + ' windowClass2 showWindow success ');
+        await sleep(300)
+        await windowClass2.destroyWindow();
+        console.info(message + ' windowClass2 destroyWindow success ');
+        await sleep(300)
+        await windowClass.destroyWindow();
+        console.info(message + ' windowClass destroyWindow success ');
+        await sleep(300)
+        expect(windoweventChange[0]).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+        expect(windoweventChange[1]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+        expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+        expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+        expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+        done();
+      }catch (err) {
+        console.error(message + ' failed: '+err);
+        if(err.code == 801){
+          done()
+        }else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+
+
+    })
+    /**
+     * @tc.name   testWindowEvent_0300
+     * @tc.number testWindowEvent_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testWindowEvent_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const message = 'testWindowEvent_0300';
+      let windoweventChange:Array<window.WindowEventType> = [];
+      let config1: window.Configuration = {
+        name: "testWindowEvent_03000_1",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      }
+      let config2: window.Configuration = {
+        name: "testWindowEvent_0300_2",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      }
+      let windowClass: window.Window | null = null;
+      try{
+        window.createWindow(config1).then(async (data)=>{
+          windowClass = data;
+          console.info(message + ' createSubWindow success ' + JSON.stringify(windowClass));
+          windowClass.on('windowEvent', (data) => {
+            console.info(message + ' Window event happened. Event:' + JSON.stringify(data));
+            windoweventChange.push(data);
+            console.info(message + ' windoweventChange:' + JSON.stringify(windoweventChange));
+          });
+          await windowClass.setUIContent('testability/pages/Index2')
+          await windowClass.showWindow();
+          console.info(message + ' windowClass showWindow success ');
+          await sleep(300)
+          let windowClass2 =await window.createWindow(config2);
+          await windowClass2.setUIContent('testability/pages/Index2')
+          await windowClass2.showWindow();
+          console.info(message + ' windowClass2 showWindow success ');
+          await sleep(300)
+          await windowClass2.destroyWindow();
+          console.info(message + ' windowClass2 destroyWindow success ');
+          await sleep(300)
+          await windowClass.minimize();
+          console.info(message + ' windowClass minimize success ');
+          await sleep(300)
+          await windowClass.destroyWindow();
+          console.info(message + ' windowClass destroyWindow success ');
+          await sleep(300)
+          expect(windoweventChange[0]).assertEqual(window.WindowEventType.WINDOW_SHOWN);
+          expect(windoweventChange[1]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+          expect(windoweventChange[2]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+          expect(windoweventChange[3]).assertEqual(window.WindowEventType.WINDOW_ACTIVE);
+          expect(windoweventChange[4]).assertEqual(window.WindowEventType.WINDOW_INACTIVE);
+          expect(windoweventChange[5]).assertEqual(window.WindowEventType.WINDOW_HIDDEN);
+          expect(windoweventChange[6]).assertEqual(window.WindowEventType.WINDOW_DESTROYED);
+          done();
+        }).catch(async (err:BusinessError)=>{
+          console.error(message + 'createWindow ' + 'caught, err: ' + JSON.stringify(err.code)+',errMessage: '+ err.message);
+          if (err.code === 1300002) {
+            expect(err.message!=null).assertTrue();
+            done();
+          } else if (err.code == 801) {
+            console.error(message + 'windowEvent failed ' + 'caught, err: ' + JSON.stringify(err));
+            await windowClass!.destroyWindow();
+            expect(err.message!=null).assertTrue();
+            done();
+          } else {
+            expect().assertFail();
+            done()
+          }
+        })
+      }catch (err) {
+        console.error(message + ' failed: '+err);
+        if(err.code == 801){
+          done()
+        }else {
+          expect(false).assertTrue();
+          done();
+        }
+      }
+
+
+    })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WindowStageEvent_0100
-     * @tc.name      : SUB_BASIC_WMS_WindowStageEvent_0100
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   SUB_BASIC_WMS_WindowStageEvent_0100
+     * @tc.number SUB_BASIC_WMS_WindowStageEvent_0100
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('SUB_BASIC_WMS_WindowStageEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('SUB_BASIC_WMS_WindowStageEvent_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = 'SUB_BASIC_WMS_WindowStageEvent_0100';
       // 1、拉起另一个Abllity主窗
       try {
@@ -2337,6 +2528,481 @@ export default function WindowLifecycle() {
         console.error(`${caseName} Failed. Cause: ${JSON.stringify(e)}`);
         await terminateAbility1(caseName);
         expect(false).assertTrue();
+        done();
+      }
+    });
+    
+    /**
+     * @tc.name   testGetAllMainWindowInfo_0200
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_WINDOWINFO_TEST_0200
+     * @tc.desc   北向getAllMainWindowInfo测试返回值覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetAllMainWindowInfo_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetAllMainWindowInfo_0200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowInfoArray = await window.getAllMainWindowInfo();
+          console.info(caseName + ' windowInfoArray.length: ' + JSON.stringify(windowInfoArray.length));
+          console.info(caseName + ' windowInfoArray: ' + JSON.stringify(windowInfoArray));
+          expect(windowInfoArray.length).assertLargerOrEqual(1);
+          for (let i = 0; i < windowInfoArray.length; i++) {
+            if (windowInfoArray[i].windowId == windowId) {
+              let mainWindowInfo = windowInfoArray[i];
+              console.info(caseName + ' mainWindowInfo: ' + JSON.stringify(mainWindowInfo));
+              expect(mainWindowInfo.windowId).assertEqual(windowId);
+              expect(mainWindowInfo.displayId).assertEqual(0);
+              expect(mainWindowInfo.showing).assertEqual(true);
+              expect(mainWindowInfo.label).assertEqual('test label');
+              break;
+            }
+          }
+          const callback = async (data: window.WindowStageLifecycleEventType) => {
+            console.info(`Succeeded in enabling the listener for window stage event changes. Data: ${JSON.stringify(data)}`);
+            if (data === window.WindowStageLifecycleEventType.HIDDEN) {
+              console.info(caseName+ ' current window stage event is HIDDEN');
+              let windowInfoArray2 = await window.getAllMainWindowInfo();
+              console.info(caseName + ' windowInfoArray2: ' + JSON.stringify(windowInfoArray2));
+              for (let i = 0; i < windowInfoArray2.length; i++) {
+                if (windowInfoArray2[i].windowId == windowId) {
+                  let mainWindowInfo2 = windowInfoArray2[i];
+                  console.info(caseName + ' mainWindowInfo2: ' + JSON.stringify(mainWindowInfo2));
+                  expect(mainWindowInfo2.showing).assertEqual(false);
+                  break;
+                }
+              }
+              windowStage.off('windowStageLifecycleEvent', callback);
+              await windowClass.restore();
+              context.setMissionLabel('label2');
+              let windowInfoArray3 = await window.getAllMainWindowInfo();
+              console.info(caseName + ' windowInfoArray3: ' + JSON.stringify(windowInfoArray3));
+              for (let i = 0; i < windowInfoArray3.length; i++) {
+                if (windowInfoArray3[i].windowId == windowId) {
+                  let mainWindowInfo3 = windowInfoArray3[i];
+                  console.info(caseName + ' mainWindowInfo3: ' + JSON.stringify(mainWindowInfo3));
+                  expect(mainWindowInfo3.label).assertEqual('label2');
+                  break;
+                }
+              }
+              done()
+            }
+          }
+          windowStage.on('windowStageLifecycleEvent', callback);
+          await windowClass.minimize();
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err))
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0200
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0200
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参是null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+              useCache: false
+          }
+          await window.getMainWindowSnapshot(null, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0300
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0300
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参是undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0300";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(undefined, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0400
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0400
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参包含0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0400";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [0, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0500
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0500
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参包含-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0500";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [-1, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0600
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0600
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参包含重复Id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0600";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId, windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0700
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0700
+     * @tc.desc   北向getMainWindowSnapshot测试windowId数组长度大于512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0700";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray: number[] = new Array(520).fill(windowId);
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          await window.getMainWindowSnapshot(windowIdArray, configs)
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0800
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0800
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参正整数，但是不存在的windowId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0800";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [1000];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          expect(pixelMapArray[0]).assertEqual(undefined);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_0900
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_0900
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration入参 null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_0900";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          await window.getMainWindowSnapshot(windowIdArray, null);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_1000
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1000
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration入参 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1000";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          await window.getMainWindowSnapshot(windowIdArray, undefined);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          if (err.code == 401) {
+            expect(true).assertTrue()
+            done();
+          } else {
+            expect().assertFail();
+            done();
+          }
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_1100
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1100
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration设置useCache=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1100";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: false
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   testGetMainWindowSnapshot_1200
+     * @tc.number SUB_BASIC_WMS_FUNCTION_GET_MAIN_WINDOW_SNAPSHOT_TEST_1200
+     * @tc.desc   北向getMainWindowSnapshot测试windowId入参正常，WindowSnapshotConfiguration设置useCache=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("testGetMainWindowSnapshot_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
+      let caseName = "testGetMainWindowSnapshot_1200";
+      console.log(caseName + " begin");
+      if (isPCStatus != '') {
+        try {
+          let windowClass = windowStage.getMainWindowSync();
+          let windowId = windowClass.getWindowProperties().id;
+          console.info(caseName + ' windowId: ' + windowId);
+          let windowIdArray = [windowId];
+          let configs: window.WindowSnapshotConfiguration = {
+            useCache: true
+          }
+          let pixelMapArray = await window.getMainWindowSnapshot(windowIdArray, configs);
+          console.info(caseName + ' pixelMapArray: ' + pixelMapArray);
+          console.info(caseName + ' pixelMapArray.length: ' + pixelMapArray.length);
+          expect(pixelMapArray.length).assertEqual(1);
+          done()
+        } catch (err) {
+          console.error(caseName + ' failed. Cause: ' + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
+      } else {
         done();
       }
     });

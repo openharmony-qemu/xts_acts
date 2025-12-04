@@ -62,15 +62,15 @@ export default function intelligenceTest() {
     let retArray = [401, 801, 313000000];
 
 
-    /**
-     * @tc.name intelligenceApiTest0100
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0100
-     * @tc.desc splitText interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0100
+     * @tc.number intelligenceApiTest0100
+     * @tc.desc   intelligenceApiTest0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("intelligenceApiTest0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0100 start")
       let text =
@@ -104,15 +104,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0200
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0200
-     * @tc.desc getTextEmbeddingModel promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0200
+     * @tc.number intelligenceApiTest0200
+     * @tc.desc   intelligenceApiTest0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0200 start");
       if (currentDeviceIsPc) {
@@ -142,15 +142,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0300
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0300
-     * @tc.desc getImageEmbeddingModel promise interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0300
+     * @tc.number intelligenceApiTest0300
+     * @tc.desc   intelligenceApiTest0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0300 start");
       if (currentDeviceIsPc) {
@@ -181,15 +181,15 @@ export default function intelligenceTest() {
 
 
 
-    /**
-     * @tc.name intelligenceApiTest0400
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0400
-     * @tc.desc getTextEmbeddingModel loadModel interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0400
+     * @tc.number intelligenceApiTest0400
+     * @tc.desc   intelligenceApiTest0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0400 start");
 
@@ -217,15 +217,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0500
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0500
-     * @tc.desc getTextEmbeddingModel loadModel interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0500
+     * @tc.number intelligenceApiTest0500
+     * @tc.desc   intelligenceApiTest0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0500 start");
       if (currentDeviceIsPc) {
@@ -262,15 +262,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0600
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0600
-     * @tc.desc getTextEmbeddingModel releaseModel abnormal interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0600
+     * @tc.number intelligenceApiTest0600
+     * @tc.desc   intelligenceApiTest0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0600 start");
 
@@ -305,15 +305,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0700
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0700
-     * @tc.desc getTextEmbeddingModel getEmbedding interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0700
+     * @tc.number intelligenceApiTest0700
+     * @tc.desc   intelligenceApiTest0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0700 start");
 
@@ -351,15 +351,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0800
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0800
-     * @tc.desc getTextEmbeddingModel getEmbedding abnormal interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0800
+     * @tc.number intelligenceApiTest0800
+     * @tc.desc   intelligenceApiTest0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0800 start");
 
@@ -394,15 +394,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest0900
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_0900
-     * @tc.desc getTextEmbeddingModel getEmbedding batchTexts interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest0900
+     * @tc.number intelligenceApiTest0900
+     * @tc.desc   intelligenceApiTest0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest0900 start");
 
@@ -437,15 +437,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest1000
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_1000
-     * @tc.desc getImageEmbeddingModel loadModel interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest1000
+     * @tc.number intelligenceApiTest1000
+     * @tc.desc   intelligenceApiTest1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest1000 start");
 
@@ -482,15 +482,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest1100
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_1100
-     * @tc.desc getImageEmbeddingModel(imageConfig) releaseModel interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest1100
+     * @tc.number intelligenceApiTest1100
+     * @tc.desc   intelligenceApiTest1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest1100 start");
 
@@ -526,15 +526,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest1200
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_1200
-     * @tc.desc getImageEmbeddingModel(imageConfig) getEmbedding test interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest1200
+     * @tc.number intelligenceApiTest1200
+     * @tc.desc   intelligenceApiTest1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest1200 start");
 
@@ -572,15 +572,15 @@ export default function intelligenceTest() {
     })
     
 
-    /**
-     * @tc.name intelligenceApiTest2600
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_2600
-     * @tc.desc getImageEmbeddingModel invalue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest2600
+     * @tc.number intelligenceApiTest2600
+     * @tc.desc   intelligenceApiTest2600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest2600 start");
 
@@ -612,15 +612,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest2700
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_2700
-     * @tc.desc getImageEmbeddingModel invalue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest2700
+     * @tc.number intelligenceApiTest2700
+     * @tc.desc   intelligenceApiTest2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest2700 start");
       if (currentDeviceIsPc) {
@@ -651,16 +651,16 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest2800
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_2800
-     * @tc.desc getTextEmbeddingModel invalue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
 
+     /**
+      * @tc.name   intelligenceApiTest2800
+      * @tc.number intelligenceApiTest2800
+      * @tc.desc   intelligenceApiTest2800
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it("intelligenceApiTest2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest2800 start")
       let text =
@@ -702,15 +702,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest2900
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_2800
-     * @tc.desc getImageEmbeddingModel getEmbedding  is invalue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest2900
+     * @tc.number intelligenceApiTest2900
+     * @tc.desc   intelligenceApiTest2900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest2900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest2900 start");
       if (currentDeviceIsPc) {
@@ -745,15 +745,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest3000
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3000
-     * @tc.desc getImageEmbeddingModel getEmbedding batchTexts is invalue
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest3000
+     * @tc.number intelligenceApiTest3000
+     * @tc.desc   intelligenceApiTest3000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest3000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest3000 start")
       let text =
@@ -795,15 +795,15 @@ export default function intelligenceTest() {
     })
 	
 	
-	/**
-     * @tc.name intelligenceApiTest3100
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3100
-     * @tc.desc getTextEmbeddingModel loadModel interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest3100
+     * @tc.number intelligenceApiTest3100
+     * @tc.desc   intelligenceApiTest3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest3100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest3100 start");
       if (currentDeviceIsPc) {
@@ -849,15 +849,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest3200
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3200
-     * @tc.desc getTextEmbeddingModel releaseModel abnormal interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest3200
+     * @tc.number intelligenceApiTest3200
+     * @tc.desc   intelligenceApiTest3200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest3200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "intelligenceApiTest3200 start");
       if (currentDeviceIsPc) {
@@ -908,15 +908,15 @@ export default function intelligenceTest() {
     })
 
 
-    /**
-     * @tc.name intelligenceApiTest3300
-     * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3300
-     * @tc.desc getImageEmbeddingModel releaseModel abnormal interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   intelligenceApiTest3300
+     * @tc.number intelligenceApiTest3300
+     * @tc.desc   intelligenceApiTest3300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("intelligenceApiTest3300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest3300 start");
 
@@ -970,12 +970,12 @@ export default function intelligenceTest() {
 
 
     /**
-     * @tc.name intelligenceApiTest3400
+     * @tc.name   intelligenceApiTest3400
      * @tc.number SUB_DistributedData_Intelligence_SDK_intelligenceApiTest_3400
-     * @tc.desc getImageEmbeddingModel releaseModel abnormal interface test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   getImageEmbeddingModel releaseModel abnormal interface test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("intelligenceApiTest3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.info(TAG + "intelligenceApiTest3400 start");

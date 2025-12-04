@@ -63,12 +63,14 @@ export default function getScrollItemRect1() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect1_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect1_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect1_0100
+     * @tc.desc   set index to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect1_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect1_0100] START');
@@ -123,12 +125,14 @@ export default function getScrollItemRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect1_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 1
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect1_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect1_0200
+     * @tc.desc   set index to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect1_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect1_0200] START');
@@ -183,12 +187,14 @@ export default function getScrollItemRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect1_0300
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to -1
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getScrollItemRect1_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect1_0300
+     * @tc.desc   set index to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect1_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect1_0300] START');
@@ -240,12 +246,14 @@ export default function getScrollItemRect1() {
     });
 
 
-    /* *
-       * @tc.number: SUB_ACE_TS_COMPONENT_getScrollItemRect1_0400
-       * @tc.name  : onGetItemRect
-       * @tc.desc  : set index to 0,The first sub component slides out of the screen
-       * @tc.level : Level 2
-       */
+    /**
+     * @tc.name   getScrollItemRect1_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_getScrollItemRect1_0400
+     * @tc.desc   set index to 0,The first sub component slides out of the screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getScrollItemRect1_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getScrollItemRect1_0400] START');

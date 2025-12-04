@@ -47,14 +47,14 @@ export default function HttpResponsePropertiesTest() {
     describe("HttpResponsePropertiesTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_0100
-        * @tc.name  :  testNetworkMgrHttpResponse_static_0100
-        * @tc.desc  :  test resultType with default parameter for expectDataType
-        * @tc.size  :  SmallTest
-        * @tc.type  :  Function
-        * @tc.level :  level 0
-       */
+        /**
+         * @tc.name   testNetworkMgrHttpResponse_static_0100
+         * @tc.number SUB_NetworkMgr_Http_Response_0100
+         * @tc.desc   test resultType with default parameter for expectDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testNetworkMgrHttpResponse_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
             const caseName: string = "testNetworkMgrHttpResponse_static_0100";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -101,13 +101,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0200
-         * @tc.name  :  testHttpResponse_static_0200
-         * @tc.desc  :  test resultType with expectDataType:http.HttpDataType.STRING
-         * @tc.size  :  SmallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpResponse_static_0200
+         * @tc.number SUB_NetworkMgr_Http_Response_0200
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.STRING
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0200";
@@ -157,13 +157,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0300
-         * @tc.name  :  testHttpResponse_static_0300
-         * @tc.desc  :  test resultType with expectDataType:http.HttpDataType.OBJECT
-         * @tc.size  :  SmallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpResponse_static_0300
+         * @tc.number SUB_NetworkMgr_Http_Response_0300
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.OBJECT
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0300";
@@ -215,13 +215,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0400
-         * @tc.name  :  testHttpResponse_static_0400
-         * @tc.desc  :  test resultType with expectDataType:http.HttpDataType.ARRAY_BUFFER
-         * @tc.size  :  SmallTest
-         * @tc.type  :  Function
-         * @tc.level :  level 3
+        /**
+         * @tc.name   testHttpResponse_static_0400
+         * @tc.number SUB_NetworkMgr_Http_Response_0400
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.ARRAY_BUFFER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0400";
@@ -274,13 +274,13 @@ export default function HttpResponsePropertiesTest() {
 
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0600
-         * @tc.name:    testHttpResponse_static_0600
-         * @tc.desc:    test resultType with header.contentType(application/json) Type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_0600
+         * @tc.number SUB_NetworkMgr_Http_Response_0600
+         * @tc.desc   test resultType with header.contentType(application/json) Type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0600";
@@ -328,13 +328,13 @@ export default function HttpResponsePropertiesTest() {
 
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0700
-         * @tc.name:    testHttpResponse_static_0700
-         * @tc.desc:    test resultType with header.contentType(application/octet-stream) Type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_0700
+         * @tc.number SUB_NetworkMgr_Http_Response_0700
+         * @tc.desc   test resultType with header.contentType(application/octet-stream) Type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0700";
@@ -381,13 +381,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0800
-         * @tc.name:    testHttpResponse_static_0800
-         * @tc.desc:    test resultType with header.contentType(image/svg+xml) Type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_0800
+         * @tc.number SUB_NetworkMgr_Http_Response_0800
+         * @tc.desc   test resultType with header.contentType(image/svg+xml) Type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0800";
@@ -435,13 +435,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_0900
-         * @tc.name:    testHttpResponse_static_0900
-         * @tc.desc:    test resultType with header.contentType(text/html) Type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_0900
+         * @tc.number SUB_NetworkMgr_Http_Response_0900
+         * @tc.desc   test resultType with header.contentType(text/html) Type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_0900";
@@ -489,13 +489,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1000
-         * @tc.name:    testNetworkMgrHttpResponse_static_1000
-         * @tc.desc:    test resultType with default parameter for expectDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 0
+        /**
+         * @tc.name   testNetworkMgrHttpResponse_static_1000
+         * @tc.number SUB_NetworkMgr_Http_Response_1000
+         * @tc.desc   test resultType with default parameter for expectDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNetworkMgrHttpResponse_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
             const caseName: string = "testNetworkMgrHttpResponse_static_1000";
@@ -539,13 +539,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1100
-         * @tc.name:    testHttpResponse_static_1100
-         * @tc.desc:    test resultType with expectDataType:http.HttpDataType.STRING
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1100
+         * @tc.number SUB_NetworkMgr_Http_Response_1100
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.STRING
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1100";
@@ -592,13 +592,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1200
-         * @tc.name:    testHttpResponse_static_1200
-         * @tc.desc:    test resultType with expectDataType:http.HttpDataType.OBJECT
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1200
+         * @tc.number SUB_NetworkMgr_Http_Response_1200
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.OBJECT
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1200";
@@ -651,13 +651,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1300
-         * @tc.name:    testHttpResponse_static_1300
-         * @tc.desc:    test resultType with expectDataType:http.HttpDataType.ARRAY_BUFFER
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1300
+         * @tc.number SUB_NetworkMgr_Http_Response_1300
+         * @tc.desc   test resultType with expectDataType:http.HttpDataType.ARRAY_BUFFER
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1300";
@@ -704,13 +704,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1500
-         * @tc.name:    testHttpResponse_static_1500
-         * @tc.desc:    test resultType with header.contentType(application/json)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1500
+         * @tc.number SUB_NetworkMgr_Http_Response_1500
+         * @tc.desc   test resultType with header.contentType(application/json)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1500";
@@ -758,13 +758,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1600
-         * @tc.name:    testHttpResponse_static_1600
-         * @tc.desc:    test resultType with header.contentType(application/octet-stream)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1600
+         * @tc.number SUB_NetworkMgr_Http_Response_1600
+         * @tc.desc   test resultType with header.contentType(application/octet-stream)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1600";
@@ -812,13 +812,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1700
-         * @tc.name:    testHttpResponse_static_1700
-         * @tc.desc:    test resultType with header.contentType(image/svg+xml)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1700
+         * @tc.number SUB_NetworkMgr_Http_Response_1700
+         * @tc.desc   test resultType with header.contentType(image/svg+xml)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1700";
@@ -866,13 +866,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1800
-         * @tc.name:    testHttpResponse_static_1800
-         * @tc.desc:    test resultType with header.contentType(text/html)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1800
+         * @tc.number SUB_NetworkMgr_Http_Response_1800
+         * @tc.desc   test resultType with header.contentType(text/html)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1800";
@@ -920,13 +920,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_1900
-         * @tc.name:    testHttpResponse_static_1900
-         * @tc.desc:    test result expect type string expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_1900
+         * @tc.number SUB_NetworkMgr_Http_Response_1900
+         * @tc.desc   test result expect type string expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_1900";
@@ -970,13 +970,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2000
-         * @tc.name:    testHttpResponse_static_2000
-         * @tc.desc:    test result expect type object expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2000
+         * @tc.number SUB_NetworkMgr_Http_Response_2000
+         * @tc.desc   test result expect type object expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2000";
@@ -1021,13 +1021,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2100
-         * @tc.name:    testHttpResponse_static_2100
-         * @tc.desc:    test result expect type ArrayBuffer expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2100
+         * @tc.number SUB_NetworkMgr_Http_Response_2100
+         * @tc.desc   test result expect type ArrayBuffer expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2100";
@@ -1071,13 +1071,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2300
-         * @tc.name:    testHttpResponse_static_2300
-         * @tc.desc:    test result with header.contentType(application/json) type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2300
+         * @tc.number SUB_NetworkMgr_Http_Response_2300
+         * @tc.desc   test result with header.contentType(application/json) type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2300";
@@ -1124,13 +1124,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2400
-         * @tc.name:    testHttpResponse_static_2400
-         * @tc.desc:    test result with header.contentType(application/octet-stream) type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2400
+         * @tc.number SUB_NetworkMgr_Http_Response_2400
+         * @tc.desc   test result with header.contentType(application/octet-stream) type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2400";
@@ -1176,13 +1176,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2500
-         * @tc.name:    testHttpResponse_static_2500
-         * @tc.desc:    test result with header.contentType(image/svg+xml) type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2500
+         * @tc.number SUB_NetworkMgr_Http_Response_2500
+         * @tc.desc   test result with header.contentType(image/svg+xml) type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2500";
@@ -1227,13 +1227,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2600
-         * @tc.name:    testHttpResponse_static_2600
-         * @tc.desc:    test result with header.contentType(text/html) type
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2600
+         * @tc.number SUB_NetworkMgr_Http_Response_2600
+         * @tc.desc   test result with header.contentType(text/html) type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2600";
@@ -1279,13 +1279,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2700
-         * @tc.name:    testHttpResponse_static_2700
-         * @tc.desc:    test result expect type string expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2700
+         * @tc.number SUB_NetworkMgr_Http_Response_2700
+         * @tc.desc   test result expect type string expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2700";
@@ -1330,13 +1330,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2800
-         * @tc.name:    testHttpResponse_static_2800
-         * @tc.desc:    test result expect type object expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2800
+         * @tc.number SUB_NetworkMgr_Http_Response_2800
+         * @tc.desc   test result expect type object expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2800";
@@ -1382,13 +1382,13 @@ export default function HttpResponsePropertiesTest() {
 
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_2900
-         * @tc.name:    testHttpResponse_static_2900
-         * @tc.desc:    test result expect type ArrayBuffer expectDataType within http.HttpDataType
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_2900
+         * @tc.number SUB_NetworkMgr_Http_Response_2900
+         * @tc.desc   test result expect type ArrayBuffer expectDataType within http.HttpDataType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_2900";
@@ -1432,13 +1432,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3100
-         * @tc.name:    testHttpResponse_static_3100
-         * @tc.desc:    test result  header.contentType(application/json)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3100
+         * @tc.number SUB_NetworkMgr_Http_Response_3100
+         * @tc.desc   test result  header.contentType(application/json)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3100";
@@ -1485,13 +1485,13 @@ export default function HttpResponsePropertiesTest() {
 
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3200
-         * @tc.name:    testHttpResponse_static_3200
-         * @tc.desc:    test result header.contentType(application/octet-stream)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3200
+         * @tc.number SUB_NetworkMgr_Http_Response_3200
+         * @tc.desc   test result header.contentType(application/octet-stream)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3200";
@@ -1538,13 +1538,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3300
-         * @tc.name:    testHttpResponse_static_3300
-         * @tc.desc:    test result header.contentType(image/svg+xml)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3300
+         * @tc.number SUB_NetworkMgr_Http_Response_3300
+         * @tc.desc   test result header.contentType(image/svg+xml)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3300";
@@ -1591,13 +1591,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3400
-         * @tc.name:    testHttpResponse_static_3400
-         * @tc.desc:    test result header.contentType(image/apng)
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3400
+         * @tc.number SUB_NetworkMgr_Http_Response_3400
+         * @tc.desc   test result header.contentType(image/apng)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3400";
@@ -1644,13 +1644,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3600
-         * @tc.name:    testHttpResponse_static_3600
-         * @tc.desc:    test responseCode with fail request
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3600
+         * @tc.number SUB_NetworkMgr_Http_Response_3600
+         * @tc.desc   test responseCode with fail request
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3600";
@@ -1692,13 +1692,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3800
-         * @tc.name:    testHttpResponse_static_3800
-         * @tc.desc:    test responseCode with fail request
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3800
+         * @tc.number SUB_NetworkMgr_Http_Response_3800
+         * @tc.desc   test responseCode with fail request
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3800";
@@ -1740,13 +1740,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_3900
-         * @tc.name:    testHttpResponse_static_3900
-         * @tc.desc:    test header expect value with type Object
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_3900
+         * @tc.number SUB_NetworkMgr_Http_Response_3900
+         * @tc.desc   test header expect value with type Object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_3900";
@@ -1787,13 +1787,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_4000
-         * @tc.name:    testHttpResponse_static_4000
-         * @tc.desc:    test header  expect value with type Object
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_4000
+         * @tc.number SUB_NetworkMgr_Http_Response_4000
+         * @tc.desc   test header  expect value with type Object
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4000";
@@ -1837,13 +1837,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_4100
-         * @tc.name:    testHttpResponse_static_4100
-         * @tc.desc:    test cookies  expect value with type string
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 2
+        /**
+         * @tc.name   testHttpResponse_static_4100
+         * @tc.number SUB_NetworkMgr_Http_Response_4100
+         * @tc.desc   test cookies  expect value with type string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4100";
@@ -1883,13 +1883,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_4200
-         * @tc.name:    testHttpResponse_static_4200
-         * @tc.desc:    test cookies  expect value with type string
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 2
+        /**
+         * @tc.name   testHttpResponse_static_4200
+         * @tc.number SUB_NetworkMgr_Http_Response_4200
+         * @tc.desc   test cookies  expect value with type string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4200";
@@ -1931,13 +1931,13 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_4300
-         * @tc.name:    testHttpResponse_static_4300
-         * @tc.desc:    test performanceTiming
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_4300
+         * @tc.number SUB_NetworkMgr_Http_Response_4300
+         * @tc.desc   test performanceTiming
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4300";
@@ -1987,13 +1987,13 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-         * @tc.number:  SUB_NetworkMgr_Http_Response_4400
-         * @tc.name:    testHttpResponse_static_4400
-         * @tc.desc:    test performanceTiming
-         * @tc.size:    SmallTest
-         * @tc.type:    Function
-         * @tc.level:   level 3
+        /**
+         * @tc.name   testHttpResponse_static_4400
+         * @tc.number SUB_NetworkMgr_Http_Response_4400
+         * @tc.desc   test performanceTiming
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testHttpResponse_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4400";
@@ -2037,14 +2037,14 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_4500
-        * @tc.name:    testHttpResponse_static_4500
-        * @tc.desc:    test result header.contentType(application/octet-stream) and expectDataType(type string)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_4500
+         * @tc.number SUB_NetworkMgr_Http_Response_4500
+         * @tc.desc   test result header.contentType(application/octet-stream) and expectDataType(type string)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4500";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2091,14 +2091,14 @@ export default function HttpResponsePropertiesTest() {
         });
 
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_4600
-        * @tc.name:    testHttpResponse_static_4600
-        * @tc.desc:    test result header.contentType(application/json) and expectDataType(type buffer)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_4600
+         * @tc.number SUB_NetworkMgr_Http_Response_4600
+         * @tc.desc   test result header.contentType(application/json) and expectDataType(type buffer)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4600";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2146,14 +2146,14 @@ export default function HttpResponsePropertiesTest() {
 
 
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_4800
-        * @tc.name:    testHttpResponse_static_4800
-        * @tc.desc:    test result header.contentType(application/json) and expectDataType(type string)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_4800
+         * @tc.number SUB_NetworkMgr_Http_Response_4800
+         * @tc.desc   test result header.contentType(application/json) and expectDataType(type string)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_4800";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2199,14 +2199,14 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_5100
-        * @tc.name:    testHttpResponse_static_5100
-        * @tc.desc:    test result header.contentType(application/octet-stream) and expectDataType(type string)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_5100
+         * @tc.number SUB_NetworkMgr_Http_Response_5100
+         * @tc.desc   test result header.contentType(application/octet-stream) and expectDataType(type string)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_5100";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2251,14 +2251,14 @@ export default function HttpResponsePropertiesTest() {
             }
         });
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_5200
-        * @tc.name:    testHttpResponse_static_5200
-        * @tc.desc:    test result header.contentType(application/json) and expectDataType(type buffer)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_5200
+         * @tc.number SUB_NetworkMgr_Http_Response_5200
+         * @tc.desc   test result header.contentType(application/json) and expectDataType(type buffer)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_5200";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -2304,14 +2304,14 @@ export default function HttpResponsePropertiesTest() {
 
         });
 
-        /* *
-        * @tc.number:  SUB_NetworkMgr_Http_Response_5400
-        * @tc.name:    testHttpResponse_static_5400
-        * @tc.desc:    test result header.contentType(application/json) and expectDataType(type string)
-        * @tc.size:    SmallTest
-        * @tc.type:    Function
-        * @tc.level:   level 3
-        */
+        /**
+         * @tc.name   testHttpResponse_static_5400
+         * @tc.number SUB_NetworkMgr_Http_Response_5400
+         * @tc.desc   test result header.contentType(application/json) and expectDataType(type string)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testHttpResponse_static_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async (done: () => void): Promise<void> => {
             const caseName: string = "testHttpResponse_static_5400";
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');

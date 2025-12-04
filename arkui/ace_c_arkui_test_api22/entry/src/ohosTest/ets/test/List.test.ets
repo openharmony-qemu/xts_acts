@@ -13,7 +13,31 @@
  * limitations under the License.
  */
 import imageAltTest  from "./image/imageAltTest.test";
+import textMinLinesTest from './textMinLines/TextMinLinesTest.test'
+import HasAxisTest from './hasAxisTest/HasAxisTest.test'
+import CoastingAxisTest from "./list/coastingAxisTest.test";
+import snapSpeedTest from "./list/snapSpeedTest.test";
+import lanesValueTest from "./list/lanesValueTest.test";
+import WaterFlowFillPolicyTest from "./waterFlow/WaterFlowFillPolicyTest.test"
+import imageDrawableDescriptorTest from "./image/imageDrawableDescriptorTest.test";
+import imageErrorTest from "./image/imageErrorTest.test";
+import textLineHeightTest from "./textLineHeight/TextLineHeightTest.test";
+import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
+import scrollBarTest from "./scrollbarTest/scrollbarTest.test";
+import ShowCounterTest from "./showCounterTest/showCounterTest.test";
 
 export default function testsuite() {
-  imageAltTest()
+  CoastingAxisTest();
+  imageAltTest();
+  snapSpeedTest();
+  lanesValueTest();
+  textMinLinesTest();
+  HasAxisTest();
+  WaterFlowFillPolicyTest();
+  imageDrawableDescriptorTest();
+  imageErrorTest();
+  textLineHeightTest();
+  textAreaBarStateTest();
+  scrollBarTest();
+  ShowCounterTest();
 }

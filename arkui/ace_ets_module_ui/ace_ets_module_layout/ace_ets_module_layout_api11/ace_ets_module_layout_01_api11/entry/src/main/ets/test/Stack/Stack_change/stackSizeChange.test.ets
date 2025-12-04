@@ -46,9 +46,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentTopStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0100
-     * @tc.name testStackLargerAlignContentTopStart
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentTopStart START');
@@ -81,9 +84,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentTop
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0200
-     * @tc.name testStackLargerAlignContentTop
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentTop START');
@@ -117,9 +123,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0300
-     * @tc.name testStackLargerAlignContentTopEnd
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentTopEnd START');
@@ -152,9 +161,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0400
-     * @tc.name testStackLargerAlignContentStart
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'START'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentStart START');
@@ -187,9 +199,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentCenter
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0500
-     * @tc.name testStackLargerAlignContentCenter
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentCenter START');
@@ -223,9 +238,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0600
-     * @tc.name testStackLargerAlignContentEnd
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'End'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentEnd START');
@@ -258,9 +276,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0700
-     * @tc.name testStackLargerAlignContentBottomStart
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentBottomStart START');
@@ -293,9 +314,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentBottom
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0800
-     * @tc.name testStackLargerAlignContentBottom
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentBottom START');
@@ -329,9 +353,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLargerAlignContentBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_0900
-     * @tc.name testStackLargerAlignContentBottomEnd
-     * @tc.desc Set stack's  height and width 300*300 and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  height and width 300*300 and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLargerAlignContentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLargerAlignContentBottomEnd START');
@@ -364,9 +391,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomTopStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1000
-     * @tc.name testStackEqualAlignContentBottomTopStart
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomTopStart START');
@@ -397,9 +427,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomTop
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1100
-     * @tc.name testStackEqualAlignContentBottomTop
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomTop START');
@@ -430,9 +463,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1200
-     * @tc.name testStackEqualAlignContentBottomTopEnd
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomTopEnd START');
@@ -463,9 +499,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1300
-     * @tc.name testStackEqualAlignContentBottomStart
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'START'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomStart START');
@@ -496,9 +535,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentCenter
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1400
-     * @tc.name testStackEqualAlignContentCenter
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentCenter START');
@@ -529,9 +571,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1500
-     * @tc.name testStackEqualAlignContentEnd
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'End'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentEnd START');
@@ -562,9 +607,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1600
-     * @tc.name testStackEqualAlignContentBottomStart
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomStart START');
@@ -595,9 +643,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottom
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1700
-     * @tc.name testStackEqualAlignContentBottom
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottom START');
@@ -628,9 +679,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackEqualAlignContentBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1800
-     * @tc.name testStackEqualAlignContentBottomEnd
-     * @tc.desc Set stack's  height and width 200*200 and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  height and width 200*200 and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackEqualAlignContentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackEqualAlignContentBottomEnd START');
@@ -661,9 +715,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentTopStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_1900
-     * @tc.name testStackLessAlignContentTopStart
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'TopStart'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'TopStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentTopStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentTopStart START');
@@ -696,9 +753,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentTop
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2000
-     * @tc.name testStackLessAlignContentTop
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'Top'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'Top'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentTop',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentTop START');
@@ -732,9 +792,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentTopEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2100
-     * @tc.name testStackLessAlignContentTopEnd
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'TopEnd'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'TopEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentTopEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentTopEnd START');
@@ -767,9 +830,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2200
-     * @tc.name testStackLessAlignContentStart
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'START'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'START'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentStart START');
@@ -802,9 +868,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentCenter
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2300
-     * @tc.name testStackLessAlignContentCenter
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'Center'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'Center'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentCenter',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentCenter START');
@@ -838,9 +907,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2400
-     * @tc.name testStackLessAlignContentEnd
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'End'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'End'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentEnd START');
@@ -873,9 +945,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentBottomStart
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2500
-     * @tc.name testStackLessAlignContentBottomStart
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'BottomStart'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'BottomStart'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentBottomStart',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentBottomStart START');
@@ -908,9 +983,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentBottom
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2600
-     * @tc.name testStackLessAlignContentBottom
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'Bottom'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'Bottom'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentBottom',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentBottom START');
@@ -944,9 +1022,12 @@ export default function stackSizeChange() {
     });
 
     /**
+     * @tc.name   testStackLessAlignContentBottomEnd
      * @tc.number SUB_ACE_STACK_ALIGNSIZECHANGED_2700
-     * @tc.name testStackLessAlignContentBottomEnd
-     * @tc.desc Set stack's  height and width 100*100 and alignContent mode 'BottomEnd'.
+     * @tc.desc   Set stack's  height and width 100*100 and alignContent mode 'BottomEnd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testStackLessAlignContentBottomEnd',  Level.LEVEL0, async (done: Function) => {
       console.info('new testStackLessAlignContentBottomEnd START');

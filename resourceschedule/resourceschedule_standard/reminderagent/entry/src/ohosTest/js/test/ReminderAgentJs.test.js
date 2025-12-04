@@ -109,9 +109,12 @@ export default function ReminderAgentTest() {
         console.info('start################################start');
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_001
-         * @tc.name      testActionButton_001
-         * @tc.desc      test ActionButton title.
+         * @tc.name   testActionButton_001
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_001
+         * @tc.desc   test ActionButton title.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButton_001", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButton_001---------------------------');
@@ -138,9 +141,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_002
-         * @tc.name      testActionButton_002
-         * @tc.desc      test ActionButton 
+         * @tc.name   testActionButton_002
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_002
+         * @tc.desc   test ActionButton
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButton_002", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButton_002---------------------------');
@@ -170,9 +176,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_003
-         * @tc.name      testWantAgentAbilityName_003
-         * @tc.desc      test wantAgent abilityName 
+         * @tc.name   testWantAgentAbilityName_003
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_003
+         * @tc.desc   test wantAgent abilityName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testWantAgentAbilityName_003", Level.LEVEL0, async function (done) {
             console.info('----------------------testWantAgentAbilityName_003---------------------------');
@@ -204,9 +213,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_004
-         * @tc.name      testMaxScreenWantAgentAbilityName_004
-         * @tc.desc      test MaxScreenWantAgent abilityName 
+         * @tc.name   testMaxScreenWantAgentAbilityName_004
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_004
+         * @tc.desc   test MaxScreenWantAgent abilityName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testMaxScreenWantAgentAbilityName_004", Level.LEVEL0, async function (done) {
             console.info('----------------------testMaxScreenWantAgentAbilityName_004---------------------------');
@@ -238,9 +250,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_005
-         * @tc.name      testReminderRequestTitle_005
-         * @tc.desc      test ReminderRequest title 
+         * @tc.name   testReminderRequestTitle_005
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_005
+         * @tc.desc   test ReminderRequest title
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderRequestTitle_005", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderRequestTitle_005---------------------------');
@@ -270,9 +285,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_006
-         * @tc.name      testReminderRequestContent_006
-         * @tc.desc      test ReminderRequest content 
+         * @tc.name   testReminderRequestContent_006
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_006
+         * @tc.desc   test ReminderRequest content
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderRequestContent_006", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderRequestContent_006---------------------------');
@@ -302,9 +320,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_007
-         * @tc.name      testReminderRequestType_007
-         * @tc.desc      test ReminderRequest LocalDateTime second 
+         * @tc.name   testReminderRequestType_007
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_007
+         * @tc.desc   test ReminderRequest LocalDateTime second
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderRequestType_007", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderRequestType_007---------------------------');
@@ -329,9 +350,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_008
-         * @tc.name      testReminderRequestType_008
-         * @tc.desc      test ReminderRequest ReminderRequestAlarm daysOfWeek 
+         * @tc.name   testReminderRequestType_008
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_008
+         * @tc.desc   test ReminderRequest ReminderRequestAlarm daysOfWeek
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderRequestType_008", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderRequestType_008---------------------------');
@@ -351,9 +375,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_009
-         * @tc.name      testPublishReminderNorFun_009
-         * @tc.desc      test reminderId is outo increment with the promise function.
+         * @tc.name   testPublishReminderNorFun_009
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_009
+         * @tc.desc   test reminderId is outo increment with the promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPublishReminderNorFun_009', Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderNorFun_009---------------------------');
@@ -377,9 +404,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_010
-         * @tc.name      testPublishReminderNorFun_010
-         * @tc.desc      test reminderId is outo increment with the callback function.
+         * @tc.name   testPublishReminderNorFun_010
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_010
+         * @tc.desc   test reminderId is outo increment with the callback function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPublishReminderNorFun_010', Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderNorFun_010---------------------------');
@@ -401,9 +431,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_011
-         * @tc.name      testAddNotificationSlotNorFun_011
-         * @tc.desc      Adds a reminder notification slot with the callback function.
+         * @tc.name   testAddNotificationSlotNorFun_011
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_011
+         * @tc.desc   Adds a reminder notification slot with the callback function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testAddNotificationSlotNorFun_011', Level.LEVEL0, async function (done) {
             console.info('----------------------testAddNotificationSlotNorFun_011---------------------------');
@@ -419,11 +452,14 @@ export default function ReminderAgentTest() {
             }
         })
 
-        /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_012
-         * @tc.name      testAddNotificationSlotNorFun_012
-         * @tc.desc      Adds a reminder notification slot with the promise function and null mySlot.
-         */
+         /**
+          * @tc.name   testAddNotificationSlotNorFun_012
+          * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_012
+          * @tc.desc   Adds a reminder notification slot with the promise function and null mySlot.
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('testAddNotificationSlotNorFun_012', Level.LEVEL0, async function (done) {
           console.info('----------------------testAddNotificationSlotNorFun_012---------------------------');
           let mySlot = null;
@@ -436,9 +472,12 @@ export default function ReminderAgentTest() {
       })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_013
-         * @tc.name      testAddNotificationSlotNorFun_013
-         * @tc.desc      Adds a reminder notification slot with the promise function and mySlot type 3.
+         * @tc.name   testAddNotificationSlotNorFun_013
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_013
+         * @tc.desc   Adds a reminder notification slot with the promise function and mySlot type 3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testAddNotificationSlotNorFun_013', Level.LEVEL0, async function (done) {
             console.info('----------------------testAddNotificationSlotNorFun_013---------------------------');
@@ -455,9 +494,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_014
-         * @tc.name      testAddNotificationSlotNorFun_014
-         * @tc.desc      Adds a reminder notification slot with the promise function and mySlot more types.
+         * @tc.name   testAddNotificationSlotNorFun_014
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_014
+         * @tc.desc   Adds a reminder notification slot with the promise function and mySlot more types.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testAddNotificationSlotNorFun_014', Level.LEVEL0, async function (done) {
             console.info('----------------------testAddNotificationSlotNorFun_014---------------------------');
@@ -496,9 +538,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_015
-         * @tc.name      testGetValidRemindersNorFun_015
-         * @tc.desc      Obtains all valid remindeers set by the current application. 
+         * @tc.name   testGetValidRemindersNorFun_015
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_015
+         * @tc.desc   Obtains all valid remindeers set by the current application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetValidRemindersNorFun_015', Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNorFun_015---------------------------');
@@ -521,9 +566,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_016
-         * @tc.name      testCancelAllRemindersNorFun_016
-         * @tc.desc      test cancel all reminders can cancel all exist reminders
+         * @tc.name   testCancelAllRemindersNorFun_016
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_016
+         * @tc.desc   test cancel all reminders can cancel all exist reminders
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelAllRemindersNorFun_016', Level.LEVEL0, async function (done) {
             console.info('----------------------testCancelAllRemindersNorFun_016---------------------------');
@@ -546,9 +594,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_017
-         * @tc.name      testCancelRemindersNorFun_017
-         * @tc.desc      test cancelReminder with not exit reminder.
+         * @tc.name   testCancelRemindersNorFun_017
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_017
+         * @tc.desc   test cancelReminder with not exit reminder.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelRemindersNorFun_017', Level.LEVEL0, async function (done) {
             console.info('----------------------testCancelRemindersNorFun_017---------------------------');
@@ -581,9 +632,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_018
-         * @tc.name      testCancelRemindersNorFun_018
-         * @tc.desc      test cancel reminder with not exit reminder.
+         * @tc.name   testCancelRemindersNorFun_018
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_018
+         * @tc.desc   test cancel reminder with not exit reminder.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelRemindersNorFun_018', Level.LEVEL0, async function (done) {
             console.info('----------------------testCancelRemindersNorFun_018---------------------------');
@@ -616,9 +670,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_019
-         * @tc.name      testCancelRemindersNorFun_019
-         * @tc.desc      test cancel reminder with exist reminder.
+         * @tc.name   testCancelRemindersNorFun_019
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_019
+         * @tc.desc   test cancel reminder with exist reminder.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelRemindersNorFun_019', Level.LEVEL0, async function (done) {
             console.info('----------------------testCancelRemindersNorFun_019---------------------------');
@@ -656,9 +713,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_020
-         * @tc.name      testCancelRemindersNorFun_020
-         * @tc.desc      test cancel reminder with exist reminder with the promise function.
+         * @tc.name   testCancelRemindersNorFun_020
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_020
+         * @tc.desc   test cancel reminder with exist reminder with the promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCancelRemindersNorFun_020', Level.LEVEL0, async function (done) {
             console.info('----------------------testCancelRemindersNorFun_020---------------------------');
@@ -696,9 +756,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_021
-         * @tc.name      testGetValidRemindersNorFun_021
-         * @tc.desc      test get valid reminders verify all the information is correct.
+         * @tc.name   testGetValidRemindersNorFun_021
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_021
+         * @tc.desc   test get valid reminders verify all the information is correct.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetValidRemindersNorFun_021', Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNorFun_021---------------------------');
@@ -727,9 +790,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_022
-         * @tc.name      testGetValidRemindersNorFun_022
-         * @tc.desc      test get valid reminders verify all the information is correct with the callback function.
+         * @tc.name   testGetValidRemindersNorFun_022
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_022
+         * @tc.desc   test get valid reminders verify all the information is correct with the callback function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetValidRemindersNorFun_022', Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNorFun_022---------------------------');
@@ -758,9 +824,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_023
-         * @tc.name      testRemoveNotificationSlotNorFun_023
-         * @tc.desc      test remove notification Slot with not exist slot.
+         * @tc.name   testRemoveNotificationSlotNorFun_023
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_023
+         * @tc.desc   test remove notification Slot with not exist slot.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRemoveNotificationSlotNorFun_023', Level.LEVEL0, async function (done) {
             console.info('----------------------testRemoveNotificationSlotNorFun_023---------------------------');
@@ -773,9 +842,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_024
-         * @tc.name      testPublishReminderTimer_024
-         * @tc.desc      test timer without reminderType .
+         * @tc.name   testPublishReminderTimer_024
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_024
+         * @tc.desc   test timer without reminderType .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_024", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_024---------------------------');
@@ -790,9 +862,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_025
-         * @tc.name      testPublishReminderTimer_025
-         * @tc.desc      test timer without triggerTimeInSeconds.
+         * @tc.name   testPublishReminderTimer_025
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_025
+         * @tc.desc   test timer without triggerTimeInSeconds.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_025", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_025---------------------------');
@@ -808,9 +883,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_026
-         * @tc.name      testPublishReminderTimer_026
-         * @tc.desc      test timer triggerTimeInSeconds with wrong parameter.
+         * @tc.name   testPublishReminderTimer_026
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_026
+         * @tc.desc   test timer triggerTimeInSeconds with wrong parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_026", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_026---------------------------');
@@ -826,9 +904,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_027
-         * @tc.name      testPublishReminderTimer_027
-         * @tc.desc      test timer triggerTimeInSeconds with illegal parameter.
+         * @tc.name   testPublishReminderTimer_027
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_027
+         * @tc.desc   test timer triggerTimeInSeconds with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_027", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_027---------------------------');
@@ -844,9 +925,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_028
-         * @tc.name      testPublishReminderTimer_028
-         * @tc.desc      test timer triggerTimeInSeconds with illegal parameter.
+         * @tc.name   testPublishReminderTimer_028
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_028
+         * @tc.desc   test timer triggerTimeInSeconds with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_028", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_028---------------------------');
@@ -862,9 +946,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_029
-         * @tc.name      testPublishReminderTimer_029
-         * @tc.desc      test timer normal parameter,return with callback.
+         * @tc.name   testPublishReminderTimer_029
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_029
+         * @tc.desc   test timer normal parameter,return with callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_029", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_029---------------------------');
@@ -880,9 +967,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_030
-         * @tc.name      testPublishReminderTimer_030
-         * @tc.desc      test timer normal parameter,return with promise.
+         * @tc.name   testPublishReminderTimer_030
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_030
+         * @tc.desc   test timer normal parameter,return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderTimer_030", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_030---------------------------');
@@ -901,9 +991,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_031
-         * @tc.name      testPublishReminderAlarm_031
-         * @tc.desc      test alarm without reminderType parameter.
+         * @tc.name   testPublishReminderAlarm_031
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_031
+         * @tc.desc   test alarm without reminderType parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_031", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_031---------------------------');
@@ -919,9 +1012,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_032
-         * @tc.name      testPublishReminderAlarm_032
-         * @tc.desc      test alarm without hour parameter.
+         * @tc.name   testPublishReminderAlarm_032
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_032
+         * @tc.desc   test alarm without hour parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_032", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_032---------------------------');
@@ -937,9 +1033,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_033
-         * @tc.name      testPublishReminderAlarm_033
-         * @tc.desc      test alarm with illegal hour parameter.
+         * @tc.name   testPublishReminderAlarm_033
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_033
+         * @tc.desc   test alarm with illegal hour parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_033", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_033---------------------------');
@@ -956,9 +1055,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_034
-         * @tc.name      testPublishReminderAlarm_034
-         * @tc.desc      test alarm hour with illegal parameter 24.
+         * @tc.name   testPublishReminderAlarm_034
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_034
+         * @tc.desc   test alarm hour with illegal parameter 24.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_034", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_034---------------------------');
@@ -975,9 +1077,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_035
-         * @tc.name      testPublishReminderAlarm_035
-         * @tc.desc      test alarm without minute parameter.
+         * @tc.name   testPublishReminderAlarm_035
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_035
+         * @tc.desc   test alarm without minute parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_035", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_035---------------------------');
@@ -993,9 +1098,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_036
-         * @tc.name      testPublishReminderAlarmNorFun_036
-         * @tc.desc      test alarm with illegal minute parameter.
+         * @tc.name   testPublishReminderAlarmNorFun_036
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_036
+         * @tc.desc   test alarm with illegal minute parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarmNorFun_036", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarmNorFun_036---------------------------');
@@ -1012,9 +1120,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_037
-         * @tc.name      testPublishReminderAlarm_037
-         * @tc.desc      test alarm hour with illegal parameter 60.
+         * @tc.name   testPublishReminderAlarm_037
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_037
+         * @tc.desc   test alarm hour with illegal parameter 60.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_037", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_037---------------------------');
@@ -1031,9 +1142,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_038
-         * @tc.name      testPublishReminderAlarmFun_038
-         * @tc.desc      test alarm with normal parameter,return with callback.
+         * @tc.name   testPublishReminderAlarmFun_038
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_038
+         * @tc.desc   test alarm with normal parameter,return with callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarmFun_038", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarmFun_038---------------------------');
@@ -1050,9 +1164,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_039
-         * @tc.name      testPublishReminderAlarmFun_039
-         * @tc.desc      test alarm with normal parameter,return with promise.
+         * @tc.name   testPublishReminderAlarmFun_039
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_039
+         * @tc.desc   test alarm with normal parameter,return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarmFun_039", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarmFun_039---------------------------');
@@ -1069,9 +1186,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_040
-         * @tc.name      testPublishReminderAlarm_040
-         * @tc.desc      test alarm with illegal daysOfWeek parameter.
+         * @tc.name   testPublishReminderAlarm_040
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_040
+         * @tc.desc   test alarm with illegal daysOfWeek parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_040", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_040---------------------------');
@@ -1091,9 +1211,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_041
-         * @tc.name      testPublishReminderAlarm_041
-         * @tc.desc      test alarm with null daysOfWeek parameter.
+         * @tc.name   testPublishReminderAlarm_041
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_041
+         * @tc.desc   test alarm with null daysOfWeek parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderAlarm_041", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAlarm_041---------------------------');
@@ -1111,9 +1234,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_042
-         * @tc.name      testPublishReminderCalendar_042
-         * @tc.desc      test calendar without reminderType parameter.
+         * @tc.name   testPublishReminderCalendar_042
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_042
+         * @tc.desc   test calendar without reminderType parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_042", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_042---------------------------');
@@ -1135,9 +1261,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_043
-         * @tc.name      testPublishReminderCalendar_043
-         * @tc.desc      test calendar without year parameter.
+         * @tc.name   testPublishReminderCalendar_043
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_043
+         * @tc.desc   test calendar without year parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_043", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_043---------------------------');
@@ -1159,9 +1288,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_044
-         * @tc.name      testPublishReminderCalendar_044
-         * @tc.desc      test calendar with illegal year parameter.
+         * @tc.name   testPublishReminderCalendar_044
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_044
+         * @tc.desc   test calendar with illegal year parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_044", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_044---------------------------');
@@ -1184,9 +1316,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_045
-         * @tc.name      testPublishReminderCalendar_045
-         * @tc.desc      test calendar without month parameter.
+         * @tc.name   testPublishReminderCalendar_045
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_045
+         * @tc.desc   test calendar without month parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_045", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_045---------------------------');
@@ -1208,9 +1343,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_046
-         * @tc.name      testPublishReminderCalendar_046
-         * @tc.desc      test calendar with illegal month parameter.
+         * @tc.name   testPublishReminderCalendar_046
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_046
+         * @tc.desc   test calendar with illegal month parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_046", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_046---------------------------');
@@ -1233,9 +1371,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_047
-         * @tc.name      testPublishReminderCalendar_047
-         * @tc.desc      test calendar with illegal month parameter 0.
+         * @tc.name   testPublishReminderCalendar_047
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_047
+         * @tc.desc   test calendar with illegal month parameter 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_047", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_047---------------------------');
@@ -1258,9 +1399,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_048
-         * @tc.name      testPublishReminderCalendar_048
-         * @tc.desc      test calendar with illegal month parameter 13.
+         * @tc.name   testPublishReminderCalendar_048
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_048
+         * @tc.desc   test calendar with illegal month parameter 13.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_048", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_048---------------------------');
@@ -1283,9 +1427,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_049
-         * @tc.name      testPublishReminderCalendar_049
-         * @tc.desc      test calendar without day parameter.
+         * @tc.name   testPublishReminderCalendar_049
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_049
+         * @tc.desc   test calendar without day parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_049", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_049---------------------------');
@@ -1307,9 +1454,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_050
-         * @tc.name      testPublishReminderCalendar_050
-         * @tc.desc      test calendar with illegal day parameter.
+         * @tc.name   testPublishReminderCalendar_050
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_050
+         * @tc.desc   test calendar with illegal day parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_050", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_050---------------------------');
@@ -1332,9 +1482,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_051
-         * @tc.name      testPublishReminderCalendar_051
-         * @tc.desc      test calendar with illegal day parameter 0.
+         * @tc.name   testPublishReminderCalendar_051
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_051
+         * @tc.desc   test calendar with illegal day parameter 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_051", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_051---------------------------');
@@ -1357,9 +1510,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_052
-         * @tc.name      testPublishReminderCalendar_052
-         * @tc.desc      test calendar with illegal day parameter 32.
+         * @tc.name   testPublishReminderCalendar_052
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_052
+         * @tc.desc   test calendar with illegal day parameter 32.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_052", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_052---------------------------');
@@ -1382,9 +1538,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_053
-         * @tc.name      testPublishReminderCalendar_053
-         * @tc.desc      test calendar without hour parameter.
+         * @tc.name   testPublishReminderCalendar_053
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_053
+         * @tc.desc   test calendar without hour parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_053", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_053---------------------------');
@@ -1406,9 +1565,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_054
-         * @tc.name      testPublishReminderCalendar_054
-         * @tc.desc      test calendar with illegal hour parameter.
+         * @tc.name   testPublishReminderCalendar_054
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_054
+         * @tc.desc   test calendar with illegal hour parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_054", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_054---------------------------');
@@ -1431,9 +1593,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_055
-         * @tc.name      testPublishReminderCalendar_055
-         * @tc.desc      test calendar with illegal hour parameter 24.
+         * @tc.name   testPublishReminderCalendar_055
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_055
+         * @tc.desc   test calendar with illegal hour parameter 24.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_055", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_055---------------------------');
@@ -1456,9 +1621,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_056
-         * @tc.name      testPublishReminderCalendar_056
-         * @tc.desc      test calendar without minute parameter.
+         * @tc.name   testPublishReminderCalendar_056
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_056
+         * @tc.desc   test calendar without minute parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_056", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_056---------------------------');
@@ -1480,9 +1648,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_057
-         * @tc.name      testPublishReminderCalendar_057
-         * @tc.desc      test calendar with illegal minute parameter.
+         * @tc.name   testPublishReminderCalendar_057
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_057
+         * @tc.desc   test calendar with illegal minute parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_057", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_057---------------------------');
@@ -1505,9 +1676,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_058
-         * @tc.name      testPublishReminderCalendar_058
-         * @tc.desc      test calendar with illegal minute parameter 60.
+         * @tc.name   testPublishReminderCalendar_058
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_058
+         * @tc.desc   test calendar with illegal minute parameter 60.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_058", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_058---------------------------');
@@ -1530,9 +1704,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_059
-         * @tc.name      testPublishReminderCalendarFun_059
-         * @tc.desc      test calendar with normal parameter,return with callback.
+         * @tc.name   testPublishReminderCalendarFun_059
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_059
+         * @tc.desc   test calendar with normal parameter,return with callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendarFun_059", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendarFun_059---------------------------');
@@ -1557,9 +1734,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_060
-         * @tc.name      testPublishReminderCalendarFun_060
-         * @tc.desc      test calendar with normal parameter,return with promise.
+         * @tc.name   testPublishReminderCalendarFun_060
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_060
+         * @tc.desc   test calendar with normal parameter,return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendarFun_060", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendarFun_060---------------------------');
@@ -1584,9 +1764,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_061
-         * @tc.name      testPublishReminderCalendar_061
-         * @tc.desc      test calendar with illegal repeatMonths parameter 13.
+         * @tc.name   testPublishReminderCalendar_061
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_061
+         * @tc.desc   test calendar with illegal repeatMonths parameter 13.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_061", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_061---------------------------');
@@ -1610,9 +1793,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_062
-         * @tc.name      testPublishReminderCalendar_062
-         * @tc.desc      test calendar with illegal repeatMonths parameter 0.
+         * @tc.name   testPublishReminderCalendar_062
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_062
+         * @tc.desc   test calendar with illegal repeatMonths parameter 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_062", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_062---------------------------');
@@ -1636,9 +1822,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_063
-         * @tc.name      testPublishReminderCalendar_063
-         * @tc.desc      test calendar with illegal repeatDays parameter 32.
+         * @tc.name   testPublishReminderCalendar_063
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_063
+         * @tc.desc   test calendar with illegal repeatDays parameter 32.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_063", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_063---------------------------');
@@ -1662,9 +1851,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_064
-         * @tc.name      testPublishReminderCalendar_064
-         * @tc.desc      test calendar with illegal repeatDays parameter 0.
+         * @tc.name   testPublishReminderCalendar_064
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_064
+         * @tc.desc   test calendar with illegal repeatDays parameter 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_064", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_064---------------------------');
@@ -1688,9 +1880,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_065
-         * @tc.name      testPublishReminderCalendar_065
-         * @tc.desc      test calendar with repeatMonths��repeatDays parameter null,return with callback.
+         * @tc.name   testPublishReminderCalendar_065
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_065
+         * @tc.desc   test calendar with repeatMonths��repeatDays parameter null,return with callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_065", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_065---------------------------');
@@ -1720,9 +1915,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_066
-         * @tc.name      testPublishReminderCalendar_066
-         * @tc.desc      test calendar with repeatMonths��repeatDays parameter null,return with promise.
+         * @tc.name   testPublishReminderCalendar_066
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_066
+         * @tc.desc   test calendar with repeatMonths��repeatDays parameter null,return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testPublishReminderCalendar_066", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderCalendar_066---------------------------');
@@ -1747,9 +1945,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_067
-         * @tc.name      testGetValidRemindersButton_067
-         * @tc.desc      test actionButton with illegal parameter.
+         * @tc.name   testGetValidRemindersButton_067
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_067
+         * @tc.desc   test actionButton with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersButton_067", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersButton_067---------------------------');
@@ -1781,9 +1982,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_068
-         * @tc.name      testGetValidRemindersButton_068
-         * @tc.desc      test actionButton without title.
+         * @tc.name   testGetValidRemindersButton_068
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_068
+         * @tc.desc   test actionButton without title.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersButton_068", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersButton_068---------------------------');
@@ -1814,9 +2018,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_069
-         * @tc.name      testGetValidRemindersButton_069
-         * @tc.desc      test actionButton with illegal title.
+         * @tc.name   testGetValidRemindersButton_069
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_069
+         * @tc.desc   test actionButton with illegal title.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersButton_069", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersButton_069---------------------------');
@@ -1848,9 +2055,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_070
-         * @tc.name      testGetValidRemindersSnoozTimes_070
-         * @tc.desc      test snoozeTimes with parameter 0.
+         * @tc.name   testGetValidRemindersSnoozTimes_070
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_070
+         * @tc.desc   test snoozeTimes with parameter 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSnoozTimes_070", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSnoozTimes_070---------------------------');
@@ -1876,9 +2086,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_071
-         * @tc.name      testGetValidRemindersSnoozTimes_071
-         * @tc.desc      test snoozeTimes with illegal parameter.
+         * @tc.name   testGetValidRemindersSnoozTimes_071
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_071
+         * @tc.desc   test snoozeTimes with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSnoozTimes_071", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSnoozTimes_071---------------------------');
@@ -1904,9 +2117,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_072
-         * @tc.name      testGetValidRemindersSnoozTimes_072
-         * @tc.desc      test snoozeTimes with illegal parameter.
+         * @tc.name   testGetValidRemindersSnoozTimes_072
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_072
+         * @tc.desc   test snoozeTimes with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSnoozTimes_072", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSnoozTimes_072---------------------------');
@@ -1932,9 +2148,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_073
-         * @tc.name      testGetValidRemindersRingDuration_073
-         * @tc.desc      test ringDuration default parameters.
+         * @tc.name   testGetValidRemindersRingDuration_073
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_073
+         * @tc.desc   test ringDuration default parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersRingDuration_073", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersRingDuration_073---------------------------');
@@ -1959,9 +2178,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_074
-         * @tc.name      testGetValidRemindersRingDuration_074
-         * @tc.desc      test ringDuration with illegal parameter.
+         * @tc.name   testGetValidRemindersRingDuration_074
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_074
+         * @tc.desc   test ringDuration with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersRingDuration_074", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersRingDuration_074---------------------------');
@@ -1987,9 +2209,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_075
-         * @tc.name      testGetValidRemindersRingDuration_075
-         * @tc.desc      test ringDuration with illegal parameter.
+         * @tc.name   testGetValidRemindersRingDuration_075
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_075
+         * @tc.desc   test ringDuration with illegal parameter.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersRingDuration_075", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersRingDuration_075---------------------------');
@@ -2009,9 +2234,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_076
-         * @tc.name      testGetValidRemindersTimeInterval_076
-         * @tc.desc      test timeInterval default parameters.
+         * @tc.name   testGetValidRemindersTimeInterval_076
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_076
+         * @tc.desc   test timeInterval default parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersTimeInterval_076", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersTimeInterval_076---------------------------');
@@ -2036,9 +2264,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_077
-         * @tc.name      testGetValidRemindersTimeInterval_077
-         * @tc.desc      test timeInterval with illegal parameters.
+         * @tc.name   testGetValidRemindersTimeInterval_077
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_077
+         * @tc.desc   test timeInterval with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersTimeInterval_077", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersTimeInterval_077---------------------------');
@@ -2064,9 +2295,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_078
-         * @tc.name      testGetValidRemindersTimeInterval_078
-         * @tc.desc      test timeInterval with illegal parameters.
+         * @tc.name   testGetValidRemindersTimeInterval_078
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_078
+         * @tc.desc   test timeInterval with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersTimeInterval_078", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersTimeInterval_078---------------------------');
@@ -2092,9 +2326,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_079
-         * @tc.name      testGetValidRemindersTitle_079
-         * @tc.desc      test title with empty parameters.
+         * @tc.name   testGetValidRemindersTitle_079
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_079
+         * @tc.desc   test title with empty parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersTitle_079", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersTitle_079---------------------------');
@@ -2123,9 +2360,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_080
-         * @tc.name      testGetValidRemindersTitle_080
-         * @tc.desc      test title with illegal parameters.
+         * @tc.name   testGetValidRemindersTitle_080
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_080
+         * @tc.desc   test title with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersTitle_080", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersTitle_080---------------------------');
@@ -2154,9 +2394,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_081
-         * @tc.name      testGetValidRemindersSlotType_081
-         * @tc.desc      test slotType default parameters.
+         * @tc.name   testGetValidRemindersSlotType_081
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_081
+         * @tc.desc   test slotType default parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSlotType_081", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSlotType_081---------------------------');
@@ -2182,9 +2425,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_082
-         * @tc.name      testGetValidRemindersSlotType_082
-         * @tc.desc      test slotType with illegal parameter 5.
+         * @tc.name   testGetValidRemindersSlotType_082
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_082
+         * @tc.desc   test slotType with illegal parameter 5.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSlotType_082", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSlotType_082---------------------------');
@@ -2207,9 +2453,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_083
-         * @tc.name      testGetValidRemindersPkgName_083
-         * @tc.desc      test pkgName with empty parameters.
+         * @tc.name   testGetValidRemindersPkgName_083
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_083
+         * @tc.desc   test pkgName with empty parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersPkgName_083", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersPkgName_083---------------------------');
@@ -2239,9 +2488,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_084
-         * @tc.name      testGetValidRemindersPkgName_084
-         * @tc.desc      test pkgName with illegal parameters.
+         * @tc.name   testGetValidRemindersPkgName_084
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_084
+         * @tc.desc   test pkgName with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersPkgName_084", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersPkgName_084---------------------------');
@@ -2271,9 +2523,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_085
-         * @tc.name      testGetValidRemindersAbilityName_085
-         * @tc.desc      test abilityName with empty parameters.
+         * @tc.name   testGetValidRemindersAbilityName_085
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_085
+         * @tc.desc   test abilityName with empty parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersAbilityName_085", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersAbilityName_085---------------------------');
@@ -2304,9 +2559,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_086
-         * @tc.name      testGetValidRemindersAbilityName_086
-         * @tc.desc      test abilityName with illegal parameters.
+         * @tc.name   testGetValidRemindersAbilityName_086
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_086
+         * @tc.desc   test abilityName with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersAbilityName_086", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersAbilityName_086---------------------------');
@@ -2337,9 +2595,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_087
-         * @tc.name      testGetValidRemindersContent_087
-         * @tc.desc      test content with illegal parameters.
+         * @tc.name   testGetValidRemindersContent_087
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_087
+         * @tc.desc   test content with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersContent_087", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersContent_087---------------------------');
@@ -2366,9 +2627,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_088
-         * @tc.name      testGetValidRemindersContent_088
-         * @tc.desc      test content with illegal parameters.
+         * @tc.name   testGetValidRemindersContent_088
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_088
+         * @tc.desc   test content with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersContent_088", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersContent_088---------------------------');
@@ -2395,9 +2659,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_089
-         * @tc.name      testGetValidRemindersExpiredContent_089
-         * @tc.desc      test expiredContent with empty parameters.
+         * @tc.name   testGetValidRemindersExpiredContent_089
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_089
+         * @tc.desc   test expiredContent with empty parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersExpiredContent_089", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersExpiredContent_089---------------------------');
@@ -2425,9 +2692,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_090
-         * @tc.name      testGetValidRemindersExpiredContent_090
-         * @tc.desc      test expiredContent with illegal parameters.
+         * @tc.name   testGetValidRemindersExpiredContent_090
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_090
+         * @tc.desc   test expiredContent with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersExpiredContent_090", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersExpiredContent_090---------------------------');
@@ -2455,9 +2725,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_091
-         * @tc.name      testGetValidRemindersSnoozeContent_091
-         * @tc.desc      test snoozeContent with empty parameters.
+         * @tc.name   testGetValidRemindersSnoozeContent_091
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_091
+         * @tc.desc   test snoozeContent with empty parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSnoozeContent_091", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSnoozeContent_091---------------------------');
@@ -2485,9 +2758,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_092
-         * @tc.name      testGetValidRemindersSnoozeContent_092
-         * @tc.desc      test snoozeContent with illegal parameters.
+         * @tc.name   testGetValidRemindersSnoozeContent_092
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_092
+         * @tc.desc   test snoozeContent with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersSnoozeContent_092", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersSnoozeContent_092---------------------------');
@@ -2514,9 +2790,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_093
-         * @tc.name      testGetValidRemindersNotificationId_093
-         * @tc.desc      test notificationId with illegal parameters.
+         * @tc.name   testGetValidRemindersNotificationId_093
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_093
+         * @tc.desc   test notificationId with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersNotificationId_093", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNotificationId_093---------------------------');
@@ -2544,9 +2823,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_094
-         * @tc.name      testGetValidRemindersNotificationId_094
-         * @tc.desc      test snoozeContent with illegal parameters.
+         * @tc.name   testGetValidRemindersNotificationId_094
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_094
+         * @tc.desc   test snoozeContent with illegal parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testGetValidRemindersNotificationId_094", Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNotificationId_094---------------------------');
@@ -2574,9 +2856,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_095
-         * @tc.name      testReminderType_095
-         * @tc.desc      test timer default parameter with 0.
+         * @tc.name   testReminderType_095
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_095
+         * @tc.desc   test timer default parameter with 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderType_095", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderType_095---------------------------');
@@ -2586,9 +2871,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_096
-         * @tc.name      testReminderType_096
-         * @tc.desc      test calendar default parameter with 1.
+         * @tc.name   testReminderType_096
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_096
+         * @tc.desc   test calendar default parameter with 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderType_096", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderType_096---------------------------');
@@ -2598,9 +2886,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_097
-         * @tc.name      testReminderType_097
-         * @tc.desc      test alarm default parameter with 2.
+         * @tc.name   testReminderType_097
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_097
+         * @tc.desc   test alarm default parameter with 2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testReminderType_097", Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderType_097---------------------------');
@@ -2610,9 +2901,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_098
-         * @tc.name      testActionButtonType_098
-         * @tc.desc      test button close default parameter with 0.
+         * @tc.name   testActionButtonType_098
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_098
+         * @tc.desc   test button close default parameter with 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButtonType_098", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButtonType_098---------------------------');
@@ -2622,9 +2916,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_099
-         * @tc.name      testActionButtonType_099
-         * @tc.desc      test button snooze default parameter with 1.
+         * @tc.name   testActionButtonType_099
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_099
+         * @tc.desc   test button snooze default parameter with 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButtonType_099", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButtonType_099---------------------------');
@@ -2634,9 +2931,12 @@ export default function ReminderAgentTest() {
         })
  
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0100
-         * @tc.name      testNotificationSlotType_0100
-         * @tc.desc      test UNKNOWN_TYPE default parameter with 0.
+         * @tc.name   testNotificationSlotType_0100
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0100
+         * @tc.desc   test UNKNOWN_TYPE default parameter with 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testNotificationSlotType_0100", Level.LEVEL0, async function (done) {
             console.info('----------------------testNotificationSlotType_0100---------------------------');
@@ -2646,9 +2946,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0101
-         * @tc.name      testNotificationSlotType_0101
-         * @tc.desc      test SOCIAL_COMMUNICATION default parameter with 1.
+         * @tc.name   testNotificationSlotType_0101
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0101
+         * @tc.desc   test SOCIAL_COMMUNICATION default parameter with 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testNotificationSlotType_0101", Level.LEVEL0, async function (done) {
             console.info('----------------------testNotificationSlotType_0101---------------------------');
@@ -2658,9 +2961,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0102
-         * @tc.name      testNotificationSlotType_0102
-         * @tc.desc      test SERVICE.INFORMATION default parameter with 2.
+         * @tc.name   testNotificationSlotType_0102
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0102
+         * @tc.desc   test SERVICE.INFORMATION default parameter with 2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testNotificationSlotType_0102", Level.LEVEL0, async function (done) {
             console.info('----------------------testNotificationSlotType_0102---------------------------');
@@ -2670,9 +2976,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0103
-         * @tc.name      testNotificationSlotType_0103
-         * @tc.desc      test CONTENT_INFORMATION default parameter with 3.
+         * @tc.name   testNotificationSlotType_0103
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0103
+         * @tc.desc   test CONTENT_INFORMATION default parameter with 3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testNotificationSlotType_0103", Level.LEVEL0, async function (done) {
             console.info('----------------------testNotificationSlotType_0103---------------------------');
@@ -2682,9 +2991,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0104
-         * @tc.name      testNotificationSlotType_0104
-         * @tc.desc      test OTHER_TYPES default parameter with 65535.
+         * @tc.name   testNotificationSlotType_0104
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0104
+         * @tc.desc   test OTHER_TYPES default parameter with 65535.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testNotificationSlotType_0104", Level.LEVEL0, async function (done) {
             console.info('----------------------testNotificationSlotType_0104---------------------------');
@@ -2694,9 +3006,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0105
-         * @tc.name      testRemoveNotificationSlotNorFun_0105
-         * @tc.desc      test remove notification Slot with not exist slot with the promise function.
+         * @tc.name   testRemoveNotificationSlotNorFun_0105
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0105
+         * @tc.desc   test remove notification Slot with not exist slot with the promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRemoveNotificationSlotNorFun_0105', Level.LEVEL0, async function (done) {
             console.info('----------------------testRemoveNotificationSlotNorFun_0105---------------------------');
@@ -2715,9 +3030,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0106
-         * @tc.name      testRemoveNotificationSlotNorFun_0106
-         * @tc.desc      test remove notification Slot with exist slot.
+         * @tc.name   testRemoveNotificationSlotNorFun_0106
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0106
+         * @tc.desc   test remove notification Slot with exist slot.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRemoveNotificationSlotNorFun_0106', Level.LEVEL0, async function (done) {
             console.info('----------------------testRemoveNotificationSlotNorFun_0106---------------------------');
@@ -2735,9 +3053,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0107
-         * @tc.name      testRemoveNotificationSlotNorFun_0107
-         * @tc.desc      test remove notification Slot with exist slot with the promise function.
+         * @tc.name   testRemoveNotificationSlotNorFun_0107
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0107
+         * @tc.desc   test remove notification Slot with exist slot with the promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRemoveNotificationSlotNorFun_0107', Level.LEVEL0, async function (done) {
             console.info('----------------------testRemoveNotificationSlotNorFun_0107---------------------------');
@@ -2755,9 +3076,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0108
-         * @tc.name      testGetValidRemindersNorFun_0108
-         * @tc.desc      test get valid reminders with promise function.
+         * @tc.name   testGetValidRemindersNorFun_0108
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0108
+         * @tc.desc   test get valid reminders with promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetValidRemindersNorFun_0108', Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNorFun_0108---------------------------');
@@ -2777,9 +3101,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0109
-         * @tc.name      testGetValidRemindersNorFun_0109
-         * @tc.desc      test get valid reminders with the callback function.
+         * @tc.name   testGetValidRemindersNorFun_0109
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0109
+         * @tc.desc   test get valid reminders with the callback function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetValidRemindersNorFun_0109', Level.LEVEL0, async function (done) {
             console.info('----------------------testGetValidRemindersNorFun_0109---------------------------');
@@ -2799,9 +3126,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0110
-         * @tc.name      testPublishReminderNorAlarmFun_0110
-         * @tc.desc      test publish reminder with a nomal alarm promise function.
+         * @tc.name   testPublishReminderNorAlarmFun_0110
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0110
+         * @tc.desc   test publish reminder with a nomal alarm promise function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPublishReminderNorAlarmFun_0110', Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderNorAlarmFun_0110---------------------------');
@@ -2818,9 +3148,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0111
-         * @tc.name      testPublishReminderNorAlarmFun_0111
-         * @tc.desc      test publish reminder with a nomal alarm callback function.
+         * @tc.name   testPublishReminderNorAlarmFun_0111
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0111
+         * @tc.desc   test publish reminder with a nomal alarm callback function.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPublishReminderNorAlarmFun_0111', Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderNorAlarmFun_0111---------------------------');
@@ -2837,9 +3170,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0112
-         * @tc.name      testPublishReminderAbNorFun_0112
-         * @tc.desc      test publish reminder with max number limit of each application.
+         * @tc.name   testPublishReminderAbNorFun_0112
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0112
+         * @tc.desc   test publish reminder with max number limit of each application.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPublishReminderAbNorFun_0112', Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderAbNorFun_0112---------------------------');
@@ -2868,10 +3204,13 @@ export default function ReminderAgentTest() {
         })
 
         /**
-      * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0113
-      * @tc.name      testReminderTypeCalendarFun_0113
-      * @tc.desc      test cancelAllReminders can cancel all exist reminders with type of calendar.
-      */
+         * @tc.name   testReminderTypeCalendarFun_0113
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0113
+         * @tc.desc   test cancelAllReminders can cancel all exist reminders with type of calendar.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testReminderTypeCalendarFun_0113', Level.LEVEL0, async function (done) {
             console.info('----------------------testReminderTypeCalendarFun_0113---------------------------');
             let timer = {
@@ -2903,9 +3242,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0115
-         * @tc.name      testActionButtonType_0115
-         * @tc.desc      test action butto type type = 0.
+         * @tc.name   testActionButtonType_0115
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0115
+         * @tc.desc   test action butto type type = 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButtonType_0115", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButtonType_0115---------------------------');
@@ -2920,9 +3262,12 @@ export default function ReminderAgentTest() {
         })
 
         /**
-         * @tc.number    SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0116
-         * @tc.name      testActionButtonType_0116
-         * @tc.desc      test action butto type type = 1.
+         * @tc.name   testActionButtonType_0116
+         * @tc.number SUB_RESOURCESCHEDULE_REMINDER_AGENT_XTS_0116
+         * @tc.desc   test action butto type type = 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("testActionButtonType_0116", Level.LEVEL0, async function (done) {
             console.info('----------------------testActionButtonType_0116---------------------------');

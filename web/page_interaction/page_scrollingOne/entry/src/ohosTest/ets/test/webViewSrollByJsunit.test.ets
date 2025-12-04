@@ -58,12 +58,14 @@ export default function webViewSrollByJsunit() {
       done();
     })
 
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0100
-      * tc.name testScrollByOne
-      * tc.desc When calling the scrollTo interface, x=0 and the y input parameter is a positive number,
-      * which is half the page height
-    */
+    /**
+     * @tc.name   testScrollByOne
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0100
+     * @tc.desc   When calling the scrollTo interface, x=0 and the y input parameter is a positive number,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByOne',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByOne';
       tcName = 'testScrollByOne'
@@ -74,12 +76,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0200
-      * tc.name testScrollByTwo
-      * tc.desc When calling the scrollTo interface, x=0 and the y input parameter is a positive number,
-      * which is greater than the content height
-    */
+    /**
+     * @tc.name   testScrollByTwo
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0200
+     * @tc.desc   When calling the scrollTo interface, x=0 and the y input parameter is a positive number,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByTwo',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByTwo';
       tcName = 'testScrollByTwo'
@@ -90,12 +94,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0300
-      * tc.name testScrollByThree
-      * tc.desc When calling the scrollTo interface, x=0 and the y input parameter is negative, which is half the
-      * page height
-    */
+    /**
+     * @tc.name   testScrollByThree
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0300
+     * @tc.desc   When calling the scrollTo interface, x=0 and the y input parameter is negative, which is half the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByThree',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByThree';
       tcName = 'testScrollByThree'
@@ -106,12 +112,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-      * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0400
-      * tc.name testScrollByFour
-      * tc.desc When calling the scrollTo interface, x=0 and the y input parameter is negative, exceeding the
-      * page height
-    */
+    /**
+     * @tc.name   testScrollByFour
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0400
+     * @tc.desc   When calling the scrollTo interface, x=0 and the y input parameter is negative, exceeding the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByFour',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByFour';
       tcName = 'testScrollByFour'
@@ -122,12 +130,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0500
-     * tc.name testScrollByFive
-     * tc.desc When calling the scrollTo interface, y=0 and the x input parameter is a positive number, which is
-     * half the page length
-    */
+    /**
+     * @tc.name   testScrollByFive
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0500
+     * @tc.desc   When calling the scrollTo interface, y=0 and the x input parameter is a positive number, which is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByFive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByFive';
       tcName = 'testScrollByFive'
@@ -138,12 +148,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0600
-     * tc.name testScrollBySix
-     * tc.desc When calling the scrollTo interface, y=0 and the x input parameter is positive, which is
-     * greater than the page length
-    */
+    /**
+     * @tc.name   testScrollBySix
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0600
+     * @tc.desc   When calling the scrollTo interface, y=0 and the x input parameter is positive, which is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollBySix',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollBySix';
       tcName = 'testScrollBySix'
@@ -154,12 +166,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0700
-     * tc.name testScrollByEight
-     * tc.desc When calling the scrollTo interface, y=0 and the x input parameter is negative, which is greater
-     * than the page length
-    */
+    /**
+     * @tc.name   testScrollBySeven
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0700
+     * @tc.desc   When calling the scrollTo interface, y=0 and the x input parameter is negative, which is greater
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollBySeven',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollBySeven';
       tcName = 'testScrollBySeven'
@@ -170,12 +184,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0800
-     * tc.name testScrollBySeven
-     * tc.desc When calling the scrollTo interface, y=0 and the x input parameter is negative, which is half the
-     * page length
-    */
+    /**
+     * @tc.name   testScrollByEight
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0800
+     * @tc.desc   When calling the scrollTo interface, y=0 and the x input parameter is negative, which is half the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByEight',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByEight';
       tcName = 'testScrollByEight'
@@ -186,12 +202,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0900
-     * tc.name testScrollByNine
-     * tc.desc When calling the scrollTo interface, the yx input parameter is a positive number, which is half
-     * the width and height of the page
-    */
+    /**
+     * @tc.name   testScrollByNine
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_0900
+     * @tc.desc   When calling the scrollTo interface, the yx input parameter is a positive number, which is half
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByNine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByNine';
       tcName = 'testScrollByEight'
@@ -202,12 +220,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1000
-     * tc.name testScrollByTen
-     * tc.desc When the scrollTo interface is called, the yx input parameter is a positive number, which exceeds
-     * the page width and height
-    */
+    /**
+     * @tc.name   testScrollByTen
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1000
+     * @tc.desc   When the scrollTo interface is called, the yx input parameter is a positive number, which exceeds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByTen',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByTen';
       tcName = 'testScrollByTen'
@@ -218,12 +238,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1100
-     * tc.name testScrollByEleven
-     * tc.desc When calling the scrollTo interface, the yx input parameter is negative, which is half the width
-     * and height of the page
-    */
+    /**
+     * @tc.name   testScrollByEleven
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1100
+     * @tc.desc   When calling the scrollTo interface, the yx input parameter is negative, which is half the width
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByEleven',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByEleven';
       tcName = 'testScrollByEleven'
@@ -234,12 +256,14 @@ export default function webViewSrollByJsunit() {
       await Utils.waitForExist(() => isReturn, tcName + '_returnCheck', true, 1000);
       done();
     })
-    /*
-     * tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1200
-     * tc.name testScrollByTwelve
-     * tc.desc When calling the scrollTo interface, the yx input parameter is negative, which exceeds the page
-     * width and height
-    */
+    /**
+     * @tc.name   testScrollByTwelve
+     * @tc.number SUB_ACE_BASIC_ETS_API_TESTSCROLLBY_1200
+     * @tc.desc   When calling the scrollTo interface, the yx input parameter is negative, which exceeds the page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testScrollByTwelve',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done:Function) =>{
       emitKey = 'emitScrollByTwelve';
       tcName = 'testScrollByTwelve'

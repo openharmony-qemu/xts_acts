@@ -43,13 +43,13 @@ export default function BackgroundProcessManager() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001
-     * @tc.desc:Test that the setPowerSaveMode function interface does not request ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001
+     * @tc.desc   Test that the setPowerSaveMode function interface does not request ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -71,13 +71,13 @@ export default function BackgroundProcessManager() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002
-     * @tc.desc:Test that the isPowerSaveMode function interface does not request ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002
+     * @tc.desc   Test that the isPowerSaveMode function interface does not request ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -97,6 +97,33 @@ export default function BackgroundProcessManager() {
           }
         }
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_002 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003
+     * @tc.desc   Test that the isPowerSaveMode function interface does not request ohos.permission.BACKGROUND_MANAGER_POWER_SAVE_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003 begin---');
+        try {
+          let pid = 55555;
+          backgroundProcessManager.getPowerSaveMode(pid);
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003 has failed for' + error.message + ' code: ' + error.code);
+          if(error.code == 801){
+            expect(error.code == 801).assertTrue();
+            done();
+          }else{
+            expect(error.code == PERMISSION_DENIED_CODE).assertTrue();
+            done();
+          }
+        }
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_NOP_XTS_003 end---');
       })
 
   })

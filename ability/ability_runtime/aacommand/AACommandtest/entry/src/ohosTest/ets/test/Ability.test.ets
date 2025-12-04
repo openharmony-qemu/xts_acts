@@ -48,19 +48,18 @@ export default function abilityTest() {
         console.log("ActsAACommandTest startAbility err : " + JSON.stringify(err));
       })
 
-      setTimeout(() => {
-        console.log("ActsAACommandTest afterEach end");
-        done();
-      }, 1000)
+      console.log("ActsAACommandTest afterEach end");
+      done();
     })
 
 
     /**
-     * @tc.number: ACTS_AACommand_0100
-     * @tc.name: -b, -s unittest, -p, -s class, -s level, -s size, -s testType, -s timeout,
-     *           -s <any-key> <any-value>, -w, etc. of the test command arguments are
-     *           valid ( -s class specifies only test suites).
-     * @tc.desc: Verify that the test framework can start normally through the test command.
+     * @tc.name   ACTS_AACommand_0100
+     * @tc.number ACTS_AACommand_0100
+     * @tc.desc   Verify that the test framework can start normally through the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0100', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0100 --- start");
@@ -69,24 +68,27 @@ export default function abilityTest() {
         '-s unittest OpenHarmonyTestRunner ' +
         '-w 40 -s class ACTS_AACommand_01_3 -s level 1 -s size 0 -s testType aaa -s ' +
         'timeout 5 -s 1 3';
-      let delay = 3000;
-      abilityDelegator!.executeShellCommand(cmd, (err: BusinessError, data: AbilityDelegatorRegistry.ShellCmdResult) => {
+      await abilityDelegator!.executeShellCommand(cmd).then((data: AbilityDelegatorRegistry.ShellCmdResult) => {
         console.log('ACTS_AACommand_0100 - executeShellCommand: start ');
         console.log('ACTS_AACommand_0100 stdResult = ' + data.stdResult);
         let i = data.stdResult.indexOf('start ability successfully');
         console.log('ACTS_AACommand_0100 query string i = ' + i);
         expect(i == -1).assertEqual(false);
-      })
-      setTimeout(async () => {
-        console.log('ACTS_AACommand_0100 - executeShellCommand: end');
-        done();
-      }, delay)
+      }).catch((err: BusinessError) => {
+        console.error('ACTS_AACommand_0100 error: ' + JSON.stringify(err));
+        expect().assertFail();
+      });
+      console.log('ACTS_AACommand_0100 - executeShellCommand: end');
+      done();
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0200
-     * @tc.name: The -b parameter of the test command is invalid, and the other parameters such as -s and -w are valid.
-     * @tc.desc: Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.name   ACTS_AACommand_0200
+     * @tc.number ACTS_AACommand_0200
+     * @tc.desc   Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0200', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0200 --- start");
@@ -106,9 +108,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0300
-     * @tc.name: The -s parameter of the test command is invalid, and the other parameters such as -b and -w are valid.
-     * @tc.desc:Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.name   ACTS_AACommand_0300
+     * @tc.number ACTS_AACommand_0300
+     * @tc.desc   Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0300', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0300 --- start");
@@ -128,9 +133,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0400
-     * @tc.name: The -w parameter of the test command is invalid, and the other parameters such as -b and -s are valid.
-     * @tc.desc: Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.name   ACTS_AACommand_0400
+     * @tc.number ACTS_AACommand_0400
+     * @tc.desc   Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0400', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0400 --- start");
@@ -152,10 +160,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0500
-     * @tc.name: The -b, -s, -w and other parameters of the test command are valid, and the
-     *           invalid -z parameter is added.
-     * @tc.desc: Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.name   ACTS_AACommand_0500
+     * @tc.number ACTS_AACommand_0500
+     * @tc.desc   Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0500', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0500 --- start");
@@ -176,9 +186,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0600
-     * @tc.name: The -p parameter of the test command is invalid, and the -b, -s, -w and other parameters are valid.
-     * @tc.desc: Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.name   ACTS_AACommand_0600
+     * @tc.number ACTS_AACommand_0600
+     * @tc.desc   Verify that the test framework cannot be started normally by passing the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0600', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0600 --- start");
@@ -198,12 +211,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0700
-     * @tc.name: The parameters of the test command are valid,
-     * and the finishTest interface is called in AsyncCallback
-     * mode. The msg parameter is invalid(including Chinese and special characters) and the code parameter
-     * is valid (Number.MIN_VALUE-1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0700
+     * @tc.number ACTS_AACommand_finishTest_0700
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0700', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0700 --- start");
@@ -216,10 +229,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_0800
-     * @tc.name: The -b, -s, -w and other parameters of the test command are valid, and there is no -D
-     *          parameter setting.
-     * @tc.desc: Verify that the test framework cannot be started in Debug mode through the test command.
+     * @tc.name   ACTS_AACommand_0800
+     * @tc.number ACTS_AACommand_0800
+     * @tc.desc   Verify that the test framework cannot be started in Debug mode through the test command.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_0800', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_0800 --- start");
@@ -236,13 +251,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0400
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in
-     *           AsyncCallback
-     *           mode. The msg parameter is invalid(including Chinese and special characters) and the code
-     *           parameter
-     *           is valid (Number.MAX_VALUE)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0400
+     * @tc.number ACTS_AACommand_finishTest_0400
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0400', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0400 --- start");
@@ -253,12 +267,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0100
-     * @tc.name: Each parameter of the test command is valid, and the finishTest interface is called
-     *           in AsyncCallback mode.
-     *           The msg parameter is valid (including Chinese and special characters) and the code parameter
-     *           is valid (1).
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0100
+     * @tc.number ACTS_AACommand_finishTest_0100
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0100', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0100 --- start");
@@ -271,13 +285,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0500
-     * @tc.name: The parameters of the test command are valid, and the finishTest
-     *           interface is called in AsyncCallback
-     *           mode. The msg parameter is invalid(including Chinese and special
-     *           characters) and the code parameter
-     *           is valid (Number.MIN_VALUE)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0500
+     * @tc.number ACTS_AACommand_finishTest_0500
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0500', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0500 --- start");
@@ -290,13 +303,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0600
-     * @tc.name: The parameters of the test command are valid, and the finishTest
-     *           interface is called in AsyncCallback
-     *           mode. The msg parameter is invalid(including Chinese and special characters)
-     *           and the code parameter
-     *           is valid (Number.MAX_VALUE+1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0600
+     * @tc.number ACTS_AACommand_finishTest_0600
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0600', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0600 --- start");
@@ -309,11 +321,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0900
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-     *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *           is valid (1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0900
+     * @tc.number ACTS_AACommand_finishTest_0900
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0900', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0900 --- start");
@@ -326,11 +339,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_1300
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-     *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *           is valid (Number.MIN_VALUE)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_1300
+     * @tc.number ACTS_AACommand_finishTest_1300
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_1300', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_1300 --- start");
@@ -343,11 +357,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_1400
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-     *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *           is valid (Number.MAX_VALUE+1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_1400
+     * @tc.number ACTS_AACommand_finishTest_1400
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_1400', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_1400 --- start");
@@ -360,11 +375,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_1500
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in Promise
-     *           mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *           is valid (Number.MIN_VALUE-1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_1500
+     * @tc.number ACTS_AACommand_finishTest_1500
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_1500', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_1500 --- start");
@@ -377,10 +393,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_0300
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in
-     *           AsyncCallback mode. The msg parameter is invalid (Undefined) and the code parameter is valid (1)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_0300
+     * @tc.number ACTS_AACommand_finishTest_0300
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_0300', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_0300 --- start");
@@ -389,12 +407,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_AACommand_finishTest_1600
-     * @tc.name: The parameters of the test command are valid, and the finishTest interface is called in
-     *           Promisemode. The msg parameter is valid(including Chinese and special characters) and the
-     *           code parameter
-     *           is valid (ABCD)
-     * @tc.desc: Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.name   ACTS_AACommand_finishTest_1600
+     * @tc.number ACTS_AACommand_finishTest_1600
+     * @tc.desc   Verify that the process of the test framework can be stopped by calling this interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_AACommand_finishTest_1600', Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_AACommand_finishTest_1600 --- start");
@@ -403,9 +421,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0700
-     * @tc.name: Test command which is invalid
-     * @tc.desc: Verify 'aa attach'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0700
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0700
+     * @tc.desc   Verify 'aa attach'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0700', Level.LEVEL0, async (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0700 start!');
@@ -432,9 +453,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0800
-     * @tc.name: Test command which is invalid
-     * @tc.desc: Verify 'aa detach -b'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0800
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0800
+     * @tc.desc   Verify 'aa detach -b'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0800', Level.LEVEL0, async (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0800 start!');
@@ -461,9 +485,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0900
-     * @tc.name: Test command which is invalid
-     * @tc.desc: Verify 'aa attach -c'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0900
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0900
+     * @tc.desc   Verify 'aa attach -c'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0900', Level.LEVEL0, (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_0900 start!');
@@ -481,9 +508,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1000
-     * @tc.name: Test command which is invalid
-     * @tc.desc: Verify 'aa detach -c'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1000
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1000
+     * @tc.desc   Verify 'aa detach -c'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1000', Level.LEVEL0, (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1000 start!');
@@ -501,9 +531,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1100
-     * @tc.name: Test command which is valid
-     * @tc.desc: Verify 'aa attach -b com.example.attachdebugtest'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1100
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1100
+     * @tc.desc   Verify 'aa attach -b com.example.attachdebugtest'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1100', Level.LEVEL0, (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1100 start!');
@@ -521,9 +554,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1200
-     * @tc.name: Test command which is valid
-     * @tc.desc: Verify 'aa detach -b com.example.attachdebugtest'
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1200
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1200
+     * @tc.desc   Verify 'aa detach -b com.example.attachdebugtest'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1200', Level.LEVEL0, (done: Function) => {
       console.debug(TAG, 'SUB_Ability_AbilityTools_AACommand_AAAttachDebug_1200 start!');

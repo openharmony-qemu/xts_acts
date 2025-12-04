@@ -29,9 +29,12 @@ export default function nativeApiSendableJsunit() {
     });
 
     /**
+     * @tc.name   napiSendableTest003
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0003
-     * @tc.name napiSendableTest003
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiSendableTest003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('napiSendableTest003 START');
@@ -43,9 +46,12 @@ export default function nativeApiSendableJsunit() {
     });
 
     /**
+     * @tc.name   napiSendableTest012
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0012
-     * @tc.name napiSendableTest012
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiSendableTest012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('napiSendableTest012 START');
@@ -65,9 +71,12 @@ export default function nativeApiSendableJsunit() {
     });
 
     /**
+     * @tc.name   napiSendableTest013
      * @tc.number SUB_ACE_BASIC_ETS_NAPI_0013
-     * @tc.name napiSendableTest013
-     * @tc.desc aceNapiEtsTest
+     * @tc.desc   aceNapiEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('napiSendableTest013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('napiSendableTest013 START');
@@ -85,6 +94,72 @@ export default function nativeApiSendableJsunit() {
       }, () => {
       })
       await Promise.all([p0])
+      done();
+    });
+
+    /**
+     * @tc.name   testStrongSendableRef0100
+     * @tc.number SUB_NAPI_STRONG_SENDABLE_REF_0100
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testStrongSendableRef0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0100";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiCreateStrongSendableRef();
+        console.info('testStrongSendableRef0100 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testStrongSendableRef0200
+     * @tc.number SUB_NAPI_STRONG_SENDABLE_REF_0200
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testStrongSendableRef0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0200";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiGetStrongSendableRef();
+        console.info('testStrongSendableRef0200 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   testStrongSendableRef0300
+     * @tc.number SUB_NAPI_STRONG_SENDABLE_REF_0300
+     * @tc.desc   MediumTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testStrongSendableRef0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let TAG = "testStrongSendableRef0300";
+      console.info(`${TAG} START`);
+      try {
+        let value : boolean = napitest.NapiDelStrongSendableRef();
+        console.info('testStrongSendableRef0300 value is: ' + value);
+        expect(value).assertTrue();
+      } catch (err) {
+        console.error(`${TAG} error is ${err} `);
+        expect().assertFail();
+      }
       done();
     });
   })

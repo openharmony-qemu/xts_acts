@@ -47,11 +47,13 @@ export default function GridTypeNodeTest() {
       console.info("GridTypeNode after each called");
     });
 
-    /*
-     * @tc.number    GridTypeNodeTest_0100
-     * @tc.name      GridTypeNodeTest_0100
-     * @tc.desc      Test GridTypeNode
-     * @tc.level     Level 1
+    /**
+     * @tc.name   GridTypeNodeTest_0100
+     * @tc.number GridTypeNodeTest_0100
+     * @tc.desc   Test GridTypeNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GridTypeNodeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[GridTypeNodeTest_0100] START');
@@ -94,12 +96,12 @@ export default function GridTypeNodeTest() {
       done();
     });
     /**
-     * @tc.number    GridTypeNodeTest_0200
-     * @tc.name      GridTypeNodeTest_0200
-     * @tc.desc      Test GridTypeNodePage undefined.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   GridTypeNodeTest_0200
+     * @tc.number GridTypeNodeTest_0200
+     * @tc.desc   Test GridTypeNodePage undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GridTypeNodeTest_0200', Level.LEVEL3, async (done: Function) => {
       console.info('[GridTypeNodeTest_0200] START');

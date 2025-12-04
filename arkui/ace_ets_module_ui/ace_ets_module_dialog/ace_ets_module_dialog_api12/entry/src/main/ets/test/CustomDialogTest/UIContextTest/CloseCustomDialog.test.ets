@@ -46,12 +46,12 @@ export default function CloseCustomDialogTest() {
     });
 
     /**
-     * @tc.number    CloseCustomDialogTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   CloseCustomDialogTest_001
+     * @tc.number CloseCustomDialogTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('CloseCustomDialogTest_001', Level.LEVEL2, async (done: Function) => {
       console.info('[CloseCustomDialogTest_001] START');

@@ -49,10 +49,12 @@ export default function ReplaceDestination2() {
 
 
     /**
-     * @tc.number    ReplaceDestination2_0100
-     * @tc.name      ReplaceDestination2_0100
-     * @tc.desc      Test replaceDestination error code 100005
-     * @tc.level     Level 2
+     * @tc.name   ReplaceDestination2_0100
+     * @tc.number ReplaceDestination2_0100
+     * @tc.desc   Test replaceDestination error code 100005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ReplaceDestination2_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ReplaceDestination2_0100 START');

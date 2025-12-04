@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanSpirv_assemblyTestCase
+     * @tc.number TestVulkanSpirv_assemblyTestCase
+     * @tc.desc   TestVulkanSpirv_assemblyTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanSpirvassemblyTest, TestVulkanSpirv_assemblyTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanSpirvassemblyTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/spirv-assembly.txt "
                 "--deqp-log-filename=ActsVulkanSpirvassemblyTest.qpa");
         }

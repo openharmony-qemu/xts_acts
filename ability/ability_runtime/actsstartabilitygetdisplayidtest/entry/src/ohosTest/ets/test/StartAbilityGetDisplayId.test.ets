@@ -73,13 +73,12 @@ export default function StartAbilityGetDisplayIdTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
-     * @tc.name      : The device has only one physical screen, call the startAbilityForResult parameter to start the application,
-     *                 and set the displayId parameter in the StartOptions parameter to the displayId of the screen
-     * @tc.desc      : for testing call startAbilityForResult to start app with startOption's displayId  which is current screen displayId
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId  which is current screen displayId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0500';
@@ -114,13 +113,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
-     * @tc.name      : The device has only one physical screen, and the startAbilityForResult parameter is called to start the application,
-     *                 and the displayId parameter in the StartOptions parameter is set to undefined
-     * @tc.desc      : for testing call startAbilityForResult to start app with startOption's displayId = undefined
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600
+     * @tc.desc   for testing call startAbilityForResult to start app with startOption's displayId = undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0600';
@@ -153,13 +151,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700
-     * @tc.name      : The device has only one physical screen, call startAbilityForResult to start the application,
-     *                 and the parameter want filters the DISPLAY_ID of parameters
-     * @tc.desc      : for testing startAbilityForResult filter want parameter DISPLAY_ID
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700
+     * @tc.desc   for testing startAbilityForResult filter want parameter DISPLAY_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0700';
@@ -194,13 +191,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300
-     * @tc.name      : The device has only one physical screen, and the startAbility parameter is called to start the application,
-     *                 and the displayId parameter in the StartOptions parameter is set to undefined
-     * @tc.desc      : for testing startAbility with startOption displayId equal undefined
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300
+     * @tc.desc   for testing startAbility with startOption displayId equal undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0300';
@@ -234,13 +230,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200
-     * @tc.name      : The device has only one physical screen, call startAbility to start the application,
-     *                 and set the displayId parameter to a string in the StartOptions parameter
-     * @tc.desc      : for testing startAbility with startOption displayId which is a String
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200
+     * @tc.desc   for testing startAbility with startOption displayId which is a String
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0200'
@@ -273,13 +268,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100
-     * @tc.name      : The device has only one physical screen, call startAbility to start the application,
-     *                 and set the displayId parameter in the StartOptions parameter to the displayId of the screen
-     * @tc.desc      : for testing startAbility with startOption displayId which is current screen value
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100
+     * @tc.desc   for testing startAbility with startOption displayId which is current screen value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0100';
@@ -314,13 +308,12 @@ export default function StartAbilityGetDisplayIdTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400
-     * @tc.name      : The device has only one physical screen, call startAbility to start the application,
-     *                 and the parameter want filters the parameters DISPLAY_ID
-     * @tc.desc      : for testing startAbilityForResult filter want parameter DISPLAY_ID
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400
+     * @tc.desc   for testing startAbilityForResult filter want parameter DISPLAY_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400", Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityRuntime_ABILITY_StartAbility_getDisplayIdTest_0400';

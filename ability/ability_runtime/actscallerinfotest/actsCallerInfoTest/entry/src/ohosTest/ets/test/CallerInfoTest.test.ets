@@ -53,13 +53,13 @@ export default function callerInfoTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_CallerInfo_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_CallerInfo_0100
-     * @tc.desc   : Verify that the UIAbility can obtain caller information when explicitly starting the Ability via startAbility.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CallerInfo_0100
+     * @tc.number SUB_Ability_AbilityRuntime_CallerInfo_0100
+     * @tc.desc   Verify that the UIAbility can obtain caller information when explicitly starting the Ability via startAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0100', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0100"
@@ -147,13 +147,13 @@ export default function callerInfoTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_CallerInfo_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_CallerInfo_0200
-     * @tc.desc   : Verify that the UIAbility can obtain caller information when implicitly starting the Ability via startAbility.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CallerInfo_0200
+     * @tc.number SUB_Ability_AbilityRuntime_CallerInfo_0200
+     * @tc.desc   Verify that the UIAbility can obtain caller information when implicitly starting the Ability via startAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0200', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0200"
@@ -214,13 +214,13 @@ export default function callerInfoTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_CallerInfo_0400
-     * @tc.name   : SUB_Ability_AbilityRuntime_CallerInfo_0400
-     * @tc.desc   : Verify that the UIAbility can obtain caller information when explicitly starting the Ability via startAbilityForResult.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CallerInfo_0400
+     * @tc.number SUB_Ability_AbilityRuntime_CallerInfo_0400
+     * @tc.desc   Verify that the UIAbility can obtain caller information when explicitly starting the Ability via startAbilityForResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0400', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0400"
@@ -286,13 +286,13 @@ export default function callerInfoTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_CallerInfo_0500
-     * @tc.name   : SUB_Ability_AbilityRuntime_CallerInfo_0500
-     * @tc.desc   : Verify that the UIAbility can obtain caller information when implicitly starting the Ability via startAbilityForResult.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CallerInfo_0500
+     * @tc.number SUB_Ability_AbilityRuntime_CallerInfo_0500
+     * @tc.desc   Verify that the UIAbility can obtain caller information when implicitly starting the Ability via startAbilityForResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0500', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0500"
@@ -358,13 +358,13 @@ export default function callerInfoTest() {
         })
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_CallerInfo_0700
-     * @tc.name   : SUB_Ability_AbilityRuntime_CallerInfo_0700
-     * @tc.desc   : Verify that the UIAbility can obtain caller information when starting the Ability via startAbilityByCall.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_CallerInfo_0700
+     * @tc.number SUB_Ability_AbilityRuntime_CallerInfo_0700
+     * @tc.desc   Verify that the UIAbility can obtain caller information when starting the Ability via startAbilityByCall.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_CallerInfo_0700', Level.LEVEL0, async (done: Function) => {
       let tag: string = "SUB_Ability_AbilityRuntime_CallerInfo_0700"

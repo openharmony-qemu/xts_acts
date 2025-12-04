@@ -60,15 +60,15 @@ export default function webViewPageattrLackJsunit() {
             await Utils.sleep(1000)
             console.info("webviewpageLackattr after each called")
         })
-        /*
-         * @tc.number       SUB_ACE_BASIC_HEADERV9_ETS_API_0001
-         * @tc.name         testWebviewpageLackattr01
-         * @tc.desic        test headerv9
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr01
+         * @tc.number testWebviewpageLackattr01
+         * @tc.desc   testWebviewpageLackattr01
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(
             "testWebviewpageLackattr01",
             Level.LEVEL0,
@@ -99,15 +99,15 @@ export default function webViewPageattrLackJsunit() {
                 done()
             }
         )
-        /*
-         * @tc.number       SUB_ACE_BASIC_HitTestType_ETS_API_0002
-         * @tc.name         testWebviewpageLackattr02
-         * @tc.desic        test HitTestType
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr02
+         * @tc.number testWebviewpageLackattr02
+         * @tc.desc   testWebviewpageLackattr02
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(
             "testWebviewpageLackattr02",
             Level.LEVEL0,
@@ -138,15 +138,15 @@ export default function webViewPageattrLackJsunit() {
                 done()
             }
         )
-        /*
-         * @tc.number       SUB_ACE_BASIC_HitTestType_ETS_API_0004
-         * @tc.name         testWebviewpageLackattr04
-         * @tc.desic        test getOrigins
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr04
+         * @tc.number testWebviewpageLackattr04
+         * @tc.desc   testWebviewpageLackattr04
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(
             "testWebviewpageLackattr04",
             Level.LEVEL0,
@@ -177,15 +177,15 @@ export default function webViewPageattrLackJsunit() {
                 done()
             }
         )
-        /*
-         * @tc.number       SUB_ACE_BASIC_HitTestType_ETS_API_0003
-         * @tc.name         testWebviewpageLackattr03
-         * @tc.desic        test HitTestValue
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr03
+         * @tc.number testWebviewpageLackattr03
+         * @tc.desc   testWebviewpageLackattr03
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it(
             "testWebviewpageLackattr03",
             Level.LEVEL0,
@@ -218,15 +218,15 @@ export default function webViewPageattrLackJsunit() {
                 done()
             }
         )
-        /*
-         * @tc.number       SUB_ACE_BASIC_QUOTA_ETS_API_005
-         * @tc.name         testgetOriginQuota005
-         * @tc.desic        getOriginQuota
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testgetOriginQuota005
+         * @tc.number testgetOriginQuota005
+         * @tc.desc   testgetOriginQuota005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("testgetOriginQuota005", Level.LEVEL0, async (done: Function) => {
             console.info("testgetOriginQuota005 START")
             await Utils.sleep(2000)
@@ -235,15 +235,15 @@ export default function webViewPageattrLackJsunit() {
             expect(JSON.parse(strJson).$type).assertEqual("Button")
             done()
         })
-        /*
-         * @tc.number       SUB_ACE_BASIC_HitTestType_ETS_API_0006
-         * @tc.name         testWebviewpageLackattr06
-         * @tc.desic        test getOriginUsage
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr6
+         * @tc.number testWebviewpageLackattr6
+         * @tc.desc   testWebviewpageLackattr6
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("testWebviewpageLackattr6", Level.LEVEL0, async (done: Function) => {
             console.info("testWebviewpageLackattr06 START")
             await Utils.sleep(2000)
@@ -270,15 +270,15 @@ export default function webViewPageattrLackJsunit() {
             console.info("testWebviewpageLackattr06 END")
             done()
         })
-        /*
-         * @tc.number       SUB_ACE_BASIC_saveCookieAsync_ETS_API_0007
-         * @tc.name         testWebviewpageLackattr07
-         * @tc.desic        test saveCookieAsync
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr7
+         * @tc.number testWebviewpageLackattr7
+         * @tc.desc   testWebviewpageLackattr7
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("testWebviewpageLackattr7", Level.LEVEL0, async (done: Function) => {
             console.info("testWebviewpageLackattr07 START")
             await Utils.sleep(2000)
@@ -305,15 +305,15 @@ export default function webViewPageattrLackJsunit() {
             console.info("testWebviewpageLackattr07END")
             done()
         })
-        /*
-         * @tc.number       SUB_ACE_BASIC_saveCookieAsync_ETS_API_0008
-         * @tc.name         testWebviewpageLackattr08
-         * @tc.desic        test saveCookieAsync
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr8
+         * @tc.number testWebviewpageLackattr8
+         * @tc.desc   testWebviewpageLackattr8
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("testWebviewpageLackattr8", Level.LEVEL0, async (done: Function) => {
             console.info("testWebviewpageLackattr08 START")
             await Utils.sleep(2000)
@@ -340,15 +340,15 @@ export default function webViewPageattrLackJsunit() {
             console.info("testWebviewpageLackattr08END")
             done()
         })
-        /*
-         * @tc.number       SUB_ACE_BASIC_runJavaScript_ETS_API_0008
-         * @tc.name         testWebviewpageLackattr08
-         * @tc.desic        test runJavaScript
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 0
-         */
 
+        /**
+         * @tc.name   testWebviewpageLackattr9
+         * @tc.number testWebviewpageLackattr9
+         * @tc.desc   testWebviewpageLackattr9
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("testWebviewpageLackattr9", Level.LEVEL0, async (done: Function) => {
             console.info("testrunJavaScript09 START")
             await Utils.sleep(2000)

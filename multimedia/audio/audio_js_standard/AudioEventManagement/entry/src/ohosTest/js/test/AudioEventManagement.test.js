@@ -96,12 +96,12 @@ describe('audioEventManagement', function () {
 
 
     /**
-     *@tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0100
-     *@tc.name      : DeviceChangeType - CONNECT  
-     *@tc.desc      : DeviceChangeType - CONNECT  
-     *@tc.size      : MEDIUM
-     *@tc.type      : Function
-     *@tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0100
+     * @tc.desc   DeviceChangeType - CONNECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0100', 2, async function (done) {
         expect(audio.DeviceChangeType.CONNECT).assertEqual(0);
@@ -110,12 +110,12 @@ describe('audioEventManagement', function () {
     })
 
     /**
-     *@tc.number    : SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0200
-     *@tc.name      : DeviceChangeType - DISCONNECT   
-     *@tc.desc      : DeviceChangeType - DISCONNECT   
-     *@tc.size      : MEDIUM
-     *@tc.type      : Function
-     *@tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0200
+     * @tc.desc   DeviceChangeType - DISCONNECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_DEVICECHANGETYPE_0200', 2, async function (done) {
         expect(audio.DeviceChangeType.DISCONNECT).assertEqual(1);

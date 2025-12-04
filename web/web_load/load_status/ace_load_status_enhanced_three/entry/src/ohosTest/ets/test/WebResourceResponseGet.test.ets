@@ -13,7 +13,8 @@
  * limitations under the License.
  */
 
-import { beforeEach, describe, it , TestType, Size, Level } from '@ohos/hypium';
+import { beforeEach, describe, it , TestType, Size, Level, expect } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import { accessibility, config } from '@kit.AccessibilityKit';
 import { Driver } from '@kit.TestKit';
@@ -36,14 +37,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTHEADER_0100
-    * @tc.name       : testGetRequestHeader001
-    * @tc.desc       : test getRequestHeader
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testGetRequestHeader001
+     * @tc.number SUB_WEB_GETREQUESTHEADER_0100
+     * @tc.desc   test getRequestHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testGetRequestHeader001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testGetRequestHeader001", 141511)
       let isReturn = false;
@@ -53,14 +54,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTURL_0100
-    * @tc.name       : testGetRequestUrl001
-    * @tc.desc       : test getRequestUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetRequestUrl001
+     * @tc.number SUB_WEB_GETREQUESTURL_0100
+     * @tc.desc   test getRequestUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetRequestUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetRequestUrl001", 141511)
       let isReturn = false;
@@ -70,14 +71,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISREQUESTGESTURE_0100
-    * @tc.name       : testIsRequestGesture001
-    * @tc.desc       : test isRequestGesture
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsRequestGesture001
+     * @tc.number SUB_WEB_ISREQUESTGESTURE_0100
+     * @tc.desc   test isRequestGesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsRequestGesture001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsRequestGesture001", 141511)
       let isReturn = false;
@@ -87,14 +88,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISMAINFRAME_0100
-    * @tc.name       : testIsMainFrame001
-    * @tc.desc       : test isMainFrame
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsMainFrame001
+     * @tc.number SUB_WEB_ISMAINFRAME_0100
+     * @tc.desc   test isMainFrame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsMainFrame001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsMainFrame001", 141511)
       let isReturn = false;
@@ -104,14 +105,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ISREDIRECT_0100
-    * @tc.name       : testIsRedirect001
-    * @tc.desc       : test isRedirect
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testIsRedirect001
+     * @tc.number SUB_WEB_ISREDIRECT_0100
+     * @tc.desc   test isRedirect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testIsRedirect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testIsRedirect001", 141511)
       let isReturn = false;
@@ -121,14 +122,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREQUESTMETHOD_0100
-    * @tc.name       : testGetRequestMethod001
-    * @tc.desc       : test getRequestMethod
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetRequestMethod001
+     * @tc.number SUB_WEB_GETREQUESTMETHOD_0100
+     * @tc.desc   test getRequestMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetRequestMethod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetRequestMethod001", 141511)
       let isReturn = false;
@@ -138,14 +139,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEDATA_0100
-    * @tc.name       : testGetResponseData001
-    * @tc.desc       : test getRequestMethod
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseData001
+     * @tc.number SUB_WEB_GETRESPONSEDATA_0100
+     * @tc.desc   test getRequestMethod
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetResponseData001", 141511)
       let isReturn = false;
@@ -155,14 +156,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEENCODING_0100
-    * @tc.name       : testGetResponseEncoding001
-    * @tc.desc       : test getResponseEncoding
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseEncoding001
+     * @tc.number SUB_WEB_GETRESPONSEENCODING_0100
+     * @tc.desc   test getResponseEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseEncoding001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetResponseEncoding001", 141511)
       let isReturn = false;
@@ -172,14 +173,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEMIMETYPE_0100
-    * @tc.name       : testGetResponseMimeType001
-    * @tc.desc       : test getResponseMimeType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseMimeType001
+     * @tc.number SUB_WEB_GETRESPONSEMIMETYPE_0100
+     * @tc.desc   test getResponseMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseMimeType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetResponseMimeType001", 141511)
       let isReturn = false;
@@ -189,14 +190,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETREASONMESSAGE_0100
-    * @tc.name       : testGetReasonMessage001
-    * @tc.desc       : test getReasonMessage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetReasonMessage001
+     * @tc.number SUB_WEB_GETREASONMESSAGE_0100
+     * @tc.desc   test getReasonMessage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetReasonMessage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetReasonMessage001", 141511)
       let isReturn = false;
@@ -206,14 +207,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSEHEADER_0100
-    * @tc.name       : testGetResponseHeader001
-    * @tc.desc       : test getResponseHeader
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseHeader001
+     * @tc.number SUB_WEB_GETRESPONSEHEADER_0100
+     * @tc.desc   test getResponseHeader
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseHeader001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetResponseHeader001", 141511)
       let isReturn = false;
@@ -223,14 +224,14 @@ export default function webResourceResponseGet() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETRESPONSECODE_0100
-    * @tc.name       : testGetResponseCode001
-    * @tc.desc       : test getResponseCode
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetResponseCode001
+     * @tc.number SUB_WEB_GETRESPONSECODE_0100
+     * @tc.desc   test getResponseCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetResponseCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetResponseCode001", 141511)
       let isReturn = false;
@@ -240,6 +241,76 @@ export default function webResourceResponseGet() {
       done();
     })
 
+
+    /**
+     * @tc.name   testGetResponseDataExReturnUndefined
+     * @tc.number SUB_ACE_WEB_GetResponseDataEx_Return_Undefined
+     * @tc.desc   test getResponseDataEx return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetResponseDataExReturnUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseDataExReturnUndefined start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            let responseDataEx = webResourceResponse.getResponseDataEx()
+            console.log('[WebResourceResponse] getResponseDataEx:' + responseDataEx);
+            expect(responseDataEx).assertUndefined()
+        } catch(error) {
+            console.error('testGetResponseDataExReturnUndefined error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseDataExReturnUndefined end')
+        done()
+    })
+
+    /**
+     * @tc.name   testGetResponseIsReadyReturnFalse
+     * @tc.number SUB_ACE_WEB_GetResponseIsReady_Return_False
+     * @tc.desc   test getResponseIsReady return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetResponseIsReadyReturnFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseIsReadyReturnFalse start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            webResourceResponse.setResponseIsReady(false)
+            let responseIsReady: boolean = webResourceResponse.getResponseIsReady()
+            console.log('[WebResourceResponse] getResponseIsReady:' + responseIsReady);
+            expect(responseIsReady).assertEqual(false)
+        } catch(error) {
+            console.error('testGetResponseIsReadyReturnFalse error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseIsReadyReturnFalse end')
+        done()
+    })
+
+
+    /**
+     * @tc.name   testGetResponseHeaderLength0
+     * @tc.number SUB_ACE_WEB_GetResponseHeader_Length_0001
+     * @tc.desc   test getResponseHeader length 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testGetResponseHeaderLength0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+        console.log('testGetResponseHeaderLength0 start')
+        try {
+            let webResourceResponse:WebResourceResponse = new WebResourceResponse();
+            console.log('[WebResourceResponse] getResponseHeader length:' + webResourceResponse.getResponseHeader().length);
+            expect(webResourceResponse.getResponseHeader().length).assertEqual(0)
+        } catch(error) {
+            console.error('testGetResponseHeaderLength0 error: ' + JSON.stringify(error))
+            expect(0).assertEqual(1)
+        }
+        console.log('testGetResponseHeaderLength0 end')
+        done()
+    })
 
   })
 }

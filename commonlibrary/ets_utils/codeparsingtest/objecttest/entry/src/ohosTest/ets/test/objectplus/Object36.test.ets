@@ -135,12 +135,12 @@ export default function Object36Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Object36Test001
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0100
-     * @tc.name Object36Test001
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn01_TestLiteralConstructor();
@@ -148,24 +148,24 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test002
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0200
-     * @tc.name Object36Test002
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn02_TestCustomConstructor();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object36Test003
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0300
-     * @tc.name Object36Test003
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn03_TestInstancePrototypeIsolation();
@@ -173,12 +173,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test004
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0400
-     * @tc.name Object36Test004
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn04_TestPrototypeOverride();
@@ -186,12 +186,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test005
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0500
-     * @tc.name Object36Test005
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn05_TestFixPrototypeConstructor();
@@ -199,12 +199,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test006
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0600
-     * @tc.name Object36Test006
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn06_TestNullUndefinedConstructor();
@@ -212,12 +212,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test007
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0700
-     * @tc.name Object36Test007
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn07_TestStringConstructor();
@@ -225,12 +225,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test008
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0800
-     * @tc.name Object36Test008
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn08_TestNumberConstructor();
@@ -238,12 +238,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test009
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_0900
-     * @tc.name Object36Test009
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn09_TestBooleanConstructor();
@@ -251,12 +251,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test010
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1000
-     * @tc.name Object36Test010
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn10_TestDateConstructor();
@@ -264,12 +264,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test011
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1100
-     * @tc.name Object36Test011
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn11_TestRegExpConstructor();
@@ -277,12 +277,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test013
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1300
-     * @tc.name Object36Test013
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn13_TestArrowFunctionConstructor();
@@ -290,12 +290,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test014
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1400
-     * @tc.name Object36Test014
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn14_TestClassInstanceConstructor();
@@ -303,12 +303,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test015
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1500
-     * @tc.name Object36Test015
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn15_TestClassInheritanceConstructor();
@@ -316,12 +316,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test016
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1600
-     * @tc.name Object36Test016
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn16_TestObjectCreateNullConstructor();
@@ -329,12 +329,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test017
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1700
-     * @tc.name Object36Test017
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn17_TestObjectCreatePrototypeConstructor();
@@ -342,12 +342,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test018
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1800
-     * @tc.name Object36Test018
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn18_TestModifyProtoConstructorAffectInstance();
@@ -355,12 +355,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test019
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_1900
-     * @tc.name Object36Test019
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn19_TestSealedObjectConstructor();
@@ -368,24 +368,24 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test020
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2000
-     * @tc.name Object36Test020
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn20_TestFrozenObjectConstructor();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object36Test021
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2100
-     * @tc.name Object36Test021
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn21_TestArrayConstructorCreate();
@@ -393,12 +393,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test022
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2200
-     * @tc.name Object36Test022
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn22_TestTypedArrayConstructor();
@@ -406,12 +406,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test023
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2300
-     * @tc.name Object36Test023
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn23_TestMapConstructor();
@@ -419,12 +419,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test024
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2400
-     * @tc.name Object36Test024
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn24_TestSetConstructor();
@@ -432,12 +432,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test025
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2500
-     * @tc.name Object36Test025
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn25_TestWeakMapConstructor();
@@ -445,12 +445,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test026
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2600
-     * @tc.name Object36Test026
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn26_TestWeakSetConstructor();
@@ -458,12 +458,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test027
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2700
-     * @tc.name Object36Test027
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn27_TestPromiseConstructor();
@@ -471,12 +471,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test028
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2800
-     * @tc.name Object36Test028
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn28_TestGeneratorConstructor();
@@ -484,12 +484,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test029
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_2900
-     * @tc.name Object36Test029
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn29_TestProxyConstructor();
@@ -497,12 +497,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test030
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3000
-     * @tc.name Object36Test030
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn30_TestSymbolConstructor();
@@ -510,12 +510,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test031
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3100
-     * @tc.name Object36Test031
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn31_TestBigIntConstructor();
@@ -523,12 +523,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test032
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3200
-     * @tc.name Object36Test032
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn32_TestModifyConstructorToNonFunction();
@@ -536,12 +536,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test033
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3300
-     * @tc.name Object36Test033
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn33_TestBrokenPrototypeChainConstructor();
@@ -549,12 +549,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test034
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3400
-     * @tc.name Object36Test034
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn34_TestClassStaticMethodConstructor();
@@ -562,12 +562,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test035
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3500
-     * @tc.name Object36Test035
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn35_TestInheritArrayClassConstructor();
@@ -575,12 +575,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test036
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3600
-     * @tc.name Object36Test036
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn36_TestObjectAssignConstructor();
@@ -588,12 +588,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test037
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3700
-     * @tc.name Object36Test037
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn37_TestArraySpreadConstructor();
@@ -601,12 +601,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test038
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3800
-     * @tc.name Object36Test038
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn38_TestObjectSpreadConstructor();
@@ -614,12 +614,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test039
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_3900
-     * @tc.name Object36Test039
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn39_TestJsonParseConstructor();
@@ -627,24 +627,24 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test040
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4000
-     * @tc.name Object36Test040
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn40_TestJsonStringifyConstructor();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object36Test041
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4100
-     * @tc.name Object36Test041
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn41_TestBoundFunctionConstructor();
@@ -652,12 +652,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test042
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4200
-     * @tc.name Object36Test042
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn42_TestClassGetterSetterConstructor();
@@ -665,12 +665,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test043
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4300
-     * @tc.name Object36Test043
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn43_TestEmptyNonEmptyObjConstructor();
@@ -678,12 +678,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test044
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4400
-     * @tc.name Object36Test044
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       try {
@@ -694,12 +694,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test045
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4500
-     * @tc.name Object36Test045
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn45_TestReflectConstructConstructor();
@@ -707,12 +707,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test048
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4800
-     * @tc.name Object36Test048
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn48_TestArrayBufferConstructor();
@@ -720,12 +720,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test049
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_4900
-     * @tc.name Object36Test049
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn49_TestDataViewConstructor();
@@ -733,12 +733,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test050
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5000
-     * @tc.name Object36Test050
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn50_TestInt32ArrayConstructor();
@@ -746,12 +746,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test051
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5100
-     * @tc.name Object36Test051
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn51_TestClassPrivatePropConstructor();
@@ -759,12 +759,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test052
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5200
-     * @tc.name Object36Test052
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn52_TestObjectCreateClassProtoConstructor();
@@ -772,12 +772,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test053
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5300
-     * @tc.name Object36Test053
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn53_TestModifyClassProtoConstructor();
@@ -785,12 +785,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test054
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5400
-     * @tc.name Object36Test054
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn54_TestArrowFuncAsConstructor();
@@ -798,12 +798,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test055
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5500
-     * @tc.name Object36Test055
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn55_TestPromiseResolveConstructor();
@@ -811,12 +811,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test056
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5600
-     * @tc.name Object36Test056
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn56_TestPromiseRejectConstructor();
@@ -824,12 +824,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test057
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_5700
-     * @tc.name Object36Test057
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn57_TestPromiseAllConstructor();
@@ -837,12 +837,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test063
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6300
-     * @tc.name Object36Test063
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn63_TestErrorConstructor();
@@ -850,12 +850,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test064
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6400
-     * @tc.name Object36Test064
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn64_TestTypeErrorConstructor();
@@ -863,24 +863,24 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test065
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6500
-     * @tc.name Object36Test065
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn65_TestRangeErrorConstructor();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object36Test066
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6600
-     * @tc.name Object36Test066
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn66_TestReferenceErrorConstructor();
@@ -888,12 +888,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test067
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6700
-     * @tc.name Object36Test067
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn67_TestSyntaxErrorConstructor();
@@ -901,12 +901,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test068
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6800
-     * @tc.name Object36Test068
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn68_TestEvalErrorConstructor();
@@ -914,12 +914,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test069
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_6900
-     * @tc.name Object36Test069
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn69_TestURIErrorConstructor();
@@ -927,12 +927,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test070
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7000
-     * @tc.name Object36Test070
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn70_TestIntlDateTimeFormatConstructor();
@@ -940,12 +940,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test071
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7100
-     * @tc.name Object36Test071
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn71_TestIntlNumberFormatConstructor();
@@ -953,12 +953,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test072
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7200
-     * @tc.name Object36Test072
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn72_TestIntlCollatorConstructor();
@@ -966,12 +966,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test073
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7300
-     * @tc.name Object36Test073
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn73_TestIntlPluralRulesConstructor();
@@ -979,12 +979,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test074
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7400
-     * @tc.name Object36Test074
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn74_TestIntlRelativeTimeFormatConstructor();
@@ -992,12 +992,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test076
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7600
-     * @tc.name Object36Test076
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn76_TestAtomicsConstructor();
@@ -1005,12 +1005,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test077
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7700
-     * @tc.name Object36Test077
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn77_TestMathConstructor();
@@ -1018,12 +1018,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test078
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7800
-     * @tc.name Object36Test078
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn78_TestReflectConstructor();
@@ -1031,12 +1031,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test079
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_7900
-     * @tc.name Object36Test079
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn79_TestIntlConstructor();
@@ -1044,12 +1044,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test080
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8000
-     * @tc.name Object36Test080
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn80_TestObjectKeysConstructor();
@@ -1057,12 +1057,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test081
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8100
-     * @tc.name Object36Test081
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn81_TestObjectValuesConstructor();
@@ -1070,12 +1070,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test082
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8200
-     * @tc.name Object36Test082
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn82_TestObjectEntriesConstructor();
@@ -1083,12 +1083,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test083
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8300
-     * @tc.name Object36Test083
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn83_TestArrayFromConstructor();
@@ -1096,12 +1096,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test084
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8400
-     * @tc.name Object36Test084
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn84_TestArrayOfConstructor();
@@ -1109,24 +1109,24 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test085
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8500
-     * @tc.name Object36Test085
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn85_TestStringFromCharCodeConstructor();
       expect(res).assertEqual(true);
     });
     /**
+     * @tc.name   Object36Test086
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8600
-     * @tc.name Object36Test086
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn86_TestStringFromCodePointConstructor();
@@ -1134,12 +1134,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test087
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8700
-     * @tc.name Object36Test087
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn87_TestNumberIsFiniteConstructor();
@@ -1147,12 +1147,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test088
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8800
-     * @tc.name Object36Test088
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn88_TestNumberIsIntegerConstructor();
@@ -1160,12 +1160,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test089
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_8900
-     * @tc.name Object36Test089
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn89_TestBooleanObjLiteralConstructor();
@@ -1173,12 +1173,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test090
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9000
-     * @tc.name Object36Test090
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn90_TestMapEntriesIteratorConstructor();
@@ -1186,12 +1186,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test091
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9100
-     * @tc.name Object36Test091
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn91_TestSetValuesIteratorConstructor();
@@ -1199,12 +1199,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test092
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9200
-     * @tc.name Object36Test092
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn92_TestArrayKeysIteratorConstructor();
@@ -1212,12 +1212,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test097
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9700
-     * @tc.name Object36Test097
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn97_TestSetProtoConstructor();
@@ -1225,12 +1225,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test098
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9800
-     * @tc.name Object36Test098
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn98_TestClassStaticPropConstructor();
@@ -1238,12 +1238,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test099
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_9900
-     * @tc.name Object36Test099
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn99_TestEmptyClassInstanceConstructor();
@@ -1251,12 +1251,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test100
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10000
-     * @tc.name Object36Test100
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn100_TestInheritErrorConstructor();
@@ -1264,12 +1264,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test101
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10100
-     * @tc.name Object36Test101
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn101_TestPromiseThenConstructor();
@@ -1277,12 +1277,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test102
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10200
-     * @tc.name Object36Test102
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn102_TestPromiseCatchConstructor();
@@ -1290,12 +1290,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test103
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10300
-     * @tc.name Object36Test103
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn103_TestPromiseFinallyConstructor();
@@ -1303,12 +1303,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test104
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10400
-     * @tc.name Object36Test104
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn104_TestPromiseAllSettledConstructor();
@@ -1316,12 +1316,12 @@ export default function Object36Test() {
     });
 
     /**
+     * @tc.name   Object36Test105
      * @tc.number SUB_BUILTINS_OBJECT36_TEST_10500
-     * @tc.name Object36Test105
-     * @tc.desc test object constructor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test object constructor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Object36Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let res = Fn105_TestPromiseRaceConstructor();

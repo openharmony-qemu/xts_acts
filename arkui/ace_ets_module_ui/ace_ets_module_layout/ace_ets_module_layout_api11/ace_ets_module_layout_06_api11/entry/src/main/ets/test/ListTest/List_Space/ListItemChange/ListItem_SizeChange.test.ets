@@ -65,9 +65,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight120Width300
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0100
-     * @tc.name testListItemSizeChangeHeight120Width300
-     * @tc.desc The ListItem subcomponent changes the width 300 and height 120 attributes
+     * @tc.desc   The ListItem subcomponent changes the width 300 and height 120 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight120Width300',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight120Width300 START');
@@ -122,9 +125,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight160Width300
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0200
-     * @tc.name testListItemSizeChangeHeight160Width300
-     * @tc.desc The ListItem subcomponent changes the width 300 and height 160 attributes
+     * @tc.desc   The ListItem subcomponent changes the width 300 and height 160 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight160Width300',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight160Width300 START');
@@ -171,7 +177,7 @@ export default function listItem_SizeChange() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight160Width300 END');
@@ -179,9 +185,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight100Width100
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0300
-     * @tc.name testListItemSizeChangeHeight100Width100
-     * @tc.desc The ListItem subcomponent changes the width 100 and height 100 attributes
+     * @tc.desc   The ListItem subcomponent changes the width 100 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight100Width100',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight100Width100 START');
@@ -229,6 +238,7 @@ export default function listItem_SizeChange() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
+      await CommonFunc.sleep(2000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight100Width100 END');
@@ -236,9 +246,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight100Width380
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0400
-     * @tc.name testListItemSizeChangeHeight100Width380
-     * @tc.desc The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.desc   The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight100Width380',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight100Width380 START');
@@ -285,6 +298,7 @@ export default function listItem_SizeChange() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
+      await CommonFunc.sleep(2000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4.top - locationText4Again.top)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight100Width380 END');
@@ -292,9 +306,12 @@ export default function listItem_SizeChange() {
     });
 
     /**
+     * @tc.name   testListItemSizeChangeHeight160Width380
      * @tc.number SUB_ACE_LIST_LISTITEM_SIZECHANGE_TEST_0500
-     * @tc.name testListItemSizeChangeHeight160Width380
-     * @tc.desc The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.desc   The ListItem subcomponent changes the width 380 and height 100 attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemSizeChangeHeight160Width380',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemSizeChangeHeight160Width380 START');
@@ -341,7 +358,7 @@ export default function listItem_SizeChange() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round( globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop ));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest4');
       expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       console.info('new testListItemSizeChangeHeight160Width380 END');

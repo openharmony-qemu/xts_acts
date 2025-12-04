@@ -44,6 +44,14 @@ export default function refreshJsunit() {
       console.info("refresh after each called");
     });
 
+    /**
+     * @tc.name   testRefresh01
+     * @tc.number testRefresh01
+     * @tc.desc   testRefresh01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh01', Level.LEVEL1, async (done: Function) => {
       console.info('[testRefresh01] START');
       await Utils.sleep(1000);
@@ -53,6 +61,14 @@ export default function refreshJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRefresh02
+     * @tc.number testRefresh02
+     * @tc.desc   testRefresh02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh02', Level.LEVEL1, async (done: Function) => {
       console.info('[testRefresh02] START');
       console.info("[testRefresh02] OverDrag: " + JSON.stringify(RefreshStatus.OverDrag));
@@ -61,6 +77,14 @@ export default function refreshJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testRefresh03
+     * @tc.number testRefresh03
+     * @tc.desc   testRefresh03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh03', Level.LEVEL1, async (done: Function) => {
       console.info('[testRefresh03] START');
       console.info("[testRefresh03] Inactive: " + JSON.stringify(RefreshStatus.Inactive));
@@ -70,12 +94,12 @@ export default function refreshJsunit() {
     });
 
     /**
-     * @tc.number    testRefresh04
-     * @tc.name      testRefresh04
-     * @tc.desc      RefreshStatus.Drag.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testRefresh04
+     * @tc.number testRefresh04
+     * @tc.desc   RefreshStatus.Drag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRefresh04', Level.LEVEL0, async (done: Function) => {
       console.info('[testRefresh04] START');
@@ -86,12 +110,12 @@ export default function refreshJsunit() {
     });
 
     /**
-     * @tc.number    testRefresh05
-     * @tc.name      testRefresh05
-     * @tc.desc      RefreshStatus.Refresh.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testRefresh05
+     * @tc.number testRefresh05
+     * @tc.desc   RefreshStatus.Refresh.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRefresh05', Level.LEVEL0, async (done: Function) => {
       console.info('[testRefresh05] START');
@@ -102,12 +126,12 @@ export default function refreshJsunit() {
     });
 
     /**
-     * @tc.number    testRefresh06
-     * @tc.name      testRefresh06
-     * @tc.desc      RefreshStatus.Done.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testRefresh06
+     * @tc.number testRefresh06
+     * @tc.desc   RefreshStatus.Done.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRefresh06', Level.LEVEL0, async (done: Function) => {
       console.info('[testRefresh06] START');

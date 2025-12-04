@@ -42,15 +42,15 @@ export default function SearchEvent2() {
       console.info("SearchEvent2 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0170
-     * @tc.name       : SearchEvent2_001
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_001
+     * @tc.number SearchEvent2_001
+     * @tc.desc   SearchEvent2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_001] START');
 
@@ -80,15 +80,15 @@ export default function SearchEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0180
-     * @tc.name       : SearchEvent2_002
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_002
+     * @tc.number SearchEvent2_002
+     * @tc.desc   SearchEvent2_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_002] START');
 
@@ -100,8 +100,6 @@ export default function SearchEvent2() {
 	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       await text.clearText();
-      await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text')
       let strJson2 = getInspectorByKey('SearchEvent2Text2');
@@ -115,18 +113,17 @@ export default function SearchEvent2() {
       expect(obj2.$attrs.content).assertEqual('01');
       console.info('[SearchEvent2_002] END');
       done();
-
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0190
-     * @tc.name       : SearchEvent2_003
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_003
+     * @tc.number SearchEvent2_003
+     * @tc.desc   SearchEvent2_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_003] START');
 
@@ -156,15 +153,15 @@ export default function SearchEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0200
-     * @tc.name       : SearchEvent2_004
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_004
+     * @tc.number SearchEvent2_004
+     * @tc.desc   SearchEvent2_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_004] START');
 
@@ -194,15 +191,15 @@ export default function SearchEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0210
-     * @tc.name       : SearchEvent2_005
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_005
+     * @tc.number SearchEvent2_005
+     * @tc.desc   SearchEvent2_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_005] START');
 
@@ -218,8 +215,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -232,15 +227,15 @@ export default function SearchEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0230
-     * @tc.name       : SearchEvent2_006
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_006
+     * @tc.number SearchEvent2_006
+     * @tc.desc   SearchEvent2_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_006',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_006] START');
 
@@ -256,8 +251,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -270,15 +263,15 @@ export default function SearchEvent2() {
 
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_TEXT_INPUT_DELETE_CALLBACK_0250
-     * @tc.name       : SearchEvent2_007
-     * @tc.desc       : onWillInsert Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SearchEvent2_007
+     * @tc.number SearchEvent2_007
+     * @tc.desc   SearchEvent2_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SearchEvent2_007',  Level.LEVEL0, async (done: Function) => {
       console.info('[SearchEvent2_007] START');
 
@@ -291,8 +284,6 @@ export default function SearchEvent2() {
       await CommonFunc.sleep(1000);
       await text.clearText();
       await CommonFunc.sleep(1000);
-	  await driver.triggerKey(2070);
-      await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('SearchEvent2Text5')
       await CommonFunc.sleep(200);
       let obj: ESObject = JSON.parse(strJson);
@@ -302,13 +293,6 @@ export default function SearchEvent2() {
       expect(obj.$attrs.content).assertEqual('onWillInsert');
       console.info('[SearchEvent2_007] END');
       done();
-
     });
-
-
-
-
-
-
   })
 }

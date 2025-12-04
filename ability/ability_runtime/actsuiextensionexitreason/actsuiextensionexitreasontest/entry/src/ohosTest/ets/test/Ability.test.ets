@@ -38,14 +38,13 @@ export default function abilityTest() {
       await sleep(500);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0100
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's share type is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0100
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0100
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's share type is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0100', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -88,14 +87,13 @@ export default function abilityTest() {
       };
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0200
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's action type is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0200
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0200
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's action type is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0200', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -139,15 +137,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0300
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/common type
-     * is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0300
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0300
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/common type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0300', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -192,15 +188,14 @@ export default function abilityTest() {
 
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0400
-    * @tc.name: UIExtension launches LaunchParam for the first time
-    * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/atomicServicePanel
-    * type is correct(compared to the default value)
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0400
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0400
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/atomicServicePanel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0400', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -244,15 +239,14 @@ export default function abilityTest() {
 
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0500
-    * @tc.name: UIExtension launches LaunchParam for the first time
-    * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/power
-    * type is correct(compared to the default value)
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0500
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0500
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/power
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0500', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -296,15 +290,14 @@ export default function abilityTest() {
 
     })
 
-    /*
-    * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0600
-    * @tc.name: UIExtension launches LaunchParam for the first time
-    * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/share
-    * type is correct(compared to the default value)
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0600
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0600
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/share
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0600', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -348,14 +341,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0700
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's hms/account type is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0700
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0700
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's hms/account type is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0700', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -400,14 +392,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0800
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's ads type is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0800
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0800
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's ads type is correct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0800', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -452,16 +443,15 @@ export default function abilityTest() {
     })
 
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0900
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's voip type is correct
-     * (compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
-     */
 
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0900
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0900
+     * @tc.desc   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0900', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
@@ -504,14 +494,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01000
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeCall
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01000
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01000
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeCall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01000', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -557,14 +546,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01100
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeContact
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01100
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01100
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeContact
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01100', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -610,14 +598,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01200
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeMessage
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01200
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01200
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/meetimeMessage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01200', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -663,14 +650,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01300
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/print
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01300
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01300
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/print
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01300', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -716,14 +702,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01400
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/meetimeContact
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01400
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01400
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/meetimeContact
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01400', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -769,14 +754,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01500
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/meetimeCallLog
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01500
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01500
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/meetimeCallLog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01500', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -822,14 +806,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0160
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/photoPicker
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01600
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_0160
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/photoPicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01600', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -875,14 +858,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01700
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sys/commonUI
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01700
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01700
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sys/commonUI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01700', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -928,14 +910,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01800
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/navigation
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01800
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01800
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/navigation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01800', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -981,14 +962,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01900
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/appSelector
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01900
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01900
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/appSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_01900', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -1034,14 +1014,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02000
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/camera
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02000
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02000
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysPicker/camera
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02000', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;
@@ -1087,14 +1066,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02100
-     * @tc.name: UIExtension launches LaunchParam for the first time
-     * @tc.desc: Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/userAuth
-     * type is correct(compared to the default value)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02100
+     * @tc.number SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02100
+     * @tc.desc   Verify if the LaunchParam carried during the first startup of UIExtension's sysDialog/userAuth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXTensionExitReason_02100', Level.LEVEL0, (done: Function) => {
       let subscriber: commonEvent.CommonEventSubscriber;

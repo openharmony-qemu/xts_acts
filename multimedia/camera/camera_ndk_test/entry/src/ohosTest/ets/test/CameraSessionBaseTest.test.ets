@@ -234,12 +234,12 @@ export default function cameraSessionTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001
-     * @tc.name      : Check capture session begin config
-     * @tc.desc      : Check capture session begin config
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001
+     * @tc.desc   Check capture session begin config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001--------------");
@@ -251,12 +251,12 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_BEGIN_CONFIG_001 PASSED");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002
-     * @tc.name      : Check capture session can add input with promise or not
-     * @tc.desc      : Check capture session can add input with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002
+     * @tc.desc   Check capture session can add input with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002--------------");
@@ -273,12 +273,12 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_INPUT_PROMISE_002 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003
-     * @tc.name      : Check capture session can add output with promise or not for preview
-     * @tc.desc      : Check capture session can add output with promise or not for preview
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003
+     * @tc.desc   Check capture session can add output with promise or not for preview
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003--------------");
@@ -295,12 +295,12 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_ADD_REMOVE_OUTPUT_PROMISE_003 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004
-     * @tc.name      : Check capture session start/stop/release output with promise or not
-     * @tc.desc      : Check capture session start/stop/release output with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004
+     * @tc.desc   Check capture session start/stop/release output with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004', Level.LEVEL0, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004--------------");
@@ -320,12 +320,12 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_START_STOP_PROMISE_004 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005
-     * @tc.name      : Check capture session commit config
-     * @tc.desc      : Check capture session commit config
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005
+     * @tc.desc   Check capture session commit config
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005--------------");
@@ -350,12 +350,12 @@ export default function cameraSessionTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_COMMIT_CONFIG_005 PASSED");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_RELEASE_PROMISE_006
-     * @tc.name      : Check capture session release with promise or not
-     * @tc.desc      : Check capture session release with promise or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_RELEASE_PROMISE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_RELEASE_PROMISE_006
+     * @tc.desc   Check capture session release with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_RELEASE_PROMISE_006', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_RELEASE_PROMISE_006--------------");

@@ -45,12 +45,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_061
-      * @tc.name  : SwiperMinSize_001
-      * @tc.desc  : Don't set minSize
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_001
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_061
+     * @tc.desc   Don't set minSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_001', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_001] START');
@@ -66,12 +68,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_063
-      * @tc.name  : SwiperMinSize_002
-      * @tc.desc  : set minSize to 20
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_002
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_063
+     * @tc.desc   set minSize to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_002', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_002] START');
@@ -101,12 +105,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_068
-      * @tc.name  : SwiperMinSize_003
-      * @tc.desc  : set minSize to 20 and change component dimensions
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_003
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_068
+     * @tc.desc   set minSize to 20 and change component dimensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_003', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_003] START');
@@ -136,12 +142,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_067
-      * @tc.name  : SwiperMinSize_004
-      * @tc.desc  : set minSize to 20 and change component dimensions
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_004
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_067
+     * @tc.desc   set minSize to 20 and change component dimensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_004', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_004] START');
@@ -171,12 +179,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_066
-      * @tc.name  : SwiperMinSize_005
-      * @tc.desc  : set minSize to 20 and paddingTop marginTop to 10
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_005
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_066
+     * @tc.desc   set minSize to 20 and paddingTop marginTop to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_005', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_005] START');
@@ -195,12 +205,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_073
-      * @tc.name  : SwiperMinSize_006
-      * @tc.desc  : set minSize to 20 and itemSpace to 10
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_006
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_073
+     * @tc.desc   set minSize to 20 and itemSpace to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_006', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_006] START');
@@ -220,12 +232,14 @@ export default function SwiperMinSize() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_070
-      * @tc.name  : SwiperMinSize_007
-      * @tc.desc  : set minSize to 20 and itemSpace to 10
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SwiperMinSize_007
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_070
+     * @tc.desc   set minSize to 20 and itemSpace to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SwiperMinSize_007', Level.LEVEL1, async (done: Function) => {
 
       console.info('[SwiperMinSize_007] START');

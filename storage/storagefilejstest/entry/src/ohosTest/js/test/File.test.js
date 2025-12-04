@@ -39,9 +39,12 @@ export default function fileTest() {
 describe('fileTest', function () {
 
   /**
+   * @tc.name   File_Delete_001
    * @tc.number SUB_STORAGE_File_Delete_0100
-   * @tc.name File_Delete_001
-   * @tc.desc Function of API, delete file.The test file is exist.
+   * @tc.desc   Function of API, delete file.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_001', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_Delete_001');
@@ -61,9 +64,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_002
    * @tc.number SUB_STORAGE_File_Delete_0200
-   * @tc.name File_Delete_002
-   * @tc.desc Function of API, delete dir.The dir is empty.
+   * @tc.desc   Function of API, delete dir.The dir is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_002', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -90,9 +96,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_003
    * @tc.number SUB_STORAGE_File_Delete_0300
-   * @tc.name File_Delete_003
-   * @tc.desc Function of API, error code: 202 The test file or dir are exist.
+   * @tc.desc   Function of API, error code: 202 The test file or dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_003', Level.LEVEL0, async function (done) {
     file.delete({
@@ -111,9 +120,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_004
    * @tc.number SUB_STORAGE_File_Delete_0400
-   * @tc.name File_Delete_004
-   * @tc.desc Function of API, error code: 300 The dir is exist with files.
+   * @tc.desc   Function of API, error code: 300 The dir is exist with files.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_004', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_Delete_004');
@@ -135,9 +147,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_005
    * @tc.number SUB_STORAGE_File_Delete_0500
-   * @tc.name File_Delete_005
-   * @tc.desc Function of API, error code: 301 The file and dir are not exist.
+   * @tc.desc   Function of API, error code: 301 The file and dir are not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_005', Level.LEVEL0, async function (done) {
     file.delete({
@@ -155,9 +170,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_006
    * @tc.number SUB_STORAGE_File_Delete_0600
-   * @tc.name File_Delete_006
-   * @tc.desc uri address length more than 4096 The test file is exist.
+   * @tc.desc   uri address length more than 4096 The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_006', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -184,9 +202,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_007
    * @tc.number SUB_STORAGE_File_Delete_0700
-   * @tc.name File_Delete_007
-   * @tc.desc Function of API, delete file from cache.The test file on cache.
+   * @tc.desc   Function of API, delete file from cache.The test file on cache.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_007', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -214,9 +235,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Delete_008
    * @tc.number SUB_STORAGE_File_Delete_0800
-   * @tc.name File_Delete_008.
-   * @tc.desc Function of API, delete file from Virtual path.The test file is exist.
+   * @tc.desc   Function of API, delete file from Virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Delete_008', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -247,9 +271,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_001
    * @tc.number SUB_STORAGE_File_writeText_0100
-   * @tc.name File_writeText_001
-   * @tc.desc Function of API, write to file(app path).The test file is not exist.
+   * @tc.desc   Function of API, write to file(app path).The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_001', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -287,9 +314,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_002
    * @tc.number SUB_STORAGE_File_writeText_0200
-   * @tc.name File_writeText_002
-   * @tc.desc Function of API, write to file.The test file is exist, it can be edited.
+   * @tc.desc   Function of API, write to file.The test file is exist, it can be edited.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_002', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -339,9 +369,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_003
    * @tc.number SUB_STORAGE_File_writeText_0300
-   * @tc.name File_writeText_003
-   * @tc.desc Different types of strings for text.
+   * @tc.desc   Different types of strings for text.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_003', Level.LEVEL0, async function (done) {
     let txt = 'hello 你好 ????? こんにちは ?????.'
@@ -380,9 +413,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_004
    * @tc.number SUB_STORAGE_File_writeText_0400
-   * @tc.name File_writeText_004
-   * @tc.desc Defferent encoding(UTF-8).
+   * @tc.desc   Defferent encoding(UTF-8).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_004', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -422,9 +458,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_005
    * @tc.number SUB_STORAGE_File_writeText_0500
-   * @tc.name File_writeText_005
-   * @tc.desc Function of API, append mode.The test file is exist and it can be edited.
+   * @tc.desc   Function of API, append mode.The test file is exist and it can be edited.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_005', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -474,9 +513,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_006
    * @tc.number SUB_STORAGE_File_writeText_0600
-   * @tc.name File_writeText_006
-   * @tc.desc Function of API, non-append mode.The test file is exist and it can be edited.
+   * @tc.desc   Function of API, non-append mode.The test file is exist and it can be edited.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_006', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -514,9 +556,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_007
    * @tc.number SUB_STORAGE_File_writeText_0700
-   * @tc.name File_writeText_007
-   * @tc.desc Function of API, error code: 202 The test file and dir are exist.
+   * @tc.desc   Function of API, error code: 202 The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_007', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -535,9 +580,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_008
    * @tc.number SUB_STORAGE_File_writeText_0800
-   * @tc.name File_writeText_008
-   * @tc.desc Function of API, error code: 300 The uri path is dir path.
+   * @tc.desc   Function of API, error code: 300 The uri path is dir path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_008', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('File_writeText_008d');
@@ -558,9 +606,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_009
    * @tc.number SUB_STORAGE_File_writeText_0900
-   * @tc.name File_writeText_009
-   * @tc.desc Function of API, error code: 300.The file path is not exist.
+   * @tc.desc   Function of API, error code: 300.The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_009', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -579,9 +630,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_010
    * @tc.number SUB_STORAGE_File_writeText_1000
-   * @tc.name File_writeText_010
-   * @tc.desc Function of API, write to file(cache path).The test file is not exist.
+   * @tc.desc   Function of API, write to file(cache path).The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_010', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -609,9 +663,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_011
    * @tc.number SUB_STORAGE_File_writeText_1100
-   * @tc.name File_writeText_011
-   * @tc.desc Function of API, Virtual path.The test file is exist.
+   * @tc.desc   Function of API, Virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_011', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -649,9 +706,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeText_013
    * @tc.number SUB_STORAGE_File_writeText_1300
-   * @tc.name File_writeText_013
-   * @tc.desc Function of API, write file out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.desc   Function of API, write file out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeText_013', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -673,9 +733,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_001
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0100
-   * @tc.name File_writeArrayBuffer_001
-   * @tc.desc Write the buffer content to file.(cache path, append mode) The file path is not exist.
+   * @tc.desc   Write the buffer content to file.(cache path, append mode) The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_001', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -715,9 +778,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_002
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0200
-   * @tc.name File_writeArrayBuffer_002
-   * @tc.desc Write the buffer content to file.(cache path, non-append mode) The file path is not exist.
+   * @tc.desc   Write the buffer content to file.(cache path, non-append mode) The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_002', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -756,9 +822,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_003
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0300
-   * @tc.name File_writeArrayBuffer_003
-   * @tc.desc Write the buffer content to file.(cache path, append mode) The file path is not exist.
+   * @tc.desc   Write the buffer content to file.(cache path, append mode) The file path is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_003', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33, 48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -799,9 +868,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_004
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0400
-   * @tc.name File_writeArrayBuffer_004
-   * @tc.desc Write the buffer content to file.(cache path, non-append mode) The file path is exist.
+   * @tc.desc   Write the buffer content to file.(cache path, non-append mode) The file path is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_004', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -853,9 +925,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_005
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0500
-   * @tc.name File_writeArrayBuffer_005
-   * @tc.desc Function of API, set value for position.The file path is exist.
+   * @tc.desc   Function of API, set value for position.The file path is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_005', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33, 44, 55, 66, 77]);
@@ -906,9 +981,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_006
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0600
-   * @tc.name File_writeArrayBuffer_006
-   * @tc.desc Function of API, not set value for position & append.The file path is exist.
+   * @tc.desc   Function of API, not set value for position & append.The file path is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_006', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -948,9 +1026,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_007
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0700
-   * @tc.name File_writeArrayBuffer_007
-   * @tc.desc Function of API, error code: 202
+   * @tc.desc   Function of API, error code: 202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_007', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -970,9 +1051,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_008
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0800
-   * @tc.name File_writeArrayBuffer_008
-   * @tc.desc Function of API, error code: 300
+   * @tc.desc   Function of API, error code: 300
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_008', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1002,9 +1086,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_009
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_0900
-   * @tc.name File_writeArrayBuffer_009
-   * @tc.desc Function of API, error code: 300
+   * @tc.desc   Function of API, error code: 300
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_009', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8]);
@@ -1043,9 +1130,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_010
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_1000
-   * @tc.name File_writeArrayBuffer_010
-   * @tc.desc Function of API, path = cache, virtual path The test file is exist.
+   * @tc.desc   Function of API, path = cache, virtual path The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_010', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1075,9 +1165,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_writeArrayBuffer_012
    * @tc.number SUB_STORAGE_File_writeArrayBuffer_1200
-   * @tc.name File_writeArrayBuffer_012
-   * @tc.desc Function of API, out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_writeArrayBuffer_012', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1101,9 +1194,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_001
    * @tc.number SUB_STORAGE_File_readText_0100
-   * @tc.name File_readText_001
-   * @tc.desc Function of API, readText, app path.
+   * @tc.desc   Function of API, readText, app path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_001', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1131,9 +1227,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_002
    * @tc.number SUB_STORAGE_File_readText_0200
-   * @tc.name File_readText_002
-   * @tc.desc Function of API, encoding = UTF-8.The test file is exist.
+   * @tc.desc   Function of API, encoding = UTF-8.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_002', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1163,9 +1262,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_003
    * @tc.number SUB_STORAGE_File_readText_0300
-   * @tc.name File_readText_003
-   * @tc.desc Function of API, error code: 202.The test file and dir is exist.
+   * @tc.desc   Function of API, error code: 202.The test file and dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_003', Level.LEVEL0, async function (done) {
     file.readText({
@@ -1183,9 +1285,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_004
    * @tc.number SUB_STORAGE_File_readText_0400
-   * @tc.name File_readText_004
-   * @tc.desc Function of API, error code: 300.The test dir is exist.
+   * @tc.desc   Function of API, error code: 300.The test dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_004', Level.LEVEL0, async function (done) {
     file.readText({
@@ -1203,9 +1308,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_005
    * @tc.number SUB_STORAGE_File_readText_0500
-   * @tc.name File_readText_005
-   * @tc.desc Function of API, error code: 301.The test file and dir is exist.
+   * @tc.desc   Function of API, error code: 301.The test file and dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_005', Level.LEVEL0, async function (done) {
     file.readText({
@@ -1223,9 +1331,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_006
    * @tc.number SUB_STORAGE_File_readText_0600
-   * @tc.name File_readText_006
-   * @tc.desc Function of API, readText, cache path.
+   * @tc.desc   Function of API, readText, cache path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_006', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1263,9 +1374,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_007
    * @tc.number SUB_STORAGE_File_readText_0700
-   * @tc.name File_readText_007
-   * @tc.desc Function of API, virtual path.The test file is exist.
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_readText_007', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1303,9 +1417,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_readText_008
    * @tc.number SUB_STORAGE_File_readText_0800
-   * @tc.name File_readText_008
-   * @tc.desc Function of API, virtual path.Test whether the files returned are equal.
+   * @tc.desc   Function of API, virtual path.Test whether the files returned are equal.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("File_readText_008", Level.LEVEL0, async function (done) {
     let fpath = await nextFileName("File_readText_008");
@@ -1336,9 +1453,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_001
    * @tc.number SUB_STORAGE_File_read_array_buffer_0100
-   * @tc.name File_read_array_buffer_001
-   * @tc.desc Function of API, readArrayBuffer, cache path.position = 0, length = 10.
+   * @tc.desc   Function of API, readArrayBuffer, cache path.position = 0, length = 10.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_001', Level.LEVEL0, async function (done) {
     var buffer = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1379,9 +1499,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_002
    * @tc.number SUB_STORAGE_File_read_array_buffer_0200
-   * @tc.name File_read_array_buffer_002
-   * @tc.desc Function of API, readArrayBuffer,
+   * @tc.desc   Function of API, readArrayBuffer,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_002', Level.LEVEL0, async function (done) {
     var buffer = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1410,9 +1533,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_003
    * @tc.number SUB_STORAGE_File_read_array_buffer_0300
-   * @tc.name File_read_array_buffer_003
-   * @tc.desc Function of API, readArrayBuffer, wrong uri.
+   * @tc.desc   Function of API, readArrayBuffer, wrong uri.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_003', Level.LEVEL0, async function (done) {
     file.readArrayBuffer({
@@ -1430,9 +1556,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_004
    * @tc.number SUB_STORAGE_File_read_array_buffer_0400
-   * @tc.name File_read_array_buffer_004
-   * @tc.desc Function of API, readArrayBuffer, wrong position.
+   * @tc.desc   Function of API, readArrayBuffer, wrong position.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_004', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_read_array_buffer_004');
@@ -1453,9 +1582,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_005
    * @tc.number SUB_STORAGE_File_read_array_buffer_0500
-   * @tc.name File_read_array_buffer_005
-   * @tc.desc Function of API, readArrayBuffer, wrong length.
+   * @tc.desc   Function of API, readArrayBuffer, wrong length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_005', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_read_array_buffer_005');
@@ -1476,9 +1608,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_006
    * @tc.number SUB_STORAGE_File_read_array_buffer_0600
-   * @tc.name File_read_array_buffer_006
-   * @tc.desc Function of API, error code: 202 Set uri is dir path.
+   * @tc.desc   Function of API, error code: 202 Set uri is dir path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_006', Level.LEVEL0, async function (done) {
     file.readArrayBuffer({
@@ -1496,9 +1631,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_007
    * @tc.number SUB_STORAGE_File_read_array_buffer_0700
-   * @tc.name File_read_array_buffer_007
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_007', Level.LEVEL0, async function (done) {
     file.readArrayBuffer({
@@ -1516,9 +1654,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_008
    * @tc.number SUB_STORAGE_File_read_array_buffer_0800
-   * @tc.name File_read_array_buffer_008
-   * @tc.desc Function of API, cache path.The test file is exist.
+   * @tc.desc   Function of API, cache path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_008', Level.LEVEL0, async function (done) {
     let buf = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8]);
@@ -1557,9 +1698,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_read_array_buffer_009
    * @tc.number SUB_STORAGE_File_read_array_buffer_0900
-   * @tc.name File_read_array_buffer_009
-   * @tc.desc Function of API, virtual path.The test file is exist.
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_read_array_buffer_009', Level.LEVEL0, async function (done) {
     var buffer = new Uint8Array([48, 49, 50, 51, 65, 66, 67, 68, 32, 33]);
@@ -1603,9 +1747,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_001
    * @tc.number SUB_STORAGE_File_access_0100
-   * @tc.name File_access_001
-   * @tc.desc Function of API, access, cache path.The test file is exist.
+   * @tc.desc   Function of API, access, cache path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_001', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1643,9 +1790,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_002
    * @tc.number SUB_STORAGE_File_access_0200
-   * @tc.name File_access_002
-   * @tc.desc Function of API, access, app path.The test file is exist.
+   * @tc.desc   Function of API, access, app path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_002', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1682,9 +1832,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_003
    * @tc.number SUB_STORAGE_File_access_0300
-   * @tc.name File_access_003
-   * @tc.desc Function of API, error code: 202 The test file and dir are exist.
+   * @tc.desc   Function of API, error code: 202 The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_003', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_access_003');
@@ -1703,9 +1856,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_004
    * @tc.number SUB_STORAGE_File_access_0400
-   * @tc.name File_access_004
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_004', Level.LEVEL0, async function (done) {
     file.access({
@@ -1723,9 +1879,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_005
    * @tc.number SUB_STORAGE_File_access_0500
-   * @tc.name File_access_005
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_005', Level.LEVEL0, async function (done) {
     file.access({
@@ -1743,9 +1902,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_006
    * @tc.number SUB_STORAGE_File_access_0600
-   * @tc.name File_access_006
-   * @tc.desc Function of API, parameter more than 4096.The test file and dir are exist.
+   * @tc.desc   Function of API, parameter more than 4096.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_006', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -1774,9 +1936,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_007
    * @tc.number SUB_STORAGE_File_access_0700
-   * @tc.name File_access_007
-   * @tc.desc Function of API, app path.The test file is exist.
+   * @tc.desc   Function of API, app path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_007', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1814,9 +1979,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_access_008
    * @tc.number SUB_STORAGE_File_access_0800
-   * @tc.name File_access_008
-   * @tc.desc Function of API, virtual path.The test file is exist.
+   * @tc.desc   Function of API, virtual path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_access_008', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -1857,9 +2025,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_001
    * @tc.number SUB_STORAGE_File_mkdir_0100
-   * @tc.name File_mkdir_001
-   * @tc.desc Function of API, mkdir, app path.
+   * @tc.desc   Function of API, mkdir, app path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_001', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1886,9 +2057,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_002
    * @tc.number SUB_STORAGE_File_mkdir_0200
-   * @tc.name File_mkdir_002
-   * @tc.desc Function of API, mkdir, recursive not set value.
+   * @tc.desc   Function of API, mkdir, recursive not set value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_002', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1906,9 +2080,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_003
    * @tc.number SUB_STORAGE_File_mkdir_0300
-   * @tc.name File_mkdir_003
-   * @tc.desc Function of API, mkdir, recursive.
+   * @tc.desc   Function of API, mkdir, recursive.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_003', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1926,9 +2103,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_004
    * @tc.number SUB_STORAGE_File_mkdir_0400
-   * @tc.name File_mkdir_004
-   * @tc.desc Function of API, error code: 202
+   * @tc.desc   Function of API, error code: 202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_004', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1946,9 +2126,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_005
    * @tc.number SUB_STORAGE_File_mkdir_0500
-   * @tc.name File_mkdir_005
-   * @tc.desc Function of API, special characters.
+   * @tc.desc   Function of API, special characters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_005', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -1966,9 +2149,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_006
    * @tc.number SUB_STORAGE_File_mkdir_0600
-   * @tc.name File_mkdir_006
-   * @tc.desc Function of API, parameter too long.
+   * @tc.desc   Function of API, parameter too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_006', Level.LEVEL0, async function (done) {
     let fileName = randomString(257);
@@ -1987,9 +2173,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_007
    * @tc.number SUB_STORAGE_File_mkdir_0700
-   * @tc.name File_mkdir_007
-   * @tc.desc Function of API, cache path.
+   * @tc.desc   Function of API, cache path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_007', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2016,9 +2205,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_008
    * @tc.number SUB_STORAGE_File_mkdir_0800
-   * @tc.name File_mkdir_008
-   * @tc.desc Function of API, virtual path.
+   * @tc.desc   Function of API, virtual path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_008', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2045,9 +2237,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_mkdir_010
    * @tc.number SUB_STORAGE_File_mkdir_1000
-   * @tc.name File_mkdir_010
-   * @tc.desc Function of API, out of package, out of package, Virtual path, save the dir authority.
+   * @tc.desc   Function of API, out of package, out of package, Virtual path, save the dir authority.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_mkdir_010', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2068,9 +2263,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_001
    * @tc.number SUB_STORAGE_File_rmdir_0100
-   * @tc.name File_rmdir_001
-   * @tc.desc Function of API, rmdir, app path.The test dir is exist, and it can be delete, the dir is empty.
+   * @tc.desc   Function of API, rmdir, app path.The test dir is exist, and it can be delete, the dir is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_001', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2097,9 +2295,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_002
    * @tc.number SUB_STORAGE_File_rmdir_0200
-   * @tc.name File_rmdir_002
-   * @tc.desc Function of API, recursive not set value.The test dir is exist, and it not empty.
+   * @tc.desc   Function of API, recursive not set value.The test dir is exist, and it not empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_002', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2129,9 +2330,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_003
    * @tc.number SUB_STORAGE_File_rmdir_0300
-   * @tc.name File_rmdir_003
-   * @tc.desc Function of API, recursive = ture.The test dir is exist, and it not empty.
+   * @tc.desc   Function of API, recursive = ture.The test dir is exist, and it not empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_003', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2182,9 +2386,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_004
    * @tc.number SUB_STORAGE_File_rmdir_0400
-   * @tc.name File_rmdir_004
-   * @tc.desc Function of API, error code: 202
+   * @tc.desc   Function of API, error code: 202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_004', Level.LEVEL0, async function (done) {
     file.rmdir({
@@ -2202,9 +2409,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_005
    * @tc.number SUB_STORAGE_File_rmdir_0500
-   * @tc.name File_rmdir_005
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_005', Level.LEVEL0, async function (done) {
     file.rmdir({
@@ -2222,9 +2432,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_006
    * @tc.number SUB_STORAGE_File_rmdir_0600
-   * @tc.name File_rmdir_006
-   * @tc.desc Function of API, too long path.
+   * @tc.desc   Function of API, too long path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_006', Level.LEVEL0, async function (done) {
     let firstPath = randomString(255);
@@ -2253,9 +2466,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_007
    * @tc.number SUB_STORAGE_File_rmdir_0700
-   * @tc.name File_rmdir_007
-   * @tc.desc Function of API, cache path.The test dir is exist, and it can be delete, it is empty.
+   * @tc.desc   Function of API, cache path.The test dir is exist, and it can be delete, it is empty.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_007', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2282,9 +2498,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_008
    * @tc.number SUB_STORAGE_File_rmdir_0800
-   * @tc.name File_rmdir_008
-   * @tc.desc Function of API, virtual path.The test dir is exist.
+   * @tc.desc   Function of API, virtual path.The test dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_008', Level.LEVEL0, async function (done) {
     file.mkdir({
@@ -2311,9 +2530,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_rmdir_010
    * @tc.number SUB_STORAGE_File_rmdir_1000
-   * @tc.name File_rmdir_010
-   * @tc.desc Function of API, out of package, Virtual path, save the dir authority.The test dir is exist.
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.The test dir is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_rmdir_010', Level.LEVEL0, async function (done) {
     file.rmdir({
@@ -2334,9 +2556,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_001
    * @tc.number SUB_STORAGE_File_Move_0100
-   * @tc.name File_Move_001
-   * @tc.desc Function of API, move.The test file is exist.
+   * @tc.desc   Function of API, move.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_001', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -2365,9 +2590,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_002
    * @tc.number SUB_STORAGE_File_Move_0200
-   * @tc.name File_Move_002
-   * @tc.desc Function of API, document integrity.The test file is exist.
+   * @tc.desc   Function of API, document integrity.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_002', Level.LEVEL0, async function (done) {
     let typeArray = new Array('.txt', '.ppt', '.flac', '.mp4', '.so', '.zip');
@@ -2393,9 +2621,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_003
    * @tc.number SUB_STORAGE_File_Move_0300
-   * @tc.name File_Move_003
-   * @tc.desc Function of API, different size file.The test file is exist.
+   * @tc.desc   Function of API, different size file.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_003', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_003');
@@ -2418,9 +2649,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_004
    * @tc.number SUB_STORAGE_File_Move_0400
-   * @tc.name File_Move_004
-   * @tc.desc Function of API, error code: 202.The test file is exist.
+   * @tc.desc   Function of API, error code: 202.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_004', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_004');
@@ -2441,9 +2675,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_005
    * @tc.number SUB_STORAGE_File_Move_0500
-   * @tc.name File_Move_005
-   * @tc.desc Function of API, error code: 300.The test file is exist.
+   * @tc.desc   Function of API, error code: 300.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_005', Level.LEVEL0, async function (done) {
     let srcDpath = await fileName('File_Move_005d');
@@ -2463,9 +2700,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_006
    * @tc.number SUB_STORAGE_File_Move_0600
-   * @tc.name File_Move_006
-   * @tc.desc Function of API, error code: 301.The test file is not exist.
+   * @tc.desc   Function of API, error code: 301.The test file is not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_006', Level.LEVEL0, async function (done) {
     let dstUri = await fileName('File_Move_006');
@@ -2486,9 +2726,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_007
    * @tc.number SUB_STORAGE_File_Move_0700
-   * @tc.name File_Move_007
-   * @tc.desc Function of API, uri more too long.
+   * @tc.desc   Function of API, uri more too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_007', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -2517,9 +2760,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_008
    * @tc.number SUB_STORAGE_File_Move_0800
-   * @tc.name File_Move_008
-   * @tc.desc Function of API, cache path.The test file is exist.
+   * @tc.desc   Function of API, cache path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_008', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -2558,9 +2804,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_009
    * @tc.number SUB_STORAGE_File_Move_0900
-   * @tc.name File_Move_009
-   * @tc.desc Function of API, same path.
+   * @tc.desc   Function of API, same path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_009', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_009');
@@ -2580,9 +2829,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_010
    * @tc.number SUB_STORAGE_File_Move_1000
-   * @tc.name File_Move_010
-   * @tc.desc Function of API, dstFpath has same file.
+   * @tc.desc   Function of API, dstFpath has same file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_010', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_010');
@@ -2605,9 +2857,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_011
    * @tc.number SUB_STORAGE_File_Move_1100
-   * @tc.name File_Move_011
-   * @tc.desc Function of API, move app path file to cache path.
+   * @tc.desc   Function of API, move app path file to cache path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_011', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_011');
@@ -2627,9 +2882,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_012
    * @tc.number SUB_STORAGE_File_Move_1200
-   * @tc.name File_Move_012
-   * @tc.desc Function of API, out of package, Virtual path(create and give 777 authority).
+   * @tc.desc   Function of API, out of package, Virtual path(create and give 777 authority).
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_012', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_012');
@@ -2650,9 +2908,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Move_014
    * @tc.number SUB_STORAGE_File_Move_1400
-   * @tc.name File_Move_014
-   * @tc.desc Function of API, check back value.
+   * @tc.desc   Function of API, check back value.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Move_014', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Move_014');
@@ -2677,9 +2938,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_001
    * @tc.number SUB_STORAGE_File_Copy_0100
-   * @tc.name File_Copy_001
-   * @tc.desc Function of API, copy, app path.The test file is exist.
+   * @tc.desc   Function of API, copy, app path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_001', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_001');
@@ -2712,9 +2976,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_002
    * @tc.number SUB_STORAGE_File_Copy_0200
-   * @tc.name File_Copy_002
-   * @tc.desc Function of API, document integrity.The test file is exist.
+   * @tc.desc   Function of API, document integrity.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_002', Level.LEVEL0, async function (done) {
     let typeArray = new Array('.txt', '.ppt', '.flac', '.mp4', '.so', '.zip');
@@ -2740,9 +3007,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_003
    * @tc.number SUB_STORAGE_File_Copy_0300
-   * @tc.name File_Copy_003
-   * @tc.desc Function of API, different size of files. The test file is exist.
+   * @tc.desc   Function of API, different size of files. The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_003', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_003');
@@ -2775,9 +3045,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_004
    * @tc.number SUB_STORAGE_File_Copy_0400
-   * @tc.name File_Copy_004
-   * @tc.desc Function of API, error code: 202 The test file is exist.
+   * @tc.desc   Function of API, error code: 202 The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_004', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_004');
@@ -2798,12 +3071,15 @@ describe('fileTest', function () {
     });
   });
 
-  /**
-   * @tc.number SUB_STORAGE_File_Copy_0500
-   * @tc.name File_Copy_005
-   * @tc.desc Function of API, error code: 300
-   */
 
+  /**
+   * @tc.name   File_Copy_005
+   * @tc.number File_Copy_005
+   * @tc.desc   File_Copy_005
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('File_Copy_005', Level.LEVEL0, async function (done) {
     file.mkdir({
       uri: 'internal://cache/File_Copy_005d',
@@ -2830,9 +3106,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_006
    * @tc.number SUB_STORAGE_File_Copy_0600
-   * @tc.name File_Copy_006
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_006', Level.LEVEL0, async function (done) {
     file.copy({
@@ -2851,9 +3130,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_007
    * @tc.number SUB_STORAGE_File_Copy_0700
-   * @tc.name File_Copy_007
-   * @tc.desc Function of API, uri too long.
+   * @tc.desc   Function of API, uri too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_007', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -2882,9 +3164,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_008
    * @tc.number SUB_STORAGE_File_Copy_0800
-   * @tc.name File_Copy_008
-   * @tc.desc Function of API, cache path.
+   * @tc.desc   Function of API, cache path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_008', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -2933,9 +3218,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_009
    * @tc.number SUB_STORAGE_File_Copy_0900
-   * @tc.name File_Copy_009
-   * @tc.desc Function of API, same path.
+   * @tc.desc   Function of API, same path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_009', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_009');
@@ -2956,9 +3244,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_010
    * @tc.number SUB_STORAGE_File_Copy_1000
-   * @tc.name File_Copy_010
-   * @tc.desc Function of API, dstFpath path has same file.
+   * @tc.desc   Function of API, dstFpath path has same file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_010', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_010');
@@ -2984,9 +3275,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_011
    * @tc.number SUB_STORAGE_File_Copy_1100
-   * @tc.name File_Copy_011
-   * @tc.desc Function of API, copy file to cache path.The test file is exist.
+   * @tc.desc   Function of API, copy file to cache path.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_011', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_011');
@@ -3016,9 +3310,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Copy_012
    * @tc.number SUB_STORAGE_File_Copy_1200
-   * @tc.name File_Copy_012
-   * @tc.desc Function of API, out of package, Virtual path(create and give 777 authority).The test file is exist.
+   * @tc.desc   Function of API, out of package, Virtual path(create and give 777 authority).The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Copy_012', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_012');
@@ -3039,12 +3336,15 @@ describe('fileTest', function () {
     });
   });
 
-  /**
-   * @tc.number SUB_STORAGE_File_Copy_1400
-   * @tc.name File_Copy_014
-   * @tc.desc Function of API, check back value.The test file is exist.
-   */
 
+  /**
+   * @tc.name   File_Copy_014
+   * @tc.number File_Copy_014
+   * @tc.desc   File_Copy_014
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
+   */
   it('File_Copy_014', Level.LEVEL0, async function (done) {
     let srcFpath = await fileName('File_Copy_014');
     let dstFpath = await cacheFileName('File_Copy_014');
@@ -3068,9 +3368,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_001
    * @tc.number SUB_STORAGE_File_List_0100
-   * @tc.name File_List_001
-   * @tc.desc Function of API, list.The test file and dir are exist.
+   * @tc.desc   Function of API, list.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_001', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_001') + 'd';
@@ -3096,9 +3399,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_002
    * @tc.number SUB_STORAGE_File_List_0200
-   * @tc.name File_List_002
-   * @tc.desc Function of API, set value of uri.The test file and dir are exist.
+   * @tc.desc   Function of API, set value of uri.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_002', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_002') + 'd';
@@ -3124,9 +3430,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_003
    * @tc.number SUB_STORAGE_File_List_0300
-   * @tc.name File_List_003
-   * @tc.desc Function of API, check lastModifiedTime.The test file and dir are exist.
+   * @tc.desc   Function of API, check lastModifiedTime.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_003', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_003') + 'd';
@@ -3175,9 +3484,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_004
    * @tc.number SUB_STORAGE_File_List_0400
-   * @tc.name File_List_004
-   * @tc.desc Function of API, check length.The test file and dir are exist.
+   * @tc.desc   Function of API, check length.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_004', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_004') + 'd';
@@ -3200,9 +3512,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_005
    * @tc.number SUB_STORAGE_File_List_0500
-   * @tc.name File_List_005
-   * @tc.desc Function of API, check type.The test file and dir are exist.
+   * @tc.desc   Function of API, check type.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_005', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_005') + 'd';
@@ -3225,9 +3540,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_006
    * @tc.number SUB_STORAGE_File_List_0600
-   * @tc.name File_List_006
-   * @tc.desc Function of API, error code:202
+   * @tc.desc   Function of API, error code:202
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_006', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_006') + 'd'
@@ -3246,9 +3564,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_007
    * @tc.number SUB_STORAGE_File_List_0700
-   * @tc.name File_List_007
-   * @tc.desc Function of API, uri set value of file.
+   * @tc.desc   Function of API, uri set value of file.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_007', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_List_007');
@@ -3268,9 +3589,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_008
    * @tc.number SUB_STORAGE_File_List_0800
-   * @tc.name File_List_008
-   * @tc.desc Function of API, error code: 301
+   * @tc.desc   Function of API, error code: 301
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_008', Level.LEVEL0, async function (done) {
     file.list({
@@ -3288,9 +3612,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_009
    * @tc.number SUB_STORAGE_File_List_0900
-   * @tc.name File_List_009
-   * @tc.desc Function of API, uri too long.
+   * @tc.desc   Function of API, uri too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_009', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -3318,9 +3645,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_010
    * @tc.number SUB_STORAGE_File_List_1000
-   * @tc.name File_List_010
-   * @tc.desc Function of API, cache path.The test file and dir are exist.
+   * @tc.desc   Function of API, cache path.The test file and dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_010', Level.LEVEL0, async function (done) {
     let dpath = await nextFileName('File_List_010d');
@@ -3358,9 +3688,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_011
    * @tc.number SUB_STORAGE_File_List_1100
-   * @tc.name File_List_011
-   * @tc.desc Function of API, virtual path.The test dir are exist.
+   * @tc.desc   Function of API, virtual path.The test dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_011', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_List_011') + 'd';
@@ -3386,9 +3719,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_List_012
    * @tc.number SUB_STORAGE_File_List_1200
-   * @tc.name Function of API, out of package, Virtual path(create and give 777 authority).
-   * @tc.desc The test dir are exist.
+   * @tc.desc   The test dir are exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_List_012', Level.LEVEL0, async function (done) {
     file.list({
@@ -3408,9 +3744,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_001
    * @tc.number SUB_STORAGE_File_Get_0100
-   * @tc.name File_Get_001
-   * @tc.desc Function of API, Get.The test file is exist.
+   * @tc.desc   Function of API, Get.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_001', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_Get_001');
@@ -3431,9 +3770,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_002
    * @tc.number SUB_STORAGE_File_Get_0200
-   * @tc.name File_Get_002
-   * @tc.desc Function of API, recursive = false.The test file is exist.
+   * @tc.desc   Function of API, recursive = false.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_002', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_Get_002');
@@ -3459,9 +3801,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_003
    * @tc.number SUB_STORAGE_File_Get_0300
-   * @tc.name File_Get_003
-   * @tc.desc Function of API, not input recursive.The test file is exist.
+   * @tc.desc   Function of API, not input recursive.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_003', Level.LEVEL0, async function (done) {
     let fpath = await fileName('File_Get_003');
@@ -3487,9 +3832,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_004
    * @tc.number SUB_STORAGE_File_Get_0400
-   * @tc.name File_Get_004
-   * @tc.desc Function of API, recursive = ture.The test file is exist.
+   * @tc.desc   Function of API, recursive = ture.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_004', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_Get_004d');
@@ -3525,9 +3873,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_005
    * @tc.number SUB_STORAGE_File_Get_0500
-   * @tc.name File_Get_005
-   * @tc.desc Function of API, recursive = false.The test file is exist.
+   * @tc.desc   Function of API, recursive = false.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_005', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_Get_005d');
@@ -3563,9 +3914,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_006
    * @tc.number SUB_STORAGE_File_Get_0600
-   * @tc.name File_Get_006
-   * @tc.desc Function of API, not input recursive.The test file is exist.
+   * @tc.desc   Function of API, not input recursive.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_006', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_Get_006d');
@@ -3600,9 +3954,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_007
    * @tc.number SUB_STORAGE_File_Get_0700
-   * @tc.name File_Get_007
-   * @tc.desc Function of API, not input uri.The test file is exist.
+   * @tc.desc   Function of API, not input uri.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_007', Level.LEVEL0, async function (done) {
     file.get({
@@ -3620,9 +3977,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_008
    * @tc.number SUB_STORAGE_File_Get_0800
-   * @tc.name File_Get_008
-   * @tc.desc Function of API, not input parameter.The test file is exist.
+   * @tc.desc   Function of API, not input parameter.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_008', Level.LEVEL0, async function (done) {
     file.get({
@@ -3639,9 +3999,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_009
    * @tc.number SUB_STORAGE_File_Get_0900
-   * @tc.name File_Get_009
-   * @tc.desc Function of API, error parameter.The test file and dir are not exist.
+   * @tc.desc   Function of API, error parameter.The test file and dir are not exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_009', Level.LEVEL0, async function (done) {
     file.get({
@@ -3659,9 +4022,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_010
    * @tc.number SUB_STORAGE_File_Get_1000
-   * @tc.name File_Get_010
-   * @tc.desc Function of API, uri = -1.
+   * @tc.desc   Function of API, uri = -1.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_010', Level.LEVEL0, async function (done) {
     file.get({
@@ -3679,9 +4045,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_011
    * @tc.number SUB_STORAGE_File_Get_1100
-   * @tc.name File_Get_011
-   * @tc.desc Function of API, cacahe path.
+   * @tc.desc   Function of API, cacahe path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_011', Level.LEVEL0, async function (done) {
     file.writeText({
@@ -3725,9 +4094,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_012
    * @tc.number SUB_STORAGE_File_Get_1200
-   * @tc.name File_Get_012
-   * @tc.desc Function of API, uri too long.
+   * @tc.desc   Function of API, uri too long.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_012', Level.LEVEL0, async function (done) {
     let firstPath = randomString(32);
@@ -3761,9 +4133,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_013
    * @tc.number SUB_STORAGE_File_Get_1300
-   * @tc.name File_Get_013
-   * @tc.desc Function of API, virtual path.
+   * @tc.desc   Function of API, virtual path.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_013', Level.LEVEL0, async function (done) {
     let dpath = await fileName('File_Get_013d');
@@ -3799,9 +4174,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Get_014
    * @tc.number SUB_STORAGE_File_Get_1400
-   * @tc.name File_Get_014
-   * @tc.desc Function of API, out of package, Virtual path, save the dir authority.
+   * @tc.desc   Function of API, out of package, Virtual path, save the dir authority.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Get_014', Level.LEVEL0, async function (done) {
     file.get({
@@ -3825,11 +4203,14 @@ describe('fileTest', function () {
       }
     });
   });
-  /**
-   * @tc.number SUB_STORAGE_Document_Choose_0100
-   * @tc.name Document_Choose_001
-   * @tc.desc Function of API, choose file.The test file is exist.
-   */
+   /**
+    * @tc.name   File_Document_Choose_001
+    * @tc.number SUB_STORAGE_Document_Choose_0100
+    * @tc.desc   Function of API, choose file.The test file is exist.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('File_Document_Choose_001', Level.LEVEL0, async function (done) {
     try {
       let types = [];
@@ -3846,11 +4227,14 @@ describe('fileTest', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_STORAGE_Document_Choose_0200
-   * @tc.name Document_Choose_002
-   * @tc.desc Function of API, choose file.The test file is  exist.
-   */
+   /**
+    * @tc.name   File_Document_Choose_002
+    * @tc.number SUB_STORAGE_Document_Choose_0200
+    * @tc.desc   Function of API, choose file.The test file is  exist.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('File_Document_Choose_002', Level.LEVEL0, async function (done) {
     try {
       let uri = "";
@@ -3868,11 +4252,14 @@ describe('fileTest', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_STORAGE_Document_Choose_0300
-   * @tc.name Document_Choose_003
-   * @tc.desc Function of API, choose file.The test file is exist.
-   */
+   /**
+    * @tc.name   File_Document_Choose_003
+    * @tc.number SUB_STORAGE_Document_Choose_0300
+    * @tc.desc   Function of API, choose file.The test file is exist.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('File_Document_Choose_003', Level.LEVEL0, async function (done) {
     try {
       let types = [];
@@ -3892,14 +4279,12 @@ describe('fileTest', function () {
   });
 
   /**
+   * @tc.name   File_Document_Choose_001
    * @tc.number SUB_STORAGE_Document_Choose_0400
-   * @tc.name Document_Choose_004
-   * @tc.desc Function of API, choose file.The test file is exist.
-   * Test choose.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Function of API, choose file.The test file is exist.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('File_Document_Choose_001', Level.LEVEL0, async function (done) {
     try {
@@ -3916,11 +4301,14 @@ describe('fileTest', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_STORAGE_Document_Show_0100
-   * @tc.name Document_Show_001
-   * @tc.desc Function of API, show file.The test file is exist.
-   */
+   /**
+    * @tc.name   File_Document_Show_001
+    * @tc.number SUB_STORAGE_Document_Show_0100
+    * @tc.desc   Function of API, show file.The test file is exist.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('File_Document_Show_001', Level.LEVEL0, async function (done) {
     try {
       let type = "";
@@ -3937,11 +4325,14 @@ describe('fileTest', function () {
     }
   });
 
-  /**
-   * @tc.number SUB_STORAGE_Document_Show_0200
-   * @tc.name Document_Show_002
-   * @tc.desc Function of API, show file.The test file is exist.
-   */
+   /**
+    * @tc.name   File_Document_Show_002
+    * @tc.number SUB_STORAGE_Document_Show_0200
+    * @tc.desc   Function of API, show file.The test file is exist.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('File_Document_Show_002', Level.LEVEL0, async function (done) {
     try {
       let type = "";

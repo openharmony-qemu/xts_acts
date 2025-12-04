@@ -48,7 +48,7 @@ export default function formLinkTest() {
                 events: ["XTS_FormLinkTest_commonEvent"],
             };
             let isChecked: boolean = false;	
-            subscriberForm = CommonEventManager.createSubscriberSync(formLinkTest_Event);
+            let subscriberForm: CommonEventManager.CommonEventSubscriber = CommonEventManager.createSubscriberSync(formLinkTest_Event);
             let formLinkCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {	
                 isChecked = true;	
                 hilog.info(DOMAIN, TAG, 'FormLinkStaticTest001 FormLinkCallBack' + JSON.stringify(data));	

@@ -46,12 +46,12 @@ export default function tabContentState() {
     });
 
     /**
-     * @tc.number    tabContentState_001
-     * @tc.name      tabContentState_001
-     * @tc.desc      TabContent state.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabContentState_001
+     * @tc.number tabContentState_001
+     * @tc.desc   TabContent state.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tabContentState_001', Level.LEVEL0, async (done: Function) => {
       console.info('[tabContentState_001] START');

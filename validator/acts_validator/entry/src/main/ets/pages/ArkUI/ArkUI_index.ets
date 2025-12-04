@@ -99,6 +99,7 @@ struct IndexPage {
     { title: 'NavigationEnableHoverMode', uri: 'pages/ArkUI/NavigationEnableHoverMode' },
     { title: 'AccessibilityProperty', uri: 'pages/ArkUI/AccessibilityProperty' },
     { title: 'AccessibilityOptions', uri: 'pages/ArkUI/AccessibilityOptions' },
+    { title: 'AccessibilityOptionsObjectDescription', uri: 'pages/ArkUI/AccessibilityOptionsObjectDescription' },
     { title: 'AccessibilityThirdFramework00', uri: 'pages/ArkUI/AccessibilityThirdFramework00' },
     { title: 'AccessibilityThirdFramework01', uri: 'pages/ArkUI/AccessibilityThirdFramework01' },
     { title: 'GetBarRect', uri: 'pages/ArkUI/GetBarRect' },
@@ -145,6 +146,7 @@ struct IndexPage {
     { title: 'ImageAnimationControllerPage', uri: 'pages/ArkUI/ImageAnimationControllerPage' },
     { title: 'AnimatedDrawableDescriptorFrameDurations', uri: 'pages/ArkUI/AnimatedDrawableDescriptorFrameDurations' },
     { title: 'GetDarkModeTest', uri: 'pages/ArkUI/GetDarkModeTest' },
+    { title: 'GetDarkModeTest', uri: 'pages/ArkUI/TabBarIndicatorPixmap' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

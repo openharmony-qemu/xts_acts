@@ -19,7 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 
 export default function ScrollEffectEdge() {
   const SUITE: string = 'ScrollEffectEdge'
-  const waitUiReadyMs: number = 1500
+  const waitUiReadyMs = 1500
 
   describe('ScrollEffectEdge', () => {
     beforeEach(async (done: Function) => {
@@ -40,10 +40,13 @@ export default function ScrollEffectEdge() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_Scroll_EffectEdge_0100
-     * @tc.name   :test effect edge callback
-     * @tc.desc   :test whether edgeEffectiveness Options are effective
+    /**
+     * @tc.name   ArkUI_Scroll_EffectEdge_0100
+     * @tc.number ArkUI_Scroll_EffectEdge_0100
+     * @tc.desc   test whether edgeEffectiveness Options are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Scroll_EffectEdge_0100', Level.LEVEL1, async (done: Function) => {
       let json1 = getInspectorByKey('scroll1')
@@ -58,10 +61,13 @@ export default function ScrollEffectEdge() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_Scroll_EffectEdge_0200
-     * @tc.name   :test effect edge callback
-     * @tc.desc   :test whether edgeEffectiveness Options are effective
+    /**
+     * @tc.name   ArkUI_Scroll_EffectEdge_0200
+     * @tc.number ArkUI_Scroll_EffectEdge_0200
+     * @tc.desc   test whether edgeEffectiveness Options are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Scroll_EffectEdge_0200', Level.LEVEL1, async (done: Function) => {
       let json1 = getInspectorByKey('scroll2')
@@ -76,10 +82,13 @@ export default function ScrollEffectEdge() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_Scroll_EffectEdge_0300
-     * @tc.name   :test effect edge callback
-     * @tc.desc   :test whether edgeEffectiveness Options are effective
+    /**
+     * @tc.name   ArkUI_Scroll_EffectEdge_0300
+     * @tc.number ArkUI_Scroll_EffectEdge_0300
+     * @tc.desc   test whether edgeEffectiveness Options are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Scroll_EffectEdge_0300', Level.LEVEL1, async (done: Function) => {
       let json1 = getInspectorByKey('list2')
@@ -94,10 +103,13 @@ export default function ScrollEffectEdge() {
       done()
     });
 
-    /*
-     * @tc.number :ArkUI_Scroll_EffectEdge_0400
-     * @tc.name   :test effect edge callback
-     * @tc.desc   :test whether edgeEffectiveness Options are effective
+    /**
+     * @tc.name   ArkUI_Scroll_EffectEdge_0400
+     * @tc.number ArkUI_Scroll_EffectEdge_0400
+     * @tc.desc   test whether edgeEffectiveness Options are effective
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_Scroll_EffectEdge_0400', Level.LEVEL1, async (done: Function) => {
       let json1 = getInspectorByKey('grid3')

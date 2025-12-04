@@ -26,61 +26,61 @@ export default function unitMarginPercentTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0001
-     * @tc.name: testUnitMarginPercent001
-     * @tc.desc: testing text for unitMarginPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitMarginPercent001
+     * @tc.number SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0001
+     * @tc.desc   testing text for unitMarginPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitMarginPercent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitMarginPercent001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0002
-     * @tc.name: testUnitMarginPercent002
-     * @tc.desc: testing text for unitMarginPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitMarginPercent002
+     * @tc.number SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0002
+     * @tc.desc   testing text for unitMarginPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitMarginPercent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitMarginPercent002()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0003
-     * @tc.name: testUnitMarginPercent003
-     * @tc.desc: testing text for unitMarginPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitMarginPercent003
+     * @tc.number SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0003
+     * @tc.desc   testing text for unitMarginPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitMarginPercent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitMarginPercent003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0004
-     * @tc.name: testUnitMarginPercent004
-     * @tc.desc: testing text for unitMarginPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitMarginPercent004
+     * @tc.number SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0004
+     * @tc.desc   testing text for unitMarginPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitMarginPercent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitMarginPercent004()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0005
-     * @tc.name: testUnitMarginPercent005
-     * @tc.desc: testing text for unitMarginPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitMarginPercent005
+     * @tc.number SUB_ARKUI_CAPI_UNIT_MARGIN_PERCENT_0005
+     * @tc.desc   testing text for unitMarginPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitMarginPercent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitMarginPercent005()).assertEqual(0)

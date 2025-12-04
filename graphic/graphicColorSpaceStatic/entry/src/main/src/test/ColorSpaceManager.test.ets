@@ -36,12 +36,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_001
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_001
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_001
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_001
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function colorSpaceManagerTest() {
       })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_002
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_002
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_002
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_002
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -113,12 +113,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_003
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_003
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_003
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_003
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -138,12 +138,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_004
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_004
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_004
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_004
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -163,12 +163,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_005
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_005
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_005
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_005
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -188,12 +188,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_006
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_006
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_006
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_006
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -213,12 +213,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_007
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_007
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_007
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_007
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -238,12 +238,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_008
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_008
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_008
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_008
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_009
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_009
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_009
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_009
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -304,12 +304,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_010
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_010
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_010
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_010
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -328,12 +328,12 @@ export default function colorSpaceManagerTest() {
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_COLOR_SPACE_API_static_011
-     * @tc.name: SUB_GRAPHIC_COLOR_SPACE_API_static_011
-     * @tc.desc: color space API ArkTS1.2
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.number SUB_GRAPHIC_COLOR_SPACE_API_static_011
+     * @tc.desc   color space API ArkTS1.2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_COLOR_SPACE_API_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

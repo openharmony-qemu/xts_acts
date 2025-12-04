@@ -40,6 +40,14 @@ export default function CircleResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   CircleResourceTest_0100
+     * @tc.number CircleResourceTest_0100
+     * @tc.desc   CircleResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('CircleResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[CircleResourceTest_0100] START');
       await CommonFunc.sleep(1000);

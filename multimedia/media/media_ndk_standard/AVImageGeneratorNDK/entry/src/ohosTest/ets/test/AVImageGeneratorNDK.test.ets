@@ -70,12 +70,12 @@ export default function OhAvImageGeneratorNDKTest() {
     }
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORCREATE_0100
-     * @tc.name       : testOhAvImageGeneratorCreate001
-     * @tc.desc       : A pointer to the OH_AVImageGenerator object that is used to create and return the object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorCreate001
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORCREATE_0100
+     * @tc.desc   A pointer to the OH_AVImageGenerator object that is used to create and return the object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorCreate001', Level.LEVEL0,(done: Function) => {
       console.info(`testOhAvImageGeneratorCreate001 test start `);
@@ -92,12 +92,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORSETFDSOURCE_0100
-     * @tc.name       : OhAvImageGeneratorSetFdSource001
-     * @tc.desc       : Set fd soucre.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorSetFdSource001
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORSETFDSOURCE_0100
+     * @tc.desc   Set fd soucre.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorSetFdSource001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorSetFdSource001 test start `);
@@ -117,12 +117,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORSETFDSOURCETWO_0200
-     * @tc.name       : testOhAVImageGeneratorSetFdPathSourceTwo0200
-     * @tc.desc       : Set invalid fd soucre.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAVImageGeneratorSetFdPathSourceTwo0200
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORSETFDSOURCETWO_0200
+     * @tc.desc   Set invalid fd soucre.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAVImageGeneratorSetFdPathSourceTwo0200', Level.LEVEL0,(done: Function) => {
       console.info(`testOhAVImageGeneratorSetFdPathSourceTwo0200 test start `);
@@ -138,12 +138,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0100
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime001
-     * @tc.desc       : Set the right timeUs and options is AV_IMAGE_QUERY_PREVIOUS_SYNC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime001
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0100
+     * @tc.desc   Set the right timeUs and options is AV_IMAGE_QUERY_PREVIOUS_SYNC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime001', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime001 test start `);
@@ -167,12 +167,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0200
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime002
-     * @tc.desc       : Set the right timeUs and options is AV_IMAGE_QUERY_CLOSEST_SYNC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime002
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0200
+     * @tc.desc   Set the right timeUs and options is AV_IMAGE_QUERY_CLOSEST_SYNC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime002', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime002 test start `);
@@ -196,12 +196,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0300
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime003
-     * @tc.desc       : Set the right timeUs and options is AV_IMAGE_QUERY_CLOSEST.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime003
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0300
+     * @tc.desc   Set the right timeUs and options is AV_IMAGE_QUERY_CLOSEST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime003', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime003 test start `);
@@ -225,12 +225,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0400
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime004
-     * @tc.desc       : Set the invalid timeUs and invalid options.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime004
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0400
+     * @tc.desc   Set the invalid timeUs and invalid options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime004', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime004 test start `);
@@ -254,12 +254,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0500
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime005
-     * @tc.desc       : Set the right timeUs and invalid options.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime005
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0500
+     * @tc.desc   Set the right timeUs and invalid options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime005', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime005 test start `);
@@ -283,12 +283,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0600
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime006
-     * @tc.desc       : Set the invalid timeUs and right options.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime006
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0600
+     * @tc.desc   Set the invalid timeUs and right options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime006', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime006 test start `);
@@ -312,12 +312,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0700
-     * @tc.name       : testOhAvImageGeneratorFetchFrameByTime007
-     * @tc.desc       : Set the right timeUs and options is AV_IMAGE_QUERY_NEXT_SYNC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorFetchFrameByTime007
+     * @tc.number SUB_MULTIMEIDA_AVIMAGEGENERATOR_OHAVIMAGEGENERATORFETCHFRAMEBYTIME_0700
+     * @tc.desc   Set the right timeUs and options is AV_IMAGE_QUERY_NEXT_SYNC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorFetchFrameByTime007', Level.LEVEL0,async (done: Function) => {
       console.info(`testOhAvImageGeneratorFetchFrameByTime007 test start `);
@@ -341,12 +341,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASE_0100
-     * @tc.name       : testOhAvImageGeneratorRelease001
-     * @tc.desc       : Set an unreleased pointer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorRelease001
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASE_0100
+     * @tc.desc   Set an unreleased pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorRelease001', Level.LEVEL0,(done: Function) => {
       console.info(`testOhAvImageGeneratorRelease001 test start`);
@@ -363,12 +363,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASETWO_0200
-     * @tc.name       : testOhAvImageGeneratorRelease002
-     * @tc.desc       : Set the pointer which is nullptr.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorRelease002
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASETWO_0200
+     * @tc.desc   Set the pointer which is nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorRelease002', Level.LEVEL0,(done: Function) => {
       console.info(`testOhAvImageGeneratorRelease002 test start`);
@@ -385,12 +385,12 @@ export default function OhAvImageGeneratorNDKTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASE_0300
-     * @tc.name       : testOhAvImageGeneratorRelease003
-     * @tc.desc       : Repeat the release of the pointer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOhAvImageGeneratorRelease003
+     * @tc.number SUB_MULTIMEIDA_AVPLAYER_OHAVIMAGEGENERATORRELEASE_0300
+     * @tc.desc   Repeat the release of the pointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvImageGeneratorRelease003', Level.LEVEL0,(done: Function) => {
       console.info(`testOhAvImageGeneratorRelease003 test start`);

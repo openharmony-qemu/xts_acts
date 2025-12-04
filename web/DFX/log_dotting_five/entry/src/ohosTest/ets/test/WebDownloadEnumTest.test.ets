@@ -65,14 +65,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0100
-    * @tc.name        : testWebDownloadEnum001
-    * @tc.desc        : test the value of WebDownloadErrorCode.ERROR_UNKNOWN is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum001
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0100
+     * @tc.desc   test the value of WebDownloadErrorCode.ERROR_UNKNOWN is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum001";
       Utils.emitEvent(emitKey, 119110)
@@ -83,14 +83,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0200
-    * @tc.name        : testWebDownloadEnum002
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_FAILED is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum002
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0200
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_FAILED is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum002";
       Utils.emitEvent(emitKey, 119110)
@@ -101,14 +101,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0300
-    * @tc.name        : testWebDownloadEnum003
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_ACCESS_DENIED is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum003
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0300
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_ACCESS_DENIED is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum003";
       Utils.emitEvent(emitKey, 119110)
@@ -119,14 +119,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0400
-    * @tc.name        : testWebDownloadEnum004
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_NO_SPACE is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum004
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0400
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_NO_SPACE is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum004";
       Utils.emitEvent(emitKey, 119110)
@@ -137,14 +137,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0500
-    * @tc.name        : testWebDownloadEnum005
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_NAME_TOO_LONG is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum005
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0500
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_NAME_TOO_LONG is 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum005";
       Utils.emitEvent(emitKey, 119110)
@@ -155,14 +155,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0600
-    * @tc.name        : testWebDownloadEnum006
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TOO_LARGE is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum006
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0600
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_TOO_LARGE is 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum006";
       Utils.emitEvent(emitKey, 119110)
@@ -173,14 +173,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0700
-    * @tc.name        : testWebDownloadEnum007
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TRANSIENT_ERROR is 10
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum007
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0700
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_TRANSIENT_ERROR is 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum007";
       Utils.emitEvent(emitKey, 119110)
@@ -191,14 +191,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0800
-    * @tc.name        : testWebDownloadEnum008
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_BLOCKED is 11
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum008
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0800
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_BLOCKED is 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum008";
       Utils.emitEvent(emitKey, 119110)
@@ -209,14 +209,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_0900
-    * @tc.name        : testWebDownloadEnum009
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_TOO_SHORT is 13
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum009
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_0900
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_TOO_SHORT is 13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum009";
       Utils.emitEvent(emitKey, 119110)
@@ -227,14 +227,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1000
-    * @tc.name        : testWebDownloadEnum010
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_HASH_MISMATCH is 14
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum010
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1000
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_HASH_MISMATCH is 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum010";
       Utils.emitEvent(emitKey, 119110)
@@ -245,14 +245,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1100
-    * @tc.name        : testWebDownloadEnum011
-    * @tc.desc        : test the value of WebDownloadErrorCode.FILE_SAME_AS_SOURCE is 15
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum011
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1100
+     * @tc.desc   test the value of WebDownloadErrorCode.FILE_SAME_AS_SOURCE is 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum011";
       Utils.emitEvent(emitKey, 119110)
@@ -263,14 +263,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1200
-    * @tc.name        : testWebDownloadEnum012
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_FAILED is 20
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum012
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1200
+     * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_FAILED is 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum012";
       Utils.emitEvent(emitKey, 119110)
@@ -281,14 +281,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1300
-    * @tc.name        : testWebDownloadEnum013
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_TIMEOUT is 21
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum013
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1300
+     * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_TIMEOUT is 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum013";
       Utils.emitEvent(emitKey, 119110)
@@ -299,14 +299,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1400
-    * @tc.name        : testWebDownloadEnum014
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_DISCONNECTED is 22
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum014
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1400
+     * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_DISCONNECTED is 22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum014";
       Utils.emitEvent(emitKey, 119110)
@@ -317,14 +317,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1500
-    * @tc.name        : testWebDownloadEnum015
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_SERVER_DOWN is 23
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum015
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1500
+     * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_SERVER_DOWN is 23
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum015";
       Utils.emitEvent(emitKey, 119110)
@@ -335,14 +335,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1600
-    * @tc.name        : testWebDownloadEnum016
-    * @tc.desc        : test the value of WebDownloadErrorCode.NETWORK_INVALID_REQUEST is 24
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum016
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1600
+     * @tc.desc   test the value of WebDownloadErrorCode.NETWORK_INVALID_REQUEST is 24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum016";
       Utils.emitEvent(emitKey, 119110)
@@ -353,14 +353,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1700
-    * @tc.name        : testWebDownloadEnum017
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_FAILED is 30
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum017
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1700
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_FAILED is 30
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum017";
       Utils.emitEvent(emitKey, 119110)
@@ -371,14 +371,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1800
-    * @tc.name        : testWebDownloadEnum018
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_NO_RANGE is 31
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum018
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1800
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_NO_RANGE is 31
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum018";
       Utils.emitEvent(emitKey, 119110)
@@ -389,14 +389,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_1900
-    * @tc.name        : testWebDownloadEnum019
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_BAD_CONTENT is 33
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum019
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_1900
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_BAD_CONTENT is 33
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum019";
       Utils.emitEvent(emitKey, 119110)
@@ -407,14 +407,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2000
-    * @tc.name        : testWebDownloadEnum020
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_UNAUTHORIZED is 34
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum020
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2000
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_UNAUTHORIZED is 34
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum020";
       Utils.emitEvent(emitKey, 119110)
@@ -425,14 +425,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2100
-    * @tc.name        : testWebDownloadEnum021
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CERT_PROBLEM is 35
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum021
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2100
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CERT_PROBLEM is 35
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum021";
       Utils.emitEvent(emitKey, 119110)
@@ -443,14 +443,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2200
-    * @tc.name        : testWebDownloadEnum022
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_FORBIDDEN is 36
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum022
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2200
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_FORBIDDEN is 36
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum022";
       Utils.emitEvent(emitKey, 119110)
@@ -461,14 +461,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2300
-    * @tc.name        : testWebDownloadEnum023
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_UNREACHABLE is 37
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum023
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2300
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_UNREACHABLE is 37
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum023";
       Utils.emitEvent(emitKey, 119110)
@@ -479,14 +479,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2400
-    * @tc.name        : testWebDownloadEnum024
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH is 38
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum024
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2400
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CONTENT_LENGTH_MISMATCH is 38
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum024";
       Utils.emitEvent(emitKey, 119110)
@@ -497,14 +497,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2500
-    * @tc.name        : testWebDownloadEnum025
-    * @tc.desc        : test the value of WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT is 39
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum025
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2500
+     * @tc.desc   test the value of WebDownloadErrorCode.SERVER_CROSS_ORIGIN_REDIRECT is 39
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum025";
       Utils.emitEvent(emitKey, 119110)
@@ -515,14 +515,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2600
-    * @tc.name        : testWebDownloadEnum026
-    * @tc.desc        : test the value of WebDownloadErrorCode.USER_CANCELED is 40
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum026
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2600
+     * @tc.desc   test the value of WebDownloadErrorCode.USER_CANCELED is 40
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum026";
       Utils.emitEvent(emitKey, 119110)
@@ -533,14 +533,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2700
-    * @tc.name        : testWebDownloadEnum027
-    * @tc.desc        : test the value of WebDownloadErrorCode.USER_SHUTDOWN is 41
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum027
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2700
+     * @tc.desc   test the value of WebDownloadErrorCode.USER_SHUTDOWN is 41
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum027";
       Utils.emitEvent(emitKey, 119110)
@@ -551,14 +551,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2800
-    * @tc.name        : testWebDownloadEnum028
-    * @tc.desc        : test the value of WebDownloadErrorCode.CRASH is 50
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum028
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2800
+     * @tc.desc   test the value of WebDownloadErrorCode.CRASH is 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum028";
       Utils.emitEvent(emitKey, 119110)
@@ -569,14 +569,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_2900
-    * @tc.name        : testWebDownloadEnum029
-    * @tc.desc        : test the value of WebDownloadState.IN_PROGRESS is 0
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum029
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_2900
+     * @tc.desc   test the value of WebDownloadState.IN_PROGRESS is 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum029";
       Utils.emitEvent(emitKey, 119110)
@@ -587,14 +587,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3000
-    * @tc.name        : testWebDownloadEnum030
-    * @tc.desc        : test the value of WebDownloadState.COMPLETED is 1
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum030
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3000
+     * @tc.desc   test the value of WebDownloadState.COMPLETED is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum030";
       Utils.emitEvent(emitKey, 119110)
@@ -605,14 +605,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3100
-    * @tc.name        : testWebDownloadEnum031
-    * @tc.desc        : test the value of WebDownloadState.CANCELED is 2
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum031
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3100
+     * @tc.desc   test the value of WebDownloadState.CANCELED is 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum031";
       Utils.emitEvent(emitKey, 119110)
@@ -623,14 +623,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3200
-    * @tc.name        : testWebDownloadEnum032
-    * @tc.desc        : test the value of WebDownloadState.INTERRUPTED is 3
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum032
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3200
+     * @tc.desc   test the value of WebDownloadState.INTERRUPTED is 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum032";
       Utils.emitEvent(emitKey, 119110)
@@ -641,14 +641,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3300
-    * @tc.name        : testWebDownloadEnum033
-    * @tc.desc        : test the value of WebDownloadState.PENDING is 4
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum033
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3300
+     * @tc.desc   test the value of WebDownloadState.PENDING is 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum033";
       Utils.emitEvent(emitKey, 119110)
@@ -659,14 +659,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3400
-    * @tc.name        : testWebDownloadEnum034
-    * @tc.desc        : test the value of WebDownloadState.PAUSED is 5
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum034
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3400
+     * @tc.desc   test the value of WebDownloadState.PAUSED is 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum034";
       Utils.emitEvent(emitKey, 119110)
@@ -677,14 +677,14 @@ export default function webDownloadEnumTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOAD_ENUM_3500
-    * @tc.name        : testWebDownloadEnum035
-    * @tc.desc        : test the value of WebDownloadState.UNKNOWN is 6
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebDownloadEnum035
+     * @tc.number SUB_WEB_WEBDOWNLOAD_ENUM_3500
+     * @tc.desc   test the value of WebDownloadState.UNKNOWN is 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebDownloadEnum035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "testWebDownloadEnum035";
       Utils.emitEvent(emitKey, 119110)

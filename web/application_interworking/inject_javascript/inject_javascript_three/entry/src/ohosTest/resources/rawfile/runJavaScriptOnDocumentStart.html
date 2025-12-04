@@ -12,6 +12,7 @@ Hello world!
     function bodyOnLoadLocalStorage() {
       if (typeof(Storage) !== 'undefined') {
         document.getElementById('result').innerHTML = localStorage.getItem('color');
+        localStorage.removeItem('color');
       } else {
         document.getElementById('result').innerHTML = 'Your browser does not support localStorage.';
       }

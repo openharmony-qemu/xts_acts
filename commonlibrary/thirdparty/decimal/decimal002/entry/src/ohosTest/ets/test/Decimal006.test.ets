@@ -35,12 +35,12 @@ export default function DecimalTest006() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_sinh_Func_01
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_sinh_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({
@@ -154,12 +154,12 @@ export default function DecimalTest006() {
         expect(true).assertEqual(true);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_02
-     * @tc.name      : Decimal_sinh_Func_02
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_sinh_Func_02
+     * @tc.number DECIMAL_TEST_02
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

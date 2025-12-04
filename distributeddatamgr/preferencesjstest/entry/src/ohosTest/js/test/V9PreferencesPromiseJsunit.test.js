@@ -46,12 +46,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0100
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0200
-         * @tc.desc flush String callback interface test
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   flush String callback interface test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0100 begin.")
@@ -101,12 +101,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0200
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0900
-         * @tc.desc mPreference.get()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   mPreference.get()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0200 begin.")
@@ -126,12 +126,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0300
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0800
-         * @tc.desc mPreference.get()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.get()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0300 begin.")
@@ -151,12 +151,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0400
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0700
-         * @tc.desc mPreference.getAll()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.getAll()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0400 begin.")
@@ -175,12 +175,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0500
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1100
-         * @tc.desc mPreference.has()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.has()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0500 begin.")
@@ -200,12 +200,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0600
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1000
-         * @tc.desc mPreference.has()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.has()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0600 begin.")
@@ -224,12 +224,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0700
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1700
-         * @tc.desc mPreference.put()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   mPreference.put()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0700 begin.")
@@ -249,12 +249,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0800
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0800
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1500
-         * @tc.desc mPreference.put()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.put()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0800 begin.")
@@ -273,12 +273,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_0900
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_0900
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0500
-         * @tc.desc fmPreference.delete()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 3
+         * @tc.desc   fmPreference.delete()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_0900 begin.")
@@ -298,12 +298,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1000
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1000
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0400
-         * @tc.desc mPreference.delete()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.delete()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1000 begin.")
@@ -322,12 +322,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1100
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1100
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0300
-         * @tc.desc mPreference.flush()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.flush()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1100 begin.")
@@ -346,12 +346,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1200
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1200
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0600
-         * @tc.desc mPreference.flush()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.flush()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1200 begin.")
@@ -370,12 +370,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1300
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1300
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_0100
-         * @tc.desc mPreference.on()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.on()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1300 begin.")
@@ -398,12 +398,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1400
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1400
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1600
-         * @tc.desc mPreference.on()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.on()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1400 begin.")
@@ -424,12 +424,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name SUB_DDM_JSPREFERENCEV9_PROMISE_1500
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1500
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1400
-         * @tc.desc mPreference.off()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.off()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1500 begin.")
@@ -448,12 +448,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name  SUB_DDM_JSPREFERENCEV9_PROMISE_1600
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1600
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1200
-         * @tc.desc  mPreference.off()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.off()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1600 begin.")
@@ -474,12 +474,12 @@ export default function preferencesV9PromiseTest(){
         })
 
         /**
-         * @tc.name  SUB_DDM_JSPREFERENCEV9_PROMISE_1700
+         * @tc.name   SUB_DDM_JSPREFERENCEV9_PROMISE_1700
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceV9JsApiPromiseTest_1300
-         * @tc.desc  mPreference.off()
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   mPreference.off()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_JSPREFERENCEV9_PROMISE_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             console.log("SUB_DDM_JSPREFERENCEV9_PROMISE_1700 begin.")

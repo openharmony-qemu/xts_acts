@@ -19,7 +19,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import wantConstant from '@ohos.app.ability.wantConstant';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { BusinessError } from "@ohos.base";
 
@@ -95,6 +95,14 @@ const judgeDialog = async (done: Function) => {
 export default function flagstartwithouttipstest() {
   describe('FlagsSartWithoutTipsTest', () => {
     beforeAll(async (done: Function) => {
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       context = AppStorage.get<common.UIAbilityContext>('TestAbilityContext') as common.UIAbilityContext;
       console.log('ishave ishave driver', !!driver);
       await checkAppSelectorExist();
@@ -108,16 +116,16 @@ export default function flagstartwithouttipstest() {
         console.log("====>aa force stop executeShellCommand error : " + JSON.stringify(error));
         selectorBundleName = '';
       });
-      await driver.delayMs(1000);
+      await driver.delayMs(500);
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
-     * @tc.name: Verify that the implicit startup application does not set flags and does not match the display popup
-     * @tc.desc: A pop-up dialog box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0100
+     * @tc.desc   A pop-up dialog box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0100', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0100';
@@ -138,7 +146,7 @@ export default function flagstartwithouttipstest() {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -147,12 +155,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
-     * @tc.name: Verify that the implicit startup application sets flags and does not display pop-ups if they do not match
-     * @tc.desc: No information dialog box is displayed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0200
+     * @tc.desc   No information dialog box is displayed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0200', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0200';
@@ -166,20 +174,20 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let textComponent = await driver.findComponent(ON.id('TEST_PAGE_TEXT'));
       expect(!!textComponent).assertTrue();
       done();
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
-     * @tc.name: Verify that the implicit startup service does not set flags and does not display pop-ups
-     * @tc.desc: Pop-up selection box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0500
+     * @tc.desc   Pop-up selection box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0500', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0500';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
@@ -188,14 +196,13 @@ export default function flagstartwithouttipstest() {
       };
       try {
         await context.startAbility(wantInfo);
-        await driver.delayMs(2000);
+        await driver.delayMs(1000);
         let textComponent = await driver.findComponent(ON.text('允许'));
         await textComponent?.click();
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(3000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -204,12 +211,12 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
-     * @tc.name: Verify that the implicit startup service sets flags and does not display pop-ups if they do not match
-     * @tc.desc: Pop-up selection box
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0600
+     * @tc.desc   Pop-up selection box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0600', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0600';
@@ -220,14 +227,13 @@ export default function flagstartwithouttipstest() {
       };
       try {
         await context.startAbility(wantInfo);
-        await driver.delayMs(2000);
+        await driver.delayMs(1000);
         let textComponent = await driver.findComponent(ON.text('允许'));
         await textComponent?.click();
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
       // Wait for the popup to open
-      await driver.delayMs(3000);
       if (!isAppSelectorExist) {
         done();
         return;
@@ -236,18 +242,17 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
-     * @tc.name: Verify that the implicit startup application does not set flags and matches one that opens directly
-     * @tc.desc: Pull the matching UIAbility directly
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0700
+     * @tc.desc   Pull the matching UIAbility directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0700', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0700';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
       await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
-      await driver.delayMs(2000);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',
@@ -256,7 +261,7 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let openViewData = false;
       try {
         await driver.findComponent(ON.text('ohos.want.action.viewData ability')).then(async (data) => {
@@ -277,18 +282,17 @@ export default function flagstartwithouttipstest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
-     * @tc.name: Verify that the implicit startup application sets flags and matches one that opens directly
-     * @tc.desc: Pull the matching UIAbility directly
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_FLAG_0800
+     * @tc.desc   Pull the matching UIAbility directly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_startAbility_FLAG_0800', Level.LEVEL0, async (done: Function) => {
       let TAG = 'SUB_Ability_AbilityRuntime_startAbility_FLAG_0800';
       hilog.info(0x0000, TAG, '%{public}s', '--start');
       await abilityDelegator.executeShellCommand('aa start -b com.acts.flagstartwithouttipstest -a TestAbility');
-      await driver.delayMs(2000);
       try {
         let wantInfo: Want = {
           action: 'ohos.want.onlyforwithouttips.onlyforwithouttips',
@@ -298,7 +302,7 @@ export default function flagstartwithouttipstest() {
       } catch (error) {
         hilog.info(0x0000, TAG, '%{public}s startAbility error', JSON.stringify(error));
       }
-      await driver.delayMs(2000);
+      await driver.delayMs(1000);
       let openViewData = false;
       try {
         await driver.findComponent(ON.text('ohos.want.action.viewData ability')).then(async (data) => {

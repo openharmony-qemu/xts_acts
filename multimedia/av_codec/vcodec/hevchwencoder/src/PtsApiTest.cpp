@@ -66,9 +66,12 @@ void HwEncApiNdkTest::TearDown()
 
 namespace {
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_001
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_001
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_001
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
 {
@@ -111,9 +114,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_001, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_002
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_002
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_002
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
 {
@@ -156,9 +162,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_002, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_003
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_003
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_003
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
 {
@@ -201,9 +210,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_003, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_004
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_004
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_004
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
 {
@@ -246,9 +258,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_004, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_005
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_005
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_005
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
 {
@@ -291,9 +306,12 @@ HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_005, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_HW_ENCODE_PTS_FUNC_006
- * @tc.name      : VIDEO_HW_ENCODE_PTS_FUNC_006
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HW_ENCODE_PTS_FUNC_006
+ * @tc.number VIDEO_HW_ENCODE_PTS_FUNC_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwEncApiNdkTest, VIDEO_HW_ENCODE_PTS_FUNC_006, TestSize.Level1)
 {

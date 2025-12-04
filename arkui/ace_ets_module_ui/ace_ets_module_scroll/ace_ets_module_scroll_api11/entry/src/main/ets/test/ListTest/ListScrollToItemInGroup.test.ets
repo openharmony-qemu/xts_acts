@@ -21,7 +21,7 @@ import { BusinessError } from '@ohos.base'
 
 export default function ListScrollToItemInGroup() {
   const SUITE: string = 'ListScrollToItemInGroup'
-  const waitUiReadyMs: number = 2000;
+  const waitUiReadyMs = 2000;
 
   describe('ListScrollToItemInGroup', () => {
     beforeEach(async (done: Function) => {
@@ -50,12 +50,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0001
-     * @tc.name      : test initial state
-     * @tc.desc      : expect ListItem_0_0 at top position
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0001
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0001
+     * @tc.desc   expect ListItem_0_0 at top position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0001', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0001] START');
@@ -67,13 +67,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0100
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      : ListItemGroup0 set ScrollAlign.START, test scrollToItemInGroup in ScrollAlign.START,
-     *   expect target ListItem at top position
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0100
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0100
+     * @tc.desc   ListItemGroup0 set ScrollAlign.START, test scrollToItemInGroup in ScrollAlign.START,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0100] START');
@@ -89,13 +88,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0200
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      ：ListItemGroup1 set ScrollAlign.CENTER,
-     *   test scrollToItemInGroup in ScrollAlign.CENTER, expect the target ListItem at center position.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0200
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0200
+     * @tc.desc   ：ListItemGroup1 set ScrollAlign.CENTER,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0200] START');
@@ -115,13 +113,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0300
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      : ListItemGroup1 set ScrollAlign.END,
-     *   test scrollToItemInGroup in ScrollAlign.END, expect the target ListItem at bottom position.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0300
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0300
+     * @tc.desc   ListItemGroup1 set ScrollAlign.END,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0300] START');
@@ -138,13 +135,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0400
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      : test scrollToItemInGroup in ScrollAlign.AUTO, expect the target ListItem at bottom position
-     *   when the distance to the top of List is greater than to bottom.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0400
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0400
+     * @tc.desc   test scrollToItemInGroup in ScrollAlign.AUTO, expect the target ListItem at bottom position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0400] START');
@@ -160,13 +156,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0500
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      : test scrollToItemInGroup in ScrollAlign.AUTO, expect the target ListItem at end position
-     *   when the distance to the bottom of List is less than to the top.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0500
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0500
+     * @tc.desc   test scrollToItemInGroup in ScrollAlign.AUTO, expect the target ListItem at end position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0500] START');
@@ -181,12 +176,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number    : ArkUI_List_Scroll_To_Item_In_Group_0600
-     * @tc.name      : test scrollToItemInGroup inteface
-     * @tc.desc      : illegal group, expect nothing happended.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0600
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0600
+     * @tc.desc   illegal group, expect nothing happended.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0600] START');
@@ -201,12 +196,12 @@ export default function ListScrollToItemInGroup() {
     });
 
     /**
-     * @tc.number     : ArkUI_List_Scroll_To_Item_In_Group_0700
-     * @tc.name       : test scrollToItemInGroup inteface
-     * @tc.desc       : illegal index, expect nothing happended.
-     * @tc.size       : MEDIUM
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ArkUI_List_Scroll_To_Item_In_Group_0700
+     * @tc.number ArkUI_List_Scroll_To_Item_In_Group_0700
+     * @tc.desc   illegal index, expect nothing happended.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_List_Scroll_To_Item_In_Group_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[ArkUI_List_Scroll_To_Item_In_Group_0700] START');

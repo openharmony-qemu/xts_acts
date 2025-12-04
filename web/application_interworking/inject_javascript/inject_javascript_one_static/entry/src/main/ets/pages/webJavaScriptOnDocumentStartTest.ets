@@ -15,7 +15,6 @@
 import webView from '@ohos.web.webview';
 import { Entry, Component, Column, Row, Button, ClickEvent, Web,OnPageEndEvent,ScriptItem } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
-import web_webview from '@ohos.web.webview'
 import { BusinessError, RecordData } from '@ohos.base';
 import Utils from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
@@ -37,11 +36,9 @@ struct WebJavaScriptOnDocumentStartTest {
   @State pageEnd: string = "";
   @State switchCase: number = 0;
   @State scripts: Array<ScriptItem> = [
-    {
-      script: "if (typeof(Storage) !== 'undefined') {" +
-        "   localStorage.setItem('color', 'Red');" +
-        "}", scriptRules: ["*"]
-    }
+    { script: "if (typeof(Storage) !== 'undefined') {" +
+      "   localStorage.setItem('color', 'Red');" +
+      '}', scriptRules: ['*'] }
   ] as Array<ScriptItem>;
 
   aboutToAppear() {
@@ -90,31 +87,7 @@ struct WebJavaScriptOnDocumentStartTest {
                 break;
               }
 
-              case "testJavaScriptOnDocumentStart002": {
-                try {
-                  this.scripts = [
-                    {
-                      script: "if (typeof(Storage) !== 'undefined') {" +
-                        "   localStorage.setItem('color', 'Blue');" +
-                        "}", scriptRules: ["123"]
-                    }
-                  ];
-                  this.controller.loadUrl('resource://rawfile/javaScriptOnDocumentStart.html')
-                  this.controller.runJavaScript("getResult()", (error, result) => {
-                    if (error) {
-                      console.info('getResult() return error: ' + error)
-                    }
-                    if (result) {
-                      console.info('getResult() return result: ' + result)
-                      Utils.emitEvent(result, 4501)
-                    }
-                  })
-                } catch (error) {
-                  error = error as BusinessError;
-                  console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
-                }
-                break;
-              }
+
 
               case 'SwitchNextPageStatic' : {
                 let uiContext: UIContext = this.getUIContext();

@@ -51,12 +51,12 @@ export default function getSendableAlbumsTest () {
     }
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Album_001
-     * @tc.name      : getSendableAlbums_promise_000
-     * @tc.desc      : get an user album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSendableAlbums_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Get_Album_001
+     * @tc.desc   get an user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSendableAlbums_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getSendableAlbums_promise_000';
@@ -95,12 +95,12 @@ export default function getSendableAlbumsTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Get_Album_001
-     * @tc.name      : getSendableAlbums_promise_001
-     * @tc.desc      : get an user album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSendableAlbums_promise_001
+     * @tc.number Sub_Photo_Access_Sendable_Get_Album_001
+     * @tc.desc   get an user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSendableAlbums_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getSendableAlbums_promise_001';

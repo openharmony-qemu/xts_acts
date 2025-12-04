@@ -65,19 +65,23 @@ export default function nfcMifareUltralightTag() {
         })
             
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0100
          * @tc.number SUB_Communication_NFC_mifareUltralight_0100
-         * @tc.name testreadMultiplePages
-         * @tc.desc Test readMultiplePages api by promise.
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test readMultiplePages api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_mifareUltralight_0100', Level.LEVEL0, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
                 let pageIndex = 1;
                 await MifareUltralightTag.readMultiplePages(pageIndex).then((data) => {
                     console.info("[NFC_test] mifareUltralight1 readMultiplePages1 data: " + data + "json1:" + JSON.stringify(data));
+                    if (data.length > 0) {
+                        expect(data.length > 0).assertTrue();
+                    } else {
+                        expect(data).assertDeepEquals([]);
+                    }
                     expect(data).assertInstanceOf('Array')
                     done();
                 }).catch((err)=> {
@@ -104,13 +108,12 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0200
          * @tc.number SUB_Communication_NFC_mifareUltralight_0200
-         * @tc.name testreadMultiplePages
-         * @tc.desc Test readMultiplePages api by callback.
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test readMultiplePages api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_mifareUltralight_0200', Level.LEVEL0, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -127,6 +130,11 @@ export default function nfcMifareUltralightTag() {
                         expect(true).assertTrue();
                     } else {
                         console.info("[NFC_test] mifareUltralight2 readMultiplePages2 data: " + data + "json2:" + JSON.stringify(data));
+                        if (data.length > 0) {
+                            expect(data.length > 0).assertTrue();
+                        } else {
+                            expect(data).assertDeepEquals([]);
+                        }
                         expect(data).assertInstanceOf('Array')
                     }
                     done();
@@ -139,13 +147,12 @@ export default function nfcMifareUltralightTag() {
         })
         
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0300
          * @tc.number SUB_Communication_NFC_mifareUltralight_0300
-         * @tc.name testwriteSinglePage
-         * @tc.desc Test writeSinglePage api by promise.
-         * @tc.size MEDIUM
-         * @ since 7
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test writeSinglePage api by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_mifareUltralight_0300', Level.LEVEL0, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -179,13 +186,12 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0400
          * @tc.number SUB_Communication_NFC_mifareUltralight_0400
-         * @tc.name testwriteSinglePage
-         * @tc.desc Test writeSinglePage api by callback.
-         * @tc.size MEDIUM
-         * @ since 7
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test writeSinglePage api by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_mifareUltralight_0400', Level.LEVEL0, async function (done) {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {
@@ -215,13 +221,12 @@ export default function nfcMifareUltralightTag() {
         })
 
         /**
+         * @tc.name   SUB_Communication_NFC_mifareUltralight_0500
          * @tc.number SUB_Communication_NFC_mifareUltralight_0500
-         * @tc.name testgetType
-         * @tc.desc Gets the type of Mifare Ultralight label
-         * @tc.size MEDIUM
-         * @ since 9
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Gets the type of Mifare Ultralight label
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_NFC_mifareUltralight_0500', Level.LEVEL0, function ()  {
             if (MifareUltralightTag != null && MifareUltralightTag != undefined) {

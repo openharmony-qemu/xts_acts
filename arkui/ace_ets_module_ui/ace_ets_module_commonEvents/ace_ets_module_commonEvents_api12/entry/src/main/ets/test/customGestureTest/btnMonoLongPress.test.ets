@@ -58,13 +58,15 @@ export default function btnMonoLongPress() {
       console.info("btnMonoLongPress after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_ACTION_GESTURE_MONOPOLIZE_0040_btnMonoLongPress_001
-     * @tc.desc  button monopolize LongPress and button tap test
-     * @tc.level Level 0
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   btnMonoLongPress_001
+     * @tc.number btnMonoLongPress_001
+     * @tc.desc   btnMonoLongPress_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('btnMonoLongPress_001', Level.LEVEL0, async (done: Function) => {
       console.info('[btnMonoLongPress_001] START');
       await CommonFunc.sleep(1000);

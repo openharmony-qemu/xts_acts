@@ -32,12 +32,12 @@ export default function requestImageDataTest() {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0000
-     * @tc.name      : request_image_data_000
-     * @tc.desc      : request image data with highQualityMode and originalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_datadata_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0000
+     * @tc.desc   request image data with highQualityMode and originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_datadata_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_000'; 
@@ -65,12 +65,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0100
-     * @tc.name      : request_image_data_001
-     * @tc.desc      : request image data with fastMode and oringinalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0100
+     * @tc.desc   request image data with fastMode and oringinalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_001', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_001';
@@ -98,12 +98,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0200
-     * @tc.name      : request_image_data_002
-     * @tc.desc      : request image data with balanceMode and originalMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0200
+     * @tc.desc   request image data with balanceMode and originalMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_002', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_002';
@@ -131,12 +131,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0300
-     * @tc.name      : request_image_data_003
-     * @tc.desc      : request image data with highQualityMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0300
+     * @tc.desc   request image data with highQualityMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_003', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_003';
@@ -164,12 +164,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0400
-     * @tc.name      : request_image_data_004
-     * @tc.desc      : request image data with fastMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0400
+     * @tc.desc   request image data with fastMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_004', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_004';
@@ -197,12 +197,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0500
-     * @tc.name      : request_image_data_005
-     * @tc.desc      : request image data with balanceMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0500
+     * @tc.desc   request image data with balanceMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_005', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_005';
@@ -230,12 +230,12 @@ export default function requestImageDataTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0500
-     * @tc.name      : request_image_data_005
-     * @tc.desc      : request image data with balanceMode and editedMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_image_data_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_IMAGE_DATA_0500
+     * @tc.desc   request image data with balanceMode and editedMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_image_data_005', Level.LEVEL0, async (done: Function) => {
       let testNum = 'request_image_data_005';

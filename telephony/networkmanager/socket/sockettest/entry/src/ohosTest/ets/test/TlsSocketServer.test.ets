@@ -203,13 +203,13 @@ export default function TLSSocketServerTest() {
       console.info('************* end SocketTest *************');
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_constructTLSSocketServerInstance_0100
-     * @tc.name  :  testNetworkMgrSocketconstructTLSSocketServerInstance0100
-     * @tc.desc  :  Create and return a TLSSocketServer object
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketconstructTLSSocketServerInstance0100
+     * @tc.number SUB_NetworkMgr_Socket_constructTLSSocketServerInstance_0100
+     * @tc.desc   Create and return a TLSSocketServer object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketconstructTLSSocketServerInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketconstructTLSSocketServerInstance0100';
@@ -225,13 +225,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0100
-     * @tc.desc  :  Test tlssocket listening, Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0100
+     * @tc.desc   Test tlssocket listening, Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0100';
@@ -251,13 +251,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0200
-     * @tc.desc  :  Test whether listen can be run within the on method,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0200
+     * @tc.desc   Test whether listen can be run within the on method,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0200';
@@ -282,13 +282,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0300
-     * @tc.desc  :  Test whether the listen method can run before the on method,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0300
+     * @tc.desc   Test whether the listen method can run before the on method,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0300';
@@ -310,13 +310,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0400
-     * @tc.desc  :  Test whether other ip can run the listen method separately,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0400
+     * @tc.desc   Test whether other ip can run the listen method separately,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0400';
@@ -336,13 +336,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0500
-     * @tc.desc  :  Test whether the local startup service can run the listen method,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0500
+     * @tc.desc   Test whether the local startup service can run the listen method,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0500';
@@ -362,13 +362,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0600
-     * @tc.desc  :  Test whether listen can be enabled if key is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0600
+     * @tc.desc   Test whether listen can be enabled if key is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0600';
@@ -414,13 +414,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0700
-     * @tc.desc  :  Test whether listen can be enabled if ca is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0700
+     * @tc.desc   Test whether listen can be enabled if ca is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0700';
@@ -466,13 +466,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0800
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0800
-     * @tc.desc  :  Test whether listen can be enabled if cert is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0800
+     * @tc.desc   Test whether listen can be enabled if cert is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0800';
@@ -518,13 +518,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0900
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen0900
-     * @tc.desc  :  Test whether listen can be enabled if password is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen0900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_0900
+     * @tc.desc   Test whether listen can be enabled if password is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen0900';
@@ -570,13 +570,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1000
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1000
-     * @tc.desc  :  Test whether listen can be enabled if password is undefined,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1000
+     * @tc.desc   Test whether listen can be enabled if password is undefined,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1000';
@@ -622,13 +622,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1100
-     * @tc.desc  :  Test whether listen can be enabled if protocols is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1100
+     * @tc.desc   Test whether listen can be enabled if protocols is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1100';
@@ -674,13 +674,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1200
-     * @tc.desc  :  Test whether listen can be enabled if protocols is 1.3,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1200
+     * @tc.desc   Test whether listen can be enabled if protocols is 1.3,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1200';
@@ -726,13 +726,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1300
-     * @tc.desc  :  Test whether listen can be enabled if useRemoteCipherPrefer is false,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1300
+     * @tc.desc   Test whether listen can be enabled if useRemoteCipherPrefer is false,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1300';
@@ -778,13 +778,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1400
-     * @tc.desc  :  Test whether listen can be enabled if useRemoteCipherPrefer is true,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1400
+     * @tc.desc   Test whether listen can be enabled if useRemoteCipherPrefer is true,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1400';
@@ -830,13 +830,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1500
-     * @tc.desc  :  Test whether listen can be enabled if signatureAlgorithms is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1500
+     * @tc.desc   Test whether listen can be enabled if signatureAlgorithms is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1500';
@@ -882,13 +882,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1600
-     * @tc.desc  :  Test whether listen can be enabled if signatureAlgorithms is undefined,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1600
+     * @tc.desc   Test whether listen can be enabled if signatureAlgorithms is undefined,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1600';
@@ -934,13 +934,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1700
-     * @tc.desc  :  Test whether listen can be enabled if cipherSuite is empty,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1700
+     * @tc.desc   Test whether listen can be enabled if cipherSuite is empty,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1700';
@@ -986,13 +986,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1800
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1800
-     * @tc.desc  :  Test whether listen can be enabled if cipherSuite is undefined,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1800
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1800
+     * @tc.desc   Test whether listen can be enabled if cipherSuite is undefined,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1800';
@@ -1038,13 +1038,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1900
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen1900
-     * @tc.desc  :  Test IPv6,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen1900
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_1900
+     * @tc.desc   Test IPv6,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen1900';
@@ -1091,13 +1091,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2000
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen2000
-     * @tc.desc  :  Test the maximum legal port,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2000
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2000
+     * @tc.desc   Test the maximum legal port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2000';
@@ -1143,13 +1143,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen2100
-     * @tc.desc  :  Test the smallest legal port,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2100
+     * @tc.desc   Test the smallest legal port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2100';
@@ -1195,13 +1195,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerListen2200
-     * @tc.desc  :  The test exceeds the legitimate port,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerListen2200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Listen_2200
+     * @tc.desc   The test exceeds the legitimate port,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerListen2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerListen2200';
@@ -1247,13 +1247,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0100
-     * @tc.desc  :  After the listen of TLSSocketServer is successful, get the TLSSocketServer status, Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0100
+     * @tc.desc   After the listen of TLSSocketServer is successful, get the TLSSocketServer status, Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0100';
@@ -1276,13 +1276,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0200
-     * @tc.desc  :  Get link status when key is empty,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0200
+     * @tc.desc   Get link status when key is empty,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0200';
@@ -1335,13 +1335,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0300
-     * @tc.desc  :  Get additional ip link status,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0300
+     * @tc.desc   Get additional ip link status,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0300';
@@ -1394,13 +1394,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0400
-     * @tc.desc  :  Get TLSSocketServer link status (onconnect),Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0400
+     * @tc.desc   Get TLSSocketServer link status (onconnect),Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0400';
@@ -1433,13 +1433,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0500
-     * @tc.desc  :  Get TLSSocketServer link status (ca is empty),Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0500
+     * @tc.desc   Get TLSSocketServer link status (ca is empty),Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0500';
@@ -1496,13 +1496,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetState0600
-     * @tc.desc  :  Get TLSSocketServer link status (listen is not set),Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetState0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetState_0600
+     * @tc.desc   Get TLSSocketServer link status (listen is not set),Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetState0600';
@@ -1522,13 +1522,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0100
-     * @tc.desc  :  Set other properties of the TLSSocketServer connection,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0100
+     * @tc.desc   Set other properties of the TLSSocketServer connection,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0100';
@@ -1564,13 +1564,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0200
-     * @tc.desc  :  Test after modifying OOBInline,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0200
+     * @tc.desc   Test after modifying OOBInline,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0200';
@@ -1606,13 +1606,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0300
-     * @tc.desc  :  Test and modify TCPNoDelay,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0300
+     * @tc.desc   Test and modify TCPNoDelay,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0300';
@@ -1648,13 +1648,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0400
-     * @tc.desc  :  Test and modify socketLinger,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0400
+     * @tc.desc   Test and modify socketLinger,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0400';
@@ -1689,13 +1689,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0500
-     * @tc.desc  :  Test and modify socketLinger,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0500
+     * @tc.desc   Test and modify socketLinger,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0500';
@@ -1730,13 +1730,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0600
-     * @tc.desc  :  Test and modify socketimeout,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0600
+     * @tc.desc   Test and modify socketimeout,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0600';
@@ -1771,13 +1771,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0700
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerSetExtraOptions0700
-     * @tc.desc  :  Test and modify reuseAddress,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerSetExtraOptions0700
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_SetExtraOptions_0700
+     * @tc.desc   Test and modify reuseAddress,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerSetExtraOptions0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerSetExtraOptions0700';
@@ -1809,13 +1809,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0100
-     * @tc.desc  :  Test to obtain a certificate,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0100
+     * @tc.desc   Test to obtain a certificate,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0100';
@@ -1837,13 +1837,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0200
-     * @tc.desc  :  The test returned an error code 401,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0200
+     * @tc.desc   The test returned an error code 401,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0200';
@@ -1877,13 +1877,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0300
-     * @tc.desc  :  Other port interface testing,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0300
+     * @tc.desc   Other port interface testing,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0300';
@@ -1927,13 +1927,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0400
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0400
-     * @tc.desc  :  Open on and off before testing,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0400
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0400
+     * @tc.desc   Open on and off before testing,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0400';
@@ -1978,13 +1978,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0500
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0500
-     * @tc.desc  :  Set other configuration items,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0500
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0500
+     * @tc.desc   Set other configuration items,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0500';
@@ -2024,13 +2024,13 @@ export default function TLSSocketServerTest() {
       console.info(`testNetworkMgrSocketTLSSocketServerGetCertificate0500 test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0600
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetCertificate0600
-     * @tc.desc  :  Do not monitor the service,Use Promise asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetCertificate0600
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetCertificate_0600
+     * @tc.desc   Do not monitor the service,Use Promise asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetCertificate0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetCertificate0600';
@@ -2063,13 +2063,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetProtocol0100
-     * @tc.desc  :  Get the communication protocol version,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetProtocol0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0100
+     * @tc.desc   Get the communication protocol version,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetProtocol0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetProtocol0100';
@@ -2093,13 +2093,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetProtocol0200
-     * @tc.desc  :  Verify that other ip can obtain the protocol version successfully,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetProtocol0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0200
+     * @tc.desc   Verify that other ip can obtain the protocol version successfully,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetProtocol0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetProtocol0200';
@@ -2147,13 +2147,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerGetProtocol0300
-     * @tc.desc  :  Do not configure the protocol version,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerGetProtocol0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_GetProtocol_0300
+     * @tc.desc   Do not configure the protocol version,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerGetProtocol0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerGetProtocol0300';
@@ -2201,13 +2201,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_On_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOn0100
-     * @tc.desc  :  Do not set whether the client can trigger the subscription,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOn0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_On_0100
+     * @tc.desc   Do not set whether the client can trigger the subscription,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOn0100';
@@ -2242,13 +2242,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_On_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOn0300
-     * @tc.desc  :  Client binds to other ports,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 3
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOn0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_On_0300
+     * @tc.desc   Client binds to other ports,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOn0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOn0300';
@@ -2292,13 +2292,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Off_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOff0100
-     * @tc.desc  :  Unsubscribe to all,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOff0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Off_0100
+     * @tc.desc   Unsubscribe to all,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOff0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOff0100';
@@ -2329,13 +2329,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Off_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOff0200
-     * @tc.desc  :  Unsubscribe to the specified connection,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOff0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Off_0200
+     * @tc.desc   Unsubscribe to the specified connection,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOff0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOff0200';
@@ -2366,13 +2366,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_Off_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOff0300
-     * @tc.desc  :  Set up another ip or port,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOff0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_Off_0300
+     * @tc.desc   Set up another ip or port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOff0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOff0300';
@@ -2403,13 +2403,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOnE0100
-     * @tc.desc  :  Test the On Error event,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnE0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0100
+     * @tc.desc   Test the On Error event,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOnE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnE0100';
@@ -2440,13 +2440,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOnE0200
-     * @tc.desc  :  Client binds to other ip,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnE0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0200
+     * @tc.desc   Client binds to other ip,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOnE0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnE0200';
@@ -2493,13 +2493,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOnE0300
-     * @tc.desc  :  Client binds to other port,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOnE0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OnE_0300
+     * @tc.desc   Client binds to other port,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOnE0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOnE0300';
@@ -2544,13 +2544,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0100
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOffE0100
-     * @tc.desc  :  Unsubscribe to error events for TLSSocketServer connections,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffE0100
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0100
+     * @tc.desc   Unsubscribe to error events for TLSSocketServer connections,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOffE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffE0100';
@@ -2580,13 +2580,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0200
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOffE0200
-     * @tc.desc  :  The test specifies that the callback in the incoming on cancels a subscription,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffE0200
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0200
+     * @tc.desc   The test specifies that the callback in the incoming on cancels a subscription,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOffE0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffE0200';
@@ -2617,13 +2617,13 @@ export default function TLSSocketServerTest() {
       console.info(`${caseName} test end `);
     })
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0300
-     * @tc.name  :  testNetworkMgrSocketTLSSocketServerOffE0300
-     * @tc.desc  :  Test whether the subscription event can be cancelled if it is not enabled,Use Callback asynchronous callback.
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testNetworkMgrSocketTLSSocketServerOffE0300
+     * @tc.number SUB_NetworkMgr_Socket_TLSSocketServer_OffE_0300
+     * @tc.desc   Test whether the subscription event can be cancelled if it is not enabled,Use Callback asynchronous callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketTLSSocketServerOffE0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketTLSSocketServerOffE0300';

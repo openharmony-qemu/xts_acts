@@ -28,13 +28,12 @@ export default function getUserDir() {
     hilog.info(domain, tag, '%{public}s', 'environment_getUserDir_test start');
 
     /**
+     * @tc.name   environment_test_getUserDesktopDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0100
-     * @tc.name environment_test_getUserDesktopDir_Static_001
-     * @tc.desc Test getDesktopDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getDesktopDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDesktopDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDesktopDir_Static_001 start');
@@ -52,13 +51,12 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDocumentDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDocumentDir_0100
-     * @tc.name environment_test_getUserDocumentDir_Static_001
-     * @tc.desc Test getUserDocumentDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserDocumentDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDocumentDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDocumentDir_Static_001 start');
@@ -76,13 +74,12 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDownloadDir_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDownloadDir_0100
-     * @tc.name environment_test_getUserDownloadDir_Static_001
-     * @tc.desc Test getUserDownloadDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test getUserDownloadDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('environment_test_getUserDownloadDir_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'environment_test_getUserDownloadDir_Static_001 start');

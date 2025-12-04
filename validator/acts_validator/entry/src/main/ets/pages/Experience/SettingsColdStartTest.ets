@@ -160,9 +160,9 @@ struct CustomContainerUser {
                       abilityName: "com.ohos.launcher.MainAbility",
                     }
                     abilityContext.startAbility(str).then((data) => {
-
+                      console.info('start ability successfully:' + data)
                     }).catch((error: BusinessError) => {
-
+                      console.error('start ability failed:' + error)
                     })
                   })
               }
@@ -228,7 +228,7 @@ struct CustomContainerUser {
         appName: $appName,
         appBundleName: $appBundleName,
         appAbilityName: $appAbilityName,
-      })
+      }).margin({ bottom: '20vp' })
     }.width('100%').height('100%').backgroundColor(Color.Black)
   }
 

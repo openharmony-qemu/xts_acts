@@ -50,10 +50,12 @@ export default function NavDestinationStateActive() {
 
 
     /**
-     * @tc.number    NavDestinationStateActive_0100
-     * @tc.name      NavDestinationStateActive_0100
-     * @tc.desc      Test NavDestinationState ON_ACTIVE
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationStateActive_0100
+     * @tc.number NavDestinationStateActive_0100
+     * @tc.desc   Test NavDestinationState ON_ACTIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationStateActive_0100', Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationStateActive_0100 START');
@@ -74,10 +76,12 @@ export default function NavDestinationStateActive() {
     });
 
     /**
-     * @tc.number    NavDestinationStateActive_0200
-     * @tc.name      NavDestinationStateActive_0200
-     * @tc.desc      Test NavDestinationState ON_INACTIVE
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationStateActive_0200
+     * @tc.number NavDestinationStateActive_0200
+     * @tc.desc   Test NavDestinationState ON_INACTIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationStateActive_0200', Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationStateActive_0200 START');

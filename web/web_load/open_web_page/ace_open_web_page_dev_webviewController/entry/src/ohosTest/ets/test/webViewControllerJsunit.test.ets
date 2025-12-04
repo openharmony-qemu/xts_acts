@@ -37,10 +37,13 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
+    /**
+     * @tc.name   testPostUrl
      * @tc.number SUB_ACE_BASIC_ETS_API_2500
-     * @tc.name testPostUrl
-     * @tc.desc test for PostUrl 
+     * @tc.desc   test for PostUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPostUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitPostUrl";
@@ -48,10 +51,13 @@ export default function webViewControllerJsunit() {
       Utils.registerEvent("testPostUrl", "http://www.example.com/", 200330, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
+    /**
+     * @tc.name   testGetUserAgent
      * @tc.number SUB_ACE_BASIC_ETS_API_0200
-     * @tc.name testGetUserAgent
-     * @tc.desc Get the UserAgent
+     * @tc.desc   Get the UserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetUserAgent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitgetUserAgent";
@@ -59,10 +65,13 @@ export default function webViewControllerJsunit() {
       Utils.registerEvent("testGetUserAgent", "success", 200340, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
+    /**
+     * @tc.name   testGetUserAgentAgain
      * @tc.number SUB_ACE_BASIC_ETS_API_0300
-     * @tc.name testGetUserAgentAgain
-     * @tc.desc Get the UserAgent again
+     * @tc.desc   Get the UserAgent again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetUserAgentAgain', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitgetUserAgentAgain";
@@ -70,10 +79,13 @@ export default function webViewControllerJsunit() {
       Utils.registerEvent("testGetUserAgentAgain", "success", 200350, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
+    /**
+     * @tc.name   testGetOriginalUrl
      * @tc.number SUB_ACE_BASIC_ETS_API_1000
-     * @tc.name testGetOriginalUrl
-     * @tc.desc test for getOriginalUrl
+     * @tc.desc   test for getOriginalUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginalUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginalUrl";
@@ -81,10 +93,13 @@ export default function webViewControllerJsunit() {
       Utils.registerEvent("testGetOriginalUrl", "success", 200360, done);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
+    /**
+     * @tc.name   testGetOriginalUrlTwo
      * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWCONTROLLERJSUNIT_API_1100
-     * @tc.name testGetOriginalUrlTwo
-     * @tc.desc test for getOriginalUrl again
+     * @tc.desc   test for getOriginalUrl again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetOriginalUrlTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitGetOriginalUrlTwo";

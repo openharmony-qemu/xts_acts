@@ -106,9 +106,12 @@ void VDecNeedInputData(OH_AVCodec *codec, uint32_t index, OH_AVMemory *data, voi
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0100
- * @tc.name      : OH_VideoDecoder_FindDecoder para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0100
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0100, TestSize.Level2)
 {
@@ -117,9 +120,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0200
- * @tc.name      : OH_VideoDecoder_CreateByName para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0200
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0200, TestSize.Level2)
 {
@@ -128,9 +134,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_3300
- * @tc.name      : OH_VideoDecoder_SetCallback para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3300
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_3300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3300, TestSize.Level2)
 {
@@ -143,9 +152,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1800
- * @tc.name      : OH_VideoDecoder_SetCallback para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1800
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1800, TestSize.Level2)
 {
@@ -161,9 +173,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0300
- * @tc.name      : OH_VideoDecoder_SetCallback para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0300
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0300, TestSize.Level2)
 {
@@ -177,9 +192,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0400
- * @tc.name      : OH_VideoDecoder_Destroy para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0400
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0400, TestSize.Level2)
 {
@@ -187,9 +205,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0500
- * @tc.name      : OH_VideoDecoder_Configure para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0500
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0500, TestSize.Level2)
 {
@@ -199,9 +220,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1400
- * @tc.name      : OH_VideoDecoder_Configure para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1400
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1400, TestSize.Level2)
 {
@@ -211,9 +235,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1400
- * @tc.name      : OH_VideoDecoder_Configure para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_5000
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_5000, TestSize.Level2)
 {
@@ -225,9 +252,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_5000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1400
- * @tc.name      : OH_VideoDecoder_Configure para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_5100
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_5100, TestSize.Level2)
 {
@@ -242,9 +272,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_5100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0600
- * @tc.name      : OH_VideoDecoder_Start para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0600
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0600, TestSize.Level2)
 {
@@ -252,9 +285,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0700
- * @tc.name      : OH_VideoDecoder_Stop para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0700
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0700, TestSize.Level2)
 {
@@ -262,9 +298,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0800
- * @tc.name      : OH_VideoDecoder_Flush para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0800
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0800, TestSize.Level2)
 {
@@ -272,9 +311,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_0900
- * @tc.name      : OH_VideoDecoder_Reset para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_0900
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_0900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0900, TestSize.Level2)
 {
@@ -282,9 +324,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_0900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1000
- * @tc.name      : OH_VideoDecoder_GetOutputDescription para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1000
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1000, TestSize.Level2)
 {
@@ -292,9 +337,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1100
- * @tc.name      : OH_VideoDecoder_SetParameter para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1100
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1100, TestSize.Level2)
 {
@@ -303,9 +351,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_4100
- * @tc.name      : OH_VideoDecoder_Prepare para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_4100
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_4100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_4100, TestSize.Level2)
 {
@@ -315,9 +366,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_4100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1500
- * @tc.name      : OH_VideoDecoder_SetParameter para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1500
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1500, TestSize.Level2)
 {
@@ -332,9 +386,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1200
- * @tc.name      : OH_VideoDecoder_SetSurface para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1200
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1200, TestSize.Level2)
 {
@@ -343,9 +400,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1300
- * @tc.name      : OH_VideoDecoder_CreateByName para correct
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1300
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1300, TestSize.Level2)
 {
@@ -353,9 +413,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1600
- * @tc.name      : OH_VideoDecoder_CreateByName para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1600
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1600, TestSize.Level2)
 {
@@ -364,9 +427,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1700
- * @tc.name      : OH_VideoDecoder_CreateByName para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_1700
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1700, TestSize.Level2)
 {
@@ -375,9 +441,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_1700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_1700
- * @tc.name      : OH_VideoDecoder_IsValid para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2200
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_1700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2200, TestSize.Level2)
 {
@@ -392,9 +461,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_2500
- * @tc.name      : OH_VideoDecoder_RenderOutputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2500
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_2500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2500, TestSize.Level2)
 {
@@ -402,9 +474,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_2600
- * @tc.name      : OH_VideoDecoder_RenderOutputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2600
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_2600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2600, TestSize.Level2)
 {
@@ -413,9 +488,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_2700
- * @tc.name      : OH_VideoDecoder_FreeOutputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2700
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_2700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2700, TestSize.Level2)
 {
@@ -423,9 +501,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_2800
- * @tc.name      : OH_VideoDecoder_FreeOutputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2800
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_2800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2800, TestSize.Level2)
 {
@@ -434,9 +515,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_2900
- * @tc.name      : OH_VideoDecoder_FreeOutputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_2900
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_2900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2900, TestSize.Level2)
 {
@@ -445,9 +529,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_2900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_3000
- * @tc.name      : OH_VideoDecoder_PushInputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3000
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_3000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3000, TestSize.Level2)
 {
@@ -463,9 +550,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_3100
- * @tc.name      : OH_VideoDecoder_PushInputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3100
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_3100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3100, TestSize.Level2)
 {
@@ -479,9 +569,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ILLEGAL_PARA_3200
- * @tc.name      : OH_VideoDecoder_PushInputData para error
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_ILLEGAL_PARA_3200
+ * @tc.number VIDEO_HWDEC_ILLEGAL_PARA_3200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3200, TestSize.Level2)
 {
@@ -495,9 +588,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ILLEGAL_PARA_3200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0100
- * @tc.name      : create create
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0100
+ * @tc.number VIDEO_HWDEC_API_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0100, TestSize.Level2)
 {
@@ -510,9 +606,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0200
- * @tc.name      : create configure configure
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0200
+ * @tc.number VIDEO_HWDEC_API_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0200, TestSize.Level2)
 {
@@ -532,9 +631,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0300
- * @tc.name      : create configure start start
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0300
+ * @tc.number VIDEO_HWDEC_API_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0300, TestSize.Level2)
 {
@@ -555,9 +657,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0400
- * @tc.name      : create configure start stop stop
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0400
+ * @tc.number VIDEO_HWDEC_API_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0400, TestSize.Level2)
 {
@@ -579,9 +684,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0500
- * @tc.name      : create configure start stop reset reset
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0500
+ * @tc.number VIDEO_HWDEC_API_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0500, TestSize.Level2)
 {
@@ -604,9 +712,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0600
- * @tc.name      : create configure start EOS EOS
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0600
+ * @tc.number VIDEO_HWDEC_API_0600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0600, TestSize.Level2)
 {
@@ -647,9 +758,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0700
- * @tc.name      : create configure start flush flush
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0700
+ * @tc.number VIDEO_HWDEC_API_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0700, TestSize.Level2)
 {
@@ -671,9 +785,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0800
- * @tc.name      : create configure start stop release release
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0800
+ * @tc.number VIDEO_HWDEC_API_0800
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0800, TestSize.Level2)
 {
@@ -697,9 +814,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_0900
- * @tc.name      : create create
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_0900
+ * @tc.number VIDEO_HWDEC_API_0900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0900, TestSize.Level2)
 {
@@ -712,9 +832,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_0900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_1000
- * @tc.name      : repeat OH_VideoDecoder_SetCallback
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_1000
+ * @tc.number VIDEO_HWDEC_API_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1000, TestSize.Level2)
 {
@@ -729,9 +852,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_1100
- * @tc.name      : repeat OH_VideoDecoder_GetOutputDescription
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_1100
+ * @tc.number VIDEO_HWDEC_API_1100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1100, TestSize.Level2)
 {
@@ -743,9 +869,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_API_1200
- * @tc.name      : repeat OH_VideoDecoder_SetParameter
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_API_1200
+ * @tc.number VIDEO_HWDEC_API_1200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1200, TestSize.Level2)
 {
@@ -765,9 +894,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_API_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0100
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0100
+ * @tc.number VIDEO_HWDEC_CAP_API_0100
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0100, TestSize.Level2)
 {
@@ -776,9 +908,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0200
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0200
+ * @tc.number VIDEO_HWDEC_CAP_API_0200
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0200, TestSize.Level2)
 {
@@ -787,9 +922,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0300
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0300
+ * @tc.number VIDEO_HWDEC_CAP_API_0300
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0300, TestSize.Level2)
 {
@@ -798,9 +936,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0400
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0400
+ * @tc.number VIDEO_HWDEC_CAP_API_0400
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0400, TestSize.Level2)
 {
@@ -809,9 +950,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0500
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0500
+ * @tc.number VIDEO_HWDEC_CAP_API_0500
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0500, TestSize.Level2)
 {
@@ -821,9 +965,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0600
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0600
+ * @tc.number VIDEO_HWDEC_CAP_API_0600
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0600, TestSize.Level2)
 {
@@ -831,9 +978,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0700
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0700
+ * @tc.number VIDEO_HWDEC_CAP_API_0700
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0700, TestSize.Level2)
 {
@@ -841,9 +991,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0800
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test, 不同平台解码器数量不一致, 改为不校验具体数量
+ * @tc.name   VIDEO_HWDEC_CAP_API_0800
+ * @tc.number VIDEO_HWDEC_CAP_API_0800
+ * @tc.desc   function test, 不同平台解码器数量不一致, 改为不校验具体数量
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0800, TestSize.Level2)
 {
@@ -858,9 +1011,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_0900
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_0900
+ * @tc.number VIDEO_HWDEC_CAP_API_0900
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0900, TestSize.Level2)
 {
@@ -870,9 +1026,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_0900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1000
- * @tc.name      : OH_AVCodec_GetCapability
- * @tc.desc      : function test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1000
+ * @tc.number VIDEO_HWDEC_CAP_API_1000
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1000, TestSize.Level2)
 {
@@ -882,9 +1041,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3100
- * @tc.name      : OH_AVCapability_GetVideoWidthAlignment param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3100
+ * @tc.number VIDEO_HWDEC_CAP_API_3100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3100, TestSize.Level2)
 {
@@ -896,9 +1058,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3200
- * @tc.name      : OH_AVCapability_GetVideoWidthAlignment param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3200
+ * @tc.number VIDEO_HWDEC_CAP_API_3200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3200, TestSize.Level2)
 {
@@ -909,9 +1074,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3300
- * @tc.name      : OH_AVCapability_GetVideoWidthAlignment param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3300
+ * @tc.number VIDEO_HWDEC_CAP_API_3300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3300, TestSize.Level2)
 {
@@ -926,9 +1094,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3400
- * @tc.name      : OH_AVCapability_GetVideoHeightAlignment param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3400
+ * @tc.number VIDEO_HWDEC_CAP_API_3400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3400, TestSize.Level2)
 {
@@ -940,9 +1111,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3500
- * @tc.name      : OH_AVCapability_GetVideoHeightAlignment param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3500
+ * @tc.number VIDEO_HWDEC_CAP_API_3500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3500, TestSize.Level2)
 {
@@ -953,9 +1127,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3600
- * @tc.name      : OH_AVCapability_GetVideoHeightAlignment param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3600
+ * @tc.number VIDEO_HWDEC_CAP_API_3600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3600, TestSize.Level2)
 {
@@ -970,9 +1147,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3700
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3700
+ * @tc.number VIDEO_HWDEC_CAP_API_3700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3700, TestSize.Level2)
 {
@@ -986,9 +1166,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3800
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3800
+ * @tc.number VIDEO_HWDEC_CAP_API_3800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3800, TestSize.Level2)
 {
@@ -1000,9 +1183,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_3900
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_3900
+ * @tc.number VIDEO_HWDEC_CAP_API_3900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3900, TestSize.Level2)
 {
@@ -1016,9 +1202,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_3900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4000
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4000
+ * @tc.number VIDEO_HWDEC_CAP_API_4000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4000, TestSize.Level2)
 {
@@ -1035,9 +1224,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4100
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4100
+ * @tc.number VIDEO_HWDEC_CAP_API_4100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4100, TestSize.Level2)
 {
@@ -1051,9 +1243,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4200
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4200
+ * @tc.number VIDEO_HWDEC_CAP_API_4200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4200, TestSize.Level2)
 {
@@ -1065,9 +1260,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4300
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4300
+ * @tc.number VIDEO_HWDEC_CAP_API_4300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4300, TestSize.Level2)
 {
@@ -1081,9 +1279,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4400
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4400
+ * @tc.number VIDEO_HWDEC_CAP_API_4400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4400, TestSize.Level2)
 {
@@ -1100,9 +1301,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4500
- * @tc.name      : OH_AVCapability_GetVideoWidthRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4500
+ * @tc.number VIDEO_HWDEC_CAP_API_4500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4500, TestSize.Level2)
 {
@@ -1113,9 +1317,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4600
- * @tc.name      : OH_AVCapability_GetVideoWidthRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4600
+ * @tc.number VIDEO_HWDEC_CAP_API_4600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4600, TestSize.Level2)
 {
@@ -1127,9 +1334,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4700
- * @tc.name      : OH_AVCapability_GetVideoWidthRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4700
+ * @tc.number VIDEO_HWDEC_CAP_API_4700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4700, TestSize.Level2)
 {
@@ -1146,9 +1356,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4800
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4800
+ * @tc.number VIDEO_HWDEC_CAP_API_4800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4800, TestSize.Level2)
 {
@@ -1159,9 +1372,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_4900
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_4900
+ * @tc.number VIDEO_HWDEC_CAP_API_4900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4900, TestSize.Level2)
 {
@@ -1173,9 +1389,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_4900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5000
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5000
+ * @tc.number VIDEO_HWDEC_CAP_API_5000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5000, TestSize.Level2)
 {
@@ -1197,9 +1416,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1700
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1700
+ * @tc.number VIDEO_HWDEC_CAP_API_1700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1700, TestSize.Level2)
 {
@@ -1224,9 +1446,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5100
- * @tc.name      : OH_AVCapability_IsVideoSizeSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5100
+ * @tc.number VIDEO_HWDEC_CAP_API_5100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5100, TestSize.Level2)
 {
@@ -1236,9 +1461,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5200
- * @tc.name      : OH_AVCapability_IsVideoSizeSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5200
+ * @tc.number VIDEO_HWDEC_CAP_API_5200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5200, TestSize.Level2)
 {
@@ -1247,18 +1475,24 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5200, TestSize.Level2)
     ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(capability, DEFAULT_WIDTH, 0));
 }
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5300
- * @tc.name      : OH_AVCapability_IsVideoSizeSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5300
+ * @tc.number VIDEO_HWDEC_CAP_API_5300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5300, TestSize.Level2)
 {
     ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(nullptr, DEFAULT_WIDTH, DEFAULT_HEIGHT));
 }
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_9400
- * @tc.name      : OH_AVCapability_IsVideoSizeSupported param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_9400
+ * @tc.number VIDEO_HWDEC_CAP_API_9400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_9400, TestSize.Level2)
 {
@@ -1271,9 +1505,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_9400, TestSize.Level2)
     ASSERT_EQ(false, OH_AVCapability_IsVideoSizeSupported(capability, widthRange.maxVal + 1, heightRange.maxVal + 1));
 }
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5400
- * @tc.name      : OH_AVCapability_IsVideoSizeSupported param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5400
+ * @tc.number VIDEO_HWDEC_CAP_API_5400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5400, TestSize.Level2)
 {
@@ -1283,9 +1520,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5500
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5500
+ * @tc.number VIDEO_HWDEC_CAP_API_5500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5500, TestSize.Level2)
 {
@@ -1296,9 +1536,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5600
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRange param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5600
+ * @tc.number VIDEO_HWDEC_CAP_API_5600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5600, TestSize.Level2)
 {
@@ -1310,9 +1553,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5700
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5700
+ * @tc.number VIDEO_HWDEC_CAP_API_5700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5700, TestSize.Level2)
 {
@@ -1328,9 +1574,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1600
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1600
+ * @tc.number VIDEO_HWDEC_CAP_API_1600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1600, TestSize.Level2)
 {
@@ -1349,9 +1598,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5800
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRangeForSize param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5800
+ * @tc.number VIDEO_HWDEC_CAP_API_5800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5800, TestSize.Level2)
 {
@@ -1362,9 +1614,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_5900
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRangeForSize param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_5900
+ * @tc.number VIDEO_HWDEC_CAP_API_5900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5900, TestSize.Level2)
 {
@@ -1376,9 +1631,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_5900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6000
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRangeForSize param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6000
+ * @tc.number VIDEO_HWDEC_CAP_API_6000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6000, TestSize.Level2)
 {
@@ -1392,9 +1650,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6100
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRangeForSize param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6100
+ * @tc.number VIDEO_HWDEC_CAP_API_6100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6100, TestSize.Level2)
 {
@@ -1408,9 +1669,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6200
- * @tc.name      : OH_AVCapability_GetVideoFrameRateRangeForSize param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6200
+ * @tc.number VIDEO_HWDEC_CAP_API_6200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6200, TestSize.Level2)
 {
@@ -1443,9 +1707,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6300
- * @tc.name      : OH_AVCapability_AreVideoSizeAndFrameRateSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6300
+ * @tc.number VIDEO_HWDEC_CAP_API_6300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6300, TestSize.Level2)
 {
@@ -1455,9 +1722,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6400
- * @tc.name      : OH_AVCapability_AreVideoSizeAndFrameRateSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6400
+ * @tc.number VIDEO_HWDEC_CAP_API_6400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6400, TestSize.Level2)
 {
@@ -1467,9 +1737,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6500
- * @tc.name      : OH_AVCapability_AreVideoSizeAndFrameRateSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6500
+ * @tc.number VIDEO_HWDEC_CAP_API_6500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6500, TestSize.Level2)
 {
@@ -1479,9 +1752,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6600
- * @tc.name      : OH_AVCapability_AreVideoSizeAndFrameRateSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6600
+ * @tc.number VIDEO_HWDEC_CAP_API_6600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6600, TestSize.Level2)
 {
@@ -1489,9 +1765,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6700
- * @tc.name      : OH_AVCapability_AreVideoSizeAndFrameRateSupported param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6700
+ * @tc.number VIDEO_HWDEC_CAP_API_6700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6700, TestSize.Level2)
 {
@@ -1501,9 +1780,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6800
- * @tc.name      : OH_AVCapability_GetVideoSupportedPixelFormats param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6800
+ * @tc.number VIDEO_HWDEC_CAP_API_6800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6800, TestSize.Level2)
 {
@@ -1515,9 +1797,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_6900
- * @tc.name      : OH_AVCapability_GetVideoSupportedPixelFormats param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_6900
+ * @tc.number VIDEO_HWDEC_CAP_API_6900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6900, TestSize.Level2)
 {
@@ -1530,9 +1815,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_6900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7000
- * @tc.name      : OH_AVCapability_GetVideoSupportedPixelFormats param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7000
+ * @tc.number VIDEO_HWDEC_CAP_API_7000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7000, TestSize.Level2)
 {
@@ -1545,9 +1833,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7100
- * @tc.name      : OH_AVCapability_GetVideoSupportedPixelFormats param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7100
+ * @tc.number VIDEO_HWDEC_CAP_API_7100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7100, TestSize.Level2)
 {
@@ -1584,9 +1875,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1200
- * @tc.name      : OH_AVCapability_GetVideoSupportedPixelFormats param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1200
+ * @tc.number VIDEO_HWDEC_CAP_API_1200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1200, TestSize.Level2)
 {
@@ -1626,9 +1920,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7200
- * @tc.name      : OH_AVCapability_GetSupportedProfiles param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7200
+ * @tc.number VIDEO_HWDEC_CAP_API_7200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7200, TestSize.Level2)
 {
@@ -1640,9 +1937,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7300
- * @tc.name      : OH_AVCapability_GetSupportedProfiles param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7300
+ * @tc.number VIDEO_HWDEC_CAP_API_7300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7300, TestSize.Level2)
 {
@@ -1655,9 +1955,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7400
- * @tc.name      : OH_AVCapability_GetSupportedProfiles param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7400
+ * @tc.number VIDEO_HWDEC_CAP_API_7400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7400, TestSize.Level2)
 {
@@ -1670,9 +1973,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7500
- * @tc.name      : OH_AVCapability_GetSupportedProfiles param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7500
+ * @tc.number VIDEO_HWDEC_CAP_API_7500
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7500, TestSize.Level2)
 {
@@ -1691,9 +1997,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7500, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1300
- * @tc.name      : OH_AVCapability_GetSupportedProfiles param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1300
+ * @tc.number VIDEO_HWDEC_CAP_API_1300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1300, TestSize.Level2)
 {
@@ -1716,9 +2025,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7600
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7600
+ * @tc.number VIDEO_HWDEC_CAP_API_7600
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7600, TestSize.Level2)
 {
@@ -1730,9 +2042,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7600, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7700
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7700
+ * @tc.number VIDEO_HWDEC_CAP_API_7700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7700, TestSize.Level2)
 {
@@ -1746,9 +2061,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7800
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7800
+ * @tc.number VIDEO_HWDEC_CAP_API_7800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7800, TestSize.Level2)
 {
@@ -1761,9 +2079,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7800, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_7900
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_7900
+ * @tc.number VIDEO_HWDEC_CAP_API_7900
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7900, TestSize.Level2)
 {
@@ -1776,9 +2097,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_7900, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_8000
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_8000
+ * @tc.number VIDEO_HWDEC_CAP_API_8000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8000, TestSize.Level2)
 {
@@ -1806,9 +2130,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_1400
- * @tc.name      : OH_AVCapability_GetSupportedLevelsForProfile param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_1400
+ * @tc.number VIDEO_HWDEC_CAP_API_1400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1400, TestSize.Level2)
 {
@@ -1840,9 +2167,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_1400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_8100
- * @tc.name      : OH_AVCapability_AreProfileAndLevelSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_8100
+ * @tc.number VIDEO_HWDEC_CAP_API_8100
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8100, TestSize.Level2)
 {
@@ -1850,9 +2180,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8100, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_8200
- * @tc.name      : OH_AVCapability_AreProfileAndLevelSupported param error
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_8200
+ * @tc.number VIDEO_HWDEC_CAP_API_8200
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8200, TestSize.Level2)
 {
@@ -1862,9 +2195,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8200, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_CAP_API_8300
- * @tc.name      : OH_AVCapability_AreProfileAndLevelSupported param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_CAP_API_8300
+ * @tc.number VIDEO_HWDEC_CAP_API_8300
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8300, TestSize.Level2)
 {
@@ -1874,9 +2210,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_CAP_API_8300, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_HWDEC_ATTIME_API_0010
- * @tc.name      : OH_VideoDecoder_RenderOutputBufferAtTime use renderTimestampNs of < 0
- * @tc.desc      : api test
+ * @tc.name   VIDEO_HWDEC_ATTIME_API_0010
+ * @tc.number VIDEO_HWDEC_ATTIME_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ATTIME_API_0010, TestSize.Level1)
 {
@@ -1895,9 +2234,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_ATTIME_API_0010, TestSize.Level1)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0010
- * @tc.name      : VIDEO_DECODE_SYNC_API_0010
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0010
+ * @tc.number VIDEO_DECODE_SYNC_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0010, TestSize.Level2)
 {
@@ -1906,9 +2248,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0010, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0020
- * @tc.name      : VIDEO_DECODE_SYNC_API_0020
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0020
+ * @tc.number VIDEO_DECODE_SYNC_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0020, TestSize.Level2)
 {
@@ -1926,9 +2271,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0020, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0030
- * @tc.name      : VIDEO_DECODE_SYNC_API_0030
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0030
+ * @tc.number VIDEO_DECODE_SYNC_API_0030
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0030, TestSize.Level2)
 {
@@ -1946,9 +2294,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0030, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0040
- * @tc.name      : VIDEO_DECODE_SYNC_API_0040
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0040
+ * @tc.number VIDEO_DECODE_SYNC_API_0040
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0040, TestSize.Level2)
 {
@@ -1956,9 +2307,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0040, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0050
- * @tc.name      : VIDEO_DECODE_SYNC_API_0050
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0050
+ * @tc.number VIDEO_DECODE_SYNC_API_0050
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0050, TestSize.Level2)
 {
@@ -1967,9 +2321,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0050, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0060
- * @tc.name      : VIDEO_DECODE_SYNC_API_0060
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0060
+ * @tc.number VIDEO_DECODE_SYNC_API_0060
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0060, TestSize.Level2)
 {
@@ -1985,9 +2342,12 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0060, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0070
- * @tc.name      : VIDEO_DECODE_SYNC_API_0070
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0070
+ * @tc.number VIDEO_DECODE_SYNC_API_0070
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0070, TestSize.Level2)
 {
@@ -2003,12 +2363,46 @@ HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0070, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_API_0080
- * @tc.name      : VIDEO_DECODE_SYNC_API_0080
- * @tc.desc      : api test
+ * @tc.name   VIDEO_DECODE_SYNC_API_0080
+ * @tc.number VIDEO_DECODE_SYNC_API_0080
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwdecApiNdkTest, VIDEO_DECODE_SYNC_API_0080, TestSize.Level2)
 {
     ASSERT_EQ(nullptr, OH_VideoDecoder_GetOutputBuffer(nullptr, 1));
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_FORMAT_API_0010
+ * @tc.number VIDEO_HWDEC_FORMAT_API_0010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_FORMAT_API_0010, TestSize.Level0)
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(
+        nullptr, &(vDecSample->pixlFormats), &(vDecSample->pixlFormatNum));
+}
+
+/**
+ * @tc.name   VIDEO_HWDEC_FORMAT_API_0020
+ * @tc.number VIDEO_HWDEC_FORMAT_API_0020
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(HwdecApiNdkTest, VIDEO_HWDEC_FORMAT_API_0020, TestSize.Level0)
+{
+    auto vDecSample = make_shared<VDecAPI11Sample>();
+    const char *avcodecMimeType = OH_AVCODEC_MIMETYPE_VIDEO_HEVC;
+    OH_AVCapability *capability = OH_AVCodec_GetCapability(avcodecMimeType, false);
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(capability, &(vDecSample->pixlFormats), nullptr);
 }
 } // namespace

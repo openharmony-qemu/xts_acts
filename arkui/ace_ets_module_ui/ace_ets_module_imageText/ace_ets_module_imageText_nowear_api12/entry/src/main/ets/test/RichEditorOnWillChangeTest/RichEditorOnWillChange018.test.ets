@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange018() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012
-     * @tc.desc  : When disabling cutting, select a piece of text for cutting to test RichEditor on WillChange callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012
+     * @tc.desc   When disabling cutting, select a piece of text for cutting to test RichEditor on WillChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0012 START');
@@ -68,7 +68,7 @@ export default function RichEditorOnWillChange018() {
       let rich = await driver.findComponent(ON.id('rich_struct'));
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
 
       let pointCenter = await rich.getBoundsCenter();

@@ -16,7 +16,7 @@
                 "mkdir -p /data/local/tmp/"
             ],
             "push": [
-              "ActsHdrcodecTest->/data/local/tmp/ActsHevcHdrcodecTest",
+              "ActsHevcHdrcodecTest->/data/local/tmp/ActsHevcHdrcodecTest",
               "./resource/media/codec/video_decoder/. ->/data/test/media/"
             ]
         },

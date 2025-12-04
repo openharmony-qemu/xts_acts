@@ -39,12 +39,12 @@ export default function BatteryStatisticsTest() {
     })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0040
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0100
-     * @tc.desc Test the third-party application call getBatteryStats will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getBatteryStats will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -74,12 +74,12 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0200
-     * @tc.desc Test the third-party application call getBatteryStats will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getBatteryStats will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -105,12 +105,12 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0300
-     * @tc.desc Test the third-party application call getAppPowerValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getAppPowerValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -133,12 +133,12 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0400
-     * @tc.desc Test the third-party application call getAppPowerPercent will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getAppPowerPercent will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -161,12 +161,12 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0500
-     * @tc.desc Test the third-party application call getHardwareUnitPowerValue will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getHardwareUnitPowerValue will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {
@@ -189,12 +189,12 @@ export default function BatteryStatisticsTest() {
       })
 
     /**
+     * @tc.name   System_API_Test_batteryStats_Manager_0600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_JSTest_0050
-     * @tc.name testSystem_API_Test_batteryStats_Manager_0600
-     * @tc.desc Test the third-party application call getHardwareUnitPowerPercent will be blocked
-     * @tc.level: Level 3
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.desc   Test the third-party application call getHardwareUnitPowerPercent will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('System_API_Test_batteryStats_Manager_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async function (done) {

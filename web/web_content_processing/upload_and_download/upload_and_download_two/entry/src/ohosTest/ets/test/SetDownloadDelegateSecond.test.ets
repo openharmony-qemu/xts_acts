@@ -62,12 +62,12 @@ export default function SetDownloadDelegateSecond() {
     })
 
     /**
+     * @tc.name   testWebView_onDownloadFailed1001
      * @tc.number SUB_ACE_WEB_onDownloadFailed_1001
-     * @tc.name testWebView_onDownloadFailed1001
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_onDownloadFailed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -83,12 +83,12 @@ export default function SetDownloadDelegateSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getUrl1000
      * @tc.number SUB_ACE_WEB_getUrl_2000
-     * @tc.name testWebView_getUrl1000
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getUrl1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -105,12 +105,12 @@ export default function SetDownloadDelegateSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getUrl1001
      * @tc.number SUB_ACE_WEB_getUrl_2001
-     * @tc.name testWebView_getUrl1001
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getUrl1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({
@@ -127,12 +127,12 @@ export default function SetDownloadDelegateSecond() {
     })
 
     /**
+     * @tc.name   testWebView_getUrl1002
      * @tc.number SUB_ACE_WEB_getUrl_2002
-     * @tc.name testWebView_getUrl1002
-     * @tc.desc test onDownloadFinish
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onDownloadFinish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebView_getUrl1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       router.pushUrl({

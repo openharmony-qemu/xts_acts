@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -48,9 +48,12 @@ export default function abilityTest() {
       console.info(`====>beforeAll getcontext result: ` + JSON.stringify(context));
     })
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0100
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: With the same application with the same module, test ActionExtensionAbility lifecycle.
+     * @tc.name   Acts_ActionExtensionAbility_0100
+     * @tc.number Acts_ActionExtensionAbility_0100
+     * @tc.desc   With the same application with the same module, test ActionExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0100', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -61,7 +64,7 @@ export default function abilityTest() {
           await globalThis.terminateCalledAbility('Acts_ActionExtensionAbility_0100');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       let subscribeCallBack = async (err: BusinessError, data: commonEvent.CommonEventData) => {
         console.log('====>Acts_ActionExtensionAbility_0100 subscribeCallBack :' + JSON.stringify(data));
@@ -84,15 +87,12 @@ export default function abilityTest() {
               expect().assertFail();
             }
           });
-
-          setTimeout(() => {
-            context.startAbility({
-              bundleName: 'com.example.actsactionextensionabilitytest',
-              abilityName: 'CalledAbility'
-            }, (err:BusinessError) => {
-              expect(err.code).assertEqual(0);
-            });
-          }, 1000);
+          context.startAbility({
+            bundleName: 'com.example.actsactionextensionabilitytest',
+            abilityName: 'CalledAbility'
+          }, (err:BusinessError) => {
+            expect(err.code).assertEqual(0);
+          });
         }
         if (data.event == 'ACTS_TEST_RELEASE') {
           expect(data.parameters?.releaseCode).assertEqual(0);
@@ -121,9 +121,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0200
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: With the same application with the different module, test ActionExtensionAbility lifecycle.
+     * @tc.name   Acts_ActionExtensionAbility_0200
+     * @tc.number Acts_ActionExtensionAbility_0200
+     * @tc.desc   With the same application with the different module, test ActionExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0200', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -148,14 +151,12 @@ export default function abilityTest() {
               expect().assertFail();
             };
           });
-          setTimeout(() => {
-            context.startAbility({
-              bundleName: 'com.example.actsactionextensionabilitytest',
-              abilityName: 'CalledAbility'
-            }, (err:BusinessError) => {
-              expect(err.code).assertEqual(0);
-            });
-          }, 1000);
+          context.startAbility({
+            bundleName: 'com.example.actsactionextensionabilitytest',
+            abilityName: 'CalledAbility'
+          }, (err:BusinessError) => {
+            expect(err.code).assertEqual(0);
+          });
         }
         if (data.event == 'ACTS_TEST_RELEASE') {
           expect(data.parameters?.releaseCode).assertEqual(0);
@@ -175,7 +176,7 @@ export default function abilityTest() {
           await globalThis.terminateCalledAbility('Acts_ActionExtensionAbility_0200');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
         subscriber = data;
@@ -191,9 +192,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0300
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: With the different application, test ActionExtensionAbility lifecycle.
+     * @tc.name   Acts_ActionExtensionAbility_0300
+     * @tc.number Acts_ActionExtensionAbility_0300
+     * @tc.desc   With the different application, test ActionExtensionAbility lifecycle.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0300', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -218,15 +222,12 @@ export default function abilityTest() {
               expect().assertFail();
             }
           });
-
-          setTimeout(() => {
-            context.startAbility({
-              bundleName: 'com.example.actsactionextensionabilityrely',
-              abilityName: 'CalledAbility'
-            }, (err:BusinessError) => {
-              expect(err.code).assertEqual(0);
-            })
-          }, 1000);
+          context.startAbility({
+            bundleName: 'com.example.actsactionextensionabilityrely',
+            abilityName: 'CalledAbility'
+          }, (err:BusinessError) => {
+            expect(err.code).assertEqual(0);
+          })
         }
         if (data.event == 'ACTS_TEST_RELEASE') {
           expect(data.parameters?.releaseCode).assertEqual(0);
@@ -249,7 +250,7 @@ export default function abilityTest() {
           });
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
         subscriber = data;
@@ -267,9 +268,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0400
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Start the same ActionExtensionAbility with different UI components, and the test is successful.
+     * @tc.name   Acts_ActionExtensionAbility_0400
+     * @tc.number Acts_ActionExtensionAbility_0400
+     * @tc.desc   Start the same ActionExtensionAbility with different UI components, and the test is successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0400', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -293,7 +297,7 @@ export default function abilityTest() {
           await globalThis.featureTerminate('Acts_ActionExtensionAbility_0400');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_MODULE).then(async (data) => {
         subscriber = data;
@@ -309,9 +313,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0500
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Start ActionExtensionAbility with invalid bundleName, start failed.
+     * @tc.name   Acts_ActionExtensionAbility_0500
+     * @tc.number Acts_ActionExtensionAbility_0500
+     * @tc.desc   Start ActionExtensionAbility with invalid bundleName, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0500', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -330,7 +337,7 @@ export default function abilityTest() {
           await globalThis.terminate('Acts_ActionExtensionAbility_0500');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
         subscriber = data;
@@ -347,9 +354,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0600
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Start ActionExtensionAbility with invalid abilityName, start failed.
+     * @tc.name   Acts_ActionExtensionAbility_0600
+     * @tc.number Acts_ActionExtensionAbility_0600
+     * @tc.desc   Start ActionExtensionAbility with invalid abilityName, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0600', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -368,7 +378,7 @@ export default function abilityTest() {
           globalThis.terminate('Acts_ActionExtensionAbility_0600');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
         subscriber = data;
@@ -384,9 +394,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0700
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Start ActionExtensionAbility with invalid parameters, start failed.
+     * @tc.name   Acts_ActionExtensionAbility_0700
+     * @tc.number Acts_ActionExtensionAbility_0700
+     * @tc.desc   Start ActionExtensionAbility with invalid parameters, start failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0700', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -405,7 +418,7 @@ export default function abilityTest() {
           globalThis.terminate('Acts_ActionExtensionAbility_0700');
           await sleep(1000);
           done();
-        }, 2000);
+        }, 1000);
       }
       commonEvent.createSubscriber(ACTS_EVENT).then(async (data) => {
         console.info(`====>Acts_ActionExtensionAbility_0700 createSubscriber  ${data}`);
@@ -423,9 +436,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0800
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test terminateSelfWithResultEvent successful.
+     * @tc.name   Acts_ActionExtensionAbility_0800
+     * @tc.number Acts_ActionExtensionAbility_0800
+     * @tc.desc   Test terminateSelfWithResultEvent successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0800', Level.LEVEL0, async (done:Function) => {
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
@@ -461,7 +477,7 @@ export default function abilityTest() {
                 setTimeout(() => {
                   console.info(`====>Acts_ActionExtensionAbility_0800 unSubscribeCallback`);
                   done();
-                }, 2000);
+                }, 1000);
               });
             }, 1000);
           }
@@ -471,14 +487,17 @@ export default function abilityTest() {
         setTimeout(() => {
           console.log("createSubscriber err : " + JSON.stringify(error));
           expect().assertFail();
-        }, 2000);
+        }, 1000);
       });
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_0900
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test sendData successful.
+     * @tc.name   Acts_ActionExtensionAbility_0900
+     * @tc.number Acts_ActionExtensionAbility_0900
+     * @tc.desc   Test sendData successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_0900', Level.LEVEL0, async (done:Function) => {
       let appearEvent = 'ACTS_UIExtension_AboutToAppear';
@@ -525,7 +544,7 @@ export default function abilityTest() {
                 setTimeout(() => {
                   console.info(`====>Acts_ActionExtensionAbility_0900 unSubscribeCallback`);
                   done();
-                }, 2000);
+                }, 1000);
               });
             }, 1000);
           }
@@ -535,14 +554,17 @@ export default function abilityTest() {
         setTimeout(() => {
           console.log("createSubscriber err : " + JSON.stringify(error));
           expect().assertFail();
-        }, 2000);
+        }, 1000);
       });
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1000
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface in callback form.
+     * @tc.name   Acts_ActionExtensionAbility_1000
+     * @tc.number Acts_ActionExtensionAbility_1000
+     * @tc.desc   Test the startAbility interface in callback form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_1000', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -572,14 +594,17 @@ export default function abilityTest() {
         globalThis.terminate('Acts_ActionExtensionAbility_1000');
         setTimeout(() => {
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1100
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface in promiss form.
+     * @tc.name   Acts_ActionExtensionAbility_1100
+     * @tc.number Acts_ActionExtensionAbility_1100
+     * @tc.desc   Test the startAbility interface in promiss form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_1100', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -609,14 +634,17 @@ export default function abilityTest() {
         globalThis.terminate('Acts_ActionExtensionAbility_1100');
         setTimeout(() => {
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1200
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbility interface with invalid want.
+     * @tc.name   Acts_ActionExtensionAbility_1200
+     * @tc.number Acts_ActionExtensionAbility_1200
+     * @tc.desc   Test the startAbility interface with invalid want.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_1200', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -646,14 +674,17 @@ export default function abilityTest() {
         globalThis.terminate('Acts_ActionExtensionAbility_1200');
         setTimeout(() => {
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1300
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface in callback form.
+     * @tc.name   Acts_ActionExtensionAbility_1300
+     * @tc.number Acts_ActionExtensionAbility_1300
+     * @tc.desc   Test the startAbilityForResult interface in callback form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Acts_ActionExtensionAbility_1300', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -684,17 +715,20 @@ export default function abilityTest() {
         globalThis.terminate('Acts_ActionExtensionAbility_1300');
         setTimeout(() => {
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1400
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface in promiss form.
+     * @tc.name   Acts_ActionExtensionAbility_1400
+     * @tc.number Acts_ActionExtensionAbility_1400
+     * @tc.desc   Test the startAbilityForResult interface in promiss form.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1400', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1400', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         console.info(`====>Acts_ActionExtensionAbility_1400 createSubscriber  ${data}`);
@@ -723,17 +757,20 @@ export default function abilityTest() {
         globalThis.terminate('Acts_ActionExtensionAbility_1400');
         setTimeout(() => {
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1500
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test the startAbilityForResult interface with invalid want.
+     * @tc.name   Acts_ActionExtensionAbility_1500
+     * @tc.number Acts_ActionExtensionAbility_1500
+     * @tc.desc   Test the startAbilityForResult interface with invalid want.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1500', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1500', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
         console.info(`====>Acts_ActionExtensionAbility_1500 createSubscriber  ${data}`);
@@ -762,17 +799,20 @@ export default function abilityTest() {
         setTimeout(() => {
           globalThis.terminate('Acts_ActionExtensionAbility_1500');
           done();
-        }, 2000);
+        }, 1000);
       }
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1600
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test setReceiveDataCallback successful.
+     * @tc.name   Acts_ActionExtensionAbility_1600
+     * @tc.number Acts_ActionExtensionAbility_1600
+     * @tc.desc   Test setReceiveDataCallback successful.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1600', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1600', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['setReceiveDataCallback']
@@ -801,7 +841,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_1600 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -809,12 +849,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1700
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Use ui components continuously to start two ActionExtensionAbility.
+     * @tc.name   Acts_ActionExtensionAbility_1700
+     * @tc.number Acts_ActionExtensionAbility_1700
+     * @tc.desc   Use ui components continuously to start two ActionExtensionAbility.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1700', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1700', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       context.startAbility({
         bundleName: 'com.example.actsactionextensionabilitytest',
         abilityName: 'EntryAbility',
@@ -822,7 +865,7 @@ export default function abilityTest() {
       }, (err:BusinessError) => {
         expect(err.code).assertEqual(0);
       });
-      await sleep(2000);
+      await sleep(1000);
       await abilityDelegator.executeShellCommand('aa dump -a').then((data) => {
         console.info('====>Acts_ActionExtensionAbility_1700 : data : ' + JSON.stringify(data.stdResult));
         try {
@@ -836,16 +879,19 @@ export default function abilityTest() {
       setTimeout(() => {
         console.info(`====>Acts_ActionExtensionAbility_1700 unSubscribeCallback`);
         done();
-      }, 2000);
+      }, 1000);
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1800
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test starts ActionExtensionAbility using startAbility interface.
+     * @tc.name   Acts_ActionExtensionAbility_1800
+     * @tc.number Acts_ActionExtensionAbility_1800
+     * @tc.desc   Test starts ActionExtensionAbility using startAbility interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1800', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1800', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -877,7 +923,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_1800 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -885,12 +931,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_1900
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test hapModuleInfo in context
+     * @tc.name   Acts_ActionExtensionAbility_1900
+     * @tc.number Acts_ActionExtensionAbility_1900
+     * @tc.desc   Test hapModuleInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_1900', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_1900', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -943,7 +992,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_1900 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -951,12 +1000,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2000
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test config in context
+     * @tc.name   Acts_ActionExtensionAbility_2000
+     * @tc.number Acts_ActionExtensionAbility_2000
+     * @tc.desc   Test config in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2000', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2000', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -994,7 +1046,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_2000 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1002,12 +1054,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2100
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test extensionAbilityInfo in context
+     * @tc.name   Acts_ActionExtensionAbility_2100
+     * @tc.number Acts_ActionExtensionAbility_2100
+     * @tc.desc   Test extensionAbilityInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2100', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2100', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1059,7 +1114,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_2100 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1067,12 +1122,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2200
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test resourceManager in context
+     * @tc.name   Acts_ActionExtensionAbility_2200
+     * @tc.number Acts_ActionExtensionAbility_2200
+     * @tc.desc   Test resourceManager in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2200', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2200', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1098,7 +1156,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2200 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1106,12 +1164,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2300
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test applicationInfo in context
+     * @tc.name   Acts_ActionExtensionAbility_2300
+     * @tc.number Acts_ActionExtensionAbility_2300
+     * @tc.desc   Test applicationInfo in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2300', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2300', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1153,7 +1214,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2300 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1161,12 +1222,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2400
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test cacheDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2400
+     * @tc.number Acts_ActionExtensionAbility_2400
+     * @tc.desc   Test cacheDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2400', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2400', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1195,7 +1259,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2400 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1203,12 +1267,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2500
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test tempDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2500
+     * @tc.number Acts_ActionExtensionAbility_2500
+     * @tc.desc   Test tempDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2500', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2500', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1237,7 +1304,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2500 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1245,12 +1312,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2600
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test filesDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2600
+     * @tc.number Acts_ActionExtensionAbility_2600
+     * @tc.desc   Test filesDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2600', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2600', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1278,7 +1348,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2600 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1286,12 +1356,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2700
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test databaseDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2700
+     * @tc.number Acts_ActionExtensionAbility_2700
+     * @tc.desc   Test databaseDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2700', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2700', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1319,7 +1392,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2700 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1327,12 +1400,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2800
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test preferencesDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2800
+     * @tc.number Acts_ActionExtensionAbility_2800
+     * @tc.desc   Test preferencesDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2800', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2800', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1361,7 +1437,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2800 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1369,12 +1445,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_2900
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Test bundleCodeDir in context
+     * @tc.name   Acts_ActionExtensionAbility_2900
+     * @tc.number Acts_ActionExtensionAbility_2900
+     * @tc.desc   Test bundleCodeDir in context
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_2900', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_2900', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_CALL_EVENT']
@@ -1403,7 +1482,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.info(`====>Acts_ActionExtensionAbility_2900 unSubscribeCallback`);
                 done();
-              }, 2000);
+              }, 1000);
             });
           }
         });
@@ -1411,12 +1490,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3000
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.name   Acts_ActionExtensionAbility_3000
+     * @tc.number Acts_ActionExtensionAbility_3000
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3000', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3000', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1443,7 +1525,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3000 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1451,7 +1533,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3000 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1459,12 +1541,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3100
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.name   Acts_ActionExtensionAbility_3100
+     * @tc.number Acts_ActionExtensionAbility_3100
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the current application hap2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3100', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3100', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1491,7 +1576,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3000 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1499,7 +1584,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3100 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1507,12 +1592,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3200
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.name   Acts_ActionExtensionAbility_3200
+     * @tc.number Acts_ActionExtensionAbility_3200
+     * @tc.desc   Context calls createModuleContext, passing in the moduleName of the cross-application hap1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3200', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3200', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1538,7 +1626,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3200 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1546,7 +1634,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3200 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1554,12 +1642,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3300
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.name   Acts_ActionExtensionAbility_3300
+     * @tc.number Acts_ActionExtensionAbility_3300
+     * @tc.desc   Context calls createModuleContext, passing in a non-existing moduleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3300', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3300', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1585,7 +1676,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3300 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1593,7 +1684,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3300 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1601,12 +1692,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3400
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.name   Acts_ActionExtensionAbility_3400
+     * @tc.number Acts_ActionExtensionAbility_3400
+     * @tc.desc   Context calls createModuleContext, and the incoming moduleName is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3400', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3400', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1632,7 +1726,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3400 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1640,7 +1734,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3400 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1648,12 +1742,15 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: Acts_ActionExtensionAbility_3500
-     * @tc.name: Test ActionExtensionAbility basic function.
-     * @tc.desc: test getApplicationContext return not empty
+     * @tc.name   Acts_ActionExtensionAbility_3500
+     * @tc.number Acts_ActionExtensionAbility_3500
+     * @tc.desc   test getApplicationContext return not empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('Acts_ActionExtensionAbility_3500', Level.LEVEL0, async (done:Function) => {
-      await sleep(2000);
+    it('Acts_ActionExtensionAbility_3500', Level.LEVEL0, async (done: Function) => {
+      await sleep(500);
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
       let subscribeInfo: commonEvent.CommonEventSubscribeInfo = {
         events: ['ACTS_TEST_CONTEXT']
@@ -1679,7 +1776,7 @@ export default function abilityTest() {
                   setTimeout(() => {
                     console.info(`====>Acts_ActionExtensionAbility_3500 unSubscribeCallback`);
                     done();
-                  }, 2000);
+                  }, 1000);
                 });
               }, 1000);
             } catch (err) {
@@ -1687,7 +1784,7 @@ export default function abilityTest() {
               setTimeout(() => {
                 console.log(`Acts_ActionExtensionAbility_3500 fail: ` + err);
                 expect().assertFail();
-              }, 2000);
+              }, 1000);
             }
           }
         });
@@ -1695,12 +1792,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0100
-     * @tc.name: Test WantConstant ShowMode UIExtensionComponent EMBEDDED_FULL.
-     * @tc.desc: Test ShowMode value EMBEDDED_FULL pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0100
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0100
+     * @tc.desc   Test ShowMode value EMBEDDED_FULL pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0100', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -1728,12 +1825,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0200
-     * @tc.name: Test WantConstant ShowMode UIExtensionComponent WINDOW.
-     * @tc.desc: Test ShowMode value WINDOW pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0200
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0200
+     * @tc.desc   Test ShowMode value WINDOW pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0200', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -1761,12 +1858,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0300
-     * @tc.name: Test WantConstant ShowMode startAbilityByType.
-     * @tc.desc: Test ShowMode value EMBEDDED_FULL pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0300
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0300
+     * @tc.desc   Test ShowMode value EMBEDDED_FULL pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0300', Level.LEVEL0, async (done:Function) => {
       let wantParam: Record<string, Object> = {};
@@ -1788,12 +1885,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0400
-     * @tc.name: Test WantConstant ShowMode startAbilityByType.
-     * @tc.desc: Test ShowMode value WINDOW pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0400
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0400
+     * @tc.desc   Test ShowMode value WINDOW pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0400', Level.LEVEL0, async (done:Function) => {
       let wantParam: Record<string, Object> = {};
@@ -1815,12 +1912,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0500
-     * @tc.name: Test WantConstant ShowMode startAbility with EMBEDDED_FULL.
-     * @tc.desc: Test ShowMode value EMBEDDED_FULL pull success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0500
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0500
+     * @tc.desc   Test ShowMode value EMBEDDED_FULL pull success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0500', Level.LEVEL0, async (done:Function) => {
       let ACTS_START_ABILITY_MODE_EVENT: commonEvent.CommonEventSubscribeInfo = {
@@ -1856,12 +1953,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0600
-     * @tc.name: Test WantConstant ShowMode startAbility with WINDOW.
-     * @tc.desc: Test ShowMode value WINDOW pull success
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0600
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0600
+     * @tc.desc   Test ShowMode value WINDOW pull success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0600', Level.LEVEL0, async (done:Function) => {
       let ACTS_START_ABILITY_MODE_EVENT: commonEvent.CommonEventSubscribeInfo = {
@@ -1898,12 +1995,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0700
-     * @tc.name: Test WantConstant ShowMode UIExtensionComponent EMBEDDED_FULL.
-     * @tc.desc: Test ShowMode value EMBEDDED_FULL pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0700
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0700
+     * @tc.desc   Test ShowMode value EMBEDDED_FULL pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0700', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -1933,12 +2030,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_AMS_WantShowMode_0800
-     * @tc.name: Test WantConstant ShowMode UIExtensionComponent WINDOW.
-     * @tc.desc: Test ShowMode value WINDOW pull failed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level: Level3
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_WantShowMode_0800
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_WantShowMode_0800
+     * @tc.desc   Test ShowMode value WINDOW pull failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AMS_WantShowMode_0800', Level.LEVEL0, async (done:Function) => {
       let subscriber: commonEvent.CommonEventSubscriber | undefined = undefined;
@@ -1965,12 +2062,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : ABILITY_TEST_NATIVE_LIBRARY_PATH_0300
-     * @tc.name      : testNativeLibraryPath003
-     * @tc.desc      : test nativeLibraryPath
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testNativeLibraryPath003
+     * @tc.number ABILITY_TEST_NATIVE_LIBRARY_PATH_0300
+     * @tc.desc   test nativeLibraryPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNativeLibraryPath003', Level.LEVEL0, async (done:Function) => {
       try {

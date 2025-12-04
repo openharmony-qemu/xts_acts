@@ -79,6 +79,14 @@ export default function openDialogTransitionTest() {
       }
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_100
+     * @tc.number OpenDialogTransitionTest_100
+     * @tc.desc   OpenDialogTransitionTest_100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_100', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_100 start');
       let driver: Driver = Driver.create();
@@ -98,6 +106,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_200
+     * @tc.number OpenDialogTransitionTest_200
+     * @tc.desc   OpenDialogTransitionTest_200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_200', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_200 start');
       let driver: Driver = Driver.create();
@@ -116,6 +132,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_300
+     * @tc.number OpenDialogTransitionTest_300
+     * @tc.desc   OpenDialogTransitionTest_300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_300', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_300 start');
       let driver: Driver = Driver.create();
@@ -139,6 +163,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_400
+     * @tc.number OpenDialogTransitionTest_400
+     * @tc.desc   OpenDialogTransitionTest_400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_400', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_400 start');
       let driver: Driver = Driver.create();
@@ -162,6 +194,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_500
+     * @tc.number OpenDialogTransitionTest_500
+     * @tc.desc   OpenDialogTransitionTest_500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_500', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_500 start');
       let driver: Driver = Driver.create();
@@ -185,6 +225,14 @@ export default function openDialogTransitionTest() {
       done();
     });
 
+    /**
+     * @tc.name   OpenDialogTransitionTest_600
+     * @tc.number OpenDialogTransitionTest_600
+     * @tc.desc   OpenDialogTransitionTest_600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('OpenDialogTransitionTest_600', Level.LEVEL2, async (done: Function) => {
       console.info('OpenDialogTransitionTest_600 start');
       let driver: Driver = Driver.create();

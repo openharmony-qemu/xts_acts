@@ -46,11 +46,13 @@ export default function inputMethodNormalStageJSUnit() {
       });
     })
 
-    /*
-     * @tc.number  inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001
+     * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001 Test start*************");
@@ -100,11 +102,13 @@ export default function inputMethodNormalStageJSUnit() {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_001 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002
+     * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002 Test start*************");
@@ -149,11 +153,13 @@ export default function inputMethodNormalStageJSUnit() {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodAndSubtype_002 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001
+     * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001 Test start*************");
@@ -191,11 +197,13 @@ export default function inputMethodNormalStageJSUnit() {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodSubtype_001 Test end*************");
     });
 
-    /*
-     * @tc.number  inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002
-     * @tc.name    Switch current input method subtype.
-     * @tc.desc    Function test
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002
+     * @tc.number inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>************* inputMethodNormalStage_test_switchCurrentInputMethodSubtype_002 Test start*************");

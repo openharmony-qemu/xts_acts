@@ -27,12 +27,12 @@ const LABEL_SIM_INFO: string = 'simInfo';
 export default function deviceInfoTest() {
   describe('deviceInfo_test', () => {
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0100
-     * @tc.name      : test_get_device_info_0100
-     * @tc.desc      : test deviceInfo getDeviceInfo without admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0100
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0100
+     * @tc.desc   test deviceInfo getDeviceInfo without admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0100", Level.LEVEL2, async (done: Function) => {
       try {
@@ -45,15 +45,15 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0200
-     * @tc.name      : test_get_device_info_0200
-     * @tc.desc      : test deviceInfo getDeviceInfo with normal admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0200
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0200
+     * @tc.desc   test deviceInfo getDeviceInfo with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0200", Level.LEVEL2, async (done: Function) => {
-      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
       try {
         deviceInfo.getDeviceInfo(SELFWANT, LABEL_DEVICE_NAME);
         expect(false).assertTrue();
@@ -66,12 +66,12 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0300
-     * @tc.name      : test_get_device_info_0300
-     * @tc.desc      : test deviceInfo getDeviceInfo unsupported item
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0300
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0300
+     * @tc.desc   test deviceInfo getDeviceInfo unsupported item
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0300", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -87,12 +87,12 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0400
-     * @tc.name      : test_get_device_info_0400
-     * @tc.desc      : test deviceInfo getDeviceInfo, item = deviceName
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0400
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0400
+     * @tc.desc   test deviceInfo getDeviceInfo, item = deviceName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0400", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -108,12 +108,12 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0500
-     * @tc.name      : test_get_device_info_0500
-     * @tc.desc      : test deviceInfo getDeviceInfo, item = deviceSerial
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0500
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0500
+     * @tc.desc   test deviceInfo getDeviceInfo, item = deviceSerial
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0500", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -129,12 +129,12 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0600
-     * @tc.name      : test_get_device_info_0600
-     * @tc.desc      : test deviceInfo getDeviceInfo, item = deviceSerial
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0600
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0600
+     * @tc.desc   test deviceInfo getDeviceInfo, item = deviceSerial
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0600", Level.LEVEL2, async (done: Function) => {
       if (sysDeviceInfo.deviceType != 'phone') {
@@ -154,12 +154,12 @@ export default function deviceInfoTest() {
     });
 
     /**
-     * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0700
-     * @tc.name      : test_get_device_info_0700
-     * @tc.desc      : test deviceInfo getDeviceInfo with super admin
-     * @tc.level     : Level 2
-     * @tc.type      : Function
-     * @tc.size      : MediumTest
+     * @tc.name   test_get_device_info_0700
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_DEVICE_INFO_JS_0700
+     * @tc.desc   test deviceInfo getDeviceInfo with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("test_get_device_info_0700", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);

@@ -332,6 +332,32 @@ async function getFocusModeTest(done: Function, testName: string,
   }
 }
 
+async function getZoomRatioRangeTest(done: Function, testName: string, callback: (res: Array<number>) => void) {
+  try {
+    if (isEmpty(mCameraDeviceArray)) {
+      console.info(TAG, testName, ' mCameraDeviceArray is null.');
+      done();
+      return;
+    } else {
+      createPhotoOutput();
+      await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
+      if (mCaptureSession.getZoomRatioRange()) {
+        let res: Array<number> = mCaptureSession.getZoomRatioRange();
+        console.info(TAG, testName, 'video FocusModeSupported, expected: ', JSON.stringify(res));
+        callback(res);
+      } else {
+        console.error(TAG, testName, "该设备不支持变焦");
+      }
+    }
+  } catch (error) {
+    console.error(TAG, testName, JSON.stringify(error), error.code);
+    expect().assertFail();
+  } finally {
+    await releasePhotoSession();
+    done();
+  }
+}
+
 export default function CameraDeprecatedCaptureSessionTest() {
   describe('CameraDeprecatedCaptureSessionTest', () => {
     beforeAll(async () => {
@@ -341,7 +367,6 @@ export default function CameraDeprecatedCaptureSessionTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('test', [])
     });
 
@@ -361,12 +386,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100
-     * @tc.desc      test camera session photo hasFlash
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100
+     * @tc.desc   test camera session photo hasFlash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_PHOTO_0100'
@@ -379,7 +404,7 @@ export default function CameraDeprecatedCaptureSessionTest() {
           await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
           let hasFlash: boolean = mCaptureSession.hasFlash();
           console.info(TAG, testName, 'hasFlash', hasFlash);
-          expect(hasFlash).assertTrue();
+          expect(isEmpty(hasFlash)).assertFalse();
         }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
@@ -391,12 +416,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100
-     * @tc.desc      test camera session video hasFlash
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100
+     * @tc.desc   test camera session video hasFlash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_HAS_FLASH_VIDEO_0100'
@@ -409,7 +434,7 @@ export default function CameraDeprecatedCaptureSessionTest() {
           await getCreateCaptureSession(mPreviewOutput, mPhotoOutput);
           let hasFlash: boolean = mCaptureSession.hasFlash();
           console.info(TAG, testName, 'hasFlash', hasFlash);
-          expect(hasFlash).assertTrue();
+          expect(isEmpty(hasFlash)).assertFalse();
         }
       } catch (err) {
         console.error(TAG, testName, JSON.stringify(err), err.code);
@@ -421,12 +446,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100
-     * @tc.desc      test camera session photo getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100
+     * @tc.desc   test camera session photo getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0100'
@@ -436,12 +461,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200
-     * @tc.desc      test camera session photo getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200
+     * @tc.desc   test camera session photo getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0200'
@@ -451,12 +476,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300
-     * @tc.desc      test camera session photo getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300
+     * @tc.desc   test camera session photo getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0300'
@@ -466,12 +491,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400
-     * @tc.desc      test camera session photo getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400
+     * @tc.desc   test camera session photo getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_PHOTO_0400'
@@ -481,12 +506,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100
-     * @tc.desc      test camera session video getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100
+     * @tc.desc   test camera session video getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0100'
@@ -496,12 +521,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200
-     * @tc.desc      test camera session video getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200
+     * @tc.desc   test camera session video getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0200'
@@ -511,12 +536,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300
-     * @tc.desc      test camera session video getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300
+     * @tc.desc   test camera session video getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0300'
@@ -526,12 +551,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400
-     * @tc.desc      test camera session video getFlashMode
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400
+     * @tc.desc   test camera session video getFlashMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FLASH_MODE_VIDEO_0400'
@@ -541,12 +566,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     })
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100
-     * @tc.desc      Test get VIDEO_STABILIZATION_MODE_OFF
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100
+     * @tc.desc   Test get VIDEO_STABILIZATION_MODE_OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0100';
@@ -557,12 +582,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200
-     * @tc.desc      Test get VIDEO_STABILIZATION_MODE_LOW
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200
+     * @tc.desc   Test get VIDEO_STABILIZATION_MODE_LOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0200';
@@ -573,12 +598,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300
-     * @tc.desc      Test get VIDEO_STABILIZATION_MODE_MEDIUM
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300
+     * @tc.desc   Test get VIDEO_STABILIZATION_MODE_MEDIUM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0300';
@@ -589,12 +614,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400
-     * @tc.desc      Test get VIDEO_STABILIZATION_MODE_HIGH
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400
+     * @tc.desc   Test get VIDEO_STABILIZATION_MODE_HIGH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0400';
@@ -605,12 +630,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500
-     * @tc.desc      Test get VIDEO_STABILIZATION_MODE_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500
+     * @tc.desc   Test get VIDEO_STABILIZATION_MODE_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_STABILIZATION_MODE_0500';
@@ -621,12 +646,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100
-     * @tc.desc      Test get FOCUS_MODE_MANUAL
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100
+     * @tc.desc   Test get FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0100';
@@ -637,12 +662,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200
-     * @tc.desc      Test get FOCUS_MODE_CONTINUOUS_AUTO
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200
+     * @tc.desc   Test get FOCUS_MODE_CONTINUOUS_AUTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0200';
@@ -653,12 +678,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300
-     * @tc.desc      Test get FOCUS_MODE_MANUAL
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300
+     * @tc.desc   Test get FOCUS_MODE_MANUAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0300';
@@ -669,12 +694,12 @@ export default function CameraDeprecatedCaptureSessionTest() {
     });
 
     /**
-     * @tc.number    SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400
-     * @tc.name      SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400
-     * @tc.desc      Test get FOCUS_MODE_LOCKED
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400
+     * @tc.desc   Test get FOCUS_MODE_LOCKED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_FOCUS_MODE_0400';
@@ -682,6 +707,21 @@ export default function CameraDeprecatedCaptureSessionTest() {
         camera.FocusMode.FOCUS_MODE_LOCKED, (res?: camera.FocusMode) => {
           expect(res).assertEqual(camera.FocusMode.FOCUS_MODE_LOCKED);
         });
+    });
+
+    /**
+     * @tc.name   SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.number SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100
+     * @tc.desc   Test get GET_ZOOM_RATIO_RANGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100', Level.LEVEL2, async (done: Function) => {
+      const testName = 'SUB_CAP_MULTIMEDIA_CAMERA_GET_ZOOM_RATIO_RANGE_0100';
+      await getZoomRatioRangeTest(done, testName, (res: Array<number>) => {
+        expect(res.length > 0).assertTrue();
+      });
     });
   })
 }

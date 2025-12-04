@@ -21,4 +21,6 @@ export class CommonConstants {
 
   static readonly ADS_URL4: string = 'https://www.4399.com/';
 
+  static readonly EXAMPLE_URL: string = 'https://www.example.com';
+
 }

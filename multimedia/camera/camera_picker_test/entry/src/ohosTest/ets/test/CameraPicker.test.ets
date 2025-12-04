@@ -292,12 +292,12 @@ export function cameraPicker() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100
-     * @tc.name      : cameraPicker takePhoto api test
-     * @tc.desc      : cameraPicker takePhoto api test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0100--------------");
@@ -324,12 +324,12 @@ export function cameraPicker() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101
-     * @tc.name      : cameraPicker takePhoto api test
-     * @tc.desc      : cameraPicker takePhoto api test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0101--------------");
@@ -357,12 +357,12 @@ export function cameraPicker() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102
-     * @tc.name      : cameraPicker takePhoto api test
-     * @tc.desc      : cameraPicker takePhoto api test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0102--------------");
@@ -395,12 +395,12 @@ export function cameraPicker() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103
-     * @tc.name      : cameraPicker takePhoto api test
-     * @tc.desc      : cameraPicker takePhoto api test
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103
+     * @tc.desc   cameraPicker takePhoto api test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_PICKER_USECASS_TAKEPHOTO_0103--------------");

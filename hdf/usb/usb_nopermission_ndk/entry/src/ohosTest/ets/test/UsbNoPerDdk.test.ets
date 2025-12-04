@@ -45,12 +45,12 @@ export default function usbNoPerDdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0100
-     * @tc.name       : testUsbInitNoPer001
-     * @tc.desc       : OH_Usb_Init Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUsbInitNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0100
+     * @tc.desc   OH_Usb_Init Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbInitNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbInitNoPer001---------------------------');
@@ -67,12 +67,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0200
-     * @tc.name       : testUsbReleaseNoPer001
-     * @tc.desc       : OH_Usb_Release Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbReleaseNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0200
+     * @tc.desc   OH_Usb_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbReleaseNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbInitNoPer001---------------------------');
@@ -89,12 +89,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1600
-     * @tc.name       : testUsbReleaseResourceNoPer001
-     * @tc.desc       : OH_Usb_ReleaseResource Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbReleaseResourceNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1600
+     * @tc.desc   OH_Usb_ReleaseResource Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbReleaseResourceNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbReleaseResourceNoPer001---------------------------');
@@ -111,12 +111,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0300
-     * @tc.name       : testUsbGetDeviceDescriptorNoPer001
-     * @tc.desc       : OH_Usb_GetDeviceDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbGetDeviceDescriptorNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0300
+     * @tc.desc   OH_Usb_GetDeviceDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbGetDeviceDescriptorNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbGetDeviceDescriptorNoPer001---------------------------');
@@ -140,12 +140,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0400
-     * @tc.name       : testUsbGetConfigDescriptorNoPer001
-     * @tc.desc       : OH_Usb_GetConfigDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbGetConfigDescriptorNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0400
+     * @tc.desc   OH_Usb_GetConfigDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbGetConfigDescriptorNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbGetConfigDescriptorNoPer001---------------------------');
@@ -169,12 +169,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0500
-     * @tc.name       : testUsbFreeConfigDescriptorNoPer001
-     * @tc.desc       : OH_Usb_FreeConfigDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbFreeConfigDescriptorNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0500
+     * @tc.desc   OH_Usb_FreeConfigDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbFreeConfigDescriptorNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbFreeConfigDescriptorNoPer001---------------------------');
@@ -198,12 +198,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0600
-     * @tc.name       : testUsbClaimInterfaceNoPer001
-     * @tc.desc       : OH_Usb_ClaimInterface Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbClaimInterfaceNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0600
+     * @tc.desc   OH_Usb_ClaimInterface Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbClaimInterfaceNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbClaimInterfaceNoPer001---------------------------');
@@ -227,12 +227,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0700
-     * @tc.name       : testUsbReleaseInterfaceNoPer001
-     * @tc.desc       : OH_Usb_ReleaseInterface Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbReleaseInterfaceNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0700
+     * @tc.desc   OH_Usb_ReleaseInterface Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbReleaseInterfaceNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbReleaseInterfaceNoPer001---------------------------');
@@ -256,12 +256,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0800
-     * @tc.name       : testUsbSelectInterfaceSettingNoPer001
-     * @tc.desc       : OH_Usb_SelectInterfaceSetting Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbSelectInterfaceSettingNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0800
+     * @tc.desc   OH_Usb_SelectInterfaceSetting Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSelectInterfaceSettingNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbSelectInterfaceSettingNoPer001---------------------------');
@@ -285,12 +285,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_0900
-     * @tc.name       : testUsbGetCurrentInterfaceSettingNoPer001
-     * @tc.desc       : OH_Usb_GetCurrentInterfaceSetting Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbGetCurrentInterfaceSettingNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_0900
+     * @tc.desc   OH_Usb_GetCurrentInterfaceSetting Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbGetCurrentInterfaceSettingNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbGetCurrentInterfaceSettingNoPer001---------------------------');
@@ -314,12 +314,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1000
-     * @tc.name       : testUsbSendControlReadRequestNoPer001
-     * @tc.desc       : OH_Usb_SendControlReadRequest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbSendControlReadRequestNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1000
+     * @tc.desc   OH_Usb_SendControlReadRequest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSendControlReadRequestNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbSendControlReadRequestNoPer001---------------------------');
@@ -343,12 +343,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1100
-     * @tc.name       : testUsbSendControlWriteRequestNoPer001
-     * @tc.desc       : OH_Usb_SendControlWriteRequest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbSendControlWriteRequestNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1100
+     * @tc.desc   OH_Usb_SendControlWriteRequest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSendControlWriteRequestNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbSendControlWriteRequestNoPer001---------------------------');
@@ -372,12 +372,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1200
-     * @tc.name       : testUsbSendPipeRequestNoPer001
-     * @tc.desc       : OH_Usb_SendPipeRequest Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbSendPipeRequestNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1200
+     * @tc.desc   OH_Usb_SendPipeRequest Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSendPipeRequestNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbSendPipeRequestNoPer001---------------------------');
@@ -401,12 +401,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1300
-     * @tc.name       : testUsbCreateDeviceMemMapNoPer001
-     * @tc.desc       : OH_Usb_CreateDeviceMemMap Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     /* @tc.level      : Level 0/
+     * @tc.name   testUsbCreateDeviceMemMapNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1300
+     * @tc.desc   OH_Usb_CreateDeviceMemMap Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbCreateDeviceMemMapNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbCreateDeviceMemMapNoPer001---------------------------');
@@ -430,12 +430,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1400
-     * @tc.name       : testUsbDestroyDeviceMemMapNoPer001
-     * @tc.desc       : OH_Usb_DestroyDeviceMemMap Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbDestroyDeviceMemMapNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1400
+     * @tc.desc   OH_Usb_DestroyDeviceMemMap Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbDestroyDeviceMemMapNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbDestroyDeviceMemMapNoPer001---------------------------');
@@ -458,13 +458,13 @@ export default function usbNoPerDdkTest() {
       }
     });
 
-     /**
-     * @tc.number     : SUB_Driver_Ext_DDKNoPer_1500
-     * @tc.name       : testUsbSendPipeRequestWithAshmemNoPer001
-     * @tc.desc       : OH_Usb_SendPipeRequestWithAshmem Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testUsbSendPipeRequestWithAshmemNoPer001
+     * @tc.number SUB_Driver_Ext_DDKNoPer_1500
+     * @tc.desc   OH_Usb_SendPipeRequestWithAshmem Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSendPipeRequestWithAshmemNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info(TAG, '----------------------testUsbSendPipeRequestWithAshmemNoPer001---------------------------');
@@ -488,12 +488,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_DDK_0900
-     * @tc.name       : testUsbGetDevicesNoPer001
-     * @tc.desc       : OH_Usb_GetDevices Interface testing,teturn DDK_ERR_NOPERM
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUsbGetDevicesNoPer001
+     * @tc.number SUB_Driver_Ext_DDK_0900
+     * @tc.desc   OH_Usb_GetDevices Interface testing,teturn DDK_ERR_NOPERM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbGetDevicesNoPer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbGetDevicesNoPer001---------------------------');
@@ -516,9 +516,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0100
-     * @tc.name       : testScsiPeripheralInit001
-     * @tc.desc       : OH_ScsiPeripheral_Init Interface testing
+     * @tc.name   testScsiPeripheralInit001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0100
+     * @tc.desc   OH_ScsiPeripheral_Init Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralInit001---------------------------');
@@ -535,9 +538,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0200
-     * @tc.name       : testScsiPeripheralRelease001
-     * @tc.desc       : OH_ScsiPeripheral_Release Interface testing
+     * @tc.name   testScsiPeripheralRelease001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0200
+     * @tc.desc   OH_ScsiPeripheral_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralRelease001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralRelease001---------------------------');
@@ -554,9 +560,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0300
-     * @tc.name       : testScsiPeripheralOpen001
-     * @tc.desc       : OH_ScsiPeripheral_Open Interface testing
+     * @tc.name   testScsiPeripheralOpen001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0300
+     * @tc.desc   OH_ScsiPeripheral_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralOpen001---------------------------');
@@ -574,9 +583,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0400
-     * @tc.name       : testScsiPeripheralClose001
-     * @tc.desc       : OH_ScsiPeripheral_Close Interface testing
+     * @tc.name   testScsiPeripheralClose001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0400
+     * @tc.desc   OH_ScsiPeripheral_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralClose001---------------------------');
@@ -594,9 +606,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0500
-     * @tc.name       : testScsiPeripheralTestUnitReady001
-     * @tc.desc       : OH_ScsiPeripheral_TestUnitReady Interface testing
+     * @tc.name   testScsiPeripheralTestUnitReady001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0500
+     * @tc.desc   OH_ScsiPeripheral_TestUnitReady Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralTestUnitReady001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralTestUnitReady001---------------------------');
@@ -614,9 +629,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0600
-     * @tc.name       : testScsiPeripheralInquiry001
-     * @tc.desc       : OH_ScsiPeripheral_Inquiry Interface testing
+     * @tc.name   testScsiPeripheralInquiry001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0600
+     * @tc.desc   OH_ScsiPeripheral_Inquiry Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralInquiry001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralInquiry001---------------------------');
@@ -634,9 +652,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0700
-     * @tc.name       : testScsiPeripheralReadCapacity10_001
-     * @tc.desc       : OH_ScsiPeripheral_ReadCapacity10 Interface testing
+     * @tc.name   testScsiPeripheralReadCapacity10_001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0700
+     * @tc.desc   OH_ScsiPeripheral_ReadCapacity10 Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralReadCapacity10_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralReadCapacity10_001---------------------------');
@@ -654,9 +675,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0800
-     * @tc.name       : testScsiPeripheralRequestSense001
-     * @tc.desc       : OH_ScsiPeripheral_RequestSense Interface testing
+     * @tc.name   testScsiPeripheralRequestSense001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0800
+     * @tc.desc   OH_ScsiPeripheral_RequestSense Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralRequestSense001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralRequestSense001---------------------------');
@@ -674,9 +698,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_0900
-     * @tc.name       : testScsiPeripheralRead10_001
-     * @tc.desc       : OH_ScsiPeripheral_Read10 Interface testing
+     * @tc.name   testScsiPeripheralRead10_001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_0900
+     * @tc.desc   OH_ScsiPeripheral_Read10 Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralRead10_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralRead10_001---------------------------');
@@ -693,9 +720,12 @@ export default function usbNoPerDdkTest() {
       }
     });
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_1000
-     * @tc.name       : testScsiPeripheralWrite10_001
-     * @tc.desc       : OH_ScsiPeripheral_Write10 Interface testing
+     * @tc.name   testScsiPeripheralWrite10_001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_1000
+     * @tc.desc   OH_ScsiPeripheral_Write10 Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralWrite10_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralWrite10_001---------------------------');
@@ -712,9 +742,12 @@ export default function usbNoPerDdkTest() {
       }
     });
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_1100
-     * @tc.name       : testScsiPeripheralVerify10_001
-     * @tc.desc       : OH_ScsiPeripheral_Verify10 Interface testing
+     * @tc.name   testScsiPeripheralVerify10_001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_1100
+     * @tc.desc   OH_ScsiPeripheral_Verify10 Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralVerify10_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralVerify10_001---------------------------');
@@ -732,9 +765,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_ScsiDdk_NdkPermisson_1200
-     * @tc.name       : testScsiPeripheralSendRequestByCDB001
-     * @tc.desc       : OH_ScsiPeripheral_SendRequestByCdb Interface testing
+     * @tc.name   testScsiPeripheralSendRequestByCDB001
+     * @tc.number SUB_Driver_Ext_ScsiDdk_NdkPermisson_1200
+     * @tc.desc   OH_ScsiPeripheral_SendRequestByCdb Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScsiPeripheralSendRequestByCDB001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testScsiPeripheralSendRequestByCDB001---------------------------');
@@ -752,9 +788,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0100
-     * @tc.name       : testHidInit001
-     * @tc.desc       : OH_Hid_Init Interface testing
+     * @tc.name   testHidInit001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0100
+     * @tc.desc   OH_Hid_Init Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidInit001---------------------------');
@@ -771,9 +810,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0200
-     * @tc.name       : testHidRelease001
-     * @tc.desc       : OH_Hid_Release Interface testing
+     * @tc.name   testHidRelease001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0200
+     * @tc.desc   OH_Hid_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRelease001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRelease001---------------------------');
@@ -790,9 +832,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0300
-     * @tc.name       : testHidOpen001
-     * @tc.desc       : OH_Hid_Open Interface testing
+     * @tc.name   testHidOpen001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0300
+     * @tc.desc   OH_Hid_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidOpen001---------------------------');
@@ -810,9 +855,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0400
-     * @tc.name       : testHidClose001
-     * @tc.desc       : OH_Hid_Close Interface testing
+     * @tc.name   testHidClose001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0400
+     * @tc.desc   OH_Hid_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidClose001---------------------------');
@@ -830,9 +878,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0500
-     * @tc.name       : testHidWrite001
-     * @tc.desc       : OH_Hid_Write Interface testing
+     * @tc.name   testHidWrite001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0500
+     * @tc.desc   OH_Hid_Write Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidWrite001---------------------------');
@@ -850,9 +901,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0600
-     * @tc.name       : testHidReadTimeout001
-     * @tc.desc       : OH_Hid_ReadTimeout Interface testing
+     * @tc.name   testHidReadTimeout001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0600
+     * @tc.desc   OH_Hid_ReadTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidReadTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidReadTimeout001---------------------------');
@@ -870,9 +924,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0700
-     * @tc.name       : testHidRead001
-     * @tc.desc       : OH_Hid_Read Interface testing
+     * @tc.name   testHidRead001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0700
+     * @tc.desc   OH_Hid_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRead001---------------------------');
@@ -890,9 +947,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0800
-     * @tc.name       : testHidSetNonBlocking001
-     * @tc.desc       : OH_Hid_SetNonBlocking Interface testing
+     * @tc.name   testHidSetNonBlocking001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0800
+     * @tc.desc   OH_Hid_SetNonBlocking Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSetNonBlocking001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSetNonBlocking001---------------------------');
@@ -910,9 +970,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_0900
-     * @tc.name       : testHidGetRawInfo001
-     * @tc.desc       : OH_Hid_GetRawInfo Interface testing
+     * @tc.name   testHidGetRawInfo001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_0900
+     * @tc.desc   OH_Hid_GetRawInfo Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawInfo001---------------------------');
@@ -930,9 +993,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1000
-     * @tc.name       : testHidGetRawName001
-     * @tc.desc       : OH_Hid_GetRawName Interface testing
+     * @tc.name   testHidGetRawName001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1000
+     * @tc.desc   OH_Hid_GetRawName Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawName001---------------------------');
@@ -950,9 +1016,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1100
-     * @tc.name       : testHidGetPhysicalAddress001
-     * @tc.desc       : OH_Hid_GetPhysicalAddress Interface testing
+     * @tc.name   testHidGetPhysicalAddress001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1100
+     * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetPhysicalAddress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetPhysicalAddress001---------------------------');
@@ -970,9 +1039,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1200
-     * @tc.name       : testHidGetRawUniqueId001
-     * @tc.desc       : OH_Hid_GetRawUniqueId Interface testing
+     * @tc.name   testHidGetRawUniqueId001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1200
+     * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawUniqueId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawUniqueId001---------------------------');
@@ -990,9 +1062,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1300
-     * @tc.name       : testHidSendReport001
-     * @tc.desc       : OH_Hid_SendReport Interface testing
+     * @tc.name   testHidSendReport001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1300
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport001---------------------------');
@@ -1010,9 +1085,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1400
-     * @tc.name       : testHidGetReport001
-     * @tc.desc       : OH_Hid_GetReport Interface testing
+     * @tc.name   testHidGetReport001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1400
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport001---------------------------');
@@ -1030,9 +1108,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_Permission_1500
-     * @tc.name       : testHidGetReportDescriptor001
-     * @tc.desc       : OH_Hid_GetReportDescriptor Interface testing
+     * @tc.name   testHidGetReportDescriptor001
+     * @tc.number SUB_Driver_Ext_HID_DDK_Permission_1500
+     * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReportDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReportDescriptor001---------------------------');
@@ -1050,9 +1131,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0100
-     * @tc.name       : testUsbSerialInit001
-     * @tc.desc       : OH_UsbSerial_Init Interface testing
+     * @tc.name   testUsbSerialInit001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0100
+     * @tc.desc   OH_UsbSerial_Init Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialInit001---------------------------');
@@ -1069,9 +1153,12 @@ export default function usbNoPerDdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0200
-     * @tc.name       : testUsbSerialRelease001
-     * @tc.desc       : OH_UsbSerial_Release Interface testing
+     * @tc.name   testUsbSerialRelease001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0200
+     * @tc.desc   OH_UsbSerial_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialRelease001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialRelease001---------------------------');
@@ -1088,9 +1175,12 @@ export default function usbNoPerDdkTest() {
     });
     
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0300
-     * @tc.name       : testUsbSerialOpen001
-     * @tc.desc       : OH_UsbSerial_Open Interface testing
+     * @tc.name   testUsbSerialOpen001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0300
+     * @tc.desc   OH_UsbSerial_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialOpen001---------------------------');
@@ -1107,9 +1197,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0400
-     * @tc.name       : testUsbSerialClose001
-     * @tc.desc       : OH_UsbSerial_Close Interface testing
+     * @tc.name   testUsbSerialClose001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0400
+     * @tc.desc   OH_UsbSerial_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialClose001---------------------------');
@@ -1126,9 +1219,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0500
-     * @tc.name       : testUsbSerialRead001
-     * @tc.desc       : OH_UsbSerial_Read Interface testing
+     * @tc.name   testUsbSerialRead001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0500
+     * @tc.desc   OH_UsbSerial_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialRead001---------------------------');
@@ -1145,9 +1241,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0600
-     * @tc.name       : testUsbSerialWrite001
-     * @tc.desc       : OH_UsbSerial_Write Interface testing
+     * @tc.name   testUsbSerialWrite001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0600
+     * @tc.desc   OH_UsbSerial_Write Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialWrite001---------------------------');
@@ -1164,9 +1263,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0700
-     * @tc.name       : testUsbSerialSetBaudRate001
-     * @tc.desc       : OH_UsbSerial_SetBaudRate Interface testing
+     * @tc.name   testUsbSerialSetBaudRate001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0700
+     * @tc.desc   OH_UsbSerial_SetBaudRate Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialSetBaudRate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialSetBaudRate001---------------------------');
@@ -1183,9 +1285,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0800
-     * @tc.name       : testUsbSerialSetParams001
-     * @tc.desc       : OH_UsbSerial_SetParams Interface testing
+     * @tc.name   testUsbSerialSetParams001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0800
+     * @tc.desc   OH_UsbSerial_SetParams Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialSetParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialSetParams001---------------------------');
@@ -1202,9 +1307,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_0900
-     * @tc.name       : testUsbSerialSetTimeout001
-     * @tc.desc       : OH_UsbSerial_SetTimeout Interface testing
+     * @tc.name   testUsbSerialSetTimeout001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_0900
+     * @tc.desc   OH_UsbSerial_SetTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialSetTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialSetTimeout001---------------------------');
@@ -1221,9 +1329,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_1000
-     * @tc.name       : testUsbSerialSetFlowControl001
-     * @tc.desc       : OH_UsbSerial_SetFlowControl Interface testing
+     * @tc.name   testUsbSerialSetFlowControl001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_1000
+     * @tc.desc   OH_UsbSerial_SetFlowControl Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialSetFlowControl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialSetFlowControl001---------------------------');
@@ -1240,9 +1351,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_1100
-     * @tc.name       : testUsbSerialFlush001
-     * @tc.desc       : OH_UsbSerial_Flush Interface testing
+     * @tc.name   testUsbSerialFlush001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_1100
+     * @tc.desc   OH_UsbSerial_Flush Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialFlush001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialFlush001---------------------------');
@@ -1259,9 +1373,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_1200
-     * @tc.name       : testUsbSerialFlushInput001
-     * @tc.desc       : OH_UsbSerial_FlushInput Interface testing
+     * @tc.name   testUsbSerialFlushInput001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_1200
+     * @tc.desc   OH_UsbSerial_FlushInput Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialFlushInput001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialFlushInput001---------------------------');
@@ -1278,9 +1395,12 @@ export default function usbNoPerDdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_UsbSerial_Permission_1300
-     * @tc.name       : testUsbSerialFlushOutput001
-     * @tc.desc       : OH_UsbSerial_FlushOutput Interface testing
+     * @tc.name   testUsbSerialFlushOutput001
+     * @tc.number SUB_Driver_Ext_UsbSerial_Permission_1300
+     * @tc.desc   OH_UsbSerial_FlushOutput Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUsbSerialFlushOutput001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testUsbSerialFlushOutput001---------------------------');

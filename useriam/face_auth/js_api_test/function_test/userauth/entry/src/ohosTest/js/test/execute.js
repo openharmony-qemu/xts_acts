@@ -38,12 +38,13 @@ describe('userAuthTestExecute', async function () {
     })
 
     /**
-    * @tc.name      execute_authentication_callback_ALL_NO_SUPPORT
-    * @tc.number    Security_IAM_Face_JSAPI_Function_Execute_1700
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+     * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_1700
+     * @tc.number Security_IAM_Face_JSAPI_Function_Execute_1700
+     * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Face_JSAPI_Function_Execute_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
         console.log("Security_IAM_Face_JSAPI_Function_Execute_1700 start");
         const auth = userAuth.getAuthenticator();
@@ -60,12 +61,13 @@ describe('userAuthTestExecute', async function () {
 
 
     /**
-    * @tc.name      execute_authentication_promise_ALL_NO_SUPPORT
-    * @tc.number    Security_IAM_Face_JSAPI_Function_Execute_2000
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+     * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_2000
+     * @tc.number Security_IAM_Face_JSAPI_Function_Execute_2000
+     * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Face_JSAPI_Function_Execute_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
         console.log("Security_IAM_Face_JSAPI_Function_Execute_2000 start");
         const auth = userAuth.getAuthenticator();
@@ -81,12 +83,13 @@ describe('userAuthTestExecute', async function () {
     })
     
     /**
-    * @tc.name      execute_authentication_callback_Type_is_null
-    * @tc.number    Security_IAM_Face_JSAPI_Function_Execute_1800
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+     * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_1800
+     * @tc.number Security_IAM_Face_JSAPI_Function_Execute_1800
+     * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Face_JSAPI_Function_Execute_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
         console.log("Security_IAM_Face_JSAPI_Function_Execute_1800 start");
         const auth = userAuth.getAuthenticator();
@@ -103,12 +106,13 @@ describe('userAuthTestExecute', async function () {
 
 
     /**
-    * @tc.name      execute_authentication_promise_Type_is_null
-    * @tc.number    Security_IAM_Face_JSAPI_Function_Execute_2100
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+     * @tc.name   Security_IAM_Face_JSAPI_Function_Execute_2100
+     * @tc.number Security_IAM_Face_JSAPI_Function_Execute_2100
+     * @tc.desc   Security_IAM_Face_JSAPI_Function_Execute_2100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Security_IAM_Face_JSAPI_Function_Execute_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
         console.log("Security_IAM_Face_JSAPI_Function_Execute_2100 start");
         const auth = userAuth.getAuthenticator();
@@ -123,13 +127,14 @@ describe('userAuthTestExecute', async function () {
         console.log("Security_IAM_Face_JSAPI_Function_Execute_2100 end");
     })
 
-       /**
-    * @tc.name      execute_authentication_callback_Type_is_null
-    * @tc.number    JSAPI_Function_Execute_3100
-    * @tc.size      MEDIUM
-    * @tc.type      FUNC
-    * @tc.level     Level2
-    */
+        /**
+         * @tc.name   JSAPI_Function_Execute_3100
+         * @tc.number JSAPI_Function_Execute_3100
+         * @tc.desc   JSAPI_Function_Execute_3100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('JSAPI_Function_Execute_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("JSAPI_Function_Execute_3100 start");
             const auth = userAuth.getAuthenticator();
@@ -238,12 +243,13 @@ describe('userAuthTestExecute', async function () {
     
     
         /**
-        * @tc.name      execute_authentication_promise_Type_is_null
-        * @tc.number    JSAPI_Function_Execute_3101
-        * @tc.size      MEDIUM
-        * @tc.type      FUNC
-        * @tc.level     Level2
-        */
+         * @tc.name   JSAPI_Function_Execute_3101
+         * @tc.number JSAPI_Function_Execute_3101
+         * @tc.desc   JSAPI_Function_Execute_3101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('JSAPI_Function_Execute_3101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, function (done) {
             console.log("JSAPI_Function_Execute_3101 start");
             const auth = userAuth.getAuthenticator();

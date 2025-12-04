@@ -20,8 +20,6 @@ import events_emitter from '@ohos.events.emitter';
 export default function NavigationParamTest() {
 
   const SUITE: string = 'NavigationParam'
-  const waitUiReadyMs: number = 500;
-
 
   describe('NavigationParamTest', () => {
 
@@ -43,10 +41,13 @@ export default function NavigationParamTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Navigation_0100
-     *tc.name   Set Navigation.title with Resource
-     *tc.desc   Set Navigation.title with Resource
+    /**
+     * @tc.name   ArkUI_Navigation_0100
+     * @tc.number ArkUI_Navigation_0100
+     * @tc.desc   Set Navigation.title with Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Navigation_0100',  Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Navigation_0100'
@@ -57,10 +58,13 @@ export default function NavigationParamTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Navigation_0200
-     *tc.name   Set Navigation.title with string
-     *tc.desc   Set Navigation.title with string
+    /**
+     * @tc.name   ArkUI_Navigation_0200
+     * @tc.number ArkUI_Navigation_0200
+     * @tc.desc   Set Navigation.title with string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Navigation_0200',  Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Navigation_0200'

@@ -45,6 +45,14 @@ export default function Toggle3Jsunit() {
       console.info("toggle after each called");
     });
 
+    /**
+     * @tc.name   testToggle01
+     * @tc.number testToggle01
+     * @tc.desc   testToggle01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle01', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle01] START');
       await Utils.sleep(1000);
@@ -56,6 +64,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle02
+     * @tc.number testToggle02
+     * @tc.desc   testToggle02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle02', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle02] START');
       await Utils.sleep(1000);
@@ -66,6 +82,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle03
+     * @tc.number testToggle03
+     * @tc.desc   testToggle03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle03', Level.LEVEL1, async (done: Function) => {
       console.info('[testToggle03] START');
       await Utils.sleep(1000);
@@ -76,6 +100,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle04
+     * @tc.number testToggle04
+     * @tc.desc   testToggle04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle04', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');
       try {
@@ -101,6 +133,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle05
+     * @tc.number testToggle05
+     * @tc.desc   testToggle05
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle05', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle05 START');
       try {
@@ -126,6 +166,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle08
+     * @tc.number testToggle08
+     * @tc.desc   testToggle08
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle08', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');
       try {
@@ -151,6 +199,14 @@ export default function Toggle3Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testToggle09
+     * @tc.number testToggle09
+     * @tc.desc   testToggle09
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testToggle09', Level.LEVEL1, async (done: Function) => {
       console.info('testToggle04 START');
       try {

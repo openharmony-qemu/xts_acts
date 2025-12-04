@@ -42,14 +42,15 @@ export default function RelativeChain2 () {
       console.info("RelativeChain2 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0400
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain2_001
+     * @tc.number RelativeChain2_001
+     * @tc.desc   RelativeChain2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain2_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain2_001] START');
 
@@ -69,14 +70,15 @@ export default function RelativeChain2 () {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0410
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain2_002
+     * @tc.number RelativeChain2_002
+     * @tc.desc   RelativeChain2_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain2_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain2_002] START');
 
@@ -102,14 +104,15 @@ export default function RelativeChain2 () {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0420
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain2_003
+     * @tc.number RelativeChain2_003
+     * @tc.desc   RelativeChain2_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain2_003', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain2_003] START');
 
@@ -135,14 +138,15 @@ export default function RelativeChain2 () {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0520
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeChain2_004
+     * @tc.number RelativeChain2_004
+     * @tc.desc   RelativeChain2_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeChain2_004', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeChain2_004] START');
 

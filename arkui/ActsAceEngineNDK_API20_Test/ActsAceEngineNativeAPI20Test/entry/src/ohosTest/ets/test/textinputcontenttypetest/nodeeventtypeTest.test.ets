@@ -27,14 +27,14 @@ export default function NodeEventTypeTest() {
     beforeEach(async (done: Function) => {
       await Utils.pushPage(`nodeeventtypetest/NodeEventTypeTest`, done);
     });
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_EVENT_ON_ATTACH_0100
-       * @tc.name       : testNODE_EVENT_ON_ATTACH0100
-       * @tc.desc       : testing NODE_EVENT_ON_ATTACH interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_EVENT_ON_ATTACH0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_EVENT_ON_ATTACH_0100
+     * @tc.desc   testing NODE_EVENT_ON_ATTACH interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_EVENT_ON_ATTACH0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -49,14 +49,14 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_TEXT_ON_DETECT_RESULT_UPDATE_0100
-       * @tc.name       : testNODE_TEXT_ON_DETECT_RESULT_UPDATE0100
-       * @tc.desc       : testing NODE_TEXT_ON_DETECT_RESULT_UPDATE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_TEXT_ON_DETECT_RESULT_UPDATE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_TEXT_ON_DETECT_RESULT_UPDATE_0100
+     * @tc.desc   testing NODE_TEXT_ON_DETECT_RESULT_UPDATE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_TEXT_ON_DETECT_RESULT_UPDATE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -71,14 +71,14 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_TEXT_SPAN_ON_LONG_PRESS_0100
-       * @tc.name       : testNODE_TEXT_SPAN_ON_LONG_PRESS0100
-       * @tc.desc       : testing NODE_TEXT_SPAN_ON_LONG_PRESS interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_TEXT_SPAN_ON_LONG_PRESS0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_TEXT_SPAN_ON_LONG_PRESS_0100
+     * @tc.desc   testing NODE_TEXT_SPAN_ON_LONG_PRESS interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_TEXT_SPAN_ON_LONG_PRESS0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -95,14 +95,14 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_IMAGE_ON_ERROR_0100
-       * @tc.name       : testNODE_IMAGE_ON_ERROR0100
-       * @tc.desc       : testing NODE_IMAGE_ON_ERROR interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_IMAGE_ON_ERROR0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_IMAGE_ON_ERROR_0100
+     * @tc.desc   testing NODE_IMAGE_ON_ERROR interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_IMAGE_ON_ERROR0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -117,20 +117,23 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_TEXT_INPUT_ON_WILL_CHANGE_0100
-       * @tc.name       : testNODE_TEXT_INPUT_ON_WILL_CHANGE0100
-       * @tc.desc       : testing NODE_TEXT_INPUT_ON_WILL_CHANGE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_TEXT_INPUT_ON_WILL_CHANGE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_TEXT_INPUT_ON_WILL_CHANGE_0100
+     * @tc.desc   testing NODE_TEXT_INPUT_ON_WILL_CHANGE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_TEXT_INPUT_ON_WILL_CHANGE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>testNODE_TEXT_INPUT_ON_WILL_CHANGE0100 start====");
           let com = await Utils.driver.findComponent(ON.id('textinput8'));
           await com.inputText('aaaaa');
+          await Utils.sleep(500);
+          await Utils.driver.triggerKey(2047)
+          await Utils.sleep(500);
           let result: number = nativerenderndk.NodeEventTypeTest_008();
           console.info(`====>testNODE_TEXT_INPUT_ON_WILL_CHANGE0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -141,20 +144,23 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_TEXT_AREA_ON_WILL_CHANGE_0100
-       * @tc.name       : testNODE_TEXT_AREA_ON_WILL_CHANGE0100
-       * @tc.desc       : testing NODE_TEXT_AREA_ON_WILL_CHANGE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_TEXT_AREA_ON_WILL_CHANGE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_TEXT_AREA_ON_WILL_CHANGE_0100
+     * @tc.desc   testing NODE_TEXT_AREA_ON_WILL_CHANGE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_TEXT_AREA_ON_WILL_CHANGE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>testNODE_TEXT_AREA_ON_WILL_CHANGE0100 start====");
           let com = await Utils.driver.findComponent(ON.id('textarea9'));
           await com.inputText('a');
+          await Utils.sleep(500);
+          await Utils.driver.triggerKey(2047)
+          await Utils.sleep(500);
           await inputMethod.getController().stopInputSession();
           let result: number = nativerenderndk.NodeEventTypeTest_009();
           console.info(`====>testNODE_TEXT_AREA_ON_WILL_CHANGE0100 result====${result}`);
@@ -166,20 +172,22 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP_0100
-       * @tc.name       : testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100
-       * @tc.desc       : testing NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP_0100
+     * @tc.desc   testing NODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
           console.info("====>testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100 start====");
+          await Utils.sleep(2000);
           let textpicker = await Utils.driver.findComponent(ON.id('textpicker11'));
-          await textpicker.scrollToBottom();
+          let textpickerCenter = await textpicker.getBoundsCenter();
+          await Utils.driver.mouseScroll(textpickerCenter, true, 10);
           let result: number = nativerenderndk.NodeEventTypeTest_010();
           console.info(`====>testNODE_TEXT_PICKER_EVENT_ON_SCROLL_STOP0100 result====${result}`);
           expect(result).assertEqual(ARKUI_ERROR_CODE_NO_ERROR);
@@ -190,14 +198,14 @@ export default function NodeEventTypeTest() {
         }
       })
 
-    /*
-     * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE_0100
-     * @tc.name       : testNODE_CHECKBOX_GROUP_EVENT_ON_CHANGE0100
-     * @tc.desc       : testing NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_CHECKBOX_GROUP_EVENT_ON_CHANGE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE_0100
+     * @tc.desc   testing NODE_CHECKBOX_GROUP_EVENT_ON_CHANGE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_CHECKBOX_GROUP_EVENT_ON_CHANGE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

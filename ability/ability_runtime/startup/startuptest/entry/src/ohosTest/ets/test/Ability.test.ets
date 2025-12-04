@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,11 +16,8 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import common from '@ohos.app.ability.common';
 import ability from '@ohos.ability.ability';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { commonEventManager } from '@kit.BasicServicesKit';
 
-let driver = Driver.create();
-const DELY_TIME = 5000;
 export default function abilityTest() {
   let testContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("testContext") as common.UIAbilityContext;
   console.log("du.yuan testContext:", testContext)
@@ -35,18 +32,25 @@ export default function abilityTest() {
     });
 
     afterEach(async (done: Function) => {
-      setTimeout(() => {
+      if (TAG === "SUB_Ability_AbilityRuntime_StartUpFeature_0100" ||
+        TAG === "SUB_Ability_AbilityRuntime_StartUpFeature_0200" ||
+        TAG === "SUB_Ability_AbilityRuntime_StartUpFeature_0300" ||
+        TAG === "SUB_Ability_AbilityRuntime_StartUpFeature_0400") {
+        setTimeout(() => {
+          done();
+        }, 3000)
+      } else {
         done();
-      }, 3000)
+      }
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0100
-     * @tc.name: test a single startup framework
-     * @tc.desc: test the startup results of a single startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0100
+     * @tc.desc   test the startup results of a single startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0100', Level.LEVEL0, async (done: Function) => {
         TAG = "ACTS_AddAbilityMonitor_Callback_0100";
@@ -63,23 +67,15 @@ export default function abilityTest() {
         expect(startResult).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0200
-     * @tc.name: test the serial startup framework
-     * @tc.desc: test the startup results of the serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0200
+     * @tc.desc   test the startup results of the serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0200";
@@ -97,23 +93,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('startupSampleInit3') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0300
-     * @tc.name: test parallel start framework
-     * @tc.desc: test the startup results of the parallel startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0300
+     * @tc.desc   test the startup results of the parallel startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0300";
@@ -134,23 +122,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('startupSampleInit8') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0400
-     * @tc.name: test loop serial startup framework
-     * @tc.desc: test the startup results of loop serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0400
+     * @tc.desc   test the startup results of loop serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0400";
@@ -168,23 +148,15 @@ export default function abilityTest() {
         expect(code).assertEqual(28800002)
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0500
-     * @tc.name: test cycle parallel start framework
-     * @tc.desc: test the startup results of cycle parallel start framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0500
+     * @tc.desc   test the startup results of cycle parallel start framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0500";
@@ -202,23 +174,15 @@ export default function abilityTest() {
         expect(code).assertEqual(28800002)
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0600
-     * @tc.name: test the callback for successful loading of the serial startup framework
-     * @tc.desc: test the callback for successful loading of the serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0600
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0600
+     * @tc.desc   test the callback for successful loading of the serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0600', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0600";
@@ -236,23 +200,15 @@ export default function abilityTest() {
         expect(hasInit003).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0700
-     * @tc.name: test the callback for successful loading of the parallel startup framework
-     * @tc.desc: test the callback for successful loading of the parallel startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0700
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0700
+     * @tc.desc   test the callback for successful loading of the parallel startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0700', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0700";
@@ -272,23 +228,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('Sample_007') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0800
-     * @tc.name: test a callback for successfully loading a startup framework
-     * @tc.desc: test a callback for successfully loading a startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0800
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0800
+     * @tc.desc   test a callback for successfully loading a startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0800', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0800";
@@ -311,23 +259,15 @@ export default function abilityTest() {
         expect(startupSampleComp).assertFalse()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_0900
-     * @tc.name: test main thread waiting
-     * @tc.desc: test the results of the main thread waiting
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_0900
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_0900
+     * @tc.desc   test the results of the main thread waiting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_0900', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_0900";
@@ -343,23 +283,15 @@ export default function abilityTest() {
         expect(res).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1000
-     * @tc.name: test main thread not waiting
-     * @tc.desc: test the result of the main thread not waiting
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1000
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1000
+     * @tc.desc   test the result of the main thread not waiting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1000', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1000";
@@ -375,23 +307,15 @@ export default function abilityTest() {
         expect(res).assertFalse()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1100
-     * @tc.name: test custom configuration a single startup framework
-     * @tc.desc: test the startup results of custom configuration a single startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1100
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1100
+     * @tc.desc   test the startup results of custom configuration a single startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1100";
@@ -410,23 +334,15 @@ export default function abilityTest() {
         expect(startResult).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1200
-     * @tc.name: test custom configuration serial startup framework
-     * @tc.desc: test the startup results of custom configuration serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1200
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1200
+     * @tc.desc   test the startup results of custom configuration serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1200";
@@ -447,23 +363,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('startupSampleInit3') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1300
-     * @tc.name: test custom configuration parallel start framework
-     * @tc.desc: test the startup results of the custom configuration parallel startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1300
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1300
+     * @tc.desc   test the startup results of the custom configuration parallel startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1300";
@@ -487,23 +395,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('startupSampleInit8') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1400
-     * @tc.name: test custom configuration loop serial startup framework
-     * @tc.desc: test the startup results of custom configuration loop serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1400
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1400
+     * @tc.desc   test the startup results of custom configuration loop serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1400";
@@ -524,23 +424,15 @@ export default function abilityTest() {
         expect(code).assertEqual(28800002)
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1500
-     * @tc.name: test custom configuration cycle parallel start framework
-     * @tc.desc: test the startup results of custom configuration cycle parallel start framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1500
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1500
+     * @tc.desc   test the startup results of custom configuration cycle parallel start framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1500";
@@ -561,23 +453,15 @@ export default function abilityTest() {
         expect(code).assertEqual(28800002)
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1600
-     * @tc.name: test custom configuration the callback for successful loading of the serial startup framework
-     * @tc.desc: test custom configuration the callback for successful loading of the serial startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1600
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1600
+     * @tc.desc   test custom configuration the callback for successful loading of the serial startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1600', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1600";
@@ -598,23 +482,15 @@ export default function abilityTest() {
         expect(hasInit003).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1700
-     * @tc.name: test custom configuration the callback for successful loading of the parallel startup framework
-     * @tc.desc: test custom configuration the callback for successful loading of the parallel startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1700
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1700
+     * @tc.desc   test custom configuration the callback for successful loading of the parallel startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1700', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1700";
@@ -637,23 +513,15 @@ export default function abilityTest() {
         expect(startOrder.indexOf('Sample_007') != -1).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1800
-     * @tc.name: test custom configuration a callback for successfully loading a startup framework
-     * @tc.desc: test custom configuration a callback for successfully loading a startup framework
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1800
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1800
+     * @tc.desc   test custom configuration a callback for successfully loading a startup framework
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1800', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1800";
@@ -678,23 +546,15 @@ export default function abilityTest() {
         expect(startupSampleComp).assertFalse()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_1900
-     * @tc.name: test custom configuration main thread waiting
-     * @tc.desc: test the custom configuration results of the main thread waiting
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_1900
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_1900
+     * @tc.desc   test the custom configuration results of the main thread waiting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_1900', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_1900";
@@ -713,23 +573,15 @@ export default function abilityTest() {
         expect(res).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2000
-     * @tc.name: test custom configuration main thread not waiting
-     * @tc.desc: test the custom configuration result of the main thread not waiting
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2000
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2000
+     * @tc.desc   test the custom configuration result of the main thread not waiting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2000', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2000";
@@ -748,23 +600,15 @@ export default function abilityTest() {
         expect(res).assertFalse()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2100
-     * @tc.name: the testing startup framework parameter is undefined
-     * @tc.desc: the result of testing startup framework parameter is undefined
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2100
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2100
+     * @tc.desc   the result of testing startup framework parameter is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2100";
@@ -783,23 +627,15 @@ export default function abilityTest() {
         expect(code == 401).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2200
-     * @tc.name: the testing startup framework parameter is null
-     * @tc.desc: the result of testing startup framework parameter is null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2200
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2200
+     * @tc.desc   the result of testing startup framework parameter is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2200";
@@ -818,23 +654,15 @@ export default function abilityTest() {
         expect(code == 401).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2300
-     * @tc.name: the testing startup framework parameter is []
-     * @tc.desc: the result of testing startup framework parameter is []
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2300
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2300
+     * @tc.desc   the result of testing startup framework parameter is []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2300";
@@ -853,23 +681,15 @@ export default function abilityTest() {
         expect(code == 401).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2400
-     * @tc.name: the testing startup framework parameter is {}
-     * @tc.desc: the result of testing startup framework parameter is {}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2400
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2400
+     * @tc.desc   the result of testing startup framework parameter is {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2400";
@@ -888,23 +708,15 @@ export default function abilityTest() {
         expect(code == 16000050).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2500
-     * @tc.name: the testing startup framework parameter is {}
-     * @tc.desc: the result of testing startup framework parameter is {}
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2500
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2500
+     * @tc.desc   the result of testing startup framework parameter is {}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2500";
@@ -923,23 +735,15 @@ export default function abilityTest() {
         expect(code == 401).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2600
-     * @tc.name: the testing startup framework parameter is {}
-     * @tc.desc: the result of testing startup framework parameter is not exit
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2600
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2600
+     * @tc.desc   the result of testing startup framework parameter is not exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2600', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2600";
@@ -958,23 +762,15 @@ export default function abilityTest() {
         expect(code == 401).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2700
-     * @tc.name: the testing startup framework parameter is {}
-     * @tc.desc: the result of testing startup framework parameter is not exit
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2700
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2700
+     * @tc.desc   the result of testing startup framework parameter is not exit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2700', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2700";
@@ -1001,23 +797,15 @@ export default function abilityTest() {
         expect(apiResult[10]).assertTrue()
         done();
       })
-      let allowed = await driver.waitForComponent(ON.text('想要打开', MatchPattern.CONTAINS), DELY_TIME);
-      console.log(TAG + " is need to click " + JSON.stringify(allowed));
-      if(allowed){
-        let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-        if(buttons && buttons.length > 0){
-          await buttons[buttons.length - 1].click();
-        }
-      }
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2800
-     * @tc.name: the testing startup framework errorCode is 28800002
-     * @tc.desc: The startup tasks have circular dependencies.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2800
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2800
+     * @tc.desc   The startup tasks have circular dependencies.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2800', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2800";
@@ -1036,12 +824,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_2900
-     * @tc.name: the testing startup framework errorCode is 28800003
-     * @tc.desc: An error occurred while running the startup tasks.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_2900
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_2900
+     * @tc.desc   An error occurred while running the startup tasks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_2900', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_2900";
@@ -1060,12 +848,12 @@ export default function abilityTest() {
     })
     
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUp_3000
-     * @tc.name: the testing startup framework errorCode is 28800004
-     * @tc.desc: Running startup tasks timeout.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUp_3000
+     * @tc.number SUB_Ability_AbilityRuntime_StartUp_3000
+     * @tc.desc   Running startup tasks timeout.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUp_3000', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUp_3000";
@@ -1100,12 +888,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUpFeature_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_StartUpFeature_0100
-     * @tc.desc: the testing startup framework errorCode is 28800001
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUpFeature_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartUpFeature_0100
+     * @tc.desc   the testing startup framework errorCode is 28800001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0100', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0100";
@@ -1148,12 +936,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUpFeature_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_StartUpFeature_0200
-     * @tc.desc: the testing startup framework errorCode is 28800002
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUpFeature_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartUpFeature_0200
+     * @tc.desc   the testing startup framework errorCode is 28800002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0200', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0200";
@@ -1197,12 +985,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUpFeature_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_StartUpFeature_0300
-     * @tc.desc: the testing startup framework errorCode is 28800003
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUpFeature_0300
+     * @tc.number SUB_Ability_AbilityRuntime_StartUpFeature_0300
+     * @tc.desc   the testing startup framework errorCode is 28800003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0300', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0300";
@@ -1246,12 +1034,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUpFeature_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_StartUpFeature_0400
-     * @tc.desc: the testing startup framework errorCode is 28800004
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUpFeature_0400
+     * @tc.number SUB_Ability_AbilityRuntime_StartUpFeature_0400
+     * @tc.desc   the testing startup framework errorCode is 28800004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0400', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0400";
@@ -1295,12 +1083,12 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_StartUpFeature_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_StartUpFeature_0500
-     * @tc.desc: the testing startup framework with matchRules.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_StartUpFeature_0500
+     * @tc.number SUB_Ability_AbilityRuntime_StartUpFeature_0500
+     * @tc.desc   the testing startup framework with matchRules.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartUpFeature_0500', Level.LEVEL0, async (done: Function) => {
       TAG = "SUB_Ability_AbilityRuntime_StartUpFeature_0500";

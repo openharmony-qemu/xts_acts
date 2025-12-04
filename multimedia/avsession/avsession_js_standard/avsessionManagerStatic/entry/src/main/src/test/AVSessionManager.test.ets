@@ -25,7 +25,7 @@ export default function AVSessionManager() {
     describe('AVSessionManager', () => {
         let tag = 'ApplicationA';
         let type = 'audio';
-        let currentAVSession: avSession.AVSession;
+        let currentAVSession: avSession.AVSession | undefined;
 
         beforeAll(() => {
             context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
@@ -39,7 +39,7 @@ export default function AVSessionManager() {
 
         afterEach(async () => {
             try{
-                await currentAVSession.destroy()
+                await currentAVSession!.destroy()
                 console.info('TestLog: Session destroy success');
             }catch(err: BusinessError){
                 console.info(`TestLog: Session destroy error: code: ${err.code}, message: ${err.message}`);
@@ -53,19 +53,19 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
-         * @tc.desc        Testing createAVSession with right parameter audio - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level0
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100
+         * @tc.desc   Testing createAVSession with right parameter audio - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try{
                 let data: avSession.AVSession;
                 currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                if (currentAVSession.sessionId.length === 64) {
+                if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
                 }
@@ -82,12 +82,12 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
-         * @tc.desc        createAVSession(promise) with invalid param(errcode 401) - empty string
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300
+         * @tc.desc   createAVSession(promise) with invalid param(errcode 401) - empty string
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -104,18 +104,18 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
-         * @tc.desc        Testing createAVSession with right parameter video - promise
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level0
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400
+         * @tc.desc   Testing createAVSession with right parameter video - promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_AVSESSION_CREATEAVSESSION_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async (done: () => void): Promise<void> => {
             try{
                 currentAVSession = await avSession.createAVSession(context, tag, "video")
-                if (currentAVSession.sessionId.length === 64) {
+                if (currentAVSession?.sessionId.length === 64) {
                     console.info('TestLog: avSession create successfully');
                     expect(true).assertTrue();
                 }
@@ -133,12 +133,12 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
-         * @tc.desc        Testing call getavcastcontroller(callback)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100
+         * @tc.desc   Testing call getavcastcontroller(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -146,7 +146,7 @@ export default function AVSessionManager() {
                 currentAVSession = await avSession.createAVSession(context, tag, 'video_call');
                 console.info(`CreateAVSession 111BusinessError: code: `);
                 console.info(`CreateAVSession 333BusinessError: code: `);
-                currentAVSession.getAVCastController((err: BusinessError|null, data: avSession.AVCastController|undefined) => {
+                currentAVSession?.getAVCastController((err: BusinessError|null, data: avSession.AVCastController | undefined|undefined) => {
                     if (err) {
                         console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
                         expect(err?.code == 6600101).assertTrue();
@@ -163,25 +163,25 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
-         * @tc.desc        Testing call getavcastcontroller(promise)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100
+         * @tc.desc   Testing call getavcastcontroller(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETAVCASTCONTROLLER_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
 
-                let aVCastController: avSession.AVCastController;
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined;
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                     aVCastController = avcontroller;
                 }).catch(async(err: BusinessError) => {
                     console.error(`getAVCastController BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -198,21 +198,21 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
-         * @tc.desc        Testing call stopCasting(callback)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100
+         * @tc.desc   Testing call stopCasting(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
                 await avSession.createAVSession(context, tag, 'video_call').then((data) => {
                     currentAVSession = data;
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                     try{
-                        currentAVSession.stopCasting((err: BusinessError|null) => {
+                        currentAVSession?.stopCasting((err: BusinessError|null) => {
                             if (err) {
                                 console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
                             } else {
@@ -235,24 +235,24 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
-         * @tc.desc        Testing call stopCasting(promise)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100
+         * @tc.desc   Testing call stopCasting(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_STOPCASTING_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
                 try{
-                    currentAVSession.stopCasting()
+                    currentAVSession?.stopCasting()
                     console.info(`stopCasting successfully`);
                     expect(true).assertTrue();
                 }catch(err: BusinessError){
@@ -270,26 +270,26 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
-         * @tc.desc        Testing call getCurrentItem(callback)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100
+         * @tc.desc   Testing call getCurrentItem(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_CALLBACK_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-                let aVCastController: avSession.AVCastController;
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined;
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                     aVCastController = avcontroller;
-                    aVCastController.getCurrentItem((err, value)=> {
+                    aVCastController?.getCurrentItem((err, value)=> {
                         if (err) {
                             console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);
                         } else {
@@ -311,27 +311,27 @@ export default function AVSessionManager() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
-         * @tc.desc        Testing call getCurrentItem(promise)
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100
+         * @tc.desc   Testing call getCurrentItem(promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETCURRENTITEM_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             try {
                 try{
                     currentAVSession = await avSession.createAVSession(context, tag, 'video_call')
-                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession.sessionId}`);
+                    console.info(`CreateAVSession : SUCCESS : sessionId = ${currentAVSession?.sessionId}`);
                 }catch(err: BusinessError){
                     console.info(`CreateAVSession BusinessError: code: ${err.code}, message: ${err.message}`);
                 };
-                let aVCastController: avSession.AVCastController
-                currentAVSession.getAVCastController().then((avcontroller: avSession.AVCastController) => {
+                let aVCastController: avSession.AVCastController | undefined
+                currentAVSession?.getAVCastController().then((avcontroller: avSession.AVCastController | undefined) => {
                         aVCastController = avcontroller;
                     try{
-                        aVCastController.getCurrentItem()
+                        aVCastController?.getCurrentItem()
                         console.info(`getCurrentItem successfully`);
                     }catch(err: BusinessError){
                         console.error(`getCurrentItem BusinessError: code: ${err.code}, message: ${err.message}`);
@@ -344,7 +344,6 @@ export default function AVSessionManager() {
                 console.error(`getAVCastController BusinessError2: code: ${error.code}, message: ${error.message}`);
                 if (error.message == "Cannot read property then of undefined") {
                     console.info(`getCurrentItem promise successfully`);
-                    expect(true).assertTrue()
                 }
             }
             done();

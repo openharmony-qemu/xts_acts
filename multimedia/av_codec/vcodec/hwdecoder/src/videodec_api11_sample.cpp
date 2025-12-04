@@ -147,18 +147,22 @@ void VdecAPI11FormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *userDa
     int32_t sliceHeight = 0;
     int32_t picWidth = 0;
     int32_t picHeight = 0;
+    int currentFormat = 0;
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_WIDTH, &currentWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_HEIGHT, &currentHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_STRIDE, &stride);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_SLICE_HEIGHT, &sliceHeight);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_WIDTH, &picWidth);
     OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_PIC_HEIGHT, &picHeight);
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT, &currentFormat);
+    std::cout << "currentFormat:" << currentFormat << std::endl;
     dec_sample->DEFAULT_WIDTH = currentWidth;
     dec_sample->DEFAULT_HEIGHT = currentHeight;
     dec_sample->stride_ = stride;
     dec_sample->sliceHeight_ = sliceHeight;
     dec_sample->picWidth_ = picWidth;
     dec_sample->picHeight_ = picHeight;
+    dec_sample->onStreamChangedKey = currentFormat;
     g_strideSurface = stride;
     g_sliceSurface = sliceHeight;
     if (dec_sample->isResChangeStream) {
@@ -345,6 +349,10 @@ int32_t VDecAPI11Sample::ConfigureVideoDecoder()
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, DEFAULT_HEIGHT);
     (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, defualtPixelFormat);
     (void)OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, DEFAULT_FRAME_RATE);
+    if (setTransform) {
+        (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_TRANSFORM_TYPE, DEFAULT_TRANSFORM);
+        cout << "config transform: " << DEFAULT_TRANSFORM << endl;
+    }
     if (useHDRSource) {
         (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, DEFAULT_PROFILE);
     } else {
@@ -969,6 +977,9 @@ int32_t VDecAPI11Sample::CheckAttrFlag(OH_AVCodecBufferAttr attr)
 void VDecAPI11Sample::GetStride()
 {
     OH_AVFormat *format = OH_VideoDecoder_GetOutputDescription(vdec_);
+    if (format == nullptr) {
+        return;
+    }
     int32_t currentWidth = 0;
     int32_t currentHeight = 0;
     int32_t stride = 0;
@@ -1185,6 +1196,8 @@ void VDecAPI11Sample::CopyFrom10BitYuv(OH_AVBuffer *buffer, uint32_t index)
 
 void VDecAPI11Sample::ProcessOutputData(OH_AVBuffer *buffer, uint32_t index)
 {
+    GetVideoSupportedPixelFormats();
+    GetFormatKey();
     if (!SF_OUTPUT) {
         GetStride();
         if (is8bitYuv) {
@@ -1399,4 +1412,99 @@ int32_t VDecAPI11Sample::OpenFile()
         return AV_ERR_UNKNOWN;
     }
     return  AV_ERR_OK;
+}
+
+void VDecAPI11Sample::GetVideoSupportedPixelFormats()
+{
+    if (!isGetVideoSupportedPixelFormats || isGetVideoSupportedPixelFormatsNum != 0) {
+        return;
+    }
+    OH_AVCapability *capability = OH_AVCodec_GetCapability(avcodecMimeType, isEncoder);
+    OH_AVCapability_GetVideoSupportedNativeBufferFormats(capability, &pixlFormats, &pixlFormatNum);
+    std::cout << "pixlFormats:" << *pixlFormats << "pixlFormatNum:" << pixlFormatNum << std::endl;
+    isGetVideoSupportedPixelFormatsNum++;
+}
+
+void VDecAPI11Sample::GetFormatKey()
+{
+    if (!isGetFormatKey || isGetFormatKeyNum != 0) {
+        return;
+    }
+    OH_AVFormat *format = OH_AVFormat_Create();
+    OH_VideoDecoder_Configure(vdec_, format);
+    format = OH_VideoDecoder_GetOutputDescription(vdec_);
+    OH_AVFormat_GetIntValue(format, OH_MD_KEY_VIDEO_NATIVE_BUFFER_FORMAT, &firstCallBackKey);
+    OH_AVFormat_Destroy(format);
+    std::cout << "firstCallBackKey:" << firstCallBackKey << std::endl;
+    isGetFormatKeyNum++;
+}
+
+int32_t VDecAPI11Sample::SetConfigTransform()
+{
+    int32_t ret = ConfigureVideoDecoder();
+    if (ret != AV_ERR_OK) {
+        cout << "config failed" << endl;
+        Release();
+        return ret;
+    }
+    
+    ret = OH_VideoDecoder_SetSurface(vdec_, nativeWindow[switchSurfaceFlag]);
+    if (ret != AV_ERR_OK) {
+        cout << "Failed to set surface" << endl;
+        return ret;
+    }
+    ret = OH_VideoDecoder_Prepare(vdec_);
+    if (ret != AV_ERR_OK) {
+        cout << "Failed to start codec, prepare failed!  " << ret << endl;
+        Release();
+        return ret;
+    }
+    ret = OH_VideoDecoder_Start(vdec_);
+    if (ret != AV_ERR_OK) {
+        cout << "Failed to start codec" << endl;
+        Release();
+        return ret;
+    }
+    return AV_ERR_OK;
+}
+
+int32_t VDecAPI11Sample::SetParameterTransform()
+{
+    int32_t ret = SetConfigTransform();
+    if (ret != AV_ERR_OK) {
+        return ret;
+    }
+    ret = SetParameter();
+    if (ret != AV_ERR_OK) {
+        cout << "set parameter failed" << endl;
+        return ret;
+    }
+    return ret;
+}
+
+int32_t VDecAPI11Sample::SetSurface()
+{
+    return OH_VideoDecoder_SetSurface(vdec_, nativeWindow[switchSurfaceFlag]);
+}
+
+int32_t VDecAPI11Sample::SetParameter()
+{
+    OH_AVFormat *format = OH_AVFormat_Create();
+    (void)OH_AVFormat_SetIntValue(format, OH_MD_KEY_VIDEO_TRANSFORM_TYPE, DEFAULT_TRANSFORM);
+    cout << "set parameter transform: " << DEFAULT_TRANSFORM << endl;
+    int32_t ret = OH_VideoDecoder_SetParameter(vdec_, format);
+    OH_AVFormat_Destroy(format);
+    return ret;
+}
+
+int32_t VDecAPI11Sample::GetSurfaceTransform(int32_t surfaceFlag)
+{
+    int32_t transform = -1;
+    int32_t ret = OH_NativeWindow_NativeWindowHandleOpt(nativeWindow[surfaceFlag], GET_TRANSFORM, &transform);
+    if (ret != AV_ERR_OK) {
+        cout << "get transform failed, ret = " << ret << endl;
+        return ret;
+    }
+    cout << "get  " << surfaceFlag << "  surface transform: " << transform << endl;
+    return transform;
 }

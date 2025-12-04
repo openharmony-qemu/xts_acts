@@ -26,78 +26,78 @@ export default function scrollAccessibilityLevelTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0100
-     * @tc.name       : testScrollAccessibilityLevel001
-     * @tc.desc       : testing accessibilityLevel for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityLevel001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0100
+     * @tc.desc   testing accessibilityLevel for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0200
-     * @tc.name       : testScrollAccessibilityLevel002
-     * @tc.desc       : testing accessibilityLevel for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityLevel002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0200
+     * @tc.desc   testing accessibilityLevel for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0300
-     * @tc.name       : testScrollAccessibilityLevel003
-     * @tc.desc       : testing accessibilityLevel for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityLevel003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0300
+     * @tc.desc   testing accessibilityLevel for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0400
-     * @tc.name       : testScrollAccessibilityLevel004
-     * @tc.desc       : testing accessibilityLevel for Scroll with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollAccessibilityLevel004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0400
+     * @tc.desc   testing accessibilityLevel for Scroll with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0500
-     * @tc.name       : testScrollAccessibilityLevel005
-     * @tc.desc       : testing accessibilityLevel for Scroll with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollAccessibilityLevel005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0500
+     * @tc.desc   testing accessibilityLevel for Scroll with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0600
-     * @tc.name       : testScrollAccessibilityLevel006
-     * @tc.desc       : testing accessibilityLevel for Scroll with alnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testScrollAccessibilityLevel006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_ACCESSIBILITYLEVEL_0600
+     * @tc.desc   testing accessibilityLevel for Scroll with alnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollAccessibilityLevel006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testScrollAccessibilityLevel006()).assertEqual(0)

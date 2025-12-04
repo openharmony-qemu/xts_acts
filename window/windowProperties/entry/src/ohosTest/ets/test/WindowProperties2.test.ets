@@ -138,12 +138,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
-     * @tc.name      : testStatusBarContentColor
-     * @tc.desc      : test_statusBarContentColor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testStatusBarContentColor
+     * @tc.number SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+     * @tc.desc   test_statusBarContentColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStatusBarContentColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_statusBarContentColor';
@@ -163,12 +163,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_DRAWABLE_RECT_0100
-     * @tc.name      : testWindowPropertiesDrawableRect
-     * @tc.desc      : test_WindowProperties_drawableRect
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testWindowPropertiesDrawableRect
+     * @tc.number SUB_BASIC_WMS_DRAWABLE_RECT_0100
+     * @tc.desc   test_WindowProperties_drawableRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWindowPropertiesDrawableRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_WindowProperties_drawableRect';
@@ -190,12 +190,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
-     * @tc.name       : test_setStatusBarColor_401
-     * @tc.desc       : test_setStatusBarColor_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setStatusBarColor_401
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
+     * @tc.desc   test_setStatusBarColor_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setStatusBarColor_401";
@@ -220,12 +220,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
-     * @tc.name       : test_setStatusBarColor_1300002
-     * @tc.desc       : test_setStatusBarColor_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setStatusBarColor_1300002
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
+     * @tc.desc   test_setStatusBarColor_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_1300002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setStatusBarColor_1300002";
@@ -257,12 +257,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_0300
-     * @tc.name       : test_setStatusBarColor_normal1
-     * @tc.desc       : 验证设置正常状态栏颜色
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setStatusBarColor_normal1
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_0300
+     * @tc.desc   验证设置正常状态栏颜色
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setStatusBarColor_normal1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setStatusBarColor_normal1";
@@ -289,12 +289,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_0400
-     * @tc.name       : test_setStatusBarColor_normal2
-     * @tc.desc       : 验证横屏设置状态栏颜色
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setStatusBarColor_normal2
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_0400
+     * @tc.desc   验证横屏设置状态栏颜色
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setStatusBarColor_normal2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setStatusBarColor_normal2";
@@ -324,12 +324,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getStatusBarProperty_ErrorCode_0100
-     * @tc.name       : test_getStatusBarProperty_1300002
-     * @tc.desc       : test_getStatusBarProperty_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getStatusBarProperty_1300002
+     * @tc.number SUB_BASIC_WMS_getStatusBarProperty_ErrorCode_0100
+     * @tc.desc   test_getStatusBarProperty_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getStatusBarProperty_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getStatusBarProperty_1300002";
@@ -356,12 +356,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowBackgroundColor_0100
-     * @tc.name       : test_setWindowBackgroundColor_ColorMetrics_mainWindow
-     * @tc.desc       : test_setWindowBackgroundColor_ColorMetrics_mainWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setWindowBackgroundColor_ColorMetrics_mainWindow
+     * @tc.number SUB_BASIC_WMS_setWindowBackgroundColor_0100
+     * @tc.desc   test_setWindowBackgroundColor_ColorMetrics_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowBackgroundColor_ColorMetrics_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setWindowBackgroundColor_ColorMetrics_mainWindow";
@@ -382,12 +382,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowBackgroundColor_0200
-     * @tc.name       : test_setWindowBackgroundColor_ColorMetrics_subWindow
-     * @tc.desc       : test_setWindowBackgroundColor_ColorMetrics_subWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setWindowBackgroundColor_ColorMetrics_subWindow
+     * @tc.number SUB_BASIC_WMS_setWindowBackgroundColor_0200
+     * @tc.desc   test_setWindowBackgroundColor_ColorMetrics_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowBackgroundColor_ColorMetrics_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setWindowBackgroundColor_ColorMetrics_subWindow";
@@ -415,12 +415,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0100
-     * @tc.name       : test_setWindowShadowRadius_401
-     * @tc.desc       : test_setWindowShadowRadius_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_401
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0100
+     * @tc.desc   test_setWindowShadowRadius_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_401";
@@ -447,12 +447,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0200
-     * @tc.name       : test_setWindowShadowRadius_1300002
-     * @tc.desc       : test_setWindowShadowRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_1300002
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0200
+     * @tc.desc   test_setWindowShadowRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_1300002";
@@ -479,12 +479,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
-     * @tc.name       : test_setWindowShadowRadius_1300004
-     * @tc.desc       : test_setWindowShadowRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
+     * @tc.desc   test_setWindowShadowRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_1300004";
@@ -505,12 +505,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0400
-     * @tc.name       : test_setWindowShadowRadius_negative1
-     * @tc.desc       : test_setWindowShadowRadius_negative1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_negative1
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0400
+     * @tc.desc   test_setWindowShadowRadius_negative1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_negative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_negative1";
@@ -537,12 +537,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0100
-     * @tc.name       : test_setWindowShadowRadius_0100
-     * @tc.desc       : 验证子窗设置没有阴影
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0100
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0100
+     * @tc.desc   验证子窗设置没有阴影
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0100";
@@ -577,12 +577,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0200
-     * @tc.name       : test_setWindowShadowRadius_0200
-     * @tc.desc       : 验证子窗设置阴影为4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0200
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0200
+     * @tc.desc   验证子窗设置阴影为4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0200";
@@ -617,12 +617,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0300
-     * @tc.name       : test_setWindowShadowRadius_0300
-     * @tc.desc       : 验证子窗设置阴影为超大值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0300
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0300
+     * @tc.desc   验证子窗设置阴影为超大值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0300";
@@ -657,12 +657,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0400
-     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT0
-     * @tc.desc       : 验证悬浮窗设置阴影为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowShadowRadiusTYPE_FLOAT0
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0400
+     * @tc.desc   验证悬浮窗设置阴影为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowShadowRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowShadowRadiusTYPE_FLOAT0";
@@ -712,12 +712,12 @@ export default function windowPropertiesTest2() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0500
-     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT4
-     * @tc.desc       : 验证悬浮窗设置阴影为4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowShadowRadiusTYPE_FLOAT4
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0500
+     * @tc.desc   验证悬浮窗设置阴影为4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowShadowRadiusTYPE_FLOAT4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowShadowRadiusTYPE_FLOAT4";
@@ -767,12 +767,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0100
-     * @tc.name       : test_setWindowCornerRadius_401
-     * @tc.desc       : test_setWindowCornerRadius_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_401
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0100
+     * @tc.desc   test_setWindowCornerRadius_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_401";
@@ -803,12 +803,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0200
-     * @tc.name       : test_setWindowCornerRadius_negative1
-     * @tc.desc       : test_setWindowCornerRadius_-1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_negative1
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0200
+     * @tc.desc   test_setWindowCornerRadius_-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_negative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_negative1";
@@ -839,12 +839,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0300
-     * @tc.name       : test_setWindowCornerRadius_1300002
-     * @tc.desc       : test_setWindowCornerRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_1300002
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0300
+     * @tc.desc   test_setWindowCornerRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_1300002";
@@ -874,12 +874,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0400
-     * @tc.name       : test_setWindowCornerRadius_1300004
-     * @tc.desc       : test_setWindowCornerRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0400
+     * @tc.desc   test_setWindowCornerRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_1300004";
@@ -917,12 +917,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0500
-     * @tc.name       : test_setWindowCornerRadius_dialog_1300004
-     * @tc.desc       : test_setWindowCornerRadius_dialog_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_dialog_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0500
+     * @tc.desc   test_setWindowCornerRadius_dialog_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_dialog_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_dialog_1300004";
@@ -969,12 +969,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0100
-     * @tc.name       : test_setWindowCornerRadius_0100
-     * @tc.desc       : 验证子窗圆角值为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0100
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0100
+     * @tc.desc   验证子窗圆角值为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0100";
@@ -1015,12 +1015,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0200
-     * @tc.name       : test_setWindowCornerRadius_0200
-     * @tc.desc       : 验证子窗圆角值为5
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0200
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0200
+     * @tc.desc   验证子窗圆角值为5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0200";
@@ -1062,12 +1062,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0300
-     * @tc.name       : test_setWindowCornerRadius_0300
-     * @tc.desc       : 验证子窗圆角值为10000
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0300
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0300
+     * @tc.desc   验证子窗圆角值为10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0300";
@@ -1109,12 +1109,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0400
-     * @tc.name       : test_setWindowCornerRadius_0400
-     * @tc.desc       : 验证子窗圆角值为5.66666666
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0400
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0400
+     * @tc.desc   验证子窗圆角值为5.66666666
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0400";
@@ -1155,12 +1155,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_setWindowCornerRadius_0600
-     * @tc.name : testSetWindowCornerRadiusTYPE_FLOAT0
-     * @tc.desc : 验证悬浮窗圆角值为0
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 3
+     * @tc.name   testSetWindowCornerRadiusTYPE_FLOAT0
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0600
+     * @tc.desc   验证悬浮窗圆角值为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowCornerRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowCornerRadiusTYPE_FLOAT0";
@@ -1211,12 +1211,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0700
-     * @tc.name       : testSetWindowCornerRadiusTYPE_FLOAT5
-     * @tc.desc       : 验证悬浮窗圆角值为5
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowCornerRadiusTYPE_FLOAT5
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0700
+     * @tc.desc   验证悬浮窗圆角值为5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowCornerRadiusTYPE_FLOAT5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowCornerRadiusTYPE_FLOAT5";
@@ -1265,12 +1265,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0800
-     * @tc.name       : test_setWindowCornerRadius_0800
-     * @tc.desc       : 验证子窗多次设置圆角值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0800
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0800
+     * @tc.desc   验证子窗多次设置圆角值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0800";
@@ -1304,12 +1304,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0100
-     * @tc.name       : test_getWindowCornerRadius_1300002
-     * @tc.desc       : test_getWindowCornerRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_1300002
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0100
+     * @tc.desc   test_getWindowCornerRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_1300002";
@@ -1336,12 +1336,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0200
-     * @tc.name       : test_getWindowCornerRadius_1300004
-     * @tc.desc       : test_getWindowCornerRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_1300004
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0200
+     * @tc.desc   test_getWindowCornerRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_1300004";
@@ -1365,12 +1365,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0300
-     * @tc.name       : test_getWindowCornerRadius_dialog_1300004
-     * @tc.desc       : test_getWindowCornerRadius_dialog_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_dialog_1300004
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0300
+     * @tc.desc   test_getWindowCornerRadius_dialog_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_dialog_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_dialog_1300004";
@@ -1407,12 +1407,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
-     * @tc.name       : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
-     * @tc.desc       : 测试非隐私主窗口竖屏截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
+     * @tc.number testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
+     * @tc.desc   测试非隐私主窗口竖屏截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait";
@@ -1470,12 +1470,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithPrivacyMainWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithPrivacyMainWindow
-     * @tc.desc       : 测试隐私主窗口竖屏截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithPrivacyMainWindow
+     * @tc.number testSnapshotIgnorePrivacyWithPrivacyMainWindow
+     * @tc.desc   测试隐私主窗口竖屏截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithPrivacyMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithPrivacyMainWindow";
@@ -1533,12 +1533,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
-     * @tc.name       : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
-     * @tc.desc       : 测试非隐私主窗口横屏
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
+     * @tc.number testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
+     * @tc.desc   测试非隐私主窗口横屏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape";
@@ -1596,12 +1596,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithPrivacySubWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithPrivacySubWindow
-     * @tc.desc       : 测试隐私子窗口截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithPrivacySubWindow
+     * @tc.number testSnapshotIgnorePrivacyWithPrivacySubWindow
+     * @tc.desc   测试隐私子窗口截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithPrivacySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithPrivacySubWindow";
@@ -1665,12 +1665,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithMinimizeWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithMinimizeWindow
-     * @tc.desc       : 测试主窗口minimize后截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithMinimizeWindow
+     * @tc.number testSnapshotIgnorePrivacyWithMinimizeWindow
+     * @tc.desc   测试主窗口minimize后截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithMinimizeWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithMinimizeWindow";
@@ -1738,12 +1738,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0100
-     * @tc.name       : testOnScreenShotAppEventwithDestoryedSubWindow
-     * @tc.desc       : 验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnScreenShotAppEventwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0100
+     * @tc.desc   验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnScreenShotAppEventwithDestoryedSubWindow";
@@ -1768,12 +1768,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
-     * @tc.name       : testOffScreenShotAppEventwithDestoryedSubWindow
-     * @tc.desc       : 验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffScreenShotAppEventwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
+     * @tc.desc   验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffScreenShotAppEventwithDestoryedSubWindow";
@@ -1799,12 +1799,12 @@ export default function windowPropertiesTest2() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0500
-     * @tc.name       : testScreenshotEventType
-     * @tc.desc       : 验证ScreenshotEventType枚举值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testScreenshotEventType
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0500
+     * @tc.desc   验证ScreenshotEventType枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScreenshotEventType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testScreenshotEventType";
@@ -1826,12 +1826,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
-     * @tc.name       : testSetWindowShadowEnabledwithPermission
-     * @tc.desc       : 验证非2in1设备调用接口报801，2in1设备调用成功
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetWindowShadowEnabledwithPermission
+     * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
+     * @tc.desc   验证非2in1设备调用接口报801，2in1设备调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowShadowEnabledwithPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetWindowShadowEnabledwithPermission";
@@ -1862,12 +1862,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0300
-     * @tc.name       : testSetWindowShadowEnabledwithUnsupportedSubwindow
-     * @tc.desc       : 验证子窗调用接口报1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testSetWindowShadowEnabledwithUnsupportedSubwindow
+     * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0300
+     * @tc.desc   验证子窗调用接口报1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowShadowEnabledwithUnsupportedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testSetWindowShadowEnabledwithUnsupportedSubwindow";
@@ -1901,12 +1901,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0100
-     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledTrue
-     * @tc.desc       : 创建float系统窗配置使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateFloatWindowwithDefaultDensityEnabledTrue
+     * @tc.number SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.desc   创建float系统窗配置使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateFloatWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateFloatWindowwithDefaultDensityEnabledTrue";
@@ -1948,12 +1948,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0200
-     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledFalse
-     * @tc.desc       : 创建float窗配置不使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateFloatWindowwithDefaultDensityEnabledFalse
+     * @tc.number SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.desc   创建float窗配置不使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateFloatWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateFloatWindowwithDefaultDensityEnabledFalse";
@@ -1995,12 +1995,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0100
-     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledTrue
-     * @tc.desc       : 创建dialog系统窗配置使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCreateDialogWindowwithDefaultDensityEnabledTrue
+     * @tc.number SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.desc   创建dialog系统窗配置使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDialogWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateDialogWindowwithDefaultDensityEnabledTrue";
@@ -2042,12 +2042,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0200
-     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledFalse
-     * @tc.desc       : 创建dialog窗配置不使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCreateDialogWindowwithDefaultDensityEnabledFalse
+     * @tc.number SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.desc   创建dialog窗配置不使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDialogWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateDialogWindowwithDefaultDensityEnabledFalse";
@@ -2089,12 +2089,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_TRUE_0100
-     * @tc.name       : testSetCustomDensitywithSubwindowApplytoSubwindowTrue
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithSubwindowApplytoSubwindowTrue
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_TRUE_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithSubwindowApplytoSubwindowTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithSubwindowApplytoSubwindowTrue";
@@ -2170,12 +2170,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_FALSE_0100
-     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowFalse
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小不同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithFloatwindowApplytoSubwindowFalse
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_FALSE_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小不同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithFloatwindowApplytoSubwindowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowFalse";
@@ -2251,12 +2251,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_UNDEFINED_0100
-     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小默认不同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_UNDEFINED_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小默认不同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined";
@@ -2332,12 +2332,12 @@ export default function windowPropertiesTest2() {
     });
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_SUBWINDOW
-     * @tc.name      : testSetWindowContainerColorwithUnsupportedSubwindow
-     * @tc.desc      : 验证不支持的子窗调用setwindowcontainercolor接口抛1300004错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithUnsupportedSubwindow
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_SUBWINDOW
+     * @tc.desc   验证不支持的子窗调用setwindowcontainercolor接口抛1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithUnsupportedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithUnsupportedSubwindow ';
@@ -2364,12 +2364,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW
-     * @tc.name      : testSetWindowContainerColorwithDestroyedMainWindow
-     * @tc.desc      : 验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithDestroyedMainWindow
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW
+     * @tc.desc   验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithDestroyedMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow ';
@@ -2392,12 +2392,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITHOUT_LOADCONTENT
-     * @tc.name      : testSetWindowContainerColorwithoutLoadContent
-     * @tc.desc      : 验证主窗未loadcontent调用setwindowcontainercolor接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithoutLoadContent
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITHOUT_LOADCONTENT
+     * @tc.desc   验证主窗未loadcontent调用setwindowcontainercolor接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithoutLoadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithoutLoadContent ';
@@ -2418,6 +2418,75 @@ export default function windowPropertiesTest2() {
         done();
       }
     });
+
+    /**
+     * @tc.name   testgetColorSpace_default_promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0100
+     * @tc.desc   testgetColorSpace_default_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testgetColorSpace_default_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testgetColorSpace_default_promise';
+      let windowClass = windowStage.getMainWindowSync();
+      let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);
+      promise.then(async () => {
+        console.info(caseName+ ' Succeeded in setting window colorspace.');
+        let ColorSpace = await windowClass.getColorSpace();
+        console.info(caseName+' Succeeded in getting window color space. Cause:' + JSON.stringify(ColorSpace));
+        expect(ColorSpace).assertEqual(window.ColorSpace.DEFAULT);
+        done();
+      }).catch((err: BusinessError) => {
+        if (err.code == 801) {
+          console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    })
+    /**
+     * @tc.name   testgetColorSpace_default_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0200
+     * @tc.desc   testgetColorSpace_default_Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testgetColorSpace_default_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
+      let caseName = 'testgetColorSpace_default_Callback';
+      let windowClass = windowStage.getMainWindowSync();
+      let promise = windowClass.setColorSpace(window.ColorSpace.DEFAULT);
+      promise.then(async () => {
+        console.info(caseName+ ' Succeeded in setting window colorspace.');
+        windowClass.getColorSpace((err: BusinessError, data) => {
+          const errCode: number = err.code;
+          if (errCode) {
+            console.error(caseName+` Failed to get window colorspace. Cause code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
+            done();
+          }else{
+            console.info(caseName+' Succeeded in getting window colorspace. Cause:' + JSON.stringify(data));
+            expect(data).assertEqual(window.ColorSpace.DEFAULT);
+            done();
+          }
+        });
+      }).catch((err: BusinessError) => {
+        if (err.code == 801) {
+          console.info(`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
+          expect(true).assertTrue();
+          done();
+        } else {
+          console.error(`${caseName}: Failed to obtain physical resolution. Code: ${err.code}, message: ${err.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+    })
 
   })
 }

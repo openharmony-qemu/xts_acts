@@ -17,7 +17,7 @@ import { State } from "@ohos.arkui.stateManagement"
 import { Callback } from '@ohos.base'
 import Utils from '../../src/test/Util.test';
 import webView from '@ohos.web.webview';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import events_emitter from '@ohos.events.emitter';
 import { Driver, ON } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -53,8 +53,8 @@ struct Index {
     console.info("web page valueChangeCallBack");
     if (eventData != null) {
       console.info("valueChangeCallBack:" + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.["ACTION"] != null) {
-        this.str = "" + (eventData.data as Record<string , object>)?.["ACTION"];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.["ACTION"] != null) {
+        this.str = "" + (eventData.data as Record<string , RecordData>)?.["ACTION"];
       }
     }
   }

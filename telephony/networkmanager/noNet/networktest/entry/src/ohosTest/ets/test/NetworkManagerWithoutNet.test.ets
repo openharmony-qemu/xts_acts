@@ -27,13 +27,13 @@ const ExpectTrue: (n: boolean, caseName?: string) => void = (n: boolean, caseNam
 export default function networkManagerWithoutCardTest() {
   describe('NetworkManagerWithoutCardTest', () => {
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_Network_getType_0300
-     * @tc.name  : testNetworkMgrNetworkGetType0300
-     * @tc.desc  : Gets the network type of the current device;none.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 0
+    /**
+     * @tc.name   testNetworkMgrNetworkGetType0300
+     * @tc.number SUB_NetworkMgr_Network_getType_0300
+     * @tc.desc   Gets the network type of the current device;none.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrNetworkGetType0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testNetworkMgrNetworkGetType0300';

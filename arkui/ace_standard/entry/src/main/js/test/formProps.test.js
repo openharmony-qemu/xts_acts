@@ -82,9 +82,12 @@ export default function undo() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformIdProp
-         * @tc.desc      ACE
+         * @tc.name   testformIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformIdProp', Level.LEVEL0, async function(done) {
             console.info('testformIdProp START');
@@ -100,9 +103,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClassProp
-         * @tc.desc      ACE
+         * @tc.name   testformClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClassProp', Level.LEVEL0, async function(done) {
             console.info('testformClassProp START');
@@ -119,9 +125,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testformClassPropNone START');
@@ -139,9 +148,12 @@ export default function undo() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformRefProp
-         * @tc.desc      ACE
+         * @tc.name   testformRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformRefProp', Level.LEVEL0, async function(done) {
             console.info('testformRefProp START');
@@ -158,9 +170,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testformRefPropNone START');
@@ -178,9 +193,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testformDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testformDisabledPropTrue START');
@@ -197,9 +215,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testformDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testformDisabledPropFalse START');
@@ -216,9 +237,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testformDisabledPropNone START');
@@ -235,9 +259,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testformFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testformFocusablePropTrue START');
@@ -254,9 +281,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testformFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testformFocusablePropFalse START');
@@ -273,9 +303,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testformFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testformFocusablePropNone START');
@@ -292,9 +325,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDataProp
-         * @tc.desc      ACE
+         * @tc.name   testformDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDataProp', Level.LEVEL0, async function(done) {
             console.info('testformDataProp START');
@@ -312,9 +348,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testformDataPropNone START');
@@ -332,9 +371,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testformClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testformClickEffectPropSmall START');
@@ -351,9 +393,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testformClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testformClickEffectPropMedium START');
@@ -370,9 +415,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testformClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testformClickEffectPropLarge START');
@@ -389,9 +437,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testformClickEffectPropNone START');
@@ -409,9 +460,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testformDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testformDirPropRtl START');
@@ -428,9 +482,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testformDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testformDirPropLtr START');
@@ -447,9 +504,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testformDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testformDirPropAuto START');
@@ -466,9 +526,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testformDirPropNone START');
@@ -485,9 +548,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testformForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformForPropNull', Level.LEVEL0, async function(done) {
             console.info('testformForPropNull START');
@@ -505,9 +571,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testformForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformForPropOne', Level.LEVEL0, async function(done) {
             console.info('testformForPropOne START');
@@ -525,9 +594,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testformForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformForPropThree', Level.LEVEL0, async function(done) {
             console.info('testformForPropThree START');
@@ -545,9 +617,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testformIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testformIfPropTrue START');
@@ -565,9 +640,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testformShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testformShowPropTrue START');
@@ -585,9 +663,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testformShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testformShowPropFalse START');
@@ -605,9 +686,12 @@ export default function undo() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testformShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testformShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testformShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testformShowPropNone START');

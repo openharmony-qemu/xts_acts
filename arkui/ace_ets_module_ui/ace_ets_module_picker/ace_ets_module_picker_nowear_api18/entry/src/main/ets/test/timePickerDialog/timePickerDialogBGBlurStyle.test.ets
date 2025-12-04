@@ -42,10 +42,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       console.info("TimePickerDialogBGBlurStyle after each called");
     });
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_001
-     * @tc.name      TimePickerDialogBGBlurStyleTest_001
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.Thin
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_001
+     * @tc.number TimePickerDialogBGBlurStyleTest_001
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.Thin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -67,10 +69,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_002
-     * @tc.name      TimePickerDialogBGBlurStyleTest_002
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.Regular
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_002
+     * @tc.number TimePickerDialogBGBlurStyleTest_002
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.Regular
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -92,10 +96,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_003
-     * @tc.name      TimePickerDialogBGBlurStyleTest_003
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.Thick
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_003
+     * @tc.number TimePickerDialogBGBlurStyleTest_003
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.Thick
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -117,10 +123,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_004
-     * @tc.name      TimePickerDialogBGBlurStyleTest_004
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_004
+     * @tc.number TimePickerDialogBGBlurStyleTest_004
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -142,10 +150,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_005
-     * @tc.name      TimePickerDialogBGBlurStyleTest_005
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_005
+     * @tc.number TimePickerDialogBGBlurStyleTest_005
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_REGULAR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -167,10 +177,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_006
-     * @tc.name      TimePickerDialogBGBlurStyleTest_006
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_006
+     * @tc.number TimePickerDialogBGBlurStyleTest_006
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle BlurStyle.BACKGROUND_THICK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -192,10 +204,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_007
-     * @tc.name      TimePickerDialogBGBlurStyleTest_007
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_007
+     * @tc.number TimePickerDialogBGBlurStyleTest_007
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -217,10 +231,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_008
-     * @tc.name      TimePickerDialogBGBlurStyleTest_008
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_008
+     * @tc.number TimePickerDialogBGBlurStyleTest_008
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_008',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -237,10 +253,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_009
-     * @tc.name      TimePickerDialogBGBlurStyleTest_009
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_009
+     * @tc.number TimePickerDialogBGBlurStyleTest_009
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_009',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -262,10 +280,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0010
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0010
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0010
+     * @tc.number TimePickerDialogBGBlurStyleTest_0010
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0010',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -287,10 +307,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0011
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0011
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0011
+     * @tc.number TimePickerDialogBGBlurStyleTest_0011
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0011',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -312,10 +334,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0012
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0012
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0012
+     * @tc.number TimePickerDialogBGBlurStyleTest_0012
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0012',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -337,10 +361,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0013
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0013
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0013
+     * @tc.number TimePickerDialogBGBlurStyleTest_0013
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0013',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -362,10 +388,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0014
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0014
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0014
+     * @tc.number TimePickerDialogBGBlurStyleTest_0014
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0014',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -387,10 +415,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0015
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0015
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0015
+     * @tc.number TimePickerDialogBGBlurStyleTest_0015
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0015',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -412,10 +442,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0016
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0016
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0016
+     * @tc.number TimePickerDialogBGBlurStyleTest_0016
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0016',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -437,10 +469,12 @@ export default function TimePickerDialogBGBlurStyleTest() {
       done();
     })
     /**
-     * @tc.number    TimePickerDialogBGBlurStyleTest_0017
-     * @tc.name      TimePickerDialogBGBlurStyleTest_0017
-     * @tc.desc      To test the TimePickerDialog backgroundBlurStyle
-     * @tc.level:    Level 0
+     * @tc.name   TimePickerDialogBGBlurStyleTest_0017
+     * @tc.number TimePickerDialogBGBlurStyleTest_0017
+     * @tc.desc   To test the TimePickerDialog backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TimePickerDialogBGBlurStyleTest_0017',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

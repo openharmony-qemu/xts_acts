@@ -24,7 +24,7 @@ export default function typeArrayFloat32ArrayTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+      await sleep(30);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +40,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0001
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0001
-     * @tc.name TypeArrayFloat32ArrayBufferDv0001
-     * @tc.desc Verify the basic properties of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 1
+     * @tc.desc   Verify the basic properties of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const length = 5;
@@ -58,12 +58,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0002
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0002
-     * @tc.name TypeArrayFloat32ArrayBufferDv0002
-     * @tc.desc Verify Float32Array creation from different data sources
-     * @tc.size SmallTest
-     * @tc.type Constructor
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array creation from different data sources
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new Float32Array(3)
@@ -77,12 +77,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0003
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0003
-     * @tc.name TypeArrayFloat32ArrayBufferDv0003
-     * @tc.desc Verify the relationship between Float32Array and ArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the relationship between Float32Array and ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16)
@@ -99,12 +99,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0004
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0004
-     * @tc.name TypeArrayFloat32ArrayBufferDv0004
-     * @tc.desc Verify the interaction between Float32Array and SharedArrayBuffer
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the interaction between Float32Array and SharedArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const sab = new SharedArrayBuffer(12)
@@ -120,12 +120,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0005
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0005
-     * @tc.name TypeArrayFloat32ArrayBufferDv0005
-     * @tc.desc Verify the set method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the set method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array(5);
@@ -138,12 +138,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0006
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0006
-     * @tc.name TypeArrayFloat32ArrayBufferDv0006
-     * @tc.desc Verify the subarray method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the subarray method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -155,12 +155,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0007
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0007
-     * @tc.name TypeArrayFloat32ArrayBufferDv0007
-     * @tc.desc Verify the slice method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the slice method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0])
@@ -173,12 +173,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0008
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0008
-     * @tc.name TypeArrayFloat32ArrayBufferDv0008
-     * @tc.desc Verify the reverse method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the reverse method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -188,12 +188,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0009
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0009
-     * @tc.name TypeArrayFloat32ArrayBufferDv0009
-     * @tc.desc Verify the sort method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the sort method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([3.0, 1.0, 4.0, 2.0]);
@@ -203,12 +203,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0010
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0010
-     * @tc.name TypeArrayFloat32ArrayBufferDv0010
-     * @tc.desc Verify the fill method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the fill method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -221,12 +221,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0011
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0011
-     * @tc.name TypeArrayFloat32ArrayBufferDv0011
-     * @tc.desc Verify the copyWithin method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the copyWithin method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -236,12 +236,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0012
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0012
-     * @tc.name TypeArrayFloat32ArrayBufferDv0012
-     * @tc.desc Verify the indexOf method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the indexOf method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([10.5, 20.5, 30.5, 20.5, 10.5]);
@@ -252,12 +252,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0013
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0013
-     * @tc.name TypeArrayFloat32ArrayBufferDv0013
-     * @tc.desc Verify the lastIndexOf method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the lastIndexOf method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([10.5, 20.5, 30.5, 20.5, 10.5]);
@@ -268,12 +268,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0014
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0014
-     * @tc.name TypeArrayFloat32ArrayBufferDv0014
-     * @tc.desc Verify the includes method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the includes method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -284,12 +284,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0015
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0015
-     * @tc.name TypeArrayFloat32ArrayBufferDv0015
-     * @tc.desc Verify the forEach method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the forEach method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
@@ -303,12 +303,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0016
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0016
-     * @tc.name TypeArrayFloat32ArrayBufferDv0016
-     * @tc.desc Verify the map method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the map method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
@@ -318,12 +318,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0017
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0017
-     * @tc.name TypeArrayFloat32ArrayBufferDv0017
-     * @tc.desc Verify the filter method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the filter method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.5, 2.5, 3.5, 4.5, 5.5]);
@@ -334,12 +334,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0018
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0018
-     * @tc.name TypeArrayFloat32ArrayBufferDv0018
-     * @tc.desc Verify the every method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the every method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new Float32Array([2.0, 4.0, 6.0, 8.0]);
@@ -350,12 +350,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0019
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0019
-     * @tc.name TypeArrayFloat32ArrayBufferDv0019
-     * @tc.desc Verify the some method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the some method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr1 = new Float32Array([1.0, 3.0, 5.0, 7.0]);
@@ -366,12 +366,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0020
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0020
-     * @tc.name TypeArrayFloat32ArrayBufferDv0020
-     * @tc.desc Verify the reduce method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the reduce method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -381,12 +381,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0021
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0021
-     * @tc.name TypeArrayFloat32ArrayBufferDv0021
-     * @tc.desc Verify the reduceRight method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the reduceRight method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -396,12 +396,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0022
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0022
-     * @tc.name TypeArrayFloat32ArrayBufferDv0022
-     * @tc.desc Verify the find method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the find method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
@@ -411,12 +411,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0023
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0023
-     * @tc.name TypeArrayFloat32ArrayBufferDv0023
-     * @tc.desc Verify the findIndex method of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the findIndex method of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0]);
@@ -426,12 +426,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0025
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0025
-     * @tc.name TypeArrayFloat32ArrayBufferDv0025
-     * @tc.desc Verify Float32Array handling of special floating-point values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array handling of special floating-point values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(4)
@@ -447,12 +447,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0026
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0026
-     * @tc.name TypeArrayFloat32ArrayBufferDv0026
-     * @tc.desc Verify Float32Array handling of boundary values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array handling of boundary values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const maxVal = 3.4028234663852886e+38
@@ -469,12 +469,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0027
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0027
-     * @tc.name TypeArrayFloat32ArrayBufferDv0027
-     * @tc.desc Verify the precision limitations of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the precision limitations of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const highPrecision = 1.234567890123456789
@@ -484,12 +484,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0028
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0028
-     * @tc.name TypeArrayFloat32ArrayBufferDv0028
-     * @tc.desc Verify conversion between Float32Array and regular array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify conversion between Float32Array and regular array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const original = [1.1, 2.2, 3.3, 4.4]
@@ -502,12 +502,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0029
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0029
-     * @tc.name TypeArrayFloat32ArrayBufferDv0029
-     * @tc.desc Verify Float32Array exception scenarios - invalid buffer offset
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array exception scenarios - invalid buffer offset
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(12)
@@ -521,12 +521,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0030
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0030
-     * @tc.name TypeArrayFloat32ArrayBufferDv0030
-     * @tc.desc Verify Float32Array exception scenarios - out-of-bounds index
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array exception scenarios - out-of-bounds index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0030', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(3)
@@ -536,12 +536,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0031
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0031
-     * @tc.name TypeArrayFloat32ArrayBufferDv0031
-     * @tc.desc Verify Float32Array exception scenarios - invalid constructor parameters
-     * @tc.size SmallTest
-     * @tc.type Exception
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array exception scenarios - invalid constructor parameters
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       let errorThrown = false;
@@ -554,12 +554,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0032
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0032
-     * @tc.name TypeArrayFloat32ArrayBufferDv0032
-     * @tc.desc Verify the iterators of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify the iterators of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
@@ -585,12 +585,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0033
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0033
-     * @tc.name TypeArrayFloat32ArrayBufferDv0033
-     * @tc.desc Verify Float32Array sharing buffer with other typed arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array sharing buffer with other typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(16);
@@ -608,12 +608,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0034
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0034
-     * @tc.name TypeArrayFloat32ArrayBufferDv0034
-     * @tc.desc Verify Float32Array subarray shares buffer with original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array subarray shares buffer with original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(20);
@@ -633,12 +633,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0035
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0035
-     * @tc.name TypeArrayFloat32ArrayBufferDv0035
-     * @tc.desc Verify Float32Array fill method handling of special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array fill method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(4);
@@ -654,12 +654,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0036
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0036
-     * @tc.name TypeArrayFloat32ArrayBufferDv0036
-     * @tc.desc Verify Float32Array set method handling of out-of-bounds
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array set method handling of out-of-bounds
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(3);
@@ -680,12 +680,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0037
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0037
-     * @tc.name TypeArrayFloat32ArrayBufferDv0037
-     * @tc.desc Verify Float32Array set method handling of negative offsets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array set method handling of negative offsets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(5);
@@ -709,12 +709,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0038
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0038
-     * @tc.name TypeArrayFloat32ArrayBufferDv0038
-     * @tc.desc Verify default behavior of Float32Array sort method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify default behavior of Float32Array sort method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([3.0, 1.0, 10.0, 2.0]);
@@ -727,12 +727,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0039
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0039
-     * @tc.name TypeArrayFloat32ArrayBufferDv0039
-     * @tc.desc Verify Float32Array indexOf handling of NaN
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array indexOf handling of NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, NaN, 3.0, NaN, 5.0]);
@@ -743,12 +743,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0040
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0040
-     * @tc.name TypeArrayFloat32ArrayBufferDv0040
-     * @tc.desc Verify Float32Array includes handling of NaN
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array includes handling of NaN
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, NaN, 3.0]);
@@ -758,12 +758,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0041
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0041
-     * @tc.name TypeArrayFloat32ArrayBufferDv0041
-     * @tc.desc Verify Float32Array copyWithin method boundary handling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array copyWithin method boundary handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -774,12 +774,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0042
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0042
-     * @tc.name TypeArrayFloat32ArrayBufferDv0042
-     * @tc.desc Verify Float32Array reduce method without initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array reduce method without initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Float32Array([1.0, 2.0, 3.0]);
@@ -801,12 +801,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0043
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0043
-     * @tc.name TypeArrayFloat32ArrayBufferDv0043
-     * @tc.desc Verify Float32Array find method handling of sparse arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array find method handling of sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(5);
@@ -821,12 +821,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0044
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0044
-     * @tc.name TypeArrayFloat32ArrayBufferDv0044
-     * @tc.desc Verify Float32Array forEach method handling of sparse arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array forEach method handling of sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(5);
@@ -842,12 +842,12 @@ export default function typeArrayFloat32ArrayTest() {
       expect(visited.length).assertEqual(5);
     })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0045
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0045
-     * @tc.name TypeArrayFloat32ArrayBufferDv0045
-     * @tc.desc Verify Float32Array interaction with DataView regarding endianness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array interaction with DataView regarding endianness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(4);
@@ -866,12 +866,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0047
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0047
-     * @tc.name TypeArrayFloat32ArrayBufferDv0047
-     * @tc.desc Verify that the map method of Float32Array returns a new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the map method of Float32Array returns a new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
@@ -883,12 +883,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0048
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0048
-     * @tc.name TypeArrayFloat32ArrayBufferDv0048
-     * @tc.desc Verify that the filter method of Float32Array returns a new array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that the filter method of Float32Array returns a new array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -900,12 +900,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0049
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0049
-     * @tc.name TypeArrayFloat32ArrayBufferDv0049
-     * @tc.desc Verify the short-circuit behavior of Float32Array's every method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the short-circuit behavior of Float32Array's every method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([2.0, 4.0, 6.0, 3.0, 8.0]);
@@ -919,12 +919,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0050
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0050
-     * @tc.name TypeArrayFloat32ArrayBufferDv0050
-     * @tc.desc Verify the short-circuit behavior of Float32Array's some method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the short-circuit behavior of Float32Array's some method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 3.0, 5.0, 4.0, 7.0]);
@@ -940,12 +940,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0051
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0051
-     * @tc.name TypeArrayFloat32ArrayBufferDv0051
-     * @tc.desc Verify that Float32Array's forEach method cannot be interrupted
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify that Float32Array's forEach method cannot be interrupted
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -962,12 +962,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0052
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0052
-     * @tc.name TypeArrayFloat32ArrayBufferDv0052
-     * @tc.desc Verify Float32Array iterator behavior when modifying the array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array iterator behavior when modifying the array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -985,12 +985,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0053
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0053
-     * @tc.name TypeArrayFloat32ArrayBufferDv0053
-     * @tc.desc Verify precision loss when converting Float32Array with other numeric types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify precision loss when converting Float32Array with other numeric types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const float64 = new Float64Array([1.2345678901234567]);
@@ -1000,12 +1000,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0055
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0055
-     * @tc.name TypeArrayFloat32ArrayBufferDv0055
-     * @tc.desc Verify Float32Array's set method handling of different source types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's set method handling of different source types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(4);
@@ -1020,12 +1020,12 @@ export default function typeArrayFloat32ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0057
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0057
-     * @tc.name TypeArrayFloat32ArrayBufferDv0057
-     * @tc.desc Verify Float32Array's find method with special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's find method with special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, NaN, 3.0, Infinity, -Infinity]);
@@ -1041,12 +1041,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0058
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0058
-     * @tc.name TypeArrayFloat32ArrayBufferDv0058
-     * @tc.desc Verify Float32Array's slice method handling of negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's slice method handling of negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -1062,12 +1062,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0059
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0059
-     * @tc.name TypeArrayFloat32ArrayBufferDv0059
-     * @tc.desc Verify Float32Array's subarray method handling of negative indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's subarray method handling of negative indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -1083,12 +1083,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0060
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0060
-     * @tc.name TypeArrayFloat32ArrayBufferDv0060
-     * @tc.desc Verify Float32Array's join method handling of special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's join method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, NaN, Infinity, -Infinity]);
@@ -1097,12 +1097,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0061
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0061
-     * @tc.name TypeArrayFloat32ArrayBufferDv0061
-     * @tc.desc Verify Float32Array's reduce method handling of special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's reduce method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, NaN, 4.0]);
@@ -1117,12 +1117,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0062
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0062
-     * @tc.name TypeArrayFloat32ArrayBufferDv0062
-     * @tc.desc Verify Float32Array's map method handling of special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's map method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0062', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, NaN, Infinity, -Infinity]);
@@ -1144,12 +1144,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0063
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0063
-     * @tc.name TypeArrayFloat32ArrayBufferDv0063
-     * @tc.desc Verify Float32Array's indexOf method handling of extremely close values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array's indexOf method handling of extremely close values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const value = 1.2345678;
@@ -1161,12 +1161,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0064
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0064
-     * @tc.name TypeArrayFloat32ArrayBufferDv0064
-     * @tc.desc Verify Float32Array's find method handling of extremely close values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array's find method handling of extremely close values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const value = 1.2345678;
@@ -1179,12 +1179,12 @@ export default function typeArrayFloat32ArrayTest() {
       expect(closeFound).assertEqual(undefined);
     })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0070
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0070
-     * @tc.name TypeArrayFloat32ArrayBufferDv0070
-     * @tc.desc Verify Float32Array's of method for creating arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's of method for creating arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = Float32Array.of(1.0, 2.0, 3.0, 4.0);
@@ -1196,12 +1196,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0071
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0071
-     * @tc.name TypeArrayFloat32ArrayBufferDv0071
-     * @tc.desc Verify Float32Array serialization and deserialization with JSON
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array serialization and deserialization with JSON
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, NaN, Infinity]);
@@ -1216,12 +1216,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0072
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0072
-     * @tc.name TypeArrayFloat32ArrayBufferDv0072
-     * @tc.desc Verify Float32Array's entries iterator
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's entries iterator
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([10.0, 20.0, 30.0]);
@@ -1236,12 +1236,12 @@ export default function typeArrayFloat32ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0075
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0075
-     * @tc.name TypeArrayFloat32ArrayBufferDv0075
-     * @tc.desc Verify batch data processing between Float32Array and DataView
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify batch data processing between Float32Array and DataView
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const size = 1000;
@@ -1267,12 +1267,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0076
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0076
-     * @tc.name TypeArrayFloat32ArrayBufferDv0076
-     * @tc.desc Verify nested array conversion for Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify nested array conversion for Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const nestedArray = [
@@ -1296,12 +1296,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0078
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0078
-     * @tc.name TypeArrayFloat32ArrayBufferDv0078
-     * @tc.desc Verify mathematical operation accuracy of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify mathematical operation accuracy of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const arr = new Float32Array([1.5, 2.5, 3.5, 4.5]);
@@ -1321,12 +1321,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0079
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0079
-     * @tc.name TypeArrayFloat32ArrayBufferDv0079
-     * @tc.desc Verify comparison operations of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify comparison operations of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -1344,12 +1344,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0080
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0080
-     * @tc.name TypeArrayFloat32ArrayBufferDv0080
-     * @tc.desc Verify batch modification of Float32Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify batch modification of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       const size = 10000;
@@ -1382,12 +1382,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0081
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0081
-     * @tc.name TypeArrayFloat32ArrayBufferDv0081
-     * @tc.desc Verify handling of zero-length Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of zero-length Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const emptyArr = new Float32Array(0);
@@ -1408,12 +1408,12 @@ export default function typeArrayFloat32ArrayTest() {
       expect(mapped.length).assertEqual(0);
     })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0083
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0083
-     * @tc.name TypeArrayFloat32ArrayBufferDv0083
-     * @tc.desc Verify Float32Array buffer slicing operation
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array buffer slicing operation
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(32);
@@ -1435,12 +1435,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0088
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0088
-     * @tc.name TypeArrayFloat32ArrayBufferDv0088
-     * @tc.desc Verify Float32Array buffer view range
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array buffer view range
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const buffer = new ArrayBuffer(24);
@@ -1460,12 +1460,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0089
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0089
-     * @tc.name TypeArrayFloat32ArrayBufferDv0089
-     * @tc.desc Verify Float32Array overflow handling
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Float32Array overflow handling
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('TypeArrayFloat32ArrayBufferDv0089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       const maxFloat32 = 3.4028234663852886e+38;
@@ -1480,12 +1480,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0090
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0090
-     * @tc.name TypeArrayFloat32ArrayBufferDv0090
-     * @tc.desc Verify Float32Array type conversion
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array type conversion
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0090', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const float32 = new Float32Array([1.5, 2.5, 3.5]);
@@ -1505,12 +1505,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0111
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0111
-     * @tc.name TypeArrayFloat32ArrayBufferDv0111
-     * @tc.desc Verify Float32Array constructor parameter types
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array constructor parameter types
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0111', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1529,12 +1529,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0112
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0112
-     * @tc.name TypeArrayFloat32ArrayBufferDv0112
-     * @tc.desc Verify Float32Array's indexOf and lastIndexOf
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's indexOf and lastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1549,12 +1549,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0113
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0113
-     * @tc.name TypeArrayFloat32ArrayBufferDv0113
-     * @tc.desc Verify Float32Array's every and some methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's every and some methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0113', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1574,12 +1574,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0114
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0114
-     * @tc.name TypeArrayFloat32ArrayBufferDv0114
-     * @tc.desc Verify Float32Array's forEach method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's forEach method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1595,12 +1595,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0115
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0115
-     * @tc.name TypeArrayFloat32ArrayBufferDv0115
-     * @tc.desc Verify Float32Array's subarray method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's subarray method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0115', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1616,12 +1616,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0116
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0116
-     * @tc.name TypeArrayFloat32ArrayBufferDv0116
-     * @tc.desc Verify Float32Array's slice method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's slice method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0116', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1637,12 +1637,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0117
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0117
-     * @tc.name TypeArrayFloat32ArrayBufferDv0117
-     * @tc.desc Verify Float32Array's fill method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's fill method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1657,12 +1657,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0118
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0118
-     * @tc.name TypeArrayFloat32ArrayBufferDv0118
-     * @tc.desc Verify Float32Array's set method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's set method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1679,12 +1679,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0119
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0119
-     * @tc.name TypeArrayFloat32ArrayBufferDv0119
-     * @tc.desc Verify Float32Array's copyWithin method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's copyWithin method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1701,12 +1701,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0120
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0120
-     * @tc.name TypeArrayFloat32ArrayBufferDv0120
-     * @tc.desc Verify Float32Array's sort method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's sort method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1721,12 +1721,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0121
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0121
-     * @tc.name TypeArrayFloat32ArrayBufferDv0121
-     * @tc.desc Verify Float32Array's find and findIndex methods
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's find and findIndex methods
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1746,12 +1746,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0122
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0122
-     * @tc.name TypeArrayFloat32ArrayBufferDv0122
-     * @tc.desc Verify Float32Array's reduceRight method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's reduceRight method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1766,12 +1766,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0123
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0123
-     * @tc.name TypeArrayFloat32ArrayBufferDv0123
-     * @tc.desc Verify Float32Array's static from method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's static from method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1785,12 +1785,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0124
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0124
-     * @tc.name TypeArrayFloat32ArrayBufferDv0124
-     * @tc.desc Verify Float32Array's static of method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's static of method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0124', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1803,12 +1803,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0125
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0125
-     * @tc.name TypeArrayFloat32ArrayBufferDv0125
-     * @tc.desc Verify Float32Array's includes method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's includes method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0125', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1821,12 +1821,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0126
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0126
-     * @tc.name TypeArrayFloat32ArrayBufferDv0126
-     * @tc.desc Verify interaction between Float32Array and DataView
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify interaction between Float32Array and DataView
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0126', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1848,12 +1848,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0127
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0127
-     * @tc.name TypeArrayFloat32ArrayBufferDv0127
-     * @tc.desc Verify properties of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 2
+     * @tc.desc   Verify properties of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0127', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1873,12 +1873,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0128
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0128
-     * @tc.name TypeArrayFloat32ArrayBufferDv0128
-     * @tc.desc Verify nested buffer views of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify nested buffer views of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0128', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1898,12 +1898,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0129
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0129
-     * @tc.name TypeArrayFloat32ArrayBufferDv0129
-     * @tc.desc Verify handling of special values in Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify handling of special values in Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0129', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1918,12 +1918,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0130
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0130
-     * @tc.name TypeArrayFloat32ArrayBufferDv0130
-     * @tc.desc Verify batch operations of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify batch operations of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0130', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1946,12 +1946,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0131
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0131
-     * @tc.name TypeArrayFloat32ArrayBufferDv0131
-     * @tc.desc Verify conversion between Float32Array and other TypedArrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify conversion between Float32Array and other TypedArrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0131', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -1967,12 +1967,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0132
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0132
-     * @tc.name TypeArrayFloat32ArrayBufferDv0132
-     * @tc.desc Verify index access boundaries of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify index access boundaries of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0132', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0]);
@@ -1989,12 +1989,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0133
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0133
-     * @tc.name TypeArrayFloat32ArrayBufferDv0133
-     * @tc.desc Verify index handling in Float32Array's map method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify index handling in Float32Array's map method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0133', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2009,12 +2009,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0134
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0134
-     * @tc.name TypeArrayFloat32ArrayBufferDv0134
-     * @tc.desc Verify index handling in Float32Array's filter method
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify index handling in Float32Array's filter method
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0134', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2029,12 +2029,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0135
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0135
-     * @tc.name TypeArrayFloat32ArrayBufferDv0135
-     * @tc.desc Verify Float32Array's reduce method with initial value
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's reduce method with initial value
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0135', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2053,12 +2053,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0136
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0136
-     * @tc.name TypeArrayFloat32ArrayBufferDv0136
-     * @tc.desc Verify relationship between Float32Array's subarray and original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify relationship between Float32Array's subarray and original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0136', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2075,12 +2075,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0137
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0137
-     * @tc.name TypeArrayFloat32ArrayBufferDv0137
-     * @tc.desc Verify the relationship between Float32Array's slice and the original array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify the relationship between Float32Array's slice and the original array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0137', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2097,12 +2097,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0138
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0138
-     * @tc.name TypeArrayFloat32ArrayBufferDv0138
-     * @tc.desc Verify Float32Array's fill method handling of start and end indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's fill method handling of start and end indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0138', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2118,12 +2118,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0139
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0139
-     * @tc.name TypeArrayFloat32ArrayBufferDv0139
-     * @tc.desc Verify Float32Array's set method handling of different sources
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's set method handling of different sources
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0139', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2140,12 +2140,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0140
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0140
-     * @tc.name TypeArrayFloat32ArrayBufferDv0140
-     * @tc.desc Verify Float32Array's copyWithin method handling of overlapping ranges
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's copyWithin method handling of overlapping ranges
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0140', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2157,12 +2157,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0142
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0142
-     * @tc.name TypeArrayFloat32ArrayBufferDv0142
-     * @tc.desc Verify Float32Array's find method handling of indices
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's find method handling of indices
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0142', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2177,12 +2177,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0143
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0143
-     * @tc.name TypeArrayFloat32ArrayBufferDv0143
-     * @tc.desc Verify Float32Array's static from method using a mapping function
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's static from method using a mapping function
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2196,12 +2196,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0144
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0144
-     * @tc.name TypeArrayFloat32ArrayBufferDv0144
-     * @tc.desc Verify Float32Array's includes method handling of special values
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's includes method handling of special values
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2216,12 +2216,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0145
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0145
-     * @tc.name TypeArrayFloat32ArrayBufferDv0145
-     * @tc.desc Verify Float32Array and DataView handling of endianness
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array and DataView handling of endianness
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2240,12 +2240,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0146
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0146
-     * @tc.name TypeArrayFloat32ArrayBufferDv0146
-     * @tc.desc Verify Float32Array's buffer properties
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's buffer properties
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const buffer = new ArrayBuffer(16)
@@ -2258,12 +2258,12 @@ export default function typeArrayFloat32ArrayTest() {
       Done()
     })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0147
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0147
-     * @tc.name TypeArrayFloat32ArrayBufferDv0147
-     * @tc.desc Verify Float32Array's buffer sharing
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's buffer sharing
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const buffer = new ArrayBuffer(16)
@@ -2277,12 +2277,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0148
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0148
-     * @tc.name TypeArrayFloat32ArrayBufferDv0148
-     * @tc.desc Verify mathematical operations with special values in Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify mathematical operations with special values in Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([0.0, NaN, Infinity, -Infinity])
@@ -2294,12 +2294,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0149
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0149
-     * @tc.name TypeArrayFloat32ArrayBufferDv0149
-     * @tc.desc Verify batch conversion of Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify batch conversion of Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const size = 5
@@ -2313,12 +2313,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0150
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0150
-     * @tc.name TypeArrayFloat32ArrayBufferDv0150
-     * @tc.desc Verify operations on empty Float32Array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify operations on empty Float32Array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const emptyArr = new Float32Array(0)
@@ -2329,12 +2329,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0151
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0151
-     * @tc.name TypeArrayFloat32ArrayBufferDv0151
-     * @tc.desc Verify Float32Array's filter method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's filter method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0])
@@ -2345,12 +2345,12 @@ export default function typeArrayFloat32ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0152
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0152
-     * @tc.name TypeArrayFloat32ArrayBufferDv0152
-     * @tc.desc Verify Float32Array's map method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's map method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0])
@@ -2361,12 +2361,12 @@ export default function typeArrayFloat32ArrayTest() {
 
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0153
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0153
-     * @tc.name TypeArrayFloat32ArrayBufferDv0153
-     * @tc.desc Verify Float32Array's find method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's find method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0])
@@ -2375,12 +2375,12 @@ export default function typeArrayFloat32ArrayTest() {
       Done()
     })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0154
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0154
-     * @tc.name TypeArrayFloat32ArrayBufferDv0154
-     * @tc.desc Verify Float32Array's findIndex method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's findIndex method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0154', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([10.0, 20.0, 30.0, 40.0, 50.0])
@@ -2390,12 +2390,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0155
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0155
-     * @tc.name TypeArrayFloat32ArrayBufferDv0155
-     * @tc.desc Verify Float32Array's every method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's every method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0155', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr1 = new Float32Array([2.0, 4.0, 6.0, 8.0])
@@ -2408,12 +2408,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0156
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0156
-     * @tc.name TypeArrayFloat32ArrayBufferDv0156
-     * @tc.desc Verify Float32Array's some method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's some method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0156', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr1 = new Float32Array([1.0, 3.0, 5.0, 7.0])
@@ -2426,12 +2426,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0157
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0157
-     * @tc.name TypeArrayFloat32ArrayBufferDv0157
-     * @tc.desc Verify Float32Array's forEach method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's forEach method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0157', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async (Done: Function) => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0])
@@ -2443,12 +2443,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0158
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0158
-     * @tc.name TypeArrayFloat32ArrayBufferDv0158
-     * @tc.desc Verify Float32Array's reduce method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's reduce method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0158', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2463,12 +2463,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0159
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0159
-     * @tc.name TypeArrayFloat32ArrayBufferDv0159
-     * @tc.desc Verify Float32Array's reduceRight method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's reduceRight method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0159', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2483,12 +2483,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0160
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0160
-     * @tc.name TypeArrayFloat32ArrayBufferDv0160
-     * @tc.desc Verify Float32Array's sort method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's sort method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0160', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2503,12 +2503,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0161
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0161
-     * @tc.name TypeArrayFloat32ArrayBufferDv0161
-     * @tc.desc Verify Float32Array's filter method using arrow functions with index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's filter method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0161', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2522,12 +2522,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0162
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0162
-     * @tc.name TypeArrayFloat32ArrayBufferDv0162
-     * @tc.desc Verify Float32Array's map method using arrow functions with index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's map method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0162', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2542,12 +2542,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0163
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0163
-     * @tc.name TypeArrayFloat32ArrayBufferDv0163
-     * @tc.desc Verify Float32Array's find method using arrow functions with index
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's find method using arrow functions with index
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0163', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2562,12 +2562,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0164
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0164
-     * @tc.name TypeArrayFloat32ArrayBufferDv0164
-     * @tc.desc Verify Float32Array's static from method using arrow functions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's static from method using arrow functions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0164', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2581,12 +2581,12 @@ export default function typeArrayFloat32ArrayTest() {
       })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0165
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0165
-     * @tc.name TypeArrayFloat32ArrayBufferDv0165
-     * @tc.desc Verify Float32Array's sort method using arrow functions with conditions
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's sort method using arrow functions with conditions
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0165', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2,
       async (Done: Function) => {
@@ -2611,12 +2611,12 @@ export default function typeArrayFloat32ArrayTest() {
         Done();
       })
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0166
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0166
-     * @tc.name TypeArrayFloat32ArrayBufferDv0166
-     * @tc.desc Verify Float32Array basic properties (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Attribute
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array basic properties (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0166', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(5);
@@ -2627,12 +2627,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0167
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0167
-     * @tc.name TypeArrayFloat32ArrayBufferDv0167
-     * @tc.desc Verify Float32Array index access (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array index access (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0167', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -2646,12 +2646,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0168
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0168
-     * @tc.name TypeArrayFloat32ArrayBufferDv0168
-     * @tc.desc Verify Float32Array's filter method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's filter method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0168', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.5, 2.5, 3.5, 4.5, 5.5]);
@@ -2665,12 +2665,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0169
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0169
-     * @tc.name TypeArrayFloat32ArrayBufferDv0169
-     * @tc.desc Verify Float32Array's map method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's map method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0169', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0]);
@@ -2683,12 +2683,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0170
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0170
-     * @tc.name TypeArrayFloat32ArrayBufferDv0170
-     * @tc.desc Verify Float32Array's every method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's every method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0170', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Float32Array([2.0, 4.0, 6.0, 8.0]);
@@ -2705,12 +2705,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0171
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0171
-     * @tc.name TypeArrayFloat32ArrayBufferDv0171
-     * @tc.desc Verify Float32Array's some method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's some method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0171', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr1 = new Float32Array([1.0, 3.0, 5.0, 7.0]);
@@ -2729,12 +2729,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0172
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0172
-     * @tc.name TypeArrayFloat32ArrayBufferDv0172
-     * @tc.desc Verify Float32Array's fill method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's fill method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0172', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(5);
@@ -2753,12 +2753,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0173
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0173
-     * @tc.name TypeArrayFloat32ArrayBufferDv0173
-     * @tc.desc Verify Float32Array's set method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's set method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0173', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array(6);
@@ -2770,12 +2770,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0174
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0174
-     * @tc.name TypeArrayFloat32ArrayBufferDv0174
-     * @tc.desc Verify Float32Array's copyWithin method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's copyWithin method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0174', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -2785,12 +2785,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0175
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0175
-     * @tc.name TypeArrayFloat32ArrayBufferDv0175
-     * @tc.desc Verify Float32Array's sort method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's sort method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0175', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([3.0, 1.0, 4.0, 2.0, 5.0]);
@@ -2800,12 +2800,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0176
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0176
-     * @tc.name TypeArrayFloat32ArrayBufferDv0176
-     * @tc.desc Verify Float32Array's indexOf method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's indexOf method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0176', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 2.0, 1.0]);
@@ -2816,12 +2816,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0177
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0177
-     * @tc.name TypeArrayFloat32ArrayBufferDv0177
-     * @tc.desc Verify Float32Array's lastIndexOf method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's lastIndexOf method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0177', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 2.0, 1.0]);
@@ -2832,12 +2832,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0178
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0178
-     * @tc.name TypeArrayFloat32ArrayBufferDv0178
-     * @tc.desc Verify Float32Array's includes method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's includes method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0178', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -2848,12 +2848,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0179
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0179
-     * @tc.name TypeArrayFloat32ArrayBufferDv0179
-     * @tc.desc Verify Float32Array's subarray method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's subarray method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0179', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);
@@ -2865,12 +2865,12 @@ export default function typeArrayFloat32ArrayTest() {
     })
 
     /**
+     * @tc.name   TypeArrayFloat32ArrayBufferDv0180
      * @tc.number SUB_BUILDINS_TYPEARRAY_FLOAT32ARRAY_BUFFER_DV_0180
-     * @tc.name TypeArrayFloat32ArrayBufferDv0180
-     * @tc.desc Verify Float32Array's slice method (synchronous test)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify Float32Array's slice method (synchronous test)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('TypeArrayFloat32ArrayBufferDv0180', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, () => {
       const arr = new Float32Array([1.0, 2.0, 3.0, 4.0, 5.0]);

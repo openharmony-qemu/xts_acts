@@ -293,7 +293,6 @@ export default function cameraSetFocusTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -311,12 +310,12 @@ export default function cameraSetFocusTest() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_001
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_001
-     * @tc.desc       test camera  photoSession SetFocusPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_001
+     * @tc.desc   test camera  photoSession SetFocusPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_001', Level.LEVEL2, async (done: Function) => {
       const point = null;
@@ -333,12 +332,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_002
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_002
-     * @tc.desc       test camera VideoSession SetFocusPoint null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_002
+     * @tc.desc   test camera VideoSession SetFocusPoint null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_002', Level.LEVEL2, async (done: Function) => {
       const point = null;
@@ -356,12 +355,12 @@ export default function cameraSetFocusTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_003
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_003
-     * @tc.desc       test camera  photoSession SetFocusPoint undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_003
+     * @tc.desc   test camera  photoSession SetFocusPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_003', Level.LEVEL2, async (done: Function) => {
       const point = undefined;
@@ -379,12 +378,12 @@ export default function cameraSetFocusTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_004
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_004
-     * @tc.desc       test camera VideoSession SetFocusPoint undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_004
+     * @tc.desc   test camera VideoSession SetFocusPoint undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_004', Level.LEVEL2, async (done: Function) => {
       const point = undefined;
@@ -402,12 +401,12 @@ export default function cameraSetFocusTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_005
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_005
-     * @tc.desc       test camera PhotoSession SetFocusPoint negative -1 0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_005
+     * @tc.desc   test camera PhotoSession SetFocusPoint negative -1 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_005', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: -1, y: 0 };
@@ -424,12 +423,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_006
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_006
-     * @tc.desc       test camera PhotoSession SetFocusPoint 1 2
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_006
+     * @tc.desc   test camera PhotoSession SetFocusPoint 1 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_006', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = {x:1, y:2};
@@ -445,12 +444,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_007
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_007
-     * @tc.desc       test camera VideoSession SetFocusPoint 1 2
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_007
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_007
+     * @tc.desc   test camera VideoSession SetFocusPoint 1 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_007', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 1, y: 2};
@@ -467,12 +466,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_008
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_008
-     * @tc.desc       test camera PhotoSession SetFocusPoint 2 0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_008
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_008
+     * @tc.desc   test camera PhotoSession SetFocusPoint 2 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_008', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = {x:2, y:0};
@@ -488,12 +487,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_009
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_009
-     * @tc.desc       test camera VideoSession SetFocusPoint 2 0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_009
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_009
+     * @tc.desc   test camera VideoSession SetFocusPoint 2 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_009', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 2, y: 0};
@@ -512,12 +511,12 @@ export default function cameraSetFocusTest() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_010
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_010
-     * @tc.desc       test camera VideoSession SetFocusPoint negative -1 0
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_010
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_010
+     * @tc.desc   test camera VideoSession SetFocusPoint negative -1 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_010', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: -1, y: 0 };
@@ -535,12 +534,12 @@ export default function cameraSetFocusTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_011
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_011
-     * @tc.desc       test camera PhotoSession SetFocusPoint negative 0 -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_011
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_011
+     * @tc.desc   test camera PhotoSession SetFocusPoint negative 0 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_011', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 0, y: -1 };
@@ -557,12 +556,12 @@ export default function cameraSetFocusTest() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_012
-     * @tc.name       SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_012
-     * @tc.desc       test camera VideoSession SetFocusPoint negative 0 -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_012
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_012
+     * @tc.desc   test camera VideoSession SetFocusPoint negative 0 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAMERA_SESSION_SETFOCUSPOINT_ERROR_012', Level.LEVEL2, async (done: Function) => {
       const point: camera.Point = { x: 0, y: -1 };

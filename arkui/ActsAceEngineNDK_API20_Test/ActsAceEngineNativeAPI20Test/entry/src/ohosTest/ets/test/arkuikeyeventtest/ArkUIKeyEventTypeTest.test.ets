@@ -25,12 +25,12 @@ export default function ArkUIKeyEventTypeTest() {
     });
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_EVENT_DOWN_0100
-     * @tc.name    : testArkUIKeyEventDown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_EVENT_DOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyEventDown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_EVENT_DOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_EVENT_DOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyEventDown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -61,12 +61,12 @@ export default function ArkUIKeyEventTypeTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_EVENT_UP_0100
-     * @tc.name    : testArkUIKeyEventUp0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_EVENT_UP are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyEventUp0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_EVENT_UP_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_EVENT_UP are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyEventUp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

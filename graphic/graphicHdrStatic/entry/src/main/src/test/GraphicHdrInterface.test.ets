@@ -35,12 +35,12 @@ export default function GraphicHdrInterface() {
     beforeAll(() => {
     })
     /**
-     * @tc.number    : testHDRFormat_static_0100
-     * @tc.name      : testHDRFormat_static_0100
-     * @tc.desc      : HDR format enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testHDRFormat_static_0100
+     * @tc.number testHDRFormat_static_0100
+     * @tc.desc   HDR format enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHDRFormat_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

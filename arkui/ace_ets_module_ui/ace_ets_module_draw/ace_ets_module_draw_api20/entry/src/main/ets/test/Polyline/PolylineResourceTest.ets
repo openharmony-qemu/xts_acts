@@ -40,6 +40,14 @@ export default function PolylineResourceTest() {
       done();
     });
     
+    /**
+     * @tc.name   PolylineResourceTest_0100
+     * @tc.number PolylineResourceTest_0100
+     * @tc.desc   PolylineResourceTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PolylineResourceTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[PolylineResourceTest_0100] START');
       await CommonFunc.sleep(1000);

@@ -48,12 +48,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest001
-     * @tc.name      ImageLoaderTest001
-     * @tc.desc      test the loadSync
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageLoaderTest001
+     * @tc.number ImageLoaderTest001
+     * @tc.desc   test the loadSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest001', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest001] START');
@@ -79,12 +79,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest002
-     * @tc.name      ImageLoaderTest002
-     * @tc.desc      test the load
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageLoaderTest002
+     * @tc.number ImageLoaderTest002
+     * @tc.desc   test the load
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest002', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest002] START');
@@ -110,12 +110,12 @@ export default function ImageLoaderTest() {
     });
 
     /**
-     * @tc.number    ImageLoaderTest003
-     * @tc.name      ImageLoaderTest003
-     * @tc.desc      test the loadSync errorCode 111001
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageLoaderTest003
+     * @tc.number ImageLoaderTest003
+     * @tc.desc   test the loadSync errorCode 111001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ImageLoaderTest003', Level.LEVEL1, async (done: Function) => {
       console.info('[ImageLoaderTest003] START');
@@ -132,6 +132,32 @@ export default function ImageLoaderTest() {
 
       expect(obj.$attrs.content).assertEqual('111001');
       console.info('[ImageLoaderTest003] END');
+      done();
+    });
+
+    /**
+     * @tc.name   ImageLoaderTest004
+     * @tc.number ImageLoaderTest004
+     * @tc.desc   test the load errorCode 111001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('ImageLoaderTest004', Level.LEVEL1, async (done: Function) => {
+      console.info('[ImageLoaderTest004] START');
+      await CommonFunc.sleep(1500);
+      let driver = await Driver.create()
+      let button3 = await driver.findComponent(ON.id('btnLoadErr'));
+      await CommonFunc.sleep(500);
+      await button3.click();
+      await CommonFunc.sleep(500);
+
+      let strJson = getInspectorByKey('errorCode');
+      let obj: ESObject = JSON.parse(strJson);
+      console.info('[ImageLoaderTest004] obj.$attrs.content is: ' + JSON.stringify(obj.$attrs.content));
+
+      expect(obj.$attrs.content).assertEqual('111001');
+      console.info('[ImageLoaderTest004] END');
       done();
     });
   })

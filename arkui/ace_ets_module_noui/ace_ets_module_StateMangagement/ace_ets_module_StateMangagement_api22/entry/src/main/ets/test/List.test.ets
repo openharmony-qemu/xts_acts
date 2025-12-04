@@ -14,6 +14,12 @@
  */
 
 import MutableBuilder001 from './mutableBuilderTest/MutableBuilder001.test';
+import ApplySync001 from './UIUtilsTest/ApplySync001.test';
+import FlushUpdates001 from './UIUtilsTest/FlushUpdates001.test';
+import FlushErrorCode from './UIUtilsTest/FlushErrorCode.test';
 export default function testsuite() {
     MutableBuilder001();
+    ApplySync001();
+    FlushUpdates001();
+    FlushErrorCode();
 }

@@ -27,14 +27,14 @@ export default function NodeNapiTest3() {
       await Utils.pushPageNoClear(`nodenapitest/nodenapiTest3`, done);
     });
 
-    /*
-   * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0100
-   * @tc.name       : testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100
-   * @tc.desc       : testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
+    /**
+     * @tc.name   testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0100
+     * @tc.desc   testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOH_ArkUI_GetDrawableDescriptorFromNapiValue0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {
@@ -50,14 +50,14 @@ export default function NodeNapiTest3() {
         }
       })
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0200
-       * @tc.name       : testOHArkUIGetDrawableDescriptorFromNapiValue0200
-       * @tc.desc       : testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-       */
+    /**
+     * @tc.name   testOHArkUIGetDrawableDescriptorFromNapiValue0200
+     * @tc.number SUB_ArkUI_ACE_ENGINE_OH_ArkUI_GetDrawableDescriptorFromNapiValue_0200
+     * @tc.desc   testing OH_ArkUI_GetDrawableDescriptorFromNapiValue interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testOHArkUIGetDrawableDescriptorFromNapiValue0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

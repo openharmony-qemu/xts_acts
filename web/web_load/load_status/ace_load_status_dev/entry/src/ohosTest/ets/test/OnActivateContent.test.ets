@@ -52,15 +52,15 @@ export default function webWaitForAttachedTest() {
     })
 
 
-    /*
-    * @tc.number      : SUB_WEB_ONACTIVATECONTENTBUTTON_0100
-    * @tc.name        : emitOnActivateContent
-    * @tc.desc        : test on normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
 
+    /**
+     * @tc.name   emitOnActivateContent
+     * @tc.number emitOnActivateContent
+     * @tc.desc   emitOnActivateContent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitOnActivateContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnActivateContent", 141301)
       let isReturn = false;

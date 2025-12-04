@@ -94,12 +94,12 @@ export default function requestUploadOnetJSUnitTest() {
     };
 
     /**
+     * @tc.name   SUB_REQUEST_On_Upload_Pause_0100
      * @tc.number SUB_REQUEST_On_Upload_Pause_0100
-     * @tc.name SUB_REQUEST_On_Upload_Pause_0100
-     * @tc.desc download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_On_Upload_Pause_0100', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_On_Upload_Pause_0100 is starting-----------------------');
@@ -157,12 +157,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Pause_0100
      * @tc.number SUB_REQUEST_Off_Upload_Pause_0100
-     * @tc.name SUB_REQUEST_Off_Upload_Pause_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Pause_0100', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Off_Upload_Pause_0100 is starting-----------------------');
@@ -240,12 +240,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Pause_0200
      * @tc.number SUB_REQUEST_Off_Upload_Pause_0200
-     * @tc.name SUB_REQUEST_Off_Upload_Pause_0200
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Pause_0200', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Upload_backgroundOnPause_0500 is starting-----------------------');
@@ -321,12 +321,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Upload_Callback_0050
-     * @tc.name    SUB_Misc_REQUEST_Remove_Upload_Callback_0050
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Callback_0050
+     * @tc.number SUB_Misc_REQUEST_Remove_Upload_Callback_0050
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Callback_0050', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Callback_0050 is starting-----------------------");
@@ -355,12 +355,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Upload_Promise_0050
-     * @tc.name    SUB_Misc_REQUEST_Remove_Upload_Promise_0050
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Promise_0050
+     * @tc.number SUB_Misc_REQUEST_Remove_Upload_Promise_0050
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Promise_0050', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Promise_0050 is starting-----------------------");
@@ -380,12 +380,12 @@ export default function requestUploadOnetJSUnitTest() {
 
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Upload_Callback_0060
-     * @tc.name    SUB_Misc_REQUEST_Remove_Upload_Callback_0060
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Callback_0060
+     * @tc.number SUB_Misc_REQUEST_Remove_Upload_Callback_0060
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Callback_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Callback_0060 is starting-----------------------");
@@ -421,12 +421,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Upload_Promise_0060
-     * @tc.name    SUB_Misc_REQUEST_Remove_Upload_Promise_0060
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Upload_Promise_0060
+     * @tc.number SUB_Misc_REQUEST_Remove_Upload_Promise_0060
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Upload_Promise_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Upload_Promise_0060 is starting-----------------------");
@@ -446,12 +446,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Progress_0020
      * @tc.number SUB_Misc_REQUEST_Off_Upload_Progress_0020
-     * @tc.name SUB_Misc_REQUEST_Off_Upload_Progress_0020
-     * @tc.desc download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Progress_0020', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Progress_0020 is starting-----------------------");
@@ -505,12 +505,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Progress_0030
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Progress_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Progress_0030
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Progress_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Progress_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Progress_0030 is starting-----------------------");
@@ -562,12 +562,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Progress_0030
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Progress_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Progress_0030
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Progress_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Progress_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Progress_0030 is starting-----------------------");
@@ -616,12 +616,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Progress_0040
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Progress_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Progress_0040
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Progress_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Progress_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Progress_0040 is starting-----------------------");
@@ -656,12 +656,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Progress_0040
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Progress_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Progress_0040
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Progress_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Progress_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Progress_0040 is starting-----------------------");
@@ -708,12 +708,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_REQUEST_Off_Upload_Completed_0200
-     * @tc.name    SUB_REQUEST_Off_Upload_Completed_0200
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_REQUEST_Off_Upload_Completed_0200
+     * @tc.number SUB_REQUEST_Off_Upload_Completed_0200
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Completed_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Off_Upload_Completed_0200 is starting-----------------------");
@@ -756,12 +756,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Completed_0030
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Completed_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Completed_0030
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Completed_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Completed_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Completed_0030 is starting-----------------------");
@@ -813,12 +813,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Completed_0030
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Completed_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Completed_0030
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Completed_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Completed_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Completed_0030 is starting-----------------------");
@@ -867,12 +867,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Completed_0040
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Completed_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Completed_0040
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Completed_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Completed_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Completed_0040 is starting-----------------------");
@@ -907,12 +907,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Completed_0040
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Completed_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Completed_0040
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Completed_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Completed_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Completed_0040 is starting-----------------------");
@@ -957,12 +957,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Failed_0020
      * @tc.number SUB_Misc_REQUEST_Off_Upload_Failed_0020
-     * @tc.name SUB_Misc_REQUEST_Off_Upload_Failed_0020
-     * @tc.desc download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Failed_0020', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Failed_0020 is starting-----------------------");
@@ -1018,12 +1018,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Failed_0030
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Failed_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Failed_0030
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Failed_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Failed_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Failed_0030 is starting-----------------------");
@@ -1075,12 +1075,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Failed_0030
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Failed_0030
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Failed_0030
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Failed_0030
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Failed_0030', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Failed_0030 is starting-----------------------");
@@ -1122,12 +1122,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_On_Upload_Failed_0040
-     * @tc.name    SUB_Misc_REQUEST_On_Upload_Failed_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_On_Upload_Failed_0040
+     * @tc.number SUB_Misc_REQUEST_On_Upload_Failed_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_On_Upload_Failed_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_On_Upload_Failed_0040 is starting-----------------------");
@@ -1162,12 +1162,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Off_Upload_Failed_0040
-     * @tc.name    SUB_Misc_REQUEST_Off_Upload_Failed_0040
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Off_Upload_Failed_0040
+     * @tc.number SUB_Misc_REQUEST_Off_Upload_Failed_0040
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Off_Upload_Failed_0040', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Off_Upload_Failed_0040 is starting-----------------------");
@@ -1212,12 +1212,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Upload_Callback_0060
-     * @tc.name    SUB_Misc_REQUEST_Create_Upload_Callback_0060
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Upload_Callback_0060
+     * @tc.number SUB_Misc_REQUEST_Create_Upload_Callback_0060
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Create_Upload_Callback_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Create_Upload_Callback_0060 is starting-----------------------");
@@ -1257,12 +1257,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Upload_Promise_0060
-     * @tc.name    SUB_Misc_REQUEST_Create_Upload_Promise_0060
-     * @tc.desc      Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Upload_Promise_0060
+     * @tc.number SUB_Misc_REQUEST_Create_Upload_Promise_0060
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Create_Upload_Promise_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Create_Upload_Promise_0060 is starting-----------------------");
@@ -1286,12 +1286,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_On_Upload_Failed_0500
      * @tc.number SUB_REQUEST_On_Upload_Failed_0500
-     * @tc.name SUB_REQUEST_On_Upload_Failed_0500
-     * @tc.desc download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_On_Upload_Failed_0500', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_On_Upload_Failed_0500 is starting-----------------------');
@@ -1336,12 +1336,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Failed_0500
      * @tc.number SUB_REQUEST_Off_Upload_Failed_0500
-     * @tc.name SUB_REQUEST_Off_Upload_Failed_0500
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Failed_0500', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Off_Upload_Failed_0500 is starting-----------------------');
@@ -1403,12 +1403,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Failed_0600
      * @tc.number SUB_REQUEST_Off_Upload_Failed_0600
-     * @tc.name SUB_REQUEST_Off_Upload_Failed_0600
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Failed_0600', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Upload_backgroundOnFailed_0500 is starting-----------------------');
@@ -1468,12 +1468,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_On_Upload_Remove_0100
      * @tc.number SUB_REQUEST_On_Upload_Remove_0100
-     * @tc.name SUB_REQUEST_On_Upload_Remove_0100
-     * @tc.desc download task
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   download task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_On_Upload_Remove_0100', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_On_Upload_Remove_0100 is starting-----------------------');
@@ -1523,12 +1523,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Remove_0100
      * @tc.number SUB_REQUEST_Off_Upload_Remove_0100
-     * @tc.name SUB_REQUEST_Off_Upload_Remove_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Remove_0100', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Off_Upload_Remove_0100 is starting-----------------------');
@@ -1590,12 +1590,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Off_Upload_Remove_0200
      * @tc.number SUB_REQUEST_Off_Upload_Remove_0200
-     * @tc.name SUB_REQUEST_Off_Upload_Remove_0200
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Off_Upload_Remove_0200', Level.LEVEL2, async (done: Function) => {
       console.info('====>-----------------------SUB_REQUEST_Off_Upload_Remove_0200 is starting-----------------------');
@@ -1655,12 +1655,12 @@ export default function requestUploadOnetJSUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_REQUEST_Upload_broadcastEvent_0200
      * @tc.number SUB_REQUEST_Upload_broadcastEvent_0200
-     * @tc.name SUB_REQUEST_Upload_broadcastEvent_0200
-     * @tc.desc Starts a upload session.
-     * @tc.size      MEDIUMTEST
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_REQUEST_Upload_broadcastEvent_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_REQUEST_Upload_broadcastEvent_0200 is starting-----------------------");

@@ -46,13 +46,13 @@ export default function geoLocationManager_nop_test() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_001
-     * @tc.name: geoLocationManager_nop_test_001
-     * @tc.desc:Using the geoLocationManager.on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_001
+     * @tc.number SUB_geoLocationManager_nop_test_001
+     * @tc.desc   Using the geoLocationManager.on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -91,13 +91,13 @@ export default function geoLocationManager_nop_test() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_002
-     * @tc.name: geoLocationManager_nop_test_002
-     * @tc.desc:Using the geoLocationManager.off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_002
+     * @tc.number SUB_geoLocationManager_nop_test_002
+     * @tc.desc   Using the geoLocationManager.off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let wantAgentInfo: wantAgent.WantAgentInfo = {
@@ -136,13 +136,13 @@ export default function geoLocationManager_nop_test() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_003
-     * @tc.name: geoLocationManager_nop_test_003
-     * @tc.desc:Using the geoLocationManager.on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_003
+     * @tc.number SUB_geoLocationManager_nop_test_003
+     * @tc.desc   Using the geoLocationManager.on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -159,13 +159,13 @@ export default function geoLocationManager_nop_test() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_004
-     * @tc.name: geoLocationManager_nop_test_004
-     * @tc.desc:Using the geoLocationManager.off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_004
+     * @tc.number SUB_geoLocationManager_nop_test_004
+     * @tc.desc   Using the geoLocationManager.off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let gnssStatusCb = (satelliteStatusInfo: geoLocationManager.SatelliteStatusInfo): void => {
@@ -184,13 +184,13 @@ export default function geoLocationManager_nop_test() {
     })
 
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_005
-     * @tc.name: geoLocationManager_nop_test_005
-     * @tc.desc:Using the geoLocationManager.off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_005
+     * @tc.number SUB_geoLocationManager_nop_test_005
+     * @tc.desc   Using the geoLocationManager.off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
@@ -210,13 +210,13 @@ export default function geoLocationManager_nop_test() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_006
-     * @tc.name: geoLocationManager_nop_test_006
-     * @tc.desc:Using the geoLocationManager.off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_006
+     * @tc.number SUB_geoLocationManager_nop_test_006
+     * @tc.desc   Using the geoLocationManager.off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let cachedLocationsCb = (locations: Array<geoLocationManager.Location>): void => {
@@ -237,13 +237,13 @@ export default function geoLocationManager_nop_test() {
       console.info('beforeEach end');
     })
 
-    /*
-     * @tc.number:SUB_geoLocationManager_nop_test_007
-     * @tc.name: geoLocationManager_nop_test_007
-     * @tc.desc:Using the geoLocationManager.off method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   geoLocationManager_nop_test_007
+     * @tc.number SUB_geoLocationManager_nop_test_007
+     * @tc.desc   Using the geoLocationManager.off method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("geoLocationManager_nop_test_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let requestInfo: geoLocationManager.LocationRequest = {

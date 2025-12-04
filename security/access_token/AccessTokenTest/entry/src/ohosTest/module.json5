@@ -74,6 +74,28 @@
             "FormAbility"
           ]
         }
+      },
+      {
+        "name": "ohos.permission.READ_CALENDAR",
+        "reason": "$string:usePermission_desc",
+        "usedScene": {
+          "abilities": [
+            "MainAbility",
+            "FormAbility",
+            "ServiceExtAbility"
+          ]
+        }
+      },
+      {
+        "name": "ohos.permission.WRITE_CALENDAR",
+        "reason": "$string:usePermission_desc",
+        "usedScene": {
+          "abilities": [
+            "MainAbility",
+            "FormAbility",
+            "ServiceExtAbility"
+          ]
+        }
       }
     ]
   }

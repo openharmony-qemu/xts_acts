@@ -53,13 +53,13 @@ export default function webViewNativeMediaPlayerProps() {
           console.info("componentLifeCycleTestOne beforeEach start");
         })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_NETWORK_ERROR_API_0002
-     *@tc.name testWebViewNativeMediaPlayerNetworkErrorStatic
-     *@tc.desc test MediaError.NETWORK_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkErrorStatic
+     * @tc.number SUB_ACE_WEB_MediaError_NETWORK_ERROR_API_0002
+     * @tc.desc   test MediaError.NETWORK_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerNetworkErrorStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -73,13 +73,13 @@ export default function webViewNativeMediaPlayerProps() {
         done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_FORMAT_ERROR_API_0003
-     *@tc.name testWebViewNativeMediaPlayerFORMATERRORStatic
-     *@tc.desc test MediaError.FORMAT_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerFORMATERRORStatic
+     * @tc.number SUB_ACE_WEB_MediaError_FORMAT_ERROR_API_0003
+     * @tc.desc   test MediaError.FORMAT_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerFORMATERRORStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -93,13 +93,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaError_DECODE_ERROR_API_0004
-     *@tc.name testWebViewNativeMediaPlayerDECODEERRORStatic
-     *@tc.desc test MediaError.DECODE_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerDECODEERRORStatic
+     * @tc.number SUB_ACE_WEB_MediaError_DECODE_ERROR_API_0004
+     * @tc.desc   test MediaError.DECODE_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerDECODEERRORStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -113,13 +113,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_CreateNativeMediaPlayerCallback_API_0005
-     *@tc.name testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallbackStatic
-     *@tc.desc test CreateNativeMediaPlayerCallback
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallbackStatic
+     * @tc.number SUB_ACE_WEB_CreateNativeMediaPlayerCallback_API_0005
+     * @tc.desc   test CreateNativeMediaPlayerCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerCreateNativeMediaPlayerCallbackStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -133,13 +133,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_EMPTY_API_0006
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateEmptyStatic
-     *@tc.desc test NetworkState EMPTY
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateEmptyStatic
+     * @tc.number SUB_ACE_WEB_NetworkState_EMPTY_API_0006
+     * @tc.desc   test NetworkState EMPTY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerNetworkStateEmptyStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -153,13 +153,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_IDLE_API_0007
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateIDLEStatic
-     *@tc.desc test NetworkState IDLE
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateIDLEStatic
+     * @tc.number SUB_ACE_WEB_NetworkState_IDLE_API_0007
+     * @tc.desc   test NetworkState IDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerNetworkStateIDLEStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -173,13 +173,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_NetworkState_NETWORK_ERROR_API_0008
-     *@tc.name testWebViewNativeMediaPlayerNetworkStateNETWORKERRORStatic
-     *@tc.desc test NetworkState NETWORK_ERROR
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerNetworkStateNETWORKERRORStatic
+     * @tc.number SUB_ACE_WEB_NetworkState_NETWORK_ERROR_API_0008
+     * @tc.desc   test NetworkState NETWORK_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerNetworkStateNETWORKERRORStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -193,13 +193,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_ReadyState_HAVE_NOTHING_API_0009
-     *@tc.name testWebViewNativeMediaPlayerReadyStateHAVENOTHINGStatic
-     *@tc.desc test ReadyState.HAVE_NOTHING
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerReadyStateHAVENOTHINGStatic
+     * @tc.number SUB_ACE_WEB_ReadyState_HAVE_NOTHING_API_0009
+     * @tc.desc   test ReadyState.HAVE_NOTHING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerReadyStateHAVENOTHINGStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -213,13 +213,13 @@ export default function webViewNativeMediaPlayerProps() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_MediaPlayer_Preload_API_0010
-     *@tc.name testWebViewNativeMediaPlayerPreloadStatic
-     *@tc.desc test MediaPlayerProps2
-     *@tc.type Function
-     *@tc.size MediumTest
-     *@tc.level Level 3
+    /**
+     * @tc.name   testWebViewNativeMediaPlayerPreloadStatic
+     * @tc.number SUB_ACE_WEB_MediaPlayer_Preload_API_0010
+     * @tc.desc   test MediaPlayerProps2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWebViewNativeMediaPlayerPreloadStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

@@ -47,12 +47,12 @@ export default function PromiseRaceTest() {
     })
 
     /**
+     * @tc.name   PromiseRaceTest0100
      * @tc.number SUB_PROMISE_RACE_TEST_0100
-     * @tc.name PromiseRaceTest0100
-     * @tc.desc Test Promise.race with different types in iterable array (string|number|boolean|bigint|object|promise)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with different types in iterable array (string|number|boolean|bigint|object|promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0100';
@@ -139,12 +139,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0200
      * @tc.number SUB_PROMISE_RACE_TEST_0200
-     * @tc.name PromiseRaceTest0200
-     * @tc.desc Test Promise.race with combinations of different types in iterable array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with combinations of different types in iterable array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0200';
@@ -200,12 +200,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0300
      * @tc.number SUB_PROMISE_RACE_TEST_0300
-     * @tc.name PromiseRaceTest0300
-     * @tc.desc Test Promise.race with different types of iterables
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with different types of iterables
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0300';
@@ -243,12 +243,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0400
      * @tc.number SUB_PROMISE_RACE_TEST_0400
-     * @tc.name PromiseRaceTest0400
-     * @tc.desc Test Promise.race with empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0400';
@@ -284,12 +284,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0500
      * @tc.number SUB_PROMISE_RACE_TEST_0500
-     * @tc.name PromiseRaceTest0500
-     * @tc.desc Test Promise.race with non-Promise values in iterable
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with non-Promise values in iterable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0500';
@@ -333,12 +333,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0600
      * @tc.number SUB_PROMISE_RACE_TEST_0600
-     * @tc.name PromiseRaceTest0600
-     * @tc.desc Test Promise.race with an iterable that throws an exception. Input: A throwing iterator.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with an iterable that throws an exception. Input: A throwing iterator.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0600';
@@ -367,12 +367,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0700
      * @tc.number SUB_PROMISE_RACE_TEST_0700
-     * @tc.name PromiseRaceTest0700
-     * @tc.desc Test Promise.race with multiple promises where one succeeds. Input: Three promises, first one resolves, second one rejects, third one resolves.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with multiple promises where one succeeds. Input: Three promises, first one resolves, second one rejects, third one resolves.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0700';
@@ -438,12 +438,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0800
      * @tc.number SUB_PROMISE_RACE_TEST_0800
-     * @tc.name PromiseRaceTest0800
-     * @tc.desc Test Promise.race where all promises fail. Input: Three promises, all of them fail.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where all promises fail. Input: Three promises, all of them fail.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0800';
@@ -514,12 +514,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest0900
      * @tc.number SUB_PROMISE_RACE_TEST_0900
-     * @tc.name PromiseRaceTest0900
-     * @tc.desc Test Promise.race where a promise throws during construction. Input: One promise throws error during construction, another one is normal.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where a promise throws during construction. Input: One promise throws error during construction, another one is normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest0900';
@@ -592,12 +592,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1000
      * @tc.number SUB_PROMISE_RACE_TEST_1000
-     * @tc.name PromiseRaceTest1000
-     * @tc.desc Test Promise.race with a promise that's already resolved. Input: One promise that is immediately resolved.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with a promise that's already resolved. Input: One promise that is immediately resolved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1000';
@@ -647,12 +647,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1100
      * @tc.number SUB_PROMISE_RACE_TEST_1100
-     * @tc.name PromiseRaceTest1100
-     * @tc.desc Test Promise.race with one immediately resolved and one immediately rejected promise. Input: One promise immediately resolved, one promise immediately rejected.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with one immediately resolved and one immediately rejected promise. Input: One promise immediately resolved, one promise immediately rejected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1100';
@@ -697,12 +697,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1200
      * @tc.number SUB_PROMISE_RACE_TEST_1200
-     * @tc.name PromiseRaceTest1200
-     * @tc.desc Test Promise.race with an immediately rejected promise. Input: One promise that is immediately rejected.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with an immediately rejected promise. Input: One promise that is immediately rejected.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1200';
@@ -768,12 +768,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1300
      * @tc.number SUB_PROMISE_RACE_TEST_1300
-     * @tc.name PromiseRaceTest1300
-     * @tc.desc Test Promise.race where all promises succeed. Input: Three promises that all resolve successfully.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where all promises succeed. Input: Three promises that all resolve successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1300';
@@ -839,12 +839,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1400
      * @tc.number SUB_PROMISE_RACE_TEST_1400
-     * @tc.name PromiseRaceTest1400
-     * @tc.desc Test Promise.race with delayed promises. Input: Two promises, first one resolves after 2 seconds, second one rejects after 1 second.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with delayed promises. Input: Two promises, first one resolves after 2 seconds, second one rejects after 1 second.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1400';
@@ -907,12 +907,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1500
      * @tc.number SUB_PROMISE_RACE_TEST_1500
-     * @tc.name PromiseRaceTest1500
-     * @tc.desc Test Promise.race with delayed promises. Input: Two promises, first one resolves after 1 second, second one rejects after 2 seconds.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with delayed promises. Input: Two promises, first one resolves after 1 second, second one rejects after 2 seconds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1500';
@@ -970,12 +970,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1600
      * @tc.number SUB_PROMISE_RACE_TEST_1600
-     * @tc.name PromiseRaceTest1600
-     * @tc.desc Test Promise.race with different types of objects. Input: One primitive value, one iterable object, one throwing iterable object.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race with different types of objects. Input: One primitive value, one iterable object, one throwing iterable object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1600';
@@ -1062,12 +1062,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1700
      * @tc.number SUB_PROMISE_RACE_TEST_1700
-     * @tc.name PromiseRaceTest1700
-     * @tc.desc Test nested Promise.any(). Input: Promise.any([Promise.any([resolved promise, rejected promise]), rejected promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise.any(). Input: Promise.any([Promise.any([resolved promise, rejected promise]), rejected promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1700';
@@ -1143,12 +1143,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1800
      * @tc.number SUB_PROMISE_RACE_TEST_1800
-     * @tc.name PromiseRaceTest1800
-     * @tc.desc Test nested Promise.any() with all rejected promises. Input: Promise.any([Promise.any([rejected promise, rejected promise]), rejected promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise.any() with all rejected promises. Input: Promise.any([Promise.any([rejected promise, rejected promise]), rejected promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1800';
@@ -1235,12 +1235,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest1900
      * @tc.number SUB_PROMISE_RACE_TEST_1900
-     * @tc.name PromiseRaceTest1900
-     * @tc.desc Test nested Promise.race() with Promise.any(). Input: Promise.any([Promise.race([resolved promise, rejected promise]), resolved promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise.race() with Promise.any(). Input: Promise.any([Promise.race([resolved promise, rejected promise]), resolved promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest1900';
@@ -1316,12 +1316,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2000
      * @tc.number SUB_PROMISE_RACE_TEST_2000
-     * @tc.name PromiseRaceTest2000
-     * @tc.desc Test nested Promise.any() with inner fast-resolving Promise. Input: Promise.any([Promise.any([fast-resolved promise, rejected promise]), slow-rejected promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise.any() with inner fast-resolving Promise. Input: Promise.any([Promise.any([fast-resolved promise, rejected promise]), slow-rejected promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2000';
@@ -1399,12 +1399,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2100
      * @tc.number SUB_PROMISE_RACE_TEST_2100
-     * @tc.name PromiseRaceTest2100
-     * @tc.desc Test nested Promise combinations. Input: Promise.all([Promise.race([resolved promise, rejected promise]), resolved promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise combinations. Input: Promise.all([Promise.race([resolved promise, rejected promise]), resolved promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2100';
@@ -1482,12 +1482,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2200
      * @tc.number SUB_PROMISE_RACE_TEST_2200
-     * @tc.name PromiseRaceTest2200
-     * @tc.desc Test nested Promise.any() with fast-rejecting outer Promise. Input: Promise.any([Promise.any([slow-resolved promise, rejected promise]), fast-rejected promise])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested Promise.any() with fast-rejecting outer Promise. Input: Promise.any([Promise.any([slow-resolved promise, rejected promise]), fast-rejected promise])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2200';
@@ -1565,12 +1565,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2300
      * @tc.number SUB_PROMISE_RACE_TEST_2300
-     * @tc.name PromiseRaceTest2300
-     * @tc.desc Test nested simulated Promise.raceSettled() within Promise.any(). Input: Promise.any([simulatedRaceSettled([resolved, rejected]), resolved])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested simulated Promise.raceSettled() within Promise.any(). Input: Promise.any([simulatedRaceSettled([resolved, rejected]), resolved])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2300';
@@ -1665,12 +1665,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2400
      * @tc.number SUB_PROMISE_RACE_TEST_2400
-     * @tc.name PromiseRaceTest2400
-     * @tc.desc Test nested simulated Promise.raceSettled() within Promise.any(). Input: Promise.any([simulatedRaceSettled([resolved, rejected]), rejected])
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test nested simulated Promise.raceSettled() within Promise.any(). Input: Promise.any([simulatedRaceSettled([resolved, rejected]), rejected])
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2400';
@@ -1769,12 +1769,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2500
      * @tc.number SUB_PROMISE_RACE_TEST_2500
-     * @tc.name PromiseRaceTest2500
-     * @tc.desc Test Promise.race execution order with .then added after race participation. Input: Promise added to race, then() added to promise, then() added to race result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race execution order with .then added after race participation. Input: Promise added to race, then() added to promise, then() added to race result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2500';
@@ -1844,12 +1844,12 @@ export default function PromiseRaceTest() {
     });
 
     /**
+     * @tc.name   PromiseRaceTest2600
      * @tc.number SUB_PROMISE_RACE_TEST_2600
-     * @tc.name PromiseRaceTest2600
-     * @tc.desc Test Promise.race execution order where promise is added to race, then race.then is executed, then promise.then is executed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race execution order where promise is added to race, then race.then is executed, then promise.then is executed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseRaceTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseRaceTest2600';

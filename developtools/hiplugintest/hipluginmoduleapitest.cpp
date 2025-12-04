@@ -124,18 +124,42 @@ protected:
     }
 };
 
+/**
+ * @tc.name   ProtoConfigNullAndInvalidSo
+ * @tc.number ProtoConfigNullAndInvalidSo
+ * @tc.desc   ProtoConfigNullAndInvalidSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigNullAndInvalidSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
     EXPECT_FALSE(PluginModuleApiTest::MemoryPluginTest(protoConfig, "1111"));
 }
 
+/**
+ * @tc.name   ProtoConfigNullAndEffectiveSo
+ * @tc.number ProtoConfigNullAndEffectiveSo
+ * @tc.desc   ProtoConfigNullAndEffectiveSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigNullAndEffectiveSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
     EXPECT_TRUE(PluginModuleApiTest::MemoryPluginTest(protoConfig, LIB_PATH));
 }
 
+/**
+ * @tc.name   ProtoConfigMemAndInvalidSo
+ * @tc.number ProtoConfigMemAndInvalidSo
+ * @tc.desc   ProtoConfigMemAndInvalidSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndInvalidSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -143,6 +167,14 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndInvalidSo, TestSize.Level1)
     EXPECT_FALSE(PluginModuleApiTest::MemoryPluginTest(protoConfig, "1111"));
 }
 
+/**
+ * @tc.name   ProtoConfigMemAndEffectiveSo
+ * @tc.number ProtoConfigMemAndEffectiveSo
+ * @tc.desc   ProtoConfigMemAndEffectiveSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndEffectiveSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -150,6 +182,14 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigMemAndEffectiveSo, TestSize.Level1)
     EXPECT_TRUE(PluginModuleApiTest::MemoryPluginTest(protoConfig, LIB_PATH));
 }
 
+/**
+ * @tc.name   ProtoConfigPidAndInvalidSo
+ * @tc.number ProtoConfigPidAndInvalidSo
+ * @tc.desc   ProtoConfigPidAndInvalidSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndInvalidSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -158,6 +198,14 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndInvalidSo, TestSize.Level1)
     EXPECT_FALSE(PluginModuleApiTest::MemoryPluginTest(protoConfig, "1111"));
 }
 
+/**
+ * @tc.name   ProtoConfigPidAndEffectiveSo
+ * @tc.number ProtoConfigPidAndEffectiveSo
+ * @tc.desc   ProtoConfigPidAndEffectiveSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndEffectiveSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -166,6 +214,14 @@ HWTEST_F(PluginModuleApiTest, ProtoConfigPidAndEffectiveSo, TestSize.Level1)
     EXPECT_TRUE(PluginModuleApiTest::MemoryPluginTest(protoConfig, LIB_PATH));
 }
 
+/**
+ * @tc.name   MemoryPluginTreeAndInvalidSo
+ * @tc.number MemoryPluginTreeAndInvalidSo
+ * @tc.desc   MemoryPluginTreeAndInvalidSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndInvalidSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -173,6 +229,14 @@ HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndInvalidSo, TestSize.Level1)
     EXPECT_FALSE(PluginModuleApiTest::MemoryPluginTest(protoConfig, "1111"));
 }
 
+/**
+ * @tc.name   MemoryPluginTreeAndEffectiveSo
+ * @tc.number MemoryPluginTreeAndEffectiveSo
+ * @tc.desc   MemoryPluginTreeAndEffectiveSo
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndEffectiveSo, TestSize.Level1)
 {
     MemoryConfig protoConfig;
@@ -180,6 +244,14 @@ HWTEST_F(PluginModuleApiTest, MemoryPluginTreeAndEffectiveSo, TestSize.Level1)
     EXPECT_TRUE(PluginModuleApiTest::MemoryPluginTest(protoConfig, LIB_PATH));
 }
 
+/**
+ * @tc.name   ApiCallInvalidSoAndInvalidStruct
+ * @tc.number ApiCallInvalidSoAndInvalidStruct
+ * @tc.desc   ApiCallInvalidSoAndInvalidStruct
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndInvalidStruct, TestSize.Level1)
 {
     PluginModuleStruct memplugin;
@@ -189,6 +261,14 @@ HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndInvalidStruct, TestSize.Level1)
     ASSERT_EQ(memplugin.callbacks->onRegisterWriterStruct(nullptr), 0);
 }
 
+/**
+ * @tc.name   ApiCallEffectiveSoAndInvalidStruct
+ * @tc.number ApiCallEffectiveSoAndInvalidStruct
+ * @tc.desc   ApiCallEffectiveSoAndInvalidStruct
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ApiCallEffectiveSoAndInvalidStruct, TestSize.Level1)
 {
     PluginModuleStruct* memplugin;
@@ -203,6 +283,14 @@ HWTEST_F(PluginModuleApiTest, ApiCallEffectiveSoAndInvalidStruct, TestSize.Level
     ASSERT_EQ(memplugin->callbacks->onRegisterWriterStruct(nullptr), 0);
 }
 
+/**
+ * @tc.name   ApiCallInvalidSoAndEffectiveStruct
+ * @tc.number ApiCallInvalidSoAndEffectiveStruct
+ * @tc.desc   ApiCallInvalidSoAndEffectiveStruct
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndEffectiveStruct, TestSize.Level1)
 {
     PluginModuleStruct memplugin;
@@ -213,6 +301,14 @@ HWTEST_F(PluginModuleApiTest, ApiCallInvalidSoAndEffectiveStruct, TestSize.Level
     ASSERT_EQ(memplugin.callbacks->onRegisterWriterStruct(&writer), 0);
 }
 
+/**
+ * @tc.name   ApiCallEffectiveSoAndEffectiveStruct
+ * @tc.number ApiCallEffectiveSoAndEffectiveStruct
+ * @tc.desc   ApiCallEffectiveSoAndEffectiveStruct
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(PluginModuleApiTest, ApiCallEffectiveSoAndEffectiveStruct, TestSize.Level1)
 {
     PluginModuleStruct* memplugin;

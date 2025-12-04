@@ -26,52 +26,52 @@ export default function textOpacityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OPACITY_0100
-     * @tc.name       : testTextOpacity001
-     * @tc.desc       : testing opacity for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOpacity001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OPACITY_0100
+     * @tc.desc   testing opacity for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOpacity001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOpacity001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OPACITY_0200
-     * @tc.name       : testTextOpacity002
-     * @tc.desc       : testing opacity for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOpacity002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OPACITY_0200
+     * @tc.desc   testing opacity for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOpacity002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOpacity002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OPACITY_0300
-     * @tc.name       : testTextOpacity003
-     * @tc.desc       : testing opacity for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextOpacity003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OPACITY_0300
+     * @tc.desc   testing opacity for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOpacity003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOpacity003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_OPACITY_0400
-     * @tc.name       : testTextOpacity004
-     * @tc.desc       : testing opacity for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextOpacity004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_OPACITY_0400
+     * @tc.desc   testing opacity for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextOpacity004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextOpacity004()).assertEqual(0)

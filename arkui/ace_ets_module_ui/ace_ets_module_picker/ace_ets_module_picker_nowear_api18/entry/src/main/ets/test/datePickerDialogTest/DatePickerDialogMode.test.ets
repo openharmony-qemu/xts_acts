@@ -40,13 +40,13 @@ export default function datePickerDialogModeTest() {
     });
 
      /**
-     * @tc.number    DatePickerDialog0100
-     * @tc.name      DatePickerDialog0100
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      * @tc.name   DatePickerDialog_0010
+      * @tc.number DatePickerDialog0100
+      * @tc.desc   createDatePickerDialogModeToWindow
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('DatePickerDialog_0010', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0010';
         console.info('[' + tagName + '] START============================');
@@ -65,14 +65,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0200
-     * @tc.name      DatePickerDialog0200
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0020
+       * @tc.number DatePickerDialog0200
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0020', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0020';
         console.info('[' + tagName + '] START============================');
@@ -91,14 +91,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0300
-     * @tc.name      DatePickerDialog0300
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0030
+       * @tc.number DatePickerDialog0300
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0030', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0030';
         console.info('[' + tagName + '] START============================');
@@ -118,14 +118,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0400
-     * @tc.name      DatePickerDialog0400
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0040
+       * @tc.number DatePickerDialog0400
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0040', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0040';
         console.info('[' + tagName + '] START============================');
@@ -144,14 +144,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0500
-     * @tc.name      DatePickerDialog0500
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0050
+       * @tc.number DatePickerDialog0500
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0050', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0050';
         console.info('[' + tagName + '] START============================');
@@ -170,14 +170,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0600
-     * @tc.name      DatePickerDialog0600
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0060
+       * @tc.number DatePickerDialog0600
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0060', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0060';
         console.info('[' + tagName + '] START============================');
@@ -197,14 +197,14 @@ export default function datePickerDialogModeTest() {
         done();
       });
   
-       /**
-     * @tc.number    DatePickerDialog0700
-     * @tc.name      DatePickerDialog0700
-     * @tc.desc      createDatePickerDialogModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+      /**
+       * @tc.name   DatePickerDialog_0070
+       * @tc.number DatePickerDialog0700
+       * @tc.desc   createDatePickerDialogModeToWindow
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('DatePickerDialog_0070', Level.LEVEL1, async (done: Function) => {
         let tagName = 'DatePickerDialog_0070';
         console.info('[' + tagName + '] START============================');

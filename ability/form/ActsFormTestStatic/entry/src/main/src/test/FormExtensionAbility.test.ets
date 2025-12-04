@@ -47,14 +47,7 @@ export default function formExtensionAbilityTest() {
                 events: ["XTS_FormExtensionAbilityOnStopTest_commonEvent"],
             };
             let isChecked: boolean = false;
-            let tmpsubscriber = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnStopTest_Event) as CommonEventManager.CommonEventSubscriber;
-            if (tmpsubscriber !== null){
-                subscriberForm = tmpsubscriber
-            }else{
-                console.info(TAG+`tmpsubscriber is null`)
-                expect(false).assertTrue()
-                done()
-            }
+            let subscriberForm: CommonEventManager.CommonEventSubscriber = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnStopTest_Event);
 
             let onStopCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
                 isChecked = true;
@@ -84,7 +77,7 @@ export default function formExtensionAbilityTest() {
                 events: ["XTS_FormExtensionAbilityOnAcquireFormState_commonEvent"],
             };
             let isChecked: boolean = false;
-            subscriberForm = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnAcquireFormStateTest_Event);
+            let subscriberForm: CommonEventManager.CommonEventSubscriber = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnAcquireFormStateTest_Event);
             let onAcquireFormStateCallBack = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
                 isChecked = true;
                 hilog.info(DOMAIN, TAG, "OnAcquireFormStateStaticTest001 onAcquireFormStateCallBack");
@@ -114,7 +107,7 @@ export default function formExtensionAbilityTest() {
                 events: ["XTS_FormExtensionAbilityOnConfigurationUpdate_commonEvent"],
             };
             let isChecked: boolean = false;
-            subscriberForm = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnAcquireFormStateTest_Event);
+            let subscriberForm: CommonEventManager.CommonEventSubscriber = CommonEventManager.createSubscriberSync(FormExtensionAbilityOnAcquireFormStateTest_Event);
             let onConfigurationUpdateCallback = (_: BusinessError | null, data: CommonEventManager.CommonEventData | undefined) => {
                 isChecked = true;
                 hilog.info(DOMAIN, TAG, "OnConfigurationUpdateStaticTest001 OnConfigurationUpdateCallBack");

@@ -39,19 +39,19 @@ namespace OHOS {
     {
     }
 
-    /*
-     * @tc.number: TestVulkanMonolithicTestCase004
-     * @tc.name  : TestVulkanMonolithicTestCase004
-     * @tc.desc  : test vulkan xts
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 1
+    /**
+     * @tc.name   TestVulkanMonolithicTestCase004
+     * @tc.number TestVulkanMonolithicTestCase004
+     * @tc.desc   test vulkan xts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     HWTEST_F(ActsVulkanMonolithic4Test, TestVulkanMonolithicTestCase004, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanMonolithic4Test------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/pipeline/monolithic4.txt "
                 "--deqp-log-filename=ActsVulkanMonolithic4Test.qpa");
         }

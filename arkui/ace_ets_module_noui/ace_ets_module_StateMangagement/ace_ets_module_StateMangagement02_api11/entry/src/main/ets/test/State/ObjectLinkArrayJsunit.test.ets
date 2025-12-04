@@ -64,6 +64,14 @@ export default function ObjectLinkArrayJsunit() {
       await CommonFunc.sleep(1000);
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0100
+     * @tc.number ObjectLinkArrayJsunit_0100
+     * @tc.desc   ObjectLinkArrayJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0100 START');
@@ -76,6 +84,14 @@ export default function ObjectLinkArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0200
+     * @tc.number ObjectLinkArrayJsunit_0200
+     * @tc.desc   ObjectLinkArrayJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0200 START');
@@ -93,6 +109,14 @@ export default function ObjectLinkArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0300
+     * @tc.number ObjectLinkArrayJsunit_0300
+     * @tc.desc   ObjectLinkArrayJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0300 START');
@@ -110,6 +134,14 @@ export default function ObjectLinkArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0400
+     * @tc.number ObjectLinkArrayJsunit_0400
+     * @tc.desc   ObjectLinkArrayJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0400 START');
@@ -127,6 +159,14 @@ export default function ObjectLinkArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0500
+     * @tc.number ObjectLinkArrayJsunit_0500
+     * @tc.desc   ObjectLinkArrayJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0500 START');
@@ -144,6 +184,14 @@ export default function ObjectLinkArrayJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   ObjectLinkArrayJsunit_0600
+     * @tc.number ObjectLinkArrayJsunit_0600
+     * @tc.desc   ObjectLinkArrayJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ObjectLinkArrayJsunit_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('ObjectLinkArrayJsunit_0600 START');

@@ -33,11 +33,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
       done();
     })
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0100
-    * @tc.name    : getOsAccountLocalIdForUid callback
-    * @tc.desc    : Verify that the user localId is obtained by uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0100
+     * @tc.number ActsOsAccountQueryIdFormUid_0100
+     * @tc.desc   Verify that the user localId is obtained by uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -58,11 +61,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       });
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0200
-    * @tc.name    : getOsAccountLocalIdForUid promise
-    * @tc.desc    : Verify that the user localId is obtained by uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0200
+     * @tc.number ActsOsAccountQueryIdFormUid_0200
+     * @tc.desc   Verify that the user localId is obtained by uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0200 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -79,11 +85,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       done();
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0300
-    * @tc.name    : getOsAccountLocalIdForUid callback
-    * @tc.desc    : Authentication failed to query user by uid -1
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0300
+     * @tc.number ActsOsAccountQueryIdFormUid_0300
+     * @tc.desc   Authentication failed to query user by uid -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0300 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -99,11 +108,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       });
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0400
-    * @tc.name    : getOsAccountLocalIdForUid promise
-    * @tc.desc    : Authentication failed to query user by uid -1
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0400
+     * @tc.number ActsOsAccountQueryIdFormUid_0400
+     * @tc.desc   Authentication failed to query user by uid -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0400 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -119,11 +131,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0500
-    * @tc.name    : getOsAccountLocalIdForUid callback
-    * @tc.desc    : Authentication failed to query user by uid 2147483648
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0500
+     * @tc.number ActsOsAccountQueryIdFormUid_0500
+     * @tc.desc   Authentication failed to query user by uid 2147483648
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0500 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -139,11 +154,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       });
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUid_0600
-    * @tc.name    : getOsAccountLocalIdForUid promise
-    * @tc.desc    : Authentication failed to query user by uid 2147483648
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUid_0600
+     * @tc.number ActsOsAccountQueryIdFormUid_0600
+     * @tc.desc   Authentication failed to query user by uid 2147483648
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUid_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUid_0600 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -159,11 +177,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUidSync_0100
-    * @tc.name    : getOsAccountLocalIdForUidSync
-    * @tc.desc    : Verify that the user localId is obtained by uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0100
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0100
+     * @tc.desc   Verify that the user localId is obtained by uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUidSync_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -188,11 +209,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUidSync_0200
-    * @tc.name    : getOsAccountLocalIdForUidSync
-    * @tc.desc    : Authentication failed to query user by uid -1
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0200
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0200
+     * @tc.desc   Authentication failed to query user by uid -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUidSync_0200 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -210,11 +234,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUidSync_0300
-    * @tc.name    : getOsAccountLocalIdForUidSync
-    * @tc.desc    : Authentication failed to query user by uid 2147483648
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0300
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0300
+     * @tc.desc   Authentication failed to query user by uid 2147483648
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUidSync_0300 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -232,11 +259,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormUidSync_0400
-    * @tc.name    : getOsAccountLocalIdForUidSync
-    * @tc.desc    : Authentication failed to query user by null uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormUidSync_0400
+     * @tc.number ActsOsAccountQueryIdFormUidSync_0400
+     * @tc.desc   Authentication failed to query user by null uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryIdFormUidSync_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormUidSync_0400 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -253,11 +283,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormProcess_0100
-    * @tc.name    : getOsAccountLocalId callback
-    * @tc.desc    : Verify that the user localId obtained from the current process uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormProcess_0100
+     * @tc.number ActsOsAccountQueryIdFormProcess_0100
+     * @tc.desc   Verify that the user localId obtained from the current process uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountQueryIdFormProcess_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormProcess_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -276,11 +309,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       });
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryIdFormProcess_0200
-    * @tc.name    : getOsAccountLocalId promise
-    * @tc.desc    : Verify that the user localId obtained from the current process uid
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryIdFormProcess_0200
+     * @tc.number ActsOsAccountQueryIdFormProcess_0200
+     * @tc.desc   Verify that the user localId obtained from the current process uid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountQueryIdFormProcess_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountQueryIdFormProcess_0200 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -297,11 +333,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       done();
     });
 
-    /*
-    * @tc.number  : ActsOsAccountgetType_0100
-    * @tc.name    : getOsAccountType callback
-    * @tc.desc    : Verify that the user type obtained from the current process uid
-    */
+    /**
+     * @tc.name   ActsOsAccountgetType_0100
+     * @tc.number ActsOsAccountgetType_0100
+     * @tc.desc   Verify that the user type obtained from the current process uid, getOsAccountType callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountgetType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountgetType_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -310,33 +349,45 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         console.info("====>get type err: " + JSON.stringify(err));
         console.info("====>type obtained by process:" + JSON.stringify(accountType));
         expect(err).assertEqual(null);
-        expect(accountType).assertEqual(0);
+        expect(accountType).assertEqual(osaccount.OsAccountType.ADMIN);
         console.info("====>ActsOsAccountgetType_0100 end====");
         done();
       });
     });
 
-    /*
-    * @tc.number  : ActsOsAccountgetType_0200
-    * @tc.name    : getOsAccountType promise
-    * @tc.desc    : Verify that the user type obtained from the current process uid
-    */
+    /**
+     * @tc.name   ActsOsAccountgetType_0200
+     * @tc.number ActsOsAccountgetType_0200
+     * @tc.desc   Verify that the user type obtained from the current process uid, getOsAccountType promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountgetType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountgetType_0200 start====");
-      var osAccountManager = osaccount.getAccountManager();
+      let osAccountManager = osaccount.getAccountManager();
       console.info("====>get AccountManager finish====");
-      var accountType = await osAccountManager.getOsAccountType();
-      console.info("====>type obtained by process:" + JSON.stringify(accountType));
-      expect(accountType).assertEqual(0);
-      console.info("====>ActsOsAccountgetType_0200 end====");
-      done();
+      try {
+        let accountType = await osAccountManager.getOsAccountType();
+        console.info("====>type obtained by process:" + JSON.stringify(accountType));
+        expect(accountType).assertEqual(osaccount.OsAccountType.ADMIN);
+        console.info("====>ActsOsAccountgetType_0200 end====");
+        done();
+      } catch (err) {
+        console.info("====>get type err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0100
-    * @tc.name    : getSerialNumberForOsAccountLocalId callback
-    * @tc.desc    : Verify query serialNumber by 100 user and query 100 user by serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0100
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0100
+     * @tc.desc   Verify query serialNumber by 100 user and query 100 user by serialNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsOsAccountQueryLocalIdSerial_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -360,11 +411,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0200
-    * @tc.name    : getSerialNumberForOsAccountLocalId promise
-    * @tc.desc    : Verify query serialNumber by 100 user and query 100 user by serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0200
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0200
+     * @tc.desc   Verify query serialNumber by 100 user and query 100 user by serialNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsOsAccountQueryLocalIdSerial_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0200 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -382,11 +436,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       done();
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0300
-    * @tc.name    : getOsAccountLocalIdForSerialNumber callback
-    * @tc.desc    : Verify query serialNumber by 0 user and query 0 user by serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0300
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0300
+     * @tc.desc   Verify query serialNumber by 0 user and query 0 user by serialNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsOsAccountQueryLocalIdSerial_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0300 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -410,11 +467,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0400
-    * @tc.name    : getOsAccountLocalIdForSerialNumber promise
-    * @tc.desc    : Verify query serialNumber by 0 user and query 0 user by serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0400
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0400
+     * @tc.desc   Verify query serialNumber by 0 user and query 0 user by serialNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ActsOsAccountQueryLocalIdSerial_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0400 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -432,12 +492,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       done();
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0500
-    * @tc.name    : getSerialNumberForOsAccountLocalId callback
-    * @tc.desc    : Verify the query for the newly created user serialNumber and query the owning user through the
-    *               serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0500
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0500
+     * @tc.desc   Verify the query for the newly created user serialNumber and query the owning user through the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryLocalIdSerial_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0500 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -500,12 +562,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryLocalIdSerial_0600
-    * @tc.name    : getOsAccountLocalIdForSerialNumber promise
-    * @tc.desc    : Verify the query for the newly created user serialNumber and query the owning user through the
-    *               serialNumber
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryLocalIdSerial_0600
+     * @tc.number ActsOsAccountQueryLocalIdSerial_0600
+     * @tc.desc   Verify the query for the newly created user serialNumber and query the owning user through the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryLocalIdSerial_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryLocalIdSerial_0600 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -537,11 +601,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       done();
     });
 
-    /*
-    * @tc.number  : ActsOsAccountQueryCounts_0100
-    * @tc.name    : getOsAccountCount callback
-    * @tc.desc    : Verify to obtain the number os all os accounts created
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryCounts_0100
+     * @tc.number ActsOsAccountQueryCounts_0100
+     * @tc.desc   Verify to obtain the number os all os accounts created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryCounts_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryCounts_0100 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -595,11 +662,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     })
 
-    /*
-    * @tc.number  : ActsOsAccountQueryCounts_0200
-    * @tc.name    : getOsAccountCount promise
-    * @tc.desc    : Verify to obtain the number os all os accounts created
-    */
+    /**
+     * @tc.name   ActsOsAccountQueryCounts_0200
+     * @tc.number ActsOsAccountQueryCounts_0200
+     * @tc.desc   Verify to obtain the number os all os accounts created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountQueryCounts_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryCounts_0200 start====");
       var osAccountManager = osaccount.getAccountManager();
@@ -631,48 +701,60 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
     })
 
 
-    /*
-    * @tc.number  : ActsOsAccountGetActivedOsAccountIds_0100
-    * @tc.name    : getActivatedOsAccountLocalIds callback
-    * @tc.desc    : query activated osAccount Ids
-    */
+    /**
+     * @tc.name   ActsOsAccountGetActivedOsAccountIds_0100
+     * @tc.number ActsOsAccountGetActivedOsAccountIds_0100
+     * @tc.desc   query activated osAccount Ids, getActivatedOsAccountLocalIds callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetActivedOsAccountIds_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountGetActivedOsAccountIds_0100 start====");
-      var osAccountManager = osaccount.getAccountManager();
+      let osAccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
       osAccountManager.getActivatedOsAccountLocalIds((err, dataArray) => {
         console.info("====>ActsOsAccountGQueryActicedOsAccountIds_0100 err :" + JSON.stringify(err));
-        expect(err).assertEqual(null)
         console.info("====>ActsOsAccountGQueryActicedOsAccountIds_0100 dataArray:" + dataArray);
-        expect(dataArray.length >= 1).assertTrue();
+        expect(err).assertEqual(null)
+        expect(dataArray.length > 0).assertTrue();
         done();
       })
     })
 
-    /*
-    * @tc.number  : ActsOsAccountGetActivedOsAccountIds_0200
-    * @tc.name    : getActivatedOsAccountLocalIds promise
-    * @tc.desc    : query activated osAccount Ids
-    */
+    /**
+     * @tc.name   ActsOsAccountGetActivedOsAccountIds_0200
+     * @tc.number ActsOsAccountGetActivedOsAccountIds_0200
+     * @tc.desc   query activated osAccount Ids, getActivatedOsAccountLocalIds promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetActivedOsAccountIds_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountGetActivedOsAccountIds_0200 start====");
-      var osAccountManager = osaccount.getAccountManager();
-      osAccountManager.getActivatedOsAccountLocalIds().then((dataArray) => {
-        console.info("====>ActsOsAccountGetActivedOsAccountIds_0200 data" + JSON.stringify(dataArray))
-        expect(dataArray.length >= 1).assertTrue();
+      let osAccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      try {
+        let dataArray = await osAccountManager.getActivatedOsAccountLocalIds();
+        console.info("====>ActsOsAccountGetActivedOsAccountIds_0200 data: " + dataArray);
+        expect(dataArray.length > 0).assertTrue();
         done();
-      }).catch((err) => {
-        console.info("====>ActsOsAccountGetActivedOsAccountIds_0200 err " + JSON.stringify(err));
-        expect(err).assertFalse()
+      } catch (err) {
+        console.info("====>ActsOsAccountGetActivedOsAccountIds_0200 err: " + JSON.stringify(err));
+        expect().assertFail();
         done();
-      });
-    })
+      }
+    });
 
 
-    /*
-    * @tc.number  : ActsOsAccountCheckConstraints_0300
-    * @tc.name    : Constraints callback
-    * @tc.desc    : get 0 local user all constraints
-    */
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3100
+     * @tc.number ActsOsAccountCheckConstraints_0300
+     * @tc.desc   get 0 local user all constraints
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountCheckConstraints_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3100 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -687,29 +769,37 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     })
 
-    /*
-    * @tc.number  : ActsOsAccountCheckConstraints_0400
-    * @tc.name    : Constraints promise
-    * @tc.desc    : get 0 local user all constraints
-    */
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3200
+     * @tc.number ActsOsAccountCheckConstraints_3200
+     * @tc.desc   get 0 local user all constraints, Constraints promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountCheckConstraints_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3200 start====");
-      var AccountManager = osaccount.getAccountManager();
+      let AccountManager = osaccount.getAccountManager();
       console.info("get AccountManager finish====");
-      AccountManager.getOsAccountConstraints(0).then((data) => {
-        console.info("====>ActsOsAccountCheckConstraints_3200 getOsAccountConstraints data:" + data);
+      try {
+        let constraints = await AccountManager.getOsAccountConstraints(0);
+        console.info("====>ActsOsAccountCheckConstraints_3200 getOsAccountConstraints data:" + constraints);
+        expect(constraints.length).assertEqual(0);
         done();
-      }).catch((err) => {
+      } catch (err) {
         console.info("====>ActsOsAccountCheckConstraints_3200 getOsAccountConstraints err:" + JSON.stringify(err));
-        expect().assertFalse()
+        expect().assertFail();
         done();
-      })
-    })
+      }
+    });
 
     /**
+     * @tc.name   ActsOsAccountQueryDomainTest_0300
      * @tc.number ActsOsAccountQueryDomainTest_0300
-     * @tc.name Test createOsAccountForDomain getOsAccountLocalIdForDomain callback
-     * @tc.desc Test createOsAccountForDomain getOsAccountLocalIdForDomain API functionality
+     * @tc.desc   Test createOsAccountForDomain getOsAccountLocalIdForDomain API functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsOsAccountQueryDomainTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryDomainTest_0100 start====");
@@ -723,9 +813,12 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
     });
 
     /**
+     * @tc.name   ActsOsAccountQueryDomainTest_0400
      * @tc.number ActsOsAccountQueryDomainTest_0400
-     * @tc.name Test createOsAccountForDomain getOsAccountLocalIdForDomain pormise
-     * @tc.desc Test createOsAccountForDomain getOsAccountLocalIdForDomain API functionality
+     * @tc.desc   Test createOsAccountForDomain getOsAccountLocalIdForDomain API functionality
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsOsAccountQueryDomainTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountQueryDomainTest_0400 start====");
@@ -740,11 +833,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     });
 
-    /*
-    * @tc.number  : ActsOsAccountGetCurrent_2100
-    * @tc.name    : getCurrentOsAccount callback
-    * @tc.desc    : Get the os account information to which the application belongs
-    */
+    /**
+     * @tc.name   ActsOsAccountGetCurrent_2100
+     * @tc.number ActsOsAccountGetCurrent_2100
+     * @tc.desc   Get the os account information to which the application belongs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetCurrent_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountGetCurrent_2100 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -758,11 +854,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     })
 
-    /*
-    * @tc.number  : ActsOsAccountGetCurrent_1800
-    * @tc.name    : getCurrentOsAccount promise
-    * @tc.desc    : Get the os account information to which the application belongs
-    */
+    /**
+     * @tc.name   ActsOsAccountGetCurrent_2200
+     * @tc.number ActsOsAccountGetCurrent_1800
+     * @tc.desc   Get the os account information to which the application belongs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountGetCurrent_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountGetCurrent_2200 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -780,14 +879,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
     })
 
 
-    /*
-    * @tc.number  : ActsOsAccountCheckConstraints_3300
-    * @tc.name    : checkOsAccountConstraintEnabled callback
-    * @tc.desc    : Checks whether the given constraint is enabled for the specified OS account
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3300
+     * @tc.number ActsOsAccountCheckConstraints_3300
+     * @tc.desc   Checks whether the given constraint is enabled for the specified OS account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountCheckConstraints_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3300 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -802,14 +901,14 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       })
     })
 
-    /*
-    * @tc.number  : ActsOsAccountPermission_3400
-    * @tc.name    : checkOsAccountConstraintEnabled promise
-    * @tc.desc    : Checks whether the given constraint is enabled for the specified OS account
-    * @tc.level   : Level3
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3400
+     * @tc.number ActsOsAccountCheckConstraints_3400
+     * @tc.desc   Checks whether the given constraint is enabled for the specified OS account, promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsOsAccountCheckConstraints_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
       console.info("====>ActsOsAccountCheckConstraints_3400 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -817,7 +916,7 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       try {
         let data = await AccountManager.checkOsAccountConstraintEnabled(100, "constraint.bluetooth");
         console.info("====>checkOsAccountConstraintEnabled data:" + JSON.stringify(data));
-        expect(data).assertEqual(true);
+        expect(data).assertTrue();
         done();
       } catch (err) {
         console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
@@ -827,14 +926,60 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     })
 
-    /*
-    * @tc.number  : ActsOsAccountIsOsAccountConstraintEnabled_0100
-    * @tc.name    : IsOsAccountConstraintEnabled promise
-    * @tc.desc    : Checks whether the given constraint is enabled for the current OS account
-    * @tc.level   : Level0
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3500
+     * @tc.number ActsOsAccountCheckConstraints_3500
+     * @tc.desc   check checkOsAccountConstraintEnabled interface for callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3500 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      AccountManager.checkOsAccountConstraintEnabled(100, "constraint.fun", (err, result) => {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err).assertEqual(null);
+        expect(result).assertFalse();
+        console.info("====>ActsOsAccountCheckConstraints_3500 end====");
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3600
+     * @tc.number ActsOsAccountCheckConstraints_3600
+     * @tc.desc   check checkOsAccountConstraintEnabled interface for promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3600 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      try {
+        let data = await AccountManager.checkOsAccountConstraintEnabled(100, "constraint.fun");
+        console.info("====>checkOsAccountConstraintEnabled data:" + JSON.stringify(data));
+        expect(data).assertFalse();
+        done();
+      } catch (err) {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err).assertEqual(null);
+        console.info("====>ActsOsAccountCheckConstraints_3600 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ActsOsAccountIsOsAccountConstraintEnabled_0100
+     * @tc.number ActsOsAccountIsOsAccountConstraintEnabled_0100
+     * @tc.desc   Checks whether the given constraint is enabled for the current OS account
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountIsOsAccountConstraintEnabled_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountIsOsAccountConstraintEnabled_0100 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -852,14 +997,39 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
       }
     })
 
-    /*
-    * @tc.number  : ActsOsAccountGetOsAccountName_0100
-    * @tc.name    : GetOsAccountName promise
-    * @tc.desc    : Gets the name of the OS account to which the caller belongs
-    * @tc.level   : Level0
-    * @tc.size    : MediumTest
-    * @tc.type    : Function
-    */
+    /**
+     * @tc.name   ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.number ActsOsAccountIsOsAccountConstraintEnabled_0200
+     * @tc.desc   Checks whether the given constraint is enabled for the current OS account,IsOsAccountConstraintEnabled promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('ActsOsAccountIsOsAccountConstraintEnabled_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+      console.info("====>ActsOsAccountIsOsAccountConstraintEnabled_0200 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      try {
+        let IsOsAccountConstraintEnabled = await AccountManager.isOsAccountConstraintEnabled("constraint.fun");
+        console.info("====>isOsAccountConstraintEnabled data:" + JSON.stringify(IsOsAccountConstraintEnabled));
+        expect(IsOsAccountConstraintEnabled).assertFalse();
+        done();
+      } catch (err) {
+        console.info("====>isOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err).assertEqual(null);
+        console.info("====>ActsOsAccountIsOsAccountConstraintEnabled_0200 end====");
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   ActsOsAccountGetOsAccountName_0100
+     * @tc.number ActsOsAccountGetOsAccountName_0100
+     * @tc.desc   Gets the name of the OS account to which the caller belongs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ActsOsAccountGetOsAccountName_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info("====>ActsOsAccountGetOsAccountName_0100 start====");
       var AccountManager = osaccount.getAccountManager();
@@ -875,5 +1045,140 @@ export default function ActsOsAccountThirdPartyTest_third_4() {
         done();
       }
     })
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3700
+     * @tc.number ActsOsAccountCheckConstraints_3700
+     * @tc.desc   get 100 local user all constraints, Constraints callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3700 start====");
+      var AccountManager = osaccount.getAccountManager();
+      console.info("====>get AccountManager finish====");
+      AccountManager.getOsAccountConstraints(100, (err, constraints) => {
+        console.info("====>getOsAccountConstraints err:" + JSON.stringify(err));
+        console.info("====>getOsAccountConstraints:" + JSON.stringify(constraints));
+        expect(err).assertEqual(null);
+        expect(constraints.length > 0).assertTrue();
+        console.info("====>ActsOsAccountCheckConstraints_3700 end====");
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3800
+     * @tc.number ActsOsAccountCheckConstraints_3800
+     * @tc.desc   get 100 local user all constraints, Constraints promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3800 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("get AccountManager finish====");
+      try {
+        let constraints = await AccountManager.getOsAccountConstraints(100);
+        console.info("====>ActsOsAccountCheckConstraints_3800 getOsAccountConstraints data:" + constraints);
+        expect(constraints.length > 0).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>ActsOsAccountCheckConstraints_3800 getOsAccountConstraints err:" + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_3900
+     * @tc.number ActsOsAccountCheckConstraints_3900
+     * @tc.desc   check checkOsAccountConstraintEnabled interface for callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_3900 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      AccountManager.checkOsAccountConstraintEnabled(999, "constraint.fun", (err, result) => {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_3900 end====");
+        done();
+      });
+    });
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_4000
+     * @tc.number ActsOsAccountCheckConstraints_4000
+     * @tc.desc   check checkOsAccountConstraintEnabled interface for promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4000 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get os AccountManager finish====");
+      try {
+        let data = await AccountManager.checkOsAccountConstraintEnabled(999, "constraint.fun");
+        console.info("====>checkOsAccountConstraintEnabled data:" + JSON.stringify(data));
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>checkOsAccountConstraintEnabled err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_4000 end====");
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_4100
+     * @tc.number ActsOsAccountCheckConstraints_4100
+     * @tc.desc   get 100 local user all constraints, Constraints callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4100 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("====>get AccountManager finish====");
+      AccountManager.getOsAccountConstraints(-1, (err, constraints) => {
+        console.info("====>getOsAccountConstraints err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        console.info("====>ActsOsAccountCheckConstraints_4100 end====");
+        done();
+      })
+    })
+
+    /**
+     * @tc.name   ActsOsAccountCheckConstraints_4200
+     * @tc.number ActsOsAccountCheckConstraints_4200
+     * @tc.desc   get 100 local user all constraints, Constraints promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
+    it('ActsOsAccountCheckConstraints_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
+      console.info("====>ActsOsAccountCheckConstraints_4200 start====");
+      let AccountManager = osaccount.getAccountManager();
+      console.info("get AccountManager finish====");
+      try {
+        await AccountManager.getOsAccountConstraints(9999);
+        console.info("====>ActsOsAccountCheckConstraints_4200 run err");
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>ActsOsAccountCheckConstraints_4200 getOsAccountConstraints err:" + JSON.stringify(err));
+        expect(err.code).assertEqual(12300003);
+        done();
+      }
+    });
   })
 }

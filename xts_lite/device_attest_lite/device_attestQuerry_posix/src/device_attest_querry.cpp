@@ -97,9 +97,12 @@ protected:
 };
 
 /**
- * @tc.number    : Sub_Device_Attest_Test_0200
- * @tc.name      : HiLog::Warn parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   subDeviceAttestTest0200
+ * @tc.number Sub_Device_Attest_Test_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DeviceAttestQuerryTest, subDeviceAttestTest0200, Function | MediumTest | Level1)
 {
@@ -114,9 +117,12 @@ HWTEST_F(DeviceAttestQuerryTest, subDeviceAttestTest0200, Function | MediumTest 
 }
 
 /**
- * @tc.number    : Sub_Device_Attest_Test_0300
- * @tc.name      : HiLog::Warn parameter legal test (Cortex-A, C)
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   subDeviceAttestTest0300
+ * @tc.number Sub_Device_Attest_Test_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(DeviceAttestQuerryTest, subDeviceAttestTest0300, Function | MediumTest | Level1)
 {

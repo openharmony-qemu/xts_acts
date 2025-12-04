@@ -29,12 +29,12 @@ export default function locationManagerTest() {
 
 function testSetLocationPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0001
-   * @tc.name      : test_set_location_policy_0001
-   * @tc.desc      : test locationManager setLocationPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_location_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0001
+   * @tc.desc   test locationManager setLocationPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_location_policy_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -49,15 +49,15 @@ function testSetLocationPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0002
-   * @tc.name      : test_set_location_policy_0002
-   * @tc.desc      : test locationManager setLocationPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_location_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0002
+   * @tc.desc   test locationManager setLocationPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.setLocationPolicy(SELFWANT, locationManager.LocationPolicy.DISALLOW_LOCATION_SERVICE);
       expect(false).assertTrue();
@@ -72,12 +72,12 @@ function testSetLocationPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0003
-   * @tc.name      : test_set_location_policy_0003
-   * @tc.desc      : test locationManager setLocationPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_location_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0003
+   * @tc.desc   test locationManager setLocationPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_location_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -94,12 +94,12 @@ function testSetLocationPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0004
-   * @tc.name      : test_set_location_policy_0004
-   * @tc.desc      : test locationManager setLocationPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_location_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_LOCATION_POLICY_JS_0004
+   * @tc.desc   test locationManager setLocationPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_location_policy_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -119,12 +119,12 @@ function testSetLocationPolicy() {
 
 function testGetLocationPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0001
-   * @tc.name      : test_get_location_policy_0001
-   * @tc.desc      : test locationManager getLocationPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_location_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0001
+   * @tc.desc   test locationManager getLocationPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_location_policy_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -137,15 +137,15 @@ function testGetLocationPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0002
-   * @tc.name      : test_get_location_policy_0002
-   * @tc.desc      : test locationManager getLocationPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_location_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0002
+   * @tc.desc   test locationManager getLocationPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_location_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       locationManager.getLocationPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -158,12 +158,12 @@ function testGetLocationPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0003
-   * @tc.name      : test_get_location_policy_0003
-   * @tc.desc      : test locationManager getLocationPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_location_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_LOCATION_POLICY_JS_0003
+   * @tc.desc   test locationManager getLocationPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_location_policy_0003", Level.LEVEL2, async (done: Function) => {
     try {

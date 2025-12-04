@@ -49,7 +49,7 @@ export default function abilityTest() {
     let id:number | undefined = undefined;
 
     beforeEach(async (done:Function) => {
-      setTimeout(() => { done(); }, 3000)
+      setTimeout(() => { done(); }, 100)
     })
 
     beforeAll(async (done:Function) => {
@@ -63,7 +63,7 @@ export default function abilityTest() {
         setTimeout(() => {
             console.log(TAG1 + "beforeAll end");
             done();
-        }, 1000);
+        }, 100);
     })
         
     afterAll(async (done:Function) => {
@@ -72,13 +72,16 @@ export default function abilityTest() {
         setTimeout(() => {
             console.log(TAG1 + "afterAll end");
             done();
-        }, 1000);
+        }, 100);
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0100
-     * @tc.name: Starting standard Ability for the first time does not trigger onNewWant.
-     * @tc.desc: Starting standard Ability for the first time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0100
+     * @tc.number ACTS_NewWant_Test_0100
+     * @tc.desc   Starting standard Ability for the first time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0100', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0100 --- start")
@@ -141,21 +144,15 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0100 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-      await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0200
-     * @tc.name: Starting singleton Ability for the first time does not trigger onNewWant.
-     * @tc.desc: Starting singleton Ability for the first time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0200
+     * @tc.number ACTS_NewWant_Test_0200
+     * @tc.desc   Starting singleton Ability for the first time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0200', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0200 --- start")
@@ -219,21 +216,15 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0200 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0300
-     * @tc.name: Starting standard ability the second time does not trigger onNewWant.
-     * @tc.desc: Starting standard ability the second time does not trigger onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0300
+     * @tc.number ACTS_NewWant_Test_0300
+     * @tc.desc   Starting standard ability the second time does not trigger onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0300', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0300 --- start")
@@ -303,21 +294,15 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0300 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0400
-     * @tc.name: Two abilities of the same hap
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0400
+     * @tc.number ACTS_NewWant_Test_0400
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0400', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0400 --- start")
@@ -388,21 +373,15 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0400 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0500
-     * @tc.name: Two haps of the same app
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0500
+     * @tc.number ACTS_NewWant_Test_0500
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0500', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0500 --- start")
@@ -473,21 +452,15 @@ export default function abilityTest() {
         console.log('ACTS_NewWant_Test_0500 - startAbility start HapB: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
       })
-
-       await driver.delayMs(2000);
-      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_1'));
-      if (allowed) {
-        console.log("find button");
-        let point = await allowed.getBoundsCenter();
-        console.log('point.x : ' + point.x +'point.y : '+ point.y);
-        await driver.click(point.x, point.y);
-      }
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0600
-     * @tc.name: Cross-application
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0600
+     * @tc.number ACTS_NewWant_Test_0600
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0600', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0600 --- start")
@@ -561,9 +534,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0700
-     * @tc.name: Service ability
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0700
+     * @tc.number ACTS_NewWant_Test_0700
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0700', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0700 --- start")
@@ -637,9 +613,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number: ACTS_NewWant_Test_0800
-     * @tc.name: API8 startup API7
-     * @tc.desc: Starting singleton ability the second time does triggers onNewWant.
+     * @tc.name   ACTS_NewWant_Test_0800
+     * @tc.number ACTS_NewWant_Test_0800
+     * @tc.desc   Starting singleton ability the second time does triggers onNewWant.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_NewWant_Test_0800', Level.LEVEL0, async (done:Function) => {
       console.log("ACTS_NewWant_Test_0800 --- start")

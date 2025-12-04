@@ -60,9 +60,12 @@ export default function swiperMarPad() {
     });
 
     /**
+     * @tc.name   testSwiperSetPaddingMargin
      * @tc.number SUB_ACE_SWIPER_MARPAD_0300
-     * @tc.name testSwiperSetPaddingMargin.
-     * @tc.desc Set swiper's  padding and margin both values '20'.
+     * @tc.desc   Set swiper's  padding and margin both values '20'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperSetPaddingMargin', Level.LEVEL1, async (done: Function) => {
       console.info('new testSwiperSetPaddingMargin START');

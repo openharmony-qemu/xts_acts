@@ -65,14 +65,14 @@ export default function webSetUserAgentForHosts() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_OVERRANGE_0100
-    * @tc.name       : testSetUserAgentForHostsOverRange
-    * @tc.desc       : test setUserAgentForHosts overRange
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHostsOverRange
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_OVERRANGE_0100
+     * @tc.desc   test setUserAgentForHosts overRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHostsOverRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsOverRange', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', false, 174060, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -80,14 +80,14 @@ export default function webSetUserAgentForHosts() {
       });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_API_0100
-    * @tc.name       : testSetUserAgentForHosts
-    * @tc.desc       : test setUserAgentForHosts
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHosts
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_API_0100
+     * @tc.desc   test setUserAgentForHosts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHosts', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHosts', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsOverRange', true, 174070, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -95,14 +95,14 @@ export default function webSetUserAgentForHosts() {
       });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0100
-    * @tc.name       : testSetUserAgentForHostsFirstParamNull
-    * @tc.desc       : test setUserAgentForHosts first param null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHostsFirstParamNull
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0100
+     * @tc.desc   test setUserAgentForHosts first param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHostsFirstParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsFirstParamNull', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamNull', '401', 174080, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -110,14 +110,14 @@ export default function webSetUserAgentForHosts() {
       });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0200
-    * @tc.name       : testSetUserAgentForHostsFirstParamUndefined
-    * @tc.desc       : test setUserAgentForHosts first param undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHostsFirstParamUndefined
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0200
+     * @tc.desc   test setUserAgentForHosts first param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHostsFirstParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsFirstParamUndefined', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsFirstParamUndefined', '401', 174090, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -125,14 +125,14 @@ export default function webSetUserAgentForHosts() {
       });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0300
-    * @tc.name       : testSetUserAgentForHostsSecondParamNull
-    * @tc.desc       : test setUserAgentForHosts second param null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHostsSecondParamNull
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0300
+     * @tc.desc   test setUserAgentForHosts second param null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHostsSecondParamNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsSecondParamNull', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamNull', '401', 174100, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -140,14 +140,14 @@ export default function webSetUserAgentForHosts() {
       });
       sendEventByKey('WebSetUserAgentForHostsButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0400
-    * @tc.name       : testSetUserAgentForHostsSecondParamUndefined
-    * @tc.desc       : test setUserAgentForHosts first param undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetUserAgentForHostsSecondParamUndefined
+     * @tc.number SUB_ACE_WEB_SETUSERAGENTFORHOSTS_ERROR_0400
+     * @tc.desc   test setUserAgentForHosts first param undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetUserAgentForHostsSecondParamUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitSetUserAgentForHostsSecondParamUndefined', 174050);
       Utils.registerBaseEvent('testSetUserAgentForHostsSecondParamUndefined', '401', 174110, done, (backData: events_emitter.EventData, expected: Object) => {

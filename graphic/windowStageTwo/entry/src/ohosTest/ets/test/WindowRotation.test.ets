@@ -142,12 +142,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0100
-     * @tc.name      : test_RotationChange_0100
-     * @tc.desc      : test_RotationChange_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_RotationChange_0100
+     * @tc.number SUB_BASIC_WMS_RotationChange_0100
+     * @tc.desc   test_RotationChange_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_RotationChange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0100';
@@ -168,12 +168,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0200
-     * @tc.name      : test_RotationChange_0200
-     * @tc.desc      : test_RotationChange_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_RotationChange_0200
+     * @tc.number SUB_BASIC_WMS_RotationChange_0200
+     * @tc.desc   test_RotationChange_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_RotationChange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0200';
@@ -195,12 +195,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0300
-     * @tc.name      : test_RotationChange_0300
-     * @tc.desc      : test_RotationChange_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_RotationChange_0300
+     * @tc.number SUB_BASIC_WMS_RotationChange_0300
+     * @tc.desc   test_RotationChange_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_RotationChange_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0300';
@@ -221,12 +221,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0400
-     * @tc.name      : test_RotationChange_0400
-     * @tc.desc      : test_RotationChange_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_RotationChange_0400
+     * @tc.number SUB_BASIC_WMS_RotationChange_0400
+     * @tc.desc   test_RotationChange_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_RotationChange_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0400';
@@ -248,12 +248,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0500
-     * @tc.name      : test_RotationChange_0500
-     * @tc.desc      : test_RotationChange_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_0500
+     * @tc.number SUB_BASIC_WMS_RotationChange_0500
+     * @tc.desc   test_RotationChange_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0500';
@@ -364,12 +364,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0600
-     * @tc.name      : test_RotationChange_0600
-     * @tc.desc      : test_RotationChange_0600
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_0600
+     * @tc.number SUB_BASIC_WMS_RotationChange_0600
+     * @tc.desc   test_RotationChange_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0600';
@@ -480,12 +480,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0700
-     * @tc.name      : test_RotationChange_0700
-     * @tc.desc      : test_RotationChange_0700
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_0700
+     * @tc.number SUB_BASIC_WMS_RotationChange_0700
+     * @tc.desc   test_RotationChange_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0700';
@@ -596,12 +596,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0800
-     * @tc.name      : test_RotationChange_0800
-     * @tc.desc      : test_RotationChange_0800
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_0800
+     * @tc.number SUB_BASIC_WMS_RotationChange_0800
+     * @tc.desc   test_RotationChange_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0800';
@@ -677,12 +677,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_0900
-     * @tc.name      : test_RotationChange_0900
-     * @tc.desc      : test_RotationChange_0900
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_0900
+     * @tc.number SUB_BASIC_WMS_RotationChange_0900
+     * @tc.desc   test_RotationChange_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_0900';
@@ -791,12 +791,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_1000
-     * @tc.name      : test_RotationChange_1000
-     * @tc.desc      : test_RotationChange_1000
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_1000
+     * @tc.number SUB_BASIC_WMS_RotationChange_1000
+     * @tc.desc   test_RotationChange_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_1000';
@@ -880,12 +880,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_1100
-     * @tc.name      : test_RotationChange_1100
-     * @tc.desc      : test_RotationChange_1100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_1100
+     * @tc.number SUB_BASIC_WMS_RotationChange_1100
+     * @tc.desc   test_RotationChange_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_1100';
@@ -969,12 +969,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_1200
-     * @tc.name      : test_RotationChange_1200
-     * @tc.desc      : test_RotationChange_1200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_1200
+     * @tc.number SUB_BASIC_WMS_RotationChange_1200
+     * @tc.desc   test_RotationChange_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_1200';
@@ -1091,12 +1091,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_1300
-     * @tc.name      : test_RotationChange_1300
-     * @tc.desc      : test_RotationChange_1300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_1300
+     * @tc.number SUB_BASIC_WMS_RotationChange_1300
+     * @tc.desc   test_RotationChange_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_1300';
@@ -1209,12 +1209,12 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_RotationChange_1400
-     * @tc.name      : test_RotationChange_1400
-     * @tc.desc      : test_RotationChange_1400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_RotationChange_1400
+     * @tc.number SUB_BASIC_WMS_RotationChange_1400
+     * @tc.desc   test_RotationChange_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_RotationChange_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_RotationChange_1400';
@@ -1324,23 +1324,24 @@ export default function windowRotationTest() {
       
     });
 
-/**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0100
-     * @tc.name      : testTwoPagesWithoutSetPreferredOrientation
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testTwoPagesWithoutSetPreferredOrientation
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0100
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testTwoPagesWithoutSetPreferredOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testTwoPagesWithoutSetPreferredOrientation';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('page2'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1372,22 +1373,23 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0200
-     * @tc.name      : testSetPreferredOrientationLandscapeToPortrait_Inverted
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientationLandscapeToPortrait_Inverted
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0200
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPreferredOrientationLandscapeToPortrait_Inverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscapeToPortrait_Inverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
+        
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1439,22 +1441,22 @@ export default function windowRotationTest() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0300
-     * @tc.name      : testSetPreferredOrientationLandscape_InvertedToPortrait
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientationLandscape_InvertedToPortrait
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0300
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPreferredOrientationLandscape_InvertedToPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationLandscape_InvertedToPortrait';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1506,22 +1508,22 @@ export default function windowRotationTest() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0400
-     * @tc.name      : testSetPreferredOrientationUserPortraitToUserLandscape
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientationUserPortraitToUserLandscape
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0400
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPreferredOrientationUserPortraitToUserLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitToUserLandscape';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1574,22 +1576,22 @@ export default function windowRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0500
-     * @tc.name      : testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0500
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationUserPortraitInvertedToUserLandscapeInverted';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1641,22 +1643,22 @@ export default function windowRotationTest() {
 
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0600
-     * @tc.name      : testSetPreferredOrientationFollowDeskTop
-     * @tc.desc      : Test the function value of preferredOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientationFollowDeskTop
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ROTATION_NO_ANIMATION_0600
+     * @tc.desc   Test the function value of preferredOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetPreferredOrientationFollowDeskTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = 'testSetPreferredOrientationFollowDeskTop';
       if(isSupportRotate){
         // let driver = Driver.create();
-        let displayOri = display.getDefaultDisplaySync().orientation;
-        console.log(caseName + ' displayOri : ' + displayOri);
         // 1、拉起另一个Abllity主窗
         let windowStageStart = await startAbility1(caseName, context);
         try {
+          let displayOri = AppStorage.get('displayOri') as display.Orientation;
+          console.log(caseName + ' displayOri : ' + displayOri);
           let btn1 = await driver.findComponent(ON.id('nonePage'))
           console.log(caseName + ' btn1 : ' + btn1);
           await btn1.click()
@@ -1698,12 +1700,12 @@ export default function windowRotationTest() {
 
 
     /**
-     * @tc.number     SUB_BASIC_WMS_GetPreferredOrientation_API_0100
-     * @tc.name       testGetPreferredOrientation_enum
-     * @tc.desc       Sets the display direction property of the window
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level0
+     * @tc.name   testGetPreferredOrientation_enum
+     * @tc.number SUB_BASIC_WMS_GetPreferredOrientation_API_0100
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetPreferredOrientation_enum', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testGetPreferredOrientation_enum';

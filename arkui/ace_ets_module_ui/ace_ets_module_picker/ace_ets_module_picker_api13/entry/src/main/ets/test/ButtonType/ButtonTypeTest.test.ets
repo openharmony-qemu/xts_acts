@@ -45,9 +45,12 @@ export default function ButtonTypeTest() {
     });
 
     /**
+     * @tc.name   ButtonTypeTest_0100
      * @tc.number ButtonTypeTest_0100
-     * @tc.name testButton
-     * @tc.desc
+     * @tc.desc   ButtonTypeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ButtonTypeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('ButtonTypeTest_0100 START');

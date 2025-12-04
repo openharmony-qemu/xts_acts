@@ -56,14 +56,14 @@ export default function webZoomAccessTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0100
-    * @tc.name        : testWebZoomAccess001
-    * @tc.desc        : test zoomAccess false zoomOut
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebZoomAccess001
+     * @tc.number SUB_WEB_ZOOMACCESS_0100
+     * @tc.desc   test zoomAccess false zoomOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebZoomAccess001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebZoomAccess001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -73,14 +73,14 @@ export default function webZoomAccessTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0200
-    * @tc.name        : testWebZoomAccess002
-    * @tc.desc        : test zoomAccess false zoomIn
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebZoomAccess002
+     * @tc.number SUB_WEB_ZOOMACCESS_0200
+     * @tc.desc   test zoomAccess false zoomIn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebZoomAccess002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebZoomAccess002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -90,14 +90,14 @@ export default function webZoomAccessTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0300
-    * @tc.name        : testWebZoomAccess003
-    * @tc.desc        : test zoomAccess true zoomOut
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebZoomAccess003
+     * @tc.number SUB_WEB_ZOOMACCESS_0300
+     * @tc.desc   test zoomAccess true zoomOut
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebZoomAccess003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebZoomAccess003", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -107,14 +107,14 @@ export default function webZoomAccessTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ZOOMACCESS_0400
-    * @tc.name        : testWebZoomAccess004
-    * @tc.desc        : test zoomAccess true zoomIn
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebZoomAccess004
+     * @tc.number SUB_WEB_ZOOMACCESS_0400
+     * @tc.desc   test zoomAccess true zoomIn
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebZoomAccess004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testWebZoomAccess004", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

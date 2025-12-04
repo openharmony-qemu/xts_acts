@@ -113,10 +113,10 @@ async function resetAndCallbackOff() {
   await avPlayer!!.reset().then(() => {
     console.info('case reset AVPlayer success');
   }).catch(mediaTestBase.catchCallback);
-  avPlayer!!.off('stateChange');
-  avPlayer!!.off('trackChange');
-  avPlayer!!.off('error');
-  avPlayer!!.off('endOfStream');
+  avPlayer!!.offStateChange();
+  avPlayer!!.offTrackChange();
+  avPlayer!!.offError();
+  avPlayer!!.offEndOfStream();
   console.info('case now stopped, to release');
   await avPlayer!!.release().then(() => {
     console.info('case release AVPlayer success');
@@ -184,17 +184,17 @@ async function testChangeTrack(fd: media.AVFileDescriptor, preparedOp: () => Pro
     }
   }).catch(mediaTestBase.catchCallback);
 
-  avPlayer!!.on('stateChange', (state, reason) => {
+  avPlayer!!.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     await handleState(state, preparedOp, playedOp, stoppedOp);
   });
-  avPlayer!!.on('trackChange', (index, isSelection) => {
+  avPlayer!!.onTrackChange((index, isSelection) => {
     console.info(`case trackChange called, index is ${index}, isSelection is ${isSelection}`);
   });
-  avPlayer!!.on('error', (err) => {
+  avPlayer!!.onError((err) => {
     console.error(`case error called, errMessage is ${err.message}`);
   });
-  avPlayer!!.on('endOfStream', () => {
+  avPlayer!!.onEndOfStream(() => {
     if (extraOp) {
       extraOp();
     }
@@ -233,13 +233,12 @@ export default function AVPlayerSelectTrackTest() {
       await mediaTestBase.closeFdNumber(avFd.fd)
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
-      * @tc.desc    test change default audio track
-      *               : 001.test change default audio track
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let preparedOperation = async () => {
@@ -267,13 +266,12 @@ export default function AVPlayerSelectTrackTest() {
       await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined , done);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
-      * @tc.desc    test change default audio track
-      *               : 001.test change default audio track
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
 

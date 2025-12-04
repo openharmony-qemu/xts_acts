@@ -52,14 +52,14 @@ export default function ActsAceWebSetResponse() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0001
-    * @tc.name        : testWebSetResponseStatus
-    * @tc.desc        : test WebSetResponseStatus
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebSetResponseStatus
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0001
+     * @tc.desc   test WebSetResponseStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebSetResponseStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseStatus"
       Utils.emitEvent(emitKey, 147001);
@@ -73,14 +73,14 @@ export default function ActsAceWebSetResponse() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0002
-    * @tc.name        : testWebSetResponseStatusText
-    * @tc.desc        : test WebSetResponseStatusText
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebSetResponseStatusText
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0002
+     * @tc.desc   test WebSetResponseStatusText
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebSetResponseStatusText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseStatusText"
       Utils.emitEvent(emitKey, 147001);
@@ -95,14 +95,14 @@ export default function ActsAceWebSetResponse() {
 
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0003
-    * @tc.name        : testWebSetResponseMimeType
-    * @tc.desc        : test WebSetResponseMimeType
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebSetResponseMimeType
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0003
+     * @tc.desc   test WebSetResponseMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebSetResponseMimeType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetResponseMimeType"
       Utils.emitEvent(emitKey, 147001);
@@ -116,14 +116,14 @@ export default function ActsAceWebSetResponse() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0004
-    * @tc.name        : testWebSetResponseEncoding
-    * @tc.desc        : test WebSetResponseEncoding
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testWebSetResponseEncoding
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0004
+     * @tc.desc   test WebSetResponseEncoding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebSetResponseEncoding', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebSetResponseEncoding"
       Utils.emitEvent(emitKey, 147001);
@@ -138,14 +138,14 @@ export default function ActsAceWebSetResponse() {
 
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0005
-    * @tc.name        : testWebSetResponseHeaderNameNull
-    * @tc.desc        : test testWebSetResponseHeaderNameNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebSetResponseHeaderNameNull
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0005
+     * @tc.desc   test testWebSetResponseHeaderNameNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebSetResponseHeaderNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderNameNull"
       Utils.emitEvent(emitKey, 147001);
@@ -159,14 +159,14 @@ export default function ActsAceWebSetResponse() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0006
-    * @tc.name        : testWebSetResponseHeaderValueNull
-    * @tc.desc        : test WebSetResponseHeaderValueNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebSetResponseHeaderValueNull
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0006
+     * @tc.desc   test WebSetResponseHeaderValueNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebSetResponseHeaderValueNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderValueNull"
       Utils.emitEvent(emitKey, 147001);
@@ -180,14 +180,14 @@ export default function ActsAceWebSetResponse() {
     })
 
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_SET_RESPONSE_API_0008
-    * @tc.name        : testWebSetResponseHeaderOverwriteNull
-    * @tc.desc        : test WebSetResponseHeaderOverwriteNull
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testWebSetResponseHeaderOverwriteNull
+     * @tc.number SUB_ACE_WEB_SET_RESPONSE_API_0008
+     * @tc.desc   test WebSetResponseHeaderOverwriteNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebSetResponseHeaderOverwriteNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebSetResponseHeaderOverwriteNull"
       Utils.emitEvent(emitKey, 147001);

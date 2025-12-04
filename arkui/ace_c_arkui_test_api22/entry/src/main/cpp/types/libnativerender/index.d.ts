@@ -13,3 +13,29 @@
  * limitations under the License.
  */
 export const imageAltTest: (a: string) => void;
+
+export const textMinLinesTest: (a: string) => void;
+
+export const CoastingAxisTest_a: () => string[];
+
+export const CoastingAxisTest_b: () => string[];
+
+export const hasAxisTest: (a: string) => void;
+
+export const WaterFlowFillPolicyTest: (a: string) => void;
+
+export const snapSpeedTest: (a: string) => void;
+
+export const LanesValueTest: (a: string) => void;
+
+export const imageDrawableDescriptorTest: (a: string) => void;
+
+export const imageErrorTest: (a: string) => void;
+
+export const textLineHeightTest: (a: string) => void;
+
+export const textAreaBarStateTest: (a: string) => void;
+
+export const scrollBarTest: (a: string) => void;
+
+export const showCounterTest: (a: string) => void;

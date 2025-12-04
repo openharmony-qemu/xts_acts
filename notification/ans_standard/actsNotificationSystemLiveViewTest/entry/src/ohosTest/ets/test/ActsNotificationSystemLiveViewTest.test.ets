@@ -26,13 +26,13 @@ const TAG = 'NotificationActs'
 const TEST_SUITE_NAME = 'testNotificationLiveNotification'
 export default function ActsNotificationSystemLiveViewTest() {
   describe('testNotificationLiveNotification', async (done : Function) => {
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_2200
-     * @tc.name: testLiveNotificationCapsuleTitleForNull
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleTitleForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_2200
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleTitleForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForNull'
@@ -100,13 +100,13 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_2300
-     * @tc.name: testLiveNotificationCapsuleTitleForUndefined
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleTitleForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_2300
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleTitleForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
@@ -176,13 +176,13 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_2600
-     * @tc.name: testLiveNotificationCapsuleIconForNull
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleIconForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_2600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleIconForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForNull'
@@ -228,13 +228,13 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_2700
-     * @tc.name: testLiveNotificationCapsuleIconForUndefined
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleIconForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_2700
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleIconForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
@@ -281,13 +281,13 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_3100
-     * @tc.name: testLiveNotificationCapsuleBackgroundColorForNull
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleBackgroundColorForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_3100
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleBackgroundColorForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForNull'
@@ -334,13 +334,13 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Live_Publish_3200
-     * @tc.name: testLiveNotificationCapsuleBackgroundColorForUndefined
-     * @tc.desc: test publish interface fail
-     * @tc.size: LargeTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   testLiveNotificationCapsuleBackgroundColorForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_3200
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testLiveNotificationCapsuleBackgroundColorForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleBackgroundColorForUndefined'
@@ -387,14 +387,14 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_3900
-    * @tc.name: testLiveNotificationButtonNamesForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationButtonNamesForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_3900
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationButtonNamesForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonNamesForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -437,14 +437,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_4000
-    * @tc.name: testLiveNotificationButtonNamesForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationCapsuleIconForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_4000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationCapsuleIconForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleIconForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -488,14 +488,14 @@ export default function ActsNotificationSystemLiveViewTest() {
 
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_4300
-    * @tc.name: testLiveNotificationButtonIconsForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationButtonIconsForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_4300
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationButtonIconsForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -538,14 +538,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_4400
-    * @tc.name: testLiveNotificationButtonIconsForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationButtonIconsForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_4400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationButtonIconsForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationButtonIconsForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -588,14 +588,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5000
-    * @tc.name: testLiveNotificationTimeinitialTimeForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeinitialTimeForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_5000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeinitialTimeForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -641,14 +641,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5100
-    * @tc.name: testLiveNotificationTimeinitialTimeForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeinitialTimeForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_5100
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeinitialTimeForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeinitialTimeForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -694,14 +694,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5300
-    * @tc.name: testLiveNotificationTimeisCountdownForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisCountdownForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_5300
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisCountdownForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -747,14 +747,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5400
-    * @tc.name: testLiveNotificationTimeisCountdownForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisCountdownForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_5400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisCountdownForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisCountdownForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -800,14 +800,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5600
-    * @tc.name: testLiveNotificationTimeisPausedForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisPausedForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_5600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisPausedForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -854,14 +854,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5700
-    * @tc.name: testLiveNotificationTimeisPausedForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisPausedForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_5700
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisPausedForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisPausedForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -908,14 +908,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_5900
-    * @tc.name: testLiveNotificationTimeisInTitleForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisInTitleForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_5900
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisInTitleForNull', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -962,14 +962,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6000
-    * @tc.name: testLiveNotificationTimeisInTitleForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationTimeisInTitleForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_6000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationTimeisInTitleForUndefined', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationTimeisInTitleForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1016,14 +1016,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6500
-    * @tc.name: testLiveNotificationProgressMaxvalueForNull
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationProgressMaxvalueForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_6500
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressMaxvalueForNull', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1074,14 +1074,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-    * @tc.number: Sub_Notification_Ans_Live_Publish_6600
-    * @tc.name: testLiveNotificationProgressMaxvalueForUndefined
-    * @tc.desc: test publish interface fail
-    * @tc.size: LargeTest
-    * @tc.type: Function
-    * @tc.level Level 3
-    */
+    /**
+     * @tc.name   testLiveNotificationProgressMaxvalueForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_6600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressMaxvalueForUndefined', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressMaxvalueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1132,14 +1132,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-   * @tc.number: Sub_Notification_Ans_Live_Publish_6900
-   * @tc.name: testLiveNotificationProgressCurrentValueForNull
-   * @tc.desc: test publish interface fail
-   * @tc.size: LargeTest
-   * @tc.type: Function
-   * @tc.level Level 3
-   */
+    /**
+     * @tc.name   testLiveNotificationProgressCurrentValueForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_6900
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressCurrentValueForNull', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1191,14 +1191,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-   * @tc.number: Sub_Notification_Ans_Live_Publish_7000
-   * @tc.name: testLiveNotificationProgressCurrentValueForUndefined
-   * @tc.desc: test publish interface fail
-   * @tc.size: LargeTest
-   * @tc.type: Function
-   * @tc.level Level 3
-   */
+    /**
+     * @tc.name   testLiveNotificationProgressCurrentValueForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_7000
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressCurrentValueForUndefined', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressCurrentValueForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1250,14 +1250,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_7300
-  * @tc.name: testLiveNotificationProgressisPercentageForNull
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
-  * @tc.level Level 3
-  */
+    /**
+     * @tc.name   testLiveNotificationProgressisPercentageForNull
+     * @tc.number Sub_Notification_Ans_Live_Publish_7300
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressisPercentageForNull', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForNull'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1310,14 +1310,14 @@ export default function ActsNotificationSystemLiveViewTest() {
     })
 
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_7400
-  * @tc.name: testLiveNotificationProgressisPercentageForUndefined
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
-  * @tc.level Level 3
-  */
+    /**
+     * @tc.name   testLiveNotificationProgressisPercentageForUndefined
+     * @tc.number Sub_Notification_Ans_Live_Publish_7400
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationProgressisPercentageForUndefined', Level.LEVEL2, async (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationProgressisPercentageForUndefined'
       let notificationRequest : notificationManager.NotificationRequest = {
@@ -1369,14 +1369,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       }
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_7500
-  * @tc.name: testLiveNotificationPublishsuccess
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
-  * @tc.level Level 3
-  */
+    /**
+     * @tc.name   testLiveNotificationPublishsuccess
+     * @tc.number Sub_Notification_Ans_Live_Publish_7500
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationPublishsuccess', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1482,14 +1482,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
     })
 
-    /*
-  * @tc.number: Sub_Notification_Ans_Live_Publish_7600
-  * @tc.name: testLiveNotificationPublishsuccess
-  * @tc.desc: test publish interface fail
-  * @tc.size: LargeTest
-  * @tc.type: Function
-  * @tc.level Level 3
-  */
+    /**
+     * @tc.name   testLiveNotificationPublishsuccess
+     * @tc.number Sub_Notification_Ans_Live_Publish_7600
+     * @tc.desc   test publish interface fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationPublishsuccess', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4
@@ -1605,14 +1605,14 @@ export default function ActsNotificationSystemLiveViewTest() {
       })
     })
 
-    /*
- * @tc.number: Sub_Notification_Ans_Live_Publish_7700
- * @tc.name: testLiveNotificationPublishsuccess
- * @tc.desc: test publish interface success
- * @tc.size: LargeTest
- * @tc.type: Function
- * @tc.level Level 3
- */
+    /**
+     * @tc.name   testLiveNotificationPublishsuccess
+     * @tc.number Sub_Notification_Ans_Live_Publish_7700
+     * @tc.desc   test publish interface success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testLiveNotificationPublishsuccess', Level.LEVEL2, async  (done : Function) => {
       const TEST_CASE_NAME = 'testLiveNotificationCapsuleTitleForUndefined'
       const color : ArrayBuffer = new ArrayBuffer(96);  //96为需要创建的像素buffer大小，取值为：height * width *4

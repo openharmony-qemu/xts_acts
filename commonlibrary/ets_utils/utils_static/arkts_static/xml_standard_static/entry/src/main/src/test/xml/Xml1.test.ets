@@ -39,12 +39,12 @@ export default function xmlTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0100
-     * @tc.name: testXml0001
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0100
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrayBuffer = new ArrayBuffer(2048);
@@ -60,12 +60,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0200
-     * @tc.name: testXml0002
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0200
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrayBuffer = new ArrayBuffer(2048);
@@ -81,12 +81,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0300
-     * @tc.name: testXml0003
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0300
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrayBuffer = new ArrayBuffer(2048);
@@ -102,12 +102,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0400
-     * @tc.name: testXml0004
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0400
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrayBuffer = new ArrayBuffer(2048);
@@ -123,12 +123,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0500
-     * @tc.name: testXml0005
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0500
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let arrayBuffer = new ArrayBuffer(2048);
@@ -144,12 +144,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0600
-     * @tc.name: testXml0006
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0600
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const myMAX = 2048;
@@ -167,12 +167,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0700
-     * @tc.name: testXml0007
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0700
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const myMAX = 2048;
@@ -192,12 +192,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0800
-     * @tc.name: testXml0008
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0800
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const myMAX = 2048;
@@ -217,12 +217,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_0900
-     * @tc.name: testXml0009
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_0900
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const myMAX = 2048;
@@ -244,12 +244,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01000
-     * @tc.name: testXml0010
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testXml0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01000
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXml0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const myMAX = 2048;
@@ -271,12 +271,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01100
-     * @tc.name: testXml0011
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01100
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -295,12 +295,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01200
-     * @tc.name: testXml0012
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01200
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -320,12 +320,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01300
-     * @tc.name: testXml0013
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01300
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -346,12 +346,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01400
-     * @tc.name: testXml0014
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01400
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -373,12 +373,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01500
-     * @tc.name: testXml0015
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01500
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -400,12 +400,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01600
-     * @tc.name: testXml0016
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01600
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -423,12 +423,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01700
-     * @tc.name: testXml0017
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01700
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -447,12 +447,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01800
-     * @tc.name: testXml0018
-     * @tc.desc: test xml method
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01800
+     * @tc.desc   test xml method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -471,12 +471,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_01900
-     * @tc.name: testXml0019
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_01900
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -496,12 +496,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02000
-     * @tc.name: testXml0020
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02000
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -520,12 +520,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02100
-     * @tc.name: testXml0021
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -546,12 +546,12 @@ export default function xmlTest1() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02200
-     * @tc.name: testXml0022
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -571,12 +571,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02300
-     * @tc.name: testXml0023
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -596,12 +596,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02400
-     * @tc.name: testXml0024
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -621,12 +621,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02500
-     * @tc.name: testXml0025
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -646,12 +646,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02600
-     * @tc.name: testXml0026
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -670,12 +670,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02700
-     * @tc.name: testXml0027
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02700
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -694,12 +694,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02800
-     * @tc.name: testXml0028
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02800
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -718,12 +718,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_02900
-     * @tc.name: testXml0029
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_02900
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -740,12 +740,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03000
-     * @tc.name: testXml0030
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03000
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -765,12 +765,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03100
-     * @tc.name: testXml0031
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -790,12 +790,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03200
-     * @tc.name: testXml0032
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -815,12 +815,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03300
-     * @tc.name: testXml0033
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -840,12 +840,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03400
-     * @tc.name: testXml0034
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -868,12 +868,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03500
-     * @tc.name: testXml0035
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -896,12 +896,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03600
-     * @tc.name: testXml0036
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -920,12 +920,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03700
-     * @tc.name: testXml0037
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03700
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -944,12 +944,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03800
-     * @tc.name: testXml0038
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03800
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -966,12 +966,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_03900
-     * @tc.name: testXml0039
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0039
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_03900
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -988,12 +988,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04000
-     * @tc.name: testXml0040
-     * @tc.desc: Writes the comment.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04000
+     * @tc.desc   Writes the comment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1012,12 +1012,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04100
-     * @tc.name: testXml0041
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0041
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04100
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1034,12 +1034,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04200
-     * @tc.name: testXml0042
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0042
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04200
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1056,12 +1056,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04300
-     * @tc.name: testXml0043
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0043
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04300
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1080,12 +1080,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04400
-     * @tc.name: testXml0044
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0044
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04400
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1104,12 +1104,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04500
-     * @tc.name: testXml0045
-     * @tc.desc: Writes the DOCTYPE.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04500
+     * @tc.desc   Writes the DOCTYPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1128,12 +1128,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04600
-     * @tc.name: testXml0046
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04600
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1150,12 +1150,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04700
-     * @tc.name: testXml0047
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04700
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1172,12 +1172,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04800
-     * @tc.name: testXml0048
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04800
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1196,12 +1196,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_04900
-     * @tc.name: testXml0049
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_04900
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1220,12 +1220,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05000
-     * @tc.name: testXml0050
-     * @tc.desc: Writes the CDATA.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05000
+     * @tc.desc   Writes the CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -1244,12 +1244,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05100
-     * @tc.name: testXml0051
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testXml0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let strXml =
@@ -1285,12 +1285,12 @@ export default function xmlTest1() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05200
-     * @tc.name: testXml0052
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1329,12 +1329,12 @@ export default function xmlTest1() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05300
-     * @tc.name: testXml0053
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1358,12 +1358,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05400
-     * @tc.name: testXml0054
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1387,12 +1387,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05500
-     * @tc.name: testXml0055
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1417,12 +1417,12 @@ export default function xmlTest1() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05600
-     * @tc.name: testXml0056
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05600
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1445,12 +1445,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05700
-     * @tc.name: testXml0057
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05700
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1474,12 +1474,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05800
-     * @tc.name: testXml0058
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0058
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05800
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1503,12 +1503,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_05900
-     * @tc.name: testXml0059
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0059
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_05900
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1531,12 +1531,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06000
-     * @tc.name: testXml0060
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06000
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1560,12 +1560,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06100
-     * @tc.name: testXml0061
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06100
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1589,12 +1589,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06200
-     * @tc.name: testXml0062
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06200
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1618,12 +1618,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06300
-     * @tc.name: testXml0063
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06300
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1645,12 +1645,12 @@ export default function xmlTest1() {
       expect(str).assertEqual(result);
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06400
-     * @tc.name: testXml0064
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0064
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06400
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1673,12 +1673,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06500
-     * @tc.name: testXml0065
-     * @tc.desc: Starts parsing the XML file.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0065
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06500
+     * @tc.desc   Starts parsing the XML file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -1707,12 +1707,12 @@ export default function xmlTest1() {
 
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06600
-     * @tc.name: testXml0066
-     * @tc.desc: Gets the START_DOCUMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0066
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06600
+     * @tc.desc   Gets the START_DOCUMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.START_DOCUMENT;
@@ -1720,12 +1720,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06700
-     * @tc.name: testXml0067
-     * @tc.desc: Gets the END_DOCUMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0067
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06700
+     * @tc.desc   Gets the END_DOCUMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.END_DOCUMENT;
@@ -1733,12 +1733,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06800
-     * @tc.name: testXml0068
-     * @tc.desc: Gets the START_TAG of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0068
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06800
+     * @tc.desc   Gets the START_TAG of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.START_TAG;
@@ -1746,12 +1746,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_06900
-     * @tc.name: testXml0069
-     * @tc.desc: Gets the END_TAG of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0069
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_06900
+     * @tc.desc   Gets the END_TAG of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.END_TAG;
@@ -1759,12 +1759,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07000
-     * @tc.name: testXml0070
-     * @tc.desc: Gets the TEXT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07000
+     * @tc.desc   Gets the TEXT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.TEXT;
@@ -1772,12 +1772,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07100
-     * @tc.name: testXml0071
-     * @tc.desc: Gets the CDSECT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07100
+     * @tc.desc   Gets the CDSECT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.CDSECT;
@@ -1785,12 +1785,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07200
-     * @tc.name: testXml0072
-     * @tc.desc: Gets the COMMENT of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0072
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07200
+     * @tc.desc   Gets the COMMENT of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.COMMENT;
@@ -1798,12 +1798,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07300
-     * @tc.name: testXml0073
-     * @tc.desc: Gets the DOCDECL of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07300
+     * @tc.desc   Gets the DOCDECL of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.DOCDECL;
@@ -1811,12 +1811,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07400
-     * @tc.name: testXml0074
-     * @tc.desc: Gets the INSTRUCTION of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07400
+     * @tc.desc   Gets the INSTRUCTION of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.INSTRUCTION;
@@ -1824,12 +1824,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07500
-     * @tc.name: testXml0075
-     * @tc.desc: Gets the ENTITY_REFERENCE of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0075
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07500
+     * @tc.desc   Gets the ENTITY_REFERENCE of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.ENTITY_REFERENCE;
@@ -1837,12 +1837,12 @@ export default function xmlTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XML_07600
-     * @tc.name: testXml0076
-     * @tc.desc: Gets the WHITESPACE of EventType.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXml0076
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XML_07600
+     * @tc.desc   Gets the WHITESPACE of EventType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXml0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let event = xml.EventType.WHITESPACE;

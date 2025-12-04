@@ -29,13 +29,13 @@ export default function lazyForEachReloadAllItemsTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_RELOADALLITEMS_0100
-     * @tc.name       : testLazyForEachReloadAllItems001
-     * @tc.desc       : testing alignment for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachReloadAllItems001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_RELOADALLITEMS_0100
+     * @tc.desc   testing alignment for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachReloadAllItems001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachReloadAllItemsTest`)
@@ -45,13 +45,13 @@ export default function lazyForEachReloadAllItemsTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_RELOADALLITEMS_0200
-     * @tc.name       : testLazyForEachReloadAllItems002
-     * @tc.desc       : testing alignment for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachReloadAllItems002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_RELOADALLITEMS_0200
+     * @tc.desc   testing alignment for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachReloadAllItems002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachReloadAllItems002()).assertEqual(0)

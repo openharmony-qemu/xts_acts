@@ -207,6 +207,32 @@ static void InitPushDisplay(napi_property_descriptor* desc)
     }
 }
 
+static void InitPushWindow2(napi_property_descriptor* desc)
+{
+    int32_t offset = 123;
+    napi_property_descriptor descTemp[] = {
+        XL("test_OH_WindowManager_GetAllMainWindowInfo_0200",
+            Window::Test_OH_WindowManager_GetAllMainWindowInfo_0200),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0200",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0200),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0300",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0300),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0400",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0400),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0500",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0500),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0600",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0600),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0700",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0700),
+        XL("test_OH_WindowManager_GetMainWindowSnapshot_0800",
+            Window::Test_OH_WindowManager_GetMainWindowSnapshot_0800),
+    };
+    for (size_t index = 0; index < sizeof(descTemp) / sizeof(descTemp[0]); index++) {
+        desc[index + offset] = descTemp[index];
+    }
+}
+
 static napi_value Init(napi_env env, napi_value exports)
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Init", "Init begins");
@@ -214,12 +240,13 @@ static napi_value Init(napi_env env, napi_value exports)
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "env or exports is null");
         return nullptr;
     }
-    napi_property_descriptor desc[123] = {};
+    napi_property_descriptor desc[131] = {};
     InitPushWindow(desc);
     InitPushWindowPip1(desc);
     InitPushWindowPip2(desc);
     InitPushWindowPip3(desc);
     InitPushDisplay(desc);
+    InitPushWindow2(desc);
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
         return nullptr;

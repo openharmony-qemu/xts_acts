@@ -15,9 +15,8 @@
 
 import Ability from '@ohos.app.ability.UIAbility';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
-import { intl } from '@kit.LocalizationKit';
+import { i18n, intl } from '@kit.LocalizationKit';
 import { LengthMetrics } from '@kit.ArkUI';
-import i18n from '@ohos.i18n'
 
 export default function FivePointOne_i18nStageTest() {
   describe("FivePointOne_i18nStageTest", () => {
@@ -37,12 +36,12 @@ export default function FivePointOne_i18nStageTest() {
     });
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0160
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0160
-     * @tc.desc     : begin code same as stop code
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0160
+     * @tc.number SUB_GLOBAL_refinedFormat_0160
+     * @tc.desc   begin code same as stop code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0160', Level.LEVEL2, () => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -51,12 +50,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0170
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0170
-     * @tc.desc     : normally (begin code & stop code)
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0170
+     * @tc.number SUB_GLOBAL_refinedFormat_0170
+     * @tc.desc   normally (begin code & stop code)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0170', Level.LEVEL2, () => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -65,12 +64,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0180
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0180
-     * @tc.desc     : begin code with negative ,stop code with decimal
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0180
+     * @tc.number SUB_GLOBAL_refinedFormat_0180
+     * @tc.desc   begin code with negative ,stop code with decimal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0180', Level.LEVEL2, () => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -79,12 +78,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0190
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0190
-     * @tc.desc     : begin code large than stop code
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   SUB_GLOBAL_refinedFormat_0190
+     * @tc.number SUB_GLOBAL_refinedFormat_0190
+     * @tc.desc   begin code large than stop code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0190', Level.LEVEL2, () => {
       let numFormat: intl.NumberFormat = new intl.NumberFormat("zh-hans-CN");
@@ -93,12 +92,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTemperatureName_0100
-     * @tc.name     : I18N_test_getTemperatureName_0100
-     * @tc.desc     : i18n.TemperatureType.CELSIUS
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.name   I18N_test_getTemperatureName_0100
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0100
+     * @tc.desc   i18n.TemperatureType.CELSIUS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('I18N_test_getTemperatureName_0100', Level.LEVEL0, () => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.CELSIUS);
@@ -107,12 +106,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTemperatureName_0200
-     * @tc.name     : I18N_test_getTemperatureName_0200
-     * @tc.desc     : i18n.TemperatureType.FAHRENHEIT
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getTemperatureName_0200
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0200
+     * @tc.desc   i18n.TemperatureType.FAHRENHEIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureName_0200', Level.LEVEL2, () => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.FAHRENHEIT);
@@ -121,12 +120,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTemperatureName_0300
-     * @tc.name     : I18N_test_getTemperatureName_0300
-     * @tc.desc     : i18n.TemperatureType.KELVIN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getTemperatureName_0300
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0300
+     * @tc.desc   i18n.TemperatureType.KELVIN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureName_0300', Level.LEVEL2, () => {
       let type = i18n.System.getTemperatureName(i18n.TemperatureType.KELVIN);
@@ -135,12 +134,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getTemperatureName_0400
-     * @tc.name     : I18N_test_getTemperatureName_0400
-     * @tc.desc     : input number zero
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getTemperatureName_0400
+     * @tc.number SUB_GLOBAL_I18N_getTemperatureName_0400
+     * @tc.desc   input number zero
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getTemperatureName_0400', Level.LEVEL3, () => {
       try {
@@ -152,12 +151,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0100
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0100
-     * @tc.desc     : en-GB & en-Latn-US
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0100
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0100
+     * @tc.desc   en-GB & en-Latn-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('I18N_test_getSimplifiedLanguage_01_0100', Level.LEVEL0, () => {
       let type_one = i18n.System.getSimplifiedLanguage('en-GB');
@@ -169,12 +168,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0200
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0200
-     * @tc.desc     : zh-Hant-HK & zh-Hant-TW
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0200
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0200
+     * @tc.desc   zh-Hant-HK & zh-Hant-TW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0200', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('zh-Hant-HK');
@@ -186,12 +185,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0300
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0300
-     * @tc.desc     : es-ES & es-US
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0300
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0300
+     * @tc.desc   es-ES & es-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0300', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('es-ES');
@@ -203,12 +202,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0400
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0400
-     * @tc.desc     : pt-PT & pt-BR
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0400
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0400
+     * @tc.desc   pt-PT & pt-BR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0400', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('pt-PT');
@@ -220,12 +219,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0500
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0500
-     * @tc.desc     : en-CN & en-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0500
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0500
+     * @tc.desc   en-CN & en-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0500', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('en-CN');
@@ -237,12 +236,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0600
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0600
-     * @tc.desc     : zh-Hant-CN & zh-Hant-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0600
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0600
+     * @tc.desc   zh-Hant-CN & zh-Hant-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0600', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('zh-Hant-CN');
@@ -254,12 +253,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0700
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0700
-     * @tc.desc     : es-CN & es-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0700
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0700
+     * @tc.desc   es-CN & es-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0700', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('es-CN');
@@ -271,12 +270,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0800
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0800
-     * @tc.desc     : pt-CN & pt-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0800
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0800
+     * @tc.desc   pt-CN & pt-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0800', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('pt-CN');
@@ -288,12 +287,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0900
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_0900
-     * @tc.desc     : bo-CN & bo-Test & bo-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_0900
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_0900
+     * @tc.desc   bo-CN & bo-Test & bo-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_0900', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage('bo-CN');
@@ -308,12 +307,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_getSimplifiedLanguage_01_1000
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_1000
-     * @tc.desc     : pt-CN & pt-Test
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_1000
+     * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_01_1000
+     * @tc.desc   pt-CN & pt-Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimplifiedLanguage_01_1000', Level.LEVEL3, () => {
       try {
@@ -325,12 +324,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
-     * @tc.name     : SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
-     * @tc.desc     :fontColor &fontFamily & fontSize & fontWeight & fontStyle
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 0
+     * @tc.name   SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
+     * @tc.number SUB_GLOBAL_I18N_StyledNumberFormat_02_00100
+     * @tc.desc   fontColor &fontFamily & fontSize & fontWeight & fontStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GLOBAL_I18N_StyledNumberFormat_02_00100', Level.LEVEL0, () => {
       let integer_textStyle = new TextStyle({
@@ -390,12 +389,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0310
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0310
-     * @tc.desc     : maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0310
+     * @tc.number SUB_GLOBAL_refinedFormat_0310
+     * @tc.desc   maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0310', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -407,12 +406,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0630
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0630
-     * @tc.desc     : roundingMode: "halfExpand" & maximumSignificantDigits: 5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0630
+     * @tc.number SUB_GLOBAL_refinedFormat_0630
+     * @tc.desc   roundingMode: "halfExpand" & maximumSignificantDigits: 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0630', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -424,12 +423,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0100
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0100
-     * @tc.desc     : path /data/out/tmp & delimiter /
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0100
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0100
+     * @tc.desc   path /data/out/tmp & delimiter /
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0100', Level.LEVEL2, () => {
       let path: string = "/data/out/tmp";
@@ -441,12 +440,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0020
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0020
-     * @tc.desc     : Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0020
+     * @tc.number SUB_GLOBAL_refinedFormat_0020
+     * @tc.desc   Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0020', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hans-CN");
@@ -458,12 +457,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0790
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0790
-     * @tc.desc     : skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0790
+     * @tc.number SUB_GLOBAL_refinedFormat_0790
+     * @tc.desc   skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0790', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hans-CN");
@@ -474,12 +473,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0320
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0320
-     * @tc.desc     : maximumFractionDigits: 2 & roundingIncrement: 1
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0320
+     * @tc.number SUB_GLOBAL_refinedFormat_0320
+     * @tc.desc   maximumFractionDigits: 2 & roundingIncrement: 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0320', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -491,12 +490,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_008
-     * @tc.name     : SUB_GLOBAL_refinedFormat_008
-     * @tc.desc     : local is CN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_008
+     * @tc.number SUB_GLOBAL_refinedFormat_008
+     * @tc.desc   local is CN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_008', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hans-CN");
@@ -507,12 +506,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimplifiedLanguage_01_1010
-     * @tc.name     : I18N_test_getSimplifiedLanguage_01_1010
-     * @tc.desc     : no param
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimplifiedLanguage_01_1010
+     * @tc.number I18N_test_getSimplifiedLanguage_01_1010
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimplifiedLanguage_01_1010', Level.LEVEL2, () => {
       let type_one = i18n.System.getSimplifiedLanguage();
@@ -521,12 +520,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getTemperatureType_0100
-     * @tc.name     : I18N_test_getTemperatureType_0100
-     * @tc.desc     : no param
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getTemperatureType_0100
+     * @tc.number I18N_test_getTemperatureType_0100
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getTemperatureType_0100', Level.LEVEL2, () => {
       let type: i18n.TemperatureType = i18n.System.getTemperatureType();
@@ -535,12 +534,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getFirstDayOfWeek_0100
-     * @tc.name     : I18N_test_getFirstDayOfWeek_0100
-     * @tc.desc     : no param
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getFirstDayOfWeek_0100
+     * @tc.number I18N_test_getFirstDayOfWeek_0100
+     * @tc.desc   no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getFirstDayOfWeek_0100', Level.LEVEL2, () => {
       let type: i18n.WeekDay = i18n.System.getFirstDayOfWeek();
@@ -549,12 +548,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getUnicodeWrappedFilePath_0100
-     * @tc.name     : I18N_test_getUnicodeWrappedFilePath_0100
-     * @tc.desc     : 890001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_0100
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_0100
+     * @tc.desc   890001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getUnicodeWrappedFilePath_0100', Level.LEVEL3, () => {
       try {
@@ -569,12 +568,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getUnicodeWrappedFilePath_0200
-     * @tc.name     : I18N_test_getUnicodeWrappedFilePath_0200
-     * @tc.desc     : path & delimiter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_0200
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_0200
+     * @tc.desc   path & delimiter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getUnicodeWrappedFilePath_0200', Level.LEVEL2, () => {
       let path: string = "/data/out/tmp";
@@ -585,12 +584,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getUnicodeWrappedFilePath_0300
-     * @tc.name     : I18N_test_getUnicodeWrappedFilePath_0300
-     * @tc.desc     : path
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getUnicodeWrappedFilePath_0300
+     * @tc.number I18N_test_getUnicodeWrappedFilePath_0300
+     * @tc.desc   path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getUnicodeWrappedFilePath_0300', Level.LEVEL2, () => {
       let path: string = "/data/out/tmp";
@@ -600,12 +599,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleDateTimeFormatByPattern_0100
-     * @tc.name     : I18N_test_getSimpleDateTimeFormatByPattern_0100
-     * @tc.desc     : 89001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_0100
+     * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleDateTimeFormatByPattern_0100', Level.LEVEL3, () => {
       try {
@@ -618,12 +617,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleDateTimeFormatByPattern_0200
-     * @tc.name     : I18N_test_getSimpleDateTimeFormatByPattern_0200
-     * @tc.desc     : only date
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_0200
+     * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_0200
+     * @tc.desc   only date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleDateTimeFormatByPattern_0200', Level.LEVEL2, () => {
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
@@ -635,12 +634,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleDateTimeFormatBySkeleton_0100
-     * @tc.name     : I18N_test_getSimpleDateTimeFormatBySkeleton_0100
-     * @tc.desc     : 89001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_0100
+     * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleDateTimeFormatBySkeleton_0100', Level.LEVEL3, () => {
       try {
@@ -653,12 +652,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleDateTimeFormatBySkeleton_0200
-     * @tc.name     : I18N_test_getSimpleDateTimeFormatBySkeleton_0200
-     * @tc.desc     : only date
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_0200
+     * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_0200
+     * @tc.desc   only date
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleDateTimeFormatBySkeleton_0200', Level.LEVEL2, () => {
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
@@ -669,12 +668,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleNumberFormatBySkeleton_0100
-     * @tc.name     : I18N_test_getSimpleNumberFormatBySkeleton_0100
-     * @tc.desc     : 89001
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_0100
+     * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_0100
+     * @tc.desc   89001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('I18N_test_getSimpleNumberFormatBySkeleton_0100', Level.LEVEL3, () => {
       try {
@@ -687,12 +686,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : I18N_test_getSimpleNumberFormatBySkeleton_0200
-     * @tc.name     : I18N_test_getSimpleNumberFormatBySkeleton_0200
-     * @tc.desc     : only skeletonFormatter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_0200
+     * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_0200
+     * @tc.desc   only skeletonFormatter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('I18N_test_getSimpleNumberFormatBySkeleton_0200', Level.LEVEL2, () => {
       let skeletonFormatter: i18n.SimpleNumberFormat =
@@ -702,12 +701,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0010
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0010
-     * @tc.desc     : without pattern
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0010
+     * @tc.number SUB_GLOBAL_refinedFormat_0010
+     * @tc.desc   without pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0010', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hans-CN");
@@ -718,12 +717,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0030
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0030
-     * @tc.desc     : without data symbol
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0030
+     * @tc.number SUB_GLOBAL_refinedFormat_0030
+     * @tc.desc   without data symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0030', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hans-CN");
@@ -734,12 +733,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0050
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0050
-     * @tc.desc     : local is en-US
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0050
+     * @tc.number SUB_GLOBAL_refinedFormat_0050
+     * @tc.desc   local is en-US
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0050', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("en-US");
@@ -751,12 +750,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0060
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0060
-     * @tc.desc     : local is ug-CN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0060
+     * @tc.number SUB_GLOBAL_refinedFormat_0060
+     * @tc.desc   local is ug-CN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0060', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("ug-CN");
@@ -768,12 +767,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0090
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0090
-     * @tc.desc     : local is zh-Hant-HK
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0090
+     * @tc.number SUB_GLOBAL_refinedFormat_0090
+     * @tc.desc   local is zh-Hant-HK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0090', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hant-HK");
@@ -781,16 +780,16 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0100
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0100
-     * @tc.desc     : local is zh-Hant-TW
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0100
+     * @tc.number SUB_GLOBAL_refinedFormat_0100
+     * @tc.desc   local is zh-Hant-TW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0100', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hant-TW");
@@ -798,16 +797,16 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("2024/12/13 上午6:30:25")
+      expect(dateFormatted).assertEqual("2024/12/13 上午 6:30:25")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0110
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0110
-     * @tc.desc     : local is zh-Hant-MO
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0110
+     * @tc.number SUB_GLOBAL_refinedFormat_0110
+     * @tc.desc   local is zh-Hant-MO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0110', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-Hant-MO");
@@ -815,16 +814,16 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024 上午6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 上午 6:30:25")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0120
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0120
-     * @tc.desc     : local is ug-CN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0120
+     * @tc.number SUB_GLOBAL_refinedFormat_0120
+     * @tc.desc   local is ug-CN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0120', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("ug-CN");
@@ -832,16 +831,16 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("12/13/2024، چ ب 6:30:25")
+      expect(dateFormatted).assertEqual("13/12/2024 6:30:25 چ ب")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0130
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0130
-     * @tc.desc     : local is bo-CN
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0130
+     * @tc.number SUB_GLOBAL_refinedFormat_0130
+     * @tc.desc   local is bo-CN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0130', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("bo-CN");
@@ -853,12 +852,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0140
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0140
-     * @tc.desc     : local is en-GB
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0140
+     * @tc.number SUB_GLOBAL_refinedFormat_0140
+     * @tc.desc   local is en-GB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0140', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("en-GB");
@@ -866,32 +865,32 @@ export default function FivePointOne_i18nStageTest() {
       let formatter: i18n.SimpleDateTimeFormat =
         i18n.getSimpleDateTimeFormatBySkeleton("yMdhms", locale);
       let dateFormatted: string = formatter.format(date);
-      expect(dateFormatted).assertEqual("13/12/2024, 6:30:25 am")
+      expect(dateFormatted).assertEqual("13/12/2024, 6:30:25 am")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0150
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0150
-     * @tc.desc     : local is en-GB
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0150
+     * @tc.number SUB_GLOBAL_refinedFormat_0150
+     * @tc.desc   local is en-GB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0150', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("en-US");
       let date: Date = new Date(2024, 11, 13, 6, 30, 25);
       let skeletonFormatter: i18n.SimpleDateTimeFormat = i18n.getSimpleDateTimeFormatBySkeleton('yMdhms', locale);
       let dateFormatted: string = skeletonFormatter.format(date);
-      expect(dateFormatted).assertEqual("12/13/2024, 6:30:25 AM")
+      expect(dateFormatted).assertEqual("12/13/2024, 6:30:25 AM")
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0240
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0240
-     * @tc.desc     : numOptions is 2,4
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   SUB_GLOBAL_refinedFormat_0240
+     * @tc.number SUB_GLOBAL_refinedFormat_0240
+     * @tc.desc   numOptions is 2,4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_GLOBAL_refinedFormat_0240', Level.LEVEL3, () => {
       let numOptions: intl.NumberOptions = {
@@ -903,12 +902,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0250
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0250
-     * @tc.desc     : numOptions is 2,6
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   SUB_GLOBAL_refinedFormat_0250
+     * @tc.number SUB_GLOBAL_refinedFormat_0250
+     * @tc.desc   numOptions is 2,6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_GLOBAL_refinedFormat_0250', Level.LEVEL3, () => {
       let numOptions: intl.NumberOptions = {
@@ -920,12 +919,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0260
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0260
-     * @tc.desc     : numOptions is 2,4,auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 3
+     * @tc.name   SUB_GLOBAL_refinedFormat_0260
+     * @tc.number SUB_GLOBAL_refinedFormat_0260
+     * @tc.desc   numOptions is 2,4,auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_GLOBAL_refinedFormat_0260', Level.LEVEL3, () => {
       let numOptions: intl.NumberOptions = {
@@ -937,12 +936,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0270
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0270
-     * @tc.desc     : numOptions is 2,6,auto
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0270
+     * @tc.number SUB_GLOBAL_refinedFormat_0270
+     * @tc.desc   numOptions is 2,6,auto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0270', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -954,12 +953,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0280
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0280
-     * @tc.desc     : numOptions is 2,4,morePrecision
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0280
+     * @tc.number SUB_GLOBAL_refinedFormat_0280
+     * @tc.desc   numOptions is 2,4,morePrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0280', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -971,12 +970,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0290
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0290
-     * @tc.desc     : numOptions is 2,6,morePrecision
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0290
+     * @tc.number SUB_GLOBAL_refinedFormat_0290
+     * @tc.desc   numOptions is 2,6,morePrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0290', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -988,12 +987,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0300
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0300
-     * @tc.desc     : numOptions is 2,4,lessPrecision
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0300
+     * @tc.number SUB_GLOBAL_refinedFormat_0300
+     * @tc.desc   numOptions is 2,4,lessPrecision
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0300', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1005,12 +1004,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0330
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0330
-     * @tc.desc     : numOptions is 2,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0330
+     * @tc.number SUB_GLOBAL_refinedFormat_0330
+     * @tc.desc   numOptions is 2,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0330', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1022,12 +1021,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0340
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0340
-     * @tc.desc     : numOptions is 2,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0340
+     * @tc.number SUB_GLOBAL_refinedFormat_0340
+     * @tc.desc   numOptions is 2,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0340', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1039,12 +1038,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0350
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0350
-     * @tc.desc     : numOptions is 2,10
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0350
+     * @tc.number SUB_GLOBAL_refinedFormat_0350
+     * @tc.desc   numOptions is 2,10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0350', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1056,12 +1055,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0360
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0360
-     * @tc.desc     : numOptions is 2,20
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0360
+     * @tc.number SUB_GLOBAL_refinedFormat_0360
+     * @tc.desc   numOptions is 2,20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0360', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1073,12 +1072,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0370
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0370
-     * @tc.desc     : numOptions is 2,25
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0370
+     * @tc.number SUB_GLOBAL_refinedFormat_0370
+     * @tc.desc   numOptions is 2,25
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0370', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1090,12 +1089,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0380
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0380
-     * @tc.desc     : numOptions is 2,50
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0380
+     * @tc.number SUB_GLOBAL_refinedFormat_0380
+     * @tc.desc   numOptions is 2,50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0380', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1107,12 +1106,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0390
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0390
-     * @tc.desc     : numOptions is 2,100
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0390
+     * @tc.number SUB_GLOBAL_refinedFormat_0390
+     * @tc.desc   numOptions is 2,100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0390', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1124,12 +1123,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0400
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0400
-     * @tc.desc     : numOptions is 2,200
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0400
+     * @tc.number SUB_GLOBAL_refinedFormat_0400
+     * @tc.desc   numOptions is 2,200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0400', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1141,12 +1140,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0410
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0410
-     * @tc.desc     : numOptions is 2,250
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0410
+     * @tc.number SUB_GLOBAL_refinedFormat_0410
+     * @tc.desc   numOptions is 2,250
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0410', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1158,12 +1157,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0420
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0420
-     * @tc.desc     : numOptions is 2,500
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0420
+     * @tc.number SUB_GLOBAL_refinedFormat_0420
+     * @tc.desc   numOptions is 2,500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0420', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1175,12 +1174,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0430
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0430
-     * @tc.desc     : numOptions is 2,1000
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0430
+     * @tc.number SUB_GLOBAL_refinedFormat_0430
+     * @tc.desc   numOptions is 2,1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0430', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1192,12 +1191,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0440
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0440
-     * @tc.desc     : numOptions is 2,2000
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0440
+     * @tc.number SUB_GLOBAL_refinedFormat_0440
+     * @tc.desc   numOptions is 2,2000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0440', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1209,12 +1208,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0450
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0450
-     * @tc.desc     : numOptions is 2,2500
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0450
+     * @tc.number SUB_GLOBAL_refinedFormat_0450
+     * @tc.desc   numOptions is 2,2500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0450', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1226,12 +1225,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0460
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0460
-     * @tc.desc     : numOptions is 2,5000
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0460
+     * @tc.number SUB_GLOBAL_refinedFormat_0460
+     * @tc.desc   numOptions is 2,5000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0460', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1243,12 +1242,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0470
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0470
-     * @tc.desc     : numOptions is ceil,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0470
+     * @tc.number SUB_GLOBAL_refinedFormat_0470
+     * @tc.desc   numOptions is ceil,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0470', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1260,12 +1259,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0480
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0480
-     * @tc.desc     : numOptions is ceil,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0480
+     * @tc.number SUB_GLOBAL_refinedFormat_0480
+     * @tc.desc   numOptions is ceil,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0480', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1277,12 +1276,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0490
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0490
-     * @tc.desc     : numOptions is floor,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0490
+     * @tc.number SUB_GLOBAL_refinedFormat_0490
+     * @tc.desc   numOptions is floor,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0490', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1294,12 +1293,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0500
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0500
-     * @tc.desc     : numOptions is floor,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0500
+     * @tc.number SUB_GLOBAL_refinedFormat_0500
+     * @tc.desc   numOptions is floor,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0500', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1311,12 +1310,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0510
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0510
-     * @tc.desc     : numOptions is expand,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0510
+     * @tc.number SUB_GLOBAL_refinedFormat_0510
+     * @tc.desc   numOptions is expand,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0510', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1328,12 +1327,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0520
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0520
-     * @tc.desc     : numOptions is expand,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0520
+     * @tc.number SUB_GLOBAL_refinedFormat_0520
+     * @tc.desc   numOptions is expand,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0520', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1345,12 +1344,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0530
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0530
-     * @tc.desc     : numOptions is trunc,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0530
+     * @tc.number SUB_GLOBAL_refinedFormat_0530
+     * @tc.desc   numOptions is trunc,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0530', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1362,12 +1361,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0540
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0540
-     * @tc.desc     : numOptions is trunc,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0540
+     * @tc.number SUB_GLOBAL_refinedFormat_0540
+     * @tc.desc   numOptions is trunc,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0540', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1379,12 +1378,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0550
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0550
-     * @tc.desc     : numOptions is halfCeil,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0550
+     * @tc.number SUB_GLOBAL_refinedFormat_0550
+     * @tc.desc   numOptions is halfCeil,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0550', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1396,12 +1395,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0560
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0560
-     * @tc.desc     : numOptions is halfCeil,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0560
+     * @tc.number SUB_GLOBAL_refinedFormat_0560
+     * @tc.desc   numOptions is halfCeil,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0560', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1413,12 +1412,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0570
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0570
-     * @tc.desc     : numOptions is halfCeil,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0570
+     * @tc.number SUB_GLOBAL_refinedFormat_0570
+     * @tc.desc   numOptions is halfCeil,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0570', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1430,12 +1429,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0580
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0580
-     * @tc.desc     : numOptions is halfCeil,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0580
+     * @tc.number SUB_GLOBAL_refinedFormat_0580
+     * @tc.desc   numOptions is halfCeil,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0580', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1447,12 +1446,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0590
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0590
-     * @tc.desc     : numOptions is halfFloor,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0590
+     * @tc.number SUB_GLOBAL_refinedFormat_0590
+     * @tc.desc   numOptions is halfFloor,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0590', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1464,12 +1463,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0600
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0600
-     * @tc.desc     : numOptions is halfFloor,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0600
+     * @tc.number SUB_GLOBAL_refinedFormat_0600
+     * @tc.desc   numOptions is halfFloor,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0600', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1481,12 +1480,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0610
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0610
-     * @tc.desc     : numOptions is halfFloor,2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0610
+     * @tc.number SUB_GLOBAL_refinedFormat_0610
+     * @tc.desc   numOptions is halfFloor,2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0610', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1498,12 +1497,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0620
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0620
-     * @tc.desc     : numOptions is halfFloor,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0620
+     * @tc.number SUB_GLOBAL_refinedFormat_0620
+     * @tc.desc   numOptions is halfFloor,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0620', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1515,12 +1514,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0640
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0640
-     * @tc.desc     : numOptions is halfExpand,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0640
+     * @tc.number SUB_GLOBAL_refinedFormat_0640
+     * @tc.desc   numOptions is halfExpand,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0640', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1532,12 +1531,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0650
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0650
-     * @tc.desc     : numOptions is halfExpand,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0650
+     * @tc.number SUB_GLOBAL_refinedFormat_0650
+     * @tc.desc   numOptions is halfExpand,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0650', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1549,12 +1548,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0660
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0660
-     * @tc.desc     : numOptions is halfExpand,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0660
+     * @tc.number SUB_GLOBAL_refinedFormat_0660
+     * @tc.desc   numOptions is halfExpand,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0660', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1566,12 +1565,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0670
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0670
-     * @tc.desc     : numOptions is halfTrunc,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0670
+     * @tc.number SUB_GLOBAL_refinedFormat_0670
+     * @tc.desc   numOptions is halfTrunc,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0670', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1583,12 +1582,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0680
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0680
-     * @tc.desc     : numOptions is halfTrunc,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0680
+     * @tc.number SUB_GLOBAL_refinedFormat_0680
+     * @tc.desc   numOptions is halfTrunc,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0680', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1600,12 +1599,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0690
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0690
-     * @tc.desc     : numOptions is halfTrunc,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0690
+     * @tc.number SUB_GLOBAL_refinedFormat_0690
+     * @tc.desc   numOptions is halfTrunc,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0690', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1617,12 +1616,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0700
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0700
-     * @tc.desc     : numOptions is halfTrunc,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0700
+     * @tc.number SUB_GLOBAL_refinedFormat_0700
+     * @tc.desc   numOptions is halfTrunc,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0700', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1634,12 +1633,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0710
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0710
-     * @tc.desc     : numOptions is halfEven,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0710
+     * @tc.number SUB_GLOBAL_refinedFormat_0710
+     * @tc.desc   numOptions is halfEven,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0710', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1651,12 +1650,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0720
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0720
-     * @tc.desc     : numOptions is halfEven,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0720
+     * @tc.number SUB_GLOBAL_refinedFormat_0720
+     * @tc.desc   numOptions is halfEven,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0720', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1668,12 +1667,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0730
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0730
-     * @tc.desc     : numOptions is halfEven,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0730
+     * @tc.number SUB_GLOBAL_refinedFormat_0730
+     * @tc.desc   numOptions is halfEven,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0730', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1685,12 +1684,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0740
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0740
-     * @tc.desc     : numOptions is halfEven,5
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0740
+     * @tc.number SUB_GLOBAL_refinedFormat_0740
+     * @tc.desc   numOptions is halfEven,5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0740', Level.LEVEL2, () => {
       let numOptions: intl.NumberOptions = {
@@ -1702,12 +1701,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0800
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0800
-     * @tc.desc     : skeleton is EE+!0
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0800
+     * @tc.number SUB_GLOBAL_refinedFormat_0800
+     * @tc.desc   skeleton is EE+!0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0800', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1717,12 +1716,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0810
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0810
-     * @tc.desc     : skeleton is %
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0810
+     * @tc.number SUB_GLOBAL_refinedFormat_0810
+     * @tc.desc   skeleton is %
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0810', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1732,12 +1731,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0820
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0820
-     * @tc.desc     : skeleton is permille
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0820
+     * @tc.number SUB_GLOBAL_refinedFormat_0820
+     * @tc.desc   skeleton is permille
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0820', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1747,12 +1746,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0830
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0830
-     * @tc.desc     : skeleton is %x100
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0830
+     * @tc.number SUB_GLOBAL_refinedFormat_0830
+     * @tc.desc   skeleton is %x100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0830', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1762,12 +1761,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0840
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0840
-     * @tc.desc     : skeleton is unit/meter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0840
+     * @tc.number SUB_GLOBAL_refinedFormat_0840
+     * @tc.desc   skeleton is unit/meter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0840', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1777,12 +1776,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0850
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0850
-     * @tc.desc     : skeleton is measure-unit/length-meter
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0850
+     * @tc.number SUB_GLOBAL_refinedFormat_0850
+     * @tc.desc   skeleton is measure-unit/length-meter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0850', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1793,12 +1792,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0860
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0860
-     * @tc.desc     : skeleton is currency/CNY
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0860
+     * @tc.number SUB_GLOBAL_refinedFormat_0860
+     * @tc.desc   skeleton is currency/CNY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0860', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1808,12 +1807,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0870
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0870
-     * @tc.desc     : skeleton is measure-unit/length-meter per-measure-unit/duration-second
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0870
+     * @tc.number SUB_GLOBAL_refinedFormat_0870
+     * @tc.desc   skeleton is measure-unit/length-meter per-measure-unit/duration-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0870', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("en-US");
@@ -1824,12 +1823,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0880
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0880
-     * @tc.desc     : skeleton is unit/meter unit-width-full-name
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0880
+     * @tc.number SUB_GLOBAL_refinedFormat_0880
+     * @tc.desc   skeleton is unit/meter unit-width-full-name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0880', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("en-US");
@@ -1840,12 +1839,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0890
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0890
-     * @tc.desc     : skeleton is precision-increment/0.01
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0890
+     * @tc.number SUB_GLOBAL_refinedFormat_0890
+     * @tc.desc   skeleton is precision-increment/0.01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0890', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1856,12 +1855,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0900
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0900
-     * @tc.desc     : skeleton is precision-increment/0.01 rounding-mode-ceiling
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0900
+     * @tc.number SUB_GLOBAL_refinedFormat_0900
+     * @tc.desc   skeleton is precision-increment/0.01 rounding-mode-ceiling
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0900', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1872,12 +1871,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0910
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0910
-     * @tc.desc     : skeleton is integer-width/000
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0910
+     * @tc.number SUB_GLOBAL_refinedFormat_0910
+     * @tc.desc   skeleton is integer-width/000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0910', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1887,12 +1886,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0920
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0920
-     * @tc.desc     : skeleton is scale/100
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0920
+     * @tc.number SUB_GLOBAL_refinedFormat_0920
+     * @tc.desc   skeleton is scale/100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0920', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1902,12 +1901,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0930
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0930
-     * @tc.desc     : skeleton is group-min2
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0930
+     * @tc.number SUB_GLOBAL_refinedFormat_0930
+     * @tc.desc   skeleton is group-min2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0930', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1917,12 +1916,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0940
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0940
-     * @tc.desc     : skeleton is numbering-system/arab
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0940
+     * @tc.number SUB_GLOBAL_refinedFormat_0940
+     * @tc.desc   skeleton is numbering-system/arab
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0940', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1933,12 +1932,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0950
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0950
-     * @tc.desc     : skeleton is () currency/CAD
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0950
+     * @tc.number SUB_GLOBAL_refinedFormat_0950
+     * @tc.desc   skeleton is () currency/CAD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0950', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1948,12 +1947,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_refinedFormat_0960
-     * @tc.name     : SUB_GLOBAL_refinedFormat_0960
-     * @tc.desc     : skeleton is decimal-always
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_refinedFormat_0960
+     * @tc.number SUB_GLOBAL_refinedFormat_0960
+     * @tc.desc   skeleton is decimal-always
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_refinedFormat_0960', Level.LEVEL2, () => {
       let locale: intl.Locale = new intl.Locale("zh-hans-CN");
@@ -1963,12 +1962,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0200
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0200
-     * @tc.desc     : path /data/out/tmp & delimiter / non-mirror language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0200
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0200
+     * @tc.desc   path /data/out/tmp & delimiter / non-mirror language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0200', Level.LEVEL2, () => {
       let path: string = "/data/out/tmp";
@@ -1980,12 +1979,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0300
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0300
-     * @tc.desc     : path \data\out\tmp & delimiter \ mirror language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0300
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0300
+     * @tc.desc   path \data\out\tmp & delimiter \ mirror language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0300', Level.LEVEL2, () => {
       let path: string = "\\data\\out\\tmp";
@@ -1997,12 +1996,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0400
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0400
-     * @tc.desc     : path >data>out>tmp & delimiter > mirror language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0400
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0400
+     * @tc.desc   path >data>out>tmp & delimiter > mirror language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0400', Level.LEVEL2, () => {
       let path: string = ">data>out>tmp";
@@ -2014,12 +2013,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0600
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0600
-     * @tc.desc     : path /data/out/tmp & delimiter > mirror language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0600
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0600
+     * @tc.desc   path /data/out/tmp & delimiter > mirror language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0600', Level.LEVEL2, () => {
       let path: string = "/data/out/tmp";
@@ -2031,12 +2030,12 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_FilePathMirroring_0800
-     * @tc.name     : SUB_GLOBAL_FilePathMirroring_0800
-     * @tc.desc     : path /data/&*^%$#@-+=!out/tmp & delimiter / mirror language
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   SUB_GLOBAL_FilePathMirroring_0800
+     * @tc.number SUB_GLOBAL_FilePathMirroring_0800
+     * @tc.desc   path /data/&*^%$#@-+=!out/tmp & delimiter / mirror language
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_GLOBAL_FilePathMirroring_0800', Level.LEVEL2, () => {
       let path: string = "/data/&*^%$#@-+=!out/tmp";
@@ -2047,14 +2046,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(flag).assertTrue()
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0010
-    * @tc.name      : SUB_GLOBAL_numberFormat_0010
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0010
+     * @tc.number SUB_GLOBAL_numberFormat_0010
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0010', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: "unit",
@@ -2069,14 +2068,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0020
-    * @tc.name      : SUB_GLOBAL_numberFormat_0020
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0020
+     * @tc.number SUB_GLOBAL_numberFormat_0020
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0020', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: "unit",
@@ -2091,14 +2090,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0030
-    * @tc.name      : SUB_GLOBAL_numberFormat_0030
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0030
+     * @tc.number SUB_GLOBAL_numberFormat_0030
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0030', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: "unit",
@@ -2113,14 +2112,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0040
-    * @tc.name      : SUB_GLOBAL_numberFormat_0040
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0040
+     * @tc.number SUB_GLOBAL_numberFormat_0040
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0040', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: "unit",
@@ -2135,14 +2134,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0050
-    * @tc.name      : SUB_GLOBAL_numberFormat_0050
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0050
+     * @tc.number SUB_GLOBAL_numberFormat_0050
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0050', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2157,14 +2156,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0060
-    * @tc.name      : SUB_GLOBAL_numberFormat_0060
-    * @tc.desc      : units Incoming beat-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0060
+     * @tc.number SUB_GLOBAL_numberFormat_0060
+     * @tc.desc   units Incoming beat-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0060', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2179,14 +2178,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0070
-    * @tc.name      : SUB_GLOBAL_numberFormat_0070
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0070
+     * @tc.number SUB_GLOBAL_numberFormat_0070
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0070', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2201,14 +2200,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 个/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0080
-    * @tc.name      : SUB_GLOBAL_numberFormat_0080
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0080
+     * @tc.number SUB_GLOBAL_numberFormat_0080
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0080', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2223,14 +2222,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 个/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0090
-    * @tc.name      : SUB_GLOBAL_numberFormat_0090
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0090
+     * @tc.number SUB_GLOBAL_numberFormat_0090
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0090', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2245,14 +2244,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 个/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0100
-    * @tc.name      : SUB_GLOBAL_numberFormat_0100
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0100
+     * @tc.number SUB_GLOBAL_numberFormat_0100
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0100', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2267,14 +2266,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2 == "10,000 个/分钟").assertTrue()
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0110
-    * @tc.name      : SUB_GLOBAL_numberFormat_0110
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0110
+     * @tc.number SUB_GLOBAL_numberFormat_0110
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0110', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2289,14 +2288,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 个/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0120
-    * @tc.name      : SUB_GLOBAL_numberFormat_0120
-    * @tc.desc      : units Incoming jump-rope-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0120
+     * @tc.number SUB_GLOBAL_numberFormat_0120
+     * @tc.desc   units Incoming jump-rope-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0120', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2311,14 +2310,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 个/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0130
-    * @tc.name      : SUB_GLOBAL_numberFormat_0130
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0130
+     * @tc.number SUB_GLOBAL_numberFormat_0130
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0130', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2333,14 +2332,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0140
-    * @tc.name      : SUB_GLOBAL_numberFormat_0140
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0140
+     * @tc.number SUB_GLOBAL_numberFormat_0140
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0140', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2355,14 +2354,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0150
-    * @tc.name      : SUB_GLOBAL_numberFormat_0150
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0150
+     * @tc.number SUB_GLOBAL_numberFormat_0150
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0150', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2377,14 +2376,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0160
-    * @tc.name      : SUB_GLOBAL_numberFormat_0160
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0160
+     * @tc.number SUB_GLOBAL_numberFormat_0160
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0160', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2399,14 +2398,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0170
-    * @tc.name      : SUB_GLOBAL_numberFormat_0170
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0170
+     * @tc.number SUB_GLOBAL_numberFormat_0170
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0170', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2421,14 +2420,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0180
-    * @tc.name      : SUB_GLOBAL_numberFormat_0180
-    * @tc.desc      : units Incoming breath-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0180
+     * @tc.number SUB_GLOBAL_numberFormat_0180
+     * @tc.desc   units Incoming breath-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0180', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2443,14 +2442,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 次/分")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0190
-    * @tc.name      : SUB_GLOBAL_numberFormat_0190
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0190
+     * @tc.number SUB_GLOBAL_numberFormat_0190
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0190', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2465,14 +2464,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0200
-    * @tc.name      : SUB_GLOBAL_numberFormat_0200
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0200
+     * @tc.number SUB_GLOBAL_numberFormat_0200
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0200', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2487,14 +2486,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0210
-    * @tc.name      : SUB_GLOBAL_numberFormat_0210
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0210
+     * @tc.number SUB_GLOBAL_numberFormat_0210
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0210', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2509,14 +2508,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0220
-    * @tc.name      : SUB_GLOBAL_numberFormat_0220
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0220
+     * @tc.number SUB_GLOBAL_numberFormat_0220
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0220', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2531,14 +2530,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0230
-    * @tc.name      : SUB_GLOBAL_numberFormat_0230
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0230
+     * @tc.number SUB_GLOBAL_numberFormat_0230
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0230', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2553,14 +2552,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0240
-    * @tc.name      : SUB_GLOBAL_numberFormat_0240
-    * @tc.desc      : units Incoming body-weight-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0240
+     * @tc.number SUB_GLOBAL_numberFormat_0240
+     * @tc.desc   units Incoming body-weight-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0240', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2575,14 +2574,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 BW/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0250
-    * @tc.name      : SUB_GLOBAL_numberFormat_0250
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0250
+     * @tc.number SUB_GLOBAL_numberFormat_0250
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0250', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2597,14 +2596,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0260
-    * @tc.name      : SUB_GLOBAL_numberFormat_0260
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0260
+     * @tc.number SUB_GLOBAL_numberFormat_0260
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0260', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2619,14 +2618,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0270
-    * @tc.name      : SUB_GLOBAL_numberFormat_0270
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0270
+     * @tc.number SUB_GLOBAL_numberFormat_0270
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0270', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2641,14 +2640,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0280
-    * @tc.name      : SUB_GLOBAL_numberFormat_0280
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0280
+     * @tc.number SUB_GLOBAL_numberFormat_0280
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0280', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2663,14 +2662,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0290
-    * @tc.name      : SUB_GLOBAL_numberFormat_0290
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0290
+     * @tc.number SUB_GLOBAL_numberFormat_0290
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0290', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2685,14 +2684,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0300
-    * @tc.name      : SUB_GLOBAL_numberFormat_0300
-    * @tc.desc      : units Incoming rotation-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0300
+     * @tc.number SUB_GLOBAL_numberFormat_0300
+     * @tc.desc   units Incoming rotation-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0300', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2707,14 +2706,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 转/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0310
-    * @tc.name      : SUB_GLOBAL_numberFormat_0310
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0310
+     * @tc.number SUB_GLOBAL_numberFormat_0310
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0310', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2729,14 +2728,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 mi/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0320
-    * @tc.name      : SUB_GLOBAL_numberFormat_0320
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0320
+     * @tc.number SUB_GLOBAL_numberFormat_0320
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0320', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2751,14 +2750,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 mi/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0330
-    * @tc.name      : SUB_GLOBAL_numberFormat_0330
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0330
+     * @tc.number SUB_GLOBAL_numberFormat_0330
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0330', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2773,14 +2772,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 mi/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0340
-    * @tc.name      : SUB_GLOBAL_numberFormat_0340
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0340
+     * @tc.number SUB_GLOBAL_numberFormat_0340
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0340', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2795,14 +2794,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时10,000英里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0350
-    * @tc.name      : SUB_GLOBAL_numberFormat_0350
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0350
+     * @tc.number SUB_GLOBAL_numberFormat_0350
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0350', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2817,14 +2816,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时0.1英里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0360
-    * @tc.name      : SUB_GLOBAL_numberFormat_0360
-    * @tc.desc      : units Incoming mile-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0360
+     * @tc.number SUB_GLOBAL_numberFormat_0360
+     * @tc.desc   units Incoming mile-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0360', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2839,14 +2838,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时-1英里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0370
-    * @tc.name      : SUB_GLOBAL_numberFormat_0370
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0370
+     * @tc.number SUB_GLOBAL_numberFormat_0370
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0370', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2862,14 +2861,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 km/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0380
-    * @tc.name      : SUB_GLOBAL_numberFormat_0380
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0380
+     * @tc.number SUB_GLOBAL_numberFormat_0380
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0380', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2884,14 +2883,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 km/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0390
-    * @tc.name      : SUB_GLOBAL_numberFormat_0390
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0390
+     * @tc.number SUB_GLOBAL_numberFormat_0390
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0390', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2906,14 +2905,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 km/h")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0400
-    * @tc.name      : SUB_GLOBAL_numberFormat_0400
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0400
+     * @tc.number SUB_GLOBAL_numberFormat_0400
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0400', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2928,14 +2927,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时10,000公里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0410
-    * @tc.name      : SUB_GLOBAL_numberFormat_0410
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0410
+     * @tc.number SUB_GLOBAL_numberFormat_0410
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0410', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2950,14 +2949,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时0.1公里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0420
-    * @tc.name      : SUB_GLOBAL_numberFormat_0420
-    * @tc.desc      : units Incoming kilometer-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0420
+     * @tc.number SUB_GLOBAL_numberFormat_0420
+     * @tc.desc   units Incoming kilometer-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0420', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2972,14 +2971,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每小时-1公里")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0430
-    * @tc.name      : SUB_GLOBAL_numberFormat_0430
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0430
+     * @tc.number SUB_GLOBAL_numberFormat_0430
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0430', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -2994,14 +2993,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0440
-    * @tc.name      : SUB_GLOBAL_numberFormat_0440
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0440
+     * @tc.number SUB_GLOBAL_numberFormat_0440
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0440', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3016,14 +3015,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0450
-    * @tc.name      : SUB_GLOBAL_numberFormat_0450
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0450
+     * @tc.number SUB_GLOBAL_numberFormat_0450
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0450', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3038,14 +3037,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0460
-    * @tc.name      : SUB_GLOBAL_numberFormat_0460
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0460
+     * @tc.number SUB_GLOBAL_numberFormat_0460
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0460', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3060,14 +3059,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0470
-    * @tc.name      : SUB_GLOBAL_numberFormat_0470
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0470
+     * @tc.number SUB_GLOBAL_numberFormat_0470
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0470', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3082,14 +3081,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0480
-    * @tc.name      : SUB_GLOBAL_numberFormat_0480
-    * @tc.desc      : units Incoming meter-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0480
+     * @tc.number SUB_GLOBAL_numberFormat_0480
+     * @tc.desc   units Incoming meter-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0480', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3104,14 +3103,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 米/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0490
-    * @tc.name      : SUB_GLOBAL_numberFormat_0490
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0490
+     * @tc.number SUB_GLOBAL_numberFormat_0490
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0490', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3126,14 +3125,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 m/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0500
-    * @tc.name      : SUB_GLOBAL_numberFormat_0500
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0500
+     * @tc.number SUB_GLOBAL_numberFormat_0500
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0500', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3148,14 +3147,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 m/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0510
-    * @tc.name      : SUB_GLOBAL_numberFormat_0510
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0510
+     * @tc.number SUB_GLOBAL_numberFormat_0510
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0510', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3170,14 +3169,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 m/s")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0520
-    * @tc.name      : SUB_GLOBAL_numberFormat_0520
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0520
+     * @tc.number SUB_GLOBAL_numberFormat_0520
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0520', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3192,14 +3191,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每秒10,000米")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0530
-    * @tc.name      : SUB_GLOBAL_numberFormat_0530
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0530
+     * @tc.number SUB_GLOBAL_numberFormat_0530
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0530', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3214,14 +3213,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每秒0.1米")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0540
-    * @tc.name      : SUB_GLOBAL_numberFormat_0540
-    * @tc.desc      : units Incoming meter-per-second
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0540
+     * @tc.number SUB_GLOBAL_numberFormat_0540
+     * @tc.desc   units Incoming meter-per-second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0540', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3236,14 +3235,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每秒-1米")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0550
-    * @tc.name      : SUB_GLOBAL_numberFormat_0550
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0550
+     * @tc.number SUB_GLOBAL_numberFormat_0550
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0550', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3258,14 +3257,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0560
-    * @tc.name      : SUB_GLOBAL_numberFormat_0560
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0560
+     * @tc.number SUB_GLOBAL_numberFormat_0560
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0560', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3280,14 +3279,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0570
-    * @tc.name      : SUB_GLOBAL_numberFormat_0570
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0570
+     * @tc.number SUB_GLOBAL_numberFormat_0570
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0570', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3302,14 +3301,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0580
-    * @tc.name      : SUB_GLOBAL_numberFormat_0580
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0580
+     * @tc.number SUB_GLOBAL_numberFormat_0580
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0580', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3324,14 +3323,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0590
-    * @tc.name      : SUB_GLOBAL_numberFormat_0590
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0590
+     * @tc.number SUB_GLOBAL_numberFormat_0590
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0590', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3346,14 +3345,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0600
-    * @tc.name      : SUB_GLOBAL_numberFormat_0600
-    * @tc.desc      : units Incoming milliliter-per-minute-per-kilogram
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0600
+     * @tc.number SUB_GLOBAL_numberFormat_0600
+     * @tc.desc   units Incoming milliliter-per-minute-per-kilogram
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0600', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3368,14 +3367,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 ml/kg/min")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0610
-    * @tc.name      : SUB_GLOBAL_numberFormat_0610
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0610
+     * @tc.number SUB_GLOBAL_numberFormat_0610
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0610', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3390,14 +3389,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 mmol/L")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0620
-    * @tc.name      : SUB_GLOBAL_numberFormat_0620
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0620
+     * @tc.number SUB_GLOBAL_numberFormat_0620
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0620', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3412,14 +3411,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 mmol/L")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0630
-    * @tc.name      : SUB_GLOBAL_numberFormat_0630
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0630
+     * @tc.number SUB_GLOBAL_numberFormat_0630
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0630', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3434,14 +3433,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 mmol/L")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0640
-    * @tc.name      : SUB_GLOBAL_numberFormat_0640
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0640
+     * @tc.number SUB_GLOBAL_numberFormat_0640
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0640', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3456,14 +3455,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每升10,000毫摩尔")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0650
-    * @tc.name      : SUB_GLOBAL_numberFormat_0650
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0650
+     * @tc.number SUB_GLOBAL_numberFormat_0650
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0650', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3478,14 +3477,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每升0.1毫摩尔")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0660
-    * @tc.name      : SUB_GLOBAL_numberFormat_0660
-    * @tc.desc      : units Incoming millimole-per-liter
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0660
+     * @tc.number SUB_GLOBAL_numberFormat_0660
+     * @tc.desc   units Incoming millimole-per-liter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0660', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3500,14 +3499,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("每升-1毫摩尔")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0670
-    * @tc.name      : SUB_GLOBAL_numberFormat_0670
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0670
+     * @tc.number SUB_GLOBAL_numberFormat_0670
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0670', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3522,14 +3521,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0680
-    * @tc.name      : SUB_GLOBAL_numberFormat_0680
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0680
+     * @tc.number SUB_GLOBAL_numberFormat_0680
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0680', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3544,14 +3543,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0690
-    * @tc.name      : SUB_GLOBAL_numberFormat_0690
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0690
+     * @tc.number SUB_GLOBAL_numberFormat_0690
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0690', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3566,14 +3565,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0700
-    * @tc.name      : SUB_GLOBAL_numberFormat_0700
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0700
+     * @tc.number SUB_GLOBAL_numberFormat_0700
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0700', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3588,14 +3587,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0710
-    * @tc.name      : SUB_GLOBAL_numberFormat_0710
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0710
+     * @tc.number SUB_GLOBAL_numberFormat_0710
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0710', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3610,14 +3609,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0720
-    * @tc.name      : SUB_GLOBAL_numberFormat_0720
-    * @tc.desc      : units Incoming step-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0720
+     * @tc.number SUB_GLOBAL_numberFormat_0720
+     * @tc.desc   units Incoming step-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0720', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3632,14 +3631,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 步/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0730
-    * @tc.name      : SUB_GLOBAL_numberFormat_0730
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0730
+     * @tc.number SUB_GLOBAL_numberFormat_0730
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0730', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3654,14 +3653,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0740
-    * @tc.name      : SUB_GLOBAL_numberFormat_0740
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0740
+     * @tc.number SUB_GLOBAL_numberFormat_0740
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0740', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3676,14 +3675,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0750
-    * @tc.name      : SUB_GLOBAL_numberFormat_0750
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0750
+     * @tc.number SUB_GLOBAL_numberFormat_0750
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0750', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3698,14 +3697,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0760
-    * @tc.name      : SUB_GLOBAL_numberFormat_0760
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0760
+     * @tc.number SUB_GLOBAL_numberFormat_0760
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0760', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3720,14 +3719,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0770
-    * @tc.name      : SUB_GLOBAL_numberFormat_0770
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0770
+     * @tc.number SUB_GLOBAL_numberFormat_0770
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0770', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3742,14 +3741,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0780
-    * @tc.name      : SUB_GLOBAL_numberFormat_0780
-    * @tc.desc      : units Incoming stroke-per-minute
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0780
+     * @tc.number SUB_GLOBAL_numberFormat_0780
+     * @tc.desc   units Incoming stroke-per-minute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0780', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3764,14 +3763,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("-1 次/分钟")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0790
-    * @tc.name      : SUB_GLOBAL_numberFormat_0790
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0790
+     * @tc.number SUB_GLOBAL_numberFormat_0790
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0790', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3786,14 +3785,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0 英尺/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0800
-    * @tc.name      : SUB_GLOBAL_numberFormat_0800
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 1
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0800
+     * @tc.number SUB_GLOBAL_numberFormat_0800
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_GLOBAL_numberFormat_0800', Level.LEVEL1, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3808,14 +3807,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("1 英尺/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0810
-    * @tc.name      : SUB_GLOBAL_numberFormat_0810
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0810
+     * @tc.number SUB_GLOBAL_numberFormat_0810
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0810', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3830,14 +3829,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("256 英尺/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0820
-    * @tc.name      : SUB_GLOBAL_numberFormat_0820
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0820
+     * @tc.number SUB_GLOBAL_numberFormat_0820
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0820', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3852,14 +3851,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("10,000 英尺/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0830
-    * @tc.name      : SUB_GLOBAL_numberFormat_0830
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 2
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0830
+     * @tc.number SUB_GLOBAL_numberFormat_0830
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_GLOBAL_numberFormat_0830', Level.LEVEL2, () => {
       let options: intl.NumberOptions = {
         style: 'unit',
@@ -3874,14 +3873,14 @@ export default function FivePointOne_i18nStageTest() {
       expect(resultFmt2).assertEqual("0.1 英尺/小时")
     })
 
-    /* *
-    * @tc.number    : SUB_GLOBAL_numberFormat_0840
-    * @tc.name      : SUB_GLOBAL_numberFormat_0840
-    * @tc.desc      : units Incoming foot-per-hour
-    * @tc.size      : MEDIUM
-    * @tc.type      : Function
-    * @tc.level     : Level 3
-    */
+    /**
+     * @tc.name   SUB_GLOBAL_numberFormat_0840
+     * @tc.number SUB_GLOBAL_numberFormat_0840
+     * @tc.desc   units Incoming foot-per-hour
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_GLOBAL_numberFormat_0840', Level.LEVEL3, () => {
       let options: intl.NumberOptions = {
         style: 'unit',

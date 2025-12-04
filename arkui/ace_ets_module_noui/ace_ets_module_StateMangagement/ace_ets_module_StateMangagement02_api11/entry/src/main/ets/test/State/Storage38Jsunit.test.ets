@@ -62,6 +62,14 @@ export default function Storage38Jsunit() {
       });
     });
 
+    /**
+     * @tc.name   Storage38Jsunit_0300
+     * @tc.number Storage38Jsunit_0300
+     * @tc.desc   Storage38Jsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage38Jsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('Storage38Jsunit_0300 START');
@@ -78,6 +86,14 @@ export default function Storage38Jsunit() {
       done();
     });
 
+    /**
+     * @tc.name   Storage38Jsunit_0400
+     * @tc.number Storage38Jsunit_0400
+     * @tc.desc   Storage38Jsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Storage38Jsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('Storage38Jsunit_0400 START');
       let driver = await UiDriver.create()

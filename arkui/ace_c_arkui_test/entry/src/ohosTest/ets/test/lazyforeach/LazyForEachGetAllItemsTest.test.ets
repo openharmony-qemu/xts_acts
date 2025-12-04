@@ -29,13 +29,13 @@ export default function lazyForEachGetAllItemsTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0100
-     * @tc.name       : testLazyForEachGetAllItems001
-     * @tc.desc       : testing getAllItems for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetAllItems001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0100
+     * @tc.desc   testing getAllItems for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetAllItems001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`lazyforeach/LazyForEachGetAllItemsTest`)
@@ -45,26 +45,26 @@ export default function lazyForEachGetAllItemsTest() {
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0200
-     * @tc.name       : testLazyForEachGetAllItems002
-     * @tc.desc       : testing getAllItems for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetAllItems002
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0200
+     * @tc.desc   testing getAllItems for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetAllItems002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetAllItems002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0300
-     * @tc.name       : testLazyForEachGetAllItems003
-     * @tc.desc       : testing getAllItems for lazyForEach with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachGetAllItems003
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_GETALLITEMS_0300
+     * @tc.desc   testing getAllItems for lazyForEach with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachGetAllItems003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachGetAllItems003()).assertEqual(0)

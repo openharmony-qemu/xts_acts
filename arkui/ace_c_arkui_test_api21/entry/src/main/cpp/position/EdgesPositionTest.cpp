@@ -840,4 +840,166 @@ napi_value EdgesPositionTest::copyPositionEdges(napi_env env, napi_callback_info
     return nullptr;
 }
 
+napi_value EdgesPositionTest::TestPositionEdgesGetTopErrorCode_001(napi_env env, napi_callback_info info) {
+    // create flex
+    NAPI_START(tsFlex, ARKUI_NODE_FLEX);
+
+    // SetTop
+    ArkUI_PositionEdges *positionEdges = OH_ArkUI_PositionEdges_Create();
+    OH_ArkUI_PositionEdges_SetTop(positionEdges, 20);
+
+    ArkUI_AttributeItem item = {.object = positionEdges};
+    nodeAPI->setAttribute(tsFlex, NODE_POSITION_EDGES, &item);
+    OH_ArkUI_PositionEdges_Dispose(positionEdges);
+
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsFlex, NODE_POSITION_EDGES);
+    ArkUI_PositionEdges *edges = reinterpret_cast<ArkUI_PositionEdges *>(get_item->object);
+
+    // GetTop
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetTop(edges, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetTopErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsFlex, NODE_POSITION_EDGES);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetTopErrorCode_002(napi_env env, napi_callback_info info) {
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetTop(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetTopErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetLeftErrorCode_001(napi_env env, napi_callback_info info) {
+    // create flex
+    NAPI_START(tsFlex, ARKUI_NODE_FLEX);
+
+    // SetLeft
+    ArkUI_PositionEdges *positionEdges = OH_ArkUI_PositionEdges_Create();
+    OH_ArkUI_PositionEdges_SetLeft(positionEdges, 20);
+
+    ArkUI_AttributeItem item = {.object = positionEdges};
+    nodeAPI->setAttribute(tsFlex, NODE_POSITION_EDGES, &item);
+    OH_ArkUI_PositionEdges_Dispose(positionEdges);
+
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsFlex, NODE_POSITION_EDGES);
+    ArkUI_PositionEdges *edges = reinterpret_cast<ArkUI_PositionEdges *>(get_item->object);
+
+    // GetLeft
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetLeft(edges, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetLeftErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsFlex, NODE_POSITION_EDGES);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetLeftErrorCode_002(napi_env env, napi_callback_info info) {
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetLeft(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetLeftErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetBottomErrorCode_001(napi_env env, napi_callback_info info) {
+    // create flex
+    NAPI_START(tsFlex, ARKUI_NODE_FLEX);
+
+    // SetBottom
+    ArkUI_PositionEdges *positionEdges = OH_ArkUI_PositionEdges_Create();
+    OH_ArkUI_PositionEdges_SetBottom(positionEdges, 20);
+
+    ArkUI_AttributeItem item = {.object = positionEdges};
+    nodeAPI->setAttribute(tsFlex, NODE_POSITION_EDGES, &item);
+    OH_ArkUI_PositionEdges_Dispose(positionEdges);
+
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsFlex, NODE_POSITION_EDGES);
+    ArkUI_PositionEdges *edges = reinterpret_cast<ArkUI_PositionEdges *>(get_item->object);
+
+    // GetBottom
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetBottom(edges, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetBottomErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsFlex, NODE_POSITION_EDGES);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetBottomErrorCode_002(napi_env env, napi_callback_info info) {
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetBottom(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetBottomErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetRightErrorCode_001(napi_env env, napi_callback_info info) {
+    // create flex
+    NAPI_START(tsFlex, ARKUI_NODE_FLEX);
+
+    // SetRight
+    ArkUI_PositionEdges *positionEdges = OH_ArkUI_PositionEdges_Create();
+    OH_ArkUI_PositionEdges_SetRight(positionEdges, 20);
+
+    ArkUI_AttributeItem item = {.object = positionEdges};
+    nodeAPI->setAttribute(tsFlex, NODE_POSITION_EDGES, &item);
+    OH_ArkUI_PositionEdges_Dispose(positionEdges);
+
+    const ArkUI_AttributeItem *get_item = nodeAPI->getAttribute(tsFlex, NODE_POSITION_EDGES);
+    ArkUI_PositionEdges *edges = reinterpret_cast<ArkUI_PositionEdges *>(get_item->object);
+
+    // GetRight
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetRight(edges, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetRightErrorCode_001 ret=%{public}d", ret);
+
+    // Reset
+    nodeAPI->resetAttribute(tsFlex, NODE_POSITION_EDGES);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesGetRightErrorCode_002(napi_env env, napi_callback_info info) {
+    float get_value;
+    auto ret = OH_ArkUI_PositionEdges_GetRight(nullptr, &get_value);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesGetRightErrorCode_002 ret=%{public}d", ret);
+
+    ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesCopyReturnNullptr(napi_env env, napi_callback_info info) {
+    float get_value;
+    ArkUI_PositionEdges *copy = OH_ArkUI_PositionEdges_Copy(nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesCopyReturnNullptr copy=%{public}p", copy);
+
+    ASSERT_OBJ(copy, nullptr);
+    NAPI_END;
+}
+
+napi_value EdgesPositionTest::TestPositionEdgesCreateReturnNoNullptr(napi_env env, napi_callback_info info) {
+    ArkUI_PositionEdges *edges = OH_ArkUI_PositionEdges_Create();
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager", "TestPositionEdgesCreateReturnNoNullptr copy=%{public}p", edges);
+
+    ASSERT_OBJ_NE(edges, nullptr);
+    OH_ArkUI_PositionEdges_Dispose(edges);
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

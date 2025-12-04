@@ -49,13 +49,13 @@ export default function alertDialogCenterStartJsunit() {
       console.info("alertDialogCenterStart after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testalertDialogCenterStart0001
-     * @tc.desic         acealertDialogCenterStartEtsTest0001
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   testalertDialogCenterStart0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testalertDialogCenterStart0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testalertDialogCenterStart0001', Level.LEVEL2, async (done: Function) => {
       console.info('alertDialogCenterStart testalertDialogCenterStart0011 START');
@@ -82,15 +82,15 @@ export default function alertDialogCenterStartJsunit() {
       await Utils.sleep(1000);
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testMeasureText0001
-     * @tc.desic        test text width
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
      
+    /**
+     * @tc.name   testMeasureText0001
+     * @tc.number testMeasureText0001
+     * @tc.desc   testMeasureText0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testMeasureText0001', Level.LEVEL2, async (done: Function) => {
       console.info('testMeasureText0001 start');
       let driver = await Driver.create()

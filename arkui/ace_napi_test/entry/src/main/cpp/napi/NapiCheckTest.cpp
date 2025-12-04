@@ -181,6 +181,17 @@
 #define PERSISTENCE_TEST_INITIAL_VALUE (12345)
 #define PERSISTENCE_TEST_MAGIC_NUMBER (0xDEADBEEF)
 
+constexpr const char16_t TEST_STR_UTF16[] = u"中文,English,123456,!@#$%$#^%&12345";
+constexpr const char TEST_ERROR_CODE[] = "500";
+constexpr const char TEST_ERROR_MESSAGE[] = "Common error";
+const uint32_t STRING_MATCH_RESULT = 86;
+const int NUM_REFERENCES = 1000;
+static const napi_type_tag typeTags0 = {0xdaf987b3cc62481a, 0xb745b0497f299531};
+static const napi_type_tag typeTags1 = {0xbb7936c374084d9b, 0xa9548d0762eeedb9};
+napi_strong_ref ref1 = nullptr;
+napi_strong_ref ref2 = nullptr;
+napi_strong_ref ref3 = nullptr;
+
 // 通用的实例数据结构定义
 struct TestInstanceData {
     int32_t intValue;
@@ -12450,6 +12461,1353 @@ static napi_value TestLongRunningInstanceDataPersistence(napi_env env, napi_call
     return result;
 }
 
+static std::u16string RepeatString(const std::u16string& str, size_t n)
+{
+    if (n == 0 || str.empty()) {
+        return std::u16string();
+    }
+    std::u16string result;
+    result.reserve(str.size() * n);
+    for (size_t i = 0; i < n; ++i) {
+        result += str;
+    }
+    return result;
+}
+
+static napi_value CreateBoolean(napi_env env, bool value)
+{
+    napi_value result = nullptr;
+    napi_get_boolean(env, value, &result);
+    return result;
+}
+
+static napi_value OpenCriticalScopeCheckArg(napi_env env, napi_callback_info info)
+{
+    napi_critical_scope scope = nullptr;
+    napi_status status = napi_open_critical_scope(nullptr, &scope);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "OpenCriticalScopeCheckArg1");
+    status = napi_open_critical_scope(env, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "OpenCriticalScopeCheckArg2");
+
+    status = napi_close_critical_scope(env, scope);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "OpenCriticalScopeCheckArg3");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value CloseCriticalScopeDouble(napi_env env, napi_callback_info info)
+{
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    napi_status status = napi_close_critical_scope(env, scope);
+    ASSERT_EQ_RS(status, napi_ok, "CloseCriticalScopeDouble");
+    status = napi_close_critical_scope(env, scope);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CloseCriticalScopeDouble");
+    OH_LOG_INFO(LOG_APP, "CloseCriticalScopeDouble success");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value CloseCriticalScopeCheckArg(napi_env env, napi_callback_info info)
+{
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    napi_status status = napi_close_critical_scope(nullptr, scope);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CloseCriticalScopeCheckArg");
+    status = napi_close_critical_scope(env, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CloseCriticalScopeCheckArg");
+    status = napi_close_critical_scope(env, scope);
+    ASSERT_EQ_RS(status, napi_ok, "CloseCriticalScopeCheckArg");
+    OH_LOG_INFO(LOG_APP, "CloseCriticalScopeCheckArg success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringCheckArg(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    napi_status status = napi_create_string_utf16(env, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+    
+    napi_value undefined = nullptr;
+    napi_get_undefined(env, &undefined);
+    
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    const char16_t* data = nullptr;
+    size_t length = 0;
+
+    status = napi_get_buffer_string_utf16_in_critical_scope(nullptr, value, &data, &length);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "StringCheckArg");
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, nullptr, &data, &length);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "StringCheckArg");
+    
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, undefined, &data, &length);
+    ASSERT_EQ_RS(status, napi_string_expected, "StringCheckArg");
+    
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, nullptr, &length);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "StringCheckArg");
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "StringCheckArg");
+    OH_LOG_INFO(LOG_APP, "StringCheckArg success");
+    
+    napi_close_critical_scope(env, scope);
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringLineStringUTF8Test(napi_env env, napi_callback_info info)
+{
+    // utf8串
+    const char *str = u8"中文,English,123456,!@#$%$#^%&12345"; 
+    napi_value result = nullptr;
+    napi_status status = napi_create_string_utf8(env, str, NAPI_AUTO_LENGTH, &result);
+
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, result, &data, &length); // napi_ok
+
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringTest");
+    int strEq = strcmp(reinterpret_cast<const char*>(data), str);
+
+    napi_close_critical_scope(env, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        return CreateBoolean(env, false);
+    }
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringLineStringlatin1Test(napi_env env, napi_callback_info info)
+{
+    const char *str = "Hello, World! éçñ, successes to create Latin1 string! 111";
+    napi_value result = nullptr;
+    napi_status status = napi_create_string_latin1(env, str, NAPI_AUTO_LENGTH, &result);
+
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, result, &data, &length); // napi_ok
+
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringTest");
+    int strEq = strcmp(reinterpret_cast<const char*>(data), str);
+
+    napi_close_critical_scope(env, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        return CreateBoolean(env, false);
+    }
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringLineStringTest(napi_env env, napi_callback_info info)
+{
+    // 含中文符号的串
+    napi_value value = nullptr;
+    napi_status status = napi_create_string_utf16(env, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+    
+    // 超大串
+    napi_value value2 = nullptr;
+    const std::u16string pattern = u"中文,English,123456,!@#$%$#^%&12345";
+    std::u16string largeStr = RepeatString(pattern, LARGE_DATA_SIZE_1MB);
+    status = napi_create_string_utf16(env, largeStr.c_str(), NAPI_AUTO_LENGTH, &value2);
+    
+    // 为空字符传
+    napi_value value1 = nullptr;
+    status = napi_create_string_utf16(env, u"", NAPI_AUTO_LENGTH, &value1);
+    
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value2, &data, &length); // napi_ok
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value1, &data, &length); // napi_invalid_arg
+    
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringTest");
+    int strEq = strcmp(reinterpret_cast<const char*>(data), reinterpret_cast<const char*>(TEST_STR_UTF16));
+
+    napi_close_critical_scope(env, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        return CreateBoolean(env, true);
+    }
+    OH_LOG_ERROR(LOG_APP, "StringLineStringTest failed");
+    return CreateBoolean(env, false);
+}
+
+static napi_value StringWithoutScopTest(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    napi_create_string_utf16(env, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    napi_status status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    
+    ASSERT_EQ_RS(status, napi_generic_failure, "StringWithoutScopTest");
+    OH_LOG_INFO(LOG_APP, "StringWithoutScopTest success");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringNotString(napi_env env, napi_callback_info info)
+{
+    napi_value value = nullptr;
+    napi_status status = napi_create_object(env, &value);
+    
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    
+    napi_close_critical_scope(env, scope);
+    
+    ASSERT_EQ_RS(status, napi_string_expected, "StringNotString");
+    OH_LOG_INFO(LOG_APP, "StringNotString success");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringNotLineString(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    
+    napi_value value = args[0];
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    napi_status status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    
+    napi_close_critical_scope(env, scope);
+    
+    ASSERT_EQ_RS(status, napi_invalid_arg, "StringNotLineString");
+    OH_LOG_INFO(LOG_APP, "StringNotLineString success");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringLineStringFromEts(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    
+    napi_critical_scope scope = nullptr;
+    napi_open_critical_scope(env, &scope);
+    
+    napi_value value = args[0];
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    napi_status status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    
+    napi_close_critical_scope(env, scope);
+    
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringFromEts");
+    OH_LOG_INFO(LOG_APP, "StringLineStringFromEts success");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value StringArrayTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    size_t argc = 1;
+    napi_value arrayArg;
+    uint32_t arrayLength;
+    
+    status = napi_get_cb_info(env, info, &argc, &arrayArg, nullptr, nullptr);
+    ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
+    
+    // 验证参数是否为数组
+    bool isArray;
+    status = napi_is_array(env, arrayArg, &isArray);
+    if (status != napi_ok || !isArray) {
+        napi_throw_type_error(env, nullptr, "Expected an array of strings");
+        return nullptr;
+    }
+    
+    status = napi_get_array_length(env, arrayArg, &arrayLength);
+    ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
+
+    uint32_t resultCount = 0;
+    for (uint32_t i = 0; i < arrayLength; i++) {
+        napi_value element;
+        status = napi_get_element(env, arrayArg, i, &element);
+        if (status != napi_ok) {
+            continue;
+        }
+
+        napi_critical_scope scope;
+        const char16_t* buffer = nullptr;
+        size_t length = 0;
+        
+        // 为每个字符串元素打开关键区域
+        status = napi_open_critical_scope(env, &scope);
+        if (status != napi_ok) {
+            continue;    
+        }
+        
+        status = napi_get_buffer_string_utf16_in_critical_scope(env, element, &buffer, &length);
+        if (status == napi_ok) {
+            uint32_t charCount = 0;
+            for (size_t j = 0; j < length && buffer[j] != 0; j++) {
+                charCount++;
+            }
+            resultCount += charCount;
+        }
+        
+        status = napi_close_critical_scope(env, scope);
+    }
+
+    ASSERT_EQ_RS(status, napi_ok, "StringArrayTest");
+    ASSERT_EQ_RS(resultCount, STRING_MATCH_RESULT, "StringArrayTest");
+    OH_LOG_INFO(LOG_APP, "StringArrayTest success");
+    
+    return CreateBoolean(env, true);
+}
+
+// env中存在异常时
+static napi_value StringLineStringInErrorEnvTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    status = napi_throw_error(env, TEST_ERROR_CODE, TEST_ERROR_MESSAGE);
+    // 含中文符号的串
+    napi_value value = nullptr;
+    status = napi_create_string_utf16(env, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+
+
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringInErrorEnvTest");
+    int strEq = strcmp(reinterpret_cast<const char*>(data), reinterpret_cast<const char*>(TEST_STR_UTF16));
+
+    napi_close_critical_scope(env, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        napi_value exception = nullptr;
+        status = napi_get_and_clear_last_exception(env, &exception);
+        return CreateBoolean(env, true);
+    }
+    OH_LOG_ERROR(LOG_APP, "StringLineStringTest failed");
+    
+    napi_value exception = nullptr;
+    status = napi_get_and_clear_last_exception(env, &exception);
+    return CreateBoolean(env, false);
+}
+
+// 多context中
+static napi_value StringLineStringInContextEnvTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_env newEnv = nullptr;
+    status = napi_create_ark_context(env, &newEnv);
+    
+    // 含中文符号的串
+    napi_value value = nullptr;
+    status = napi_create_string_utf16(newEnv, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+    
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(newEnv, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(newEnv, value, &data, &length);
+    ASSERT_EQ_RS(status, napi_ok, "StringLineStringInContextEnvTest");
+    int strEq = strcmp(reinterpret_cast<const char*>(data), reinterpret_cast<const char*>(TEST_STR_UTF16));
+
+    napi_close_critical_scope(newEnv, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringInContextEnvTest success");
+        napi_value exception = nullptr;
+        status = napi_get_and_clear_last_exception(newEnv, &exception);
+        status = napi_switch_ark_context(env);
+        status = napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, true);
+    }
+    OH_LOG_ERROR(LOG_APP, "StringLineStringInContextEnvTest failed");
+    
+    napi_value exception = nullptr;
+    status = napi_get_and_clear_last_exception(newEnv, &exception);
+    status = napi_switch_ark_context(env);
+    status = napi_destroy_ark_context(newEnv);
+    
+    return CreateBoolean(env, false);
+}
+
+// 子线程 runtime env new context
+static void *CreateArkRuntimeFunc(void *arg)
+{
+    // 1. 创建基础运行环境
+    napi_env env;
+    napi_status ret = napi_create_ark_runtime(&env);
+    ASSERT_EQ_RS(ret, napi_ok, "CreateArkRuntimeFunc");
+
+    //子线程中调用napi全量接口
+    napi_status status;
+    status = napi_throw_error(env, TEST_ERROR_CODE, TEST_ERROR_MESSAGE);
+    // 含中文符号的串
+    napi_value value = nullptr;
+    status = napi_create_string_utf16(env, TEST_STR_UTF16, NAPI_AUTO_LENGTH, &value);
+
+    napi_critical_scope scope = nullptr;
+    status = napi_open_critical_scope(env, &scope);
+    
+    const char16_t* data = nullptr;
+    size_t length = 0;
+    status = napi_get_buffer_string_utf16_in_critical_scope(env, value, &data, &length);
+    int strEq = strcmp(reinterpret_cast<const char*>(data), reinterpret_cast<const char*>(TEST_STR_UTF16));
+
+    napi_close_critical_scope(env, scope);
+    
+    if(length == sizeof(TEST_STR_UTF16) / sizeof(char16_t) - 1 && strEq == 0) {
+        OH_LOG_INFO(LOG_APP, "StringLineStringTest success");
+        napi_value exception = nullptr;
+        status = napi_get_and_clear_last_exception(env, &exception);
+    }
+    
+    napi_destroy_ark_runtime(&env);
+    return nullptr;
+}
+
+static napi_value StringLineStringInArkRuntimeTest(napi_env env, napi_callback_info info)
+{
+    pthread_t tid;
+    pthread_create(&tid, nullptr, CreateArkRuntimeFunc, nullptr);
+    pthread_join(tid, nullptr);
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value CreateStrongRefCheckArg(napi_env env, napi_callback_info info)
+{    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_strong_ref ref = nullptr;
+    napi_status status = napi_create_strong_reference(nullptr, value, &ref);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CreateStrongRefCheckArg");
+    status = napi_create_strong_reference(env, nullptr, &ref);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CreateStrongRefCheckArg");
+    status = napi_create_strong_reference(env, value, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "CreateStrongRefCheckArg");
+    
+    OH_LOG_INFO(LOG_APP, "CreateStrongRefCheckArg success");
+    napi_close_handle_scope(env, scope);
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value CreateStrongRefSingle(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_type_tag_object(env, value, &typeTags0);
+    napi_create_strong_reference(env, value, &ref1);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+    
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref1, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    bool resultBool = false;
+    napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
+    if(!resultBool) {
+        OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "CreateStrongRefSingle success");
+    napi_delete_strong_reference(env, ref1);
+    return CreateBoolean(env, true);
+}
+
+static napi_value CreateStrongRef2Ref(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_value value2 = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_type_tag_object(env, value, &typeTags0);
+    napi_create_strong_reference(env, value, &ref1);
+    napi_create_strong_reference(env, value, &ref2);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+    
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref1, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    bool resultBool = false;
+    napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
+    if(!resultBool) {
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    
+    result = napi_undefined;
+    napi_get_strong_reference_value(env, ref2, &value2);
+    napi_typeof(env, value2, &result);
+    if(result != napi_object) {
+        napi_delete_strong_reference(env, ref2);
+        return CreateBoolean(env, false);
+    }
+    resultBool = false;
+    napi_check_object_type_tag(env, value2, &typeTags0, &resultBool);
+    if(!resultBool) {
+        napi_delete_strong_reference(env, ref2);
+        return CreateBoolean(env, false);
+    }
+    
+    napi_delete_strong_reference(env, ref1);
+    napi_delete_strong_reference(env, ref2);
+    return CreateBoolean(env, true);
+}
+
+static napi_value CreateStrongRef2Obj(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_value value2 = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_create_object(env, &value2);
+    napi_type_tag_object(env, value, &typeTags0);
+    napi_type_tag_object(env, value2, &typeTags1);
+    napi_create_strong_reference(env, value, &ref1);
+    napi_create_strong_reference(env, value2, &ref2);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+    
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref1, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    bool resultBool = false;
+    napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
+    if(!resultBool) {
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    
+    result = napi_undefined;
+    napi_get_strong_reference_value(env, ref2, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        napi_delete_strong_reference(env, ref2);
+        return CreateBoolean(env, false);
+    }
+    resultBool = false;
+    napi_check_object_type_tag(env, value, &typeTags1, &resultBool);
+    if(!resultBool) {
+        napi_delete_strong_reference(env, ref2);
+        return CreateBoolean(env, false);
+    }
+    
+    napi_delete_strong_reference(env, ref1);
+    napi_delete_strong_reference(env, ref2);
+    return CreateBoolean(env, true);
+}
+
+static napi_value GetStrongRefCheckArg(napi_env env, napi_callback_info info)
+{    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_create_object(env, &value);
+    napi_create_strong_reference(env, value, &ref1);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_value value2 = nullptr;
+    napi_status status = napi_get_strong_reference_value(nullptr, ref1, &value2);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "GetStrongRefCheckArg");
+    status = napi_get_strong_reference_value(env, nullptr, &value2);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "GetStrongRefCheckArg");
+    status = napi_get_strong_reference_value(env, ref1, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "GetStrongRefCheckArg");
+    
+    napi_delete_strong_reference(env, ref1);
+    OH_LOG_INFO(LOG_APP, "GetStrongRefCheckArg success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value GetStrongRef(napi_env env, napi_callback_info info)
+{    
+    napi_status status;
+    napi_handle_scope scope = nullptr;
+    status = napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    status = napi_create_object(env, &value);
+    status = napi_create_strong_reference(env, value, &ref1);
+
+    status = napi_close_handle_scope(env, scope);
+
+    napi_value value2 = nullptr;
+    status = napi_get_strong_reference_value(env, ref1, &value2);
+
+    bool equalBool = false;
+    status = napi_strict_equals(env, value, value2, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    
+    napi_delete_strong_reference(env, ref1);
+    napi_valuetype result = napi_undefined;
+    value2 = nullptr;
+    napi_get_strong_reference_value(env, ref1, &value2);
+    napi_typeof(env, value2, &result);
+    if(result == napi_object) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetStrongRef success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value DeleteStrongRefCheckArg(napi_env env, napi_callback_info info)
+{    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_create_object(env, &value);
+    napi_strong_ref ref = nullptr;
+    napi_create_strong_reference(env, value, &ref);
+    napi_close_handle_scope(env, scope);
+    
+    napi_status status = napi_delete_strong_reference(nullptr, ref);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "DeleteStrongRefCheckArg");
+    status = napi_delete_strong_reference(env, nullptr);
+    ASSERT_EQ_RS(status, napi_invalid_arg, "DeleteStrongRefCheckArg");
+    status = napi_delete_strong_reference(env, ref);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRefCheckArg");
+    
+    OH_LOG_INFO(LOG_APP, "DeleteStrongRefCheckArg success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value DeleteStrongRef(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_create_strong_reference(env, value, &ref1);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_status status = napi_delete_strong_reference(env, ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRef");
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref1, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_undefined) {
+        OH_LOG_ERROR(LOG_APP, "DeleteStrongRef failed type=%{public}d", result);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "DeleteStrongRef success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value DeleteStrongRef2Ref(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_create_strong_reference(env, value, &ref1);
+    napi_create_strong_reference(env, value, &ref2);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_status status = napi_delete_strong_reference(env, ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRef2Ref");
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref2, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        OH_LOG_ERROR(LOG_APP, "DeleteStrongRef2Ref failed type=%{public}d", result);
+        napi_delete_strong_reference(env, ref2);
+        return CreateBoolean(env, false);
+    }
+    napi_delete_strong_reference(env, ref2);
+    OH_LOG_INFO(LOG_APP, "DeleteStrongRef2Ref success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value DeleteStrongRefDouble(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    napi_create_object(env, &value);
+    napi_create_strong_reference(env, value, &ref1);
+
+    napi_close_handle_scope(env, scope);
+    
+    napi_status status = napi_delete_strong_reference(env, ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRefDouble");
+    status = napi_delete_strong_reference(env, ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteStrongRefDouble");
+    napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+
+    napi_valuetype result = napi_undefined;
+    napi_get_strong_reference_value(env, ref1, &value);
+    napi_typeof(env, value, &result);
+    if(result != napi_undefined) {
+        OH_LOG_ERROR(LOG_APP, "DeleteStrongRef failed type=%{public}d", result);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "DeleteStrongRef success");
+    return CreateBoolean(env, true);
+}
+
+static napi_value RepeateCreateDeleteStrongRef(napi_env env, napi_callback_info info)
+{    
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_create_object(env, &value);
+    napi_create_strong_reference(env, value, &ref1);
+
+    napi_close_handle_scope(env, scope);
+
+    napi_value value2 = nullptr;
+    napi_get_strong_reference_value(env, ref1, &value2);
+
+    bool equalBool = false;
+    napi_strict_equals(env, value, value2, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    
+    napi_delete_strong_reference(env, ref1);
+    napi_valuetype result = napi_undefined;
+    value2 = nullptr;
+    napi_get_strong_reference_value(env, ref1, &value2);
+    napi_typeof(env, value2, &result);
+    if(result == napi_object) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetStrongRef success");
+
+    napi_create_strong_reference(env, value, &ref3);
+    napi_value value3 = nullptr;
+    napi_get_strong_reference_value(env, ref3, &value3);
+    equalBool = false;
+    napi_strict_equals(env, value, value3, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(env, ref3);
+        return CreateBoolean(env, false);
+    }
+    napi_delete_strong_reference(env, ref3);
+    return CreateBoolean(env, true);
+}
+
+static napi_value DeleteUndefindAndCreateRef(napi_env env, napi_callback_info info)
+{
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    napi_create_object(env, &value);
+    napi_status status = napi_create_strong_reference(env, value, &ref1);
+    status = napi_create_strong_reference(env, value, &ref1);
+    status = napi_create_strong_reference(env, value, &ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
+    
+    napi_value undefined = nullptr;
+    status = napi_get_undefined(env, &undefined);
+    status = napi_create_strong_reference(env, undefined, &ref1);
+    status = napi_create_strong_reference(env, undefined, &ref1);
+    status = napi_create_strong_reference(env, undefined, &ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
+    
+    napi_value value1 = nullptr;
+    status = napi_get_strong_reference_value(env, ref1, &value1);
+    napi_valuetype result = napi_undefined;
+    napi_typeof(env, value1, &result);
+    if(result != napi_undefined) {
+        return CreateBoolean(env, false);
+    }
+    status = napi_create_strong_reference(env, value, &ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
+    napi_close_handle_scope(env, scope);
+    
+    napi_value value2 = nullptr;
+    status = napi_get_strong_reference_value(env, ref1, &value2);
+    status = napi_get_strong_reference_value(env, ref1, &value2);
+    status = napi_get_strong_reference_value(env, ref1, &value2);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
+    bool equalBool = false;
+    napi_strict_equals(env, value, value2, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    
+    status = napi_delete_strong_reference(env, ref1);
+    status = napi_delete_strong_reference(env, ref1);
+    status = napi_delete_strong_reference(env, ref1);
+    ASSERT_EQ_RS(status, napi_ok, "DeleteUndefindAndCreateRef");
+    
+    return CreateBoolean(env, true);
+}
+
+static napi_value OptStrongRefInErrorEnvTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gcFun = args[0];
+    
+    napi_handle_scope scope = nullptr;
+    status = napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    
+    status = napi_create_object(env, &value);
+    status = napi_type_tag_object(env, value, &typeTags0);
+
+    status = napi_throw_error(env, TEST_ERROR_CODE, TEST_ERROR_MESSAGE);
+    status = napi_create_strong_reference(env, value, &ref1);
+
+    status = napi_close_handle_scope(env, scope);
+    
+    status = napi_call_function(env, nullptr, gcFun, 0, nullptr, nullptr);
+    
+    napi_valuetype result = napi_undefined;
+    status = napi_get_strong_reference_value(env, ref1, &value);
+    status = napi_typeof(env, value, &result);
+    if(result != napi_object) {
+        OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+
+    napi_value exception = nullptr;
+    status = napi_get_and_clear_last_exception(env, &exception);
+
+    bool resultBool = false;
+    status = napi_check_object_type_tag(env, value, &typeTags0, &resultBool);
+    if(!resultBool) {
+        OH_LOG_ERROR(LOG_APP, "CreateStrongRefSingle failed type=%{public}d", result);
+        napi_delete_strong_reference(env, ref1);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "CreateStrongRefSingle success");
+    status = napi_delete_strong_reference(env, ref1);
+
+    return CreateBoolean(env, true);
+}
+
+static napi_value OptStrongRefInContextEnvTest(napi_env env, napi_callback_info info)
+{
+    napi_status status;
+    napi_env newEnv = nullptr;
+    status = napi_create_ark_context(env, &newEnv);
+
+    napi_handle_scope scope = nullptr;
+    napi_open_handle_scope(newEnv, &scope);
+
+    napi_value value = nullptr;
+    napi_create_object(newEnv, &value);
+    napi_create_strong_reference(newEnv, value, &ref1);
+
+    napi_close_handle_scope(newEnv, scope);
+
+    napi_value value2 = nullptr;
+    napi_get_strong_reference_value(newEnv, ref1, &value2);
+
+    bool equalBool = false;
+    napi_strict_equals(newEnv, value, value2, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(newEnv, ref1);
+        napi_switch_ark_context(env);
+        napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, false);
+    }
+    
+    napi_delete_strong_reference(newEnv, ref1);
+    napi_valuetype result = napi_undefined;
+    value2 = nullptr;
+    napi_get_strong_reference_value(newEnv, ref1, &value2);
+    napi_typeof(newEnv, value2, &result);
+    if(result == napi_object) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
+        napi_switch_ark_context(env);
+        napi_destroy_ark_context(newEnv);
+        return CreateBoolean(env, false);
+    }
+    OH_LOG_INFO(LOG_APP, "GetStrongRef success");
+    napi_switch_ark_context(env);
+    napi_destroy_ark_context(newEnv);
+
+    return CreateBoolean(env, true);
+}
+
+// 子线程 runtime env new context
+static void *CreateArkRuntimeFunc1(void *arg)
+{
+    // 1. 创建基础运行环境
+    napi_env env;
+    napi_status ret = napi_create_ark_runtime(&env);
+    ASSERT_EQ_RS(ret, napi_ok, "CreateArkRuntimeFunc");
+
+    //子线程中调用napi全量接口
+    napi_status status;
+    napi_handle_scope scope = nullptr;
+    status = napi_open_handle_scope(env, &scope);
+
+    napi_value value = nullptr;
+    status = napi_create_object(env, &value);
+    status = napi_create_strong_reference(env, value, &ref1);
+
+    status = napi_close_handle_scope(env, scope);
+
+    napi_value value2 = nullptr;
+    status = napi_get_strong_reference_value(env, ref1, &value2);
+
+    bool equalBool = false;
+    status = napi_strict_equals(env, value, value2, &equalBool);
+    if(!equalBool) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed");
+        napi_delete_strong_reference(env, ref1);
+        return nullptr;
+    }
+    
+    napi_delete_strong_reference(env, ref1);
+    napi_valuetype result = napi_undefined;
+    value2 = nullptr;
+    napi_get_strong_reference_value(env, ref1, &value2);
+    napi_typeof(env, value2, &result);
+    if(result == napi_object) {
+        OH_LOG_ERROR(LOG_APP, "GetStrongRef failed after delete strong reference");
+        return nullptr;
+    }
+
+    napi_destroy_ark_runtime(&env);
+    return nullptr;
+}
+
+static napi_value OptStrongRefInArkRuntimeTest(napi_env env, napi_callback_info info)
+{
+    pthread_t tid;
+    pthread_create(&tid, nullptr, CreateArkRuntimeFunc1, nullptr);
+    pthread_join(tid, nullptr);
+    
+    return CreateBoolean(env, true);
+}
+
+// 多次获取同一引用 + 完整的创建-获取-删除流程
+static napi_value OptStrongRefStress(napi_env env, napi_callback_info info)
+{
+    for (int i = 0; i < 1000; i++) {
+        napi_handle_scope scope;
+        napi_status status = napi_open_handle_scope(env, &scope);
+        
+        // 创建对象和强引用
+        napi_value obj;
+        napi_create_object(env, &obj);
+        napi_strong_ref strong_ref;
+        status = napi_create_strong_reference(env, obj, &strong_ref);
+        ASSERT_EQ_RS(status, napi_ok, "Create strong ref");
+        
+        // 获取引用值并验证
+        napi_value retrieved_obj;
+        status = napi_get_strong_reference_value(env, strong_ref, &retrieved_obj);
+        ASSERT_EQ_RS(status, napi_ok, "Get strong ref value");
+        
+        bool isEqual;
+        napi_strict_equals(env, obj, retrieved_obj, &isEqual);
+        ASSERT_EQ_RS(isEqual, true, "Objects should be equal");
+        
+        // 多次获取同一引用
+        napi_value obj1, obj2, obj3;
+        napi_get_strong_reference_value(env, strong_ref, &obj1);
+        napi_get_strong_reference_value(env, strong_ref, &obj2);
+        napi_get_strong_reference_value(env, strong_ref, &obj3);
+        
+        bool eq1, eq2;
+        napi_strict_equals(env, obj1, obj2, &eq1);
+        ASSERT_EQ_RS(eq1, true, "Objects should be equal");
+        napi_strict_equals(env, obj2, obj3, &eq2);
+        ASSERT_EQ_RS(eq2, true, "Objects should be equal");
+        // 删除强引用
+        status = napi_delete_strong_reference(env, strong_ref);
+        ASSERT_EQ_RS(status, napi_ok, "Delete strong ref");
+
+        napi_close_handle_scope(env, scope);
+    }
+    return CreateBoolean(env, true);
+}
+
+// 同一对象的多个强引用
+static napi_value SameObjMutilStrongRef(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gc_function = args[0];
+    
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    
+    napi_value obj;
+    napi_create_object(env, &obj);
+    
+    // 创建多个强引用指向同一对象
+    napi_strong_ref ref1, ref2, ref3;
+    napi_create_strong_reference(env, obj, &ref1);
+    napi_create_strong_reference(env, obj, &ref2);
+    napi_create_strong_reference(env, obj, &ref3);
+    
+    napi_close_handle_scope(env, scope);
+    
+    // 触发垃圾回收
+    napi_call_function(env, nullptr, gc_function, 0, nullptr, nullptr);
+    
+    // 验证所有引用仍然有效
+    napi_value retrieved1, retrieved2, retrieved3;
+    napi_get_strong_reference_value(env, ref1, &retrieved1);
+    napi_get_strong_reference_value(env, ref2, &retrieved2);
+    napi_get_strong_reference_value(env, ref3, &retrieved3);
+    
+    napi_valuetype type1, type2, type3;
+    napi_typeof(env, retrieved1, &type1);
+    napi_typeof(env, retrieved2, &type2);
+    napi_typeof(env, retrieved3, &type3);
+    
+    ASSERT_EQ_RS(type1 == napi_object && type2 == napi_object && type3 == napi_object, 
+              true, "All references should keep object alive");
+    
+    // 清理
+    napi_delete_strong_reference(env, ref1);
+    napi_delete_strong_reference(env, ref2);
+    napi_delete_strong_reference(env, ref3);
+    
+    return CreateBoolean(env, true);
+}
+
+// 测试逐步释放多个引用时的对象生命周期
+static napi_value GradualReferenceRelease(napi_env env, napi_callback_info info) {
+    napi_status status;
+    size_t argc = 1;
+    napi_value args[1];
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_value gc_function = args[0];
+    
+    napi_handle_scope scope;
+    status = napi_open_handle_scope(env, &scope);
+    
+    napi_value obj;
+    status = napi_create_object(env, &obj);
+    
+    napi_strong_ref ref1, ref2, ref3;
+    status = napi_create_strong_reference(env, obj, &ref1);
+    status = napi_create_strong_reference(env, obj, &ref2);
+    status = napi_create_strong_reference(env, obj, &ref3);
+    
+    status = napi_close_handle_scope(env, scope);
+    
+    // 逐步释放引用
+    status = napi_delete_strong_reference(env, ref1);
+    status = napi_call_function(env, nullptr, gc_function, 0, nullptr, nullptr);
+    
+    // 验证对象仍然存活（还有两个引用）
+    napi_value retrieved;
+    status = napi_get_strong_reference_value(env, ref2, &retrieved);
+    napi_valuetype type;
+    status = napi_typeof(env, retrieved, &type);
+    ASSERT_EQ_RS(type, napi_object, "Object should still be alive");
+    
+    status = napi_delete_strong_reference(env, ref2);
+    status = napi_call_function(env, nullptr, gc_function, 0, nullptr, nullptr);
+    
+    // 验证对象仍然存活（还有一个引用）
+    status = napi_get_strong_reference_value(env, ref3, &retrieved);
+    status = napi_typeof(env, retrieved, &type);
+    ASSERT_EQ_RS(type, napi_object, "Object should still be alive");
+    
+    status = napi_delete_strong_reference(env, ref3);
+    status = napi_call_function(env, nullptr, gc_function, 0, nullptr, nullptr);
+    
+    return CreateBoolean(env, true);
+}
+
+// 不同类型对象的强引用
+static napi_value SayHello(napi_env env, napi_callback_info info)
+{
+    printf("Hello\n");
+    napi_value ret;
+    napi_create_int32(env, 1, &ret);
+    return ret;
+}
+
+static napi_value StrongRefVariousTypes(napi_env env, napi_callback_info info) {
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    
+    // 测试对象
+    napi_value obj;
+    napi_create_object(env, &obj);
+    napi_strong_ref obj_ref;
+    napi_create_strong_reference(env, obj, &obj_ref);
+    
+    // 测试数组
+    napi_value array;
+    napi_create_array(env, &array);
+    napi_strong_ref array_ref;
+    napi_create_strong_reference(env, array, &array_ref);
+    
+    // 测试函数
+    napi_value func;
+    napi_create_function(env, "func", NAPI_AUTO_LENGTH, SayHello, nullptr, &func);
+    
+    napi_strong_ref func_ref;
+    napi_create_strong_reference(env, func, &func_ref);
+    
+    // 测试字符串
+    napi_value string;
+    napi_create_string_utf8(env, "test string", NAPI_AUTO_LENGTH, &string);
+    napi_strong_ref string_ref;
+    napi_create_strong_reference(env, string, &string_ref);
+    
+    // 验证所有引用都能正确获取值
+    napi_value retrieved_obj, retrieved_array, retrieved_func, retrieved_string;
+    napi_get_strong_reference_value(env, obj_ref, &retrieved_obj);
+    napi_get_strong_reference_value(env, array_ref, &retrieved_array);
+    napi_get_strong_reference_value(env, func_ref, &retrieved_func);
+    napi_get_strong_reference_value(env, string_ref, &retrieved_string);
+    
+    napi_valuetype obj_type, array_type, func_type, string_type;
+    napi_typeof(env, retrieved_obj, &obj_type);
+    napi_typeof(env, retrieved_array, &array_type);
+    napi_typeof(env, retrieved_func, &func_type);
+    napi_typeof(env, retrieved_string, &string_type);
+    
+    ASSERT_EQ_RS(obj_type == napi_object && array_type == napi_object && 
+              func_type == napi_function && string_type == napi_string, 
+              true, "All types should be preserved");
+    
+    // 清理
+    napi_delete_strong_reference(env, obj_ref);
+    napi_delete_strong_reference(env, array_ref);
+    napi_delete_strong_reference(env, func_ref);
+    napi_delete_strong_reference(env, string_ref);
+    
+    napi_close_handle_scope(env, scope);
+    
+    return CreateBoolean(env, true);
+}
+
+// 测试删除引用后的各种操作
+static napi_value PostDeleteBehavior(napi_env env, napi_callback_info info) {
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    
+    napi_value obj;
+    napi_create_object(env, &obj);
+    napi_strong_ref strong_ref;
+    napi_create_strong_reference(env, obj, &strong_ref);
+    
+    // 删除引用
+    napi_status status = napi_delete_strong_reference(env, strong_ref);
+    ASSERT_EQ_RS(status, napi_ok, "Delete should succeed");
+    
+    // 尝试获取已删除的引用
+    napi_value retrieved;
+    status = napi_get_strong_reference_value(env, strong_ref, &retrieved);
+    // 注意：规范未明确定义此行为，实际可能返回undefined或保持原值
+    
+    // 重复删除（应该被安全处理）
+    status = napi_delete_strong_reference(env, strong_ref);
+    // 可能返回napi_ok或错误，取决于实现
+    
+    napi_close_handle_scope(env, scope);
+    return CreateBoolean(env, true);
+}
+
+// 测试强引用在不同作用域中的行为
+static napi_value CrossScopeStrongRef(napi_env env, napi_callback_info info) {
+    napi_value outer_obj;
+    
+    // 在外部作用域创建对象和强引用
+    {
+        napi_handle_scope outer_scope;
+        napi_open_handle_scope(env, &outer_scope);
+        
+        napi_create_object(env, &outer_obj);
+        napi_strong_ref cross_scope_ref;
+        napi_create_strong_reference(env, outer_obj, &cross_scope_ref);
+        
+        napi_close_handle_scope(env, outer_scope);
+        
+        // 在外部作用域关闭后，强引用仍然有效
+        napi_value inner_obj;
+        {
+            napi_handle_scope inner_scope;
+            napi_open_handle_scope(env, &inner_scope);
+            
+            napi_get_strong_reference_value(env, cross_scope_ref, &inner_obj);
+            napi_valuetype type;
+            napi_typeof(env, inner_obj, &type);
+            ASSERT_EQ_RS(type, napi_object, "Object should survive scope closure");
+            
+            napi_close_handle_scope(env, inner_scope);
+        }
+        napi_delete_strong_reference(env, cross_scope_ref);
+    }
+    
+    return CreateBoolean(env, true);
+}
+
+// 测试管理大量强引用的性能
+static napi_value ManyStrongReferences(napi_env env, napi_callback_info info) {
+    napi_strong_ref refs[NUM_REFERENCES];
+    
+    napi_handle_scope scope;
+    napi_open_handle_scope(env, &scope);
+    
+    // 创建大量对象和强引用
+    for (int i = 0; i < NUM_REFERENCES; i++) {
+        napi_value obj;
+        napi_create_object(env, &obj);
+        
+        // 给对象设置不同属性以区分
+        napi_value prop_value;
+        napi_create_int32(env, i, &prop_value);
+        napi_set_named_property(env, obj, "index", prop_value);
+        
+        napi_status status = napi_create_strong_reference(env, obj, &refs[i]);
+        ASSERT_EQ_RS(status, napi_ok, "Create reference should succeed");
+    }
+    
+    // 验证所有引用都能正确获取
+    for (int i = 0; i < NUM_REFERENCES; i++) {
+        napi_value retrieved;
+        napi_status status = napi_get_strong_reference_value(env, refs[i], &retrieved);
+        ASSERT_EQ_RS(status, napi_ok, "Get reference value should succeed");
+        
+        napi_valuetype type;
+        napi_typeof(env, retrieved, &type);
+        ASSERT_EQ_RS(type, napi_object, "Retrieved value should be object");
+        
+        // 验证属性
+        napi_value prop;
+        napi_get_named_property(env, retrieved, "index", &prop);
+        int32_t index;
+        napi_get_value_int32(env, prop, &index);
+        ASSERT_EQ_RS(index, i, "Property should match");
+    }
+    
+    // 清理所有引用
+    for (int i = 0; i < NUM_REFERENCES; i++) {
+        napi_delete_strong_reference(env, refs[i]);
+    }
+    
+    napi_close_handle_scope(env, scope);
+    return CreateBoolean(env, true);
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -12658,7 +14016,44 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("testLargeDataBlockSetAndGet", TestLargeDataBlockSetAndGet),
         DECLARE_NAPI_FUNCTION("testFinalizeCallbackApiCalls", TestFinalizeCallbackApiCalls),
         DECLARE_NAPI_FUNCTION("testLongRunningInstanceDataPersistence", TestLongRunningInstanceDataPersistence),
-        
+        // API 21
+        DECLARE_NAPI_FUNCTION("openCriticalScopeCheckArg", OpenCriticalScopeCheckArg),
+        DECLARE_NAPI_FUNCTION("closeCriticalScopeDouble", CloseCriticalScopeDouble),
+        DECLARE_NAPI_FUNCTION("closeCriticalScopeCheckArg", CloseCriticalScopeCheckArg),
+        DECLARE_NAPI_FUNCTION("stringCheckArg", StringCheckArg),
+        DECLARE_NAPI_FUNCTION("stringLineStringUTF8Test", StringLineStringUTF8Test),
+        DECLARE_NAPI_FUNCTION("stringLineStringlatin1Test", StringLineStringlatin1Test),
+        DECLARE_NAPI_FUNCTION("stringLineStringTest", StringLineStringTest),
+        DECLARE_NAPI_FUNCTION("stringWithoutScopTest", StringWithoutScopTest),
+        DECLARE_NAPI_FUNCTION("stringNotString", StringNotString),
+        DECLARE_NAPI_FUNCTION("stringNotLineString", StringNotLineString),
+        DECLARE_NAPI_FUNCTION("stringLineStringFromEts", StringLineStringFromEts),
+        DECLARE_NAPI_FUNCTION("stringArrayTest", StringArrayTest),
+        DECLARE_NAPI_FUNCTION("stringLineStringInErrorEnvTest", StringLineStringInErrorEnvTest),
+        DECLARE_NAPI_FUNCTION("stringLineStringInContextEnvTest", StringLineStringInContextEnvTest),
+        DECLARE_NAPI_FUNCTION("stringLineStringInArkRuntimeTest", StringLineStringInArkRuntimeTest),
+        DECLARE_NAPI_FUNCTION("createStrongRefCheckArg", CreateStrongRefCheckArg),
+        DECLARE_NAPI_FUNCTION("createStrongRefSingle", CreateStrongRefSingle),
+        DECLARE_NAPI_FUNCTION("createStrongRef2Ref", CreateStrongRef2Ref),
+        DECLARE_NAPI_FUNCTION("createStrongRef2Obj", CreateStrongRef2Obj),
+        DECLARE_NAPI_FUNCTION("getStrongRefCheckArg", GetStrongRefCheckArg),
+        DECLARE_NAPI_FUNCTION("getStrongRef", GetStrongRef),
+        DECLARE_NAPI_FUNCTION("deleteStrongRefCheckArg", DeleteStrongRefCheckArg),
+        DECLARE_NAPI_FUNCTION("deleteStrongRef", DeleteStrongRef),
+        DECLARE_NAPI_FUNCTION("deleteStrongRef2Ref", DeleteStrongRef2Ref),
+        DECLARE_NAPI_FUNCTION("deleteStrongRefDouble", DeleteStrongRefDouble),
+        DECLARE_NAPI_FUNCTION("repeateCreateDeleteStrongRef", RepeateCreateDeleteStrongRef),
+        DECLARE_NAPI_FUNCTION("deleteUndefindAndCreateRef", DeleteUndefindAndCreateRef),
+        DECLARE_NAPI_FUNCTION("optStrongRefInErrorEnvTest", OptStrongRefInErrorEnvTest),
+        DECLARE_NAPI_FUNCTION("optStrongRefInContextEnvTest", OptStrongRefInContextEnvTest),
+        DECLARE_NAPI_FUNCTION("optStrongRefInArkRuntimeTest", OptStrongRefInArkRuntimeTest),
+        DECLARE_NAPI_FUNCTION("optStrongRefStress", OptStrongRefStress),
+        DECLARE_NAPI_FUNCTION("sameObjMutilStrongRef", SameObjMutilStrongRef),
+        DECLARE_NAPI_FUNCTION("gradualReferenceRelease", GradualReferenceRelease),
+        DECLARE_NAPI_FUNCTION("strongRefVariousTypes", StrongRefVariousTypes),
+        DECLARE_NAPI_FUNCTION("postDeleteBehavior", PostDeleteBehavior),
+        DECLARE_NAPI_FUNCTION("crossScopeStrongRef", CrossScopeStrongRef),
+        DECLARE_NAPI_FUNCTION("manyStrongReferences", ManyStrongReferences),
     };
 
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(*properties), properties));

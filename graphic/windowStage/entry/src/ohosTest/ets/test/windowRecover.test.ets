@@ -40,14 +40,14 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
-     * @tc.name      : testRecover
-     * @tc.desc      : test the function of Recover
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testRecover
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1280
+     * @tc.desc   test the function of Recover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testRecover', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
+    it('testRecover', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let msgStr = 'testRecover';
       console.log(msgStr + ' begin');
       try {
@@ -77,12 +77,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3940
-     * @tc.name      : testMaximize
-     * @tc.desc      : test the function of Maximize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testMaximize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3940
+     * @tc.desc   test the function of Maximize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testMaximize', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let msgStr = 'testMaximize';
@@ -128,12 +128,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3950
-     * @tc.name      : testMaximizeToRecover
-     * @tc.desc      : test the function of MaximizeToRecover
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testMaximizeToRecover
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_3950
+     * @tc.desc   test the function of MaximizeToRecover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testMaximizeToRecover', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let msgStr = 'testMaximizeToRecover';
@@ -182,12 +182,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4280
-     * @tc.name      : testMaximizeToMinimize
-     * @tc.desc      : test the function of MaximizeToMinimize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testMaximizeToMinimize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4280
+     * @tc.desc   test the function of MaximizeToMinimize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testMaximizeToMinimize', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let msgStr = 'testMaximizeToMinimize';
@@ -235,12 +235,12 @@ export default function windowRecoverTest(context: common.UIAbilityContext, wind
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
-     * @tc.name      : testMinimizeToMaximize
-     * @tc.desc      : test the function of MinimizeToMaximize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testMinimizeToMaximize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
+     * @tc.desc   test the function of MinimizeToMaximize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testMinimizeToMaximize', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL4, async (done: Function) => {
       let msgStr = 'testMinimizeToMaximize';

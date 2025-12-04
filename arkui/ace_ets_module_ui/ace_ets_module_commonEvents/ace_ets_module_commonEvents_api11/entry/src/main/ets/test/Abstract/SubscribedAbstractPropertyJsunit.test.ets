@@ -16,6 +16,14 @@ import { describe, it, Level } from '@ohos/hypium';
 
 export default function subscribedAbstractPropertyJsunit() {
   describe('appInfoTest_four_8', () => {
+    /**
+     * @tc.name   subscribedAbstractProperty0100
+     * @tc.number subscribedAbstractProperty0100
+     * @tc.desc   subscribedAbstractProperty0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('subscribedAbstractProperty0100', Level.LEVEL0, async (done: Function) => {
       console.info('[subscribedAbstractProperty0100] START');
       if (true) {

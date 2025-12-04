@@ -169,10 +169,13 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCService_0010
- * @tc.name      : Service which cross processes is registered ok
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testIPCService0010
+ * @tc.number DMSLite_SAMGR_IPCService_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(LiteIPCServiceTest, testIPCService0010, Function | MediumTest | Level1)
 {
     ASSERT_EQ((&g_service)->serviceStatus, TRUE);
@@ -181,10 +184,13 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0010, Function | MediumTest | Level1)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCService_0020
- * @tc.name      : Service which cross process also can be accessed as LPC
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testIPCService0020
+ * @tc.number DMSLite_SAMGR_IPCService_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCServiceTest, testIPCService0020, Function | MediumTest | Level2)
 {
     DefaultFeatureApi *demoApi = nullptr;
@@ -203,10 +209,13 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0020, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCService_0030
- * @tc.name      : For inside caller, Service which cross process can not be accessed as IPC
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testIPCService0030
+ * @tc.number DMSLite_SAMGR_IPCService_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCServiceTest, testIPCService0030, Function | MediumTest | Level2)
 {
     IClientProxy *demoApi = nullptr;
@@ -219,10 +228,13 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0030, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCService_0040
- * @tc.name      : Service which cross process can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testIPCService0040
+ * @tc.number DMSLite_SAMGR_IPCService_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCServiceTest, testIPCService0040, Function | MediumTest | Level2)
 {
     IUnknown *iUnknown = SAMGR_GetInstance()->UnregisterDefaultFeatureApi(SERVICE_NAME);
@@ -233,10 +245,13 @@ HWTEST_F(LiteIPCServiceTest, testIPCService0040, Function | MediumTest | Level2)
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_IPCService_0050
- * @tc.name      : User can not unregister service belong to other process
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testIPCService0050
+ * @tc.number DMSLite_SAMGR_IPCService_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(LiteIPCServiceTest, testIPCService0050, Function | MediumTest | Level2)
 {
     // samgr belong foundation process

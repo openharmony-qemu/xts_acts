@@ -46,10 +46,13 @@ export default function common_ts_ets_apiStaticClearJsunit() {
       console.info("common_ts_ets_apiStaticClear after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testcommon_ts_ets_apiPersistProp0001
-     * @tc.desic         acecommon_ts_ets_apiPersistPropEtsTest0001
+    /**
+     * @tc.name   testcommon_ts_ets_apiPersistProp0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testcommon_ts_ets_apiPersistProp0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommon_ts_ets_apiPersistProp0001', Level.LEVEL2, async () => {
       console.info('common_ts_ets_apiPersistProp testcommon_ts_ets_apiPersistProp0001 START');
@@ -70,10 +73,13 @@ export default function common_ts_ets_apiStaticClearJsunit() {
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testcommon_ts_ets_apiEnvProp0001
-     * @tc.desic         acecommon_ts_ets_apiEnvPropEtsTest0001
+    /**
+     * @tc.name   testcommon_ts_ets_apiEnvProp0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testcommon_ts_ets_apiEnvProp0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testcommon_ts_ets_apiEnvProp0001', Level.LEVEL2, async () => {
       console.info('common_ts_ets_apiEnvProp testcommon_ts_ets_apiEnvProp0001 START');
@@ -94,11 +100,14 @@ export default function common_ts_ets_apiStaticClearJsunit() {
       }
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-    * @tc.name         test_font_registerFont_0001
-    * @tc.desc        Register a customized font in the FontManager
-    */
+    /**
+     * @tc.name   test_font_registerFont_0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   Register a customized font in the FontManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('test_font_registerFont_0001', Level.LEVEL2, async () => {
       console.info('test_font_registerFont_0001 Register a customized font in the FontManagerSTART');
       await Utils.sleep(2000);

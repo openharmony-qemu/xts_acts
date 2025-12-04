@@ -58,6 +58,14 @@ export default function state1() {
       await CommonFunc.sleep(1000);
       router.back()
     });
+    /**
+     * @tc.name   state1_0100
+     * @tc.number state1_0100
+     * @tc.desc   state1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('state1_0100 START');
       let driver = await UiDriver.create()
@@ -74,6 +82,14 @@ export default function state1() {
 
     });
 
+    /**
+     * @tc.name   state1_0200
+     * @tc.number state1_0200
+     * @tc.desc   state1_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state1_0200', Level.LEVEL0, async (done: Function) => {
       console.info('state1_0200 START');
       let driver = await UiDriver.create()
@@ -91,6 +107,14 @@ export default function state1() {
     });
 
 
+    /**
+     * @tc.name   state1_0300
+     * @tc.number state1_0300
+     * @tc.desc   state1_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state1_0300', Level.LEVEL0, async (done: Function) => {
       console.info('state1_0300 START');
       let driver = await UiDriver.create()
@@ -107,6 +131,14 @@ export default function state1() {
 
     });
 
+    /**
+     * @tc.name   state1_0400
+     * @tc.number state1_0400
+     * @tc.desc   state1_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('state1_0400', Level.LEVEL0, async (done: Function) => {
       console.info('state1_0400 START');
       let driver = await UiDriver.create()

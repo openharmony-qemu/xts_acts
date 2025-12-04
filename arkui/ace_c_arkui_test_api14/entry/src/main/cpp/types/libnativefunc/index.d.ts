@@ -15,3 +15,5 @@
 export const testNativeXComponent_RegisterKeyEventCallbackWithResult001: () => number;
 
 export const tabStop_001: () => number;
+
+export const TestMethodReturnValue001: () => number;

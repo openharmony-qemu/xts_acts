@@ -49,10 +49,12 @@ export default function NavigationOnPop() {
 
 
     /**
-     * @tc.number    NavigationOnPop_0100
-     * @tc.name      NavigationOnPop_0100
-     * @tc.desc      Test NavPathInfo onPop
-     * @tc.level     Level 2
+     * @tc.name   NavigationOnPop_0100
+     * @tc.number NavigationOnPop_0100
+     * @tc.desc   Test NavPathInfo onPop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavigationOnPop_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavigationOnPop_0100 START');

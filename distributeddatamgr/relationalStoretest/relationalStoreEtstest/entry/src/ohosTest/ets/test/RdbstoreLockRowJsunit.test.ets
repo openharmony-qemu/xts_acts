@@ -157,13 +157,12 @@ export default function rdbstoreLockRowJsunitTest() {
         console.log(TAG + "*************JS Test Begin*************");
 
     /**
+     * @tc.name   testRdbStoreLockRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0100
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.Insert data, check status
-     *          2.Update data, check status
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.Insert data, check status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreLockRow0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.log(TAG + "************* testRdbStoreLockRow0001 start *************");
@@ -213,12 +212,12 @@ export default function rdbstoreLockRowJsunitTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreLockRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0200
-     * @tc.name Abnormal test case of lock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreLockRow0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.log(TAG + "************* testRdbStoreLockRow0002 start *************");
@@ -234,12 +233,12 @@ export default function rdbstoreLockRowJsunitTest() {
     })
 
     /**
+     * @tc.name   testRdbStoreLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
-     * @tc.name Abnormal test case of unlock, if TABLE name or column invalid
-     * @tc.desc Configure predicates (TABLE name: "")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Configure predicates (TABLE name: "")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testRdbStoreLockRow0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function () {
         console.log(TAG + "************* testRdbStoreLockRow0003 start *************");

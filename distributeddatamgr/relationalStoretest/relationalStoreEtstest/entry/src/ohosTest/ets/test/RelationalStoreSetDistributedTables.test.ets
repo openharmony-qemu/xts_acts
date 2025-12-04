@@ -54,12 +54,12 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -91,12 +91,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1700 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -127,12 +127,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1800 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -162,12 +162,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1900 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -197,12 +197,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2000 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -232,12 +232,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2100 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -268,12 +268,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2200 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -304,12 +304,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2300 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -340,12 +340,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2400 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -376,12 +376,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2500 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -412,12 +412,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2600 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -448,12 +448,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2700 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -484,12 +484,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2800 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -520,12 +520,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_2900 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables callback params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG + "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000 start *************")
@@ -598,13 +598,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3000 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3100
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is data_relationalStore.DistributedType = 3;
-     *          return 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is data_relationalStore.DistributedType = 3;
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -632,12 +631,12 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0100
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -662,12 +661,12 @@ export default function relationalStoreSetDistributedTables() {
       }
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0200
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -694,12 +693,12 @@ export default function relationalStoreSetDistributedTables() {
 
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0300
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -725,12 +724,12 @@ export default function relationalStoreSetDistributedTables() {
 
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -757,12 +756,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0400 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -788,12 +787,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0500 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -820,12 +819,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0600 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: false,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -852,12 +851,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0700 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -882,12 +881,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0800 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -913,12 +912,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_0900 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -945,12 +944,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1000 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:false,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -977,12 +976,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1100 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -1008,12 +1007,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1200 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:true,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -1040,12 +1039,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1300 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_CLOUD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -1072,13 +1071,12 @@ export default function relationalStoreSetDistributedTables() {
         "************* SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1400 end   *************");
     });
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1500
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
-     *          return 14800000
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +
@@ -1105,13 +1103,12 @@ export default function relationalStoreSetDistributedTables() {
     });
 
     /**
+     * @tc.name   SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600
-     * @tc.name Normal test case of original state
-     * @tc.desc 1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
-     *          return 14800014
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   1.setDistributedTables params: setConfig={autoSync: true,asyncDownloadAsset:true,enableCloud:false,} DistributedType is DISTRIBUTED_DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DistributedData_RelationalStore_SDK_SetDistributedTables_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(TAG +

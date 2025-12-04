@@ -38,12 +38,12 @@ export default function usbManagerTest() {
 
 function testAddAllowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0001
-   * @tc.name      : test_add_allowed_usb_devices_0001
-   * @tc.desc      : test usbManager addAllowedUsbDevices without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager addAllowedUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -60,15 +60,15 @@ function testAddAllowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0002
-   * @tc.name      : test_add_allowed_usb_devices_0002
-   * @tc.desc      : test usbManager addAllowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager addAllowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceId> = [
         {vendorId: 1, productId: 1},
@@ -85,12 +85,12 @@ function testAddAllowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0003
-   * @tc.name      : test_add_allowed_usb_devices_0003
-   * @tc.desc      : test usbManager addAllowedUsbDevices with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_usb_devices_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0003
+   * @tc.desc   test usbManager addAllowedUsbDevices with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_usb_devices_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -112,12 +112,12 @@ function testAddAllowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0004
-   * @tc.name      : test_add_allowed_usb_devices_0004
-   * @tc.desc      : test usbManager addAllowedUsbDevices with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_allowed_usb_devices_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0004
+   * @tc.desc   test usbManager addAllowedUsbDevices with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_allowed_usb_devices_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -145,14 +145,14 @@ function testAddAllowedUsbDevices() {
     done();
   });
 
-  /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0005
-   * @tc.name      : test_add_allowed_usb_devices_0005
-   * @tc.desc      : test usbManager addAllowedUsbDevices with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
-   */
+    /**
+     * @tc.name   test_add_allowed_usb_devices_0005
+     * @tc.number SUB_CUSTOMIZATION_EDM_ADD_USB_DEVICES_JS_0005
+     * @tc.desc   test usbManager addAllowedUsbDevices with super admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_add_allowed_usb_devices_0005", Level.LEVEL2, async (done: Function) => {
       await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
       try {
@@ -188,12 +188,12 @@ function testAddAllowedUsbDevices() {
 
 function testRemoveAllowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_USB_DEVICES_JS_0001
-   * @tc.name      : test_remove_allowed_usb_devices_0001
-   * @tc.desc      : test usbManager removeAllowedUsbDevices without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager removeAllowedUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -210,15 +210,15 @@ function testRemoveAllowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_USB_DEVICES_JS_0002
-   * @tc.name      : test_remove_allowed_usb_devices_0002
-   * @tc.desc      : test usbManager removeAllowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_allowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager removeAllowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceId> = [
         {vendorId: 1, productId: 1},
@@ -237,12 +237,12 @@ function testRemoveAllowedUsbDevices() {
 
 function testGetAllowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USB_DEVICES_JS_0001
-   * @tc.name      : test_get_allowed_usb_devices_0001
-   * @tc.desc      : test usbManager getAllowedUsbDevices without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_allowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager getAllowedUsbDevices without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_allowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -255,15 +255,15 @@ function testGetAllowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USB_DEVICES_JS_0002
-   * @tc.name      : test_get_allowed_usb_devices_0002
-   * @tc.desc      : test usbManager getAllowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_allowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager getAllowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_allowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.getAllowedUsbDevices(SELFWANT);
       expect(false).assertTrue();
@@ -278,12 +278,12 @@ function testGetAllowedUsbDevices() {
 
 function testSetUsbStorageDeviceAccessPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0001
-   * @tc.name      : test_set_usb_device_access_policy_0001
-   * @tc.desc      : test usbManager setUsbStorageDeviceAccessPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_usb_device_access_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0001
+   * @tc.desc   test usbManager setUsbStorageDeviceAccessPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_usb_device_access_policy_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -296,15 +296,15 @@ function testSetUsbStorageDeviceAccessPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0002
-   * @tc.name      : test_set_usb_device_access_policy_0002
-   * @tc.desc      : test usbManager setUsbStorageDeviceAccessPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_usb_device_access_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0002
+   * @tc.desc   test usbManager setUsbStorageDeviceAccessPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_usb_device_access_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.setUsbStorageDeviceAccessPolicy(SELFWANT, usbManager.UsbPolicy.READ_ONLY);
       expect(false).assertTrue();
@@ -317,12 +317,12 @@ function testSetUsbStorageDeviceAccessPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0003
-   * @tc.name      : test_set_usb_device_access_policy_0003
-   * @tc.desc      : test usbManager setUsbStorageDeviceAccessPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_usb_device_access_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0003
+   * @tc.desc   test usbManager setUsbStorageDeviceAccessPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_usb_device_access_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -339,12 +339,12 @@ function testSetUsbStorageDeviceAccessPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0004
-   * @tc.name      : test_set_usb_device_access_policy_0004
-   * @tc.desc      : test usbManager setUsbStorageDeviceAccessPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_usb_device_access_policy_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0004
+   * @tc.desc   test usbManager setUsbStorageDeviceAccessPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_usb_device_access_policy_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -362,12 +362,12 @@ function testSetUsbStorageDeviceAccessPolicy() {
 
 function testGetUsbStorageDeviceAccessPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0001
-   * @tc.name      : test_get_usb_device_access_policy_0001
-   * @tc.desc      : test usbManager getUsbStorageDeviceAccessPolicy without admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_usb_device_access_policy_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0001
+   * @tc.desc   test usbManager getUsbStorageDeviceAccessPolicy without admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_usb_device_access_policy_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -380,15 +380,15 @@ function testGetUsbStorageDeviceAccessPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0002
-   * @tc.name      : test_get_usb_device_access_policy_0002
-   * @tc.desc      : test usbManager getUsbStorageDeviceAccessPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_usb_device_access_policy_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0002
+   * @tc.desc   test usbManager getUsbStorageDeviceAccessPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_usb_device_access_policy_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       usbManager.getUsbStorageDeviceAccessPolicy(SELFWANT);
       expect(false).assertTrue();
@@ -401,12 +401,12 @@ function testGetUsbStorageDeviceAccessPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0003
-   * @tc.name      : test_get_usb_device_access_policy_0003
-   * @tc.desc      : test usbManager getUsbStorageDeviceAccessPolicy with super admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_usb_device_access_policy_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_ALLOWED_USB_DEVICE_ACCESS_POLICY_JS_0003
+   * @tc.desc   test usbManager getUsbStorageDeviceAccessPolicy with super admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_usb_device_access_policy_0003", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -424,12 +424,12 @@ function testGetUsbStorageDeviceAccessPolicy() {
 
 function testAddDisallowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0001
-   * @tc.name      : test_add_disallowed_usb_devices_0001
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with inactive admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager addDisallowedUsbDevices with inactive admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -446,15 +446,15 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0002
-   * @tc.name      : test_add_disallowed_usb_devices_0002
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager addDisallowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
@@ -471,12 +471,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0003
-   * @tc.name      : test_add_disallowed_usb_devices_0003
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with null admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0003
+   * @tc.desc   test usbManager addDisallowedUsbDevices with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0003", Level.LEVEL2, async (done: Function) => {
     try {
@@ -493,12 +493,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0004
-   * @tc.name      : test_add_disallowed_usb_devices_0004
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin for multiple types
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0004
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin for multiple types
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -522,12 +522,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0005
-   * @tc.name      : test_add_disallowed_usb_devices_0005
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin for single type
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0005
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin for single type
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -548,12 +548,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0006
-   * @tc.name      : test_add_disallowed_usb_devices_0006
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin twice with all types different
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0006
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin twice with all types different
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -583,12 +583,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0007
-   * @tc.name      : test_add_disallowed_usb_devices_0007
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin twice with part of same types
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0007
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin twice with part of same types
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -620,12 +620,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0008
-   * @tc.name      : test_add_disallowed_usb_devices_0008
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0008
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -647,12 +647,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0009
-   * @tc.name      : test_add_disallowed_usb_devices_0009
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and baseClass out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0009
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and baseClass out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -680,12 +680,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0010
-   * @tc.name      : test_add_disallowed_usb_devices_0010
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and subClass out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0010
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and subClass out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0010", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -713,12 +713,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0011
-   * @tc.name      : test_add_disallowed_usb_devices_0011
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and protocol out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0011
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and protocol out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0011", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -746,12 +746,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0012
-   * @tc.name      : test_add_disallowed_usb_devices_0012
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and size out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0012
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0012
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and size out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0012", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -788,12 +788,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0013
-   * @tc.name      : test_add_disallowed_usb_devices_0013
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and disableUsb has been set
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0013
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0013
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and disableUsb has been set
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0013", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -813,12 +813,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0014
-   * @tc.name      : test_add_disallowed_usb_devices_0014
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and allowedDevices has been set
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0014
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0014
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and allowedDevices has been set
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0014", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -841,12 +841,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0015
-   * @tc.name      : test_add_disallowed_usb_devices_0015
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and then set disableUsb
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0015
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0015
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and then set disableUsb
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0015", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -866,12 +866,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0016
-   * @tc.name      : test_add_disallowed_usb_devices_0016
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and then set allowed devices
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0016
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0016
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and then set allowed devices
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0016", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -894,12 +894,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0017
-   * @tc.name      : test_add_disallowed_usb_devices_0017
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and then set storage device read only
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0017
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0017
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and then set storage device read only
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0017", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -922,12 +922,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0018
-   * @tc.name      : test_add_disallowed_usb_devices_0018
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and then set storage device read write
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0018
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0018
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and then set storage device read write
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0018", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -950,12 +950,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0019
-   * @tc.name      : test_add_disallowed_usb_devices_0019
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and then set storage device disabled
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0019
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0019
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and then set storage device disabled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0019", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -978,12 +978,12 @@ function testAddDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0020
-   * @tc.name      : test_add_disallowed_usb_devices_0020
-   * @tc.desc      : test usbManager addDisallowedUsbDevices with super admin and storage device has been set disabled
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_usb_devices_0020
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_USB_DEVICES_JS_0020
+   * @tc.desc   test usbManager addDisallowedUsbDevices with super admin and storage device has been set disabled
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_usb_devices_0020", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1006,12 +1006,12 @@ function testAddDisallowedUsbDevices() {
 
 function testRemoveDisallowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0001
-   * @tc.name      : test_remove_disallowed_usb_devices_0001
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with inactive admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with inactive admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1028,15 +1028,15 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0002
-   * @tc.name      : test_remove_disallowed_usb_devices_0002
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
@@ -1053,12 +1053,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0003
-   * @tc.name      : test_remove_disallowed_usb_devices_0003
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with null admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0003
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0003", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1075,12 +1075,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0004
-   * @tc.name      : test_remove_disallowed_usb_devices_0004
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin for multiple types
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0004
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0004
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin for multiple types
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0004", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1110,12 +1110,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0005
-   * @tc.name      : test_remove_disallowed_usb_devices_0005
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin for single type
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0005
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0005
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin for single type
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0005", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1144,12 +1144,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0006
-   * @tc.name      : test_remove_disallowed_usb_devices_0006
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin twice with all types different
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0006
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0006
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin twice with all types different
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0006", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1186,12 +1186,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0007
-   * @tc.name      : test_remove_disallowed_usb_devices_0007
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin twice with part of same types
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0007
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0007
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin twice with part of same types
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0007", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1229,12 +1229,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0008
-   * @tc.name      : test_remove_disallowed_usb_devices_0008
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin for removing a device not in list
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0008
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0008
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin for removing a device not in list
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0008", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1261,12 +1261,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0009
-   * @tc.name      : test_remove_disallowed_usb_devices_0009
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin for empty list
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0009
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0009
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin for empty list
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0009", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1286,12 +1286,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0010
-   * @tc.name      : test_remove_disallowed_usb_devices_0010
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin and boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0010
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0010
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin and boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0010", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1312,12 +1312,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0011
-   * @tc.name      : test_remove_disallowed_usb_devices_0011
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin and baseClass out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0011
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0011
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin and baseClass out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0011", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1345,12 +1345,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0012
-   * @tc.name      : test_remove_disallowed_usb_devices_0012
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin and subClass out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0012
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0012
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin and subClass out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0012", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1378,12 +1378,12 @@ function testRemoveDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0013
-   * @tc.name      : test_remove_disallowed_usb_devices_0013
-   * @tc.desc      : test usbManager removeDisallowedUsbDevices with super admin and protocol out of boundary value
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_usb_devices_0013
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_USB_DEVICES_JS_0013
+   * @tc.desc   test usbManager removeDisallowedUsbDevices with super admin and protocol out of boundary value
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_usb_devices_0013", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
@@ -1413,12 +1413,12 @@ function testRemoveDisallowedUsbDevices() {
 
 function testGetDisallowedUsbDevices() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0001
-   * @tc.name      : test_get_disallowed_usb_devices_0001
-   * @tc.desc      : test usbManager getDisallowedUsbDevices with inactive admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_usb_devices_0001
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0001
+   * @tc.desc   test usbManager getDisallowedUsbDevices with inactive admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_usb_devices_0001", Level.LEVEL2, async (done: Function) => {
     try {
@@ -1435,15 +1435,15 @@ function testGetDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0002
-   * @tc.name      : test_get_disallowed_usb_devices_0002
-   * @tc.desc      : test usbManager getDisallowedUsbDevices with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_usb_devices_0002
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0002
+   * @tc.desc   test usbManager getDisallowedUsbDevices with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_usb_devices_0002", Level.LEVEL2, async (done: Function) => {
-    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
     try {
       let devices: Array<usbManager.UsbDeviceType> = [
         {baseClass: 3, subClass: 1, protocol: 2, descriptor: usbManager.Descriptor.INTERFACE},
@@ -1460,12 +1460,12 @@ function testGetDisallowedUsbDevices() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0003
-   * @tc.name      : test_get_disallowed_usb_devices_0003
-   * @tc.desc      : test usbManager getDisallowedUsbDevices with null admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_usb_devices_0003
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_USB_DEVICES_JS_0003
+   * @tc.desc   test usbManager getDisallowedUsbDevices with null admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_usb_devices_0003", Level.LEVEL2, async (done: Function) => {
     try {

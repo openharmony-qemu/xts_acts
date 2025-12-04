@@ -46,12 +46,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0100
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0100
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions: avSession.AVCastPickerOptions = {
@@ -69,22 +69,22 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0100
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0100
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0100
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0100
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions : avSession.AVCastPickerOptions = {
                 sessionType: 'video',
             }
             let avCastPicker = new avSession.AVCastPickerHelper(context);
-            avCastPicker.on('pickerStateChange',(state: AVCastPickerState) => {
+            avCastPicker.onPickerStateChange((state: AVCastPickerState) => {
                 console.info(`${TAG}: pickerStateChange received picker state change: ${state}`);
                 if (state == AVCastPickerState.STATE_APPEARING || state == AVCastPickerState.STATE_DISAPPEARING) {
-                    expect(true).assertTrue();
+                    console.info('${TAG}: on pickerStateChange successfully');
                 } else {
                     expect(false).assertTrue();
                 }
@@ -101,12 +101,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0200
-         * @tc.desc        Testing on('hangUp')
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0200
+         * @tc.desc   Testing on('hangUp')
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_ON_PICKERSTATECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let flag: boolean = false;
@@ -115,7 +115,7 @@ export default function abilityTest() {
                     sessionType: 'video',
                 }
                 let avCastPicker = new avSession.AVCastPickerHelper(context);
-                avCastPicker.on('pickerStateChange',(state: AVCastPickerState) => {
+                avCastPicker.onPickerStateChange((state: AVCastPickerState) => {
                     console.info(`${TAG}: pickerStateChange received picker state change: ${state}`);
                     if (state == AVCastPickerState.STATE_APPEARING || state == AVCastPickerState.STATE_DISAPPEARING) {
                         flag = true;
@@ -123,7 +123,7 @@ export default function abilityTest() {
                         expect(false).assertTrue();
                     }
                 });
-                avCastPicker.off('pickerStateChange');
+                avCastPicker.offPickerStateChange();
                 await avCastPicker.select(avCastPickerOptions);
                 if (flag) {
                     console.info(`${TAG}: pickerStateChange off pickerStateChange fail`);
@@ -138,12 +138,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0300
-         * @tc.desc        sessionType: 'audio'
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0300
+         * @tc.desc   sessionType: 'audio'
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -161,12 +161,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0400
-         * @tc.desc        sessionType: 'voice_call'
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0400
+         * @tc.desc   sessionType: 'voice_call'
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -184,12 +184,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0500
-         * @tc.desc        sessionType: 'vioce_call'
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0500
+         * @tc.desc   sessionType: 'vioce_call'
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions : avSession.AVCastPickerOptions = {
@@ -207,12 +207,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0600
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0600
-         * @tc.desc        sessionType: 'vioce_call'
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0600
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0600
+         * @tc.desc   sessionType: 'vioce_call'
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPickerOptions : avSession.AVCastPickerOptions = {}
@@ -228,12 +228,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0700
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0700
-         * @tc.desc        select()
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0700
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0700
+         * @tc.desc   select()
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_AVCASTPICKERHELPER_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             let avCastPicker = new avSession.AVCastPickerHelper(context);

@@ -35,6 +35,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             useSoftware = await checkSoftware();
             done();
         })
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_RSA_101
+         * @tc.number Security_HUKS_SignVerify_API9_RSA_101
+         * @tc.desc   Security_HUKS_SignVerify_API9_RSA_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_RSA_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA512KeyAlias101';
             let HuksOptions = {
@@ -61,6 +69,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'finish', false, srcData63Kb);
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_RSA_102
+         * @tc.number Security_HUKS_SignVerify_API9_RSA_102
+         * @tc.desc   Security_HUKS_SignVerify_API9_RSA_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_RSA_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA512KeyAlias102';
             let HuksOptions = {
@@ -76,6 +92,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData63Kb);
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_RSA_103
+         * @tc.number Security_HUKS_SignVerify_API9_RSA_103
+         * @tc.desc   Security_HUKS_SignVerify_API9_RSA_103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_RSA_103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1MD5KeyAlias103';
             let HuksOptions = {
@@ -104,6 +128,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             }
             done();
         });
+        /**
+         * @tc.name   Security_HUKS_SignVerify_API9_RSA_104
+         * @tc.number Security_HUKS_SignVerify_API9_RSA_104
+         * @tc.desc   Security_HUKS_SignVerify_API9_RSA_104
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_SignVerify_API9_RSA_104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA512KeyAlias104';
             let HuksOptions = {
@@ -119,6 +151,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             await publicSignVerifyFunc(srcKeyAlies, HuksOptions, 'abort', true, srcData65Kb);
             done();
         });
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1NONE103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1NONE103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1NONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1NONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1NONEKeyAlias103';
             let HuksOptions = {
@@ -147,6 +187,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1SHA1103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1SHA1103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1SHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1SHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA1KeyAlias103';
             let HuksOptions = {
@@ -176,6 +224,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1SHA224103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1SHA224103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1SHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1SHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA224KeyAlias103';
             let HuksOptions = {
@@ -205,6 +261,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1SHA256103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1SHA256103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1SHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1SHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA256KeyAlias103';
             let HuksOptions = {
@@ -233,6 +297,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1SHA384103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1SHA384103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1SHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1SHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA384KeyAlias103';
             let HuksOptions = {
@@ -261,6 +333,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPKCS1SHA512103
+         * @tc.number testSignVerifyRSASize2048SIGNPKCS1SHA512103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPKCS1SHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPKCS1SHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPKCS1SHA512KeyAlias103';
             let HuksOptions = {
@@ -289,6 +369,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSMD5103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSMD5103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSMD5103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSMD5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSMD5KeyAlias103';
             let HuksOptions = {
@@ -318,6 +406,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSNONE103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSNONE103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSNONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSNONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSNONEKeyAlias103';
             let HuksOptions = {
@@ -346,6 +442,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSSHA1103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSSHA1103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSSHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSSHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSSHA1KeyAlias103';
             let HuksOptions = {
@@ -375,6 +479,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSSHA224103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSSHA224103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSSHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSSHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSSHA224KeyAlias103';
             let HuksOptions = {
@@ -404,6 +516,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSSHA256103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSSHA256103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSSHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSSHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSSHA256KeyAlias103';
             let HuksOptions = {
@@ -432,6 +552,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSSHA384103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSSHA384103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSSHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSSHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSSHA384KeyAlias103';
             let HuksOptions = {
@@ -460,6 +588,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize2048SIGNPSSSHA512103
+         * @tc.number testSignVerifyRSASize2048SIGNPSSSHA512103
+         * @tc.desc   testSignVerifyRSASize2048SIGNPSSSHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize2048SIGNPSSSHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize2048SIGNPSSSHA512KeyAlias103';
             let HuksOptions = {
@@ -488,6 +624,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1MD5103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1MD5103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1MD5103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1MD5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1MD5KeyAlias103';
             let HuksOptions = {
@@ -517,6 +661,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1NONE103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1NONE103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1NONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1NONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1NONEKeyAlias103';
             let HuksOptions = {
@@ -545,6 +697,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1SHA1103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1SHA1103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1SHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1SHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1SHA1KeyAlias103';
             let HuksOptions = {
@@ -574,6 +734,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1SHA224103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1SHA224103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1SHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1SHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1SHA224KeyAlias103';
             let HuksOptions = {
@@ -603,6 +771,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1SHA256103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1SHA256103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1SHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1SHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1SHA256KeyAlias103';
             let HuksOptions = {
@@ -631,6 +807,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1SHA384103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1SHA384103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1SHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1SHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1SHA384KeyAlias103';
             let HuksOptions = {
@@ -659,6 +843,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPKCS1SHA512103
+         * @tc.number testSignVerifyRSASize3072SIGNPKCS1SHA512103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPKCS1SHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPKCS1SHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPKCS1SHA512KeyAlias103';
             let HuksOptions = {
@@ -687,6 +879,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSMD5103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSMD5103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSMD5103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSMD5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSMD5KeyAlias103';
             let HuksOptions = {
@@ -716,6 +916,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSNONE103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSNONE103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSNONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSNONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSNONEKeyAlias103';
             let HuksOptions = {
@@ -744,6 +952,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSSHA1103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSSHA1103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSSHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSSHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSSHA1KeyAlias103';
             let HuksOptions = {
@@ -773,6 +989,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSSHA224103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSSHA224103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSSHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSSHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSSHA224KeyAlias103';
             let HuksOptions = {
@@ -802,6 +1026,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSSHA256103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSSHA256103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSSHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSSHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSSHA256KeyAlias103';
             let HuksOptions = {
@@ -830,6 +1062,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSSHA384103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSSHA384103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSSHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSSHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSSHA384KeyAlias103';
             let HuksOptions = {
@@ -858,6 +1098,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize3072SIGNPSSSHA512103
+         * @tc.number testSignVerifyRSASize3072SIGNPSSSHA512103
+         * @tc.desc   testSignVerifyRSASize3072SIGNPSSSHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize3072SIGNPSSSHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize3072SIGNPSSSHA512KeyAlias103';
             let HuksOptions = {
@@ -886,6 +1134,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1MD5103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1MD5103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1MD5103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1MD5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1MD5KeyAlias103';
             let HuksOptions = {
@@ -915,6 +1171,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1NONE103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1NONE103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1NONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1NONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1NONEKeyAlias103';
             let HuksOptions = {
@@ -943,6 +1207,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1SHA1103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1SHA1103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1SHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1SHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1SHA1KeyAlias103';
             let HuksOptions = {
@@ -972,6 +1244,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1SHA224103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1SHA224103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1SHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1SHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1SHA224KeyAlias103';
             let HuksOptions = {
@@ -1001,6 +1281,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1SHA256103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1SHA256103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1SHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1SHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1SHA256KeyAlias103';
             let HuksOptions = {
@@ -1029,6 +1317,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1SHA384103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1SHA384103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1SHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1SHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1SHA384KeyAlias103';
             let HuksOptions = {
@@ -1057,6 +1353,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPKCS1SHA512103
+         * @tc.number testSignVerifyRSASize4096SIGNPKCS1SHA512103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPKCS1SHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPKCS1SHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPKCS1SHA512KeyAlias103';
             let HuksOptions = {
@@ -1085,6 +1389,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSMD5103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSMD5103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSMD5103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSMD5103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSMD5KeyAlias103';
             let HuksOptions = {
@@ -1114,6 +1426,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSNONE103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSNONE103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSNONE103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSNONE103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSNONEKeyAlias103';
             let HuksOptions = {
@@ -1142,6 +1462,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSSHA1103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSSHA1103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSSHA1103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSSHA1103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSSHA1KeyAlias103';
             let HuksOptions = {
@@ -1171,6 +1499,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSSHA224103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSSHA224103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSSHA224103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSSHA224103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSSHA224KeyAlias103';
             let HuksOptions = {
@@ -1200,6 +1536,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSSHA256103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSSHA256103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSSHA256103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSSHA256103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSSHA256KeyAlias103';
             let HuksOptions = {
@@ -1228,6 +1572,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSSHA384103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSSHA384103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSSHA384103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSSHA384103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSSHA384KeyAlias103';
             let HuksOptions = {
@@ -1256,6 +1608,14 @@ export default function SecurityHuksSignVerifyRSAPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   testSignVerifyRSASize4096SIGNPSSSHA512103
+         * @tc.number testSignVerifyRSASize4096SIGNPSSSHA512103
+         * @tc.desc   testSignVerifyRSASize4096SIGNPSSSHA512103
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('testSignVerifyRSASize4096SIGNPSSSHA512103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlies = 'testSignVerifyRSASize4096SIGNPSSSHA512KeyAlias103';
             let HuksOptions = {

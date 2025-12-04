@@ -40,12 +40,12 @@ export default function albumCloseTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_0000
-     * @tc.name      : album_close_000
-     * @tc.desc      : close system album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_close_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_0000
+     * @tc.desc   close system album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_close_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_close_000';
@@ -126,12 +126,12 @@ export default function albumCloseTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_0100
-     * @tc.name      : album_close_001
-     * @tc.desc      : close user album
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_close_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ALBUM_CLOSE_0100
+     * @tc.desc   close user album
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_close_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'album_close_001';

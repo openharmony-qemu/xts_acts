@@ -89,12 +89,12 @@ export default function geolocationCApiTest() {
     afterAll(() => {
     })
     /**
-     * @tc.number     : SUB_HSS_LocationSystem_OH_LOCATION_IS_ENABLED_0001
-     * @tc.name       : testOHLocationIsEnabled001
-     * @tc.desc       : test OH_Location_Is_Enabled
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHLocationIsEnabled001
+     * @tc.number SUB_HSS_LocationSystem_OH_LOCATION_IS_ENABLED_0001
+     * @tc.desc   test OH_Location_Is_Enabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHLocationIsEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let capiResult: number = geolocationCApi.ohLocationIsEnabled();
@@ -104,12 +104,12 @@ export default function geolocationCApiTest() {
     });
 
     /**
-     * @tc.number     : SUB_HSS_LocationSystem_OH_LOCATION_START_LOCATING_0001
-     * @tc.name       : testOHLocationStartLocatingAndStopLocating001
-     * @tc.desc       : test OH_Location_Start_Locating
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testOHLocationStartLocatingAndStopLocating001
+     * @tc.number SUB_HSS_LocationSystem_OH_LOCATION_START_LOCATING_0001
+     * @tc.desc   test OH_Location_Start_Locating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHLocationStartLocatingAndStopLocating001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result1: number = geolocationCApi.ohLocationStartLocating();

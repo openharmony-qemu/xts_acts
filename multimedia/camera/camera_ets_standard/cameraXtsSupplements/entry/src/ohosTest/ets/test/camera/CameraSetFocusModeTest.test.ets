@@ -308,7 +308,6 @@ export default function cameraSetFocusModeTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -328,12 +327,12 @@ export default function cameraSetFocusModeTest() {
 
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001
-     * @tc.desc       photoSession SetFocusMode api errorcode undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001
+     * @tc.desc   photoSession SetFocusMode api errorcode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_001';
@@ -348,12 +347,12 @@ export default function cameraSetFocusModeTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002
-     * @tc.desc       VideoSession SetFocusMode api errorcode undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002
+     * @tc.desc   VideoSession SetFocusMode api errorcode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_002';
@@ -368,12 +367,12 @@ export default function cameraSetFocusModeTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003
-     * @tc.desc       PhotoSession SetFocusMode api errorcode null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003
+     * @tc.desc   PhotoSession SetFocusMode api errorcode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_003';
@@ -388,12 +387,12 @@ export default function cameraSetFocusModeTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004
-     * @tc.desc       videoSession SetFocusMode api errorcode null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004
+     * @tc.desc   videoSession SetFocusMode api errorcode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_004';
@@ -408,12 +407,12 @@ export default function cameraSetFocusModeTest() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005
-     * @tc.desc       PhotoSession SetFocusMode api errorcode -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005
+     * @tc.desc   PhotoSession SetFocusMode api errorcode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_005';
@@ -427,12 +426,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006
-     * @tc.desc       videoSession SetFocusMode api errorcode -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006
+     * @tc.desc   videoSession SetFocusMode api errorcode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_006';
@@ -446,12 +445,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007
-     * @tc.desc       PhotoSession SetFocusMode api errorcode 4
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007
+     * @tc.desc   PhotoSession SetFocusMode api errorcode 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_007';
@@ -466,12 +465,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008
-     * @tc.desc       videoSession SetFocusMode api errorcode 4
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008
+     * @tc.desc   videoSession SetFocusMode api errorcode 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_008';
@@ -486,12 +485,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009
-     * @tc.desc       PhotoSession SetFocusMode api errorcode 1000
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009
+     * @tc.desc   PhotoSession SetFocusMode api errorcode 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_009';
@@ -505,12 +504,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010
-     * @tc.desc       videoSession SetFocusMode api errorcode 1000
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010
+     * @tc.desc   videoSession SetFocusMode api errorcode 1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_010';
@@ -524,12 +523,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011
-     * @tc.desc       PhotoSession SetFocusMode api errorcode string
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011
+     * @tc.desc   PhotoSession SetFocusMode api errorcode string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_011';
@@ -543,12 +542,12 @@ export default function cameraSetFocusModeTest() {
       })
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012
-     * @tc.desc       videoSession SetFocusMode api errorcode string
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012
+     * @tc.desc   videoSession SetFocusMode api errorcode string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_ERROR_CODE_SETFOCUSMODE_ERROR_012';

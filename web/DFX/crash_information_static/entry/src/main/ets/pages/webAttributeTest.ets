@@ -27,7 +27,7 @@ import {
 } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Hypium } from "../../../hypium";
 import emitter from '@ohos.events.emitter';
 import testsuite from '../../src/test/List.test';
@@ -56,7 +56,7 @@ struct webAttributeTest {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
@@ -84,11 +84,11 @@ struct webAttributeTest {
                 break;
               }
               case "emitRenderExitReasonProcessCrashed": {
-                console.log("RenderExitReason0", RenderExitReason.ProcessAbnormalTermination)
-                console.log("RenderExitReason1", RenderExitReason.ProcessWasKilled)
-                console.log("RenderExitReason2", RenderExitReason.ProcessCrashed)
-                console.log("RenderExitReason3", RenderExitReason.ProcessOom)
-                console.log("RenderExitReason4", RenderExitReason.ProcessExitUnknown)
+                console.log("RenderExitReason0", RenderExitReason.PROCESS_ABNORMAL_TERMINATION)
+                console.log("RenderExitReason1", RenderExitReason.PROCESS_WAS_KILLED)
+                console.log("RenderExitReason2", RenderExitReason.PROCESS_CRASHED)
+                console.log("RenderExitReason3", RenderExitReason.PROCESS_OOM)
+                console.log("RenderExitReason4", RenderExitReason.PROCESS_EXIT_UNKNOWN)
                 this.flag = true;
                 this.controller.loadUrl('chrome://crash/')
                 break;

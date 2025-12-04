@@ -41,12 +41,12 @@ export default function getTarget2Test() {
       done();
     });
     /**
-     * @tc.number    getTarget2
-     * @tc.name      getTarget2Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getTarget2Test_0100
+     * @tc.number getTarget2
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTarget2Test_0100', Level.LEVEL0, async (done: Function) => {
       console.info('getTarget2Test_0100 START');

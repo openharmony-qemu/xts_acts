@@ -40,12 +40,12 @@ export default function FivePointOne_resMgrStageTest() {
     });
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getIntPluralStringValueSync_0100
-     * @tc.desc     : getIntPluralStringValueSync with id
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getIntPluralStringValueSync with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringValueSync_0100', Level.LEVEL2, () => {
       let value = res.getIntPluralStringValueSync($r('app.plural.p_str4').id, 2, 2, 'test');
@@ -54,12 +54,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getIntPluralStringValueSync_0200
-     * @tc.desc     : getIntPluralStringValueSync with object
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_0200
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getIntPluralStringValueSync with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringValueSync_0200', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -73,12 +73,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getIntPluralStringByNameSync_0100
-     * @tc.desc     : getIntPluralStringByNameSync with name
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getIntPluralStringByNameSync with name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getIntPluralStringByNameSync_0100', Level.LEVEL2, () => {
       let value = res.getIntPluralStringByNameSync('p_str4', 2, 2, 'test');
@@ -87,12 +87,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getDoublePluralStringValueSync_0100
-     * @tc.desc     : getDoublePluralStringValueSync with id
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getDoublePluralStringValueSync with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getDoublePluralStringValueSync_0100', Level.LEVEL2, () => {
       let value = res.getDoublePluralStringValueSync($r('app.plural.p_str4').id, 2.1, 2, 'test');
@@ -101,12 +101,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getDoublePluralStringValueSync_0200
-     * @tc.desc     : getDoublePluralStringValueSync with object
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_0200
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getDoublePluralStringValueSync with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getDoublePluralStringValueSync_0200', Level.LEVEL2, () => {
       let resource: resourceManager.Resource = {
@@ -120,12 +120,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number   : SUB_GLOBAL_ResourceManager_Plural_0310
-     * @tc.name     : resourceManager_test_getDoublePluralStringByNameSync_0100
-     * @tc.desc     : getDoublePluralStringByNameSync with name
-     * @tc.size     : MEDIUM
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_0100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0310
+     * @tc.desc   getDoublePluralStringByNameSync with name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_0100', Level.LEVEL2, () => {
       let value = res.getDoublePluralStringByNameSync('p_str4', 2.1, 2, 'test');
@@ -134,12 +134,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_0970
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_0970
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_0970
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0970
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_0970', Level.LEVEL3, () => {
       try {
@@ -151,12 +151,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_0980
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_0980
-     * @tc.desc      : error code 9001001 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_0980
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0980
+     * @tc.desc   error code 9001001 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_0980', Level.LEVEL3, () => {
       try {
@@ -172,12 +172,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_0990
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_0990
-     * @tc.desc      : error code 9001001 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_0990
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_0990
+     * @tc.desc   error code 9001001 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_0990', Level.LEVEL3, () => {
       try {
@@ -189,12 +189,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1000
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1000
-     * @tc.desc      : error code 9001001 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1000
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1000
+     * @tc.desc   error code 9001001 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1000', Level.LEVEL3, () => {
       try {
@@ -210,12 +210,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1010
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1010
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1010
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1010
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1010', Level.LEVEL3, () => {
       try {
@@ -227,12 +227,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1020
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1020
-     * @tc.desc      : error code 9001002 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1020
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1020
+     * @tc.desc   error code 9001002 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1020', Level.LEVEL3, () => {
       try {
@@ -248,12 +248,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1030
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1030
-     * @tc.desc      : error code 9001002 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1030
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1030
+     * @tc.desc   error code 9001002 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1030', Level.LEVEL3, () => {
       try {
@@ -265,12 +265,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1040
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1040
-     * @tc.desc      : error code 9001002 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1040
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1040
+     * @tc.desc   error code 9001002 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1040', Level.LEVEL3, () => {
       try {
@@ -286,12 +286,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1050
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1050
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1050
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1050
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1050', Level.LEVEL3, () => {
       try {
@@ -303,12 +303,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1060
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1060
-     * @tc.desc      : error code 9001006 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1060
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1060
+     * @tc.desc   error code 9001006 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1060', Level.LEVEL3, () => {
       try {
@@ -324,12 +324,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1070
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1070
-     * @tc.desc      : error code 9001006 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1070
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1070
+     * @tc.desc   error code 9001006 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1070', Level.LEVEL3, () => {
       try {
@@ -341,12 +341,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1080
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1080
-     * @tc.desc      : error code 9001006 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1080
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1080
+     * @tc.desc   error code 9001006 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1080', Level.LEVEL3, () => {
       try {
@@ -362,12 +362,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1090
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1090
-     * @tc.desc      : error code 9001007 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1090
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1090
+     * @tc.desc   error code 9001007 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1090', Level.LEVEL3, () => {
       try {
@@ -379,12 +379,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1100
-     * @tc.name      : resourceManager_test_getIntPluralStringValueSync_1100
-     * @tc.desc      : error code 9001007 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringValueSync_1100
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1100
+     * @tc.desc   error code 9001007 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringValueSync_1100', Level.LEVEL3, () => {
       try {
@@ -400,12 +400,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1110
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1110
-     * @tc.desc      : error code 9001007 with id
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1110
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1110
+     * @tc.desc   error code 9001007 with id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1110', Level.LEVEL3, () => {
       try {
@@ -417,12 +417,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1120
-     * @tc.name      : resourceManager_test_getDoublePluralStringValueSync_1120
-     * @tc.desc      : error code 9001007 with object
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringValueSync_1120
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1120
+     * @tc.desc   error code 9001007 with object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringValueSync_1120', Level.LEVEL3, () => {
       try {
@@ -438,12 +438,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1130
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_1130
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_1130
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1130
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_1130', Level.LEVEL3, () => {
       try {
@@ -455,12 +455,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1140
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_1140
-     * @tc.desc      : error code 9001003 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_1140
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1140
+     * @tc.desc   error code 9001003 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_1140', Level.LEVEL3, () => {
       try {
@@ -472,12 +472,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1150
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_1150
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_1150
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1150
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_1150', Level.LEVEL3, () => {
       try {
@@ -489,12 +489,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1160
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_1160
-     * @tc.desc      : error code 9001006 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_1160
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1160
+     * @tc.desc   error code 9001006 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_1160', Level.LEVEL3, () => {
       try {
@@ -506,12 +506,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1170
-     * @tc.name      : resourceManager_test_getIntPluralStringByNameSync_1170
-     * @tc.desc      : error code 9001008 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getIntPluralStringByNameSync_1170
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1170
+     * @tc.desc   error code 9001008 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getIntPluralStringByNameSync_1170', Level.LEVEL3, () => {
       try {
@@ -523,12 +523,12 @@ export default function FivePointOne_resMgrStageTest() {
     })
 
     /**
-     * @tc.number    : SUB_GLOBAL_ResourceManager_Plural_1180
-     * @tc.name      : resourceManager_test_getDoublePluralStringByNameSync_1180
-     * @tc.desc      : error code 9001008 by name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   resourceManager_test_getDoublePluralStringByNameSync_1180
+     * @tc.number SUB_GLOBAL_ResourceManager_Plural_1180
+     * @tc.desc   error code 9001008 by name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('resourceManager_test_getDoublePluralStringByNameSync_1180', Level.LEVEL3, () => {
       try {

@@ -41,12 +41,12 @@ export default function bindTips2Test() {
     });
 
     /**
+     * @tc.name   bindTips2_0100
      * @tc.number bindTips2_0100
-     * @tc.name bindTips2_0100
-     * @tc.desc Test suspended bubbles
-     * @tc.level: Level 1
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
+     * @tc.desc   Test suspended bubbles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('bindTips2_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('bindTips_0100 start');

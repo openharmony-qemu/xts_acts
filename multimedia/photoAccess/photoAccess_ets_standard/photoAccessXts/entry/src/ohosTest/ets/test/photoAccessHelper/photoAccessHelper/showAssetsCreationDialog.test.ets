@@ -61,12 +61,12 @@ export default function showAssetsCreationDialogTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_001
-     * @tc.name      : showAssetsCreationDialog_promise_001
-     * @tc.desc      : showAssetsCreationDialog
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   showAssetsCreationDialog_promise_001
+     * @tc.number PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_001
+     * @tc.desc   showAssetsCreationDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAssetsCreationDialog_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'showAssetsCreationDialog_promise_001';
@@ -85,12 +85,12 @@ export default function showAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_002
-     * @tc.name      : showAssetsCreationDialog_promise_002
-     * @tc.desc      : showAssetsCreationDialog
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   showAssetsCreationDialog_promise_002
+     * @tc.number PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_002
+     * @tc.desc   showAssetsCreationDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAssetsCreationDialog_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'showAssetsCreationDialog_promise_002';
@@ -109,12 +109,12 @@ export default function showAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_003
-     * @tc.name      : showAssetsCreationDialog_promise_003
-     * @tc.desc      : showAssetsCreationDialog
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   showAssetsCreationDialog_promise_003
+     * @tc.number PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_003
+     * @tc.desc   showAssetsCreationDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAssetsCreationDialog_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'showAssetsCreationDialog_promise_003';
@@ -133,12 +133,12 @@ export default function showAssetsCreationDialogTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_004
-     * @tc.name      : showAssetsCreationDialog_promise_004
-     * @tc.desc      : showAssetsCreationDialog
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   showAssetsCreationDialog_promise_004
+     * @tc.number PHOTO_ACCESS_HELPER_SHOW_ASSETS_CREATION_DIALOG_004
+     * @tc.desc   showAssetsCreationDialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAssetsCreationDialog_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'showAssetsCreationDialog_promise_004';

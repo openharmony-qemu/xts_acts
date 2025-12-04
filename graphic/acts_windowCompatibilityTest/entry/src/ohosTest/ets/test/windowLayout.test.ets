@@ -63,12 +63,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       console.log(msg + ' beforeEach end!!!')
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0010
-     * @tc.name      : testSetAspectRatio_DialogWindow
-     * @tc.desc      : Set the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0010
+     * @tc.desc   Set the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_DialogWindow';
@@ -100,12 +100,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0020
-     * @tc.name      : testSetAspectRatio_SubWindow
-     * @tc.desc      : VSet the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0020
+     * @tc.desc   VSet the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_SubWindow';
@@ -133,12 +133,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0030
-     * @tc.name      : testSetAspectRatio_MainWindow_WinStatusType_Floating
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_MainWindow_WinStatusType_Floating
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0030
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_MainWindow_WinStatusType_Floating', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_MainWindow_WinStatusType_Floating';
@@ -161,12 +161,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0040
-     * @tc.name      : testResetAspectRatio_DialogWindow
-     * @tc.desc      : Unset the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResetAspectRatio_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0040
+     * @tc.desc   Unset the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatio_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetAspectRatio_DialogWindow';
@@ -197,12 +197,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0050
-     * @tc.name      : testResetAspectRatio_SubWindow
-     * @tc.desc      : Unset the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResetAspectRatio_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0050
+     * @tc.desc   Unset the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatio_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetAspectRatio_SubWindow';
@@ -229,12 +229,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0060
-     * @tc.name      : testResetAspectRatio_MainWindow_WinStatusType_Floating
-     * @tc.desc      : Unset the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResetAspectRatio_MainWindow_WinStatusType_Floating
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0060
+     * @tc.desc   Unset the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatio_MainWindow_WinStatusType_Floating', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetAspectRatio_MainWindow_WinStatusType_Floating';
@@ -250,12 +250,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0070
-     * @tc.name      : testResize_MainWindow_FullScreen_Promise
-     * @tc.desc      : Verify the full screen window resize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_MainWindow_FullScreen_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0070
+     * @tc.desc   Verify the full screen window resize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_MainWindow_FullScreen_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_MainWindow_FullScreen_Promise';
@@ -316,12 +316,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0080
-     * @tc.name      : testResize_MainWindow_FullScreen_Callback
-     * @tc.desc      : Verify the full screen window resize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_MainWindow_FullScreen_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0080
+     * @tc.desc   Verify the full screen window resize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_MainWindow_FullScreen_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testResize_MainWindow_FullScreen_Callback';
@@ -398,12 +398,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0090
-     * @tc.name      : testGetWindowLimits_DialogWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowLimits_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0090
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowLimits_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowLimits_DialogWindow';
@@ -436,12 +436,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0100
-     * @tc.name      : testGetWindowLimits_SubWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowLimits_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0100
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowLimits_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowLimits_SubWindow';
@@ -471,12 +471,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0110
-     * @tc.name      : testGetWindowLimits_MainWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowLimits_MainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0110
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowLimits_MainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowLimits_MainWindow';
@@ -500,12 +500,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0120
-     * @tc.name      : testSetWindowLimits_DialogWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0120
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_DialogWindow';
@@ -561,12 +561,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0130
-     * @tc.name      : testSetWindowLimits_SubWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0130
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_SubWindow';
@@ -617,12 +617,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0140
-     * @tc.name      : testSetWindowLimits_MainWindow
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_MainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0140
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_MainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_MainWindow';
@@ -669,12 +669,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0150
-     * @tc.name      : testSetWindowLimits_InvalidParameter
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_InvalidParameter
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0150
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_InvalidParameter', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_InvalidParameter';
@@ -726,12 +726,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0160
-     * @tc.name      : testSetWindowLimits_MoreThenInitGetValue
-     * @tc.desc      : Sets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_MoreThenMaxInitGetValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0160
+     * @tc.desc   Sets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_MoreThenMaxInitGetValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_MoreThenInitGetValue';
@@ -788,12 +788,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0170
-     * @tc.name      : testSetWindowLimits_LessThenMinInitGetValue
-     * @tc.desc      : Sets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_LessThenMinInitGetValue
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0170
+     * @tc.desc   Sets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_LessThenMinInitGetValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_LessThenMinInitGetValue';
@@ -850,12 +850,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0180
-     * @tc.name      : testOnOffWindowStatusChange_OnSubWindow
-     * @tc.desc      : Enable listening for window mode changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnOffWindowStatusChange_OnSubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0180
+     * @tc.desc   Enable listening for window mode changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnOffWindowStatusChange_OnSubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testOnOffWindowStatusChange_OnSubWindow';
@@ -912,12 +912,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0190
-     * @tc.name      : testOnOffWindowStatusChange_OnMainWindow
-     * @tc.desc      : Enable listening for window mode changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnOffWindowStatusChange_OnMainWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0190
+     * @tc.desc   Enable listening for window mode changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnOffWindowStatusChange_OnMainWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testOnOffWindowStatusChange_OnMainWindow';
@@ -970,12 +970,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0200
-     * @tc.name      : testSetAspectRatio_SubWindowWithOptions
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetAspectRatio_SubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0200
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_SubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_SubWindowWithOptions';
@@ -1017,12 +1017,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0210
-     * @tc.name      : testResetAspectRatio_SubWindowWithOptions
-     * @tc.desc      : Unset the proportion of the window content layout
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testResetAspectRatio_SubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0210
+     * @tc.desc   Unset the proportion of the window content layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResetAspectRatio_SubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResetAspectRatio_SubWindowWithOptions';
@@ -1062,12 +1062,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
         });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0220
-     * @tc.name      : testGetWindowLimits_SubWindowWithOptions
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWindowLimits_SubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0220
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWindowLimits_SubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetWindowLimits_SubWindowWithOptions';
@@ -1110,12 +1110,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0230
-     * @tc.name      : testSetWindowLimits_SubWindowWithOptions
-     * @tc.desc      : Gets the size limit for the current application window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowLimits_SubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0230
+     * @tc.desc   Gets the size limit for the current application window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowLimits_SubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowLimits_SubWindowWithOptions';
@@ -1180,12 +1180,12 @@ export default function windowLayoutTest(context: common.UIAbilityContext, windo
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0240
-     * @tc.name      : testOnOffWindowStatusChange_OnSubWindowWithOptions
-     * @tc.desc      : Enable listening for window mode changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnOffWindowStatusChange_OnSubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLAYOUT_JS_API_0240
+     * @tc.desc   Enable listening for window mode changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnOffWindowStatusChange_OnSubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testOnOffWindowStatusChange_OnSubWindowWithOptions';

@@ -26,65 +26,65 @@ export default function imageMatchTextDirectionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0100
-     * @tc.name       : testImageMatchTextDirection001
-     * @tc.desc       : testing imageMatchTextDirection for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatchTextDirection001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0100
+     * @tc.desc   testing imageMatchTextDirection for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatchTextDirection001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatchTextDirection001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0200
-     * @tc.name       : testImageMatchTextDirection002
-     * @tc.desc       : testing imageMatchTextDirection for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatchTextDirection002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0200
+     * @tc.desc   testing imageMatchTextDirection for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatchTextDirection002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatchTextDirection002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0300
-     * @tc.name       : testImageMatchTextDirection003
-     * @tc.desc       : testing imageMatrix for image with illegal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatchTextDirection003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0300
+     * @tc.desc   testing imageMatrix for image with illegal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatchTextDirection003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatchTextDirection003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0400
-     * @tc.name       : testImageMatchTextDirection004
-     * @tc.desc       : testing imageMatrix for image with set/get attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatchTextDirection004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0400
+     * @tc.desc   testing imageMatrix for image with set/get attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatchTextDirection004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatchTextDirection004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0500
-     * @tc.name       : testImageMatchTextDirection005
-     * @tc.desc       : testing imageMatrix for image with set/get/reset attribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageMatchTextDirection005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_MATCHTEXTDIRECTION_0500
+     * @tc.desc   testing imageMatrix for image with set/get/reset attribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageMatchTextDirection005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageMatchTextDirection005()).assertEqual(0)

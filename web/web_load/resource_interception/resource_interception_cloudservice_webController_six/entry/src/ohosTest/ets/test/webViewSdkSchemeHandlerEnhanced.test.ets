@@ -57,13 +57,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
         done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_isChunked_false_API_0001
-     * @tc.name        : testWebViewSdkSchemeHandler_isChunked_false
-     * @tc.desc        : test SdkSchemeHandler_isChunked_false
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isChunked_false
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isChunked_false_API_0001
+     * @tc.desc   test SdkSchemeHandler_isChunked_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isChunked_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isChunked_false", EVENT_ID_SET_EMIT_KEY);
@@ -76,13 +76,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
     })
 
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_isEof_false_API_0001
-     * @tc.name        : testWebViewSdkSchemeHandler_isEof_false
-     * @tc.desc        : test SdkSchemeHandler_isEof_false
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isEof_false
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isEof_false_API_0001
+     * @tc.desc   test SdkSchemeHandler_isEof_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isEof_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isEof_false", EVENT_ID_SET_EMIT_KEY);
@@ -93,21 +93,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
         done();
       }
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_SdkSchemeHandler_isInMemory_false
-     *@tc.desc test SdkSchemeHandler_isInMemory_false
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level 1
-     */
-    /*
-     * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0002
-     * @tc.name        : testWebViewSdkSchemeHandler_isInMemory_false
-     * @tc.desc        : test SdkSchemeHandler_isInMemory_false
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isInMemory_false
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0002
+     * @tc.desc   test SdkSchemeHandler_isInMemory_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isInMemory_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isInMemory_false", EVENT_ID_SET_EMIT_KEY);
@@ -118,21 +110,13 @@ export default function ActsAceWebViewSdkSchemeHandlerEnhanced() {
         done();
       }
     })
-    /*
-     *@tc.number SUB_ACE_WEB_SdkSchemeHandler_mainFrame_false_API_0001
-     *@tc.name testWebViewSdkSchemeHandler_SdkSchemeHandler_isInMemory_false
-     *@tc.desc test SdkSchemeHandler_isInMemory_false
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level 1
-     */
-    /*
-     * @tc.number      : SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0003
-     * @tc.name        : testWebViewSdkSchemeHandler_isMainFrame_false
-     * @tc.desc        : test SdkSchemeHandler_isInMemory_false
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSdkSchemeHandler_isMainFrame_false
+     * @tc.number SUB_ACE_WEB_SdkSchemeHandler_isInMemory_false_API_0003
+     * @tc.desc   test SdkSchemeHandler_isInMemory_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSdkSchemeHandler_isMainFrame_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitWebViewSdkSchemeHandler_isMainFrame_false", EVENT_ID_SET_EMIT_KEY);

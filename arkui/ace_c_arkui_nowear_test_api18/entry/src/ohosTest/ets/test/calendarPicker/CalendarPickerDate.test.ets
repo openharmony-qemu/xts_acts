@@ -25,13 +25,13 @@ export default function calendarPickerDateTest(){
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_POST_FRAME_0100
-     * @tc.name       : testCalendarPickerDate001
-     * @tc.desc       : testing CalendarPicker AutoPlay
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCalendarPickerDate001
+     * @tc.number SUB_ARKUI_CAPI_POST_FRAME_0100
+     * @tc.desc   testing CalendarPicker AutoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCalendarPickerDate001',  Level.LEVEL0, async (done: Function) => {
       let PAGE_TAG = 'TestCalendarPickerDate';

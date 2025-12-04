@@ -100,14 +100,14 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     const TRUE_FLAG = true;
     let tag = 'pipWindowTest'
     let isPipWindowEnabled = false;
-    let isAutoWindow: string =
-      settings.getValueSync(globalThis.abilityContext, 'window_pcmode_switch_status', '',
-        settings.domainName.DEVICE_SHARED);
+    let windowStage:window.WindowStage =  AppStorage.get('windowStage') as window.WindowStage;
+    let isAutoWindow: string = settings.getValueSync(globalThis.abilityContext, 'window_pcmode_switch_status', '',settings.domainName.USER_PROPERTY);
     let isPCStatus: string = settings.getValueSync(globalThis.abilityContext, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY);
       //isPCStatus == '' 非PC设备
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+    let isFreeWindowMode = false;
     let sleep = async (time:number):Promise<void> => {
       let timeoutId:number | null = null;
       await new Promise((resolve: (value: string) => void) => {
@@ -133,15 +133,20 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     beforeAll(async () => {
       isPipWindowEnabled = await isPipWindowSupport(context1);
       console.log('beforeAll isPipEnabled:'+isPipWindowEnabled);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
-     * @tc.name       : isPiPEnabled_test
-     * @tc.desc       : To test the function of isPiPEnabled
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level0
+     * @tc.name   isPiPEnabled_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0100
+     * @tc.desc   To test the function of isPiPEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isPiPEnabled_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.log('www data isPiPEnabled_test begin')
@@ -159,12 +164,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
-     * @tc.name       : create_Function_Promise
-     * @tc.desc       : To test the function of create
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   create_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0200
+     * @tc.desc   To test the function of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('create_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.log('www data create_Function_Promise begin')
@@ -206,12 +211,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
-     * @tc.name       : startPiP_Function_Promise
-     * @tc.desc       : To test the function of startPiP
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   startPiP_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0300
+     * @tc.desc   To test the function of startPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('startPiP_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -254,12 +259,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
-     * @tc.name       : stopPiP_Function_Promise
-     * @tc.desc       : To test the function of stopPiP
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   stopPiP_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0400
+     * @tc.desc   To test the function of stopPiP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('stopPiP_Function_Promise',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -309,12 +314,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
-     * @tc.name       : setAutoStartEnabled_test
-     * @tc.desc       : To test the function of setAutoStartEnabled
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   setAutoStartEnabled_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0500
+     * @tc.desc   To test the function of setAutoStartEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('setAutoStartEnabled_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -351,12 +356,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
-     * @tc.name       : updateContentSize_test
-     * @tc.desc       : To test the function of updateContentSize
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   updateContentSize_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0600
+     * @tc.desc   To test the function of updateContentSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('updateContentSize_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -394,12 +399,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
-     * @tc.name       : stateChange_Function_Callback
-     * @tc.desc       : To test the function of stateChange
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   stateChange_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0700
+     * @tc.desc   To test the function of stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('stateChange_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -461,12 +466,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
-     * @tc.name       : stateChange_test
-     * @tc.desc       : To test the function of stateChange
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   stateChange_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0800
+     * @tc.desc   To test the function of stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('stateChange_test',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -535,12 +540,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
-     * @tc.name       : controlPanelActionEvent_Function_Callback
-     * @tc.desc       : To test the function of controlPanelActionEvent
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   controlPanelActionEvent_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0900
+     * @tc.desc   To test the function of controlPanelActionEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('controlPanelActionEvent_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -588,12 +593,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
-     * @tc.name       : controlPanelActionEvent_test
-     * @tc.desc       : To test the function of controlPanelActionEvent
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   controlPanelActionEvent_test
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1000
+     * @tc.desc   To test the function of controlPanelActionEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('controlPanelActionEvent_test',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let pipController:pipWindow.PiPController | undefined = undefined;
@@ -648,12 +653,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
-     * @tc.name       : testPiPTemplateType
-     * @tc.desc       : To test the function of testPiPTemplateType
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level0
+     * @tc.name   testPiPTemplateType
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1100
+     * @tc.desc   To test the function of testPiPTemplateType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPiPTemplateType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testPiPTemplateType"
@@ -669,14 +674,14 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
-     * @tc.name       : testPiPEvent
-     * @tc.desc       : To test the function of testPiPEvent
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testPiPEvent
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1200
+     * @tc.desc   To test the function of testPiPEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testPiPEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+    it('testPiPEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let msg = "testPiPEvent"
       try {
         let event: pipWindow.PiPActionEventType = "playbackStateChanged";
@@ -697,12 +702,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
-     * @tc.name       : create_Function_Promise_2
-     * @tc.desc       : To test the function of create
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   create_Function_Promise_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1300
+     * @tc.desc   To test the function of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('create_Function_Promise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.log('www data create_Function_Promise begin')
@@ -744,12 +749,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
-     * @tc.name       : create_Function_Promise_3
-     * @tc.desc       : To test the function of create
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   create_Function_Promise_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1400
+     * @tc.desc   To test the function of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('create_Function_Promise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.log('www data create_Function_Promise begin')
@@ -791,12 +796,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
-     * @tc.name       : create_Function_Promise_4
-     * @tc.desc       : To test the function of create
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   create_Function_Promise_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_1500
+     * @tc.desc   To test the function of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('create_Function_Promise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.log('www data create_Function_Promise begin')
@@ -838,12 +843,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1600
-     * @tc.name       : test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT
-     * @tc.desc       : test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1600
+     * @tc.desc   test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT begin');
@@ -887,12 +892,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1700
-     * @tc.name       : test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD
-     * @tc.desc       : test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1700
+     * @tc.desc   test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoPlayControlGroup_FAST_FORWARD_BACKWARD begin');
@@ -936,12 +941,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1800
-     * @tc.name       : test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD
-     * @tc.desc       : test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1800
+     * @tc.desc   test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoPlayControlGroup_VIDEO_PREVIOUS_NEXT_FAST_FORWARD_BACKWARD begin');
@@ -978,12 +983,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1900
-     * @tc.name       : test_VideoCallControlGroup_MICROPHONE_SWITCH
-     * @tc.desc       : test_VideoCallControlGroup_MICROPHONE_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_MICROPHONE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_1900
+     * @tc.desc   test_VideoCallControlGroup_MICROPHONE_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_MICROPHONE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH begin');
@@ -1026,12 +1031,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2000
-     * @tc.name       : test_VideoCallControlGroup_HANG_UP_BUTTON
-     * @tc.desc       : test_VideoCallControlGroup_HANG_UP_BUTTON
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_HANG_UP_BUTTON
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2000
+     * @tc.desc   test_VideoCallControlGroup_HANG_UP_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_HANG_UP_BUTTON begin');
@@ -1074,12 +1079,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2100
-     * @tc.name       : test_VideoCallControlGroup_CAMERA_SWITCH
-     * @tc.desc       : test_VideoCallControlGroup_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2100
+     * @tc.desc   test_VideoCallControlGroup_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_CAMERA_SWITCH begin');
@@ -1122,12 +1127,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2200
-     * @tc.name       : test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON
-     * @tc.desc       : test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2200
+     * @tc.desc   test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON begin');
@@ -1170,12 +1175,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2300
-     * @tc.name       : test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH
-     * @tc.desc       : test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2300
+     * @tc.desc   test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_CAMERA_SWITCH begin');
@@ -1219,12 +1224,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2400
-     * @tc.name       : test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.desc       : test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2400
+     * @tc.desc   test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH begin');
@@ -1267,12 +1272,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2500
-     * @tc.name       : test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.desc       : test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2500
+     * @tc.desc   test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoCallControlGroup_MICROPHONE_SWITCH_HANG_UP_BUTTON_CAMERA_SWITCH begin');
@@ -1316,12 +1321,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2600
-     * @tc.name       : test_VideoMeetingControlGroup_HANG_UP_BUTTON
-     * @tc.desc       : test_VideoMeetingControlGroup_HANG_UP_BUTTON
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_HANG_UP_BUTTON
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2600
+     * @tc.desc   test_VideoMeetingControlGroup_HANG_UP_BUTTON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_HANG_UP_BUTTON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON begin');
@@ -1364,12 +1369,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2700
-     * @tc.name       : test_VideoMeetingControlGroup_CAMERA_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2700
+     * @tc.desc   test_VideoMeetingControlGroup_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_CAMERA_SWITCH begin');
@@ -1413,12 +1418,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2800
-     * @tc.name       : test_VideoMeetingControlGroup_MUTE_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_MUTE_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_MUTE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2800
+     * @tc.desc   test_VideoMeetingControlGroup_MUTE_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_MUTE_SWITCH begin');
@@ -1461,12 +1466,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2900
-     * @tc.name       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_2900
+     * @tc.desc   test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH begin');
@@ -1509,12 +1514,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3000
-     * @tc.name       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3000
+     * @tc.desc   test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_CAMERA_SWITCH begin');
@@ -1557,12 +1562,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3100
-     * @tc.name       : test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3100
+     * @tc.desc   test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_MUTE_SWITCH_CAMERA_SWITCH begin');
@@ -1605,12 +1610,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3200
-     * @tc.name       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH
-     * @tc.desc       : test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3200
+     * @tc.desc   test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       console.log(tag + 'test_VideoMeetingControlGroup_HANG_UP_BUTTON_MUTE_SWITCH_CAMERA_SWITCH begin');
@@ -1653,12 +1658,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3300
-     * @tc.name       : TestUpdatePiPControlStatusInVideoPlay
-     * @tc.desc       : TestUpdatePiPControlStatusInVideoPlay
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestUpdatePiPControlStatusInVideoPlay
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3300
+     * @tc.desc   TestUpdatePiPControlStatusInVideoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestUpdatePiPControlStatusInVideoPlay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestUpdatePiPControlStatusInVideoPlay';
@@ -1742,12 +1747,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3400
-     * @tc.name       : TestUpdatePiPControlStatelessType
-     * @tc.desc       : TestUpdatePiPControlStatelessType
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestUpdatePiPControlStatelessType
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3400
+     * @tc.desc   TestUpdatePiPControlStatelessType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestUpdatePiPControlStatelessType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestUpdatePiPControlStatelessType';
@@ -1823,12 +1828,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3500
-     * @tc.name       : TestUpdatePiPControlStatusInVideoCall
-     * @tc.desc       : TestUpdatePiPControlStatusInVideoCall
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestUpdatePiPControlStatusInVideoCall
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3500
+     * @tc.desc   TestUpdatePiPControlStatusInVideoCall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestUpdatePiPControlStatusInVideoCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestUpdatePiPControlStatusInVideoCall';
@@ -1912,12 +1917,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3600
-     * @tc.name       : TestUpdatePiPControlStatusInVideoMeeting
-     * @tc.desc       : TestUpdatePiPControlStatusInVideoMeeting
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestUpdatePiPControlStatusInVideoMeeting
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3600
+     * @tc.desc   TestUpdatePiPControlStatusInVideoMeeting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestUpdatePiPControlStatusInVideoMeeting', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestUpdatePiPControlStatusInVideoMeeting';
@@ -2001,12 +2006,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3700
-     * @tc.name       : TestUpdatePiPControlStatusInVideoLive
-     * @tc.desc       : TestUpdatePiPControlStatusInVideoLive
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestUpdatePiPControlStatusInVideoLive
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3700
+     * @tc.desc   TestUpdatePiPControlStatusInVideoLive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestUpdatePiPControlStatusInVideoLive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestUpdatePiPControlStatusInVideoLive';
@@ -2090,12 +2095,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3800
-     * @tc.name       : TestSetPiPControlEnabledInVideoPlay
-     * @tc.desc       : TestSetPiPControlEnabledInVideoPlay
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestSetPiPControlEnabledInVideoPlay
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3800
+     * @tc.desc   TestSetPiPControlEnabledInVideoPlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestSetPiPControlEnabledInVideoPlay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestSetPiPControlEnabledInVideoPlay';
@@ -2163,12 +2168,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3900
-     * @tc.name       : TestSetPiPControlEnabledInVideoCall
-     * @tc.desc       : TestSetPiPControlEnabledInVideoCall
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestSetPiPControlEnabledInVideoCall
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_3900
+     * @tc.desc   TestSetPiPControlEnabledInVideoCall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestSetPiPControlEnabledInVideoCall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestSetPiPControlEnabledInVideoCall';
@@ -2236,12 +2241,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4000
-     * @tc.name       : TestSetPiPControlEnabledInVideoMeeting
-     * @tc.desc       : TestSetPiPControlEnabledInVideoMeeting
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   TestSetPiPControlEnabledInVideoMeeting
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4000
+     * @tc.desc   TestSetPiPControlEnabledInVideoMeeting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('TestSetPiPControlEnabledInVideoMeeting', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
       const message = 'TestSetPiPControlEnabledInVideoMeeting';
@@ -2309,12 +2314,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4100
-     * @tc.name       : testPiPControlCustomUI
-     * @tc.desc       : testPiPControlCustomUI
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testPiPControlCustomUI
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4100
+     * @tc.desc   testPiPControlCustomUI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testPiPControlCustomUI', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       console.log(`${tag} testPiPControlCustomUI begin`);
@@ -2359,12 +2364,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4200
-     * @tc.name       : testCreateArgsContentNode
-     * @tc.desc       : testCreateArgsContentNode
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testCreateArgsContentNode
+     * @tc.number SUB_BASIC_WMS_PIP_TABIET_CONTROLS_4200
+     * @tc.desc   testCreateArgsContentNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCreateArgsContentNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const caseName = 'TestCreateArgsContentNode';
@@ -2415,15 +2420,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       }
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
-     * @tc.name       : PiPSizeChange_Function_Callback
-     * @tc.desc       : To test the function of PiPSizeChange
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   PiPSizeChange_Function_Callback_0
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4300
+     * @tc.desc   To test the function of PiPSizeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PiPSizeChange_Function_Callback_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      if (isPCStatus != ''|| isAutoWindow == 'true') {
+      if (isFreeWindowMode == true) {
         console.log('PiPSizeChange_Function_Callback_0 device type 2in1');
         done();
         return;
@@ -2496,15 +2501,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
-     * @tc.name       : PiPSizeChange_Function_Callback
-     * @tc.desc       : To test the function of PiPSizeChange
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   PiPSizeChange_Function_Callback_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4400
+     * @tc.desc   To test the function of PiPSizeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PiPSizeChange_Function_Callback_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      if (isPCStatus != ''|| isAutoWindow == 'true') {
+      if (isFreeWindowMode == true) {
         console.log('PiPSizeChange_Function_Callback_1 device type 2in1');
         done();
         return;
@@ -2580,15 +2585,15 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
       
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
-     * @tc.name       : PiPSizeChange_Function_Callback
-     * @tc.desc       : To test the function of PiPSizeChange
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level3
+     * @tc.name   PiPSizeChange_Function_Callback_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4500
+     * @tc.desc   To test the function of PiPSizeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('PiPSizeChange_Function_Callback_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
-      if (isPCStatus != ''|| isAutoWindow == 'true') {
+      if (isFreeWindowMode == true) {
         console.log('PiPSizeChange_Function_Callback_2 device type 2in1');
         done();
         return;
@@ -2674,12 +2679,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_GET_PIP_WINDOW_INFO_0100
-     * @tc.name       : testgetPiPWindowInfo
-     * @tc.desc       : testgetPiPWindowInfo
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testgetPiPWindowInfo
+     * @tc.number SUB_BASIC_WMS_PIP_GET_PIP_WINDOW_INFO_0100
+     * @tc.desc   testgetPiPWindowInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testgetPiPWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       const caseName = 'testgetPiPWindowInfo';
@@ -2748,12 +2753,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testUpdateContentSizeErrCode401_0100
-     * @tc.name       : testUpdateContentSizeErrCode401_0100
-     * @tc.desc       : testUpdateContentSizeErrCode401_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testUpdateContentSizeErrCode401_0100
+     * @tc.number testUpdateContentSizeErrCode401_0100
+     * @tc.desc   testUpdateContentSizeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUpdateContentSizeErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testUpdateContentSizeErrCode401_0100';
@@ -2799,12 +2804,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testUpdatePiPControlStatusErrCode401_0100
-     * @tc.name       : testUpdatePiPControlStatusErrCode401_0100
-     * @tc.desc       : testUpdatePiPControlStatusErrCode401_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testUpdatePiPControlStatusErrCode401_0100
+     * @tc.number testUpdatePiPControlStatusErrCode401_0100
+     * @tc.desc   testUpdatePiPControlStatusErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testUpdatePiPControlStatusErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testUpdatePiPControlStatusErrCode401_0100';
@@ -2850,12 +2855,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testSetPiPControlEnabledErrCode401_0100
-     * @tc.name       : testSetPiPControlEnabledErrCode401_0100
-     * @tc.desc       : testSetPiPControlEnabledErrCode401_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetPiPControlEnabledErrCode401_0100
+     * @tc.number testSetPiPControlEnabledErrCode401_0100
+     * @tc.desc   testSetPiPControlEnabledErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPiPControlEnabledErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetPiPControlEnabledErrCode401_0100';
@@ -2901,12 +2906,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testOnPipWindowSizeChangeErrCode401_0100
-     * @tc.name       : testOnPipWindowSizeChangeErrCode401_0100
-     * @tc.desc       : testOnPipWindowSizeChangeErrCode401_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnPipWindowSizeChangeErrCode401_0100
+     * @tc.number testOnPipWindowSizeChangeErrCode401_0100
+     * @tc.desc   testOnPipWindowSizeChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnPipWindowSizeChangeErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOnPipWindowSizeChangeErrCode401_0100';
@@ -2953,12 +2958,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testOffPipWindowSizeChangeErrCode401_0100
-     * @tc.name       : testOffPipWindowSizeChangeErrCode401_0100
-     * @tc.desc       : testOffPipWindowSizeChangeErrCode401_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffPipWindowSizeChangeErrCode401_0100
+     * @tc.number testOffPipWindowSizeChangeErrCode401_0100
+     * @tc.desc   testOffPipWindowSizeChangeErrCode401_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffPipWindowSizeChangeErrCode401_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testOffPipWindowSizeChangeErrCode401_0100';
@@ -3005,12 +3010,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : testGetPiPWindowInfoErrCode1300014_0100
-     * @tc.name       : testGetPiPWindowInfoErrCode1300014_0100
-     * @tc.desc       : testGetPiPWindowInfoErrCode1300014_0100
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testGetPiPWindowInfoErrCode1300014_0100
+     * @tc.number testGetPiPWindowInfoErrCode1300014_0100
+     * @tc.desc   testGetPiPWindowInfoErrCode1300014_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPiPWindowInfoErrCode1300014_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testGetPiPWindowInfoErrCode1300014_0100';
@@ -3051,12 +3056,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ON_PIP_WINDOW_SIZE_CHANGE_0100
-     * @tc.name       : test_pipWindowSizeChange
-     * @tc.desc       : 验证updateContentSize后获取pipWindow宽高正确
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_pipWindowSizeChange
+     * @tc.number SUB_BASIC_WMS_ON_PIP_WINDOW_SIZE_CHANGE_0100
+     * @tc.desc   验证updateContentSize后获取pipWindow宽高正确
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_pipWindowSizeChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_pipWindowSizeChange!'
@@ -3121,12 +3126,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0100
-     * @tc.name       : test_videoCallControlGroup_MUTE_SWITCH
-     * @tc.desc       : 验证VIDEO_CALL仅有一个VideoCallControlGroup.MUTE_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_videoCallControlGroup_MUTE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0100
+     * @tc.desc   验证VIDEO_CALL仅有一个VideoCallControlGroup.MUTE_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_videoCallControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_videoCallControlGroup_MUTE_SWITCH!'
@@ -3183,12 +3188,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0200
-     * @tc.name       : test_VideoMeetingControlGroup_MICROPHONE_SWITCH
-     * @tc.desc       : 验证VIDEO_CALL仅有一个VideoCallControlGroup.MUTE_SWITCH
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_VideoMeetingControlGroup_MICROPHONE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0200
+     * @tc.desc   验证VIDEO_CALL仅有一个VideoCallControlGroup.MUTE_SWITCH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_VideoMeetingControlGroup_MICROPHONE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_VideoMeetingControlGroup_MICROPHONE_SWITCH!'
@@ -3245,12 +3250,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0300
-     * @tc.name       : test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE
-     * @tc.desc       : 验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0300
+     * @tc.desc   验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_VideoLiveControlGroup_VIDEO_PLAY_PAUSE!'
@@ -3307,12 +3312,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0400
-     * @tc.name       : test_VideoLiveControlGroup_MUTE_SWITCH
-     * @tc.desc       : 验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_VideoLiveControlGroup_MUTE_SWITCH
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0400
+     * @tc.desc   验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_VideoLiveControlGroup_MUTE_SWITCH', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_VideoLiveControlGroup_MUTE_SWITCH!'
@@ -3369,12 +3374,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0500
-     * @tc.name       : test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE
-     * @tc.desc       : 验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_TEMPLATE_0500
+     * @tc.desc   验证VIDEO_CALL仅有一个VideoLiveControlGroup.VIDEO_PLAY_PAUSE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_VideoLiveControlGroup_MUTE_SWITCH_VIDEO_PLAY_PAUSE!'
@@ -3431,12 +3436,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0100
-     * @tc.name       : test_on_controlEvent
-     * @tc.desc       : 验证on_controlEvent
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_on_controlEvent
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0100
+     * @tc.desc   验证on_controlEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_on_controlEvent!'
@@ -3513,12 +3518,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0200
-     * @tc.name       : test_off_controlEvent
-     * @tc.desc       : 验证on_controlEvent
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_off_controlEvent
+     * @tc.number SUB_BASIC_WMS_PIP_WINDOW_ON_CONTROLEVENT_0200
+     * @tc.desc   验证on_controlEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_off_controlEvent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_off_controlEvent!'
@@ -3592,12 +3597,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_updateContentNode_ErrorCode_0100
-     * @tc.name       : test_updateContentNode_ErrorCode_401
-     * @tc.desc       : updateContentNode验证401
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_updateContentNode_ErrorCode_401
+     * @tc.number SUB_BASIC_WMS_updateContentNode_ErrorCode_0100
+     * @tc.desc   updateContentNode验证401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateContentNode_ErrorCode_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_updateContentNode_ErrorCode_401!'
@@ -3645,12 +3650,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_updateContentNode_ErrorCode_0200
-     * @tc.name       : test_updateContentNode_ErrorCode_801
-     * @tc.desc       : 验证updateContentNode接口801
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_updateContentNode_ErrorCode_801
+     * @tc.number SUB_BASIC_WMS_updateContentNode_ErrorCode_0200
+     * @tc.desc   验证updateContentNode接口801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateContentNode_ErrorCode_801', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_updateContentNode_ErrorCode_801!'
@@ -3708,12 +3713,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_updateContentNode_0100
-     * @tc.name       : test_updateContentNode1
-     * @tc.desc       : 验证先updateContentNode后startPIP
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_updateContentNode1
+     * @tc.number SUB_BASIC_WMS_updateContentNode_0100
+     * @tc.desc   验证先updateContentNode后startPIP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateContentNode1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_updateContentNode1!'
@@ -3772,12 +3777,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_updateContentNode_0200
-     * @tc.name       : test_updateContentNode2
-     * @tc.desc       : 验证先startPIP后updateContentNode
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_updateContentNode2
+     * @tc.number SUB_BASIC_WMS_updateContentNode_0200
+     * @tc.desc   验证先startPIP后updateContentNode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateContentNode2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_updateContentNode2!'
@@ -3835,12 +3840,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_updateContentSize_0100
-     * @tc.name       : test_updateContentSize_401
-     * @tc.desc       : 验证updateContentSize接口401
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_updateContentSize_401
+     * @tc.number SUB_BASIC_WMS_updateContentSize_0100
+     * @tc.desc   验证updateContentSize接口401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateContentSize_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_updateContentSize_401!'
@@ -3891,12 +3896,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0100
-     * @tc.name       : test_pip_create_with_localstorage
-     * @tc.desc       : 验证pipwindow.create带localstorage参数
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_pip_create_with_localstorage
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0100
+     * @tc.desc   验证pipwindow.create带localstorage参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_pip_create_with_localstorage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_pip_create_with_localstorage!'
@@ -3952,12 +3957,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0200
-     * @tc.name       : test_pip_create_null_localstorage
-     * @tc.desc       : 验证pipwindow.create带localstorage参数为null
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_pip_create_null_localstorage
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0200
+     * @tc.desc   验证pipwindow.create带localstorage参数为null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_pip_create_null_localstorage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_pip_create_null_localstorage!'
@@ -4011,12 +4016,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0300
-     * @tc.name       : test_pip_create_undefined_localstorage
-     * @tc.desc       : 验证pipwindow.create带localstorage参数为undefined
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_pip_create_undefined_localstorage
+     * @tc.number SUB_BASIC_WMS_PIP_CREATE_LOCALSTORAGE_0300
+     * @tc.desc   验证pipwindow.create带localstorage参数为undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_pip_create_undefined_localstorage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_pip_create_undefined_localstorage!'
@@ -4069,12 +4074,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : testPipWindowDefaultWindowSize_0100
-     * @tc.name       : testPipWindowDefaultWindowSize_0100
-     * @tc.desc       : 验证画中画窗口按大窗启动第二次传入undefined按关闭前大小启动
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPipWindowDefaultWindowSize_0100
+     * @tc.number testPipWindowDefaultWindowSize_0100
+     * @tc.desc   验证画中画窗口按大窗启动第二次传入undefined按关闭前大小启动
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipWindowDefaultWindowSize_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testPipWindowDefaultWindowSize_0100!'
@@ -4146,12 +4151,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : testPipWindowDefaultWindowSize_0200
-     * @tc.name       : testPipWindowDefaultWindowSize_0200
-     * @tc.desc       : 验证画中画窗口按大窗启动第二次传入0按关闭前大小启动
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPipWindowDefaultWindowSize_0200
+     * @tc.number testPipWindowDefaultWindowSize_0200
+     * @tc.desc   验证画中画窗口按大窗启动第二次传入0按关闭前大小启动
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipWindowDefaultWindowSize_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testPipWindowDefaultWindowSize_0200!'
@@ -4223,12 +4228,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : testPipWindowDefaultWindowSize_0300
-     * @tc.name       : testPipWindowDefaultWindowSize_0300
-     * @tc.desc       : 验证画中画窗口小窗启动后第二次传入undefined按关闭前大小启动
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPipWindowDefaultWindowSize_0300
+     * @tc.number testPipWindowDefaultWindowSize_0300
+     * @tc.desc   验证画中画窗口小窗启动后第二次传入undefined按关闭前大小启动
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipWindowDefaultWindowSize_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testPipWindowDefaultWindowSize_0300!'
@@ -4305,12 +4310,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : testPipWindowDefaultWindowSize_0400
-     * @tc.name       : testPipWindowDefaultWindowSize_0400
-     * @tc.desc       : 验证画中画窗口小窗启动后第二次传入0按上次关闭大小启动
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPipWindowDefaultWindowSize_0400
+     * @tc.number testPipWindowDefaultWindowSize_0400
+     * @tc.desc   验证画中画窗口小窗启动后第二次传入0按上次关闭大小启动
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPipWindowDefaultWindowSize_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testPipWindowDefaultWindowSize_0400!'
@@ -4385,12 +4390,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : testPipWindowDefaultWindowSizeErrCode_0100
-     * @tc.name       : testPipWindowDefaultWindowSizeErrCode_0100
-     * @tc.desc       : 验证401错误码
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testPipWindowDefaultWindowSizeErrCode_0100
+     * @tc.number testPipWindowDefaultWindowSizeErrCode_0100
+     * @tc.desc   验证401错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPipWindowDefaultWindowSizeErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testPipWindowDefaultWindowSizeErrCode_0100!'
@@ -4440,12 +4445,12 @@ export default function pipWindowTest(context1: common.BaseContext, windowStage:
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_GETPIPSETTINGSWITCH_0100
-     * @tc.name       : testGetPiPSettingSwitchStatus
-     * @tc.desc       : 验证支持画中画的设备调用getpipsettingswitch接口，获取设置中自动启动画中画按钮状态
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetPiPSettingSwitchStatus
+     * @tc.number SUB_BASIC_WMS_GETPIPSETTINGSWITCH_0100
+     * @tc.desc   验证支持画中画的设备调用getpipsettingswitch接口，获取设置中自动启动画中画按钮状态
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetPiPSettingSwitchStatus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testGetPiPSettingSwitchStatus!'

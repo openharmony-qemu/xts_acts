@@ -50,12 +50,12 @@ export default function exceptionPromptSymbolStyleTest() {
     })
 
     /**
+     * @tc.name   exceptionPromptSymbolStyleTest_0100
      * @tc.number exceptionPromptSymbolStyleTest
-     * @tc.name exceptionPromptSymbolStyleTest_0100
-     * @tc.desc Test exceptionPromptSymbolStyle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test exceptionPromptSymbolStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('exceptionPromptSymbolStyleTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
       console.info('[exceptionPromptSymbolStyleTest_0100] START');

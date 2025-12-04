@@ -20,35 +20,35 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 
 
-const domain: number = 0x0000; //日志标识,0x0000作为测试框架的业务标识
+const domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 const tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 
 function registerPrintTask(printTask: print.PrintTask) {
-  printTask.on('block', () => {
+  printTask.onBlock(() => {
     hilog.info(domain, tag, 'print state is block');
   })
-  printTask.on('succeed', () => {
+  printTask.onSucceed(() => {
     hilog.info(domain, tag, 'print state is succeed');
   })
-  printTask.on('fail', () => {
+  printTask.onFail(() => {
     hilog.info(domain, tag, 'print state is fail');
   })
-  printTask.on('cancel', () => {
+  printTask.onCancel(() => {
     hilog.info(domain, tag, 'print state is cancel');
   })
 }
 
 function UnregisterPrintTask(printTask: print.PrintTask) {
-  printTask.off('block', () => {
+  printTask.offBlock(() => {
     hilog.info(domain, tag, 'unregister print state is blocked');
   })
-  printTask.off('succeed', () => {
+  printTask.offSucceed(() => {
     hilog.info(domain, tag, 'unregister print state is succeed');
   })
-  printTask.off('fail', () => {
+  printTask.offFail(() => {
     hilog.info(domain, tag, 'unregister print state is fail');
   })
-  printTask.off('cancel', () => {
+  printTask.offCancel(() => {
     hilog.info(domain, tag, 'unregister print state is cancel');
   })
 }
@@ -120,12 +120,12 @@ export default function printTest() {
   describe("printTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
+     * @tc.name   print_function_0100
      * @tc.number print_function_0100
-     * @tc.name print_function_0100
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0100', Level.LEVEL0, () => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0100 start');
@@ -145,12 +145,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0200
      * @tc.number print_function_0200
-     * @tc.name print_function_0200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0200', Level.LEVEL0, () => {
       try {
@@ -212,12 +212,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0300
      * @tc.number print_function_0300
-     * @tc.name print_function_0300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0300 start');
@@ -240,12 +240,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0400
      * @tc.number print_function_0400
-     * @tc.name print_function_0400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0400 start');
@@ -272,12 +272,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0500
      * @tc.number print_function_0500
-     * @tc.name print_function_0500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0500 start');
@@ -299,12 +299,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0600
      * @tc.number print_function_0600
-     * @tc.name print_function_0600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0600 start');
@@ -330,12 +330,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0700
      * @tc.number print_function_0700
-     * @tc.name print_function_0700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0700 start');
@@ -358,12 +358,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_0800
      * @tc.number print_function_0800
-     * @tc.name print_function_0800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0800 start');
@@ -390,12 +390,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_0900
      * @tc.number print_function_0900
-     * @tc.name print_function_0900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_0900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_0900 start');
@@ -418,12 +418,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1000
      * @tc.number print_function_1000
-     * @tc.name print_function_1000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1000 start');
@@ -450,12 +450,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1100
      * @tc.number print_function_1100
-     * @tc.name print_function_1100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1100 start');
@@ -478,12 +478,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1200
      * @tc.number print_function_1200
-     * @tc.name print_function_1200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1200 start');
@@ -510,12 +510,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1300
      * @tc.number print_function_1300
-     * @tc.name print_function_1300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1300 start');
@@ -538,12 +538,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1400
      * @tc.number print_function_1400
-     * @tc.name print_function_1400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1400 start');
@@ -570,12 +570,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1500
      * @tc.number print_function_1500
-     * @tc.name print_function_1500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1500 start');
@@ -598,12 +598,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1600
      * @tc.number print_function_1600
-     * @tc.name print_function_1600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1600 start');
@@ -630,12 +630,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1700
      * @tc.number print_function_1700
-     * @tc.name print_function_1700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1700 start');
@@ -659,12 +659,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_1800
      * @tc.number print_function_1800
-     * @tc.name print_function_1800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1800 start');
@@ -692,12 +692,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_1900
      * @tc.number print_function_1900
-     * @tc.name print_function_1900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_1900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_1900 start');
@@ -720,12 +720,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2000
      * @tc.number print_function_2000
-     * @tc.name print_function_2000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2000 start');
@@ -752,12 +752,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_2100
      * @tc.number print_function_2100
-     * @tc.name print_function_2100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2100 start');
@@ -779,12 +779,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2200
      * @tc.number print_function_2200
-     * @tc.name print_function_2200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2200 start');
@@ -810,12 +810,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_2300
      * @tc.number print_function_2300
-     * @tc.name print_function_2300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2300 start');
@@ -840,12 +840,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2400
      * @tc.number print_function_2400
-     * @tc.name print_function_2400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2400 start');
@@ -874,19 +874,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_2500
      * @tc.number print_function_2500
-     * @tc.name print_function_2500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2500 start');
       try {
         let jobId : string = "testJobId";
-        let type = 'spooler_closed_for_cancelled';
-        print.notifyPrintService(jobId, type).then(() => {
+        print.notifyPrintServiceSpoolerCloseForCancelled(jobId).then(() => {
           hilog.info(domain, tag, 'print_function_2500 success');
           done();
         }).catch((err: Object | null | undefined) => {
@@ -903,12 +902,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2600
      * @tc.number print_function_2600
-     * @tc.name print_function_2600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2600 start');
@@ -916,8 +915,7 @@ export default function printTest() {
       try {
         let printerId : string = 'testPrinterId';
         let jobId : string = "testJobId";
-        let type = 'spooler_closed_for_cancelled';
-        print.notifyPrintService(jobId, type, (err: Object | null | undefined) => {
+        print.notifyPrintServiceSpoolerCloseForCancelled(jobId, (err: Object | null | undefined) => {
           if (err) {
             const error = err as BusinessError;
             hilog.error(domain, tag, 'print_function_2600 error, code: %{public}d, message: %{public}s',
@@ -937,12 +935,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_2700
      * @tc.number print_function_2700
-     * @tc.name print_function_2700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2700 start');
@@ -965,12 +963,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2800
      * @tc.number print_function_2800
-     * @tc.name print_function_2800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2800 start');
@@ -993,12 +991,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_2900
      * @tc.number print_function_2900
-     * @tc.name print_function_2900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_2900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_2900 start');
@@ -1032,12 +1030,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3000
      * @tc.number print_function_3000
-     * @tc.name print_function_3000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3000 start');
@@ -1075,12 +1073,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_3100
      * @tc.number print_function_3100
-     * @tc.name print_function_3100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3100 start');
@@ -1114,12 +1112,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3200
      * @tc.number print_function_3200
-     * @tc.name print_function_3200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3200 start');
@@ -1142,12 +1140,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3300
      * @tc.number print_function_3300
-     * @tc.name print_function_3300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3300 start');
@@ -1174,12 +1172,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3400
      * @tc.number print_function_3400
-     * @tc.name print_function_3400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3400 start');
@@ -1206,12 +1204,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3500
      * @tc.number print_function_3500
-     * @tc.name print_function_3500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3500 start');
@@ -1234,12 +1232,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_3600
      * @tc.number print_function_3600
-     * @tc.name print_function_3600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3600 start');
@@ -1262,7 +1260,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.requestPrintPreview(printJob).then((ret : int) => {
           hilog.info(domain, tag, 'print_function_3600 success, %{public}d', ret);
@@ -1281,12 +1282,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_3700
      * @tc.number print_function_3700
-     * @tc.name print_function_3700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3700 start');
@@ -1310,7 +1311,10 @@ export default function printTest() {
             name : "nameTest",
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.requestPrintPreview(printJob, (err: Object | null | undefined) => {
           if (err) {
@@ -1333,12 +1337,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_3800
      * @tc.number print_function_3800
-     * @tc.name print_function_3800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3800 start');
@@ -1361,12 +1365,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_3900
      * @tc.number print_function_3900
-     * @tc.name print_function_3900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_3900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_3900 start');
@@ -1393,12 +1397,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4000
      * @tc.number print_function_4000
-     * @tc.name print_function_4000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4000 start');
@@ -1421,7 +1425,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.startPrintJob(printJob).then(() => {
           hilog.info(domain, tag, 'print_function_4000 success');
@@ -1440,12 +1447,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4100
      * @tc.number print_function_4100
-     * @tc.name print_function_4100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4100 start');
@@ -1469,7 +1476,10 @@ export default function printTest() {
             name : 'nameTest',
             width : 1,
             height : 2,
-          }
+          },
+          isLandscape : false,
+          colorMode : 1,
+          duplexMode : 1
         };
         print.startPrintJob(printJob, (err: Object | null | undefined) => {
           if (err) {
@@ -1492,12 +1502,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4200
      * @tc.number print_function_4200
-     * @tc.name print_function_4200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4200 start');
@@ -1520,12 +1530,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4300
      * @tc.number print_function_4300
-     * @tc.name print_function_4300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4300 start');
@@ -1546,12 +1556,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4400
      * @tc.number print_function_4400
-     * @tc.name print_function_4400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4400', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4400 start');
@@ -1589,12 +1599,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4500
      * @tc.number print_function_4500
-     * @tc.name print_function_4500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4500', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4500 start');
@@ -1616,12 +1626,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4600
      * @tc.number print_function_4600
-     * @tc.name print_function_4600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4600 start');
@@ -1643,12 +1653,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4700
      * @tc.number print_function_4700
-     * @tc.name print_function_4700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4700 start');
@@ -1675,12 +1685,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4800
      * @tc.number print_function_4800
-     * @tc.name print_function_4800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4800 start');
@@ -1706,12 +1716,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_4900
      * @tc.number print_function_4900
-     * @tc.name print_function_4900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_4900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_4900 start');
@@ -1733,12 +1743,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5000
      * @tc.number print_function_5000
-     * @tc.name print_function_5000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5000 start');
@@ -1766,12 +1776,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5100
      * @tc.number print_function_5100
-     * @tc.name print_function_5100
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5100 start');
@@ -1798,12 +1808,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5200
      * @tc.number print_function_5200
-     * @tc.name print_function_5200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5200 start');
@@ -1834,19 +1844,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5300
      * @tc.number print_function_5300
-     * @tc.name print_function_5300
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5300', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5300 start');
 
       try {
-        let type : string = 'printerStateChange';
-        print.on(type, (state: print.PrinterState, info: print.PrinterInfo) => {
+        print.onPrinterStateChange((state: print.PrinterState, info: print.PrinterInfo) => {
           hilog.info(domain, tag, 'print_function_5300 success');
         });
       } catch (err) {
@@ -1859,19 +1868,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5400
      * @tc.number print_function_5400
-     * @tc.name print_function_5400
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5400', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5400 start');
 
       try {
-        let type : string = 'jobStateChange';
-        print.on(type, (state: print.PrintJobState, job: print.PrintJob) => {
+        print.onJobStateChange((state: print.PrintJobState, job: print.PrintJob) => {
           hilog.info(domain, tag, 'print_function_5400 success');
         });
       } catch (err) {
@@ -1884,19 +1892,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5500
      * @tc.number print_function_5500
-     * @tc.name print_function_5500
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5500', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5500 start');
 
       try {
-        let type : string = 'extInfoChange';
-        print.on(type, (extensionId: string, info: string) => {
+        print.onExtInfoChange((extensionId: string, info: string) => {
           hilog.info(domain, tag, 'print_function_5500 success');
         });
       } catch (err) {
@@ -1909,19 +1916,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5600
      * @tc.number print_function_5600
-     * @tc.name print_function_5600
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5600', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5600 start');
 
       try {
-        let type : string = 'printerStateChange';
-        print.off(type, (state: boolean) => {
+        print.offPrinterStateChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5600 success');
         });
       } catch (err) {
@@ -1934,19 +1940,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5700
      * @tc.number print_function_5700
-     * @tc.name print_function_5700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5700', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5700 start');
 
       try {
-        let type : string = 'jobStateChange';
-        print.off(type, (state: boolean) => {
+        print.offJobStateChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5700 success');
         });
       } catch (err) {
@@ -1959,19 +1964,18 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5800
      * @tc.number print_function_5800
-     * @tc.name print_function_5800
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5800', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5800 start');
 
       try {
-        let type : string = 'extInfoChange';
-        print.off(type, (state: boolean) => {
+        print.offExtInfoChange((state: boolean) => {
           hilog.info(domain, tag, 'print_function_5800 success');
         });
       } catch (err) {
@@ -1984,12 +1988,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_5900
      * @tc.number print_function_5900
-     * @tc.name print_function_5900
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_5900', Level.LEVEL0, ():void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_5900 start');
@@ -2136,12 +2140,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_6000
      * @tc.number print_function_6000
-     * @tc.name print_function_6000
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6000 start');
@@ -2214,12 +2218,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_6100
      * @tc.number print_function_6100
-     * @tc.name print_function_6100
-     * @tc.desc check the stopDiscoverPrinter api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the stopDiscoverPrinter api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6100 start');
@@ -2242,12 +2246,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_6200
      * @tc.number print_function_6200
-     * @tc.name print_function_6200
-     * @tc.desc check the getAddedPrinters api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the getAddedPrinters api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6200 start');
@@ -2270,12 +2274,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_6300
      * @tc.number print_function_6300
-     * @tc.name print_function_6300
-     * @tc.desc check the addPrinterToDiscovery api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the addPrinterToDiscovery api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6300 start');
@@ -2305,23 +2309,22 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_6400
      * @tc.number print_function_6400
-     * @tc.name print_function_6400
-     * @tc.desc check the on printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the on printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6400', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6400 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_6400 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.on(type, callback);
+        print.onPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_6400 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2333,23 +2336,22 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_6500
      * @tc.number print_function_6500
-     * @tc.name print_function_6500
-     * @tc.desc check the off printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the off printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6500', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6500 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_6500 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.off(type, callback);
+        print.offPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_6500 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2361,12 +2363,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_6600
      * @tc.number print_function_6600
-     * @tc.name print_function_6600
-     * @tc.desc check print function without permission (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function without permission (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6600', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6600 start');
@@ -2389,12 +2391,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_6700
      * @tc.number print_function_6700
-     * @tc.name print_function_6700
-     * @tc.desc check print function without permission (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function without permission (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6700 start');
@@ -2420,12 +2422,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_6800
      * @tc.number print_function_6800
-     * @tc.name print_function_6800
-     * @tc.desc check print function with context without permission (callback)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function with context without permission (callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6800', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6800 start');
@@ -2451,12 +2453,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_6900
      * @tc.number print_function_6900
-     * @tc.name print_function_6900
-     * @tc.desc check print function with context without permission (promise)
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check print function with context without permission (promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_6900', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_6900 start');
@@ -2485,12 +2487,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_7000
      * @tc.number print_function_7000
-     * @tc.name print_function_7000
-     * @tc.desc test print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7000 start');
@@ -2561,12 +2563,12 @@ export default function printTest() {
 
 
     /**
+     * @tc.name   print_function_7100
      * @tc.number print_function_7100
-     * @tc.name print_function_7100
-     * @tc.desc check the print function
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the print function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7100', Level.LEVEL0, () => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7100 start');
@@ -2579,28 +2581,28 @@ export default function printTest() {
           hilog.info(domain, tag, '%{public}s', 'enter print callback');
           if (printTask != undefined) {
             try {
-              printTask.on('block', () => {
+              printTask.onBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on block');
               })
-              printTask.on('succeed', () => {
+              printTask.onSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on succeed');
               })
-              printTask.on('fail', () => {
+              printTask.onFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on fail');
               })
-              printTask.on('cancel', () => {
+              printTask.onCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask on cancel');
               })
-              printTask.off('block', () => {
+              printTask.offBlock(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off block');
               })
-              printTask.off('succeed', () => {
+              printTask.offSucceed(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off succeed');
               })
-              printTask.off('fail', () => {
+              printTask.offFail(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off fail');
               })
-              printTask.off('cancel', () => {
+              printTask.offCancel(() => {
                 hilog.info(domain, tag, '%{public}s', 'enter printTask off cancel');
               })
             } catch(err) {
@@ -2617,12 +2619,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_7200
      * @tc.number print_function_7200
-     * @tc.name print_function_7200
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7200 start');
@@ -2650,12 +2652,12 @@ export default function printTest() {
     })
 
     /**
+     * @tc.name   print_function_7300
      * @tc.number print_function_7300
-     * @tc.name print_function_7300
-     * @tc.desc check removePrinterFromDiscovery api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check removePrinterFromDiscovery api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7300', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7300 start');
@@ -2680,12 +2682,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_7400
      * @tc.number print_function_7400
-     * @tc.name print_function_7400
-     * @tc.desc check getPrinterInformationById api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check getPrinterInformationById api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7400', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7400 start');
@@ -2710,23 +2712,22 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_7500
      * @tc.number print_function_7500
-     * @tc.name print_function_7500
-     * @tc.desc check on printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check on printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7500', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7500 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_7500 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.on(type, callback);
+        print.onPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_7500 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2738,23 +2739,22 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_7600
      * @tc.number print_function_7600
-     * @tc.name print_function_7600
-     * @tc.desc check off printerChange api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check off printerChange api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7600', Level.LEVEL0, (): void => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7600 start');
 
       try {
-        let type: string = 'printerChange';
         let callback: print.PrinterChangeCallback = (event: print.PrinterEvent, printerInformation: print.PrinterInformation) => {
           hilog.info(domain, tag, 'print_function_7600 callback, event: %{public}d, printerId: %{public}s',
             event, printerInformation.printerId);
         };
-        print.off(type, callback);
+        print.offPrinterChange(callback);
         hilog.info(domain, tag, 'print_function_7600 success');
       } catch (err) {
         const error = err as BusinessError;
@@ -2766,12 +2766,12 @@ export default function printTest() {
     });
 
     /**
+     * @tc.name   print_function_7700
      * @tc.number print_function_7700
-     * @tc.name print_function_7700
-     * @tc.desc check the enum api
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   check the enum api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('print_function_7700', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'print_function_7700 start');

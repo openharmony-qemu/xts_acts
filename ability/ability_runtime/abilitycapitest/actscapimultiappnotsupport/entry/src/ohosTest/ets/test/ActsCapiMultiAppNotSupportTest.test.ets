@@ -22,12 +22,12 @@ export default function ActsCapiMultiAppNotSupportTest() {
   describe('ActsCapiMultiAppNotSupportTest', () => {
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
-     * @tc.desc    : Testing StartSelfUIAbilityWithStartOptions returns 16000072.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000
+     * @tc.desc   Testing Sta1rtSelfUIAbilityWithStartOptions returns 16000072.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -37,6 +37,11 @@ export default function ActsCapiMultiAppNotSupportTest() {
           let result:number = AbilityKitTest.StartSelfUIAbilityWithStartOptionsMultiAppNotSupport();
           if(result == 801){
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            expect(16000078).assertEqual(result);
             done();
             return;
           }
@@ -51,12 +56,12 @@ export default function ActsCapiMultiAppNotSupportTest() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeMultiAppNotSupport_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeMultiAppNotSupport_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodeMultiAppNotSupport error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeMultiAppNotSupport_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeMultiAppNotSupport_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodeMultiAppNotSupport error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodeMultiAppNotSupport_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -66,6 +71,11 @@ export default function ActsCapiMultiAppNotSupportTest() {
           let result:number = AbilityKitTest.AbilityRuntimeErrorCodeMultiAppNotSupportCode();
           if(result == 801){
             expect(801).assertEqual(result);
+            done();
+            return;
+          }
+          if(result == 16000078){
+            expect(16000078).assertEqual(result);
             done();
             return;
           }

@@ -72,11 +72,13 @@ export default function StartAbilityForResult() {
             done();
         });
 
-        /*
-         * @tc.number: FreeInstall_FA_StartAbilityForResult_2700
-         * @tc.name: startAbilityForResult: NoTargetBundleList,free install successfully.
-         * @tc.desc: Function test
-         * @tc.level   0
+        /**
+         * @tc.name   FreeInstall_FA_StartAbilityForResult_2700
+         * @tc.number FreeInstall_FA_StartAbilityForResult_2700
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("FreeInstall_FA_StartAbilityForResult_2700", Level.LEVEL0, async (done:Function) => {
             console.log("------------start FreeInstall_FA_StartAbilityForResult_2700-------------");
@@ -105,11 +107,13 @@ export default function StartAbilityForResult() {
             done();
         });
 
-        /*
-         * @tc.number: FreeInstall_FA_StartAbilityForResult_2800
-         * @tc.name: startAbilityForResult: NoTargetBundleList and yuanzihua already installed,startAbility successfully
-         * @tc.desc: Function test
-         * @tc.level   0
+        /**
+         * @tc.name   FreeInstall_FA_StartAbilityForResult_2800
+         * @tc.number FreeInstall_FA_StartAbilityForResult_2800
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("FreeInstall_FA_StartAbilityForResult_2800", Level.LEVEL0, async (done:Function) => {
             console.log("------------start FreeInstall_FA_StartAbilityForResult_2800-------------");
@@ -142,12 +146,13 @@ export default function StartAbilityForResult() {
             done();
         });
 
-        /*
-         * @tc.number: FreeInstall_FA_StartAbilityForResult_2900
-         * @tc.name: startAbilityForResult: The same application does not need to check targetbundlelist,
-                     start feature hap successfully.
-         * @tc.desc: Function test
-         * @tc.level   0
+        /**
+         * @tc.name   FreeInstall_FA_StartAbilityForResult_2900
+         * @tc.number FreeInstall_FA_StartAbilityForResult_2900
+         * @tc.desc   Function test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("FreeInstall_FA_StartAbilityForResult_2900", Level.LEVEL0, async (done:Function) => {
             console.log("------------start FreeInstall_FA_StartAbilityForResult_2900-------------");

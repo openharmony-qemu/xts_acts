@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanRay_tracing_pipelineTestCase
+     * @tc.number TestVulkanRay_tracing_pipelineTestCase
+     * @tc.desc   TestVulkanRay_tracing_pipelineTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanRay_tracing_pipelineTest, TestVulkanRay_tracing_pipelineTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanRaytracingpipelineTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/ray-tracing-pipeline.txt "
                 "--deqp-log-filename=ActsVulkanRaytracingpipelineTest.qpa");
         }

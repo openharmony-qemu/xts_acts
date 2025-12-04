@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -127,24 +127,6 @@ export default function abilityTest() {
           }
           console.log(`${tag} startAbility succeed`);
         });
-        await sleep(2000);
-        if (obj.flag) {
-          console.log(`${tag} no need to click button`);
-          return;
-        }
-        try {
-          let allowed = await driver.findComponent(ON.text('想要打开', MatchPattern.CONTAINS));
-          if (allowed) {
-            let buttons = await driver.findComponents(ON.id('advanced_dialog_button_1'));
-            if (buttons && buttons.length > 0) {
-              buttons[buttons.length - 1].click();
-            }
-          }
-        } catch (err) {
-          let code = (err as BusinessError).code;
-          let message = (err as BusinessError).message;
-          console.log(`${tag} click button failed, code is ${code}, message is ${message}`);
-        }
       } catch (err) {
         let code = (err as BusinessError).code;
         let message = (err as BusinessError).message;
@@ -190,7 +172,7 @@ export default function abilityTest() {
         await abilityDelegator.executeShellCommand(forcestop).catch((err:BusinessError) => {
           console.log(`${tag} executeShellCommand failed.`);
         })
-        await sleep(1000);
+        await sleep(300);
       } catch (err) {
         console.info(`${tag} err: ${JSON.stringify(err)}`);
       }
@@ -200,12 +182,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0400
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0400
-     * @tc.name Anomalous branch.
-     * @tc.desc Start with processMode only.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with processMode only.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0400', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0400]';
@@ -234,12 +216,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0500
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0500
-     * @tc.name Anomalous branch.
-     * @tc.desc Start with startupVisibility only.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with startupVisibility only.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0500', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0500]';
@@ -263,12 +245,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0700
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0700
-     * @tc.name Anomalous branch.
-     * @tc.desc Target ability is not self application.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Target ability is not self application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0700', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0700]';
@@ -293,12 +275,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0900
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0900
-     * @tc.name Anomalous branch.
-     * @tc.desc Start with NEW_PROCESS_ATTACH_TO_PARENT, then call showAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with NEW_PROCESS_ATTACH_TO_PARENT, then call showAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0900', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_0900]';
@@ -331,12 +313,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1000
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1000
-     * @tc.name Anomalous branch.
-     * @tc.desc Start ability without process options, then call hideAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start ability without process options, then call hideAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1000', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1000]';
@@ -367,12 +349,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1800
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1800
-     * @tc.name Anomalous branch.
-     * @tc.desc Function not enable. Start with process options.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Function not enable. Start with process options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1800', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1800]';
@@ -392,12 +374,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1900
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1900
-     * @tc.name Anomalous branch.
-     * @tc.desc Function not enable. Start ability without process options, then call showAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Function not enable. Start ability without process options, then call showAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1900', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_1900]';
@@ -415,7 +397,7 @@ export default function abilityTest() {
           commonEvent.publish(SHOW_ABILITY_EVENT, (err)=>{
             console.log(`${tag} publish SHOW_ABILITY_EVENT err: ${JSON.stringify(err)}`);
           });
-        }, 5000)
+        }, 3000)
       } else {
         expect(true).assertTrue();
         done();
@@ -423,12 +405,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2000
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2000
-     * @tc.name Anomalous branch.
-     * @tc.desc Function not enable. Start ability without process options, then call hideAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Function not enable. Start ability without process options, then call hideAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2000', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2000]';
@@ -446,7 +428,7 @@ export default function abilityTest() {
           commonEvent.publish(HIDE_ABILITY_EVENT, (err)=>{
             console.log(`${tag} publish HIDE_ABILITY_EVENT err: ${JSON.stringify(err)}`);
           });
-        }, 5000)
+        }, 3000)
       } else {
         expect(true).assertTrue();
         done();
@@ -454,12 +436,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2100
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2100
-     * @tc.name Normal branch.
-     * @tc.desc Child process exits with parent process.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Child process exits with parent process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2100', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2100]';
@@ -517,12 +499,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2200
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2200
-     * @tc.name Normal branch.
-     * @tc.desc Child process exits with parent process.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Child process exits with parent process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2200', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2200]';
@@ -580,12 +562,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2400
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2400
-     * @tc.name Normal branch.
-     * @tc.desc Child process exits with parent process.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Child process exits with parent process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2400', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2400]';
@@ -644,12 +626,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2500
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2500
-     * @tc.name Normal branch.
-     * @tc.desc Child process exits with parent process.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Child process exits with parent process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2500', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2500]';
@@ -707,12 +689,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2600
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2600
-     * @tc.name Normal branch.
-     * @tc.desc Start with NEW_PROCESS_ATTACH_TO_PARENT and STARTUP_HIDE.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with NEW_PROCESS_ATTACH_TO_PARENT and STARTUP_HIDE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2600', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2600]';
@@ -749,12 +731,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2700
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2700
-     * @tc.name Normal branch.
-     * @tc.desc Start with NEW_PROCESS_ATTACH_TO_PARENT and STARTUP_SHOW.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with NEW_PROCESS_ATTACH_TO_PARENT and STARTUP_SHOW.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2700', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2700]';
@@ -783,12 +765,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2800
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2800
-     * @tc.name Anomalous branch.
-     * @tc.desc Repeat start ability with NEW_PROCESS_ATTACH_TO_PARENT in singleton mode.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Repeat start ability with NEW_PROCESS_ATTACH_TO_PARENT in singleton mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2800', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2800]';
@@ -823,12 +805,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2900
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2900
-     * @tc.name Anomalous branch.
-     * @tc.desc Target ability is not self application.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Target ability is not self application.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2900', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_2900]';
@@ -853,12 +835,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3000
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3000
-     * @tc.name Normal branch.
-     * @tc.desc Repeat start ability with STARTUP_HIDE in multiton mode.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Repeat start ability with STARTUP_HIDE in multiton mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3000', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3000]';
@@ -918,12 +900,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3100
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3100
-     * @tc.name Anomalous branch.
-     * @tc.desc Repeat start ability in specified mode.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Repeat start ability in specified mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3100', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3100]';
@@ -965,12 +947,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3200
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3200
-     * @tc.name Anomalous branch.
-     * @tc.desc Start specified ability without process options, then start the ability with process options again.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start specified ability without process options, then start the ability with process options again.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3200', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3200]';
@@ -1005,12 +987,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3300
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3300
-     * @tc.name Anomalous branch.
-     * @tc.desc Start singleton ability without process options, then start the ability with process options again.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start singleton ability without process options, then start the ability with process options again.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3300', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3300]';
@@ -1045,12 +1027,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3400
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3400
-     * @tc.name Normal branch.
-     * @tc.desc Repeat start ability with STARTUP_SHOW in multiton mode.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Repeat start ability with STARTUP_SHOW in multiton mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3400', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3400]';
@@ -1110,12 +1092,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3500
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3500
-     * @tc.name Anomalous branch.
-     * @tc.desc Function not enable. Start with process options.
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Function not enable. Start with process options.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3500', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3500]';
@@ -1135,12 +1117,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3600
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3600
-     * @tc.name Anomalous branch.
-     * @tc.desc Start with NEW_PROCESS_ATTACH_TO_PARENT, then call hideAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start with NEW_PROCESS_ATTACH_TO_PARENT, then call hideAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3600', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3600]';
@@ -1173,12 +1155,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3700
      * @tc.number SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3700
-     * @tc.name Anomalous branch.
-     * @tc.desc Start ability without process options, then call showAbility().
-     * @tc.level Level 3
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Start ability without process options, then call showAbility().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3700', Level.LEVEL0, async (done: Function) => {
       let tag = '[SUB_Ability_AbilityRuntime_StartAbilityInNewProcess_3700]';

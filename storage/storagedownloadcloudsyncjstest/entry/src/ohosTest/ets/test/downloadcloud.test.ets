@@ -87,14 +87,13 @@ describe('cloud_file_download_test', () => {
     });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0100
-   * @tc.name test_Download_State_001
-   * @tc.desc function of API, Test State RUNNING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_State_001
+    * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0100
+    * @tc.desc   function of API, Test State RUNNING
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_State_001', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_State_001::";
      let RUNNING = 0;
@@ -117,14 +116,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0200
-   * @tc.name test_Download_State_002
-   * @tc.desc function of API, Test State FAILED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_State_002
+    * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0200
+    * @tc.desc   function of API, Test State FAILED
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_State_002', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_State_002::";
      let FAILED = 2;
@@ -147,14 +145,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_UPLOADING_STATE_TEST_0300
-   * @tc.name test_Uploading_State_003
-   * @tc.desc function of API, Test State Uploading
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Uploading_State_003
+    * @tc.number SUB_STORAGE_UPLOADING_STATE_TEST_0300
+    * @tc.desc   function of API, Test State Uploading
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Uploading_State_003', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Uploading_State_003::";
      let UPLOADING = 0;
@@ -176,14 +173,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0400
-   * @tc.name test_Uploading_Failed_State_004
-   * @tc.desc function of API, Test State Uploading_Failed
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Uploading_Failed_State_004
+    * @tc.number SUB_STORAGE_DOWNLOAD_STATE_TEST_0400
+    * @tc.desc   function of API, Test State Uploading_Failed
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Uploading_Failed_State_004', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Uploading_Failed_State_004::";
      let UPLOAD_FAILED = 1;
@@ -205,13 +201,12 @@ describe('cloud_file_download_test', () => {
    });
 
   /**
+   * @tc.name   test_CloudSync_SyncState_005
    * @tc.number SUB_STORAGE_GALLERYSYNC_STATE_TEST_0500
-   * @tc.name test_CloudSync_SyncState_005
-   * @tc.desc function of API, Test State DOWNLOAD_FAILED
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   function of API, Test State DOWNLOAD_FAILED
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_CloudSync_SyncState_005', Level.LEVEL0, async (done: Function) => {
     let TAG = "test_CloudSync_SyncState_005::";
@@ -235,14 +230,13 @@ describe('cloud_file_download_test', () => {
   });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOADING_STATE_TEST_0600
-   * @tc.name test_Downloading_State_006
-   * @tc.desc function of API, Test State Downloading
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Downloading_State_006
+    * @tc.number SUB_STORAGE_DOWNLOADING_STATE_TEST_0600
+    * @tc.desc   function of API, Test State Downloading
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Downloading_State_006', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Downloading_State_006::";
      let DOWNLOADING = 2;
@@ -264,14 +258,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_PROCESSED_TEST_0100
-   * @tc.name test_Download_Processed_001
-   * @tc.desc function of API, Test State processed
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_Processed_001
+    * @tc.number SUB_STORAGE_DOWNLOAD_PROCESSED_TEST_0100
+    * @tc.desc   function of API, Test State processed
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_Processed_001', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_Processed_001::";
      let FAILED = 2;
@@ -294,14 +287,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0100
-   * @tc.name test_Download_Error_001
-   * @tc.desc function of API, Test DownloadErrorType NO_ERROR
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_Error_001
+    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0100
+    * @tc.desc   function of API, Test DownloadErrorType NO_ERROR
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_Error_001', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_Error_001::";
      let NO_ERROR = 0;
@@ -324,14 +316,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0200
-   * @tc.name test_Download_Error_002
-   * @tc.desc function of API, Test DownloadErrorType UNKNOWN_ERROR
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_Error_002
+    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0200
+    * @tc.desc   function of API, Test DownloadErrorType UNKNOWN_ERROR
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_Error_002', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_Error_002::";
      let UNKNOWN_ERROR = 1;
@@ -354,14 +345,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0300
-   * @tc.name test_Download_Error_003
-   * @tc.desc function of API, Test DownloadErrorType NETWORK_UNAVAILABLE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
-   */
+    * @tc.name   test_Download_Error_003
+    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0300
+    * @tc.desc   function of API, Test DownloadErrorType NETWORK_UNAVAILABLE
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('test_Download_Error_003', Level.LEVEL0, async (done: Function) => {
      let TAG = "test_Download_Error_003::";
      let NETWORK_UNAVAILABLE = 2;
@@ -384,14 +374,13 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
-   * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0400
-   * @tc.name test_Download_Error_004
-   * @tc.desc function of API, Test DownloadErrorType LOCAL_STORAGE_FULL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
-   */
+    * @tc.name   test_Download_Error_004
+    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0400
+    * @tc.desc   function of API, Test DownloadErrorType LOCAL_STORAGE_FULL
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
+    */
    it('test_Download_Error_004', Level.LEVEL3, async (done: Function) => {
      let TAG = "test_Download_Error_004::";
      let LOCAL_STORAGE_FULL = 3;
@@ -413,14 +402,13 @@ describe('cloud_file_download_test', () => {
      done();
    });
 
-    /**
+   /**
+    * @tc.name   test_Download_Error_005
     * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0500
-    * @tc.name test_Download_Error_005
-    * @tc.desc function of API, Test DownloadErrorType CONTENT_NOT_FOUND
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 3
-    * @tc.require
+    * @tc.desc   function of API, Test DownloadErrorType CONTENT_NOT_FOUND
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('test_Download_Error_005', Level.LEVEL3, async (done: Function) => {
      let TAG = "test_Download_Error_005::";
@@ -443,14 +431,13 @@ describe('cloud_file_download_test', () => {
      done();
    });
 
-    /**
+   /**
+    * @tc.name   test_Download_Error_006
     * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0600
-    * @tc.name test_Download_Error_006
-    * @tc.desc function of API, Test DownloadErrorType FREQUENT_USER_REQUESTS
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 3
-    * @tc.require
+    * @tc.desc   function of API, Test DownloadErrorType FREQUENT_USER_REQUESTS
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('test_Download_Error_006', Level.LEVEL3, async (done: Function) => {
      let TAG = "test_Download_Error_006::";
@@ -474,13 +461,12 @@ describe('cloud_file_download_test', () => {
    });
 
    /**
+    * @tc.name   test_Download_Error_007
     * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0700
-    * @tc.name test_Download_Error_007
-    * @tc.desc function of API, Test Test_error on() interfaces.
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level 3
-    * @tc.require
+    * @tc.desc   function of API, Test Test_error on() interfaces.
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL3
     */
    it('test_Download_Error_007', Level.LEVEL3, async (done: Function) => {
      let TAG = "test_Download_Error_007::";
@@ -500,13 +486,12 @@ describe('cloud_file_download_test', () => {
    });
 
   /**
+   * @tc.name   test_CloudSync_ErrorType_008
    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0800
-   * @tc.name test_CloudSync_ErrorType_008
-   * @tc.desc function of API, Test ErrorType WIFI_UNAVAILABLE
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ErrorType WIFI_UNAVAILABLE
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_ErrorType_008', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_CloudSync_ErrorType_008::";
@@ -530,13 +515,12 @@ describe('cloud_file_download_test', () => {
   });
 
   /**
+   * @tc.name   test_CloudSync_ErrorType_009
    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_0900
-   * @tc.name test_CloudSync_ErrorType_009
-   * @tc.desc function of API, Test ErrorType BATTERY_LEVEL_LOW
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ErrorType BATTERY_LEVEL_LOW
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_ErrorType_009', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_CloudSync_ErrorType_009::";
@@ -561,13 +545,12 @@ describe('cloud_file_download_test', () => {
 
 
   /**
+   * @tc.name   test_CloudSync_ErrorType_010
    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1000
-   * @tc.name test_CloudSync_ErrorType_010
-   * @tc.desc function of API, Test ErrorType BATTERY_LEVEL_WARNING
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ErrorType BATTERY_LEVEL_WARNING
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_ErrorType_010', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_CloudSync_ErrorType_010::";
@@ -592,13 +575,12 @@ describe('cloud_file_download_test', () => {
 
 
   /**
+   * @tc.name   test_CloudSync_ErrorType_011
    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1100
-   * @tc.name test_CloudSync_ErrorType_011
-   * @tc.desc function of API, Test ErrorType CLOUD_STORAGE_FULL
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ErrorType CLOUD_STORAGE_FULL
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_ErrorType_011', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_CloudSync_ErrorType_011::";
@@ -623,13 +605,12 @@ describe('cloud_file_download_test', () => {
 
 
   /**
+   * @tc.name   test_CloudSync_ErrorType_012
    * @tc.number SUB_STORAGE_DOWNLOAD_ERROR_TEST_1200
-   * @tc.name test_CloudSync_ErrorType_012
-   * @tc.desc function of API, Test ErrorType DEVICE_TEMPERATURE_TOO_HIGH
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test ErrorType DEVICE_TEMPERATURE_TOO_HIGH
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_ErrorType_012', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_CloudSync_ErrorType_012::";
@@ -653,13 +634,12 @@ describe('cloud_file_download_test', () => {
   });
 
   /**
+   * @tc.name   test_CloudSync_NotifyType_001
    * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0100
-   * @tc.name test_CloudSync_NotifyType_001
-   * @tc.desc function of API, Test  NotifyType NOTIFY_ADDED.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test  NotifyType NOTIFY_ADDED.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_NotifyType_001', Level.LEVEL3, async (done: Function) => {
     console.info('--------------test_CloudSync_NotifyType_001 begin-------------------')
@@ -675,13 +655,12 @@ describe('cloud_file_download_test', () => {
 
 
   /**
+   * @tc.name   test_CloudSync_NotifyType_002
    * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0200
-   * @tc.name test_CloudSync_NotifyType_002
-   * @tc.desc function of API, Test  NotifyType NOTIFY_MODIFIED.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test  NotifyType NOTIFY_MODIFIED.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_NotifyType_002', Level.LEVEL3, async (done: Function) => {
     console.info('--------------test_CloudSync_NotifyType_002 begin-------------------')
@@ -696,13 +675,12 @@ describe('cloud_file_download_test', () => {
   });
 
   /**
+   * @tc.name   test_CloudSync_NotifyType_003
    * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0300
-   * @tc.name test_CloudSync_NotifyType_003
-   * @tc.desc function of API, Test  NotifyType NOTIFY_MODIFIED.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test  NotifyType NOTIFY_MODIFIED.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_NotifyType_003', Level.LEVEL3, async (done: Function) => {
     console.info('--------------test_CloudSync_NotifyType_003 begin-------------------')
@@ -718,13 +696,12 @@ describe('cloud_file_download_test', () => {
 
 
   /**
+   * @tc.name   test_CloudSync_NotifyType_004
    * @tc.number SUB_STORAGE_ NOTIFYTYPE_TEST_0400
-   * @tc.name test_CloudSync_NotifyType_004
-   * @tc.desc function of API, Test  NotifyType NOTIFY_RENAMED.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test  NotifyType NOTIFY_RENAMED.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_CloudSync_NotifyType_004', Level.LEVEL3, async (done: Function) => {
     console.info('--------------test_CloudSync_NotifyType_004 begin-------------------')
@@ -739,13 +716,12 @@ describe('cloud_file_download_test', () => {
   });
 
   /**
+   * @tc.name   test_Getlastsynctime_001
    * @tc.number SUB_STORAGE_GETLASTAYNCTIME_TEST_0100
-   * @tc.name test_Getlastsynctime_001
-   * @tc.desc function of API, Test getLastsynctime interfaces.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test getLastsynctime interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_Getlastsynctime_001', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_Getlastsynctime_001::";
@@ -761,13 +737,12 @@ describe('cloud_file_download_test', () => {
   });
 
   /**
+   * @tc.name   test_Getlastsynctime_002
    * @tc.number SUB_STORAGE_GETLASTAYNCTIME_TEST_0200
-   * @tc.name test_Getlastsynctime_002
-   * @tc.desc function of API, Test getLastsynctime interfaces.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   function of API, Test getLastsynctime interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_Getlastsynctime_002', Level.LEVEL3, async (done: Function) => {
     let TAG = "test_Getlastsynctime_002::";

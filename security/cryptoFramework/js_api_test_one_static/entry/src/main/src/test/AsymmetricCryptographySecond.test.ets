@@ -26,9 +26,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     });
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1200
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1200
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_1200
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_1200",
@@ -51,9 +54,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1300
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1300
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_1300
-     * @tc.desc First input  RSA256, Second input  NULL
+     * @tc.desc   First input  RSA256, Second input  NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_1300",
@@ -79,10 +85,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1400
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1400
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_1400
-     * @tc.desc First input  RSA4096|NULL|SHA256, Second input  RSA4096|PKCS1|NULL
-     * @tc.desc Third input  RSA4096|PKCS1|SHA122, Fourth input  RSA4096|PKCS5|SHA256
+     * @tc.desc   Third input  RSA4096|PKCS1|SHA122, Fourth input  RSA4096|PKCS5|SHA256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_1400",
@@ -120,9 +128,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_2000
      * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_2000
-     * @tc.name Security_crypto_framework_ASymmetric_Encryption_RSA_2000
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_Encryption_RSA_2000",
@@ -149,9 +160,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_2100
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_2100
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_2100
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_2100",
@@ -178,10 +192,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1500
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1500
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_1500
-     * @tc.desc First input  RSA4096|NULL|SHA256, Second input  RSA4096|PKCS1|NULL
-     * @tc.desc Third input  RSA4096|PKCS1|SHA122, Fourth input  RSA4096|PKCS5|SHA256
+     * @tc.desc   Third input  RSA4096|PKCS1|SHA122, Fourth input  RSA4096|PKCS5|SHA256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_1500",
@@ -219,9 +235,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0100
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0100
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0100
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0100",
@@ -244,9 +263,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0200
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0200
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0200
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0200",
@@ -269,9 +291,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0300
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0300
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0300
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0300",
@@ -294,9 +319,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0400
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0400
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0400
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0400",
@@ -319,9 +347,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0500
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0500
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0500
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0500",
@@ -344,9 +375,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0600
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0600
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0600
-     * @tc.desc First input  ECC1, Second input null character string
+     * @tc.desc   First input  ECC1, Second input null character string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0600",
@@ -372,10 +406,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0700
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0700
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0700
-     * @tc.desc First input ECC224|SHA257, Second input ECC224|NULL
-     * @tc.desc Third input NULL|SHA1, Fourth input ECC1|SHA1
+     * @tc.desc   Third input NULL|SHA1, Fourth input ECC1|SHA1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0700",
@@ -410,10 +446,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0800
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0800
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0800
-     * @tc.desc First input ECC1|SHA256, Second input NULL|SHA256
-     * @tc.desc Third input ECC224|SHA122, Fourth input ECC224|NULL
+     * @tc.desc   Third input ECC224|SHA122, Fourth input ECC224|NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0800",
@@ -449,9 +487,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0900
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0900
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0900
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDSA_0900",
@@ -478,9 +519,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0100
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0100
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0100
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0100",
@@ -503,9 +547,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0200
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0200
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0200
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0200",
@@ -528,9 +575,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0300
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0300
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0300
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0300",
@@ -553,9 +603,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0400
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0400
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0400
-     * @tc.desc Use the Callback Style of Interface
+     * @tc.desc   Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0400",
@@ -578,9 +631,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0500
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0500
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0500
-     * @tc.desc First input ECC5, Second input NULL
+     * @tc.desc   First input ECC5, Second input NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0500",
@@ -597,9 +653,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0600
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0600
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0600
-     * @tc.desc First input invalid pubkey, Second input invalide prikey
+     * @tc.desc   First input invalid pubkey, Second input invalide prikey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0600",
@@ -627,9 +686,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_ECDH_0700
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_ECDH_0700
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_ECDH_0700
-     * @tc.desc The public key and private key do not match
+     * @tc.desc   The public key and private key do not match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_ECDH_0700",
@@ -660,9 +722,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_3300
      * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_3300
-     * @tc.name Security_crypto_framework_ASymmetric_Encryption_RSA_3300
-     * @tc.desc Use RSA3072|PRIMES_2 algorithm
+     * @tc.desc   Use RSA3072|PRIMES_2 algorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_Encryption_RSA_3300",
@@ -685,9 +750,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_Encryption_RSA_3100
      * @tc.number Security_crypto_framework_ASymmetric_Encryption_RSA_3100
-     * @tc.name Security_crypto_framework_ASymmetric_Encryption_RSA_3100
-     * @tc.desc Use RSA1024|PRIMES_2 algorithm
+     * @tc.desc   Use RSA1024|PRIMES_2 algorithm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_Encryption_RSA_3100",
@@ -710,9 +778,12 @@ export default function AsymmetricCryptographyJsSecondunit() {
     );
 
     /**
+     * @tc.name   Security_crypto_framework_ASymmetric_SignVerify_RSA_1100
      * @tc.number Security_crypto_framework_ASymmetric_SignVerify_RSA_1100
-     * @tc.name Security_crypto_framework_ASymmetric_SignVerify_RSA_1100
-     * @tc.desc Use the Promise Style of Interface
+     * @tc.desc   Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_crypto_framework_ASymmetric_SignVerify_RSA_1100",

@@ -53,6 +53,14 @@ export default function ApiCommponentAdd02Jsunit() {
 
     });
 
+    /**
+     * @tc.name   ApiCommponentAdd02Jsunit_0900
+     * @tc.number ApiCommponentAdd02Jsunit_0900
+     * @tc.desc   ApiCommponentAdd02Jsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ApiCommponentAdd02Jsunit_0900', Level.LEVEL1, async (done: Function) => {
       console.info('apiCommponentAdd02Jsunit_0900 START');
       ohosrouter.clear();

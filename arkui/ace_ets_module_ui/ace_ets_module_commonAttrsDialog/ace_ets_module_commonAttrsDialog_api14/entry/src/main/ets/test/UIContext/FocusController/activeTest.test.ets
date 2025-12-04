@@ -42,14 +42,14 @@ export default function activeTest() {
       done();
     });
 
-    /**
-     * @tc.number    activeTest_0010
-     * @tc.name      activeTest_0010
-     * @tc.desc      FocusController.active(active：true,autoInactive:true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
+   /**
+    * @tc.name   activeTest_0010
+    * @tc.number activeTest_0010
+    * @tc.desc   FocusController.active(active：true,autoInactive:true)
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL0
+    */
    it('activeTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0010 START');
       let driver = await Driver.create()
@@ -70,12 +70,12 @@ export default function activeTest() {
       done();
     });
     /**
-     * @tc.number    activeTest_0020
-     * @tc.name      activeTest_0020
-     * @tc.desc      FocusController.active(active：true,autoInactive:false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeTest_0020
+     * @tc.number activeTest_0020
+     * @tc.desc   FocusController.active(active：true,autoInactive:false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0020 START');
@@ -97,12 +97,12 @@ export default function activeTest() {
       done();
     });
     /**
-     * @tc.number    activeTest_0030
-     * @tc.name      activeTest_0030
-     * @tc.desc      FocusController.active(active：false,autoInactive:false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeTest_0030
+     * @tc.number activeTest_0030
+     * @tc.desc   FocusController.active(active：false,autoInactive:false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeTest_0030', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0030 START');
@@ -121,13 +121,13 @@ export default function activeTest() {
       done();
     });
 
-     /**
-     * @tc.number    activeTest_0040
-     * @tc.name      activeTest_0040
-     * @tc.desc      FocusController.active(active:false,autoInactive:true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   activeTest_0040
+     * @tc.number activeTest_0040
+     * @tc.desc   FocusController.active(active:false,autoInactive:true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeTest_0040', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0040 START');
@@ -151,12 +151,12 @@ export default function activeTest() {
     });
 
     /**
-     * @tc.number    activeTest_0050
-     * @tc.name      activeTest_0050
-     * @tc.desc      FocusController.active(active：true)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeTest_0050
+     * @tc.number activeTest_0050
+     * @tc.desc   FocusController.active(active：true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeTest_0050', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0040 START');
@@ -179,12 +179,12 @@ export default function activeTest() {
     });
 
     /**
-     * @tc.number    activeTest_0060
-     * @tc.name      activeTest_0060
-     * @tc.desc      FocusController.active(active：false)
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   activeTest_0060
+     * @tc.number activeTest_0060
+     * @tc.desc   FocusController.active(active：false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('activeTest_0060', Level.LEVEL0, async (done: Function) => {
       console.info('activeTest_0040 START');

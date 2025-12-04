@@ -41,13 +41,13 @@ let UDPAddr2: socket.NetAddress = {
 export default function UDPSocketTest() {
   describe('UDPSocketTest', () => {
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_ConstructUDPSocketInstance_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketConstructUDPSocketInstance0100
-     * @tc.desc  :  Create a UDPSocket object
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 0
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketConstructUDPSocketInstance0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_ConstructUDPSocketInstance_0100
+     * @tc.desc   Create a UDPSocket object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrSocketUDPSocketConstructUDPSocketInstance0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketConstructUDPSocketInstance0100';
@@ -66,19 +66,25 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0100
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0100';
       console.info(`${caseName} test start`);
       try {
         let udp: socket.UDPSocket = socket.constructUDPSocketInstance();
+        udp.on('error',(err:BusinessError) => {
+          console.error("on error,err:" + JSON.stringify(err));
+        });
+        udp.on('listening',() => {
+          console.info("on listening success");
+        });
         udp.bind(UDPAddr1, (err: BusinessError) => {
           if (err) {
             console.info(`${caseName} err: ${JSON.stringify(err)}`);
@@ -86,6 +92,10 @@ export default function UDPSocketTest() {
           }
           expectTrue(true);
           console.info(`${caseName} test end`);
+          udp.off('error',(err:BusinessError) => {
+            console.error("off error,err:" + JSON.stringify(err));
+          });
+          udp.off('listening');
           udp.close();
           done();
         });
@@ -97,13 +107,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0200
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0200
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0200';
@@ -134,13 +144,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0300
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0300
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0300';
@@ -169,13 +179,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0400
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0400
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0400';
@@ -206,13 +216,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0500
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0500
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0500';
@@ -243,13 +253,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0600
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0600
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0600';
@@ -280,13 +290,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0700
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0700
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0700';
@@ -317,13 +327,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_0900
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind0900
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind0900
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_0900
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind0900';
@@ -349,13 +359,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1000
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1000
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1000
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1000
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1000';
@@ -381,13 +391,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1100
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1100';
@@ -413,13 +423,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1200
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1200
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1200';
@@ -451,13 +461,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1300
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1300
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1300';
@@ -487,13 +497,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1400
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1400
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1400';
@@ -525,13 +535,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1500
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1500
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1500';
@@ -563,13 +573,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1600
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 0
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1600
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrSocketUDPSocketBind1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1600';
@@ -601,13 +611,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1700
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1700
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1700';
@@ -639,13 +649,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1800
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1800
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1800
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1800
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1800';
@@ -677,13 +687,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_1900
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind1900
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind1900
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_1900
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind1900';
@@ -710,13 +720,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_2000
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind2000
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind2000
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_2000
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind2000';
@@ -743,13 +753,13 @@ export default function UDPSocketTest() {
       }
     });
     
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Bind_2100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketBind2100
-     * @tc.desc  :  Bind IP address and port
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 2
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketBind2100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Bind_2100
+     * @tc.desc   Bind IP address and port
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketBind2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketBind2100';
@@ -781,13 +791,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0100
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0100
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0100';
@@ -820,13 +830,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0200
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0200
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0200';
@@ -859,13 +869,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0500
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0500
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0500';
@@ -902,13 +912,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0700
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0700
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0700';
@@ -945,13 +955,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0800
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0800
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0800
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0800
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0800';
@@ -988,13 +998,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_0900
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend0900
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend0900
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_0900
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend0900';
@@ -1031,13 +1041,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1200
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 0
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1200
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrSocketUDPSocketSend1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1200';
@@ -1066,13 +1076,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1300
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1300
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1300';
@@ -1101,13 +1111,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1500
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1500
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1500';
@@ -1141,13 +1151,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1600
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1600
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1600';
@@ -1181,13 +1191,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1700
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1700
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1700';
@@ -1221,13 +1231,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1800
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1800
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1800
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1800
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1800';
@@ -1261,13 +1271,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_1900
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend1900
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 0
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend1900
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_1900
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrSocketUDPSocketSend1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend1900';
@@ -1305,13 +1315,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2100
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2100
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2100';
@@ -1349,13 +1359,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2200
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2200
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2200';
@@ -1393,13 +1403,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2300
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2300
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2300';
@@ -1437,13 +1447,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2500
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2500
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2500';
@@ -1481,13 +1491,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2600
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2600
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2600';
@@ -1517,13 +1527,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Send_2700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSend2700
-     * @tc.desc  :  Sending data through UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSend2700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Send_2700
+     * @tc.desc   Sending data through UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSend2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSend2700';
@@ -1553,13 +1563,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Close_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketClose0100
-     * @tc.desc  :  Close UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketClose0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Close_0100
+     * @tc.desc   Close UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketClose0100';
@@ -1588,13 +1598,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Close_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketClose0200
-     * @tc.desc  :  Close UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketClose0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Close_0200
+     * @tc.desc   Close UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketClose0200';
@@ -1619,13 +1629,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Close_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketClose0300
-     * @tc.desc  :  Close UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketClose0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Close_0300
+     * @tc.desc   Close UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketClose0300';
@@ -1655,13 +1665,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Close_0400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketClose0400
-     * @tc.desc  :  Close UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketClose0400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Close_0400
+     * @tc.desc   Close UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketClose0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketClose0400';
@@ -1686,13 +1696,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0100
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0100
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0100';
@@ -1726,13 +1736,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0200
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0200
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0200';
@@ -1767,13 +1777,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0300
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0300
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0300';
@@ -1803,13 +1813,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0400
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0400
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0400';
@@ -1843,13 +1853,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0500
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0500
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0500';
@@ -1884,13 +1894,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_GetState_0600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketGetState0600
-     * @tc.desc  :  Get UDPSocket status
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketGetState0600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_GetState_0600
+     * @tc.desc   Get UDPSocket status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketGetState0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketGetState0600';
@@ -1920,13 +1930,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0100
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0100
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0100';
@@ -1962,13 +1972,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0200
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0200
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0200';
@@ -2000,13 +2010,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0300
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0300
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0300';
@@ -2042,13 +2052,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0400
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0400
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0400';
@@ -2084,13 +2094,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0500
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0500
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0500
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0500
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0500';
@@ -2126,13 +2136,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0600
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0600
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0600
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0600
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0600';
@@ -2161,13 +2171,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0700
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0700
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0700
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0700
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0700';
@@ -2196,13 +2206,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0800
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0800
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0800
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0800
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0800';
@@ -2238,13 +2248,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0900
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions0900
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions0900
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_0900
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions0900';
@@ -2277,13 +2287,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1000
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions1000
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions1000
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1000
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions1000';
@@ -2320,13 +2330,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions1100
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions1100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1100
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions1100';
@@ -2363,13 +2373,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions1200
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions1200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1200
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions1200';
@@ -2406,13 +2416,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions1300
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions1300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1300
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions1300';
@@ -2442,13 +2452,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1400
-     * @tc.name  :  testNetworkMgrSocketUDPSocketSetExtraOptions1400
-     * @tc.desc  :  Set other properties of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketSetExtraOptions1400
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_SetExtraOptions_1400
+     * @tc.desc   Set other properties of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketSetExtraOptions1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketSetExtraOptions1400';
@@ -2478,13 +2488,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_On_Message_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOnMessage0100
-     * @tc.desc  :  Subscription to receive message events for UDPSocket connections
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOnMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_On_Message_0100
+     * @tc.desc   Subscription to receive message events for UDPSocket connections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOnMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOnMessage0100';
@@ -2521,13 +2531,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOffMessage0100
-     * @tc.desc  :  Unsubscribe from receiving message events for UDPSocket connections
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOffMessage0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0100
+     * @tc.desc   Unsubscribe from receiving message events for UDPSocket connections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOffMessage0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOffMessage0100';
@@ -2571,13 +2581,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOffMessage0200
-     * @tc.desc  :  Unsubscribe from receiving message events for UDPSocket connections
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOffMessage0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0200
+     * @tc.desc   Unsubscribe from receiving message events for UDPSocket connections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOffMessage0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOffMessage0200';
@@ -2630,13 +2640,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOffMessage0300
-     * @tc.desc  :  Unsubscribe from receiving message events for UDPSocket connections
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOffMessage0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Off_Message_0300
+     * @tc.desc   Unsubscribe from receiving message events for UDPSocket connections
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOffMessage0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOffMessage0300';
@@ -2689,13 +2699,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_On_Close_0100
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOnClose0100
-     * @tc.desc  :  Subscription to UDPSocket connection closure event
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOnClose0100
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_On_Close_0100
+     * @tc.desc   Subscription to UDPSocket connection closure event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOnClose0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOnClose0100';
@@ -2721,13 +2731,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Off_Close_0200
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOffClose0200
-     * @tc.desc  :  Unsubscribe from the closing event of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOffClose0200
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Off_Close_0200
+     * @tc.desc   Unsubscribe from the closing event of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOffClose0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOffClose0200';
@@ -2766,13 +2776,13 @@ export default function UDPSocketTest() {
       }
     });
 
-    /*
-     * @tc.number:  SUB_NetworkMgr_Socket_UDPSocket_Off_Close_0300
-     * @tc.name  :  testNetworkMgrSocketUDPSocketOffClose0300
-     * @tc.desc  :  Unsubscribe from the closing event of UDPSocket connection
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  Level 3
+    /**
+     * @tc.name   testNetworkMgrSocketUDPSocketOffClose0300
+     * @tc.number SUB_NetworkMgr_Socket_UDPSocket_Off_Close_0300
+     * @tc.desc   Unsubscribe from the closing event of UDPSocket connection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrSocketUDPSocketOffClose0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,async (done: Function) => {
       let caseName: string = 'testNetworkMgrSocketUDPSocketOffClose0300';

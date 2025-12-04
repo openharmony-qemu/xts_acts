@@ -911,12 +911,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_01
-         * @tc.name       : actsZipTest01
-         * @tc.desc       : test deflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest01
+         * @tc.number ACTS_ZipTest_01
+         * @tc.desc   test deflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================ACTS_ZipTest_01 start==================");
@@ -948,12 +948,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_02
-         * @tc.name       : actsZipTest02
-         * @tc.desc       : test deflateInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest02
+         * @tc.number ACTS_ZipTest_02
+         * @tc.desc   test deflateInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================ACTS_ZipTest_02 start==================");
@@ -978,12 +978,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_03
-         * @tc.name       : actsZipTest03
-         * @tc.desc       : test deflateParams
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest03
+         * @tc.number ACTS_ZipTest_03
+         * @tc.desc   test deflateParams
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================ACTS_ZipTest_03 start==================");
@@ -1021,12 +1021,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_04
-         * @tc.name       : actsZipTest04
-         * @tc.desc       : test deflatePrime
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest04
+         * @tc.number ACTS_ZipTest_04
+         * @tc.desc   test deflatePrime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================ACTS_ZipTest_04 start==================");
@@ -1063,12 +1063,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_05
-         * @tc.name       : actsZipTest05
-         * @tc.desc       : test deflateTune
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest05
+         * @tc.number ACTS_ZipTest_05
+         * @tc.desc   test deflateTune
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest05', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================ACTS_ZipTest_05 start==================");
@@ -1105,12 +1105,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_06
-         * @tc.name       : actsZipTest06
-         * @tc.desc       : test deflateSetDictionary and deflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest06
+         * @tc.number ACTS_ZipTest_06
+         * @tc.desc   test deflateSetDictionary and deflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest06', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================ACTS_ZipTest_06 start==================");
@@ -1153,12 +1153,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_07
-         * @tc.name       : actsZipTest07
-         * @tc.desc       : test deflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest07
+         * @tc.number ACTS_ZipTest_07
+         * @tc.desc   test deflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest07', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================ACTS_ZipTest_07 start==================");
@@ -1195,12 +1195,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_08
-         * @tc.name       : actsZipTest08
-         * @tc.desc       : test deflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest08
+         * @tc.number ACTS_ZipTest_08
+         * @tc.desc   test deflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest08', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest08 start==================");
@@ -1237,12 +1237,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_09
-         * @tc.name       : actsZipTest09
-         * @tc.desc       : test deflateBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest09
+         * @tc.number ACTS_ZipTest_09
+         * @tc.desc   test deflateBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest09', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest09 start==================");
@@ -1279,12 +1279,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_10
-         * @tc.name       : actsZipTest10
-         * @tc.desc       : test deflatePending
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest10
+         * @tc.number ACTS_ZipTest_10
+         * @tc.desc   test deflatePending
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest10', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest10 start==================");
@@ -1323,12 +1323,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_11
-         * @tc.name       : actsZipTest11
-         * @tc.desc       : test deflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest11
+         * @tc.number ACTS_ZipTest_11
+         * @tc.desc   test deflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest11', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest11 start==================");
@@ -1355,6 +1355,7 @@ export default function ActsZipTest() {
             })
             await zip.deflateCopy(zip).then((data) => {
                 console.info('deflateCopy success')
+                expect(data).assertEqual(zlib.ReturnStatus.OK);
             }).catch((errData: base.BusinessError) => {
                 console.error(`errData is errCode:${errData.code}  message:${errData.message}`);
                 expect(errData).assertFail()
@@ -1364,12 +1365,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_12
-         * @tc.name       : actsZipTest12
-         * @tc.desc       : test deflateSetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest12
+         * @tc.number ACTS_ZipTest_12
+         * @tc.desc   test deflateSetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest12', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest12 start==================");
@@ -1411,12 +1412,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_13
-         * @tc.name       : actsZipTest13
-         * @tc.desc       : test deflate and inflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest13
+         * @tc.number ACTS_ZipTest_13
+         * @tc.desc   test deflate and inflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest13', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest13 start==================");
@@ -1482,12 +1483,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_14
-         * @tc.name       : actsZipTest14
-         * @tc.desc       : test getZStream
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest14
+         * @tc.number ACTS_ZipTest_14
+         * @tc.desc   test getZStream
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest14', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest14 start==================");
@@ -1524,12 +1525,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_15
-         * @tc.name       : actsZipTest15
-         * @tc.desc       : test inflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest15
+         * @tc.number ACTS_ZipTest_15
+         * @tc.desc   test inflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest15', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest15 start==================");
@@ -1561,12 +1562,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_16
-         * @tc.name       : actsZipTest16
-         * @tc.desc       : test inflateValidate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest16
+         * @tc.number ACTS_ZipTest_16
+         * @tc.desc   test inflateValidate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest16', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest16 start==================");
@@ -1598,12 +1599,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_17
-         * @tc.name       : actsZipTest17
-         * @tc.desc       : test deflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest17
+         * @tc.number ACTS_ZipTest_17
+         * @tc.desc   test deflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest17', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest17 start==================");
@@ -1904,12 +1905,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_18
-         * @tc.name       : actsZipTest18
-         * @tc.desc       : test inflateSyncPoint
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest18
+         * @tc.number ACTS_ZipTest_18
+         * @tc.desc   test inflateSyncPoint
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest18', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest18 start==================");
@@ -1941,12 +1942,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_19
-         * @tc.name       : actsZipTest19
-         * @tc.desc       : test inflateSync
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest19
+         * @tc.number ACTS_ZipTest_19
+         * @tc.desc   test inflateSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest19', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest19 start==================");
@@ -1978,12 +1979,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_20
-         * @tc.name       : actsZipTest20
-         * @tc.desc       : test inflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest20
+         * @tc.number ACTS_ZipTest_20
+         * @tc.desc   test inflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest20', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest20 start==================");
@@ -2015,12 +2016,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_21
-         * @tc.name       : actsZipTest21
-         * @tc.desc       : test inflateReset2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest21
+         * @tc.number ACTS_ZipTest_21
+         * @tc.desc   test inflateReset2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest21', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest21 start==================");
@@ -2052,12 +2053,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_22
-         * @tc.name       : actsZipTest22
-         * @tc.desc       : test inflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest22
+         * @tc.number ACTS_ZipTest_22
+         * @tc.desc   test inflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest22', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest22 start==================");
@@ -2089,12 +2090,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_23
-         * @tc.name       : actsZipTest23
-         * @tc.desc       : test inflatePrime
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest23
+         * @tc.number ACTS_ZipTest_23
+         * @tc.desc   test inflatePrime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest23', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest23 start==================");
@@ -2126,12 +2127,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_24
-         * @tc.name       : actsZipTest24
-         * @tc.desc       : test inflateGetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest24
+         * @tc.number ACTS_ZipTest_24
+         * @tc.desc   test inflateGetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('actsZipTest24', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
             console.info("==================actsZipTest24 start==================");
@@ -2167,12 +2168,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_25
-         * @tc.name       : actsZipTest25
-         * @tc.desc       : test inflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest25
+         * @tc.number ACTS_ZipTest_25
+         * @tc.desc   test inflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest25', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest25 start==================");
@@ -2205,12 +2206,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_26
-         * @tc.name       : actsZipTest26
-         * @tc.desc       : test zlibVersion
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest26
+         * @tc.number ACTS_ZipTest_26
+         * @tc.desc   test zlibVersion
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest26', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest26 start==================");
@@ -2227,12 +2228,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_27
-         * @tc.name       : actsZipTest27
-         * @tc.desc       : test zlibCompileFlags
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest27
+         * @tc.number ACTS_ZipTest_27
+         * @tc.desc   test zlibCompileFlags
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest27', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest27 start==================");
@@ -2250,12 +2251,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_28
-         * @tc.name       : actsZipTest28
-         * @tc.desc       : test compress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest28
+         * @tc.number ACTS_ZipTest_28
+         * @tc.desc   test compress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest28', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest28 start==================");
@@ -2280,12 +2281,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_29
-         * @tc.name       : actsZipTest29
-         * @tc.desc       : test uncompress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest29
+         * @tc.number ACTS_ZipTest_29
+         * @tc.desc   test uncompress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest29', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest29 start==================");
@@ -2318,12 +2319,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_30
-         * @tc.name       : actsZipTest30
-         * @tc.desc       : test compress2 and uncompress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest30
+         * @tc.number ACTS_ZipTest_30
+         * @tc.desc   test compress2 and uncompress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest30', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest30 start==================");
@@ -2357,12 +2358,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_31
-         * @tc.name       : actsZipTest31
-         * @tc.desc       : test compressBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest31
+         * @tc.number ACTS_ZipTest_31
+         * @tc.desc   test compressBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest31', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest31 start==================");
@@ -2386,12 +2387,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_32
-         * @tc.name       : actsZipTest32
-         * @tc.desc       : test inflateBack
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest32
+         * @tc.number ACTS_ZipTest_32
+         * @tc.desc   test inflateBack
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('actsZipTest32', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
             console.info("==================actsZipTest32 start==================");
@@ -2532,12 +2533,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_33
-         * @tc.name       : actsZipTest33
-         * @tc.desc       : test deflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest33
+         * @tc.number ACTS_ZipTest_33
+         * @tc.desc   test deflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest33', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest33 start==================");
@@ -2574,12 +2575,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_34
-         * @tc.name       : actsZipTest34
-         * @tc.desc       : test deflateInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest34
+         * @tc.number ACTS_ZipTest_34
+         * @tc.desc   test deflateInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest34', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest34 start==================");
@@ -2614,12 +2615,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_35
-         * @tc.name       : actsZipTest35
-         * @tc.desc       : test compress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest35
+         * @tc.number ACTS_ZipTest_35
+         * @tc.desc   test compress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest35', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest35 start==================");
@@ -2654,12 +2655,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_36
-         * @tc.name       : actsZipTest36
-         * @tc.desc       : test compress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest36
+         * @tc.number ACTS_ZipTest_36
+         * @tc.desc   test compress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest36', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest36 start==================");
@@ -2694,12 +2695,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_37
-         * @tc.name       : actsZipTest37
-         * @tc.desc       : test compressBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest37
+         * @tc.number ACTS_ZipTest_37
+         * @tc.desc   test compressBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest37', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest37 start==================");
@@ -2725,12 +2726,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_38
-         * @tc.name       : actsZipTest38
-         * @tc.desc       : test uncompress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest38
+         * @tc.number ACTS_ZipTest_38
+         * @tc.desc   test uncompress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest38', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest38 start==================");
@@ -2765,12 +2766,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_39
-         * @tc.name       : actsZipTest39
-         * @tc.desc       : test uncompress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest39
+         * @tc.number ACTS_ZipTest_39
+         * @tc.desc   test uncompress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest39', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest39 start==================");
@@ -2805,12 +2806,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_40
-         * @tc.name       : actsZipTest40
-         * @tc.desc       : test inflateValidate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest40
+         * @tc.number ACTS_ZipTest_40
+         * @tc.desc   test inflateValidate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest40', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest40 start==================");
@@ -2847,12 +2848,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_41
-         * @tc.name       : actsZipTest41
-         * @tc.desc       : test deflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest41
+         * @tc.number ACTS_ZipTest_41
+         * @tc.desc   test deflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest41', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest41 start==================");
@@ -3153,12 +3154,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_42
-         * @tc.name       : actsZipTest42
-         * @tc.desc       : test inflateSyncPoint
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest42
+         * @tc.number ACTS_ZipTest_42
+         * @tc.desc   test inflateSyncPoint
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest42', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest42 start==================");
@@ -3193,12 +3194,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_43
-         * @tc.name       : actsZipTest43
-         * @tc.desc       : test inflateSync
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest43
+         * @tc.number ACTS_ZipTest_43
+         * @tc.desc   test inflateSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest43', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest43 start==================");
@@ -3233,12 +3234,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_44
-         * @tc.name       : actsZipTest44
-         * @tc.desc       : test inflateSetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest44
+         * @tc.number ACTS_ZipTest_44
+         * @tc.desc   test inflateSetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest44', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest44 start==================");
@@ -3273,12 +3274,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_45
-         * @tc.name       : actsZipTest45
-         * @tc.desc       : test inflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest45
+         * @tc.number ACTS_ZipTest_45
+         * @tc.desc   test inflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest45', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest45 start==================");
@@ -3313,12 +3314,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_46
-         * @tc.name       : actsZipTest46
-         * @tc.desc       : test inflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest46
+         * @tc.number ACTS_ZipTest_46
+         * @tc.desc   test inflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest46', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest46 start==================");
@@ -3353,12 +3354,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_47
-         * @tc.name       : actsZipTest47
-         * @tc.desc       : test inflateReset2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest47
+         * @tc.number ACTS_ZipTest_47
+         * @tc.desc   test inflateReset2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest47', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest47 start==================");
@@ -3393,12 +3394,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_48
-         * @tc.name       : actsZipTest48
-         * @tc.desc       : test inflatePrime
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest48
+         * @tc.number ACTS_ZipTest_48
+         * @tc.desc   test inflatePrime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest48', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest48 start==================");
@@ -3433,12 +3434,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_49
-         * @tc.name       : actsZipTest49
-         * @tc.desc       : test inflateMark
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest49
+         * @tc.number ACTS_ZipTest_49
+         * @tc.desc   test inflateMark
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest49', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest49 start==================");
@@ -3464,12 +3465,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_50
-         * @tc.name       : actsZipTest50
-         * @tc.desc       : test inflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest50
+         * @tc.number ACTS_ZipTest_50
+         * @tc.desc   test inflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('actsZipTest50', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
             console.info("==================actsZipTest50 start==================");
@@ -3504,12 +3505,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_51
-         * @tc.name       : actsZipTest51
-         * @tc.desc       : test inflateInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest51
+         * @tc.number ACTS_ZipTest_51
+         * @tc.desc   test inflateInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest51', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest51 start==================");
@@ -3535,12 +3536,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_52
-         * @tc.name       : actsZipTest52
-         * @tc.desc       : test inflateGetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest52
+         * @tc.number ACTS_ZipTest_52
+         * @tc.desc   test inflateGetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest52', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest52 start==================");
@@ -3575,12 +3576,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_53
-         * @tc.name       : actsZipTest53
-         * @tc.desc       : test inflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest53
+         * @tc.number ACTS_ZipTest_53
+         * @tc.desc   test inflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest53', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest53 start==================");
@@ -3615,12 +3616,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_54
-         * @tc.name       : actsZipTest54
-         * @tc.desc       : test inflateEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest54
+         * @tc.number ACTS_ZipTest_54
+         * @tc.desc   test inflateEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest54', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest54 start==================");
@@ -3655,12 +3656,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_55
-         * @tc.name       : actsZipTest55
-         * @tc.desc       : test inflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest55
+         * @tc.number ACTS_ZipTest_55
+         * @tc.desc   test inflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest55', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest55 start==================");
@@ -3695,12 +3696,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_56
-         * @tc.name       : actsZipTest56
-         * @tc.desc       : test inflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest56
+         * @tc.number ACTS_ZipTest_56
+         * @tc.desc   test inflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest56', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest55 start==================");
@@ -3735,12 +3736,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_57
-         * @tc.name       : actsZipTest57
-         * @tc.desc       : test deflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest57
+         * @tc.number ACTS_ZipTest_57
+         * @tc.desc   test deflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest57', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest57 start==================");
@@ -3775,12 +3776,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_58
-         * @tc.name       : actsZipTest58
-         * @tc.desc       : test deflateBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest58
+         * @tc.number ACTS_ZipTest_58
+         * @tc.desc   test deflateBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest58', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest58 start==================");
@@ -3806,12 +3807,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_59
-         * @tc.name       : actsZipTest59
-         * @tc.desc       : test deflateSetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest59
+         * @tc.number ACTS_ZipTest_59
+         * @tc.desc   test deflateSetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest59', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest59 start==================");
@@ -3846,12 +3847,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_60
-         * @tc.name       : actsZipTest60
-         * @tc.desc       : test inflateCodesUsed
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest60
+         * @tc.number ACTS_ZipTest_60
+         * @tc.desc   test inflateCodesUsed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest60', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest60 start==================");
@@ -3877,12 +3878,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_61
-         * @tc.name       : actsZipTest61
-         * @tc.desc       : test deflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest61
+         * @tc.number ACTS_ZipTest_61
+         * @tc.desc   test deflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest61', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest61 start==================");
@@ -3917,12 +3918,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_62
-         * @tc.name       : actsZipTest62
-         * @tc.desc       : test deflateSetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest62
+         * @tc.number ACTS_ZipTest_62
+         * @tc.desc   test deflateSetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest62', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest62 start==================");
@@ -3957,12 +3958,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_63
-         * @tc.name       : actsZipTest63
-         * @tc.desc       : test deflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest63
+         * @tc.number ACTS_ZipTest_63
+         * @tc.desc   test deflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest63', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest63 start==================");
@@ -3997,12 +3998,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_64
-         * @tc.name       : actsZipTest64
-         * @tc.desc       : test deflateTune
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest64
+         * @tc.number ACTS_ZipTest_64
+         * @tc.desc   test deflateTune
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest64', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest64 start==================");
@@ -4037,12 +4038,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_65
-         * @tc.name       : actsZipTest65
-         * @tc.desc       : test deflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest65
+         * @tc.number ACTS_ZipTest_65
+         * @tc.desc   test deflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest65', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest65 start==================");
@@ -4077,12 +4078,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_66
-         * @tc.name       : actsZipTest66
-         * @tc.desc       : test deflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest66
+         * @tc.number ACTS_ZipTest_66
+         * @tc.desc   test deflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest66', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest66 start==================");
@@ -4117,12 +4118,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_67
-         * @tc.name       : actsZipTest67
-         * @tc.desc       : test deflatePending
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest67
+         * @tc.number ACTS_ZipTest_67
+         * @tc.desc   test deflatePending
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest67', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest67 start==================");
@@ -4157,12 +4158,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_68
-         * @tc.name       : actsZipTest68
-         * @tc.desc       : test deflateParams
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest68
+         * @tc.number ACTS_ZipTest_68
+         * @tc.desc   test deflateParams
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest68', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest68 start==================");
@@ -4197,12 +4198,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_69
-         * @tc.name       : actsZipTest69
-         * @tc.desc       : test deflatePrime
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest69
+         * @tc.number ACTS_ZipTest_69
+         * @tc.desc   test deflatePrime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest69', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest69 start==================");
@@ -4237,12 +4238,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_70
-         * @tc.name       : actsZipTest70
-         * @tc.desc       : test inflateCodesUsed
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest70
+         * @tc.number ACTS_ZipTest_70
+         * @tc.desc   test inflateCodesUsed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest70', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest70 start==================");
@@ -4274,12 +4275,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_71
-         * @tc.name       : actsZipTest71
-         * @tc.desc       : test inflateMark
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest71
+         * @tc.number ACTS_ZipTest_71
+         * @tc.desc   test inflateMark
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest71', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest71 start==================");
@@ -4317,12 +4318,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_72
-         * @tc.name       : actsZipTest72
-         * @tc.desc       : test inflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest72
+         * @tc.number ACTS_ZipTest_72
+         * @tc.desc   test inflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest72', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest72 start==================");
@@ -4357,12 +4358,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_73
-         * @tc.name       : actsZipTest73
-         * @tc.desc       : test inflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest73
+         * @tc.number ACTS_ZipTest_73
+         * @tc.desc   test inflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest73', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest73 start==================");
@@ -4393,12 +4394,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_74
-         * @tc.name       : actsZipTest74
-         * @tc.desc       : test inflateSync
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest74
+         * @tc.number ACTS_ZipTest_74
+         * @tc.desc   test inflateSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest74', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest74 start==================");
@@ -4478,12 +4479,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_75
-         * @tc.name       : actsZipTest75
-         * @tc.desc       : test inflateSetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest75
+         * @tc.number ACTS_ZipTest_75
+         * @tc.desc   test inflateSetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest75', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest75 start==================");
@@ -4567,12 +4568,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_76
-         * @tc.name       : actsZipTest76
-         * @tc.desc       : test deflateEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest76
+         * @tc.number ACTS_ZipTest_76
+         * @tc.desc   test deflateEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest76', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest76 start==================");
@@ -4591,12 +4592,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_77
-         * @tc.name       : actsZipTest77
-         * @tc.desc       : test inflateBackEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest77
+         * @tc.number ACTS_ZipTest_77
+         * @tc.desc   test inflateBackEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest77', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest77 start==================");
@@ -4633,12 +4634,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_78
-         * @tc.name       : actsZipTest78
-         * @tc.desc       : test inflateBack
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+         * @tc.name   actsZipTest78
+         * @tc.number ACTS_ZipTest_78
+         * @tc.desc   test inflateBack
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest78', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest78 start==================");
@@ -4684,12 +4685,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_79
-         * @tc.name       : actsZipTest79
-         * @tc.desc       : test inflateBackInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest79
+         * @tc.number ACTS_ZipTest_79
+         * @tc.desc   test inflateBackInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest79', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest79 start==================");
@@ -4714,12 +4715,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_80
-         * @tc.name       : actsZipTest80
-         * @tc.desc       : test deflatePrime
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest80
+         * @tc.number ACTS_ZipTest_80
+         * @tc.desc   test deflatePrime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest80', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest80 start==================");
@@ -4750,12 +4751,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_81
-         * @tc.name       : actsZipTest81
-         * @tc.desc       : test compress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest81
+         * @tc.number ACTS_ZipTest_81
+         * @tc.desc   test compress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest81', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest81 start==================");
@@ -4774,12 +4775,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_82
-         * @tc.name       : actsZipTest82
-         * @tc.desc       : test compress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest82
+         * @tc.number ACTS_ZipTest_82
+         * @tc.desc   test compress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest82', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest82 start==================");
@@ -4799,12 +4800,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_83
-         * @tc.name       : actsZipTest83
-         * @tc.desc       : test uncompress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest83
+         * @tc.number ACTS_ZipTest_83
+         * @tc.desc   test uncompress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest83', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest83 start==================");
@@ -4823,12 +4824,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_84
-         * @tc.name       : actsZipTest84
-         * @tc.desc       : test uncompress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest84
+         * @tc.number ACTS_ZipTest_84
+         * @tc.desc   test uncompress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest84', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest84 start==================");
@@ -4847,12 +4848,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_85
-         * @tc.name       : actsZipTest85
-         * @tc.desc       : test deflatePending
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest85
+         * @tc.number ACTS_ZipTest_85
+         * @tc.desc   test deflatePending
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest85', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest85 start==================");
@@ -5155,12 +5156,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_86
-         * @tc.name       : actsZipTest86
-         * @tc.desc       : test inflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest86
+         * @tc.number ACTS_ZipTest_86
+         * @tc.desc   test inflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest86', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest86 start==================");
@@ -5338,12 +5339,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_87
-         * @tc.name       : actsZipTest87
-         * @tc.desc       : test inflateBackInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest87
+         * @tc.number ACTS_ZipTest_87
+         * @tc.desc   test inflateBackInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest87', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest87 start==================");
@@ -5451,12 +5452,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_88
-         * @tc.name       : actsZipTest88
-         * @tc.desc       : test inflateBackInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest88
+         * @tc.number ACTS_ZipTest_88
+         * @tc.desc   test inflateBackInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest88', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest88 start==================");
@@ -5732,12 +5733,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_89
-         * @tc.name       : actsZipTest89
-         * @tc.desc       : test inflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest89
+         * @tc.number ACTS_ZipTest_89
+         * @tc.desc   test inflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest89', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest89 start==================");
@@ -6170,12 +6171,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_90
-         * @tc.name       : actsZipTest90
-         * @tc.desc       : test inflateReset2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest90
+         * @tc.number ACTS_ZipTest_90
+         * @tc.desc   test inflateReset2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest90', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest90 start==================");
@@ -6621,12 +6622,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_91
-         * @tc.name       : actsZipTest91
-         * @tc.desc       : test inflateReset2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest91
+         * @tc.number ACTS_ZipTest_91
+         * @tc.desc   test inflateReset2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest91', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest91 start==================");
@@ -7163,12 +7164,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_92
-         * @tc.name       : actsZipTest92
-         * @tc.desc       : test inflateBackInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest92
+         * @tc.number ACTS_ZipTest_92
+         * @tc.desc   test inflateBackInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest92', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest92 start==================");
@@ -7601,12 +7602,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_93
-         * @tc.name       : actsZipTest93
-         * @tc.desc       : test deflateInit2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest93
+         * @tc.number ACTS_ZipTest_93
+         * @tc.desc   test deflateInit2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest93', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest93 start==================");
@@ -8071,12 +8072,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_94
-         * @tc.name       : actsZipTest94
-         * @tc.desc       : test inflateReset2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest94
+         * @tc.number ACTS_ZipTest_94
+         * @tc.desc   test inflateReset2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest94', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest94 start==================");
@@ -8621,12 +8622,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_95
-         * @tc.name       : actsZipTest95
-         * @tc.desc       : test deflateParams
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest95
+         * @tc.number ACTS_ZipTest_95
+         * @tc.desc   test deflateParams
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest95', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest95 start==================");
@@ -9012,12 +9013,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_96
-         * @tc.name       : actsZipTest96
-         * @tc.desc       : test inflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest96
+         * @tc.number ACTS_ZipTest_96
+         * @tc.desc   test inflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest96', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest96 start==================");
@@ -9056,12 +9057,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_97
-         * @tc.name       : actsZipTest97
-         * @tc.desc       : test inflateReset
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest97
+         * @tc.number ACTS_ZipTest_97
+         * @tc.desc   test inflateReset
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest97', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest97 start==================");
@@ -9325,12 +9326,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_98
-         * @tc.name       : actsZipTest98
-         * @tc.desc       : test inflateGetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest98
+         * @tc.number ACTS_ZipTest_98
+         * @tc.desc   test inflateGetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest98', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest98 start==================");
@@ -9878,12 +9879,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_99
-         * @tc.name       : actsZipTest99
-         * @tc.desc       : test inflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest99
+         * @tc.number ACTS_ZipTest_99
+         * @tc.desc   test inflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest99', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest99 start==================");
@@ -10171,12 +10172,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_100
-         * @tc.name       : actsZipTest100
-         * @tc.desc       : test inflateBack
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest100
+         * @tc.number ACTS_ZipTest_100
+         * @tc.desc   test inflateBack
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest100 start==================");
@@ -10508,12 +10509,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_101
-         * @tc.name       : actsZipTest101
-         * @tc.desc       : test inflateMark
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest101
+         * @tc.number ACTS_ZipTest_101
+         * @tc.desc   test inflateMark
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest101', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest101 start==================");
@@ -10773,12 +10774,12 @@ export default function ActsZipTest() {
 
 
         /**
-         * @tc.number     : ACTS_ZipTest_102
-         * @tc.name       : actsZipTest102
-         * @tc.desc       : test inflateInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest102
+         * @tc.number ACTS_ZipTest_102
+         * @tc.desc   test inflateInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest102', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest102 start==================");
@@ -11037,12 +11038,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_103
-         * @tc.name       : actsZipTest103
-         * @tc.desc       : test inflateEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest103
+         * @tc.number ACTS_ZipTest_103
+         * @tc.desc   test inflateEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest103', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest103 start==================");
@@ -11301,12 +11302,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_104
-         * @tc.name       : actsZipTest104
-         * @tc.desc       : test inflateCodesUsed
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest104
+         * @tc.number ACTS_ZipTest_104
+         * @tc.desc   test inflateCodesUsed
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest104', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest104 start==================");
@@ -11565,12 +11566,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_105
-         * @tc.name       : actsZipTest105
-         * @tc.desc       : test inflateBackEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest105
+         * @tc.number ACTS_ZipTest_105
+         * @tc.desc   test inflateBackEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest105', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest105 start==================");
@@ -11828,12 +11829,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_106
-         * @tc.name       : actsZipTest106
-         * @tc.desc       : test compress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest106
+         * @tc.number ACTS_ZipTest_106
+         * @tc.desc   test compress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest106', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest106 start==================");
@@ -11932,12 +11933,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_107
-         * @tc.name       : actsZipTest107
-         * @tc.desc       : test compress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest107
+         * @tc.number ACTS_ZipTest_107
+         * @tc.desc   test compress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest107', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest107 start==================");
@@ -12061,12 +12062,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_108
-         * @tc.name       : actsZipTest108
-         * @tc.desc       : test uncompress
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest108
+         * @tc.number ACTS_ZipTest_108
+         * @tc.desc   test uncompress
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest108', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest108 start==================");
@@ -12173,12 +12174,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_109
-         * @tc.name       : actsZipTest109
-         * @tc.desc       : test uncompress2
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest109
+         * @tc.number ACTS_ZipTest_109
+         * @tc.desc   test uncompress2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest109', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest109 start==================");
@@ -12287,12 +12288,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_110
-         * @tc.name       : actsZipTest110
-         * @tc.desc       : test compressBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest110
+         * @tc.number ACTS_ZipTest_110
+         * @tc.desc   test compressBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest110 start==================");
@@ -12333,12 +12334,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_111
-         * @tc.name       : actsZipTest111
-         * @tc.desc       : test inflateValidate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest111
+         * @tc.number ACTS_ZipTest_111
+         * @tc.desc   test inflateValidate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest111', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest111 start==================");
@@ -12645,12 +12646,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_112
-         * @tc.name       : actsZipTest112
-         * @tc.desc       : test inflateSyncPoint
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest112
+         * @tc.number ACTS_ZipTest_112
+         * @tc.desc   test inflateSyncPoint
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest112', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest112 start==================");
@@ -12933,12 +12934,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_113
-         * @tc.name       : actsZipTest113
-         * @tc.desc       : test inflateSync
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest113
+         * @tc.number ACTS_ZipTest_113
+         * @tc.desc   test inflateSync
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest113', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest113 start==================");
@@ -13274,12 +13275,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_114
-         * @tc.name       : actsZipTest114
-         * @tc.desc       : test inflateResetKeep
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest114
+         * @tc.number ACTS_ZipTest_114
+         * @tc.desc   test inflateResetKeep
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest114', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest114 start==================");
@@ -13562,12 +13563,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_115
-         * @tc.name       : actsZipTest115
-         * @tc.desc       : test inflateSetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest115
+         * @tc.number ACTS_ZipTest_115
+         * @tc.desc   test inflateSetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest115', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest115 start==================");
@@ -13912,12 +13913,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_116
-         * @tc.name       : actsZipTest116
-         * @tc.desc       : test inflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest116
+         * @tc.number ACTS_ZipTest_116
+         * @tc.desc   test inflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest116', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest116 start==================");
@@ -14229,12 +14230,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_117
-         * @tc.name       : actsZipTest117
-         * @tc.desc       : test deflateInit
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest117
+         * @tc.number ACTS_ZipTest_117
+         * @tc.desc   test deflateInit
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest117', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest117 start==================");
@@ -14545,12 +14546,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_118
-         * @tc.name       : actsZipTest118
-         * @tc.desc       : test deflate
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest118
+         * @tc.number ACTS_ZipTest_118
+         * @tc.desc   test deflate
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest118', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest118 start==================");
@@ -14921,12 +14922,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_119
-         * @tc.name       : actsZipTest119
-         * @tc.desc       : test deflateEnd
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest119
+         * @tc.number ACTS_ZipTest_119
+         * @tc.desc   test deflateEnd
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest119', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest119 start==================");
@@ -15268,12 +15269,12 @@ export default function ActsZipTest() {
 
 
         /**
-         * @tc.number     : ACTS_ZipTest_120
-         * @tc.name       : actsZipTest120
-         * @tc.desc       : test deflateBound
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest120
+         * @tc.number ACTS_ZipTest_120
+         * @tc.desc   test deflateBound
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest120', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest120 start==================");
@@ -15607,12 +15608,12 @@ export default function ActsZipTest() {
 
 
         /**
-         * @tc.number     : ACTS_ZipTest_121
-         * @tc.name       : actsZipTest121
-         * @tc.desc       : test deflateSetHeader
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest121
+         * @tc.number ACTS_ZipTest_121
+         * @tc.desc   test deflateSetHeader
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest121', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest121 start==================");
@@ -16218,12 +16219,12 @@ export default function ActsZipTest() {
 
 
         /**
-         * @tc.number     : ACTS_ZipTest_122
-         * @tc.name       : actsZipTest122
-         * @tc.desc       : test deflateCopy
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest122
+         * @tc.number ACTS_ZipTest_122
+         * @tc.desc   test deflateCopy
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest122', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest122 start==================");
@@ -16256,12 +16257,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_123
-         * @tc.name       : actsZipTest123
-         * @tc.desc       : test deflateSetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest123
+         * @tc.number ACTS_ZipTest_123
+         * @tc.desc   test deflateSetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest123', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest123 start==================");
@@ -16600,12 +16601,12 @@ export default function ActsZipTest() {
         })
 
         /**
-         * @tc.number     : ACTS_ZipTest_124
-         * @tc.name       : actsZipTest124
-         * @tc.desc       : test deflateGetDictionary
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest124
+         * @tc.number ACTS_ZipTest_124
+         * @tc.desc   test deflateGetDictionary
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest124', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest124 start==================");
@@ -16945,12 +16946,12 @@ export default function ActsZipTest() {
 
 
         /**
-         * @tc.number     : ACTS_ZipTest_125
-         * @tc.name       : actsZipTest125
-         * @tc.desc       : test deflateTune
-         * @tc.size       : MEDIUM
-         * @tc.type       : Function
-         * @tc.level      : Level 1
+         * @tc.name   actsZipTest125
+         * @tc.number ACTS_ZipTest_125
+         * @tc.desc   test deflateTune
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('actsZipTest125', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
             console.info("==================actsZipTest125 start==================");

@@ -29,14 +29,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function dataHasCardNoDataTest() {
   describe('dataHasCardNoDataTest', () => {
 
-    /* *
-    * @tc.number: SUB_Telephony_Data_GetCellularDataFlowType_0200
-    * @tc.name  : testTelephonyDataGetCellularDataFlowType0200
-    * @tc.desc  : Obtain the uplink and downlink status of cellular data services.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
-    */
+    /**
+     * @tc.name   testTelephonyDataGetCellularDataFlowType0200
+     * @tc.number SUB_Telephony_Data_GetCellularDataFlowType_0200
+     * @tc.desc   Obtain the uplink and downlink status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTelephonyDataGetCellularDataFlowType0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyDataGetCellularDataFlowType0200';
       console.info(`${caseName} test start `);
@@ -68,14 +68,14 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-    * @tc.number: SUB_Telephony_Data_GetCellularDataFlowType_0700
-    * @tc.name  : testTelephonyDataGetCellularDataFlowType0700
-    * @tc.desc  : Obtain the uplink and downlink status of cellular data services.
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyDataGetCellularDataFlowType0700
+     * @tc.number SUB_Telephony_Data_GetCellularDataFlowType_0700
+     * @tc.desc   Obtain the uplink and downlink status of cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataGetCellularDataFlowType0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataGetCellularDataFlowType0700';
       console.info(`${caseName} test start `);
@@ -105,28 +105,28 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-        * @tc.number: SUB_Telephony_Data_GetCellularDataState_0100
-        * @tc.name  : testTelephonyDataGetCellularDataState0100
-        * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 0
-       */
+    /**
+     * @tc.name   testTelephonyDataGetCellularDataState0100
+     * @tc.number SUB_Telephony_Data_GetCellularDataState_0100
+     * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTelephonyDataGetCellularDataState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTelephonyDataGetCellularDataState0100';
       console.info(`${caseName} test start `);
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState((err: BusinessError, data: data.DataConnectState) => {
+          data.getCellularDataState((err: BusinessError, dat: data.DataConnectState) => {
             if (err) {
               console.info(`${caseName} err->${JSON.stringify(err)}`);
               ExpectTrue(false);
               done();
             } else {
-              console.info(`${caseName} data->${JSON.stringify(data)}`);
-              ExpectTrue(data !== null);
+              console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+              ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
               done();
             }
           });
@@ -143,14 +143,14 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-        * @tc.number: SUB_Telephony_Data_GetCellularDataState_0300
-        * @tc.name  : testTelephonyDataGetCellularDataState0300
-        * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testTelephonyDataGetCellularDataState0300
+     * @tc.number SUB_Telephony_Data_GetCellularDataState_0300
+     * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataGetCellularDataState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataGetCellularDataState0300';
       console.info(`${caseName} test start `);
@@ -182,23 +182,23 @@ export default function dataHasCardNoDataTest() {
     });
 
 
-    /* *
-      * @tc.number: SUB_Telephony_Data_GetCellularDataState_0700
-      * @tc.name  : testTelephonyDataGetCellularDataState0700
-      * @tc.desc  : Get the connection status of a packet switched domain (PS domain).
-      * @tc.size  : MediumTest
-      * @tc.type  : Function
-      * @tc.level : level 3
-      */
+    /**
+     * @tc.name   testTelephonyDataGetCellularDataState0700
+     * @tc.number SUB_Telephony_Data_GetCellularDataState_0700
+     * @tc.desc   Get the connection status of a packet switched domain (PS domain).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataGetCellularDataState0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataGetCellularDataState0700';
       console.info(`${caseName} test start `);
       try {
         let hasSim: boolean = await sim.hasSimCard(0);
         if (hasSim) {
-          data.getCellularDataState().then((data: data.DataConnectState) => {
-            console.info(`${caseName} data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
+          data.getCellularDataState().then((dat: data.DataConnectState) => {
+            console.info(`${caseName} dat->${JSON.stringify(dat)}`);
+            ExpectTrue(dat == data.DataConnectState.DATA_STATE_DISCONNECTED);
             done();
           }).catch((err: BusinessError) => {
             console.info(`${caseName} err->${JSON.stringify(err)}`);
@@ -218,14 +218,14 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-        * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0200
-        * @tc.name  : testTelephonyDataIsCellularDataEnabled0200
-        * @tc.desc  : Check whether the cellular data service is enabled.
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 3
-       */
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataEnabled0200
+     * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0200
+     * @tc.desc   Check whether the cellular data service is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataIsCellularDataEnabled0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataEnabled0200';
       console.info(`${caseName} test start `);
@@ -237,7 +237,7 @@ export default function dataHasCardNoDataTest() {
             done();
           } else {
             console.info(`${caseName} data->${JSON.stringify(data)}`);
-            ExpectTrue(true);
+            ExpectTrue(data == false);
             done();
           }
         });
@@ -251,21 +251,21 @@ export default function dataHasCardNoDataTest() {
 
 
 
-    /* *
-     * @tc.number: SUB_Telephony_Data_IsCellularDataEnabled_0600
-     * @tc.name  : testTelephonyDataIsCellularDataEnabled0600
-     * @tc.desc  : Check whether the cellular data service is enabled.
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
-    */
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataEnabled0600
+     * @tc.number SUB_Telephony_Data_IsCellularDataEnabled_0600
+     * @tc.desc   Check whether the cellular data service is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataIsCellularDataEnabled0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataEnabled0600';
       console.info(`${caseName} test start `);
       try {
         data.isCellularDataEnabled().then((data: boolean) => {
           console.info(`${caseName} data->${JSON.stringify(data)}`);
-          ExpectTrue(true);
+          ExpectTrue(data == false);
           done();
         }).catch((err: BusinessError) => {
           console.info(`${caseName} err->${JSON.stringify(err)}`);
@@ -280,14 +280,38 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
 
-    /* *
-         * @tc.number: SUB_Telephony_Data_IsCellularDataRoamingEnabled_0800
-         * @tc.name  : testTelephonyDataIsCellularDataRoamingEnabled0800
-         * @tc.desc  : Check whether roaming is enabled for cellular data services.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
-        */
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataEnabledSync0700
+     * @tc.number SUB_Telephony_Data_IsCellularDataEnabledSync_0700
+     * @tc.desc   Check whether the cellular data service is enabled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTelephonyDataIsCellularDataEnabledSync0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let caseName: string = 'testTelephonyDataIsCellularDataEnabledSync0700';
+      console.info(`${caseName} test start `);
+      try {
+        let isEnabled:boolean = data.isCellularDataEnabledSync();
+        console.info(`${caseName} isCellularDataEnabledSync success isEnabled is ${isEnabled}`);
+        ExpectTrue(isEnabled == false);
+        done();
+      } catch (error) {
+        console.info(`${caseName} catchError->${JSON.stringify(error)}`);
+        ExpectTrue(false);
+        done();
+      }
+      console.info(`${caseName} test end `);
+    });
+
+    /**
+     * @tc.name   testTelephonyDataIsCellularDataRoamingEnabled0800
+     * @tc.number SUB_Telephony_Data_IsCellularDataRoamingEnabled_0800
+     * @tc.desc   Check whether roaming is enabled for cellular data services.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testTelephonyDataIsCellularDataRoamingEnabled0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testTelephonyDataIsCellularDataRoamingEnabled0800';
       console.info(`${caseName} test start `);
@@ -316,14 +340,14 @@ export default function dataHasCardNoDataTest() {
       console.info(`${caseName} test end `);
     });
     
-	/* *
-	 * @tc.number: SUB_Telephony_Data_GetActiveApnName_0200
-	 * @tc.name  : testTelephonyDataGetActiveApnName0200
-	 * @tc.desc  : test interface getActiveApnName with a sim card and without a network.
-	 * @tc.size  : MediumTest
-	 * @tc.type  : Function
-	 * @tc.level : level 3
-	*/
+    /**
+     * @tc.name   testTelephonyDataGetActiveApnName0200
+     * @tc.number SUB_Telephony_Data_GetActiveApnName_0200
+     * @tc.desc   test interface getActiveApnName with a sim card and without a network.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testTelephonyDataGetActiveApnName0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = "testTelephonyDataGetActiveApnName0200";
       console.info(`${caseName}---Start`);

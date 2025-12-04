@@ -23,13 +23,12 @@ export default function fileioOpen() {
 describe('fileio_open', function () {
 
   /**
+   * @tc.name   fileio_test_open_sync_000
    * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0000
-   * @tc.name fileio_test_open_sync_000
-   * @tc.desc Test openSync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_sync_000', Level.LEVEL0, function () {
     try {
@@ -41,13 +40,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_000
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0000
-   * @tc.name fileio_test_open_async_000
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_000');
@@ -71,13 +69,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_001
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0100
-   * @tc.name fileio_test_open_async_001
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_001');
@@ -99,13 +96,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_002
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0200
-   * @tc.name fileio_test_open_async_002
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_002');
@@ -127,13 +123,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_003
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0300
-   * @tc.name fileio_test_open_async_003
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_003');
@@ -155,13 +150,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_004
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0400
-   * @tc.name fileio_test_open_async_004
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_004');
@@ -187,13 +181,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_005
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0500
-   * @tc.name fileio_test_open_async_005
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_005');
@@ -218,13 +211,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_006
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0600
-   * @tc.name fileio_test_open_async_006
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_006');
@@ -249,13 +241,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_007
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0700
-   * @tc.name fileio_test_open_async_007
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_007');
@@ -277,13 +268,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_008
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0800
-   * @tc.name fileio_test_open_async_008
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_008');
@@ -300,13 +290,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_009
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0900
-   * @tc.name fileio_test_open_async_009
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_009');
@@ -335,14 +324,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_010
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1000
-   * @tc.name fileio_test_open_async_010
-   * @tc.desc Test open() interfaces.
-   * Use default: flag = O_RDONLY, mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test open() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_open_async_010', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_010');
@@ -376,14 +363,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_011
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1100
-   * @tc.name fileio_test_open_async_011
-   * @tc.desc Test open() interfaces.
-   * Use default: flag = O_RDONLY, mode = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test open() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_open_async_011', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_011');
@@ -407,13 +392,12 @@ describe('fileio_open', function () {
   });
 
   /**
+   * @tc.name   fileio_test_open_async_012
    * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1200
-   * @tc.name fileio_test_open_async_012
-   * @tc.desc Test openASync() interfaces.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test openASync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_open_async_012', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_open_async_012');

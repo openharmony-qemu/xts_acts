@@ -41,12 +41,12 @@ export default function RunMetricsTest() {
       done();
     });
     /**
-     * @tc.number    RunMetrics
-     * @tc.name      RunMetricsTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RunMetricsTest_0100
+     * @tc.number RunMetrics
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RunMetricsTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       console.info('RunMetricsTest_0100 START');

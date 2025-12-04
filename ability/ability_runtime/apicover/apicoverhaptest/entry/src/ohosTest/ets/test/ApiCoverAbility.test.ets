@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -62,24 +62,15 @@ export default function ApiCoverTest() {
         console.info("ApiCoverTestTest beforeAll create driver error" );
       }
     })
-    afterEach(async (done: Function) => {
-      try{
-        await driver1.delayMs(2500);
-        done();
-      }catch{
-        console.info("ApiCoverTestTest afterEach delayMs error" );
-      }
-    })
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_001
-     * @tc.name    StartServiceExtensionAbility with incorrect abilityName.
-     * @tc.desc    Function test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_001
+     * @tc.number SUB_AA_ABILITY_Extension_API_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_001', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest",
         abilityName: "FirstExtension1"
@@ -96,16 +87,15 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_002
-     * @tc.name    StopServiceExtensionAbility with incorrect bundleName.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_002
+     * @tc.number SUB_AA_ABILITY_Extension_API_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_002', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest1",
         abilityName: "FirstExtension"
@@ -122,13 +112,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_003
-     * @tc.name    startServiceExtensionAbilityWithAccount with incorrect userId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_003
+     * @tc.number SUB_AA_ABILITY_Extension_API_003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_003', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);
@@ -153,13 +143,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_004
-     * @tc.name    stopServiceExtensionAbilityWithAccount with incorrect userId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_004
+     * @tc.number SUB_AA_ABILITY_Extension_API_004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_004', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);
@@ -184,13 +174,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_005
-     * @tc.name    StartServiceExtensionAbility with incorrect abilityName.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_005
+     * @tc.number SUB_AA_ABILITY_Extension_API_005
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_005', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);
@@ -210,16 +200,15 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_006
-     * @tc.name    StopServiceExtensionAbility with incorrect bundleName.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_006
+     * @tc.number SUB_AA_ABILITY_Extension_API_006
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_006', Level.LEVEL0, async (done: Function) => {
-      await sleep(2000);
       let want: Want = {
         bundleName: "com.example.extensionapitest1",
         abilityName: "FirstExtension"
@@ -237,13 +226,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_007
-     * @tc.name    startServiceExtensionAbilityWithAccount with incorrect userId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_007
+     * @tc.number SUB_AA_ABILITY_Extension_API_007
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_007', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);
@@ -268,13 +257,13 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_008
-     * @tc.name    stopServiceExtensionAbilityWithAccount with incorrect userId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_008
+     * @tc.number SUB_AA_ABILITY_Extension_API_008
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_008', Level.LEVEL0, async (done: Function) => {
       await sleep(2000);
@@ -299,13 +288,13 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_009
-     * @tc.name    connectServiceExtensionAbility with invalid want.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_009
+     * @tc.number SUB_AA_ABILITY_Extension_API_009
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_009', Level.LEVEL0, async (done: Function) => {
       console.log(`SUB_AA_ABILITY_Extension_API_009 start`);
@@ -335,13 +324,13 @@ export default function ApiCoverTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_010
-     * @tc.name    disconnectServiceExtensionAbility with invalid connectionId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_010
+     * @tc.number SUB_AA_ABILITY_Extension_API_010
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_010', Level.LEVEL0, async (done: Function) => {
       console.log(`SUB_AA_ABILITY_Extension_API_010 start`);
@@ -358,13 +347,13 @@ export default function ApiCoverTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_011
-     * @tc.name    disconnectServiceExtensionAbility with invalid connectionId.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_011
+     * @tc.number SUB_AA_ABILITY_Extension_API_011
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_011', Level.LEVEL0, async (done: Function) => {
       console.log(`SUB_AA_ABILITY_Extension_API_011 start`);
@@ -381,13 +370,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_ABILITY_Extension_API_012
-     * @tc.name    killProcessesBySelf with invalid param.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ABILITY_Extension_API_012
+     * @tc.number SUB_AA_ABILITY_Extension_API_012
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ABILITY_Extension_API_012', Level.LEVEL0, async (done: Function) => {
       try {
@@ -438,13 +427,13 @@ export default function ApiCoverTest() {
       }
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Context_0100
-     * @tc.name    Get the resource and path of the context.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Context_0100
+     * @tc.number SUB_AA_AMS_Context_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AMS_Context_0100', Level.LEVEL0, async (done: Function) => {
       expect("/data/storage/el2/base/haps/entry_test/cache")
@@ -508,14 +497,14 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-       * @tc.number  SUB_AA_AMS_Context_0200
-       * @tc.name    Register the listener of Ability and cancel the listener.
-       * @tc.desc    Function test
-       * @tc.size:   MediumTest
-       * @tc.type:   Function
-       * @tc.level   3
-       */
+    /**
+     * @tc.name   SUB_AA_AMS_Context_0200
+     * @tc.number SUB_AA_AMS_Context_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_AMS_Context_0200', Level.LEVEL0, async (done: Function) => {
       await AppStorage.get<common.UIAbilityContext>("abilityContext")!.eventHub.on("contextEvent", func1);
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.eventHub.emit("contextEvent", "aa", "bb");
@@ -532,13 +521,13 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_Test_InsightIntent_0100
-     * @tc.name    Test insightIntent.ExecuteMode and startOptions.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Test_InsightIntent_0100
+     * @tc.number SUB_AA_Test_InsightIntent_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Test_InsightIntent_0100', Level.LEVEL0, async (done: Function) => {
       let startOp: startOptions = {
@@ -571,13 +560,13 @@ export default function ApiCoverTest() {
       })
     });
 
-    /*
-     * @tc.number  SUB_AA_Test_StartOptions_0100
-     * @tc.name    Test insightIntent.ExecuteMode and startOptions.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Test_StartOptions_0100
+     * @tc.number SUB_AA_Test_StartOptions_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Test_StartOptions_0100', Level.LEVEL0, async (done: Function) => {
       let windowParam: window.WindowCreateParams = {};
@@ -613,13 +602,13 @@ export default function ApiCoverTest() {
       })
     });
 
-    /*
-     * @tc.number  SUB_AA_FMS_AbilityStage_0100
-     * @tc.name    Start AbilityStage and get config.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_FMS_AbilityStage_0100
+     * @tc.number SUB_AA_FMS_AbilityStage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_FMS_AbilityStage_0100', Level.LEVEL0, async (done: Function) => {
       console.info("SUB_AA_FMS_AbilityStage_0100===AbilityStage===" + JSON.stringify(AppStorage.get<common.AbilityStageContext>("stageContext")!));
@@ -662,59 +651,14 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_FMS_AcquireForm_0100
-     * @tc.name    Test startAbility in FormExtensionContext.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
-     */
-    it('SUB_AA_FMS_AcquireForm_0100', Level.LEVEL0, async (done: Function) => {
-      let subscriber: commonEventManager.CommonEventSubscriber;
-      let formExtensionContext: common.FormExtensionContext
-      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-        events: ["Form_StartAbility"]
-      }
 
-      commonEvent.createSubscriber(subscribeInfo, (err, data) => {
-        console.info("SUB_AA_FMS_AcquireForm_0100 ===CreateSubscriberCallback===");
-        subscriber = data;
-        commonEvent.subscribe(subscriber, async (err, data) => {
-          console.info("SUB_AA_FMS_AcquireForm_0100 ===SubscribeInfoCallback===" + JSON.stringify(data));
-          expect(data.parameters?.Life).assertEqual("onForeground");
-          commonEvent.unsubscribe(subscriber, () => {
-            console.info("SUB_AA_FMS_AcquireForm_0100 ===UnSubscribeInfoCallback===");
-          })
-          await sleep(4000);
-          done();
-        })
-      })
-      let formWant: Want = {
-        deviceId: "",
-        bundleName: "com.example.apicoverhaptest",
-        abilityName: "CreateFormAbility",
-        parameters: {
-          "createForm": true
-        }
-      }
-      AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(formWant, (err, data) => {
-        if (err.code == 0) {
-          console.info("SUB_AA_FMS_AcquireForm_0100 ===acquireFormState=== " + JSON.stringify(data));
-        } else {
-          expect().assertFail();
-          done();
-        }
-      })
-    })
-
-    /*
-     * @tc.number  SUB_AA_AbilityAppManager_0100
-     * @tc.name    The form of a promise getRunningProcessInformation
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AbilityAppManager_0100
+     * @tc.number SUB_AA_AbilityAppManager_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AbilityAppManager_0100', Level.LEVEL0, async (done: Function) => {
       await sleep(1000);
@@ -742,13 +686,13 @@ export default function ApiCoverTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_AA_AbilityAppManager_0200
-     * @tc.name    The form of a callback getRunningProcessInformation
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AbilityAppManager_0200
+     * @tc.number SUB_AA_AbilityAppManager_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_AbilityAppManager_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_AbilityAppManager_0200';
@@ -772,13 +716,13 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-     * @tc.number  SUB_AA_ApplicationContext_0100
-     * @tc.name    The form of a promise getRunningProcessInformation
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ApplicationContext_0100
+     * @tc.number SUB_AA_ApplicationContext_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ApplicationContext_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_ApplicationContext_0100';
@@ -805,13 +749,13 @@ export default function ApiCoverTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_AA_ApplicationContext_0200
-     * @tc.name    The form of a callback getRunningProcessInformation
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_ApplicationContext_0200
+     * @tc.number SUB_AA_ApplicationContext_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ApplicationContext_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_ApplicationContext_0200';
@@ -831,13 +775,13 @@ export default function ApiCoverTest() {
         done();
       })
     })
-    /*
-     * @tc.number  SUB_AA_Form_formBindingData_0100
-     * @tc.name    Create FormBindingData
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Form_formBindingData_0100
+     * @tc.number SUB_AA_Form_formBindingData_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Form_formBindingData_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_Form_formBindingData_0100';
@@ -854,14 +798,14 @@ export default function ApiCoverTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_AA_UIAbilityContext_setMissionContinueState_0100
-    * @tc.name    setMissionContinueState with callback for Ability.
-    * @tc.desc    Function test
-    * @tc.size:   MediumTest
-    * @tc.type:   Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_AA_UIAbilityContext_setMissionContinueState_0100
+     * @tc.number SUB_AA_UIAbilityContext_setMissionContinueState_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_UIAbilityContext_setMissionContinueState_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_UIAbilityContext_setMissionContinueState_0100';
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.setMissionContinueState(0, (err, data) => {
@@ -871,14 +815,14 @@ export default function ApiCoverTest() {
       })
     })
 
-    /*
-   * @tc.number  SUB_AA_UIAbilityContext_setMissionContinueState_0200
-   * @tc.name    setMissionContinueState with promise for Ability.
-   * @tc.desc    Function test
-   * @tc.size:   MediumTest
-   * @tc.type:   Function
-   * @tc.level   3
-   */
+    /**
+     * @tc.name   SUB_AA_UIAbilityContext_setMissionContinueState_0200
+     * @tc.number SUB_AA_UIAbilityContext_setMissionContinueState_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_UIAbilityContext_setMissionContinueState_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_UIAbilityContext_setMissionContinueState_0200';
       AppStorage.get<common.UIAbilityContext>("abilityContext")!.setMissionContinueState(0)
@@ -894,13 +838,13 @@ export default function ApiCoverTest() {
         })
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_0900
-     * @tc.name   : call startChildProcess to create a child process
-     * @tc.desc   : Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startChildProcess_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ChildProcessManager_startChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_0100`;
@@ -925,15 +869,13 @@ export default function ApiCoverTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_AppSpawn_0100
-     * @tc.name   : Call startChildProcess to create a child process by APP_SPAWN_FORK mode
-     * @tc.desc   : startChildProcess api cover
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_StateInfo_StartChildProcess_AppSpawn_0100
+     * @tc.desc   startChildProcess api cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_AA_ChildProcessManager_startChildProcess_AppSpawn_0100`;
@@ -958,25 +900,25 @@ export default function ApiCoverTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ABILITY_URI_FLAG_0100
-     * @tc.name   : Check if value of FLAG_AUTH_PERSISTABLE_URI_PERMISSION is as expected
-     * @tc.desc   : Uri Flag api cover
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ABILITY_URI_FLAG_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ABILITY_URI_FLAG_0100
+     * @tc.desc   Uri Flag api cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ABILITY_URI_FLAG_0100', Level.LEVEL0, async (done: Function) => {
       expect(wantConstant.Flags.FLAG_AUTH_PERSISTABLE_URI_PERMISSION).assertEqual(0x00000040);
       done();
     });
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ApplicationContext_0100
-     * @tc.name   : Test AbilityLifecycleCallback by ApplicationContex.
-     * @tc.desc   : Uri Flag api cover
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ApplicationContext_0100
+     * @tc.number SUB_Ability_AbilityRuntime_ApplicationContext_0100
+     * @tc.desc   Uri Flag api cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ApplicationContext_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ApplicationContext_0100`;
@@ -1079,13 +1021,13 @@ export default function ApiCoverTest() {
         done();
       })
     });
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
-     * @tc.name   : Test setSupportedProcessCache can not use in iphone.
-     * @tc.desc   : Uri Flag api cover
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : 1
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
+     * @tc.number SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100
+     * @tc.desc   Uri Flag api cover
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_setSupportedProcessCache_0100`;
@@ -1111,13 +1053,13 @@ export default function ApiCoverTest() {
 
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ProcessCache_0400
-     * @tc.name   : Call setSupportedProcessCache.
-     * @tc.desc   : The function call should return no permission error.
-     * @tc.size   : LargeTest
-     * @tc.type   : Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_0400
+     * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_0400
+     * @tc.desc   The function call should return no permission error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_ProcessCache_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessCache_0400`;
@@ -1139,14 +1081,14 @@ export default function ApiCoverTest() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ProcessCache_0700
-     * @tc.name   : Call setSupportedProcessCache.
-     * @tc.desc   : The function call should return invalid permission error.
-     * @tc.size   : LargeTest
-     * @tc.type   : Function
-     * @tc.level  : 3
-     */
+     /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_0700
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_0700
+      * @tc.desc   The function call should return invalid permission error.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_Ability_AbilityRuntime_ProcessCache_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessCache_0700`;
       console.log(`${tag}, test begin`);
@@ -1166,14 +1108,14 @@ export default function ApiCoverTest() {
       done();
     });
 
-     /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ProcessCache_3000
-     * @tc.name   : Call killAllProcesses.
-     * @tc.desc   : successfully killAllProcesses
-     * @tc.size   : LargeTest
-     * @tc.type   : Function
-     * @tc.level  : 3
-     */
+     /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_3000
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3000
+      * @tc.desc   successfully killAllProcesses
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_Ability_AbilityRuntime_ProcessCache_3000', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessCache_3000`;
       console.log(`${tag}, test begin`);
@@ -1185,7 +1127,7 @@ export default function ApiCoverTest() {
               }).then(data => {
                 console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3000 startAbility err:' + JSON.stringify(data));
               });
-      sleep(1500);
+      await sleep(1500);
       await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
         console.log(`The running process information is: ${JSON.stringify(data)}`);
         data.forEach(item =>{
@@ -1205,14 +1147,14 @@ export default function ApiCoverTest() {
       console.log(`${tag}, test end`);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_ProcessCache_3100
-     * @tc.name   : Call killAllProcesses.
-     * @tc.desc   : successfully killAllProcesses
-     * @tc.size   : LargeTest
-     * @tc.type   : Function
-     * @tc.level  : 3
-     */
+     /**
+      * @tc.name   SUB_Ability_AbilityRuntime_ProcessCache_3100
+      * @tc.number SUB_Ability_AbilityRuntime_ProcessCache_3100
+      * @tc.desc   successfully killAllProcesses
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_Ability_AbilityRuntime_ProcessCache_3100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_ProcessCache_3100`;
       console.log(`${tag}, test begin`);
@@ -1224,7 +1166,7 @@ export default function ApiCoverTest() {
               }).then(data => {
                 console.debug('====>SUB_Ability_AbilityRuntime_ProcessCache_3100 startAbility err:' + JSON.stringify(data));
               });
-      sleep(1500);
+      await sleep(1500);
       await appManagerNew.getRunningProcessInformation().then((data : Array<appManagerNew.ProcessInformation>) => {
         console.log(`The running process information is: ${JSON.stringify(data)}`);
         data.forEach(item =>{
@@ -1244,13 +1186,13 @@ export default function ApiCoverTest() {
       console.log(`${tag}, test end`);
     });
 
-    /*
-     * @tc.number  SUB_AA_Test_SetStartUpPage_0100
-     * @tc.name    Test setStartUpPage param,startWindowIcon and startWindowBackgroundColor.
-     * @tc.desc    Function test
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_Test_SetStartUpPage_0100
+     * @tc.number SUB_AA_Test_SetStartUpPage_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_Test_SetStartUpPage_0100', Level.LEVEL0, async (done: Function) => {
       let startOp: startOptions = {
@@ -1272,5 +1214,50 @@ export default function ApiCoverTest() {
         done();
       }
     });
+
+    /**
+     * @tc.name   SUB_AA_FMS_AcquireForm_0100
+     * @tc.number SUB_AA_FMS_AcquireForm_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AA_FMS_AcquireForm_0100', Level.LEVEL0, async (done: Function) => {
+      let subscriber: commonEventManager.CommonEventSubscriber;
+      let formExtensionContext: common.FormExtensionContext
+      let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
+        events: ["Form_StartAbility"]
+      }
+
+      commonEvent.createSubscriber(subscribeInfo, (err, data) => {
+        console.info("SUB_AA_FMS_AcquireForm_0100 ===CreateSubscriberCallback===");
+        subscriber = data;
+        commonEvent.subscribe(subscriber, async (err, data) => {
+          console.info("SUB_AA_FMS_AcquireForm_0100 ===SubscribeInfoCallback===" + JSON.stringify(data));
+          expect(data.parameters?.Life).assertEqual("onForeground");
+          commonEvent.unsubscribe(subscriber, () => {
+            console.info("SUB_AA_FMS_AcquireForm_0100 ===UnSubscribeInfoCallback===");
+            done();
+          })
+        })
+      })
+      let formWant: Want = {
+        deviceId: "",
+        bundleName: "com.example.apicoverhaptest",
+        abilityName: "CreateFormAbility",
+        parameters: {
+          "createForm": true
+        }
+      }
+      AppStorage.get<common.UIAbilityContext>("abilityContext")!.startAbility(formWant, (err, data) => {
+        if (err.code == 0) {
+          console.info("SUB_AA_FMS_AcquireForm_0100 ===acquireFormState=== " + JSON.stringify(data));
+        } else {
+          expect().assertFail();
+          done();
+        }
+      })
+    })
   })
 }

@@ -64,13 +64,13 @@ export default function gestureGestureInfoTest() {
 
     let PAGE_TAG = 'GestureGestureInfoTest';
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0100
-     * @tc.name       : testGestureGestureInfo001
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInfo001
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0100
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInfo001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
@@ -82,13 +82,13 @@ export default function gestureGestureInfoTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0200
-     * @tc.name       : testGestureGestureInfo002
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInfo002
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0200
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInfo002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
@@ -101,13 +101,13 @@ export default function gestureGestureInfoTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0300
-     * @tc.name       : testGestureGestureInfo003
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInfo003
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0300
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInfo003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
@@ -119,13 +119,13 @@ export default function gestureGestureInfoTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0400
-     * @tc.name       : testGestureGestureInfo004
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInfo004
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0400
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInfo004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);
@@ -137,13 +137,13 @@ export default function gestureGestureInfoTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0500
-     * @tc.name       : testGestureGestureInfo005
-     * @tc.desc       : Test retrieving and verifying gesture information for various gestures
-     * @tc.size       : MediumTest
-     * @tc.type       : Render
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testGestureGestureInfo005
+     * @tc.number SUB_ARKUI_CAPI_GESTURE_GESTURE_INFO_0500
+     * @tc.desc   Test retrieving and verifying gesture information for various gestures
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureGestureInfo005', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`gesture/${PAGE_TAG}`);

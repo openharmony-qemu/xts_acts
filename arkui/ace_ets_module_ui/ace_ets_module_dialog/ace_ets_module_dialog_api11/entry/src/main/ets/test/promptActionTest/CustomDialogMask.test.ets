@@ -21,7 +21,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function CustomDialogMaskTest() {
 
   const SUITE: string = 'CustomDialogMask'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('CustomDialogMaskTest', () => {
 
@@ -45,10 +45,13 @@ export default function CustomDialogMaskTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_CustomDialog_Mask_0100
-     *tc.name   CustomDialogController#maskColor not set
-     *tc.desc   CustomDialogController#maskColor not set
+    /**
+     * @tc.name   ArkUI_CustomDialog_Mask_0100
+     * @tc.number ArkUI_CustomDialog_Mask_0100
+     * @tc.desc   CustomDialogController#maskColor not set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUI_CustomDialog_Mask_0100', Level.LEVEL2, async (done: Function) => {
       let CASE: string = 'ArkUI_CustomDialog_Mask_0100'
@@ -67,10 +70,13 @@ export default function CustomDialogMaskTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_CustomDialog_Mask0200
-     *tc.name   CustomDialogController#maskColor set by Color
-     *tc.desc   CustomDialogController#maskColor set by Color
+    /**
+     * @tc.name   ArkUI_CustomDialog_Mask0200
+     * @tc.number ArkUI_CustomDialog_Mask0200
+     * @tc.desc   CustomDialogController#maskColor set by Color
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUI_CustomDialog_Mask0200', Level.LEVEL2, async (done: Function) => {
       let CASE: string = 'ArkUI_CustomDialog_Mask0200'
@@ -88,10 +94,13 @@ export default function CustomDialogMaskTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_CustomDialog_Mask0300
-     *tc.name   CustomDialogController#maskColor set by string
-     *tc.desc   CustomDialogController#maskColor set by string
+    /**
+     * @tc.name   ArkUI_CustomDialog_Mask0300
+     * @tc.number ArkUI_CustomDialog_Mask0300
+     * @tc.desc   CustomDialogController#maskColor set by string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUI_CustomDialog_Mask0300', Level.LEVEL2, async (done: Function) => {
       let CASE: string = 'ArkUI_CustomDialog_Mask0300'
@@ -108,10 +117,13 @@ export default function CustomDialogMaskTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_CustomDialog_Mask0400
-     *tc.name   CustomDialogController#maskColor set by Resource
-     *tc.desc   CustomDialogController#maskColor set by Resource
+    /**
+     * @tc.name   ArkUI_CustomDialog_Mask0400
+     * @tc.number ArkUI_CustomDialog_Mask0400
+     * @tc.desc   CustomDialogController#maskColor set by Resource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUI_CustomDialog_Mask0400', Level.LEVEL2, async (done: Function) => {
       let CASE: string = 'ArkUI_CustomDialog_Mask0400'
@@ -128,10 +140,13 @@ export default function CustomDialogMaskTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_CustomDialog_Mask0500
-     *tc.name   CustomDialogController#maskColor set by number
-     *tc.desc   CustomDialogController#maskColor set by number
+    /**
+     * @tc.name   ArkUI_CustomDialog_Mask0500
+     * @tc.number ArkUI_CustomDialog_Mask0500
+     * @tc.desc   CustomDialogController#maskColor set by number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ArkUI_CustomDialog_Mask0500', Level.LEVEL2, async (done: Function) => {
       let CASE: string = 'ArkUI_CustomDialog_Mask0500'

@@ -1175,6 +1175,58 @@ static napi_value TestInjectTouchEventwithHideSubWindowDown(napi_env env, napi_c
     return resultValue;
 }
 
+napi_value Test_OH_WindowManager_GetAllMainWindowInfo_0100(napi_env env, napi_callback_info info)
+{
+    napi_value retValue;
+    WindowManager_MainWindowInfo *infoList = NULL;
+    size_t mainWindowInfoSize = 0;
+    int32_t result = OH_WindowManager_GetAllMainWindowInfo(&infoList, &mainWindowInfoSize);
+    if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_NO_PERMISSION) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_NO_PERMISSION, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, -1, &retValue);
+    return retValue;
+}
+
+void OnWindowSnapshotCallback(const OH_PixelmapNative** snapshotPixelMapList, size_t snapshotListSize)
+{
+}
+
+napi_value Test_OH_WindowManager_GetMainWindowSnapshot_0100(napi_env env, napi_callback_info info)
+{
+    if ((env == nullptr) || (info == nullptr)) {
+        return nullptr;
+    }
+    size_t argCnt = 1;
+    napi_value args[1] = { nullptr };
+    if (argCnt != 1) {
+        napi_throw_type_error(env, NULL, "Wrong number of arguments");
+        return nullptr;
+    }
+    int32_t windowId = 0;
+    napi_get_value_int32(env, args[0], &windowId);
+    std::vector<int32_t> windowIdList;
+    windowIdList.push_back(windowId);
+    WindowManager_WindowSnapshotConfig config;
+    config.useCache = false;
+    int32_t result = OH_WindowManager_GetMainWindowSnapshot(windowIdList.data(), windowIdList.size(),
+        config, OnWindowSnapshotCallback);
+    napi_value retValue;
+    if (result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED, &retValue);
+        return retValue;
+    } else if (result == WINDOW_MANAGER_ERRORCODE_NO_PERMISSION) {
+        napi_create_int32(env, WINDOW_MANAGER_ERRORCODE_NO_PERMISSION, &retValue);
+        return retValue;
+    }
+    napi_create_int32(env, -1, &retValue);
+    return retValue;
+}
+
 static napi_value injectTouchEventInit(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
@@ -1217,10 +1269,23 @@ static napi_value injectTouchEventInit(napi_env env, napi_value exports)
     return exports;
 }
 
+static napi_value windowNoPermissionInit(napi_env env, napi_value exports)
+{
+    napi_property_descriptor desc[] = {
+        {"test_OH_WindowManager_GetAllMainWindowInfo_0100", nullptr,
+            Test_OH_WindowManager_GetAllMainWindowInfo_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"test_OH_WindowManager_GetMainWindowSnapshot_0100", nullptr,
+            Test_OH_WindowManager_GetMainWindowSnapshot_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+    };
+    napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
+    return exports;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     injectTouchEventInit(env, exports);
+    windowNoPermissionInit(env, exports);
     napi_property_descriptor desc[] = {
         {"filterKeyCode", nullptr, filterKeyCode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"unFilterKeyCode", nullptr, unFilterKeyCode, nullptr, nullptr, nullptr, napi_default, nullptr},

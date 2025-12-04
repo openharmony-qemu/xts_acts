@@ -38,10 +38,13 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_014
-     *tc.name requestFocus
-     *tc.desic Gets the request focus
+    /**
+     * @tc.name   requestFocus
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_014
+     * @tc.desc   requestFocus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('requestFocus', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetRequestFocus", EVENT_ID_SET_SUITE_KEY);

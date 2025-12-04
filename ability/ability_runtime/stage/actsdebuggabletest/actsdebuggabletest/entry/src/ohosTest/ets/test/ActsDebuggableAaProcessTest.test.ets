@@ -79,11 +79,13 @@ export default function actsDebuggableAaProcessTest() {
       await sleep(1000);
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_1700
-     * @tc.name    aa process -b com.example.timeout -a EntryAbility -m entry -S -p
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_1700
+     * @tc.number SUB_AA_AMS_Debuggable_1700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_1700', Level.LEVEL1, async (done: Function) => {
       let res = '';
@@ -101,11 +103,13 @@ export default function actsDebuggableAaProcessTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_2400
-     * @tc.name    aa process -b com.example.timeout -a EntryAbility -m entry -S -D
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_2400
+     * @tc.number SUB_AA_AMS_Debuggable_2400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_2400', Level.LEVEL1, async (done: Function) => {
       let res = '';
@@ -123,11 +127,13 @@ export default function actsDebuggableAaProcessTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_AA_AMS_Debuggable_2500
-     * @tc.name    aa process -h
-     * @tc.desc    Function test
-     * @tc.level   3
+    /**
+     * @tc.name   SUB_AA_AMS_Debuggable_2500
+     * @tc.number SUB_AA_AMS_Debuggable_2500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_AA_AMS_Debuggable_2500', Level.LEVEL1, async (done: Function) => {
       let res = '';

@@ -49,12 +49,12 @@ export default function subHeaderAccessibilityTest() {
     })
 
     /**
+     * @tc.name   subHeaderAccessibilityPage_0100
      * @tc.number subHeaderAccessibilityPage
-     * @tc.name   subHeaderAccessibilityPage
      * @tc.desc   Test subHeaderAccessibilityPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderAccessibilityPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

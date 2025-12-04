@@ -42,9 +42,12 @@ int FormatVfwprintf(FILE *fp, const wchar_t *format, ...)
 }
 
 /**
+ * @tc.name   testVfwprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_0100
- * @tc.name   vfwprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVfwprintf, Function | MediumTest | Level1)
 {
@@ -66,9 +69,12 @@ HWTEST_F(IoTest, testVfwprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFwprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_0200
- * @tc.name   fwprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFwprintf, Function | MediumTest | Level1)
 {
@@ -90,9 +96,12 @@ HWTEST_F(IoTest, testFwprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFwide
  * @tc.number SUB_KERNEL_IO_WCHAR_0300
- * @tc.name   fwide basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFwide, Function | MediumTest | Level1)
 {
@@ -115,9 +124,12 @@ HWTEST_F(IoTest, testFwide, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFgetws
  * @tc.number SUB_KERNEL_IO_WCHAR_0400
- * @tc.name   fgetws basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFgetws, Function | MediumTest | Level1)
 {
@@ -136,9 +148,12 @@ HWTEST_F(IoTest, testFgetws, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPutwc
  * @tc.number SUB_KERNEL_IO_WCHAR_0500
- * @tc.name   putwc basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPutwc, Function | MediumTest | Level1)
 {
@@ -155,9 +170,12 @@ HWTEST_F(IoTest, testPutwc, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testUngetwc
  * @tc.number SUB_KERNEL_IO_WCHAR_0600
- * @tc.name   ungetwc basic function test
  * @tc.desc   [C- SOFTWAret -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testUngetwc, Function | MediumTest | Level1)
 {
@@ -176,9 +194,12 @@ HWTEST_F(IoTest, testUngetwc, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFputwc
  * @tc.number SUB_KERNEL_IO_WCHAR_0700
- * @tc.name   fputwc basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFputwc, Function | MediumTest | Level1)
 {
@@ -195,9 +216,12 @@ HWTEST_F(IoTest, testFputwc, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFwscanf
  * @tc.number SUB_KERNEL_IO_WCHAR_0800
- * @tc.name   fwscanf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFwscanf, Function | MediumTest | Level1)
 {
@@ -218,9 +242,12 @@ HWTEST_F(IoTest, testFwscanf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWmemset
  * @tc.number SUB_KERNEL_IO_WCHAR_0900
- * @tc.name   wmemset  basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWmemset, Function | MediumTest | Level1)
 {
@@ -239,9 +266,12 @@ HWTEST_F(IoTest, testWmemset, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWmemchr
  * @tc.number SUB_KERNEL_IO_WCHAR_1000
- * @tc.name   wmemchr basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWmemchr, Function | MediumTest | Level1)
 {
@@ -255,9 +285,12 @@ HWTEST_F(IoTest, testWmemchr, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWmemcpy
  * @tc.number SUB_KERNEL_IO_WCHAR_1100
- * @tc.name   wmemcpy basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWmemcpy, Function | MediumTest | Level1)
 {
@@ -273,9 +306,12 @@ HWTEST_F(IoTest, testWmemcpy, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWmemmove
  * @tc.number SUB_KERNEL_IO_WCHAR_1200
- * @tc.name   wmemmove basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWmemmove, Function | MediumTest | Level1)
 {
@@ -291,9 +327,12 @@ HWTEST_F(IoTest, testWmemmove, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPutwchar
  * @tc.number SUB_KERNEL_IO_WCHAR_1300
- * @tc.name   putwchar basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPutwchar, Function | MediumTest | Level1)
 {
@@ -304,9 +343,12 @@ HWTEST_F(IoTest, testPutwchar, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWmemcmp
  * @tc.number SUB_KERNEL_IO_WCHAR_1400
- * @tc.name   wmemcmp basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWmemcmp, Function | MediumTest | Level1)
 {
@@ -323,9 +365,12 @@ HWTEST_F(IoTest, testWmemcmp, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testMbsinit
  * @tc.number SUB_KERNEL_IO_WCHAR_1500
- * @tc.name   mbsinit basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testMbsinit, Function | MediumTest | Level1)
 {
@@ -362,9 +407,12 @@ int FormatVswprintf(const wchar_t *format, ...)
 }
 
 /**
+ * @tc.name   testVswprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_1600
- * @tc.name   vswprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVswprintf, Function | MediumTest | Level1)
 {
@@ -381,9 +429,12 @@ HWTEST_F(IoTest, testVswprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSwprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_1700
- * @tc.name   swprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSwprintf, Function | MediumTest | Level1)
 {
@@ -401,9 +452,12 @@ HWTEST_F(IoTest, testSwprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_1800
- * @tc.name   wprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWprintf, Function | MediumTest | Level1)
 {
@@ -439,9 +493,12 @@ HWTEST_F(IoTest, testWprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testWscanf
  * @tc.number SUB_KERNEL_IO_WCHAR_1900
- * @tc.name   wscanf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testWscanf, Function | MediumTest | Level1)
 {
@@ -484,9 +541,12 @@ int FormatVwprintf(const wchar_t *format, ...)
 }
 
 /**
+ * @tc.name   testVwprintf
  * @tc.number SUB_KERNEL_IO_WCHAR_2000
- * @tc.name   vwprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVwprintf, Function | MediumTest | Level1)
 {
@@ -531,9 +591,12 @@ int FormatVwscanf(const wchar_t *format, ...)
 }
 
 /**
+ * @tc.name   testVwscanf
  * @tc.number SUB_KERNEL_IO_WCHAR_2100
- * @tc.name   vwscanf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVwscanf, Function | MediumTest | Level1)
 {
@@ -567,9 +630,12 @@ HWTEST_F(IoTest, testVwscanf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testGetwchar
  * @tc.number SUB_KERNEL_IO_WCHAR_2200
- * @tc.name   getwchar basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGetwchar, Function | MediumTest | Level1)
 {
@@ -599,9 +665,12 @@ HWTEST_F(IoTest, testGetwchar, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testBtowc
  * @tc.number SUB_KERNEL_IO_WCHAR_2300
- * @tc.name   btowc basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testBtowc, Function | MediumTest | Level1)
 {

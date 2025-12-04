@@ -26,14 +26,14 @@ export default function textInputOnBlurTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONBLUR_0100
-    * @tc.name       : testTextInputOnBlur001
-    * @tc.desc       : test onBlur event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnBlur001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONBLUR_0100
+     * @tc.desc   test onBlur event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnBlur001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestTextInputCompare')
       await Utils.sleep(2000)
@@ -44,14 +44,14 @@ export default function textInputOnBlurTest() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONBLUR_0200
-    * @tc.name       : testTextInputOnBlur002
-    * @tc.desc       : test onBlur event not callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnBlur002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONBLUR_0200
+     * @tc.desc   test onBlur event not callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnBlur002', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnBlurTestTextInputDisable')
       await Utils.sleep(2000)

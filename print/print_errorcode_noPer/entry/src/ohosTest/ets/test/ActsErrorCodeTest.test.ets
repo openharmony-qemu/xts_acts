@@ -22,12 +22,12 @@ export default function ActsErrorCodeTest() {
   describe('ActsErrorCodeTest', () => {
 
     /**
-     * @tc.number  : SUB_OH_Print_Init1
-     * @tc.name    : testOHPrintInit1
-     * @tc.desc    : test no permission
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHPrintInit1
+     * @tc.number SUB_OH_Print_Init1
+     * @tc.desc   test no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPrintInit1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -43,12 +43,12 @@ export default function ActsErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Print_Init2
-     * @tc.name    : testOHPrintInit2
-     * @tc.desc    : test no permission
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHPrintInit2
+     * @tc.number SUB_OH_Print_Init2
+     * @tc.desc   test no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPrintInit2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function ActsErrorCodeTest() {
     })
 
     /**
-     * @tc.number  : SUB_OH_Print_StartPrinterDiscovery1
-     * @tc.name    : testOHPrintStartPrinterDiscovery1
-     * @tc.desc    : test no permission
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHPrintStartPrinterDiscovery1
+     * @tc.number SUB_OH_Print_StartPrinterDiscovery1
+     * @tc.desc   test no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPrintStartPrinterDiscovery1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function ActsErrorCodeTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_Print_ConnectPrinter1
-     * @tc.name    : testOHPrintConnectPrinter1
-     * @tc.desc    : test no permission
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHPrintConnectPrinter1
+     * @tc.number SUB_OH_Print_ConnectPrinter1
+     * @tc.desc   test no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPrintConnectPrinter1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

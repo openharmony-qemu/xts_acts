@@ -26,52 +26,52 @@ export default function refreshRefreshingTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_REFRESHING_0100
-     * @tc.name       : testRefreshRefreshing001
-     * @tc.desc       : testing value for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshRefreshing001
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHING_0100
+     * @tc.desc   testing value for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshRefreshing001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshRefreshing001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_REFRESHING_0200
-     * @tc.name       : testRefreshRefreshing002
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshRefreshing002
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHING_0200
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshRefreshing002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshRefreshing002()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_REFRESHING_0300
-     * @tc.name       : testRefreshRefreshing003
-     * @tc.desc       : testing value for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshRefreshing003
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHING_0300
+     * @tc.desc   testing value for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshRefreshing003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshRefreshing003()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_REFRESH_REFRESHING_0400
-     * @tc.name       : testRefreshRefreshing004
-     * @tc.desc       : testing value for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testRefreshRefreshing004
+     * @tc.number SUB_ARKUI_CAPI_REFRESH_REFRESHING_0400
+     * @tc.desc   testing value for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRefreshRefreshing004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testRefreshRefreshing004()).assertEqual(0)

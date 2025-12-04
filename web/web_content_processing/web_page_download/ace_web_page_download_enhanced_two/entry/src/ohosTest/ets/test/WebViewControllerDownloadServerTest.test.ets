@@ -64,14 +64,14 @@ export default function webViewControllerDownloadServerTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0100
-    * @tc.name        : testDownloadServer001
-    * @tc.desc        : test WebDownloadErrorCode.SERVER_FAILED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadServer001
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0100
+     * @tc.desc   test WebDownloadErrorCode.SERVER_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadServer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadServer001", 131890)
       Utils.registerBaseEvent("testDownloadServer001", webView.WebDownloadErrorCode.SERVER_FAILED, 131900, done,
@@ -81,14 +81,14 @@ export default function webViewControllerDownloadServerTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0200
-    * @tc.name        : testDownloadServer002
-    * @tc.desc        : test WebDownloadErrorCode.SERVER_BAD_CONTENT
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadServer002
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0200
+     * @tc.desc   test WebDownloadErrorCode.SERVER_BAD_CONTENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadServer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadServer002", 131890)
       Utils.registerBaseEvent("testDownloadServer002", webView.WebDownloadErrorCode.SERVER_BAD_CONTENT, 131910, done,
@@ -98,14 +98,14 @@ export default function webViewControllerDownloadServerTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0300
-    * @tc.name        : testDownloadServer003
-    * @tc.desc        : test WebDownloadErrorCode.SERVER_UNAUTHORIZED
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadServer003
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0300
+     * @tc.desc   test WebDownloadErrorCode.SERVER_UNAUTHORIZED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadServer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadServer003", 131890)
       Utils.registerBaseEvent("testDownloadServer003", webView.WebDownloadErrorCode.SERVER_UNAUTHORIZED, 131920, done,
@@ -115,14 +115,14 @@ export default function webViewControllerDownloadServerTest() {
       await Utils.waitAndClickComponent(driver, 'WebViewControllerDownloadServerTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0400
-    * @tc.name        : testDownloadServer004
-    * @tc.desc        : test WebDownloadErrorCode.SERVER_FORBIDDEN
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testDownloadServer004
+     * @tc.number SUB_WEB_WEBDOWNLOADERRORCODE_SERVER_0400
+     * @tc.desc   test WebDownloadErrorCode.SERVER_FORBIDDEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDownloadServer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDownloadServer004", 131890)
       Utils.registerBaseEvent("testDownloadServer004", webView.WebDownloadErrorCode.SERVER_FORBIDDEN, 131930, done,

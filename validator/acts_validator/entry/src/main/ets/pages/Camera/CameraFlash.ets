@@ -143,8 +143,7 @@ struct cameraOrientation {
       }
       .width('80%')
       .height('50%')
-
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Camera/Camera_index',

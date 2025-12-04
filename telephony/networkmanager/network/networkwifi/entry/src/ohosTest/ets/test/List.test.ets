@@ -15,7 +15,20 @@
  */
 
 import networkManagerWithWifiTest from './NetworkManagerWithWifi.test';
+import EmptyTest from './Empty.test';
+import connection from '@ohos.net.connection';
+let netHandle = connection.getDefaultNetSync();
+
 
 export default function testsuite() {
-  networkManagerWithWifiTest();
+ if(netHandle.netId != 0){
+      let NetCapabilities = connection.getNetCapabilitiesSync(netHandle);
+      if(NetCapabilities.bearerTypes[0] == 1){
+         networkManagerWithWifiTest();
+      }else{
+        EmptyTest();
+      }
+    }else{
+      EmptyTest();
+    }
 }

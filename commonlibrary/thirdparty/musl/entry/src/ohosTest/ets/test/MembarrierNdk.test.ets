@@ -25,12 +25,12 @@ export default function membarrierNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MEMBARRIER_MEMBARRIER_0100
-     * @tc.name       : testMuslMembarrierMembarrier001
-     * @tc.desc       : test membarrier
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMembarrierMembarrier001
+     * @tc.number SUB_THIRDPARTY_MUSL_MEMBARRIER_MEMBARRIER_0100
+     * @tc.desc   test membarrier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMembarrierMembarrier001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = membarrier.membarrier();

@@ -27,14 +27,14 @@ export default function BindControllerTest() {
       await Utils.pushPage(`BindController/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_ETS_BIND_CONTROLLER_0100
-    * @tc.name       : testBindController001
-    * @tc.desc       : test Text ErrorCode 100021
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testBindController001
+     * @tc.number SUB_ARKUI_ETS_BIND_CONTROLLER_0100
+     * @tc.desc   test Text ErrorCode 100021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBindController001', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       let TextErrorButton100021 = await driver.findComponent(ON.id('TestErrorCodeText'))
@@ -48,14 +48,14 @@ export default function BindControllerTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_ETS_BIND_CONTROLLER_0200
-    * @tc.name       : testBindController002
-    * @tc.desc       : test TextInput ErrorCode 100021
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testBindController002
+     * @tc.number SUB_ARKUI_ETS_BIND_CONTROLLER_0200
+     * @tc.desc   test TextInput ErrorCode 100021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBindController002', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       let TextInputErrorButton100021 = await driver.findComponent(ON.id('TestErrorCodeTextInput'))
@@ -69,14 +69,14 @@ export default function BindControllerTest() {
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_ETS_BIND_CONTROLLER_0300
-    * @tc.name       : testBindController003
-    * @tc.desc       : test TextArea ErrorCode 100021
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testBindController003
+     * @tc.number SUB_ARKUI_ETS_BIND_CONTROLLER_0300
+     * @tc.desc   test TextArea ErrorCode 100021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testBindController003', Level.LEVEL3, async (done: Function) => {
       let driver = Driver.create();
       let TextAreaErrorButton100021 = await driver.findComponent(ON.id('TestErrorCodeTextArea'))

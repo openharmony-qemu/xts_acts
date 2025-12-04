@@ -43,12 +43,12 @@ export default function idScrollEvent() {
     });
 
     /**
-     * @tc.number    idScrollEvent_001
-     * @tc.name      idScrollEvent_0100
-     * @tc.desc      Listen for the start and end of scrolling events.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   idScrollEvent_0100
+     * @tc.number idScrollEvent_001
+     * @tc.desc   Listen for the start and end of scrolling events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('idScrollEvent_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[idScrollEvent_0100] START');

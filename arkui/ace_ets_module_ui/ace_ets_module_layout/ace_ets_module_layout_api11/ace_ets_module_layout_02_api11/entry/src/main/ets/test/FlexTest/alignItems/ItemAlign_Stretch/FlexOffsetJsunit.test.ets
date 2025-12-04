@@ -45,9 +45,12 @@ export default function flexOffset_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchSetOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_1000
-     * @tc.name testFlexItemAlignStretchSetOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchSetOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchSetOffset START');

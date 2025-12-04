@@ -26,39 +26,39 @@ export default function spanFontSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSIZE_0100
-     * @tc.name: testSpanFontSize001
-     * @tc.desc: testing fontSize for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontSize001
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSIZE_0100
+     * @tc.desc   testing fontSize for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSIZE_0200
-     * @tc.name: testSpanFontSize002
-     * @tc.desc: testing fontSize for span with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testSpanFontSize002
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSIZE_0200
+     * @tc.desc   testing fontSize for span with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_SPAN_FONTSIZE_0300
-     * @tc.name: testSpanFontSize003
-     * @tc.desc: testing fontSize for span with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testSpanFontSize003
+     * @tc.number SUB_ARKUI_CAPI_SPAN_FONTSIZE_0300
+     * @tc.desc   testing fontSize for span with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpanFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSpanFontSize003()).assertEqual(0)

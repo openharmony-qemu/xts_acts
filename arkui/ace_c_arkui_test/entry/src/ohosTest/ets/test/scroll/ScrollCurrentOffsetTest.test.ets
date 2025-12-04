@@ -25,13 +25,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0100
-     * @tc.name       : testScrollCurrentOffset001
-     * @tc.desc       : testing scroll to for scroll with linear value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset001
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0100
+     * @tc.desc   testing scroll to for scroll with linear value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetLinearTest';
@@ -40,13 +40,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0200
-     * @tc.name       : testScrollCurrentOffset002
-     * @tc.desc       : testing scroll to for scroll with ease value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset002
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0200
+     * @tc.desc   testing scroll to for scroll with ease value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetEaseTest';
@@ -55,13 +55,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0300
-     * @tc.name       : testScrollCurrentOffset003
-     * @tc.desc       : testing scroll to for scroll with ease in value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset003
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0300
+     * @tc.desc   testing scroll to for scroll with ease in value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetEaseInTest';
@@ -70,13 +70,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0400
-     * @tc.name       : testScrollCurrentOffset004
-     * @tc.desc       : testing scroll to for scroll with ease out value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset004
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0400
+     * @tc.desc   testing scroll to for scroll with ease out value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetEaseOutTest';
@@ -85,13 +85,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0500
-     * @tc.name       : testScrollCurrentOffset005
-     * @tc.desc       : testing scroll to for scroll with ease in out value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset005
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0500
+     * @tc.desc   testing scroll to for scroll with ease in out value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset005', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetEaseInOutTest';
@@ -100,13 +100,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0600
-     * @tc.name       : testScrollCurrentOffset006
-     * @tc.desc       : testing scroll to for scroll with fast out slow in value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset006
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0600
+     * @tc.desc   testing scroll to for scroll with fast out slow in value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset006', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetFastOutSlowInTest';
@@ -115,13 +115,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0700
-     * @tc.name       : testScrollCurrentOffset007
-     * @tc.desc       : testing scroll to for scroll with linear out slow in value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset007
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0700
+     * @tc.desc   testing scroll to for scroll with linear out slow in value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset007', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetLinearOutSlowInTest';
@@ -130,13 +130,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0800
-     * @tc.name       : testScrollCurrentOffset008
-     * @tc.desc       : testing scroll to for scroll with fast out linear in value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset008
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0800
+     * @tc.desc   testing scroll to for scroll with fast out linear in value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset008', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetFastOutLinearInTest';
@@ -145,13 +145,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0900
-     * @tc.name       : testScrollCurrentOffset009
-     * @tc.desc       : testing scroll to for scroll with extreme deceleration value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset009
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_0900
+     * @tc.desc   testing scroll to for scroll with extreme deceleration value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset009', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetExtremeDecelerationTest';
@@ -160,13 +160,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1000
-     * @tc.name       : testScrollCurrentOffset010
-     * @tc.desc       : testing scroll to for scroll with sharp value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset010
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1000
+     * @tc.desc   testing scroll to for scroll with sharp value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset010', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetSharpTest';
@@ -175,13 +175,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1100
-     * @tc.name       : testScrollCurrentOffset011
-     * @tc.desc       : testing scroll to for scroll with rhythm value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset011
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1100
+     * @tc.desc   testing scroll to for scroll with rhythm value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset011', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetRhythmTest';
@@ -190,13 +190,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1200
-     * @tc.name       : testScrollCurrentOffset012
-     * @tc.desc       : testing scroll to for scroll with smooth value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset012
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1200
+     * @tc.desc   testing scroll to for scroll with smooth value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset012', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetSmoothTest';
@@ -205,13 +205,13 @@ export default function scrollCurrentOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1300
-     * @tc.name       : testScrollCurrentOffset013
-     * @tc.desc       : testing scroll to for scroll with friction value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testScrollCurrentOffset013
+     * @tc.number SUB_ARKUI_CAPI_SCROLL_CURRENTOFFSET_1300
+     * @tc.desc   testing scroll to for scroll with friction value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testScrollCurrentOffset013', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'ScrollCurrentOffsetFrictionTest';

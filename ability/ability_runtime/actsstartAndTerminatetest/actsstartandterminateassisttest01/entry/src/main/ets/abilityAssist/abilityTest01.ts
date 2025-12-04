@@ -18,6 +18,8 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import app, { AppResponse } from '@system.app';
 
+let testNum: number = 0;
+
 export default class AbilityTest01 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 onCreate');
@@ -57,22 +59,27 @@ export default class AbilityTest01 extends UIAbility {
     commonEventManager.publish('AbilityTest01_onForeground', function () {
       hilog.info(0x0000, 'testTag', '%{public}s', 'AbilityTest01 publish AbilityTest01_onForeground');
     });
+    testNum++;
+    if (testNum !== 1) {
+      return;
+    } 
     try {
       globalThis.abilityAssist01.startAbility(
         {
           bundleName: 'com.test.actsstartandterminatetest',
           abilityName: 'UiAbility08'
         }).then(() => {
-        hilog.info(0x0000, 'testTag', '%{public}s', 'start test hap UiAbility08');
-        setTimeout(() => {
-          // destroy assistHap
-          globalThis.abilityAssist01.terminateSelf();
-        }, 400);
-      });
+          hilog.info(0x0000, 'testTag', '%{public}s', 'start test hap UiAbility08');
+        }).catch(() => {
+          hilog.info(0x0000, 'testTag', '%{public}s', 'fail test hap UiAbility08');
+        });
+      setTimeout(() => {
+        hilog.info(0x0000, 'testTag', '%{public}s', 'UiAbility01 setTimeout inner');
+        globalThis.abilityAssist01.terminateSelf();
+      }, 1000);
     } catch (err) {
       hilog.info(0x0000, 'testTag', '%{public}s', `startAbility fail ${err}`);
     }
-
   }
 
   onBackground(): void {

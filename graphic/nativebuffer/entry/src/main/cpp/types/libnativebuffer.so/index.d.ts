@@ -22,12 +22,9 @@ export const oHNativeBufferGetSeqNum: () => number;
 export const oHNativeBufferAllocAbnormal: () => number;
 export const oHNativeBufferReferenceAbnormal: () => number;
 export const oHNativeBufferUnreferenceAbnormal: () => number;
-export const oHNativeBufferGetConfigAbnormal: () => number;
 export const oHNativeBufferMapAbnormal: () => number;
 export const oHNativeBufferUnmapAbnormal: () => number;
 export const oHNativeBufferGetSeqNumAbnormal: () => number;
-
-//
 export const oHNativeBufferAllocNullptr: () => number;
 export const oHNativeBufferAllocNormal: () => Array<number>;
 export const oHNativeBufferAllocAbormal: () => Array<number>;
@@ -65,6 +62,28 @@ export const oHNativeBufferSetMetadataValueNullptr: () => Array<number>;
 export const oHNativeBufferGetMetadataValueAbnormal: () => Array<number>;
 export const oHNativeBufferGetMetadataValueNullptr: () => Array<number>;
 export const oHNativeBufferY8Y16USAGEandAlloc: () => Array<number>;
-
-
-
+export const oHNativeBufferMapWaitFence0ms: () => number;
+export const oHNativeBufferMapWaitFence100ms: () => number;
+export const oHNativeBufferMapWaitFence5000ms: () => number;
+export const oHNativeBufferMapWaitFenceNullptr: () => number;
+export const oHNativeBufferMapWaitFenceAbnormal: () => number;
+export const oHNativeBufferSetMetadataValueEnumTraversal: () => number;
+export const oHNativeBufferSetMetadataValueREGION: () => number;
+export const oHNativeBufferIsSupportedNormal: () => number;
+export const oHNativeBufferIsSupportedNull01: () => number;
+export const oHNativeBufferIsSupportedNull02: () => number;
+export const oHNativeBufferIsSupportedAbnormal01: () => number;
+export const oHNativeBufferIsSupportedAbnormal02: () => number;
+export const oHNativeBufferIsSupportedMultipleCalls: () => number;
+export const oHNativeBufferMapAndGetConfilgNormal: () => number;
+export const oHNativeBufferMapAndGetConfilgNull: () => number;
+export const oHNativeBufferMapAndGetConfilgMultipleCalls01: () => number;
+export const oHNativeBufferMapAndGetConfilgMultipleCalls02: () => number;
+export const oHNativeBufferMapAll: () => number;
+export const oHNativeBufferMapAndUnmap: () => number;
+export const oHNativeBufferWriteToParcelNormal: () => number;
+export const oHNativeBufferWriteToParcelNull: () => number;
+export const oHNativeBufferReadFromParcelNormal: () => number;
+export const oHNativeBufferReadFromParcelNull: () => number;
+export const oHNativeBufferReadFromParcelAbnnormal: () => number;
+export const oHNativeBufferWriteAndReadParcelMultipleCalls: () => number;

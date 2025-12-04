@@ -45,12 +45,14 @@ export default function ActsAccountOnOff() {
             )
         }
 
-        /*
-        * @tc.number    : ActsAccountOnOff_0300
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to change
-        *                 the credential
-        */
+        /**
+         * @tc.name   ActsAccountOnOff_0300
+         * @tc.number ActsAccountOnOff_0300
+         * @tc.desc   Received the account information change to the authorized account of the subscription to change
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountOnOff_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await testInit();
             await sleep(500)
@@ -114,12 +116,14 @@ export default function ActsAccountOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountOnOff_0400
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to delete
-        *                 authorized account
-        */
+        /**
+         * @tc.name   ActsAccountOnOff_0400
+         * @tc.number ActsAccountOnOff_0400
+         * @tc.desc   Received the account information change to the authorized account of the subscription to delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ActsAccountOnOff_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await testInit();
             await sleep(500)
@@ -187,12 +191,14 @@ export default function ActsAccountOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountOnOff_0500
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to delete
-        *                 the only authorized account
-        */
+        /**
+         * @tc.name   ActsAccountOnOff_0500
+         * @tc.number ActsAccountOnOff_0500
+         * @tc.desc   Received the account information change to the authorized account of the subscription to delete
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOnOff_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -251,12 +257,14 @@ export default function ActsAccountOnOff() {
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
 
-        /*
-        * @tc.number    : ActsAccountOnOff_0600
-        * @tc.name      : Subscribe/unsubscribe to the change event of application
-        * @tc.desc      : Received the account information change to the authorized account of the subscription to cancel
-        *                 authorized account   
-        */
+        /**
+         * @tc.name   ActsAccountOnOff_0600
+         * @tc.number ActsAccountOnOff_0600
+         * @tc.desc   Received the account information change to the authorized account of the subscription to cancel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL4
+         */
         it('ActsAccountOnOff_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async function (done) {
             await testInit();
             await sleep(500)
@@ -331,6 +339,56 @@ export default function ActsAccountOnOff() {
             console.info("====>publish event account_on_change 0600====");
             commonevent.publish("account_on_change", commonEventPublishData, publishCallback);
         });
-          
+
+        /**
+         * @tc.name   ActsAccountOnOff_0700
+         * @tc.number ActsAccountOnOff_0700
+         * @tc.desc   Receive account information after the app subscribes to itself and changes additional information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('ActsAccountOnOff_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
+            console.info("====>ActsAccountOnOff_0700 start====");
+            let dataMap = new Map();
+            let appAccountManager = account.createAppAccountManager();
+            console.info("====>ActsAccountOnOff_0700 start createAccount");
+            await appAccountManager.createAccount("onoff_self");
+            console.info("====>ActsAccountOnOff_0700 start on");
+            try{
+                appAccountManager.on('accountChange', ["com.example.actsaccountoperatetest"], async (data) => {
+                    console.info("====>receive change 0700 data:" + JSON.stringify(data));
+                    console.info("====>data.length:" + data.length);
+                    expect(data.length > 0).assertTrue();
+                    for (let i = 0, len = data.length; i < len; i++) {
+                        dataMap.set(data[i].name, data[i].owner)
+                    }
+                    expect(dataMap.has("onoff_self")).assertTrue();
+                    if (dataMap.has("onoff_self")) {
+                        let data = dataMap.get("onoff_self");
+                        console.info("====>the account owner is: " + data);
+                        expect(data).assertEqual("com.example.actsaccountoperatetest");
+                    }
+                    appAccountManager.off('accountChange');
+                    await sleep(500);
+                    console.info("====>off ActsAccountOnOff_0700 finish====");
+                    await appAccountManager.removeAccount("onoff_self");
+                    console.info("====>ActsAccountOnOff_0700 end====");
+                    done();
+                });
+            } catch (err) {
+                console.error("====>on ActsAccountOnOff_0700 err:" + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+            console.info("====>setAccountExtraInfo start====");
+            try{
+                await appAccountManager.setCustomData("onoff_self","key","value");
+            } catch (err) {
+                console.error("====>setAccountExtraInfo fail err:" + JSON.stringify(err));
+                expect().assertFail();
+                done();
+            }
+        });
     })
 }

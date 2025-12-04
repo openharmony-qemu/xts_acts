@@ -37,12 +37,12 @@ export default function showDatePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBlurStyleOptions_0100
-     * @tc.name      showDatePickerDialogBlurStyleOptions_0100
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBlurStyleOptions_0100
+     * @tc.number showDatePickerDialogBlurStyleOptions_0100
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function showDatePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBlurStyleOptions_0200
-     * @tc.name      showDatePickerDialogBlurStyleOptions_0200
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBlurStyleOptions_0200
+     * @tc.number showDatePickerDialogBlurStyleOptions_0200
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function showDatePickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDatePickerDialogBlurStyleOptions_0300
-     * @tc.name      showDatePickerDialogBlurStyleOptions_0300
-     * @tc.desc      createShowDatePickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDatePickerDialogBlurStyleOptions_0300
+     * @tc.number showDatePickerDialogBlurStyleOptions_0300
+     * @tc.desc   createShowDatePickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showDatePickerDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showDatePickerDialogBlurStyleOptions_0300';

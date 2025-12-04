@@ -45,9 +45,12 @@ export default function flexMargin_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testItemAlignCenterParentSetMargin
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_0500
-     * @tc.name testItemAlignCenterParentSetMargin
-     * @tc.desc Parent component set margin attribute.
+     * @tc.desc   Parent component set margin attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testItemAlignCenterParentSetMargin',  Level.LEVEL0, async () => {
       console.info('new testItemAlignCenterParentSetMargin START');

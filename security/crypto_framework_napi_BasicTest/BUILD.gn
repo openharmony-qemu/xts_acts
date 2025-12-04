@@ -51,7 +51,7 @@ ohos_moduletest_suite("ActsCryptoFrameworkNAPITest") {
 
   include_dirs = [
     "include",
-    "$root_path/base/security/crypto_framework/interfaces/kits/native/include",
+    "$root_path/interface/sdk_c/CryptoArchitectureKit",
     "$root_path/base/security/crypto_framework/common/inc",
   ]
 

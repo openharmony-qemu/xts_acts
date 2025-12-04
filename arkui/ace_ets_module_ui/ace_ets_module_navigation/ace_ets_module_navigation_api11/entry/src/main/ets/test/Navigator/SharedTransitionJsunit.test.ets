@@ -46,6 +46,14 @@ export default function sharedTransitionJsunit() {
       console.info("sharedTransition after each called");
     });
 
+    /**
+     * @tc.name   sharedTransitionTest_0100
+     * @tc.number sharedTransitionTest_0100
+     * @tc.desc   sharedTransitionTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sharedTransitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0100 START');
       let strJson: string = getInspectorByKey('Navigator');
@@ -56,6 +64,14 @@ export default function sharedTransitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   sharedTransitionTest_0200
+     * @tc.number sharedTransitionTest_0200
+     * @tc.desc   sharedTransitionTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sharedTransitionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0200 START');
       let strJson: string = getInspectorByKey('Navigator');
@@ -67,6 +83,14 @@ export default function sharedTransitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   sharedTransitionTest_0300
+     * @tc.number sharedTransitionTest_0300
+     * @tc.desc   sharedTransitionTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sharedTransitionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0300 START');
       let strJson: string = getInspectorByKey('Navigator');
@@ -78,6 +102,14 @@ export default function sharedTransitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   sharedTransitionTest_0400
+     * @tc.number sharedTransitionTest_0400
+     * @tc.desc   sharedTransitionTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sharedTransitionTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('sharedTransitionTest_0400 START');
       try {

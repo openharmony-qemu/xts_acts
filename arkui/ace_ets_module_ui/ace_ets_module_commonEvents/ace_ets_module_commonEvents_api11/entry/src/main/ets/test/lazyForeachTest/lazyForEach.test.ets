@@ -58,10 +58,13 @@ done();
       console.info("lazyForEachOnDataAdd after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlazyForEachOnDataAdd0001
-     * @tc.desic         acelazyForEachOnDataAddEtsTest0001
+    /**
+     * @tc.name   testlazyForEachOnDataAdd0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testlazyForEachOnDataAdd0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlazyForEachOnDataAdd0001', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0001 START');
@@ -90,10 +93,13 @@ done();
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlazyForEachOnDataAdd0002
-     * @tc.desic         acelazyForEachOnDataAddEtsTest0002
+    /**
+     * @tc.name   testlazyForEachOnDataAdd0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlazyForEachOnDataAdd0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlazyForEachOnDataAdd0002', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0002 START');
@@ -122,10 +128,13 @@ done();
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-     * @tc.name         testlazyForEachOnDataAdd0003
-     * @tc.desic         acelazyForEachOnDataAddEtsTest0003
+    /**
+     * @tc.name   testlazyForEachOnDataAdd0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   testlazyForEachOnDataAdd0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlazyForEachOnDataAdd0003', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0003 START');
@@ -154,10 +163,13 @@ done();
       }
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testlazyForEachOnDataAdd0004
-     * @tc.desic         acelazyForEachOnDataAddEtsTest0004
+    /**
+     * @tc.name   testlazyForEachOnDataAdd0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testlazyForEachOnDataAdd0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testlazyForEachOnDataAdd0004', Level.LEVEL0, async () => {
       console.info('lazyForEachOnDataAdd testlazyForEachOnDataAdd0004 START');

@@ -13,6 +13,7 @@
  * limitations under the License.
  */
 import { afterEach, beforeAll, beforeEach, describe, it, expect , TestType, Size, Level } from '@ohos/hypium';
+import events_emitter from '@ohos.events.emitter';
 import Utils from './Utils';
 import router from '@ohos.router';
 import { waitForComponent } from './WaitTest';
@@ -44,18 +45,66 @@ export default function ActsAceWebViewGetSecurityLevel() {
     });
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
-     *@tc.name testWebViewGetSecurityLevelNone
-     *@tc.desc test getSecurityLevel NONE 0
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNone
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
+     * @tc.desc   test getSecurityLevel NONE 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewGetSecurityLevelNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewGetSecurityLevel01"
       Utils.emitEvent(emitKey, 160030);
       Utils.registerEvent("testWebViewGetSecurityLevelNone", 'success', 160040, done);
+      sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelSecure
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0002
+     * @tc.desc   test getSecurityLevel SECURE 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebViewGetSecurityLevelSecure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebViewGetSecurityLevelSecure", 160030);
+      Utils.registerBaseEvent('testWebViewGetSecurityLevelSecure', 1, 25102202, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(1)
+        })
+      sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelWarning
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0003
+     * @tc.desc   test getSecurityLevel WARNING 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebViewGetSecurityLevelWarning', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebViewGetSecurityLevelWarning", 160030);
+      Utils.registerBaseEvent('testWebViewGetSecurityLevelWarning', 2, 25102203, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(2)
+        })
+      sendEventByKey('webViewGetSecurityLevelButton', 10, '');
+    })
+
+    /**
+     * @tc.name   testWebViewGetSecurityLevelDangerous
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0004
+     * @tc.desc   test getSecurityLevel DANGEROUS 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('testWebViewGetSecurityLevelDangerous', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      Utils.emitEvent("testWebViewGetSecurityLevelDangerous", 160030);
+      Utils.registerBaseEvent('testWebViewGetSecurityLevelDangerous', 3, 25102204, done, (backData: events_emitter.EventData, expected: Object) => {
+            expect(backData?.data?.ACTION).assertEqual(3)
+        })
       sendEventByKey('webViewGetSecurityLevelButton', 10, '');
     })
 

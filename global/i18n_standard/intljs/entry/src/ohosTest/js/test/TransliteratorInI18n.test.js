@@ -56,11 +56,14 @@ describe('TransliteratorInI18nTest', function () {
         + ' syslocale: ' + I18n.System.getSystemLocale());
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0100
-    * @tc.name    test getAvailableIDs
-    * @tc.desc    get the ID value
-    */
+    /**
+     * @tc.name   transliterator_test_0100
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0100
+     * @tc.desc   get the ID value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transliterator_test_0100', Level.LEVEL0, function () {
         console.log('transliterator_test_0100 ' + 'start');
         let value = I18n.Transliterator.getAvailableIDs();
@@ -76,11 +79,14 @@ describe('TransliteratorInI18nTest', function () {
         }
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0200
-    * @tc.name    test getInstance with a param
-    * @tc.desc    get the instance value
-    */
+    /**
+     * @tc.name   transliterator_test_0200
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0200
+     * @tc.desc   get the instance value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0200', Level.LEVEL2, function () {
         console.log('transliterator_test_0200 ' + 'start');
         let value = I18n.Transliterator.getInstance('a');
@@ -88,11 +94,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value !== null).assertTrue();
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0300
-    * @tc.name    test transform with 中国 param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0300
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0300
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0300', Level.LEVEL2, function () {
         console.log('transliterator_test_0300 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-Accents');
@@ -101,11 +110,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value).assertEqual('中国');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0400
-    * @tc.name    test transform with Any-Latn param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0400
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0400
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0400', Level.LEVEL2, function () {
         console.log('transliterator_test_0400 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-Latn');
@@ -114,11 +126,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value).assertEqual('zhōng guó');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0500
-    * @tc.name    test transform with Any-Thai param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0500
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0500
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0500', Level.LEVEL2, function () {
         console.log('transliterator_test_0500 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-Thai');
@@ -127,11 +142,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value).assertEqual('中国');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0600
-    * @tc.name    test transform with Any-zh param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0600
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0600
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0600', Level.LEVEL2, function () {
         console.log('transliterator_test_0600 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-zh');
@@ -140,11 +158,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value).assertEqual('nihao');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0700
-    * @tc.name    test transform with Any-Hant param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0700
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0700
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0700', Level.LEVEL2, function () {
         console.log('transliterator_test_0700 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-Hant');
@@ -153,11 +174,14 @@ describe('TransliteratorInI18nTest', function () {
         expect(value).assertEqual('hello');
     })
 
-    /* *
-    * @tc.number  SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0800
-    * @tc.name    test transform with Any-Kannada param
-    * @tc.desc    get the transform value
-    */
+    /**
+     * @tc.name   transliterator_test_0800
+     * @tc.number SUB_GLOBAL_I18N_JS_TRANSLITERATOR_0800
+     * @tc.desc   get the transform value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('transliterator_test_0800', Level.LEVEL2, function () {
         console.log('transliterator_test_0800 ' + 'start');
         let trans = I18n.Transliterator.getInstance('Any-Kannada');

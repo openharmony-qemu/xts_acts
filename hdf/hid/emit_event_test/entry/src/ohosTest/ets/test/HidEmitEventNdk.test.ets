@@ -68,12 +68,12 @@ export default function HidEmitEventTest() {
     })
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0100
-     * @tc.name       : testHidCreateDevice0100
-     * @tc.desc       : OH_Hid_CreateDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidCreateDevice0100
+     * @tc.number SUB_Driver_Ext_HIDDDK_0100
+     * @tc.desc   OH_Hid_CreateDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidCreateDevice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidCreateDeviceOne();
@@ -84,12 +84,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0800
-     * @tc.name       : testHidCreateDevice0200
-     * @tc.desc       : OH_Hid_CreateDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidCreateDevice0200
+     * @tc.number SUB_Driver_Ext_HIDDDK_0800
+     * @tc.desc   OH_Hid_CreateDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidCreateDevice0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidCreateDeviceTwo();
@@ -100,12 +100,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0900
-     * @tc.name       : testHidCreateDevice0300
-     * @tc.desc       : OH_Hid_CreateDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidCreateDevice0300
+     * @tc.number SUB_Driver_Ext_HIDDDK_0900
+     * @tc.desc   OH_Hid_CreateDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidCreateDevice0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidCreateDeviceThree();
@@ -116,12 +116,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0200
-     * @tc.name       : testHidEmitEventOne0100
-     * @tc.desc       : OH_Hid_EmitEvent Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidEmitEventOne0100
+     * @tc.number SUB_Driver_Ext_HIDDDK_0200
+     * @tc.desc   OH_Hid_EmitEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidEmitEventOne0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidEmitEventOne();
@@ -132,12 +132,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0300
-     * @tc.name       : testHidEmitEventTwo0200
-     * @tc.desc       : OH_Hid_EmitEvent Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidEmitEventTwo0200
+     * @tc.number SUB_Driver_Ext_HIDDDK_0300
+     * @tc.desc   OH_Hid_EmitEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidEmitEventTwo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidEmitEventTwo();
@@ -148,12 +148,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0400
-     * @tc.name       : testHidEmitEventThree0300
-     * @tc.desc       : OH_Hid_EmitEvent Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidEmitEventThree0300
+     * @tc.number SUB_Driver_Ext_HIDDDK_0400
+     * @tc.desc   OH_Hid_EmitEvent Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidEmitEventThree0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidEmitEventThree();
@@ -164,12 +164,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0500
-     * @tc.name       : testHidDestroyDeviceOne0100
-     * @tc.desc       : OH_Hid_DestroyDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidDestroyDeviceOne0100
+     * @tc.number SUB_Driver_Ext_HIDDDK_0500
+     * @tc.desc   OH_Hid_DestroyDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidDestroyDeviceOne0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidDestroyDeviceOne();
@@ -180,12 +180,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0600
-     * @tc.name       : testHidDestroyDeviceTwo0200
-     * @tc.desc       : OH_Hid_DestroyDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidDestroyDeviceTwo0200
+     * @tc.number SUB_Driver_Ext_HIDDDK_0600
+     * @tc.desc   OH_Hid_DestroyDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidDestroyDeviceTwo0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidDestroyDeviceTwo();
@@ -196,12 +196,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HIDDDK_0700
-     * @tc.name       : testHidDestroyDeviceThree0300
-     * @tc.desc       : OH_Hid_DestroyDevice Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testHidDestroyDeviceThree0300
+     * @tc.number SUB_Driver_Ext_HIDDDK_0700
+     * @tc.desc   OH_Hid_DestroyDevice Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidDestroyDeviceThree0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = hidEmitEvent.hidDestroyDeviceThree();
@@ -212,12 +212,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0100
-     * @tc.name       : testHidInit001
-     * @tc.desc       : OH_Hid_Init Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidInit001
+     * @tc.number SUB_Driver_Ext_HID_DDK_0100
+     * @tc.desc   OH_Hid_Init Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidInit001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidInit001---------------------------');
@@ -234,12 +234,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0200
-     * @tc.name       : testHidRelease001
-     * @tc.desc       : OH_Hid_Release Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRelease001
+     * @tc.number SUB_Driver_Ext_HID_DDK_0200
+     * @tc.desc   OH_Hid_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRelease001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRelease001---------------------------');
@@ -256,12 +256,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0300
-     * @tc.name       : testHidRelease002
-     * @tc.desc       : OH_Hid_Release Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRelease002
+     * @tc.number SUB_Driver_Ext_HID_DDK_0300
+     * @tc.desc   OH_Hid_Release Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRelease002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRelease002---------------------------');
@@ -278,12 +278,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0400
-     * @tc.name       : testHidOpen001
-     * @tc.desc       : OH_Hid_Open Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidOpen001
+     * @tc.number SUB_Driver_Ext_HID_DDK_0400
+     * @tc.desc   OH_Hid_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidOpen001---------------------------');
@@ -307,12 +307,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0500
-     * @tc.name       : testHidOpen002
-     * @tc.desc       : OH_Hid_Open Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidOpen002
+     * @tc.number SUB_Driver_Ext_HID_DDK_0500
+     * @tc.desc   OH_Hid_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidOpen002---------------------------');
@@ -336,12 +336,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0600
-     * @tc.name       : testHidOpen003
-     * @tc.desc       : OH_Hid_Open Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidOpen003
+     * @tc.number SUB_Driver_Ext_HID_DDK_0600
+     * @tc.desc   OH_Hid_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidOpen003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidOpen003---------------------------');
@@ -365,12 +365,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0700
-     * @tc.name       : testHidOpen004
-     * @tc.desc       : OH_Hid_Open Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidOpen004
+     * @tc.number SUB_Driver_Ext_HID_DDK_0700
+     * @tc.desc   OH_Hid_Open Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidOpen004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidOpen004---------------------------');
@@ -394,12 +394,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0800
-     * @tc.name       : testHidClose001
-     * @tc.desc       : OH_Hid_Close Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidClose001
+     * @tc.number SUB_Driver_Ext_HID_DDK_0800
+     * @tc.desc   OH_Hid_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidClose001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidClose001---------------------------');
@@ -423,12 +423,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_0900
-     * @tc.name       : testHidClose002
-     * @tc.desc       : OH_Hid_Close Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidClose002
+     * @tc.number SUB_Driver_Ext_HID_DDK_0900
+     * @tc.desc   OH_Hid_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidClose002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidClose002---------------------------');
@@ -452,12 +452,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1000
-     * @tc.name       : testHidClose003
-     * @tc.desc       : OH_Hid_Close Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidClose003
+     * @tc.number SUB_Driver_Ext_HID_DDK_1000
+     * @tc.desc   OH_Hid_Close Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidClose003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidClose003---------------------------');
@@ -481,12 +481,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1100
-     * @tc.name       : testHidWrite001
-     * @tc.desc       : OH_Hid_Write Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidWrite001
+     * @tc.number SUB_Driver_Ext_HID_DDK_1100
+     * @tc.desc   OH_Hid_Write Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidWrite001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidWrite001---------------------------');
@@ -510,12 +510,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1200
-     * @tc.name       : testHidWrite002
-     * @tc.desc       : OH_Hid_Write Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidWrite002
+     * @tc.number SUB_Driver_Ext_HID_DDK_1200
+     * @tc.desc   OH_Hid_Write Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidWrite002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidWrite002---------------------------');
@@ -539,12 +539,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1300
-     * @tc.name       : testHidWrite003
-     * @tc.desc       : OH_Hid_Write Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidWrite003
+     * @tc.number SUB_Driver_Ext_HID_DDK_1300
+     * @tc.desc   OH_Hid_Write Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidWrite003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidWrite003---------------------------');
@@ -568,12 +568,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1400
-     * @tc.name       : testHidReadTimeout001
-     * @tc.desc       : OH_Hid_ReadTimeout Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidReadTimeout001
+     * @tc.number SUB_Driver_Ext_HID_DDK_1400
+     * @tc.desc   OH_Hid_ReadTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidReadTimeout001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidReadTimeout001---------------------------');
@@ -597,12 +597,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1500
-     * @tc.name       : testHidReadTimeout002
-     * @tc.desc       : OH_Hid_ReadTimeout Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidReadTimeout002
+     * @tc.number SUB_Driver_Ext_HID_DDK_1500
+     * @tc.desc   OH_Hid_ReadTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidReadTimeout002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidReadTimeout002---------------------------');
@@ -626,12 +626,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1600
-     * @tc.name       : testHidReadTimeout003
-     * @tc.desc       : OH_Hid_ReadTimeout Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidReadTimeout003
+     * @tc.number SUB_Driver_Ext_HID_DDK_1600
+     * @tc.desc   OH_Hid_ReadTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidReadTimeout003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidReadTimeout003---------------------------');
@@ -655,12 +655,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1700
-     * @tc.name       : testHidReadTimeout004
-     * @tc.desc       : OH_Hid_ReadTimeout Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidReadTimeout004
+     * @tc.number SUB_Driver_Ext_HID_DDK_1700
+     * @tc.desc   OH_Hid_ReadTimeout Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidReadTimeout004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidReadTimeout004---------------------------');
@@ -684,12 +684,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1800
-     * @tc.name       : testHidRead001
-     * @tc.desc       : OH_Hid_Read Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRead001
+     * @tc.number SUB_Driver_Ext_HID_DDK_1800
+     * @tc.desc   OH_Hid_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRead001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRead001---------------------------');
@@ -713,12 +713,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_1900
-     * @tc.name       : testHidRead002
-     * @tc.desc       : OH_Hid_Read Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRead002
+     * @tc.number SUB_Driver_Ext_HID_DDK_1900
+     * @tc.desc   OH_Hid_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRead002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRead002---------------------------');
@@ -742,12 +742,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2000
-     * @tc.name       : testHidRead003
-     * @tc.desc       : OH_Hid_Read Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRead003
+     * @tc.number SUB_Driver_Ext_HID_DDK_2000
+     * @tc.desc   OH_Hid_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRead003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRead003---------------------------');
@@ -771,12 +771,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2100
-     * @tc.name       : testHidRead004
-     * @tc.desc       : OH_Hid_Read Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidRead004
+     * @tc.number SUB_Driver_Ext_HID_DDK_2100
+     * @tc.desc   OH_Hid_Read Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidRead004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidRead004---------------------------');
@@ -800,12 +800,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2200
-     * @tc.name       : testHidSetNonBlocking001
-     * @tc.desc       : OH_Hid_SetNonBlocking Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSetNonBlocking001
+     * @tc.number SUB_Driver_Ext_HID_DDK_2200
+     * @tc.desc   OH_Hid_SetNonBlocking Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSetNonBlocking001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSetNonBlocking001---------------------------');
@@ -829,12 +829,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2300
-     * @tc.name       : testHidSetNonBlocking002
-     * @tc.desc       : OH_Hid_SetNonBlocking Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSetNonBlocking002
+     * @tc.number SUB_Driver_Ext_HID_DDK_2300
+     * @tc.desc   OH_Hid_SetNonBlocking Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSetNonBlocking002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSetNonBlocking002---------------------------');
@@ -858,12 +858,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2400
-     * @tc.name       : testHidSetNonBlocking003
-     * @tc.desc       : OH_Hid_SetNonBlocking Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSetNonBlocking003
+     * @tc.number SUB_Driver_Ext_HID_DDK_2400
+     * @tc.desc   OH_Hid_SetNonBlocking Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSetNonBlocking003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSetNonBlocking003---------------------------');
@@ -887,12 +887,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2500
-     * @tc.name       : testHidGetRawInfo001
-     * @tc.desc       : OH_Hid_GetRawInfo Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawInfo001
+     * @tc.number SUB_Driver_Ext_HID_DDK_2500
+     * @tc.desc   OH_Hid_GetRawInfo Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawInfo001---------------------------');
@@ -916,12 +916,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2600
-     * @tc.name       : testHidGetRawInfo002
-     * @tc.desc       : OH_Hid_GetRawInfo Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawInfo002
+     * @tc.number SUB_Driver_Ext_HID_DDK_2600
+     * @tc.desc   OH_Hid_GetRawInfo Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawInfo002---------------------------');
@@ -945,12 +945,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2700
-     * @tc.name       : testHidGetRawInfo003
-     * @tc.desc       : OH_Hid_GetRawInfo Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawInfo003
+     * @tc.number SUB_Driver_Ext_HID_DDK_2700
+     * @tc.desc   OH_Hid_GetRawInfo Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawInfo003---------------------------');
@@ -974,12 +974,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2800
-     * @tc.name       : testHidGetRawName001
-     * @tc.desc       : OH_Hid_GetRawName Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawName001
+     * @tc.number SUB_Driver_Ext_HID_DDK_2800
+     * @tc.desc   OH_Hid_GetRawName Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawName001---------------------------');
@@ -1003,12 +1003,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_2900
-     * @tc.name       : testHidGetRawName002
-     * @tc.desc       : OH_Hid_GetRawName Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawName002
+     * @tc.number SUB_Driver_Ext_HID_DDK_2900
+     * @tc.desc   OH_Hid_GetRawName Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawName002---------------------------');
@@ -1032,12 +1032,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3000
-     * @tc.name       : testHidGetRawName003
-     * @tc.desc       : OH_Hid_GetRawName Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawName003
+     * @tc.number SUB_Driver_Ext_HID_DDK_3000
+     * @tc.desc   OH_Hid_GetRawName Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawName003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawName003---------------------------');
@@ -1061,12 +1061,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3100
-     * @tc.name       : testHidGetPhysicalAddress001
-     * @tc.desc       : OH_Hid_GetPhysicalAddress Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetPhysicalAddress001
+     * @tc.number SUB_Driver_Ext_HID_DDK_3100
+     * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetPhysicalAddress001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetPhysicalAddress001---------------------------');
@@ -1090,12 +1090,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3200
-     * @tc.name       : testHidGetPhysicalAddress002
-     * @tc.desc       : OH_Hid_GetPhysicalAddress Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetPhysicalAddress002
+     * @tc.number SUB_Driver_Ext_HID_DDK_3200
+     * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetPhysicalAddress002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetPhysicalAddress002---------------------------');
@@ -1118,12 +1118,12 @@ export default function HidEmitEventTest() {
       }
     });
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3300
-     * @tc.name       : testHidGetPhysicalAddress003
-     * @tc.desc       : OH_Hid_GetPhysicalAddress Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetPhysicalAddress003
+     * @tc.number SUB_Driver_Ext_HID_DDK_3300
+     * @tc.desc   OH_Hid_GetPhysicalAddress Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetPhysicalAddress003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetPhysicalAddress003---------------------------');
@@ -1147,12 +1147,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3400
-     * @tc.name       : testHidGetRawUniqueId001
-     * @tc.desc       : OH_Hid_GetRawUniqueId Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawUniqueId001
+     * @tc.number SUB_Driver_Ext_HID_DDK_3400
+     * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawUniqueId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawUniqueId001---------------------------');
@@ -1176,12 +1176,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3500
-     * @tc.name       : testHidGetRawUniqueId002
-     * @tc.desc       : OH_Hid_GetRawUniqueId Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawUniqueId002
+     * @tc.number SUB_Driver_Ext_HID_DDK_3500
+     * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawUniqueId002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawUniqueId002---------------------------');
@@ -1205,12 +1205,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3600
-     * @tc.name       : testHidGetRawUniqueId003
-     * @tc.desc       : OH_Hid_GetRawUniqueId Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetRawUniqueId003
+     * @tc.number SUB_Driver_Ext_HID_DDK_3600
+     * @tc.desc   OH_Hid_GetRawUniqueId Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetRawUniqueId003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetRawUniqueId003---------------------------');
@@ -1234,12 +1234,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3700
-     * @tc.name       : testHidSendReport001
-     * @tc.desc       : OH_Hid_SendReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSendReport001
+     * @tc.number SUB_Driver_Ext_HID_DDK_3700
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport001---------------------------');
@@ -1263,12 +1263,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3800
-     * @tc.name       : testHidSendReport002
-     * @tc.desc       : OH_Hid_SendReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSendReport002
+     * @tc.number SUB_Driver_Ext_HID_DDK_3800
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport002---------------------------');
@@ -1292,12 +1292,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_3900
-     * @tc.name       : testHidSendReport003
-     * @tc.desc       : OH_Hid_SendReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSendReport003
+     * @tc.number SUB_Driver_Ext_HID_DDK_3900
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport003---------------------------');
@@ -1320,12 +1320,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4000
-     * @tc.name       : testHidSendReport004
-     * @tc.desc       : OH_Hid_SendReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSendReport004
+     * @tc.number SUB_Driver_Ext_HID_DDK_4000
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport004---------------------------');
@@ -1348,12 +1348,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4100
-     * @tc.name       : testHidSendReport005
-     * @tc.desc       : OH_Hid_SendReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidSendReport005
+     * @tc.number SUB_Driver_Ext_HID_DDK_4100
+     * @tc.desc   OH_Hid_SendReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidSendReport005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidSendReport005---------------------------');
@@ -1377,12 +1377,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4200
-     * @tc.name       : testHidGetReport001
-     * @tc.desc       : OH_Hid_GetReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReport001
+     * @tc.number SUB_Driver_Ext_HID_DDK_4200
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport001---------------------------');
@@ -1406,12 +1406,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4300
-     * @tc.name       : testHidGetReport002
-     * @tc.desc       : OH_Hid_GetReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReport002
+     * @tc.number SUB_Driver_Ext_HID_DDK_4300
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport002---------------------------');
@@ -1435,12 +1435,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4400
-     * @tc.name       : testHidGetReport003
-     * @tc.desc       : OH_Hid_GetReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReport003
+     * @tc.number SUB_Driver_Ext_HID_DDK_4400
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport003---------------------------');
@@ -1463,12 +1463,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4500
-     * @tc.name       : testHidGetReport004
-     * @tc.desc       : OH_Hid_GetReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReport004
+     * @tc.number SUB_Driver_Ext_HID_DDK_4500
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport004---------------------------');
@@ -1492,12 +1492,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4600
-     * @tc.name       : testHidGetReport005
-     * @tc.desc       : OH_Hid_GetReport Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReport005
+     * @tc.number SUB_Driver_Ext_HID_DDK_4600
+     * @tc.desc   OH_Hid_GetReport Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReport005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReport005---------------------------');
@@ -1520,12 +1520,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4700
-     * @tc.name       : testHidGetReportDescriptor001
-     * @tc.desc       : OH_Hid_GetReportDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReportDescriptor001
+     * @tc.number SUB_Driver_Ext_HID_DDK_4700
+     * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReportDescriptor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReportDescriptor001---------------------------');
@@ -1549,12 +1549,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4800
-     * @tc.name       : testHidGetReportDescriptor002
-     * @tc.desc       : OH_Hid_GetReportDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReportDescriptor002
+     * @tc.number SUB_Driver_Ext_HID_DDK_4800
+     * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReportDescriptor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReportDescriptor002---------------------------');
@@ -1578,12 +1578,12 @@ export default function HidEmitEventTest() {
     });
 
     /**
-     * @tc.number     : SUB_Driver_Ext_HID_DDK_4900
-     * @tc.name       : testHidGetReportDescriptor003
-     * @tc.desc       : OH_Hid_GetReportDescriptor Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHidGetReportDescriptor003
+     * @tc.number SUB_Driver_Ext_HID_DDK_4900
+     * @tc.desc   OH_Hid_GetReportDescriptor Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHidGetReportDescriptor003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('----------------------testHidGetReportDescriptor003---------------------------');

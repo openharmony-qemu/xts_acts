@@ -45,12 +45,12 @@ export default function MulticastconnectionPromiseTest() {
   describe("MulticastconnectionPromiseTest", ()=>{
 
     /**
+     * @tc.name   testNetworkManagerDNSAddCustomDNSRulePromise0100
      * @tc.number SUB_NetworkManager_DNS_addCustomDNSRule_Promise_0100
-     * @tc.name testNetworkManagerDNSAddCustomDNSRulePromise0100
-     * @tc.desc Test addCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test addCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerDNSAddCustomDNSRulePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "testNetworkManagerDNSAddCustomDNSRulePromise0100";
@@ -76,12 +76,12 @@ export default function MulticastconnectionPromiseTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerConnectionAddCustomDNSRulePromise0300
      * @tc.number SUB_NetworkManager_Connection_addCustomDNSRule_Promise_0300
-     * @tc.name testNetworkManagerConnectionAddCustomDNSRulePromise0300
-     * @tc.desc Test addCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test addCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerConnectionAddCustomDNSRulePromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "testNetworkManagerConnectionAddCustomDNSRulePromise0300";
@@ -107,12 +107,12 @@ export default function MulticastconnectionPromiseTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerConnectionRemoveCustomDNSRulePromise0100
      * @tc.number SUB_NetworkManager_Connection_removeCustomDNSRule_Promise_0100
-     * @tc.name testNetworkManagerConnectionRemoveCustomDNSRulePromise0100
-     * @tc.desc Test removeCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerConnectionRemoveCustomDNSRulePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "testNetworkManagerConnectionRemoveCustomDNSRulePromise0100";
@@ -139,12 +139,12 @@ export default function MulticastconnectionPromiseTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerConnectionRemoveCustomDNSRulePromise0300
      * @tc.number SUB_NetworkManager_Connection_removeCustomDNSRule_Promise_0300
-     * @tc.name testNetworkManagerConnectionRemoveCustomDNSRulePromise0300
-     * @tc.desc Test removeCustomDNSRule property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test removeCustomDNSRule property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerConnectionRemoveCustomDNSRulePromise0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "testNetworkManagerConnectionRemoveCustomDNSRulePromise0300";
@@ -167,13 +167,13 @@ export default function MulticastconnectionPromiseTest() {
         done();
       }
     });
-    /*
+    /**
+     * @tc.name   testNetworkManagerConnectionClearCustomDNSRulePromise0100
      * @tc.number SUB_NetworkManager_Connection_clearCustomDNSRule_Promise_0100
-     * @tc.name testNetworkManagerConnectionClearCustomDNSRulePromise0100
-     * @tc.desc Test clearCustomDnsRules property
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test clearCustomDnsRules property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerConnectionClearCustomDNSRulePromise0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName = "testNetworkManagerConnectionClearCustomDNSRulePromise0100";

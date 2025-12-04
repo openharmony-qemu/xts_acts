@@ -43,12 +43,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     });
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0010
-     * @tc.name      SpaceCross5AlignItemsTest_0010
-     * @tc.desc      Flex space cross=5: wrap: FlexWrap.NoWrap
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0010
+     * @tc.number SpaceCross5AlignItemsTest_0010
+     * @tc.desc   Flex space cross=5: wrap: FlexWrap.NoWrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0010 START');
@@ -63,12 +63,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     });
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0020
-     * @tc.name      SpaceCross5AlignItemsTest_0020
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.Start
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0020
+     * @tc.number SpaceCross5AlignItemsTest_0020
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0020 START');
@@ -83,12 +83,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     }); 
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0030
-     * @tc.name      SpaceCross5AlignItemsTest_0030
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.Center
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0030
+     * @tc.number SpaceCross5AlignItemsTest_0030
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0030 START');
@@ -102,12 +102,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     }); 
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0040
-     * @tc.name      SpaceCross5AlignItemsTest_0040
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.End
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0040
+     * @tc.number SpaceCross5AlignItemsTest_0040
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0040 START');
@@ -121,12 +121,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     });
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0050
-     * @tc.name      SpaceCross5AlignItemsTest_0050
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.Stretch
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0050
+     * @tc.number SpaceCross5AlignItemsTest_0050
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.Stretch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0050 START');
@@ -140,12 +140,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     });
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0060
-     * @tc.name      SpaceCross5AlignItemsTest_0060
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.Baseline
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0060
+     * @tc.number SpaceCross5AlignItemsTest_0060
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.Baseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0060',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0060 START');
@@ -159,12 +159,12 @@ export default function SpaceCross5AlignItemsJsunit() {
     });
 
     /**
-     * @tc.number    SpaceCross5AlignItemsTest_0070
-     * @tc.name      SpaceCross5AlignItemsTest_0070
-     * @tc.desc      Flex space cross=5: alignItems: ItemAlign.Baseline
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceCross5AlignItemsTest_0070
+     * @tc.number SpaceCross5AlignItemsTest_0070
+     * @tc.desc   Flex space cross=5: alignItems: ItemAlign.Baseline
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceCross5AlignItemsTest_0070',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceCross5AlignItemsTest_0070 START');

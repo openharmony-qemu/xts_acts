@@ -67,13 +67,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             console.info('afterEach called');
         })
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0100
-         * @tc.name       : testNoPermissionQueryDevices001
-         * @tc.desc       : verify permission of queryDevices
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionQueryDevices001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0100
+         * @tc.desc   verify permission of queryDevices
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionQueryDevices001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionQueryDevices001---------------------------');
@@ -91,13 +91,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0200
-         * @tc.name       : testNoPermissionBindDevice001
-         * @tc.desc       : verify permission of bindDevice
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionBindDevice001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0200
+         * @tc.desc   verify permission of bindDevice
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionBindDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionBindDevice001---------------------------');
@@ -114,13 +114,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0300
-         * @tc.name       : testNoPermissionBindDevice002
-         * @tc.desc       : verify permission of bindDevice
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionBindDevice002
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0300
+         * @tc.desc   verify permission of bindDevice
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionBindDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async done => {
             console.info('----------------------testNoPermissionBindDevice002---------------------------');
@@ -137,13 +137,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0400
-         * @tc.name       : testNoPermissionBindDeviceDriver001
-         * @tc.desc       : verify permission of bindDeviceDriver
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionBindDeviceDriver001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0400
+         * @tc.desc   verify permission of bindDeviceDriver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionBindDeviceDriver001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionBindDeviceDriver001---------------------------');
@@ -161,13 +161,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0500
-         * @tc.name       : testNoPermissionBindDeviceDriver002
-         * @tc.desc       : verify permission of bindDeviceDriver
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionBindDeviceDriver002
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0500
+         * @tc.desc   verify permission of bindDeviceDriver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionBindDeviceDriver002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async done => {
             console.info('----------------------testNoPermissionBindDeviceDriver002---------------------------');
@@ -185,13 +185,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0600
-         * @tc.name       : testNoPermissionUnbindDevice001
-         * @tc.desc       : verify permission of unbindDevice
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionUnbindDevice001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0600
+         * @tc.desc   verify permission of unbindDevice
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionUnbindDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionUnbindDevice001---------------------------');
@@ -209,13 +209,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0700
-         * @tc.name       : testNoPermissionUnbindDevice002
-         * @tc.desc       : verify permission of unbindDevice
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionUnbindDevice002
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0700
+         * @tc.desc   verify permission of unbindDevice
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionUnbindDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async done => {
             console.info('----------------------testNoPermissionUnbindDevice002---------------------------');
@@ -235,13 +235,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0800
-         * @tc.name       : testNoPermissionQueryDeviceInfo001
-         * @tc.desc       : verify permission of queryDeviceInfo
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionQueryDeviceInfo001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0800
+         * @tc.desc   verify permission of queryDeviceInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionQueryDeviceInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionQueryDeviceInfo001---------------------------');
@@ -260,13 +260,13 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-         * @tc.number     : SUB_Driver_Ext_DevManNoPermission_0900
-         * @tc.name       : testNoPermissionQueryDriverInfo001
-         * @tc.desc       : verify permission of queryDeviceInfo
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : Level 2
+        /**
+         * @tc.name   testNoPermissionQueryDriverInfo001
+         * @tc.number SUB_Driver_Ext_DevManNoPermission_0900
+         * @tc.desc   verify permission of queryDeviceInfo
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testNoPermissionQueryDriverInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, done => {
             console.info('----------------------testNoPermissionQueryDriverInfo001---------------------------');
@@ -285,11 +285,14 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-        * @tc.name:Permission_bindDriverWithDeviceId_001
-        * @tc.desc:verify permission of bindDriverWithDeviceId
-        * @tc.type: FUNC
-        */
+        /**
+         * @tc.name   Permission_bindDriverWithDeviceId_001
+         * @tc.number Permission_bindDriverWithDeviceId_001
+         * @tc.desc   verify permission of bindDriverWithDeviceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("Permission_bindDriverWithDeviceId_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async done => {
             console.info('----------------------Permission_bindDriverWithDeviceId_001---------------------------');
             if (!isDeviceConnected(done)) {
@@ -305,11 +308,14 @@ export default function DeviceManagerNoPermissionJsTest() {
             }
         });
 
-        /*
-        * @tc.name:Permission_unbindDriverWithDeviceId_001
-        * @tc.desc:verify permission of unbindDriverWithDeviceId
-        * @tc.type: FUNC
-        */
+        /**
+         * @tc.name   Permission_unbindDriverWithDeviceId
+         * @tc.number Permission_unbindDriverWithDeviceId
+         * @tc.desc   verify permission of unbindDriverWithDeviceId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("Permission_unbindDriverWithDeviceId", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async done => {
             console.info('----------------------Permission_unbindDriverWithDeviceId_001---------------------------');
             if (!isDeviceConnected(done)) {

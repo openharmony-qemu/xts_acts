@@ -23,14 +23,12 @@ export default function fileioStreamRead() {
 describe('fileio_stream_read', function () {
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_000
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0000
-   * @tc.name fileio_test_stream_read_sync_000
-   * @tc.desc Test Stream.readSync() interface.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Stream.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_000', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_000');
@@ -52,14 +50,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_sync_001
    * @tc.number SUB_DF_FILEIO_STREAM_READSYNC_0100
-   * @tc.name fileio_test_stream_read_sync_001
-   * @tc.desc Test Stream.readSync() interface.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test Stream.readSync() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_sync_001', Level.LEVEL3, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_sync_001');
@@ -87,13 +83,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_000
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0000
-   * @tc.name fileio_test_stream_read_async_000
-   * @tc.desc Test read() interface,return in promise mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface,return in promise mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_000', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_000');
@@ -114,13 +109,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_001
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0100
-   * @tc.name fileio_test_stream_read_async_001
-   * @tc.desc Test read() interface, return in callback mode.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, return in callback mode.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_001', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileio_test_stream_read_async_001');
@@ -141,13 +135,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_002
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0200
-   * @tc.name fileio_test_stream_read_async_002
-   * @tc.desc Test read() interface, When the offset is 1 and the length is 5.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the offset is 1 and the length is 5.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_002');
@@ -172,13 +165,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_003
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0300
-   * @tc.name fileio_test_stream_read_async_003
-   * @tc.desc Test read() interface, When offset equals buffer length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When offset equals buffer length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_003', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_003');
@@ -201,13 +193,12 @@ describe('fileio_stream_read', function () {
 
 
   /**
+   * @tc.name   fileio_test_stream_read_async_004
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0400
-   * @tc.name fileio_test_stream_read_async_004
-   * @tc.desc Test read() interface, When the offset is 1 and the position is 5.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the offset is 1 and the position is 5.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_004', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_004');
@@ -237,13 +228,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_005
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0500
-   * @tc.name fileio_test_stream_read_async_005
-   * @tc.desc Test read() interface, When the offset is negative.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the offset is negative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_005', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_005');
@@ -262,13 +252,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_006
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0600
-   * @tc.name fileio_test_stream_read_async_006
-   * @tc.desc Test read() interface, When offset+length>buffer.size.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When offset+length>buffer.size.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_006', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_006');
@@ -287,13 +276,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_007
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0700
-   * @tc.name fileio_test_stream_read_async_007
-   * @tc.desc Test read() interface, When the offset is greater than the buffer length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the offset is greater than the buffer length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_007', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_007');
@@ -312,13 +300,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_008
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0800
-   * @tc.name fileio_test_stream_read_async_008
-   * @tc.desc Test read() interface, When the length is greater than the buffer length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the length is greater than the buffer length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_008', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_008');
@@ -337,13 +324,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_009
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_0900
-   * @tc.name fileio_test_stream_read_async_009
-   * @tc.desc Test read() interface, When the length is negative,equivalent to omitting the parameter.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the length is negative,equivalent to omitting the parameter.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_009', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_009');
@@ -363,14 +349,13 @@ describe('fileio_stream_read', function () {
     }
   });
 
-   /**
+  /**
+   * @tc.name   fileio_test_stream_read_async_010
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_1000
-   * @tc.name fileio_test_stream_read_async_010
-   * @tc.desc Test read() interface, When there are no parameters.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When there are no parameters.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_010', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_010');
@@ -388,14 +373,13 @@ describe('fileio_stream_read', function () {
     }
   });
 
-    /**
+  /**
+   * @tc.name   fileio_test_stream_read_async_011
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_1100
-   * @tc.name fileio_test_stream_read_async_011
-   * @tc.desc Test read() interface, When length>FILE_CONTENT.length.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When length>FILE_CONTENT.length.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_011', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_011');
@@ -415,13 +399,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_012
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_1200
-   * @tc.name fileio_test_stream_read_async_012
-   * @tc.desc Test read() interface, When the position is negative.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface, When the position is negative.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_012', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_012');
@@ -440,13 +423,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_013
    * @tc.number SUB_DF_FILEIO_STREAM_READASYNC_1300
-   * @tc.name fileio_test_stream_read_async_013
-   * @tc.desc Test read() interface,When the parameter type is wrong.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test read() interface,When the parameter type is wrong.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileio_test_stream_read_async_013', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_013');
@@ -465,14 +447,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_014
    * @tc.number SUB_DF_FILEIO_STREAM_READ_ASYNC_1400
-   * @tc.name fileio_test_stream_read_async_014
-   * @tc.desc Test the read() interface of class Stream. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the read() interface of class Stream. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_async_014', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_014');
@@ -497,14 +477,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_015
    * @tc.number SUB_DF_FILEIO_STREAM_READ_ASYNC_1500
-   * @tc.name fileio_test_stream_read_async_015
-   * @tc.desc Test the read() interface of class Stream. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the read() interface of class Stream. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_async_015', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_015');
@@ -539,14 +517,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_016
    * @tc.number SUB_DF_FILEIO_STREAM_READ_ASYNC_1600
-   * @tc.name fileio_test_stream_read_async_016
-   * @tc.desc Test the read() interface of class Stream. Promise.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the read() interface of class Stream. Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_async_016', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_016');
@@ -578,14 +554,12 @@ describe('fileio_stream_read', function () {
   });
 
   /**
+   * @tc.name   fileio_test_stream_read_async_017
    * @tc.number SUB_DF_FILEIO_STREAM_READ_ASYNC_1700
-   * @tc.name fileio_test_stream_read_async_017
-   * @tc.desc Test the read() interface of class Stream. Callback.
-   * Undefined option arguments, use default options.
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test the read() interface of class Stream. Callback.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('fileio_test_stream_read_async_017', Level.LEVEL3, async function (done) {
     let fpath = await nextFileName('fileio_test_stream_read_async_017');

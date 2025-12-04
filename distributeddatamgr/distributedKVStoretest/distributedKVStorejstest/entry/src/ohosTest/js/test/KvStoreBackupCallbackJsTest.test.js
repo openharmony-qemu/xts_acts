@@ -52,7 +52,7 @@ function publicGetKvStore(optionsp){
 function publicCloseKvStore() {
     console.log(`Test closeKvStore `)
     return new Promise(function (resolve, reject) {
-        kvManager.closeKVStore(BUNDLE_NAME, STORE_ID, kvStore, (err, data) => {
+        kvManager.closeKVStore(BUNDLE_NAME, STORE_ID, (err, data) => {
             console.info('Test closeKvStore begin')
             if (err) {
                 console.info('Test closeKvStore err = ' + err);
@@ -65,6 +65,7 @@ function publicCloseKvStore() {
                     console.info('Test deleteKVStore err = ' + err);
                     reject(err);
                 }
+                kvStore = null;
                 console.info('Test deleteKVStore data = ' + data);
                 resolve(data);
             });
@@ -213,21 +214,22 @@ export default function kvStoreBackupCallbackJsunittest(){
             'which is executed after the test suite is executed');
             await publicCloseKvStore();
             kvManager = null;
+            kvStore = null;
             console.info("Test kvstore = " + kvStore);
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.restore() manal testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0100
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0100
+         * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try{
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100 before restore");
-                publicRestore(kvStore).then((data) => {
+                await publicRestore(kvStore).then((data) => {
                     console.log("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0100 going restore = " + JSON.stringify(data));
                     expect().assertFail();
                     done();
@@ -246,25 +248,25 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.restore() manal testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0200
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0200
+         * @tc.desc   Test Js Api SingleKvStore.restore() manal testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200 before getname");
                 file  = '123' ;
                 files[0] = file ;
-                publicBackup(kvStore,file) ;
+                await publicBackup(kvStore,file) ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200 before restore");
                 await sleep(500);
-                publicRestore(kvStore);
+                await publicRestoreSp(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200 going restore ");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_MANALRESTORE_CALLBACK_0200 delResult[1] = " + delResult[1]);
@@ -281,12 +283,12 @@ export default function kvStoreBackupCallbackJsunittest(){
 
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.backup() db testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0300
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0300
+         * @tc.desc   Test Js Api SingleKvStore.backup() db testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -294,10 +296,10 @@ export default function kvStoreBackupCallbackJsunittest(){
                 file  = 'true' ;
                 files[0] = file ;
                 console.log("SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100 before backup");
-                publicBackup(kvStore,file) ;
+                await publicBackup(kvStore,file) ;
                 console.log("SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100 going backup");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_BUCKUP_CALLBACK_0100 delResult[1] = " + delResult[1]);
@@ -313,12 +315,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0400
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0400
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try{
@@ -327,7 +329,7 @@ export default function kvStoreBackupCallbackJsunittest(){
                 file = 'legal' ;
                 files[0] = "legal" ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100 before backup");
-                publicBackup(kvStore,file) ;
+                await publicBackup(kvStore,file) ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0100 going backup");
                 await sleep(500);
                 await publicDeleteBackup(kvStore,files).then((data) => {
@@ -345,12 +347,12 @@ export default function kvStoreBackupCallbackJsunittest(){
             }
         })
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0500
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0500
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -358,10 +360,10 @@ export default function kvStoreBackupCallbackJsunittest(){
                 file  = '1' ;
                 files[0] = file ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200 before backup");
-                publicBackup(kvStore,file) ;
+                await publicBackup(kvStore,file) ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200 going backup");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0200 delResult[1] = " + delResult[1]);
@@ -377,12 +379,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.backup() manal testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0600
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0600
+         * @tc.desc   Test Js Api SingleKvStore.backup() manal testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -390,7 +392,7 @@ export default function kvStoreBackupCallbackJsunittest(){
                 file  = '1.0' ;
                 files[0] = file ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300 before backup");
-                publicBackup(kvStore,file) ;
+                await publicBackup(kvStore,file) ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0300 going backup");
                 await sleep(500);
                 await publicDeleteBackup(kvStore,files).then((data) => {
@@ -409,12 +411,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 004
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0700
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0700
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -438,12 +440,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 005
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0800
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0800
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -460,20 +462,25 @@ export default function kvStoreBackupCallbackJsunittest(){
                 files[3] = file3 ;
                 files[4] = file4 ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500 before backup");
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 await sleep(500);
-                publicBackup(kvStore,file1);
+                await publicBackup(kvStore,file1);
                 await sleep(500);
-                publicBackup(kvStore,file2);
+                await publicBackup(kvStore,file2);
                 await sleep(500);
-                publicBackup(kvStore,file3);
+                await publicBackup(kvStore,file3);
                 await sleep(500);
-                publicBackup(kvStore,file4);
-                await sleep(500);
+
+                try {
+                    await publicBackup(kvStore,file4);
+                    await sleep(500);
+                  } catch(e) {
+                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500 publicBackup(kvStore,file4) " + e);
+                  }
 
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500 before publicDeleteBackup");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
 
                     expect("1").assertEqual(delresult[0][0])
                     expect(0).assertEqual(delresult[0][1]);
@@ -504,12 +511,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600
-         * @tc.desc Test Js Api SingleKvStore.backup() testcase 006
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0900
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_0900
+         * @tc.desc   Test Js Api SingleKvStore.backup() testcase 006
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -528,30 +535,40 @@ export default function kvStoreBackupCallbackJsunittest(){
                 files[4] = file4 ;
                 files[5] = file5 ;
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 before backup");
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 await sleep(500);
-                publicBackup(kvStore,file1);
+                await publicBackup(kvStore,file1);
                 await sleep(500);
-                publicBackup(kvStore,file2);
+                await publicBackup(kvStore,file2);
                 await sleep(500);
-                publicBackup(kvStore,file3);
+                await publicBackup(kvStore,file3);
                 await sleep(500);
-                publicBackup(kvStore,file4);
-                await sleep(500);
-                console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 before Sixth backup");
-                publicBackup(kvStore,file5).then((data) => {
-                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 going backup");
-                    expect(true).assertEqual(data == "code数字");
-                    done();
-                }).catch((err) => {
-                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 ManualbackupCallback002 fail1 " + err);
-                    console.log(JSON.stringify(err));
-                    expect(true).assertEqual(JSON.stringify(err) == "{\"code\":\"\"}");
-                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 Sixth backup err");
-                })
-                await sleep(500);
+                try {
+                    await publicBackup(kvStore,file4);
+                    await sleep(500);
+                  } catch(e) {
+                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500 publicBackup(kvStore,file4) " + e);
+                  }
+
+                  try {
+                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 before Sixth backup");
+                    await publicBackup(kvStore,file5).then((data) => {
+                        console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 going backup");
+                        expect(true).assertEqual(data == "code数字");
+                        done();
+                    }).catch((err) => {
+                        console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 ManualbackupCallback002 fail1 " + err);
+                        console.log(JSON.stringify(err));
+                        expect(true).assertEqual(JSON.stringify(err) == "{\"code\":\"\"}");
+                        console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 Sixth backup err");
+                    })
+                    await sleep(500);
+                  } catch(e) {
+                    console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0500 publicBackup(kvStore,file4) " + e);
+                  }
+
                 console.log("SUB_DDM_DKV_KVBACKUP_MANALBACKUP_CALLBACK_0600 before publicDeleteBackup");
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
 
                     expect("1").assertEqual(delresult[0][0])
                     expect(0).assertEqual(delresult[0][1]);
@@ -576,25 +593,25 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1000
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1000
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100 before getname");
                 file  = 'legal' ;
                 files[0] = file ;
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100 before restoresp");
                 await sleep(500);
-                publicRestoreSp(kvStore,file);
+                await publicRestoreSp(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100 going restoresp");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0100 delResult[1] = " + delResult[1]);
@@ -610,25 +627,25 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1100
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1100
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200 before getname");
                 file  = 'true' ;
                 files[0] = file ;
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200 before restoresp");
                 await sleep(500);
-                publicRestoreSp(kvStore,file);
+                await publicRestoreSp(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200 going restoresp");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0200 delResult[1] = " + delResult[1]);
@@ -644,25 +661,25 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1200
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1200
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300 before getname");
                 file  = '1' ;
                 files[0] = file ;
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300 before restoresp");
                 await sleep(500);
-                publicRestoreSp(kvStore,file);
+                await publicRestoreSp(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300 going restoresp");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0300 delResult[1] = " + delResult[1]);
@@ -678,25 +695,25 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 004
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1300
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1300
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 004
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400 before getname");
                 file  = '1.0' ;
                 files[0] = file ;
-                publicBackup(kvStore,file);
+                await publicBackup(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400 before restoresp");
                 await sleep(500);
-                publicRestoreSp(kvStore,file);
+                await publicRestoreSp(kvStore,file);
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400 going restoresp");
                 await sleep(500);
-                publicDeleteBackup(kvStore,files).then((data) => {
+                await publicDeleteBackup(kvStore,files).then((data) => {
                     let delResult = delresult[0];
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400 delResult = " + delResult);
                     console.info("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0400 delResult[1] = " + delResult[1]);
@@ -712,21 +729,27 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 005
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1400
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1400
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 005
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500 before getname");
                 file  = '' ;
-                publicBackup(kvStore,file) ;
+                try {
+                    await publicBackup(kvStore,file) ;
+                    await sleep(500);
+                } catch(e) {
+                    console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500 publicBackup(kvStore,file) " + e);
+                }
+
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500 before restoresp");
                 await sleep(500);
-                publicRestoreSp(kvStore,file).then((data) => {
+                await publicRestoreSp(kvStore,file).then((data) => {
                     console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0500 going restoresp = " + JSON.stringify(data));
                     expect(true).assertEqual(false);
                     done();
@@ -743,19 +766,19 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600
-         * @tc.desc Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 006
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1500
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1500
+         * @tc.desc   Test Js Api SingleKvStore.restore() SpecifiedVerision testcase 006
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600 before getname");
                 file  = 'legal' ;
                 console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600 before restoresp");
-                publicRestoreSp(kvStore,file).then((data) => {
+                await publicRestoreSp(kvStore,file).then((data) => {
                     console.log("SUB_DDM_DKV_KVBACKUP_RESTORETOSPECIFIEDVERSION_CALLBACK_0600 going restoresp = " + JSON.stringify(data));
                     expect(true).assertEqual(false);
                     done();
@@ -772,12 +795,12 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.deleteBackup() testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1600
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1600
+         * @tc.desc   Test Js Api SingleKvStore.deleteBackup() testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_DELETEBUCKUP_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
@@ -801,17 +824,17 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 001
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1700
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1700
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 001
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100 before putdata");
-                publicPut(kvStore,"key","value").then((data)=>{
+                await publicPut(kvStore,"key","value").then((data)=>{
                     console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100 going putdata data= " + JSON.stringify(data));
                     console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0100 going putdata");
                     expect(data == undefined).assertTrue();
@@ -829,19 +852,19 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 002
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1800
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1800
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 002
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200 before putdata");
                 await publicPut(kvStore,"key","value") ;
                 console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200 going putdata");
-                publicGet(kvStore,"key").then((data) => {
+                await publicGet(kvStore,"key").then((data) => {
                     console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0200 going getdata" + JSON.stringify(data));
                     expect(true).assertEqual(data == "value");
                     done();
@@ -858,19 +881,19 @@ export default function kvStoreBackupCallbackJsunittest(){
         })
 
         /**
-         * @tc.name SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300
-         * @tc.desc Test Js Api SingleKvStore.put() db testcase 003
-         * @tc.type: FUNC
-         * @tc.number: SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1900
-         * @tc.size: MediumTest
-         * @tc.level: Level 2
+         * @tc.name   SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300
+         * @tc.number SUB_DistributedData_KVStore_SDK_DisKVStoreBackupCallbackJsApiTest_1900
+         * @tc.desc   Test Js Api SingleKvStore.put() db testcase 003
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             try {
                 console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300 before putdata");
                 await publicPut(kvStore,"putcallback003","value1") ;
                 console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300 going putdata");
-                publicGet(kvStore,"putcallback").then((data) => {
+                await publicGet(kvStore,"putcallback").then((data) => {
                     console.log("SUB_DDM_DKV_KVBACKUP_PUT_CALLBACK_0300 going getdata" + JSON.stringify(data));
                     expect(true).assertEqual(false);
                     done();

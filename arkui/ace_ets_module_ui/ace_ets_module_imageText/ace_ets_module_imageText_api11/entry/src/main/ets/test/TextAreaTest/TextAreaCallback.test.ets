@@ -20,7 +20,7 @@ import events_emitter from '@ohos.events.emitter';
 export default function TextAreaCallbackTest() {
 
   const SUITE: string = 'TextAreaCallback'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
 
   describe('TextAreaCallbackTest', () => {
 
@@ -42,10 +42,13 @@ export default function TextAreaCallbackTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_TextArea_Callback_0100
-     *tc.name   TextArea.onEditChange
-     *tc.desc   TextArea.onEditChange
+    /**
+     * @tc.name   ArkUI_TextArea_Callback_0100
+     * @tc.number ArkUI_TextArea_Callback_0100
+     * @tc.desc   TextArea.onEditChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUI_TextArea_Callback_0100', Level.LEVEL1, async (done: Function) => {
       let CASE = 'ArkUI_TextArea_Callback_0100'

@@ -71,12 +71,12 @@ export default function DecimalTest034() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_001
-     * @tc.name      : Decimal_toFraction_Func_34_001
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_001
+     * @tc.number DECIMAL_TEST_34_001
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -98,12 +98,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_002
-     * @tc.name      : Decimal_toFraction_Func_34_002
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_002
+     * @tc.number DECIMAL_TEST_34_002
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('-200111074540568980159529,25000000000000', '-8004442981.622759206381160');
@@ -124,12 +124,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_003
-     * @tc.name      : Decimal_toFraction_Func_34_003
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_003
+     * @tc.number DECIMAL_TEST_34_003
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('-211,100', '-2.11');
@@ -152,12 +152,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_004
-     * @tc.name      : Decimal_toFraction_Func_34_004
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_004
+     * @tc.number DECIMAL_TEST_34_004
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('12401124714135748113774134798397,2', '6200562357067874056887067399198.66971421701', '2');
@@ -186,12 +186,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_005
-     * @tc.name      : Decimal_toFraction_Func_34_005
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_005
+     * @tc.number DECIMAL_TEST_34_005
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('3511582655801640591,52', '67530435688493088.2885316751682999639624370547426320', '73');
@@ -217,12 +217,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_006
-     * @tc.name      : Decimal_toFraction_Func_34_006
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_006
+     * @tc.number DECIMAL_TEST_34_006
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('-4135862533810979636019397675000,1', '-4.135862533810979636019397675E+30');
@@ -246,12 +246,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_007
-     * @tc.name      : Decimal_toFraction_Func_34_007
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_007
+     * @tc.number DECIMAL_TEST_34_007
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('8199609,1000000', '8.199609');
@@ -273,12 +273,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_008
-     * @tc.name      : Decimal_toFraction_Func_34_008
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_008
+     * @tc.number DECIMAL_TEST_34_008
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('2125057574,3289',
@@ -313,12 +313,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_009
-     * @tc.name      : Decimal_toFraction_Func_34_009
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_009
+     * @tc.number DECIMAL_TEST_34_009
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('1,2', '0.5716202415873544262986953173753852278285193332218646822626651', '2');
@@ -349,12 +349,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_010
-     * @tc.name      : Decimal_toFraction_Func_34_010
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_010
+     * @tc.number DECIMAL_TEST_34_010
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('-67246554173689300336047211,8000000', '-8405819271711162542.005901375');
@@ -379,12 +379,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_011
-     * @tc.name      : Decimal_toFraction_Func_34_011
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_011
+     * @tc.number DECIMAL_TEST_34_011
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('310291026486294288245548,3136069', '98942665638509321.1423434879780971949357099446690852',
@@ -414,12 +414,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_012
-     * @tc.name      : Decimal_toFraction_Func_34_012
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_012
+     * @tc.number DECIMAL_TEST_34_012
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_002('347448038601,1158528605', '299.9045833667611513140004251012084', '3206002475');
@@ -440,12 +440,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_013
-     * @tc.name      : Decimal_toFraction_Func_34_013
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_013
+     * @tc.number DECIMAL_TEST_34_013
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       test_toFraction_001('418298807255269058527019236340986131039447727889611856636829077,50000000000000000000000000000000000',
@@ -461,12 +461,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_014
-     * @tc.name      : Decimal_toFraction_Func_34_014
-     * @tc.desc      : Test toFraction
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_toFraction_Func_34_014
+     * @tc.number DECIMAL_TEST_34_014
+     * @tc.desc   Test toFraction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_toFraction_Func_34_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -489,12 +489,12 @@ export default function DecimalTest034() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_015
-     * @tc.name      : Decimal_decimalPlaces_Func_34_015
-     * @tc.desc      : Test decimalPlaces
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_decimalPlaces_Func_34_015
+     * @tc.number DECIMAL_TEST_34_015
+     * @tc.desc   Test decimalPlaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_decimalPlaces_Func_34_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       Decimal.set({
@@ -515,12 +515,12 @@ export default function DecimalTest034() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_016
-     * @tc.name      : Decimal_sum_Func_34_016
-     * @tc.desc      : Test sum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_sum_Func_34_016
+     * @tc.number DECIMAL_TEST_34_016
+     * @tc.desc   Test sum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sum_Func_34_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect('0').assertEqual(Decimal.sum(0, 0, 0).valueOf());
@@ -533,12 +533,12 @@ export default function DecimalTest034() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST_34_017
-     * @tc.name      : Decimal_isPositive_Func_34_017
-     * @tc.desc      : Test isPositive
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_isPositive_Func_34_017
+     * @tc.number DECIMAL_TEST_34_017
+     * @tc.desc   Test isPositive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isPositive_Func_34_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(true).assertEqual(new Decimal(0).isPositive());

@@ -40,11 +40,14 @@ export default function ActsZlibTest() {
             })
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_0100
-        * @tc.name: zipFile
-        * @tc.desc: inFile is empty
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_0100
+         * @tc.number ACTS_ZipFile_0100
+         * @tc.desc   inFile is empty
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ACTS_ZipFile_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================ACTS_ZipFile_0100 start==================");
             var path = "";
@@ -63,11 +66,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_0100 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_0200
-        * @tc.name: zipFile
-        * @tc.desc: inFile doesn't exist
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_0200
+         * @tc.number ACTS_ZipFile_0200
+         * @tc.desc   inFile doesn't exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ACTS_ZipFile_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================ACTS_ZipFile_0200 start==================");
             var path = dir + "/ACTS_ZipFile_9999900.txt";
@@ -94,11 +100,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_0200 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_0300
-        * @tc.name: zipFile
-        * @tc.desc: output file not specified
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_0300
+         * @tc.number ACTS_ZipFile_0300
+         * @tc.desc   output file not specified
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ACTS_ZipFile_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================ACTS_ZipFile_0300 start==================");
             var path = dir + "/ACTS_ZipFile_0300.txt";
@@ -125,11 +134,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_0300 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_0400
-        * @tc.name: zipFile
-        * @tc.desc: The output file is a directory that does not exist
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_0400
+         * @tc.number ACTS_ZipFile_0400
+         * @tc.desc   The output file is a directory that does not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ACTS_ZipFile_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================ACTS_ZipFile_0400 start==================");
             var path = dir + "/ACTS_ZipFile_0400.txt";
@@ -156,11 +168,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_0400 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_2200
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_LEVEL_NO_COMPRESSION,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2200
+         * @tc.number ACTS_ZipFile_2200
+         * @tc.desc   COMPRESS_LEVEL_NO_COMPRESSION,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ACTS_ZipFile_2200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             console.info("==================ACTS_ZipFile_2200 start==================");
             var path = dir + "/ACTS_ZipFile_2200.txt";
@@ -213,11 +228,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2200 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2300
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_LEVEL_BEST_SPEED,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2300
+         * @tc.number ACTS_ZipFile_2300
+         * @tc.desc   COMPRESS_LEVEL_BEST_SPEED,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ACTS_ZipFile_2300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             console.info("==================ACTS_ZipFile_2300 start==================");
             var path = dir + "/ACTS_ZipFile_2300.txt";
@@ -273,11 +291,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2300 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_2400
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_LEVEL_BEST_COMPRESSION,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2400
+         * @tc.number ACTS_ZipFile_2400
+         * @tc.desc   COMPRESS_LEVEL_BEST_COMPRESSION,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ZipFile_2400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================ACTS_ZipFile_2400 start==================");
             var path = dir + "/ACTS_ZipFile_2400.txt";
@@ -333,11 +354,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2400 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2500
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_LEVEL_DEFAULT_COMPRESSION,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2500
+         * @tc.number ACTS_ZipFile_2500
+         * @tc.desc   COMPRESS_LEVEL_DEFAULT_COMPRESSION,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ACTS_ZipFile_2500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             console.info("==================ACTS_ZipFile_2500 start==================");
             var path = dir + "/ACTS_ZipFile_2500.txt";
@@ -393,11 +417,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2500 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2600
-        * @tc.name: zipFile
-        * @tc.desc: MEM_LEVEL_MIN_MEMLEVEL,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2600
+         * @tc.number ACTS_ZipFile_2600
+         * @tc.desc   MEM_LEVEL_MIN_MEMLEVEL,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('ACTS_ZipFile_2600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             console.info("==================ACTS_ZipFile_2600 start==================");
             var path = dir + "/ACTS_ZipFile_2600.txt";
@@ -453,11 +480,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2600 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2700
-        * @tc.name: zipFile
-        * @tc.desc: MEM_LEVEL_MAX_MEMLEVEL,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2700
+         * @tc.number ACTS_ZipFile_2700
+         * @tc.desc   MEM_LEVEL_MAX_MEMLEVEL,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ZipFile_2700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================ACTS_ZipFile_2700 start==================");
             var path = dir + "/ACTS_ZipFile_2700.txt";
@@ -513,11 +543,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2700 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2800
-        * @tc.name: zipFile
-        * @tc.desc: MEM_LEVEL_DEFAULT_MEMLEVEL,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2800
+         * @tc.number ACTS_ZipFile_2800
+         * @tc.desc   MEM_LEVEL_DEFAULT_MEMLEVEL,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_2800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_2800 start==================");
             var path = dir + "/ACTS_ZipFile_2800.txt";
@@ -573,11 +606,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2800 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_2900
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_DEFAULT_STRATEGY,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_2900
+         * @tc.number ACTS_ZipFile_2900
+         * @tc.desc   COMPRESS_STRATEGY_DEFAULT_STRATEGY,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_2900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_2900 start==================");
             var path = dir + "/ACTS_ZipFile_2900.txt";
@@ -633,11 +669,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_2900 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_3000
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_FILTERED,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3000
+         * @tc.number ACTS_ZipFile_3000
+         * @tc.desc   COMPRESS_STRATEGY_FILTERED,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3000 start==================");
             var path = dir + "/ACTS_ZipFile_3000.txt";
@@ -693,11 +732,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3000 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_3100
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_HUFFMAN_ONLY,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3100
+         * @tc.number ACTS_ZipFile_3100
+         * @tc.desc   COMPRESS_STRATEGY_HUFFMAN_ONLY,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3100 start==================");
             var path = dir + "/ACTS_ZipFile_3100.txt";
@@ -750,11 +792,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3100 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_3200
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_RLE,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3200
+         * @tc.number ACTS_ZipFile_3200
+         * @tc.desc   COMPRESS_STRATEGY_RLE,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3200 start==================");
             var path = dir + "/ACTS_ZipFile_3200.txt";
@@ -808,11 +853,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3200 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_3300
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_FIXED,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3300
+         * @tc.number ACTS_ZipFile_3300
+         * @tc.desc   COMPRESS_STRATEGY_FIXED,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3300 start==================");
             var path = dir + "/ACTS_ZipFile_3300.txt";
@@ -868,11 +916,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3300 end==================");
         });
 
-        /*
-        * @tc.number: ACTS_ZipFile_3500
-        * @tc.name: zipFile
-        * @tc.desc: INPUT_FILE_NOT_EXIST,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3500
+         * @tc.number ACTS_ZipFile_3500
+         * @tc.desc   INPUT_FILE_NOT_EXIST,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3500 start==================");
             var path = dir + "/ACTS_ZipFile_3500.txt";
@@ -900,11 +951,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3500 end ==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_3600
-        * @tc.name: zipFile
-        * @tc.desc: INPUT_FILE_NULL,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_3600
+         * @tc.number ACTS_ZipFile_3600
+         * @tc.desc   INPUT_FILE_NULL,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_3600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_3600 start==================");
             var path = dir + "/ACTS_ZipFile_3600.txt";
@@ -931,11 +985,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_3600 end ==================")
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_4500
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_FILTERED_CALLBACK,,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_4500
+         * @tc.number ACTS_ZipFile_4500
+         * @tc.desc   COMPRESS_STRATEGY_FILTERED_CALLBACK,,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_4500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_4500 start==================");
             var path = dir + "/ACTS_ZipFile_4500.txt";
@@ -985,11 +1042,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_4500 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_4900
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_FILTERED_PROMISE,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_4900
+         * @tc.number ACTS_ZipFile_4900
+         * @tc.desc   COMPRESS_STRATEGY_FILTERED_PROMISE,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_4900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_4900 start==================");
             var path = dir + "/ACTS_ZipFile_4900.txt";
@@ -1039,11 +1099,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_4900 end==================");
         })
 
-        /*
-        * @tc.number: ACTS_ZipFile_5000
-        * @tc.name: zipFile
-        * @tc.desc: COMPRESS_STRATEGY_FIXED,
-        */
+        /**
+         * @tc.name   ACTS_ZipFile_5000
+         * @tc.number ACTS_ZipFile_5000
+         * @tc.desc   COMPRESS_STRATEGY_FIXED,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('ACTS_ZipFile_5000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================ACTS_ZipFile_5000 start==================");
             var path = dir + "/ACTS_ZipFile_5000.txt";
@@ -1091,11 +1154,14 @@ export default function ActsZlibTest() {
             console.info("==================ACTS_ZipFile_5000 end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_InputParam_6700
-        * @tc.name: compressFileOfFolders
-        * @tc.desc: test compressFile when input is folders
-        */
+        /**
+         * @tc.name   compressFileOfFolders
+         * @tc.number Sub_Bms_Zlib_Compress_InputParam_6700
+         * @tc.desc   test compressFile when input is folders
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('compressFileOfFolders', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================compressFileOfFolders start==================");
             let inputPath1 = dir + "/compressFileOfFolders1";
@@ -1153,11 +1219,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_InputParam_6800
-        * @tc.name: compressFileTest
-        * @tc.desc: test compressFile when inFile and out file is valid
-        */
+        /**
+         * @tc.name   compressFileTest
+         * @tc.number Sub_Bms_Zlib_Compress_InputParam_6800
+         * @tc.desc   test compressFile when inFile and out file is valid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('compressFileTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================compressFileTest start==================");
             let path1 = dir + "/compressFileTest1.txt";
@@ -1211,11 +1280,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_0700
-        * @tc.name: compressFileInFileNotExist
-        * @tc.desc: test compressFile when inFile is not exist
-        */
+        /**
+         * @tc.name   compressFileInFileNotExist
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_0700
+         * @tc.desc   test compressFile when inFile is not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileInFileNotExist', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileInFileNotExist start==================");
             let path = "nonexist.txt";
@@ -1241,11 +1313,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileInFileNotExist end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_0800
-        * @tc.name: compressFileInFileNull
-        * @tc.desc: test compressFile when inFile is null
-        */
+        /**
+         * @tc.name   compressFileInFileNull
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_0800
+         * @tc.desc   test compressFile when inFile is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileInFileNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileInFileNull start==================");
             let zipDest = dir + "/compressFileInFileNull.zip";
@@ -1277,11 +1352,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileInFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_0900
-        * @tc.name: compressFileOutFileNotExist
-        * @tc.desc: test compressFile when outFile is not existed.
-        */
+        /**
+         * @tc.name   compressFileOutFileNotExist
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_0900
+         * @tc.desc   test compressFile when outFile is not existed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileOutFileNotExist', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileOutFileNotExist start==================");
             let path1 = dir + "/compressFileOutFileNotExist.txt";
@@ -1314,11 +1392,14 @@ export default function ActsZlibTest() {
         })
 
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_1000
-        * @tc.name: compressFileOutFileNull
-        * @tc.desc: test compressFile when outFile is null
-        */
+        /**
+         * @tc.name   compressFileOutFileNull
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_1000
+         * @tc.desc   test compressFile when outFile is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileOutFileNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileOutFileNull start==================");
             let path1 = dir + "/compressFileOutFileNull.txt";
@@ -1357,11 +1438,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileOutFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_1100
-        * @tc.name: compressFileOptionNull
-        * @tc.desc: test compressFile when option is null
-        */
+        /**
+         * @tc.name   compressFileOptionNull
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_1100
+         * @tc.desc   test compressFile when option is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileOptionNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileOptionNull start==================");
             let path1 = dir + "/compressFileOptionNull.txt";
@@ -1397,11 +1481,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileOptionNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_1200
-        * @tc.name: compressFileInvalidOption
-        * @tc.desc: test compressFile when option is invalid
-        */
+        /**
+         * @tc.name   compressFileInvalidOption
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_1200
+         * @tc.desc   test compressFile when option is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileInvalidOption', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileInvalidOption start==================");
             let path1 = dir + "/compressFileInvalidOption.txt";
@@ -1433,11 +1520,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileInvalidOption end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Compress_Unusual_1300
-        * @tc.name: compressFileStrategyNull
-        * @tc.desc: test compressFile when strategy is null
-        */
+        /**
+         * @tc.name   compressFileStrategyNull
+         * @tc.number Sub_Bms_Zlib_Compress_Unusual_1300
+         * @tc.desc   test compressFile when strategy is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('compressFileStrategyNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================compressFileStrategyNull start==================");
             let path1 = dir + "/compressFileStrategyNull.txt";
@@ -1475,11 +1565,14 @@ export default function ActsZlibTest() {
             console.info("==================compressFileOutFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0300
-        * @tc.name: decompressFileTest
-        * @tc.desc: test decompressFile when inFile and out file is valid
-        */
+        /**
+         * @tc.name   decompressFileTest
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0300
+         * @tc.desc   test decompressFile when inFile and out file is valid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('decompressFileTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================decompressFileTestOutDir start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -1564,11 +1657,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0400
-        * @tc.name: decompressDifferentLevel
-        * @tc.desc: test decompressFile when inFile and out file is valid
-        */
+        /**
+         * @tc.name   decompressDifferentLevel
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0400
+         * @tc.desc   test decompressFile when inFile and out file is valid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('decompressDifferentLevel', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================decompressDifferentLevel start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -1653,11 +1749,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0200
-        * @tc.name: decompressFileInFileNotExist
-        * @tc.desc: test decompressFile when inFile is not exist
-        */
+        /**
+         * @tc.name   decompressFileInFileNotExist
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0200
+         * @tc.desc   test decompressFile when inFile is not exist
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileInFileNotExist', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileInFileNotExist start==================");
             let zipDest = dir + "/noneexist.zip";
@@ -1689,11 +1788,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileInFileNotExist end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0300
-        * @tc.name: decompressFileInFileNull
-        * @tc.desc: test decompressFile when inFile is null
-        */
+        /**
+         * @tc.name   decompressFileInFileNull
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0300
+         * @tc.desc   test decompressFile when inFile is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileInFileNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileInFileNull start==================");
             let unzipdir = dir + "/decompressFileInFileNull";
@@ -1732,11 +1834,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileInFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0400
-        * @tc.name: decompressFileOutFileNotExist
-        * @tc.desc: test decompressFile when outFile is not existed.
-        */
+        /**
+         * @tc.name   decompressFileOutFileNotExist
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0400
+         * @tc.desc   test decompressFile when outFile is not existed.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileOutFileNotExist', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileOutFileNotExist start==================");
             let path = dir + "/decompressFileOutFileNotExist.txt";
@@ -1782,11 +1887,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileOutFileNotExist end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0500
-        * @tc.name: decompressFileOutFileNull
-        * @tc.desc: test decompressFile when outFile is null
-        */
+        /**
+         * @tc.name   decompressFileOutFileNull
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0500
+         * @tc.desc   test decompressFile when outFile is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileOutFileNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileOutFileNull start==================");
             let path = dir + "/decompressFileOutFileNull.txt";
@@ -1842,11 +1950,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileOutFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0600
-        * @tc.name: decompressFileOptionNull
-        * @tc.desc: test decompressFile when option is null
-        */
+        /**
+         * @tc.name   decompressFileOptionNull
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0600
+         * @tc.desc   test decompressFile when option is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileOptionNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileOptionNull start==================");
             let path = dir + "/decompressFileOptionNull.txt";
@@ -1905,11 +2016,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileOutFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0610
-        * @tc.name: decompressFileInputNotZipPro
-        * @tc.desc: test decompressFile when input file is not zip (promise).
-        */
+        /**
+         * @tc.name   decompressFileInputNotZipPro
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0610
+         * @tc.desc   test decompressFile when input file is not zip (promise).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileInputNotZipPro', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileInputNotZipPro start==================");
             let path = dir + "/decompressFileInputNotZipPro.txt";
@@ -1960,11 +2074,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileInputNotZipPro end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0620
-        * @tc.name: decompressFileInputNotZipCal
-        * @tc.desc: test decompressFile when input file is not zip (callback).
-        */
+        /**
+         * @tc.name   decompressFileInputNotZipCal
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0620
+         * @tc.desc   test decompressFile when input file is not zip (callback).
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileInputNotZipCal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileInputNotZipCal start==================");
             let path = dir + "/decompressFileInputNotZipCal.txt";
@@ -2006,11 +2123,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileInputNotZipCal end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0700
-        * @tc.name: decompressFileInvalidOption
-        * @tc.desc: test decompressFile when option is invalid
-        */
+        /**
+         * @tc.name   decompressFileInvalidOption
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0700
+         * @tc.desc   test decompressFile when option is invalid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileInvalidOption', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileInvalidOption start==================");
             let path = dir + "/decompressFileInvalidOption.txt";
@@ -2063,11 +2183,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileOutFileNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_Unusual_0800
-        * @tc.name: decompressFileStrategyNull
-        * @tc.desc: test decompressFile when strategy is null
-        */
+        /**
+         * @tc.name   decompressFileStrategyNull
+         * @tc.number Sub_Bms_Zlib_Uncompress_Unusual_0800
+         * @tc.desc   test decompressFile when strategy is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('decompressFileStrategyNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             console.info("==================decompressFileStrategyNull start==================");
             let path = dir + "/decompressFileStrategyNull.txt";
@@ -2129,11 +2252,14 @@ export default function ActsZlibTest() {
             console.info("==================decompressFileStrategyNull end==================");
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0500
-        * @tc.name: decompressFileInfileSpecialCharacters
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileInfileSpecialCharacters
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0500
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('decompressFileInfileSpecialCharacters', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             console.info("==================decompressFileInfileSpecialCharacters start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2218,11 +2344,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0600
-        * @tc.name: decompressFileOutfileSpecialCharDir
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileOutfileSpecialCharDir
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0600
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('decompressFileOutfileSpecialCharDir', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================decompressFileOutfileSpecialCharDir start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2307,11 +2436,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0700
-        * @tc.name: decompressFileInfileChineseDir
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileInfileChineseDir
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0700
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('decompressFileInfileChineseDir', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================decompressFileInfileChineseDir start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2396,11 +2528,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0800
-        * @tc.name: decompressFileInfileChinesePath
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileInfileChinesePath
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0800
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('decompressFileInfileChinesePath', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================decompressFileInfileChinesePath start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2485,11 +2620,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_0900
-        * @tc.name: decompressFileInfileZipPath
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileInfileZipPath
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_0900
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('decompressFileInfileZipPath', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================decompressFileInfileZipPath start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2574,11 +2712,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_Bms_Zlib_Uncompress_InputParam_1000
-        * @tc.name: decompressFileInfileBlankPath
-        * @tc.desc: test decompressFile when outFile is a dir
-        */
+        /**
+         * @tc.name   decompressFileInfileBlankPath
+         * @tc.number Sub_Bms_Zlib_Uncompress_InputParam_1000
+         * @tc.desc   test decompressFile when outFile is a dir
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('decompressFileInfileBlankPath', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================decompressFileInfileBlankPath start==================");
             let path = dir + "/decompressFileTest.txt";
@@ -2663,11 +2804,14 @@ export default function ActsZlibTest() {
             })
         })
 
-        /*
-        * @tc.number: Sub_CompressFiles_0100
-        * @tc.name: compressFiles 
-        * @tc.desc: test compressFiles
-        */
+        /**
+         * @tc.name   compressFiles
+         * @tc.number Sub_CompressFiles_0100
+         * @tc.desc   test compressFiles
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('compressFiles', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             console.info("==================compressFiles  start==================");
             try {
@@ -2763,11 +2907,14 @@ export default function ActsZlibTest() {
           done()
         })
 
-        /*
-        * @tc.number: Sub_CompressFiles_0200
-        * @tc.name: compressFilesNull
-        * @tc.desc: test compressFiles when inFile is null
-        */
+        /**
+         * @tc.name   compressFilesNull
+         * @tc.number Sub_CompressFiles_0200
+         * @tc.desc   test compressFiles when inFile is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('compressFilesNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             console.info("==================compressFilesNull start==================");
             try {

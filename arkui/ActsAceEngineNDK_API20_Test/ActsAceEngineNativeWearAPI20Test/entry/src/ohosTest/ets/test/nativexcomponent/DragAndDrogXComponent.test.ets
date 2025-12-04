@@ -50,12 +50,12 @@ export default function DragAndDrogXComponent() {
       done();
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_RESULT_CANCELED_0100
-     * @tc.name      testGetDragResult
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetDragResult
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_RESULT_CANCELED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDragResult', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -73,12 +73,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DROP_OPERATION_MOVE_0100
-     * @tc.name      testGetDropOperationResult
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetDropOperationResult
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DROP_OPERATION_MOVE_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDropOperationResult', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -96,12 +96,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_UNKNOWN_0100
-     * @tc.name      testGetOnPreDragResult0100
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_UNKNOWN_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -119,12 +119,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_ACTION_DETECTING_0100
-     * @tc.name      testGetOnPreDragResult0200
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_ACTION_DETECTING_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -142,12 +142,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_READY_TO_TRIGGER_DRAG_0100
-     * @tc.name      testGetOnPreDragResult0300
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_READY_TO_TRIGGER_DRAG_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -165,12 +165,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LIFT_STARTED_0100
-     * @tc.name      testGetOnPreDragResult0400
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LIFT_STARTED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -188,12 +188,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LIFT_FINISHED_0100
-     * @tc.name      testGetOnPreDragResult0500
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LIFT_FINISHED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -211,18 +211,18 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_STARTED_0100
-     * @tc.name      testGetOnPreDragResult0600
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0600
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_STARTED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0600', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         await Utils.driver.longClickAt(ImageComponentOnePoint, 1500);
-        await Utils.sleep(100);
+        await Utils.sleep(2000);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_STARTED_0100 start<====`);
         let Result: number = nativexcomponent.GetOnPreDragResult(4);
         expect(4).assertEqual(Result);
@@ -234,18 +234,18 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_FINISHED_0100
-     * @tc.name      testGetOnPreDragResult0700
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0700
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_FINISHED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0700', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         await Utils.driver.longClickAt(ImageComponentOnePoint, 1500);
-        await Utils.sleep(100);
+        await Utils.sleep(2000);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_PREVIEW_LANDING_FINISHED_0100 start<====`);
         let Result: number = nativexcomponent.GetOnPreDragResult(5);
         expect(5).assertEqual(Result);
@@ -257,12 +257,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_CANCELED_BEFORE_DRAG_0100
-     * @tc.name      testGetOnPreDragResult0800
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetOnPreDragResult0800
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_PRE_DRAG_STATUS_CANCELED_BEFORE_DRAG_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOnPreDragResult0800', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -280,12 +280,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_PREVIEW_SCALE_AUTO_0100
-     * @tc.name      testDragPreviewOptionSetScaleMode
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragPreviewOptionSetScaleMode
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_PREVIEW_SCALE_AUTO_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragPreviewOptionSetScaleMode', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -302,12 +302,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_UNKNOWN_0100
-     * @tc.name      testDragAndDropInfoGetDragStatusUnknown
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragAndDropInfoGetDragStatusUnknown
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_UNKNOWN_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragAndDropInfoGetDragStatusUnknown', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -324,12 +324,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_STARTED_0100
-     * @tc.name      testDragAndDropInfoGetDragStatusStarted
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragAndDropInfoGetDragStatusStarted
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_STARTED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragAndDropInfoGetDragStatusStarted', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -347,12 +347,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_ENDED_0100
-     * @tc.name      testDragAndDropInfoGetDragStatusEnded
-     * @tc.desc      Test ArkUI_FocusMove.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragAndDropInfoGetDragStatusEnded
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_DRAG_STATUS_ENDED_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragAndDropInfoGetDragStatusEnded', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -370,12 +370,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_DISABLEDEFAULTDROPANIMATION_0100
-     * @tc.name      testDragEventDisableDefaultDropAnimationOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventDisableDefaultDropAnimationOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_DISABLEDEFAULTDROPANIMATION_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventDisableDefaultDropAnimationOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -393,12 +393,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_DISABLEDEFAULTDROPANIMATION_0200
-     * @tc.name      testDragEventDisableDefaultDropAnimationParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventDisableDefaultDropAnimationParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_DISABLEDEFAULTDROPANIMATION_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventDisableDefaultDropAnimationParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -416,12 +416,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETSUGGESTEDDROPOPERATION_0100
-     * @tc.name      testDragEventSetSuggestedDropOperationOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetSuggestedDropOperationOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETSUGGESTEDDROPOPERATION_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetSuggestedDropOperationOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -439,12 +439,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETSUGGESTEDDROPOPERATION_0200
-     * @tc.name      testDragEventSetSuggestedDropOperationParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetSuggestedDropOperationParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETSUGGESTEDDROPOPERATION_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetSuggestedDropOperationParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -462,12 +462,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDRAGRESULT_0100
-     * @tc.name      testDragEventSetDragResultOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDragResultOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDRAGRESULT_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDragResultOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -485,12 +485,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDRAGRESULT_0200
-     * @tc.name      testDragEventSetDragResultParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDragResultParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDRAGRESULT_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDragResultParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -508,12 +508,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATA_0100
-     * @tc.name      testDragEventSetDataOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDataOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATA_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDataOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -531,12 +531,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATA_0200
-     * @tc.name      testDragEventSetDataParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDataParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATA_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDataParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -554,12 +554,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATALOADPARAMS_0100
-     * @tc.name      testDragEventSetDataLoadParamsOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDataLoadParamsOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATALOADPARAMS_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDataLoadParamsOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -577,12 +577,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATALOADPARAMS_0200
-     * @tc.name      testDragEventSetDataLoadParamsParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventSetDataLoadParamsParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_SETDATALOADPARAMS_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventSetDataLoadParamsParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -600,12 +600,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETUDMFDATA_0100
-     * @tc.name      testDragEventGetUdmfDataOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetUdmfDataOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETUDMFDATA_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetUdmfDataOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -623,12 +623,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETUDMFDATA_0200
-     * @tc.name      testDragEventGetUdmfDataParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetUdmfDataParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETUDMFDATA_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetUdmfDataParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -646,12 +646,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPECOUNT_0100
-     * @tc.name      testDragEventGetDataTypeCountOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDataTypeCountOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPECOUNT_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDataTypeCountOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -669,12 +669,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPECOUNT_0200
-     * @tc.name      testDragEventGetDataTypeCountParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDataTypeCountParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPECOUNT_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDataTypeCountParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -692,12 +692,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0100
-     * @tc.name      testDragEventGetDataTypesOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDataTypesOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDataTypesOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -715,12 +715,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0200
-     * @tc.name      testDragEventGetDataTypesParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDataTypesParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDataTypesParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -738,12 +738,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0300
-     * @tc.name      testDragEventGetDataTypesBufferSizeError
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDataTypesBufferSizeError
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDATATYPES_0300
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDataTypesBufferSizeError', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -761,12 +761,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGRESULT_0100
-     * @tc.name      testDragEventGetDragResultOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDragResultOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGRESULT_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDragResultOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -784,12 +784,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGRESULT_0200
-     * @tc.name      testDragEventGetDragResultParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDragResultParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGRESULT_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDragResultParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -807,12 +807,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDROPOPERATION_0100
-     * @tc.name      testDragEventGetDropOperationOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDropOperationOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDROPOPERATION_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDropOperationOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -830,12 +830,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDROPOPERATION_0200
-     * @tc.name      testDragEventGetDropOperationParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDropOperationParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDROPOPERATION_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDropOperationParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -853,12 +853,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETTOUCHPOINTXTOGLOBALDISPLAY_0100
-     * @tc.name      testGetDragTouchPointDisplayX
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetDragTouchPointDisplayX
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETTOUCHPOINTXTOGLOBALDISPLAY_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDragTouchPointDisplayX', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -876,12 +876,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETTOUCHPOINTYTOGLOBALDISPLAY_0100
-     * @tc.name      testGetDragTouchPointDisplayY
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testGetDragTouchPointDisplayY
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETTOUCHPOINTYTOGLOBALDISPLAY_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDragTouchPointDisplayY', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -899,12 +899,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETMODIFIERKEYSTATES_0100
-     * @tc.name      testDragEventGetModifierKeyStatesOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetModifierKeyStatesOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETMODIFIERKEYSTATES_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetModifierKeyStatesOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -922,12 +922,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETMODIFIERKEYSTATES_0200
-     * @tc.name      testDragEventGetModifierKeyStatesParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetModifierKeyStatesParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETMODIFIERKEYSTATES_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetModifierKeyStatesParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -945,12 +945,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDISPLAYID_0100
-     * @tc.name      testDragEventGetDisplayIdOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDisplayIdOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDISPLAYID_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDisplayIdOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -968,12 +968,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDISPLAYID_0200
-     * @tc.name      testDragEventGetDisplayIdParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDisplayIdParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDISPLAYID_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDisplayIdParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -991,12 +991,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_STARTDATALOADING_0100
-     * @tc.name      testDragEventStartDataLoadingOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventStartDataLoadingOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_STARTDATALOADING_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventStartDataLoadingOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1014,12 +1014,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_STARTDATALOADING_0200
-     * @tc.name      testDragEventStartDataLoadingParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventStartDataLoadingParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_STARTDATALOADING_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventStartDataLoadingParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1037,12 +1037,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CANCELDATALOADING_0100
-     * @tc.name      testDragEventCancelDataLoadingOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventCancelDataLoadingOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CANCELDATALOADING_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventCancelDataLoadingOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1060,12 +1060,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CANCELDATALOADING_0200
-     * @tc.name      testDragEventCancelDataLoadingParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventCancelDataLoadingParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_CANCELDATALOADING_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventCancelDataLoadingParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1083,12 +1083,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DISABLEDROPDATAPREFETCHONNODE_0100
-     * @tc.name      testDisableDropDataPrefetchOnNodeOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDisableDropDataPrefetchOnNodeOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DISABLEDROPDATAPREFETCHONNODE_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDisableDropDataPrefetchOnNodeOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1104,12 +1104,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DISABLEDROPDATAPREFETCHONNODE_0200
-     * @tc.name      testDisableDropDataPrefetchOnNodeParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDisableDropDataPrefetchOnNodeParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DISABLEDROPDATAPREFETCHONNODE_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDisableDropDataPrefetchOnNodeParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1125,12 +1125,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGACTION_SETDATALOADPARAMS_0100
-     * @tc.name      testDragActionSetDataLoadParamsOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragActionSetDataLoadParamsOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGACTION_SETDATALOADPARAMS_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragActionSetDataLoadParamsOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1148,12 +1148,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGACTION_SETDATALOADPARAMS_0200
-     * @tc.name      testDragActionSetDataLoadParamsParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragActionSetDataLoadParamsParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGACTION_SETDATALOADPARAMS_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragActionSetDataLoadParamsParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1169,12 +1169,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGSOURCE_0100
-     * @tc.name      testDragEventGetDragSourceOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDragSourceOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGSOURCE_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDragSourceOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1192,12 +1192,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGSOURCE_0200
-     * @tc.name      testDragEventGetDragSourceParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventGetDragSourceParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_GETDRAGSOURCE_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventGetDragSourceParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1213,12 +1213,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_ISREMOTE_0100
-     * @tc.name      testDragEventIsRemoteOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventIsRemoteOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_ISREMOTE_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventIsRemoteOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1236,12 +1236,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_ISREMOTE_0200
-     * @tc.name      testDragEventIsRemoteParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testDragEventIsRemoteParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_DRAGEVENT_ISREMOTE_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDragEventIsRemoteParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1259,12 +1259,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ENABLEDROPDISALLOWEDBADGE_0100
-     * @tc.name      testEnableDropDisallowedBadgeOk
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testEnableDropDisallowedBadgeOk
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ENABLEDROPDISALLOWEDBADGE_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEnableDropDisallowedBadgeOk', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1280,12 +1280,12 @@ export default function DragAndDrogXComponent() {
       }
     })
     /**
-     * @tc.number    SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ENABLEDROPDISALLOWEDBADGE_0200
-     * @tc.name      testEnableDropDisallowedBadgeParamInvalid
-     * @tc.desc      Test get native xcomopnent key event action works.
-     * @tc.level     LEVEL1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   testEnableDropDisallowedBadgeParamInvalid
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_ENABLEDROPDISALLOWEDBADGE_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEnableDropDisallowedBadgeParamInvalid', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

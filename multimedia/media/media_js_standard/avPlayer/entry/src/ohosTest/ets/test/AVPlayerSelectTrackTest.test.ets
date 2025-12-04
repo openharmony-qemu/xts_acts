@@ -280,14 +280,14 @@ export default function AVPlayerSelectTrackTest() {
       console.info('afterAll case');
       await mediaTestBase.closeFdNumber(avFd.fd)
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0100
-        * @tc.name      : 001.test change default audio track
-        * @tc.desc      : test change default audio track
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0100
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       let preparedOperation = async () => {
@@ -317,14 +317,14 @@ export default function AVPlayerSelectTrackTest() {
 
       await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0200
-        * @tc.name      : 001.test change default audio track
-        * @tc.desc      : test change default audio track
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0200
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
 
       let preparedOperation = async () => {
@@ -352,14 +352,14 @@ export default function AVPlayerSelectTrackTest() {
 
       await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined, done);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_ON_0000
-        * @tc.name      : 001.test change default audio track
-        * @tc.desc      : test change default audio track
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_ON_0000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_ON_0000
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_ON_0000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_ON_0000 called');
       let preparedOperation = async () => {
@@ -389,14 +389,14 @@ export default function AVPlayerSelectTrackTest() {
 
       await testChangeTrackListening(avFd, preparedOperation, playedOperation, stoppedOperation, undefined,changeTrackOn, done);
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300
-        * @tc.name      : 006.test change default audio track
-        * @tc.desc      : test change default audio track
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300
+     * @tc.desc   test change default audio track
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_SELECTTRACK_FUNC_0300', Level.LEVEL0, async (done: Function) => {
       await media.createAVPlayer().then((video) => {
         if (typeof (video) != 'undefined') {

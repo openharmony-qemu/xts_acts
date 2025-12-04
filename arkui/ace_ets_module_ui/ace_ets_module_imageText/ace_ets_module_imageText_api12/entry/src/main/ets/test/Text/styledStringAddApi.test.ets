@@ -43,15 +43,15 @@ export default function styledStringAddApi() {
       console.info("styledStringAddApi after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_StyledString_0010
-     * @tc.name       : styledStringAddApi_001
-     * @tc.desc       : StyledStringChangeValue Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   styledStringAddApi_001
+     * @tc.number styledStringAddApi_001
+     * @tc.desc   styledStringAddApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('styledStringAddApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[styledStringAddApi_001] START');
       let driver: Driver = Driver.create();
@@ -71,15 +71,15 @@ export default function styledStringAddApi() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_StyledString_0020
-     * @tc.name       : styledStringAddApi_002
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   styledStringAddApi_002
+     * @tc.number styledStringAddApi_002
+     * @tc.desc   styledStringAddApi_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('styledStringAddApi_002', Level.LEVEL3, async () => {
       let msg = 'testPositionWithAffinity'
       console.info(msg + 'begin');

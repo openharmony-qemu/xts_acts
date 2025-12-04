@@ -61,12 +61,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
     })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1001
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0100
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1001
-     * @tc.desc test ErrorSuccess
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ErrorSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -99,12 +99,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1002
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0200
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1002
-     * @tc.desc test ErrorSuccess GenericsTask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test ErrorSuccess GenericsTask
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -138,12 +138,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1003
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0300
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1003
-     * @tc.desc test onStartExecution
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onStartExecution
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -188,12 +188,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1004
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0400
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1004
-     * @tc.desc test onExecutionSucceeded
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onExecutionSucceeded
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -239,12 +239,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1005
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0500
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1005
-     * @tc.desc test onReceiveData
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onReceiveData
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -282,12 +282,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1006
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0600
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1006
-     * @tc.desc test Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Task
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -319,12 +319,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1007
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0700
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1007
-     * @tc.desc test Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Task
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -360,12 +360,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1008
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_0800
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1008
-     * @tc.desc test Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Task
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -396,12 +396,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1009
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1009
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1009
-     * @tc.desc test asyncLock
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test asyncLock
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -431,12 +431,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1010
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1000
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1010
-     * @tc.desc test onEnqueued
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onEnqueued
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -482,12 +482,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1011
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1100
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1011
-     * @tc.desc test onExecutionFailed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test onExecutionFailed
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -528,12 +528,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1012
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1200
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1012
-     * @tc.desc test asyncLock-then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test asyncLock-then
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -564,12 +564,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1013
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1300
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1013
-     * @tc.desc test asyncLock-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test asyncLock-catch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -598,12 +598,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1014
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1400
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1014
-     * @tc.desc test asyncLock-finally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test asyncLock-finally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -632,12 +632,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1015
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1500
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1015
-     * @tc.desc test task-then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-then
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -666,12 +666,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1016
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1600
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1016
-     * @tc.desc test task-catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-catch
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -700,12 +700,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1017
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1700
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1017
-     * @tc.desc test task-finally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-finally
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -734,12 +734,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1018
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1800
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1018
-     * @tc.desc test task-promise
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-promise
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -768,12 +768,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1019
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_1900
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1019
-     * @tc.desc test task-setTimeout
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test task-setTimeout
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1019', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -801,12 +801,12 @@ export default function taskPoolAsyncRunnerErrorSuccessTest() {
       })
 
     /**
+     * @tc.name   taskPoolAsyncRunnerErrorSuccessTest1020
      * @tc.number SUB_TASKPOOL_ASYNC_RUNNER_ERROR_SUCCESS_TEST_2000
-     * @tc.name taskPoolAsyncRunnerErrorSuccessTest1020
-     * @tc.desc test async-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test async-error
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolAsyncRunnerErrorSuccessTest1020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1,
       async (Done: Function) => {

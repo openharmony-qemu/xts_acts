@@ -7,6 +7,12 @@
     "MainAbility/pages/PixelRound/PixelRoundPage",
     "MainAbility/pages/Column/ColumnMatchParent",
     "MainAbility/pages/Column/ColumnWrapContent",
-    "MainAbility/pages/Column/ColumnFixAtiDealSize"
+    "MainAbility/pages/Column/ColumnFixAtiDealSize",
+    "MainAbility/pages/list/ListWillStopDraggingTest",
+    "MainAbility/pages/list/ListWillStartDraggingTest",
+    "MainAbility/pages/list/ListDidStopDraggingTest",
+    "MainAbility/pages/list/ListWillStartFlingTest",
+    "MainAbility/pages/list/ListDidStopFlingTest",
+    "MainAbility/pages/imageSupportSvg2/ImageSupportSvg2Page"
   ]
 }

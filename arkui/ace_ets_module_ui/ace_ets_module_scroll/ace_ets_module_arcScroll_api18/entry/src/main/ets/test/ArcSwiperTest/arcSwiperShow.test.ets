@@ -43,12 +43,12 @@ export default function arcSwiperShow() {
     });
 
     /**
-     * @tc.number    arcSwiperShow_001
-     * @tc.name      arcSwiperShow_0100
-     * @tc.desc      ArcSwiper component page flipping.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   arcSwiperShow_0100
+     * @tc.number arcSwiperShow_001
+     * @tc.desc   ArcSwiper component page flipping.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('arcSwiperShow_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[arcSwiperShow_0100] START');

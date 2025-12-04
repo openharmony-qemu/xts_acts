@@ -46,10 +46,12 @@ export default function MarqueeMirroringTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_001
-     * @tc.desc      Marquee onStart test
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   MarqueeMirroringTest_001
+     * @tc.number SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_001
+     * @tc.desc   Marquee onStart test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeMirroringTest_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[MarqueeMirroringTest_001] START');
@@ -69,10 +71,12 @@ export default function MarqueeMirroringTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_002
-     * @tc.desc      Marquee onBounce test
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   MarqueeMirroringTest_002
+     * @tc.number SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_002
+     * @tc.desc   Marquee onBounce test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeMirroringTest_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[MarqueeMirroringTest_002] START');
@@ -93,10 +97,12 @@ export default function MarqueeMirroringTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_003
-     * @tc.desc      Marquee onFinish test
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   MarqueeMirroringTest_003
+     * @tc.number SUB_ACE_UI_COMPONENT_MarqueeMirroringTest_003
+     * @tc.desc   Marquee onFinish test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeMirroringTest_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[MarqueeMirroringTest_003] START');

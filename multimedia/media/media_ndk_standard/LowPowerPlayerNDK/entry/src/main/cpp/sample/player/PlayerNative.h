@@ -103,5 +103,6 @@ public:
     static napi_value StartAudio(napi_env env, napi_callback_info info);
     static napi_value GetDurationTime(napi_env env, napi_callback_info info);
     static napi_value GetProgressTime(napi_env env, napi_callback_info info);
+    static napi_value GetCapability(napi_env env, napi_callback_info info);
 };
 #endif // VIDEO_CODEC_SAMPLE_PLAYER_NATIVE_H

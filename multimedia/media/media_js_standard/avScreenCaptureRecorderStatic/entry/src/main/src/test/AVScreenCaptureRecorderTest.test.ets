@@ -55,13 +55,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 01.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0100 start')
@@ -102,13 +101,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 01.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0101 start')
@@ -154,13 +152,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 03.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0300 start')

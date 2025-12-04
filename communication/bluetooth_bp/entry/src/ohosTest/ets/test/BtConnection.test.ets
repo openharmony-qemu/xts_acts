@@ -173,12 +173,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0100
-     * @tc.name testOnPinRequired
-     * @tc.desc Test pinRequired off api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test pinRequired off api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -210,12 +210,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200
-     * @tc.name testGetPairedDevices
-     * @tc.desc Test getPairedDevices api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getPairedDevices api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -234,14 +234,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300
-     * @tc.name testGetRemoteDeviceName
-     * @tc.desc Test get RemoteDeviceName api 10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300
+      * @tc.desc   Test get RemoteDeviceName api 10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
          try {
             let ret = bluetooth.getRemoteDeviceName("00:00:00:00:00:00");
@@ -258,14 +258,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900
-     * @tc.name testGetRemoteDeviceName
-     * @tc.desc Test get RemoteDeviceName api 16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900
+      * @tc.desc   Test get RemoteDeviceName api 16
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
          try {
             let ret = bluetooth.getRemoteDeviceName("00:00:00:00:00:00", true);
@@ -282,14 +282,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000
-     * @tc.name testGetRemoteDeviceName
-     * @tc.desc Test get RemoteDeviceName api 16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000
+      * @tc.desc   Test get RemoteDeviceName api 16
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
          try {
             let ret = bluetooth.getRemoteDeviceName("00:00:00:00:00:00", false);
@@ -306,14 +306,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100
-     * @tc.name testGetRemoteDeviceName
-     * @tc.desc Test get RemoteDeviceName api 16
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100
+      * @tc.desc   Test get RemoteDeviceName api 16
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
          try {
             let ret = bluetooth.getRemoteDeviceName(null);
@@ -327,12 +327,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400
-     * @tc.name testOnBondStateChange
-     * @tc.desc Test pairDevice callback api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test pairDevice callback api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -358,12 +358,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0500
-     * @tc.name testOnPinRequired
-     * @tc.desc Test setDevicePairingConfirmation api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test setDevicePairingConfirmation api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -384,12 +384,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2400
-     * @tc.name testOnPinRequired
-     * @tc.desc Test setDevicePairingConfirmation api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test setDevicePairingConfirmation api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -403,12 +403,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2500
-     * @tc.name testOnPinRequired
-     * @tc.desc Test setDevicePairingConfirmation api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test setDevicePairingConfirmation api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -421,14 +421,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
-     * @tc.name testGetRemoteDeviceClass
-     * @tc.desc Test get RemoteDeviceClass api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600
+      * @tc.desc   Test get RemoteDeviceClass api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let DeviceClass = bluetooth.getRemoteDeviceClass("00:00:00:00:00:00");
@@ -447,14 +447,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200
-     * @tc.name testGetRemoteDeviceClass
-     * @tc.desc Test get RemoteDeviceClass api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200
+      * @tc.desc   Test get RemoteDeviceClass api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let DeviceClass = bluetooth.getRemoteDeviceClass(null);
@@ -466,14 +466,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700
-     * @tc.name testSetDevicePinCode
-     * @tc.desc Test setDevicePinCode api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700
+      * @tc.desc   Test setDevicePinCode api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.setDevicePinCode('11:22:33:44:55:66', '12345', (err, data) => {
@@ -491,14 +491,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700
-     * @tc.name testSetDevicePinCode
-     * @tc.desc Test setDevicePinCode api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700
+      * @tc.desc   Test setDevicePinCode api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.setDevicePinCode(null, '12345', (err, data) => {
@@ -513,12 +513,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0800
-     * @tc.name testSetDevicePinCode
-     * @tc.desc Test setDevicePinCode api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setDevicePinCode api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -540,12 +540,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2600
-     * @tc.name testSetDevicePinCode
-     * @tc.desc Test setDevicePinCode api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setDevicePinCode api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -563,14 +563,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
-     * @tc.name testOnBondStateChange
-     * @tc.desc Test pairDevice promise api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900
+      * @tc.desc   Test pairDevice promise api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.on('bondStateChange', BondStateParam1);
@@ -596,14 +596,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100
-     * @tc.name testGetBluetoothScanMode
-     * @tc.desc TEST scanmode api10 by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100
+      * @tc.desc   TEST scanmode api10 by promise.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
        console.info('[bluetooth_js] get bluetooth state001'+ JSON.stringify(state));
@@ -630,13 +630,13 @@ describe('btConnectionTest', () => {
 
      })
 
-     /**
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0200
-     * @tc.name testGetBluetoothScanMode
-     * @tc.desc TEST scanmode api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
@@ -663,12 +663,12 @@ describe('btConnectionTest', () => {
        }
     })
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0300
-     * @tc.name testGetBluetoothScanMode
-     * @tc.desc TEST scanmode api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
@@ -696,13 +696,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state004'+ JSON.stringify(state));
@@ -729,13 +729,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state005'+ JSON.stringify(state));
@@ -762,13 +762,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state006'+ JSON.stringify(state));
@@ -795,13 +795,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state007'+ JSON.stringify(state));
@@ -828,13 +828,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state008'+ JSON.stringify(state));
@@ -861,13 +861,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let state = btAccess.getState();
         console.info('[bluetooth_js] get bluetooth state009'+ JSON.stringify(state));
@@ -894,13 +894,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000
-    * @tc.name testGetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let state = btAccess.getState();
@@ -933,13 +933,13 @@ describe('btConnectionTest', () => {
     })
 
     /**
-    * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800
-    * @tc.name testSetBluetoothScanMode
-    * @tc.desc TEST scanmode api by promise.
-    * @tc.type Function
-    * @tc.size MediumTest
-    * @tc.level Level 2
-    */
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800
+     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800
+     * @tc.desc   TEST scanmode api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_SCANMODE_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             bluetooth.setBluetoothScanMode(null, null);
@@ -951,13 +951,13 @@ describe('btConnectionTest', () => {
         done();
     })
 
-   /**
+    /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100
-     * @tc.name testOnBluetoothDeviceFind
-     * @tc.desc TEST bluetoothDeviceFind api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
+     * @tc.desc   TEST bluetoothDeviceFind api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_DISCOVERY_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
     try {
@@ -980,12 +980,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0100
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3 
+     * @tc.desc   Test setLocalName api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1002,12 +1002,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0200
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1024,12 +1024,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0300
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName number
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1046,12 +1046,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0400
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api by SYMBOL.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName api by SYMBOL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1068,12 +1068,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0500
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1091,12 +1091,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0600
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1114,12 +1114,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0700
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1136,14 +1136,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800
+      * @tc.desc   TEST setLocalName api by promise.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.setLocalName(Btname.MIXES4);
@@ -1159,12 +1159,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0900
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1181,12 +1181,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1000
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1000
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1203,12 +1203,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1100
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1226,12 +1226,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1200
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1200
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1248,14 +1248,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+      /**
+       * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300
+       * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300
+       * @tc.desc   TEST setLocalName api by promise.
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             bluetooth.setLocalName(Btname.MIXES6);
@@ -1271,12 +1271,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1400
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1293,12 +1293,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1500
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1315,12 +1315,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1600
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1337,12 +1337,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1700
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1359,12 +1359,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1800
-     * @tc.name testSetLocalName
-     * @tc.desc TEST setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   TEST setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1382,12 +1382,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1900
-     * @tc.name testSetLocalName
-     * @tc.desc Test setLocalName api by promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test setLocalName api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1413,12 +1413,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100
-     * @tc.name testGetProfileConnectionState
-     * @tc.desc Test getBtConnectionState api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getBtConnectionState api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1436,14 +1436,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200
-     * @tc.name testGetProfileConnectionState
-     * @tc.desc Test getProfileConnectionState api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200
+      * @tc.desc   Test getProfileConnectionState api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PROFILE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let result = bluetooth.getProfileConnectionState(1);
@@ -1455,14 +1455,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
-     * @tc.name testBluetoothTransport
-     * @tc.desc Test BluetoothTransport api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100
+      * @tc.desc   Test BluetoothTransport api10
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let TRANSPORT_BR_EDR = bluetooth.BluetoothTransport.TRANSPORT_BR_EDR;
@@ -1482,14 +1482,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200
-     * @tc.name testDeviceChargeState
-     * @tc.desc Test DeviceChargeState api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200
+      * @tc.desc   Test DeviceChargeState api12
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let deviceNormalChargeNotCharged = bluetooth.DeviceChargeState.DEVICE_NORMAL_CHARGE_NOT_CHARGED;
@@ -1507,14 +1507,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300
-     * @tc.name testUnbondCause
-     * @tc.desc Test UnbondCause api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300
+      * @tc.desc   Test UnbondCause api12
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let userRemoved = bluetooth.UnbondCause.USER_REMOVED;
@@ -1534,14 +1534,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000
-     * @tc.name testGetPairState
-     * @tc.desc Test getPairState api11
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000
+      * @tc.desc   Test getPairState api11
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let state: bluetooth.BondState = bluetooth.getPairState("00:11:22:33:44:55");
@@ -1559,14 +1559,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300
-     * @tc.name testGetPairState
-     * @tc.desc Test getPairState api11
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300
+      * @tc.desc   Test getPairState api11
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             let state: bluetooth.BondState = bluetooth.getPairState(null);
@@ -1577,14 +1577,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
-     * @tc.name testIsBluetoothDiscovering
-     * @tc.desc Test isBluetoothDiscovering api11
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 1
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100
+      * @tc.desc   Test isBluetoothDiscovering api11
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done : Function) => {
         try {
             let result: boolean = bluetooth.isBluetoothDiscovering();
@@ -1602,14 +1602,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200
-     * @tc.name testSetRemoteDeviceName
-     * @tc.desc Test setRemoteDeviceName api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200
+      * @tc.desc   Test setRemoteDeviceName api12
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             await bluetooth.setRemoteDeviceName('11:22:33:44:55:66', 'RemoteDeviceName').then(() => {
@@ -1622,14 +1622,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300
-     * @tc.name testGetRemoteDeviceBatteryInfo
-     * @tc.desc Test getRemoteDeviceBatteryInfo api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300
+      * @tc.desc   Test getRemoteDeviceBatteryInfo api12
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             await bluetooth.getRemoteDeviceBatteryInfo('11:22:33:44:55:66').then((data) => {
@@ -1649,14 +1649,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000
-     * @tc.name testGetRemoteDeviceBatteryInfo
-     * @tc.desc Test getRemoteDeviceBatteryInfo api12
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000
+      * @tc.desc   Test getRemoteDeviceBatteryInfo api12
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
             await bluetooth.getRemoteDeviceBatteryInfo(null).then((data) => {
@@ -1671,12 +1671,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1400
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1400
-     * @tc.name testGetRemoteProfileUuids
-     * @tc.desc Test getRemoteProfileUuids callback.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getRemoteProfileUuids callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1715,12 +1715,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2800
-     * @tc.name testGetRemoteProfileUuids
-     * @tc.desc Test getRemoteProfileUuids callback.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getRemoteProfileUuids callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1755,12 +1755,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1500
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1500
-     * @tc.name testGetRemoteProfileUuids
-     * @tc.desc Test getRemoteProfileUuids promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getRemoteProfileUuids promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1780,12 +1780,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2900
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2900
-     * @tc.name testGetRemoteProfileUuids
-     * @tc.desc Test getRemoteProfileUuids promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test getRemoteProfileUuids promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1800,12 +1800,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100
-     * @tc.name testGetLastConnectionTime
-     * @tc.desc Test getLastConnectionTime promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test getLastConnectionTime promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -1826,12 +1826,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0200
-     * @tc.name testGetLastConnectionTime
-     * @tc.desc Test getLastConnectionTime promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test getLastConnectionTime promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTH_GETLASTCONNECTIONTIME_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -1846,14 +1846,14 @@ describe('btConnectionTest', () => {
         done();
     })
 
-    /**
-     * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400
-     * @tc.name testScanMode
-     * @tc.desc Test ScanMode enum.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400
+      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400
+      * @tc.desc   Test ScanMode enum.
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_CONSTANT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
             let SCAN_MODE_NONE = bluetooth.ScanMode.SCAN_MODE_NONE;
@@ -1887,12 +1887,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600
-     * @tc.name testOnDiscoveryResult
-     * @tc.desc Test onDiscoveryResult offDiscoveryResult
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test onDiscoveryResult offDiscoveryResult
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let onReceiveEvent: (data: Array<bluetooth.DiscoveryResult>) => void = (data: Array<bluetooth.DiscoveryResult>) => {
@@ -1926,12 +1926,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0100
-     * @tc.name testConnectAllowedProfiles
-     * @tc.desc Test connectAllowedProfiles callback.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test connectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -1974,12 +1974,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0200
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0200
-     * @tc.name testConnectAllowedProfiles
-     * @tc.desc Test connectAllowedProfiles promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test connectAllowedProfiles promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -2000,12 +2000,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0300
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0300
-     * @tc.name testConnectAllowedProfiles
-     * @tc.desc Test connectAllowedProfiles callback.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test connectAllowedProfiles callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -2037,12 +2037,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0400
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0400
-     * @tc.name testConnectAllowedProfiles
-     * @tc.desc Test connectAllowedProfiles promise.
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 3
+     * @tc.desc   Test connectAllowedProfiles promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_COMMUNICATION_BLUETOOTH_CONNECTION_CONNECTALLOWEDPROFILES_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done : Function) => {
         try {
@@ -2058,12 +2058,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700
-     * @tc.name testPairDevice
-     * @tc.desc Test pairDevice callback api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test pairDevice callback api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -2088,12 +2088,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800
-     * @tc.name testPairDevice
-     * @tc.desc Test pairDevice promise api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test pairDevice promise api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         try {
@@ -2109,12 +2109,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3600
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3600
-     * @tc.name testBatteryChange
-     * @tc.desc Test batteryChange off api10
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 2
+     * @tc.desc   Test batteryChange off api10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_PAIR_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done : Function) => {
         let onReceiveEvent: (data: bluetooth.BatteryInfo) => void = (data: bluetooth.BatteryInfo) => {
@@ -2149,12 +2149,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100
-     * @tc.desc Test getRemoteDeviceTransport
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
+     * @tc.desc   Test getRemoteDeviceTransport
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_GETREMOTEDEVICETRANSPORT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
         try {
@@ -2174,12 +2174,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
-     * @tc.name SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100
-     * @tc.desc Test pairDevice with common api21
-     * @tc.type Function
-     * @tc.size MediumTest
-     * @tc.level Level 0
+     * @tc.desc   Test pairDevice with common api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_COMMUNICATION_BLUETOOTH_COMMON_PAIRDEVICE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
         try {
@@ -2204,12 +2204,12 @@ describe('btConnectionTest', () => {
     })
 
     /**
+     * @tc.name   SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
      * @tc.number SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
-     * @tc.name SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100
-     * @tc.desc Test common BluetoothAddressType api21
-     * @tc.type Function
-     * @tc.size MEDIUMTEST
-     * @tc.level Level 0
+     * @tc.desc   Test common BluetoothAddressType api21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_COMMUNICATION_BLUETOOTHCOMMON_BLUETOOTHADDRESSTYPE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done : Function) => {
         let VIRTUAL = btCommon.BluetoothAddressType.VIRTUAL;

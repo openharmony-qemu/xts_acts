@@ -40,12 +40,12 @@ export default function ConnectionWithoutPermissionTest() {
   describe('ConnectionWithoutPermissionTest', () => {
 
     /**
-     * @tc.number     : SUB_NetworkMgr_CONNECTION_Register_0800
-     * @tc.name       : testNetworkMgrCONNECTIONRegister0800
-     * @tc.desc       : test subscribe to notifications of specified network status changes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrCONNECTIONRegister0800
+     * @tc.number SUB_NetworkMgr_CONNECTION_Register_0800
+     * @tc.desc   test subscribe to notifications of specified network status changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrCONNECTIONRegister0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrCONNECTIONRegister0800";
@@ -74,12 +74,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_Unregister_0700
-     * @tc.name       : testNetworkMgrConnectionUnregister0700
-     * @tc.desc       : test unsubscribe from notifications of default network state changes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionUnregister0700
+     * @tc.number SUB_NetworkMgr_Connection_Unregister_0700
+     * @tc.desc   test unsubscribe from notifications of default network state changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionUnregister0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionUnregister0700";
@@ -108,12 +108,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0600
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetCallback0600
-     * @tc.desc       : test obtain the default activated data network and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback0600
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0600
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultNetCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetCallback0600";
@@ -141,12 +141,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0600
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetPromise0600
-     * @tc.desc       : test obtain the default activated data network and use Promise as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetPromise0600
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0600
+     * @tc.desc   test obtain the default activated data network and use Promise as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetDefaultNetPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetPromise0600";
@@ -172,12 +172,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMetered_Callback_0600
-     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredCallback0600
-     * @tc.desc       : test check if the data traffic usage on the current network is being measured and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionIsDefaultNetMeteredCallback0600
+     * @tc.number SUB_NetworkMgr_Connection_IsDefaultNetMetered_Callback_0600
+     * @tc.desc   test check if the data traffic usage on the current network is being measured and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionIsDefaultNetMeteredCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredCallback0600";
@@ -205,12 +205,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMetered_Promise_0600
-     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredPromise0600
-     * @tc.desc       : test check if the data traffic usage on the current network is being measured and use Promise as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionIsDefaultNetMeteredPromise0600
+     * @tc.number SUB_NetworkMgr_Connection_IsDefaultNetMetered_Promise_0600
+     * @tc.desc   test check if the data traffic usage on the current network is being measured and use Promise as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionIsDefaultNetMeteredPromise0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredPromise0600";
@@ -236,12 +236,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_IsDefaultNetMeteredSync_0200
-     * @tc.name       : testNetworkMgrConnectionIsDefaultNetMeteredSync0200
-     * @tc.desc       : test check if the data traffic usage on the current network is being measured and return it using synchronous mode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionIsDefaultNetMeteredSync0200
+     * @tc.number SUB_NetworkMgr_Connection_IsDefaultNetMeteredSync_0200
+     * @tc.desc   test check if the data traffic usage on the current network is being measured and return it using synchronous mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionIsDefaultNetMeteredSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionIsDefaultNetMeteredSync0200";
@@ -261,12 +261,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_0500
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNet0500
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionHasDefaultNet0500
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_0500
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionHasDefaultNet0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNet0500";
@@ -294,12 +294,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_1000
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNet1000
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionHasDefaultNet1000
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_1000
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionHasDefaultNet1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNet1000";
@@ -325,12 +325,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNetSync_0500
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNetSync0500
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testNetworkMgrConnectionHasDefaultNetSync0500
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNetSync_0500
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionHasDefaultNetSync0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNetSync0500";
@@ -350,12 +350,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_5000
-     * @tc.name       : testNetworkMgrConnectionGetAllNets5000
-     * @tc.desc       : Obtain a list of all connected networks and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetAllNets5000
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_5000
+     * @tc.desc   Obtain a list of all connected networks and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNets5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets5000";
@@ -383,12 +383,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_5100
-     * @tc.name       : testNetworkMgrConnectionGetAllNets5100
-     * @tc.desc       : Obtain a list of all connected networks and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetAllNets5100
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_5100
+     * @tc.desc   Obtain a list of all connected networks and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNets5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets5100";
@@ -414,12 +414,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNetsSync_0500
-     * @tc.name       : testNetworkMgrConnectionGetAllNetsSync0500
-     * @tc.desc       : Use synchronization method to obtain a list of all connected networks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetAllNetsSync0500
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNetsSync_0500
+     * @tc.desc   Use synchronization method to obtain a list of all connected networks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNetsSync0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = "testNetworkMgrConnectionGetAllNetsSync0500";
@@ -439,12 +439,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_AddCustomDnsRule_0700
-     * @tc.name   : testNetworkMgrConnectionAddCustomDnsRule0700
-     * @tc.desc   : Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0700
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0700
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionAddCustomDnsRule0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0700';
@@ -471,12 +471,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_AddCustomDnsRule_0800
-     * @tc.name   : testNetworkMgrConnectionAddCustomDnsRule0800
-     * @tc.desc   : Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionAddCustomDnsRule0800
+     * @tc.number SUB_NetworkMgr_Connection_AddCustomDnsRule_0800
+     * @tc.desc   Add a custom host and corresponding IP address mapping for the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionAddCustomDnsRule0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionAddCustomDnsRule0800';
@@ -502,12 +502,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_RemoveCustomDnsRule_0700
-     * @tc.name   : testNetworkMgrConnectionRemoveCustomDnsRule0700
-     * @tc.desc   : Delete custom DNS rules for the corresponding host in the current application.Using callback as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionRemoveCustomDnsRule0700
+     * @tc.number SUB_NetworkMgr_Connection_RemoveCustomDnsRule_0700
+     * @tc.desc   Delete custom DNS rules for the corresponding host in the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRemoveCustomDnsRule0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionRemoveCustomDnsRule0700';
@@ -534,12 +534,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_RemoveCustomDnsRule_0800
-     * @tc.name   : testNetworkMgrConnectionRemoveCustomDnsRule0800
-     * @tc.desc   : Delete custom DNS rules for the corresponding host in the current application.Using promise as an asynchronous method.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionRemoveCustomDnsRule0800
+     * @tc.number SUB_NetworkMgr_Connection_RemoveCustomDnsRule_0800
+     * @tc.desc   Delete custom DNS rules for the corresponding host in the current application.Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRemoveCustomDnsRule0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionRemoveCustomDnsRule0800';
@@ -565,12 +565,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_ClearCustomDnsRules_0300
-     * @tc.name   : testNetworkMgrConnectionClearCustomDnsRules0300
-     * @tc.desc   : Delete all custom DNS rules for the current application.Using callback as an asynchronous method.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionClearCustomDnsRules0300
+     * @tc.number SUB_NetworkMgr_Connection_ClearCustomDnsRules_0300
+     * @tc.desc   Delete all custom DNS rules for the current application.Using callback as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionClearCustomDnsRules0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionClearCustomDnsRules0300';
@@ -597,12 +597,12 @@ export default function ConnectionWithoutPermissionTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_ClearCustomDnsRules_0400
-     * @tc.name   : testNetworkMgrConnectionClearCustomDnsRules0400
-     * @tc.desc   : Delete all custom DNS rules for the current application . Using promise as an asynchronous method.
-     * @tc.level  : Level 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionClearCustomDnsRules0400
+     * @tc.number SUB_NetworkMgr_Connection_ClearCustomDnsRules_0400
+     * @tc.desc   Delete all custom DNS rules for the current application . Using promise as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionClearCustomDnsRules0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testNetworkMgrConnectionClearCustomDnsRules0400';
@@ -627,14 +627,14 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-    * @tc.number:SUB_NetworkMgr_Connection_GetAddressByName_Callback_Nop_100
-    * @tc.name: testNetworkMgrConnectionGetAddressByNameCallbackNop100
-    * @tc.desc:Using the on method without permission
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
-    */
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressByNameCallbackNop100
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressByName_Callback_Nop_100
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testNetworkMgrConnectionGetAddressByNameCallbackNop100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetAddressByNameCallbackNop100 begin');
       try {
@@ -657,13 +657,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetAddressByName_Promise_Nop_200
-     * @tc.name: testNetworkMgrConnectionGetAddressByNamePromiseNop200
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressByNamePromiseNop200
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressByName_Promise_Nop_200
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAddressByNamePromiseNop200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetAddressByNamePromiseNop200 begin');
@@ -685,13 +685,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetAddressesByName_Promise_Array_NetAddress_Nop_300
-     * @tc.name: testNetworkMgrConnectionGetAddressesByNamePromiseArrayNetAddressNop300
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNamePromiseArrayNetAddressNop300
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByName_Promise_Array_NetAddress_Nop_300
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAddressesByNamePromiseArrayNetAddressNop300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetAddressesByNamePromiseArrayNetAddressNop300 begin');
@@ -713,13 +713,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetAddressesByName_Callback_Array_NetAddress_Nop_400
-     * @tc.name: testNetworkMgrConnectionGetAddressesByNameCallbackArrayNetAddressNop400
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetAddressesByNameCallbackArrayNetAddressNop400
+     * @tc.number SUB_NetworkMgr_Connection_GetAddressesByName_Callback_Array_NetAddress_Nop_400
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetAddressesByNameCallbackArrayNetAddressNop400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetAddressesByNameCallbackArrayNetAddressNop400 begin');
@@ -744,13 +744,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetNetCapabilities_Callback_Nop_500
-     * @tc.name: testNetworkMgrConnectionGetNetCapabilitiesCallbackNop500
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesCallbackNop500
+     * @tc.number SUB_NetworkMgr_Connection_GetNetCapabilities_Callback_Nop_500
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesCallbackNop500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetNetCapabilitiesCallbackNop500 begin');
@@ -774,13 +774,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetNetCapabilities_Promise_Nop_600
-     * @tc.name: testNetworkMgrConnectionGetNetCapabilitiesPromiseNop600
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 0
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesPromiseNop600
+     * @tc.number SUB_NetworkMgr_Connection_GetNetCapabilities_Promise_Nop_600
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesPromiseNop600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetNetCapabilitiesPromiseNop600 begin');
@@ -802,13 +802,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetConnectionProperties_Promise_Nop_700
-     * @tc.name: testNetworkMgrConnectionGetConnectionPropertiesPromiseNop700
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesPromiseNop700
+     * @tc.number SUB_NetworkMgr_Connection_GetConnectionProperties_Promise_Nop_700
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesPromiseNop700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectionPropertiesPromiseNop700 begin');
@@ -830,13 +830,13 @@ export default function ConnectionWithoutPermissionTest() {
       }
     });
 
-    /*
-     * @tc.number:SUB_NetworkMgr_Connection_GetConnectionProperties_Callback_Nop_800
-     * @tc.name: testNetworkMgrConnectionGetConnectionPropertiesCallbackNop800
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesCallbackNop800
+     * @tc.number SUB_NetworkMgr_Connection_GetConnectionProperties_Callback_Nop_800
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesCallbackNop800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       hilog.info(0x0000, 'ConnectionTag', '%{public}s', 'testNetworkMgrConnectionGetConnectionPropertiesCallbackNop800 begin');

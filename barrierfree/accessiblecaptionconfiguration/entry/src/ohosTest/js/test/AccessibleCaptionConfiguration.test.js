@@ -35,14 +35,13 @@ describe('AccessibleCaptionConfiguration', function () {
   })
 
 
-  /*
-   * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100
-   * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100
-   * @tc.desc    The parameter input is 'enableChange', test the captionManager.on() function,
-   *             and return undefined
-   * @tc.size    SmallTest
-   * @tc.type    User
-   * @tc.level   Level 1
+  /**
+   * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100
+   * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100
+   * @tc.desc   The parameter input is 'enableChange', test the captionManager.on() function,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
     console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0100');
@@ -55,14 +54,13 @@ describe('AccessibleCaptionConfiguration', function () {
     done();
   })
 
-  /*
-   * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200
-   * @tc.name    SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200
-   * @tc.desc    The parameter input is 'styleChange', test the captionManager.on() function,
-   *             and return undefined
-   * @tc.size    SmallTest
-   * @tc.type    User
-   * @tc.level   Level 1
+  /**
+   * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200
+   * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200
+   * @tc.desc   The parameter input is 'styleChange', test the captionManager.on() function,
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
     console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCaptionConfiguration_0200');

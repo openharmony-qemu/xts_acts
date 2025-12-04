@@ -69,12 +69,12 @@ export default function imageEffectErrorCodeTest() {
     }
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTINSERTFILTERBYFILTER_0500
-     * @tc.name   : testOHImageEffectInsertFilterByFilter005
-     * @tc.desc   : OH_ImageEffect_InsertFilterByFilter return IMAGE_SUCCESS
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectInsertFilterByFilter005
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTINSERTFILTERBYFILTER_0500
+     * @tc.desc   OH_ImageEffect_InsertFilterByFilter return IMAGE_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectInsertFilterByFilter005', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectInsertFilterByFilterEffectSuccess();
@@ -84,12 +84,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTCONFIGURE_0700
-     * @tc.name   : testOHImageEffectConfigure007
-     * @tc.desc   : SOH_ImageEffect_Configure  return EFFECT_PARAM_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectConfigure007
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTCONFIGURE_0700
+     * @tc.desc   SOH_ImageEffect_Configure  return EFFECT_PARAM_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectConfigure007', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectConfigureEffectParamError();
@@ -98,12 +98,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSETINPUTNATIVEBUFFER_0200
-     * @tc.name   : testOHImageEffectSetInputNativeBuffer002
-     * @tc.desc   : OH_ImageEffect_SetInputNativeBuffer return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectSetInputNativeBuffer002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSETINPUTNATIVEBUFFER_0200
+     * @tc.desc   OH_ImageEffect_SetInputNativeBuffer return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectSetInputNativeBuffer002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectSetInputNativeBufferErrorCode();
@@ -111,12 +111,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSETOUTPUTNATIVEBUFFER_0200
-     * @tc.name   : testOHImageEffectSetOutputNativeBuffer002
-     * @tc.desc   : OH_ImageEffect_SetOutputNativeBuffer return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectSetOutputNativeBuffer002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSETOUTPUTNATIVEBUFFER_0200
+     * @tc.desc   OH_ImageEffect_SetOutputNativeBuffer return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectSetOutputNativeBuffer002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectSetOutputNativeBufferErrorCode();
@@ -124,12 +124,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectSetInputPicture_0200
-     * @tc.name   : testOHImageEffectSetInputPicture002
-     * @tc.desc   : OH_ImageEffect_SetInputPicture return EFFECT_SUCCESS
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectSetInputPicture002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectSetInputPicture_0200
+     * @tc.desc   OH_ImageEffect_SetInputPicture return EFFECT_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectSetInputPicture002', Level.LEVEL3, async (done: Function) => {
       await getFd("test51.jpg");
@@ -139,12 +139,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectSetOutputPicture_0200
-     * @tc.name   : testOHImageEffectSetOutputPicture002
-     * @tc.desc   : OH_ImageEffect_SetOutputPicture return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectSetOutputPicture002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectSetOutputPicture_0200
+     * @tc.desc   OH_ImageEffect_SetOutputPicture return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectSetOutputPicture002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectSetOutputPictureErrorCode();
@@ -153,12 +153,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectStart_0500
-     * @tc.name   : testOHImageEffectStart005
-     * @tc.desc   : OH_ImageEffect_Start return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectStart005
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHImageEffectStart_0500
+     * @tc.desc   OH_ImageEffect_Start return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectStart005', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectStartErrorCode();
@@ -166,12 +166,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSTOP_0200
-     * @tc.name   : testOHImageEffectStop002
-     * @tc.desc   : OH_ImageEffect_Stop return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectStop002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHIMAGEEFFECTSTOP_0200
+     * @tc.desc   OH_ImageEffect_Stop return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectStop002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectStopErrorCode();
@@ -180,12 +180,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_ERRORPARAMINVALID_0100
-     * @tc.name   : testOHImageEffectErrorParamInvalid001
-     * @tc.desc   : OH_ImageEffect_SetOutputPicture return EFFECT_ERROR_PARAM_INVALID
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectErrorParamInvalid001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_ERRORPARAMINVALID_0100
+     * @tc.desc   OH_ImageEffect_SetOutputPicture return EFFECT_ERROR_PARAM_INVALID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectErrorParamInvalid001', Level.LEVEL3, () => {
       let result: number = testNapi.ImageEffectErrorCodeErrorParamInvalid();
@@ -193,12 +193,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_PARAMERROR_0100
-     * @tc.name   : testOHImageEffectErrorParamError001
-     * @tc.desc   : OH_ImageEffect_Configure return EFFECT_PARAM_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectErrorParamError001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_PARAMERROR_0100
+     * @tc.desc   OH_ImageEffect_Configure return EFFECT_PARAM_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectErrorParamError001', Level.LEVEL3, () => {
       let result: number = testNapi.ImageEffectErrorCodeParamError();
@@ -206,12 +206,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_KEYERROR_0100
-     * @tc.name   : testOHImageEffectErrorKeyError001
-     * @tc.desc   : OH_EffectFilter_SetValue return EFFECT_KEY_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectErrorKeyError001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_KEYERROR_0100
+     * @tc.desc   OH_EffectFilter_SetValue return EFFECT_KEY_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectErrorKeyError001', Level.LEVEL3, () => {
       let result: number = testNapi.ImageEffectErrorCodeKeyError();
@@ -219,12 +219,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_DATATYPEUNKNOWN_0100
-     * @tc.name   : testOHImageEffectDataTypeUnknown001
-     * @tc.desc   : Test the EFFECT_DATA_TYPE_UNKNOWN in the enumeration ImageEffect_DataType.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectDataTypeUnknown001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_DATATYPEUNKNOWN_0100
+     * @tc.desc   Test the EFFECT_DATA_TYPE_UNKNOWN in the enumeration ImageEffect_DataType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectDataTypeUnknown001', Level.LEVEL3, () => {
       let result: number = testNapi.ImageEffectDataTypeUnknown();
@@ -232,12 +232,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_BUFFERTYPEUNKNOWN_0100
-     * @tc.name   : testOHImageEffectBufferTypeUnknown001
-     * @tc.desc   : Test the EFFECT_BUFFER_TYPE_UNKNOWN in the enumeration ImageEffect_BufferType.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHImageEffectBufferTypeUnknown001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_BUFFERTYPEUNKNOWN_0100
+     * @tc.desc   Test the EFFECT_BUFFER_TYPE_UNKNOWN in the enumeration ImageEffect_BufferType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHImageEffectBufferTypeUnknown001', Level.LEVEL3, () => {
       let result: number = testNapi.ImageEffectBufferTypeUnknown();
@@ -246,12 +246,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHEFFECTFILTERSETVALUE_0300
-     * @tc.name   : testOHEffectFilterSetValue003
-     * @tc.desc   : OH_EffectFilter_SetValue return EFFECT_KEY_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterSetValue003
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHEFFECTFILTERSETVALUE_0300
+     * @tc.desc   OH_EffectFilter_SetValue return EFFECT_KEY_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterSetValue003', Level.LEVEL3, () => {
       let result: number = testNapi.OHEffectFilterSetValueErrorCode();
@@ -260,12 +260,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHEFFECTFILTERGETVALUE_0600
-     * @tc.name   : testOHEffectFilterGetValue006
-     * @tc.desc   : OH_EffectFilter_GetValue return EFFECT_KEY_ERROR
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterGetValue006
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_OHEFFECTFILTERGETVALUE_0600
+     * @tc.desc   OH_EffectFilter_GetValue return EFFECT_KEY_ERROR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterGetValue006', Level.LEVEL3, () => {
       let result: number = testNapi.OHEffectFilterGetValueErrorCode();
@@ -273,12 +273,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0100
-     * @tc.name   : testOHEffectFilterImageEffectRegion001
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Region structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectRegion001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0100
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Region structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectRegion001', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectRegion();
@@ -286,12 +286,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0200
-     * @tc.name   : testOHEffectFilterImageEffectRegion002
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Region X0 structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectRegion002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0200
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Region X0 structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectRegion002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectRegion();
@@ -299,12 +299,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0300
-     * @tc.name   : testOHEffectFilterImageEffectRegion003
-     * @tc.desc   :The purpose of the test is to cover the ImageEffect_Region y0 structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectRegion003
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0300
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Region y0 structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectRegion003', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectRegion();
@@ -312,12 +312,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0400
-     * @tc.name   : testOHEffectFilterImageEffectRegion004
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Region x1 structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectRegion004
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0400
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Region x1 structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectRegion004', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectRegion();
@@ -325,12 +325,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0500
-     * @tc.name   : testOHEffectFilterImageEffectRegion005
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Region y1 structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectRegion005
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTREGION_0500
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Region y1 structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectRegion005', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectRegion();
@@ -338,12 +338,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0100
-     * @tc.name   : testOHEffectFilterImageEffectSize001
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Size structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectSize001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0100
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Size structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectSize001', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectSize();
@@ -351,12 +351,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0200
-     * @tc.name   : testOHEffectFilterImageEffectSize002
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Size width structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectSize002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0200
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Size width structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectSize002', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectSize();
@@ -364,12 +364,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0300
-     * @tc.name   : testOHEffectFilterImageEffectSize003
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_Size height structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageEffectSize003
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_IMAGEEFFECTSIZE_0300
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_Size height structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageEffectSize003', Level.LEVEL3, () => {
       let result: number = testNapi.OHImageEffectImageEffectSize();
@@ -378,12 +378,12 @@ export default function imageEffectErrorCodeTest() {
 
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_FILTERNAMES_0100
-     * @tc.name   : testOHEffectFilterImageImageEffectFilterNames001
-     * @tc.desc   : The purpose of the test is to cover the ImageEffect_FilterNames size structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageImageEffectFilterNames001
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_FILTERNAMES_0100
+     * @tc.desc   The purpose of the test is to cover the ImageEffect_FilterNames size structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageImageEffectFilterNames001', Level.LEVEL3, () => {
       let result: number = testNapi.OHEffectFilterLookupFiltersFilterNames();
@@ -391,12 +391,12 @@ export default function imageEffectErrorCodeTest() {
     });
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_FILTERNAMES_0200
-     * @tc.name   : testOHEffectFilterImageImageEffectFilterNames002
-     * @tc.desc   : he purpose of the test is to cover the ImageEffect_FilterNames nameList structure
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testOHEffectFilterImageImageEffectFilterNames002
+     * @tc.number SUB_MULTIMEDIA_IMAGE_IMAGEEFFECT_FILTERNAMES_0200
+     * @tc.desc   he purpose of the test is to cover the ImageEffect_FilterNames nameList structure
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOHEffectFilterImageImageEffectFilterNames002', Level.LEVEL3, () => {
       let result: number = testNapi.OHEffectFilterLookupFiltersFilterNames();

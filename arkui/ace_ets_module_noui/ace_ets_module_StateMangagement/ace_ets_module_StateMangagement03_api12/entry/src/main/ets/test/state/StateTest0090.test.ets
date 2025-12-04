@@ -46,12 +46,12 @@ export default function StateTest0090() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0090
-     * @tc.name      StateTest0090_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   StateTest0090_001
+     * @tc.number SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0090
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateTest0090_001', Level.LEVEL0, async (done: Function) => {
       console.info('[StateTest0090_001] START');
@@ -70,12 +70,12 @@ export default function StateTest0090() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0060
-     * @tc.name      StateTest0090_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   StateTest0090_002
+     * @tc.number SUB_ACE_STATUSMANAGER_PAGE_STATE_INTERFACE_0060
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateTest0090_002', Level.LEVEL0, async (done: Function) => {
       console.info('[StateTest0090_002] START');

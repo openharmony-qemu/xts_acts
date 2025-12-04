@@ -41,12 +41,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0100
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0200
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -91,12 +91,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0300
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -112,12 +112,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0400
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -134,12 +134,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0500
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -157,12 +157,12 @@ export default function SecurityCryptoFwMd5TestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Md5_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Md5_Func_0600
-     * @tc.name Test Md5. Callback style. Process success
-     * @tc.desc algorithm is Md5
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Md5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_Md5_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

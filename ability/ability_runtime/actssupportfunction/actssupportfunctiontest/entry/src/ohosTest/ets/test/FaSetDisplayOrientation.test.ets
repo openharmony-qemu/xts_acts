@@ -26,8 +26,6 @@ export default function FaSetDisplayOrientationTest() {
   describe('FaSetDisplayOrientationTest', () => {
     let TAG = "";
     let TAG1 = "SUB_AA_OpenHarmony == FaSetDisplayOrientationTest : ";
-    let sleepTimeOne = 1000;
-    let sleepTimeTwo = 2000;
     let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
     afterEach(async (done: Function) => {
@@ -65,15 +63,16 @@ export default function FaSetDisplayOrientationTest() {
           console.log(TAG1 + "executeShellCommand error : " + JSON.stringify(error));
         })
 
-      setTimeout(() => {
-        done();
-      }, sleepTimeOne);
+      done();
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0100
-     * @tc.name    : Verify the enumeration value of DisplayOrientation
-     * @tc.desc    : Verify the enumeration value of DisplayOrientation.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0100
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0100
+     * @tc.desc   Verify the enumeration value of DisplayOrientation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0100 == ';
@@ -85,10 +84,13 @@ export default function FaSetDisplayOrientationTest() {
       done();
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0500
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Set the horizontal and vertical screen status of ability to UNSPECIFIED.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0500
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0500
+     * @tc.desc   Set the horizontal and vertical screen status of ability to UNSPECIFIED.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0500 == ';
@@ -116,8 +118,7 @@ export default function FaSetDisplayOrientationTest() {
               displayOrientationAfter = data?.parameters?.displayOrientationAfter;
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -125,7 +126,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -150,10 +150,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0600
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Set the horizontal and vertical screen status of ability to LANDSCAPE.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0600
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0600
+     * @tc.desc   Set the horizontal and vertical screen status of ability to LANDSCAPE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0600 == ';
@@ -180,8 +183,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -189,7 +191,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -217,10 +218,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0700
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Set the horizontal and vertical screen status of ability to PORTRAIT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0700
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0700
+     * @tc.desc   Set the horizontal and vertical screen status of ability to PORTRAIT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0700 == ';
@@ -248,8 +252,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList = data?.parameters?.lifeList;
               setDisplayOrientation = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
                   expect(displayOrientationBefore).assertEqual(bundle.DisplayOrientation.UNSPECIFIED);
@@ -257,7 +260,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -285,11 +287,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0800
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : The same applies to setting ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status
-                     of ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0800
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0800
+     * @tc.desc   The same applies to setting ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0800 == ';
@@ -327,8 +331,7 @@ export default function FaSetDisplayOrientationTest() {
               displayOrientationAfter2 = data?.parameters?.displayOrientationAfter;
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -340,7 +343,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -368,11 +370,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_0900
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : The same applies to setting ability1 to PORTRAIT, and ability1 starts ability2 and sets the status
-                     of ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_0900
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_0900
+     * @tc.desc   The same applies to setting ability1 to PORTRAIT, and ability1 starts ability2 and sets the status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_0900', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_0900 == ';
@@ -412,8 +416,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -425,7 +428,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -453,11 +455,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1000
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Different haps set ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status of
-                     ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1000
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1000
+     * @tc.desc   Different haps set ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1000', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1000 == ';
@@ -497,8 +501,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -510,7 +513,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -538,11 +540,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1100
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Different haps set ability1 to PORTRAIT, and ability1 starts ability2 and sets the status of
-                     ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1100
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1100
+     * @tc.desc   Different haps set ability1 to PORTRAIT, and ability1 starts ability2 and sets the status of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1100 == ';
@@ -583,8 +587,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -596,7 +599,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -624,11 +626,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1200
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Different applications set ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status
-                     of ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1200
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1200
+     * @tc.desc   Different applications set ability1 to LANDSCAPE, and ability1 starts ability2 and sets the status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1200 == ';
@@ -671,8 +675,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -684,7 +687,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -712,11 +714,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1300
-     * @tc.name    : Verify getDisplayOrientation and setDisplayOrientation interfaces
-     * @tc.desc    : Different applications set ability1 to PORTRAIT, and ability1 starts ability2 and sets the status
-                     of ability2 to FOLLOW_RECENT.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1300
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1300
+     * @tc.desc   Different applications set ability1 to PORTRAIT, and ability1 starts ability2 and sets the status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1300 == ';
@@ -758,11 +762,7 @@ export default function FaSetDisplayOrientationTest() {
               lifeList2 = data?.parameters?.lifeList;
               setDisplayOrientation2 = data?.parameters?.setDisplayOrientation;
 
-              setTimeout(async () => {
-              }, 1000);
-
-              setTimeout(async () => {
-                commonEvent.unsubscribe(subscriber, async (err, data) => {
+              commonEvent.unsubscribe(subscriber, async (err, data) => {
                   console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
                   expect(JSON.stringify(lifeList1)).assertEqual(JSON.stringify(listCheck));
                   expect(JSON.stringify(lifeList2)).assertEqual(JSON.stringify(listCheck));
@@ -774,7 +774,6 @@ export default function FaSetDisplayOrientationTest() {
                   expect(setDisplayOrientation2).assertEqual(1);
                   done();
                 });
-              }, sleepTimeOne);
             }
           });
         })
@@ -802,10 +801,13 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1400
-     * @tc.name    : Verify setDisplayOrientation interfaces
-     * @tc.desc    : SetDisplayOrientation input parameter is undefined.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1400
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1400
+     * @tc.desc   SetDisplayOrientation input parameter is undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1400 == ';
@@ -835,14 +837,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
+              setTimeout(async () => {	
                 commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
-              }, sleepTimeTwo);
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })
@@ -870,11 +872,14 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-    * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1500
-    * @tc.name    : Verify setDisplayOrientation interfaces
-    * @tc.desc    : SetDisplayOrientation input parameter is -1.
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1500
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1500
+     * @tc.desc   SetDisplayOrientation input parameter is -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1500 == ';
       console.log(TAG + "begin");
@@ -903,14 +908,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
+              setTimeout(async () => {	
                 commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
-              }, sleepTimeTwo);
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })
@@ -938,11 +943,14 @@ export default function FaSetDisplayOrientationTest() {
         })
     })
 
-    /*
-    * @tc.number  : SUB_AA_OpenHarmony_DisplayOrientation_1600
-    * @tc.name    : Verify setDisplayOrientation interfaces
-    * @tc.desc    : SetDisplayOrientation input parameter is a nonexistent enumeration value.
-    */
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_DisplayOrientation_1600
+     * @tc.number SUB_AA_OpenHarmony_DisplayOrientation_1600
+     * @tc.desc   SetDisplayOrientation input parameter is a nonexistent enumeration value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_AA_OpenHarmony_DisplayOrientation_1600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_DisplayOrientation_1600 == ';
       console.log(TAG + "begin");
@@ -971,14 +979,14 @@ export default function FaSetDisplayOrientationTest() {
             if (data.event == onActive) {
               lifeList = data?.parameters?.lifeList;
 
-              setTimeout(async () => {
+              setTimeout(async () => {	
                 commonEvent.unsubscribe(subscriber, async (err, data) => {
-                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));
-                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));
-                  expect(status1).assertTrue();
-                  done();
-                });
-              }, sleepTimeTwo);
+                  console.log(TAG + "UnSubscribeInfoCallback : " + JSON.stringify(data));	
+                  expect(JSON.stringify(lifeList)).assertEqual(JSON.stringify(listCheck));	
+                  expect(status1).assertTrue();	
+                  done();	
+                });	
+              }, 1000);
             }
           });
         })

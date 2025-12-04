@@ -42,50 +42,65 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_036                                                                                                                                                               
-     *tc.name GetStoredGeolocation                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetStoredGeolocation
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_036
+     * @tc.desc   GetStoredGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetStoredGeolocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerEvent("GetStoredGeolocation", "file:///", 160590, done);
       Utils.emitEvent("emitGetStoredGeolocation", 160580);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_037                                                                                                                                                           
-     *tc.name SetHttpDnsSuccess                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   SetHttpDnsSuccess
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_037
+     * @tc.desc   SetHttpDnsSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SetHttpDnsSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerEvent("SetHttpDnsSuccess", 1, 160600, done);
       Utils.emitEvent("emitSetHttpDnsSuccess", 160580);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_038                                                                                                                                                           
-     *tc.name GetAccessibleGeolocation                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetAccessibleGeolocation
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_038
+     * @tc.desc   GetAccessibleGeolocation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetAccessibleGeolocation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerEvent("GetAccessibleGeolocation", true, 160610, done);
       Utils.emitEvent("emitGetAccessibleGeolocation", 160580);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_056                                                                                                                                                
-     *tc.name GetAccessibleGeolocationPromise                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetAccessibleGeolocationPromise
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_056
+     * @tc.desc   GetAccessibleGeolocationPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetAccessibleGeolocationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerEvent("GetAccessibleGeolocationPromise", true, 160620, done);
       Utils.emitEvent("emitGetAccessibleGeolocationPromise", 160580);
       await Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_060                                                                                                                                                              
-     *tc.name GetStoredGeolocationPromise                                                                                                                                                                                                                
-     *tc.desic Save current page
+    /**
+     * @tc.name   GetStoredGeolocationPromise
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_THREE_API_060
+     * @tc.desc   GetStoredGeolocationPromise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetStoredGeolocationPromise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.registerEvent("GetStoredGeolocationPromise", "file:///", 160630, done);

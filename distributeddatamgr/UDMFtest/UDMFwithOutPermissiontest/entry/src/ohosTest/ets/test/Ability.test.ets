@@ -34,12 +34,12 @@ export default function dragWithOutPPermissionTest() {
       unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
     })
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
@@ -52,12 +52,12 @@ export default function dragWithOutPPermissionTest() {
       }
     })
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
 
@@ -72,12 +72,12 @@ export default function dragWithOutPPermissionTest() {
     })
 
     /**
-     * @tc.number    : SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
-     * @tc.name      : unifiedDataChannel deleteData promise interface test
-     * @tc.desc      : setAppShareOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {

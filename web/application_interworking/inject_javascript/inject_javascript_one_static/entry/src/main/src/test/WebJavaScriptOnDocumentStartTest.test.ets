@@ -73,25 +73,6 @@ export default function webJavaScriptOnDocumentStartTest() {
       })
 
     /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
-    * @tc.name       : testJavaScriptOnDocumentStartStatic002
-    * @tc.desc       : test javaScriptOnDocumentStart
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('testJavaScriptOnDocumentStartStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
-      async (done: () => void): Promise<void> => {
-        Utils.emitEvent("testJavaScriptOnDocumentStart002", 10)
-        await Utils.msSleep(2000);
-        Utils.registerEvent("testJavaScriptOnDocumentStart002", '"Red"', 4501, done);
-        await Utils.msSleep(2000);
-        inspector.sendEventByKey('WebJavaScriptOnDocumentStartTestButton', 10, '');
-        await Utils.msSleep(6000);
-        done();
-      })
-
-    /*
    * @tc.number     : SUB_WEB_JAVASCRIPTONDOCUMENTSTART_0200
    * @tc.name       : testJavaScriptOnDocumentStartStatic002
    * @tc.desc       : test javaScriptOnDocumentStart

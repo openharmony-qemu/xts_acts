@@ -68,7 +68,7 @@ struct playVideo {
       }.width('100%').height('80%').onClick(() => {
         this.showControls = !this.showControls
       })
-
+      .margin({ bottom: '-10vp' })
       CustomContainer({
         title: this.name,
         Url: 'pages/Player/PlayVideoList',

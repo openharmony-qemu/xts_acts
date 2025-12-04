@@ -26,6 +26,16 @@ public:
     static napi_value CreatePixelRoundNativeRoot(napi_env env, napi_callback_info info);
     static napi_value SetPixelRound(napi_env env, napi_callback_info info);
     static napi_value GetPixelRound(napi_env env, napi_callback_info info);
+
+    static napi_value TestPixelRoundPolicyGetTopErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetTopErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetStartErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetStartErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetBottomErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetBottomErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetEndErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyGetEndErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPixelRoundPolicyCreateReturnNoNullptr(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_PIXEL_ROUND_TEST_H

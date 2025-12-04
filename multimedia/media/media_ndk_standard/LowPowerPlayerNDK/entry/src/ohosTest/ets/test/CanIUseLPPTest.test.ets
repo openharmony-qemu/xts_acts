@@ -71,35 +71,39 @@ export function CanIUseLPPTest() {
     })
 
     /**
-     * @tc.number     : TESTOHLPP_CANIUSE_ERROREVENT_0100
-     * @tc.name       : TESTOHLPP_CANIUSE_ERROREVENT_0100
-     * @tc.desc       : Prepare the playback environment and asynchronously cache media data.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
+     * @tc.number TESTOHLPP_GETCAPABILITY_ERROREVENT_0100
+     * @tc.desc   Prepare the playback environment and asynchronously cache media data.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('TESTOHLPP_CANIUSE_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
-      console.info(`TESTOHLPP_CANIUSE_ERROREVENT_0100 test start `);
-      let isSupport = canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink");
-      if (isSupport) {
+    it('TESTOHLPP_GETCAPABILITY_ERROREVENT_0100', Level.LEVEL0, async (done: Function) => {
+      console.info(`TESTOHLPP_GETCAPABILITY_ERROREVENT_0100 test start `);
+      let result = canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink") && player.getCapability();
+      if (result == 1) {
         console.log("support SystemCapability.Multimedia.Media.LowPowerAVSink")
-        expect(isSupport).assertEqual(true);
+        expect(result).assertEqual(1);
         done();
         return;
       } else {
         console.log("nonsupport SystemCapability.Multimedia.Media.LowPowerAVSink")
-        expect(isSupport).assertEqual(false);
+        expect(result).assertEqual(0);
         done();
         return;
       }
-      console.info(`TESTOHLPP_CANIUSE_ERROREVENT_0100 test end `);
+      console.info(`TESTOHLPP_GETCAPABILITY_ERROREVENT_0100 test end `);
     });
 
   })
 }
 
 export function executeLowPowerAVSink() : boolean {
-  let isSupport = canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink");
-  console.log("SystemCapability.Multimedia.Media.LowPowerAVSink="+isSupport)
-  return isSupport;
+  let result = canIUse("SystemCapability.Multimedia.Media.LowPowerAVSink") && player.getCapability();
+  console.log("SystemCapability.Multimedia.Media.LowPowerAVSink="+result)
+  if (result == 1) {
+    return true;
+  } else {
+    return false;
+  }
 }

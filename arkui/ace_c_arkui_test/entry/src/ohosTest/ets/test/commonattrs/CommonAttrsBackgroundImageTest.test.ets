@@ -26,143 +26,143 @@ export default function commonAttrsBackgroundImageTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0100
-     * @tc.name       : testCommonAttrsBackgroundImage001
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png"
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0100
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0200
-     * @tc.name       : testCommonAttrsBackgroundImage002
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png" (bgcolor with red)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0200
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png" (bgcolor with red)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0300
-     * @tc.name       : testCommonAttrsBackgroundImage003
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value ""
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0300
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0400
-     * @tc.name       : testCommonAttrsBackgroundImage004
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value ”abcdefg”
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0400
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value ”abcdefg”
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0500
-     * @tc.name       : testCommonAttrsBackgroundImage005
-     * @tc.desc       : testing backgroundImage for commonAttrs with invalid value "icon.png",-100
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0500
+     * @tc.desc   testing backgroundImage for commonAttrs with invalid value "icon.png",-100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0600
-     * @tc.name       : testCommonAttrsBackgroundImage006
-     * @tc.desc       : testing backgroundImage for commonAttrs with invalid value "icon.png",NoRepeat
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0600
+     * @tc.desc   testing backgroundImage for commonAttrs with invalid value "icon.png",NoRepeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0700
-     * @tc.name       : testCommonAttrsBackgroundImage007
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png",X
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage007
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0700
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png",X
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0800
-     * @tc.name       : testCommonAttrsBackgroundImage008
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png",Y
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage008
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0800
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png",Y
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage008()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0900
-     * @tc.name       : testCommonAttrsBackgroundImage009
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png",XY
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage009
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_0900
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png",XY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage009()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_1000
-     * @tc.name       : testCommonAttrsBackgroundImage010
-     * @tc.desc       : testing backgroundImage for commonAttrs with valid value "icon.png",XY (bgcolor with red)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage010
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_1000
+     * @tc.desc   testing backgroundImage for commonAttrs with valid value "icon.png",XY (bgcolor with red)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage010', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage010()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_1100
-     * @tc.name       : testCommonAttrsBackgroundImage011
-     * @tc.desc       : testing resetAttribute backgroundImage for commonAttrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCommonAttrsBackgroundImage011
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_BACKGROUNDIMAGE_1100
+     * @tc.desc   testing resetAttribute backgroundImage for commonAttrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsBackgroundImage011', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsBackgroundImage011()).assertEqual(0)

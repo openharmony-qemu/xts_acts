@@ -22,12 +22,12 @@ export default function ActsCapiNoPermissionTest() {
   describe('ActsCapiNoPermissionTest', () => {
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
-     * @tc.desc    : Testing StartSelfUIAbility returns 201.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100
+     * @tc.desc   Testing StartSelfUIAbility returns 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeChildProcess_StartSelfUIAbility_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -51,12 +51,12 @@ export default function ActsCapiNoPermissionTest() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1100
-     * @tc.desc    : Test StartSelfUIAbilityWithStartOptions and return 201.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1100
+     * @tc.desc   Test StartSelfUIAbilityWithStartOptions and return 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_StartSelfUIAbilityWithStartOptions_1100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -80,12 +80,12 @@ export default function ActsCapiNoPermissionTest() {
       })
 
     /**
-     * @tc.number  : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodePermissionDenied_0100
-     * @tc.name    : SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodePermissionDenied_0100
-     * @tc.desc    : Test AbilityRuntimeErrorCodePermissionDenied error code.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodePermissionDenied_0100
+     * @tc.number SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodePermissionDenied_0100
+     * @tc.desc   Test AbilityRuntimeErrorCodePermissionDenied error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityBase_NativeAbilityRuntime_AbilityRuntimeErrorCodePermissionDenied_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

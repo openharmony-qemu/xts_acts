@@ -154,7 +154,7 @@ export default function audioCapturer() {
 
     let recPromise =
       async (AudioCapturerOptions: audio.AudioCapturerOptions, AudioRendererOptions: audio.AudioRendererOptions, done: () => void) => {
-        let audioCap: audio.AudioCapturer;
+        let audioCap: audio.AudioCapturer | null;
         try {
           audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
            console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
@@ -176,7 +176,7 @@ export default function audioCapturer() {
           });
         }
         try {
-          let audioParamsGet = await audioCap.getStreamInfo();
+          let audioParamsGet = await audioCap!.getStreamInfo();
           if (audioParamsGet != undefined && audioParamsGet != null) {
             console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfo:${JSON.stringify(audioParamsGet)}`);
           } else {
@@ -189,7 +189,7 @@ export default function audioCapturer() {
         }
 
         try {
-          let audioParamsGet = await audioCap.getCapturerInfo();
+          let audioParamsGet = await audioCap!.getCapturerInfo();
           if (audioParamsGet != undefined) {
             console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
           } else {
@@ -201,9 +201,9 @@ export default function audioCapturer() {
           expect(false).assertTrue();
         }
         try {
-          await audioCap.start();
+          await audioCap!.start();
           console.log(`${Tag} start ok`);
-          let bufferSize = await audioCap.getBufferSize();
+          let bufferSize = await audioCap!.getBufferSize();
           console.log(`${Tag} bufferSize: ${JSON.stringify(bufferSize)} , dirPath: ${JSON.stringify(dirPath)}`);
           let fileSync = fs.openSync(dirPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
           console.log(`${fileSync} fd: ${JSON.stringify(fileSync)}`);
@@ -222,14 +222,14 @@ export default function audioCapturer() {
             console.info(`${Tag} AudioFrameworkRecLog: file fd Open: Append Mode : FAILED`);
             expect(false).assertTrue();
           }
-          await audioCap.stop();
+          await audioCap!.stop();
           console.log(`${Tag} stop ok`);
         } catch (err: BusinessError) {
           console.log(`${Tag} start-read-stop err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
         }
         try {
-          await audioCap.release();
+          await audioCap!.release();
           console.log(`${Tag} release ok`);
         } catch (err) {
           console.log(`${Tag} release err: ${JSON.stringify(err)}`);
@@ -239,7 +239,7 @@ export default function audioCapturer() {
       }
 
     let recCapturerPromise4 = async (AudioCapturerOptions: audio.AudioCapturerOptions, fileName: string, done: () => void) => {
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info(`${Tag} recCapturerPromise4 Created : Success`);
@@ -294,7 +294,7 @@ export default function audioCapturer() {
           fs.writeSync(fd, buffer, options);
           bufferSize += buffer.byteLength;
         };
-        audioCap.on('readData', readDataCallback);
+        audioCap!.onReadData(readDataCallback);
 
         if (audioCap === undefined) {
           console.info(`${Tag} recCapturerPromise4: audioCap is undefined`);
@@ -307,16 +307,16 @@ export default function audioCapturer() {
         }
 
         try {
-          await audioCap.start();
+          await audioCap!.start();
           console.log(`${Tag} recCapturerPromise4 start ok`);
 
           await Utils.msSleep(2000);
           console.log(`${Tag} recCapturerPromise4 sleep end`);
 
-          await audioCap.stop();
+          await audioCap!.stop();
           console.log(`${Tag} recCapturerPromise4 stop ok`);
 
-          await audioCap.release();
+          await audioCap!.release();
           console.log(`${Tag} recCapturerPromise4 release ok`);
         } catch (err) {
           console.log(`${Tag} recCapturerPromise4 release err: ${JSON.stringify(err)}`);
@@ -339,7 +339,7 @@ export default function audioCapturer() {
     }
 
     let resRendererPromise5 = async (AudioRendererOptions: audio.AudioRendererOptions, fileName: string) => {
-      let audioRen: audio.AudioRenderer;
+      let audioRen: audio.AudioRenderer | null;
       try {
         audioRen = await audio.createAudioRenderer(AudioRendererOptions);
         console.info(`${Tag}: resRendererPromise5 Created : Success`);
@@ -367,20 +367,20 @@ export default function audioCapturer() {
           }
         };
 
-        audioRen.on('writeData', writeDataCallback);
+        audioRen!.onWriteData(writeDataCallback);
         console.info(`${Tag}: resRendererPromise5 on function : SUCCESS`);
 
         try {
-          await audioRen.start();
+          await audioRen!.start();
           console.log(`${Tag} resRendererPromise5 start ok`);
 
           await Utils.msSleep(2000);
           console.log(`${Tag} resRendererPromise5 sleep end`);
 
-          await audioRen.stop();
+          await audioRen!.stop();
           console.log(`${Tag} resRendererPromise5 stop ok`);
 
-          await audioRen.release();
+          await audioRen!.release();
           console.log(`${Tag} resRendererPromise5 release ok`);
         } catch (err) {
           console.log(`${Tag} resRendererPromise5 err: ${JSON.stringify(err)}`);
@@ -401,12 +401,12 @@ export default function audioCapturer() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0200
-     * @tc.desc        AudioCapturer - getOverflowCountSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0200
+     * @tc.desc   AudioCapturer - getOverflowCountSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -423,15 +423,57 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
-        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer) => {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data: audio.AudioCapturer | null) => {
           audioCapPromise = data;
           console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
-          let OverflowCOuntSync = audioCapPromise.getOverflowCountSync();
+          let OverflowCOuntSync = audioCapPromise!.getOverflowCountSync();
           console.info(`${Tag}: overflowCOuntSync : Converted: ${OverflowCOuntSync}`);
           expect(OverflowCOuntSync as number).assertLargerOrEqual(0.0);
         }).catch((err: Error) => {
+          console.error(`AudioCapturer Created : ERROR : ${err}`);
+          expect(false).assertTrue();
+        });
+      } catch (err: BusinessError) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(false).assertTrue();
+      }
+      await audioCapPromise!.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100
+     * @tc.desc   AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapPromise: audio.AudioCapturer;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
+          audioCapPromise.setWillMuteWhenInterrupted(true);
+          expect(true).assertTrue();
+        }).catch(async(err: BusinessError) => {
           console.error(`AudioCapturer Created : ERROR : ${err}`);
           expect(false).assertTrue();
         });
@@ -444,12 +486,54 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
-     * @tc.desc        AudioCapturer with state prepared
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200
+     * @tc.desc   AudioCapturer - setWillMuteWhenInterrupted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_SET_WILL_MUTE_WHEN_INTERRUPTED_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_1,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapPromise: audio.AudioCapturer;
+      try {
+        await audio.createAudioCapturer(AudioCapturerOptions).then((data) => {
+          audioCapPromise = data;
+          audioCapPromise.start();
+          console.info('AudioCapturer start : Success : Stream Type: SUCCESS');
+          audioCapPromise.setWillMuteWhenInterrupted(true);
+        }).catch(async(err: BusinessError) => {
+          console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+          expect(err.code).assertEqual(6800103);
+        });
+      } catch (err: BusinessError) {
+        console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
+        expect(false).assertTrue();
+      }
+      await audioCapPromise.release();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100
+     * @tc.desc   AudioCapturer with state prepared
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMOISE_PREPARED_STATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -466,12 +550,12 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : Success : Stream Type: success`);
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_PREPARED);
-        expect(audioCapPromise.state == 1).assertTrue();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_PREPARED);
+        expect(audioCapPromise!.state == 1).assertTrue();
       } catch (err: BusinessError) {
         console.info(`${Tag} AudioFrameworkRecLog: AudioCapturer Created : ERROR :  ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -480,12 +564,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_STATIC_0100
-     * @tc.desc        AudioCapturer with state running
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_STATIC_0100
+     * @tc.desc   AudioCapturer with state running
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RUNNING_STATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -502,13 +586,13 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.start();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RUNNING);
-        expect(audioCapPromise.state == 2).assertTrue();
-        await audioCapPromise.release();
+        await audioCapPromise!.start();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+        expect(audioCapPromise!.state == 2).assertTrue();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -517,12 +601,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_STATIC_0100
-     * @tc.desc        AudioCapturer with state stopped
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_STATIC_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOPPED_STATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -539,15 +623,15 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.start();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RUNNING);
-        await audioCapPromise.stop();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_STOPPED);
-        expect(audioCapPromise.state == 3).assertTrue();
-        await audioCapPromise.release()
+        await audioCapPromise!.start();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+        await audioCapPromise!.stop();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_STOPPED);
+        expect(audioCapPromise!.state == 3).assertTrue();
+        await audioCapPromise!.release()
       } catch (err: BusinessError) {
         console.log(`${Tag} err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -556,12 +640,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_STATIC_0100
-     * @tc.desc        AudioCapturer with state released
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_STATIC_0100
+     * @tc.desc   AudioCapturer with state released
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASED_STATE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -578,14 +662,14 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.start();
-        await audioCapPromise.stop();
-        await audioCapPromise.release();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
-        expect(audioCapPromise.state == 4).assertTrue();
+        await audioCapPromise!.start();
+        await audioCapPromise!.stop();
+        await audioCapPromise!.release();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        expect(audioCapPromise!.state == 4).assertTrue();
       } catch (err: BusinessError) {
         console.log(`${Tag} err : ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -594,12 +678,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_STATIC_0100
-     * @tc.desc        AudioCapturer with state stopped
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_STATIC_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -616,7 +700,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err: BusinessError) {
@@ -628,17 +712,17 @@ export default function audioCapturer() {
         });
       }
       try {
-        await audioCapPromise.start();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RUNNING);
-        let bufferSize = audioCapPromise.getBufferSizeSync();
+        await audioCapPromise!.start();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+        let bufferSize = audioCapPromise!.getBufferSizeSync();
         console.info(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
       } catch (err: BusinessError) {
         console.log(`${Tag} start-getBufferSizeSync err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.release();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        await audioCapPromise!.release();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RELEASED);
       } catch (err: BusinessError) {
         console.log(`${Tag} release err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -647,12 +731,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_STATIC_0100
-     * @tc.desc        AudioCapturer with state stopped
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_STATIC_0100
+     * @tc.desc   AudioCapturer with state stopped
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_BUFFER_SIZE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -669,7 +753,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err: BusinessError) {
@@ -681,17 +765,17 @@ export default function audioCapturer() {
         });
       }
       try {
-        await audioCapPromise.start();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RUNNING);
-        let bufferSize = audioCapPromise.getBufferSize();
+        await audioCapPromise!.start();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+        let bufferSize = audioCapPromise!.getBufferSize();
         console.info(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
       } catch (err: BusinessError) {
         console.log(`${Tag} start-getBufferSize err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.release();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        await audioCapPromise!.release();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RELEASED);
       } catch (err: BusinessError) {
         console.log(`${Tag} release err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -700,12 +784,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_STATIC_0100
-     * @tc.desc        AudioCapturer with read buffer
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_STATIC_0100
+     * @tc.desc   AudioCapturer with read buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_READ_BUFFER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkpromisereadbuffer.pcm");
@@ -723,7 +807,7 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err: BusinessError) {
@@ -735,9 +819,9 @@ export default function audioCapturer() {
         });
       }
       try {
-        await audioCapPromise.start();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RUNNING);
-        bufferSize = await audioCapPromise.getBufferSize();
+        await audioCapPromise!.start();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RUNNING);
+        bufferSize = await audioCapPromise!.getBufferSize();
         console.info(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
       } catch (err: BusinessError) {
         console.log(`${Tag} start-getBufferSize err: ${JSON.stringify(err.message)}`);
@@ -768,8 +852,8 @@ export default function audioCapturer() {
         });
       }
       try {
-        await audioCapPromise.release();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        await audioCapPromise!.release();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RELEASED);
       } catch (err: BusinessError) {
         console.log(`${Tag} release err: ${JSON.stringify(err.message)}`);
         expect(false).assertTrue();
@@ -778,12 +862,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0100
-     * @tc.desc        AudioCapturer with parameter set 7
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0100
+     * @tc.desc   AudioCapturer with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -815,12 +899,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0100
-     * @tc.desc        AudioCapturer with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0100
+     * @tc.desc   AudioCapturer with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -852,12 +936,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0200
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -889,12 +973,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0200
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -926,12 +1010,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
-     * @tc.desc        record audio with parameter set 2
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300
+     * @tc.desc   record audio with parameter set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo96000: audio.AudioStreamInfo = {
@@ -963,12 +1047,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0300
-     * @tc.desc        record audio with parameter set 2
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0300
+     * @tc.desc   record audio with parameter set 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo96000: audio.AudioStreamInfo = {
@@ -1000,12 +1084,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0400
-     * @tc.desc        record audio with parameter set 3
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0400
+     * @tc.desc   record audio with parameter set 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo48000: audio.AudioStreamInfo = {
@@ -1037,12 +1121,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0400
-     * @tc.desc        record audio with parameter set 3
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0400
+     * @tc.desc   record audio with parameter set 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo48000: audio.AudioStreamInfo = {
@@ -1074,12 +1158,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0500
-     * @tc.desc        record audio with parameter set 4
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0500
+     * @tc.desc   record audio with parameter set 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo8000: audio.AudioStreamInfo = {
@@ -1111,12 +1195,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0500
-     * @tc.desc        record audio with parameter set 4
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0500
+     * @tc.desc   record audio with parameter set 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo8000: audio.AudioStreamInfo = {
@@ -1148,12 +1232,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0600
-     * @tc.desc        record audio with parameter set 5
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0600
+     * @tc.desc   record audio with parameter set 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo11025: audio.AudioStreamInfo = {
@@ -1185,12 +1269,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0600
-     * @tc.desc        record audio with parameter set 5
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0600
+     * @tc.desc   record audio with parameter set 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo11025: audio.AudioStreamInfo = {
@@ -1222,12 +1306,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0700
-     * @tc.desc        record audio with parameter set 6
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0700
+     * @tc.desc   record audio with parameter set 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo12000: audio.AudioStreamInfo = {
@@ -1259,12 +1343,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0800
-     * @tc.desc        record audio with parameter set 7
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0800
+     * @tc.desc   record audio with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo16000: audio.AudioStreamInfo = {
@@ -1296,12 +1380,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0800
-     * @tc.desc        record audio with parameter set 7
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0800
+     * @tc.desc   record audio with parameter set 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo16000: audio.AudioStreamInfo = {
@@ -1333,13 +1417,13 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0900
-     * @tc.desc        record audio with parameter set 8
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
-     //  */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0900
+     * @tc.desc   record audio with parameter set 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo22050: audio.AudioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_22050,
@@ -1370,12 +1454,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0900
-     * @tc.desc        record audio with parameter set 8
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0900
+     * @tc.desc   record audio with parameter set 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo22050: audio.AudioStreamInfo = {
@@ -1407,12 +1491,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1000
-     * @tc.desc        record audio with parameter set 9
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1000
+     * @tc.desc   record audio with parameter set 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo24000: audio.AudioStreamInfo = {
@@ -1445,12 +1529,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1000
-     * @tc.desc        record audio with parameter set 9
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1000
+     * @tc.desc   record audio with parameter set 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo24000: audio.AudioStreamInfo = {
@@ -1482,12 +1566,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1100
-     * @tc.desc        record audio with parameter set 010
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1100
+     * @tc.desc   record audio with parameter set 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo32000: audio.AudioStreamInfo = {
@@ -1519,12 +1603,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1100
-     * @tc.desc        record audio with parameter set 010
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1100
+     * @tc.desc   record audio with parameter set 010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo32000: audio.AudioStreamInfo = {
@@ -1556,12 +1640,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1200
-     * @tc.desc        record audio with parameter set 011
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1200
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -1593,12 +1677,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1200
-     * @tc.desc        record audio with parameter set 011
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1200
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_ENUM_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -1630,12 +1714,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1300
-     * @tc.desc        record audio with parameter set 011
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1300
+     * @tc.desc   record audio with parameter set 011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_REC_VOICE_CHAT_PROMISE_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo64000: audio.AudioStreamInfo = {
@@ -1667,12 +1751,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_STATIC_0100
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_STATIC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -1705,12 +1789,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_STATIC_0100
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_STATIC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_RECORD_PROMISE_AUDIO_SCENE_DEFAULT_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -1742,12 +1826,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_STATIC_0100
-     * @tc.desc        AudioCapturer GET_AUDIO_TIME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_STATIC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_READ_WRITE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -1766,7 +1850,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -1777,13 +1861,13 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.start();
+        await audioCapPromise!.start();
         console.log(`${Tag} start ok`);
-        let audioTime = await audioCapPromise.getAudioTime();
+        let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`);
         expect(audioTime as number).assertLarger(0.0);
 
-        let bufferSize = await audioCapPromise.getBufferSize();
+        let bufferSize = await audioCapPromise!.getBufferSize();
         console.log(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
         let fileSync = fs.openSync(dirPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         console.log(`${Tag} fd: ${JSON.stringify(fileSync)}`);
@@ -1809,7 +1893,7 @@ export default function audioCapturer() {
             resolve(undefined);
           });
         }
-        let audioTime2 = await audioCapPromise.getAudioTime();
+        let audioTime2 = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
         expect(audioTime2 as number).assertLarger(0.0);
       } catch (err) {
@@ -1818,7 +1902,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -1827,12 +1911,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_STATIC_0100
-     * @tc.desc        AudioCapturer GET_AUDIO_TIME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_STATIC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_GET_AUDIO_TIME_AFTER_STOP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       await getFd("capture_CB_js-44100-2C-S16LE-checkcbreadbuffer.pcm");
@@ -1851,7 +1935,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -1862,13 +1946,13 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.start();
+        await audioCapPromise!.start();
         console.log(`${Tag} start ok`);
-        let audioTime = await audioCapPromise.getAudioTime();
+        let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`);
         expect(audioTime as number).assertLarger(0.0);
 
-        let bufferSize = await audioCapPromise.getBufferSize();
+        let bufferSize = await audioCapPromise!.getBufferSize();
         console.log(`${Tag} AudioFrameworkRecLog: buffer size:  ${JSON.stringify(bufferSize)}`);
         let fileSync = fs.openSync(dirPath, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
         console.log(`${Tag} fd: ${JSON.stringify(fileSync)}`);
@@ -1899,8 +1983,8 @@ export default function audioCapturer() {
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.stop();
-        let audioTime2 = await audioCapPromise.getAudioTime();
+        await audioCapPromise!.stop();
+        let audioTime2 = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime2: ${JSON.stringify(audioTime2)}`);
         expect(audioTime2 as number).assertLarger(0.0);
       } catch (err) {
@@ -1909,7 +1993,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -1918,12 +2002,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_STATIC_0100
-     * @tc.desc        AudioCapturer GET_AUDIO_TIME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_STATIC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1941,7 +2025,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -1950,8 +2034,8 @@ export default function audioCapturer() {
         done();
       }
       try {
-        await audioCapPromise.start();
-        let audioTime = await audioCapPromise.getAudioTime();
+        await audioCapPromise!.start();
+        let audioTime = await audioCapPromise!.getAudioTime();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`)
         expect(audioTime as number).assertLarger(0.0);
       } catch (err) {
@@ -1959,7 +2043,7 @@ export default function audioCapturer() {
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -1968,12 +2052,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_STATIC_0100
-     * @tc.desc        AudioCapturer GET_AUDIO_TIME_SYNC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_STATIC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME_SYNC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_CB_GET_AUDIO_TIME_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -1991,7 +2075,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2000,8 +2084,8 @@ export default function audioCapturer() {
         done();
       }
       try {
-        await audioCapPromise.start();
-        let audioTime = audioCapPromise.getAudioTimeSync();
+        await audioCapPromise!.start();
+        let audioTime = audioCapPromise!.getAudioTimeSync();
         console.log(`${Tag} audioTime: ${JSON.stringify(audioTime)}`)
         expect(audioTime as number).assertLarger(0.0);
       } catch (err) {
@@ -2009,7 +2093,7 @@ export default function audioCapturer() {
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2018,12 +2102,64 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
-     * @tc.desc        AudioCapturer createAudioCapturer->stop->release
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC
+     * @tc.desc   AudioCapturer GET_AUDIO_TIMESTAMP_INFO_SYNC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_TIMESTAMP_INFO_SYNC_STATIC',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+        let AudioStreamInfo: audio.AudioStreamInfo = {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+          channels: audio.AudioChannel.CHANNEL_2,
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        }
+        let AudioCapturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_MIC,
+          capturerFlags: 0
+        }
+        let AudioCapturerOptions: audio.AudioCapturerOptions = {
+          streamInfo: AudioStreamInfo,
+          capturerInfo: AudioCapturerInfo
+        }
+
+        let audioCapPromise: audio.AudioCapturer | null;
+        try {
+          audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
+        } catch (err: BusinessError) {
+          console.log(`${Tag} createAudioCapturer err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+          done();
+        }
+        try {
+          await audioCapPromise!.start();
+          let audioTimestampInfo: audio.AudioTimestampInfo = audioCapPromise!.getAudioTimestampInfoSync();
+          console.log(`${Tag} framePos: ${JSON.stringify(audioTimestampInfo.framePos)},
+          timestamp: ${JSON.stringify(audioTimestampInfo.timestamp)}`)
+          expect(audioTimestampInfo.timestamp != 0).assertTrue();
+        } catch (err: BusinessError) {
+          console.log(`${Tag} start-getAudioTimestampInfoSync err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        }
+        try {
+          await audioCapPromise!.release();
+        } catch (err: BusinessError) {
+          console.log(`${Tag} err: ${JSON.stringify(err)}`);
+          expect(false).assertTrue();
+        }
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100
+     * @tc.desc   AudioCapturer createAudioCapturer->stop->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_STOP_BEFORE_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2041,7 +2177,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.log(`${Tag} createAudioCapturer ok`);
@@ -2052,14 +2188,14 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.start();
+        await audioCapPromise!.start();
         console.log(`${Tag} start ok`);
       } catch (err) {
         console.log(`${Tag} start err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.stop();
+        await audioCapPromise!.stop();
         console.log(`${Tag} stop ok`);
         expect(true).assertTrue();
       } catch (err) {
@@ -2070,12 +2206,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_STATIC_0100
-     * @tc.desc        AudioCapturer GET_AUDIO_TIME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_STATIC_0100
+     * @tc.desc   AudioCapturer GET_AUDIO_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOIP_CAP_PROMISE_RELEASE_BEFORE_START_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2093,7 +2229,7 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
 
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2103,14 +2239,14 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCapPromise.release();
-        expect(audioCapPromise.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        await audioCapPromise!.release();
+        expect(audioCapPromise!.state).assertEqual(audio.AudioState.STATE_RELEASED);
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
       try {
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err) {
         console.log(`${Tag} re-release err: ${JSON.stringify(err)}`);
         expect(true).assertTrue();
@@ -2119,12 +2255,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_STATIC_0100
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_STATIC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2143,7 +2279,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2153,7 +2289,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet: audio.AudioStreamInfo = audioCap.getStreamInfoSync();
+        let audioParamsGet: audio.AudioStreamInfo = audioCap!.getStreamInfoSync();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfoSync:${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfoSync err: ${JSON.stringify(err)}`);
@@ -2161,7 +2297,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2170,12 +2306,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_STATIC_0100
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_STATIC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2194,7 +2330,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2204,7 +2340,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet: audio.AudioStreamInfo = await audioCap.getStreamInfo();
+        let audioParamsGet: audio.AudioStreamInfo = await audioCap!.getStreamInfo();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfo:${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
@@ -2212,7 +2348,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2221,12 +2357,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_STATIC_0100
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_STATIC_0100
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_STREAM_INFO_ENUM_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2244,7 +2380,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2254,7 +2390,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet: audio.AudioStreamInfo = await audioCap.getStreamInfo();
+        let audioParamsGet: audio.AudioStreamInfo = await audioCap!.getStreamInfo();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfo:${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
@@ -2262,22 +2398,22 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
-        console.log(`${Tag} audioCap.state: ${JSON.stringify(audioCap.state)}`);
+        console.log(`${Tag} audioCap.state: ${JSON.stringify(audioCap!.state)}`);
         expect(false).assertTrue();
       }
       done();
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_STATIC_0200
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_STATIC_0200
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_CB_VOICE_CHAT_GET_STREAM_INFO_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2295,7 +2431,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2305,32 +2441,32 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet: audio.AudioStreamInfo = await audioCap.getStreamInfo();
+        let audioParamsGet: audio.AudioStreamInfo = await audioCap!.getStreamInfo();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer getStreamInfo:${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
       }
 
-      audioCap.release((err: BusinessError<void> | null) => {
+      audioCap!.release((err: BusinessError<void> | null) => {
         if (err) {
           console.log(`${Tag} release err: ${JSON.stringify(err)}`);
           expect(false).assertTrue();
           done();
           return;
         }
-        expect(audioCap.state).assertEqual(audio.AudioState.STATE_RELEASED);
+        expect(audioCap!.state).assertEqual(audio.AudioState.STATE_RELEASED);
         done();
       })
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_STATIC_0300
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_STATIC_0300
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2349,7 +2485,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2359,7 +2495,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet = await audioCap.getCapturerInfo();
+        let audioParamsGet = await audioCap!.getCapturerInfo();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
@@ -2367,7 +2503,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2376,12 +2512,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_STATIC_0300
-     * @tc.desc        record audio with parameter set 1
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_STATIC_0300
+     * @tc.desc   record audio with parameter set 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO_ENUM_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2399,7 +2535,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2409,7 +2545,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet = await audioCap.getCapturerInfo();
+        let audioParamsGet = await audioCap!.getCapturerInfo();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
       } catch (err) {
         console.log(`${Tag} getStreamInfo err: ${JSON.stringify(err)}`);
@@ -2417,7 +2553,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2426,12 +2562,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_STATIC_0400
-     * @tc.desc        getCapturerInfoSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_STATIC_0400
+     * @tc.desc   getCapturerInfoSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_REC_PR_VOICE_CHAT_GET_CAPTURER_INFO__SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo44100: audio.AudioStreamInfo = {
@@ -2450,7 +2586,7 @@ export default function audioCapturer() {
         capturerInfo: audioCapturerInfo44100,
       }
 
-      let audioCap: audio.AudioCapturer;
+      let audioCap: audio.AudioCapturer | null;
       try {
         audioCap = await audio.createAudioCapturer(AudioCapturerOptions);
       } catch (err) {
@@ -2460,7 +2596,7 @@ export default function audioCapturer() {
       }
 
       try {
-        let audioParamsGet = audioCap.getCapturerInfoSync();
+        let audioParamsGet = audioCap!.getCapturerInfoSync();
         console.info(`${Tag} AudioFrameworkRecLog: Capturer CapturerInfo: ${JSON.stringify(audioParamsGet)}`);
         expect(true).assertTrue();
       } catch (err) {
@@ -2469,7 +2605,7 @@ export default function audioCapturer() {
       }
 
       try {
-        await audioCap.release();
+        await audioCap!.release();
       } catch (err) {
         console.log(`${Tag} release err: ${JSON.stringify(err)}`);
         expect(false).assertTrue();
@@ -2478,12 +2614,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0100
-     * @tc.desc        AudioCapturer - getAudioStreamId
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0100
+     * @tc.desc   AudioCapturer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2500,10 +2636,10 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        audioCapPromise.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
+        audioCapPromise!.getAudioStreamId((err: BusinessError<void> | null, data: long | undefined) => {
           if (err) {
             console.info(`${Tag}: getAudioStreamId : ERROR : code: ${err?.code}, mesage: ${err?.message}`);
             expect(false).assertTrue();
@@ -2511,7 +2647,7 @@ export default function audioCapturer() {
             expect(true).assertTrue();
             console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
           }
-          audioCapPromise.release();
+          audioCapPromise!.release();
         });
       } catch (err) {
         console.log(`${Tag} err: ${JSON.stringify(err)}`);
@@ -2521,12 +2657,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0200
-     * @tc.desc        AudioCapturer - getAudioStreamId
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0200
+     * @tc.desc   AudioCapturer - getAudioStreamId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2544,15 +2680,15 @@ export default function audioCapturer() {
         capturerInfo: AudioCapturerInfo
       }
       try {
-        let audioCapPromise: audio.AudioCapturer = await audio.createAudioCapturer(AudioCapturerOptions);
+        let audioCapPromise: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
         try {
-          let data = await audioCapPromise.getAudioStreamId();
+          let data = await audioCapPromise!.getAudioStreamId();
           expect(true).assertTrue();
-          audioCapPromise.release();
+          audioCapPromise!.release();
           console.info(`${Tag}: getAudioStreamId : Converted: ${data}`);
         } catch (err: BusinessError) {
           expect(true).assertTrue();
-          audioCapPromise.release();
+          audioCapPromise!.release();
           console.error(`${Tag}: getAudioStreamId : ERROR : ${err.message}`);
         }
       } catch (err: BusinessError) {
@@ -2563,12 +2699,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
-     * @tc.desc        AudioCapturer - getAudioStreamIdSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300
+     * @tc.desc   AudioCapturer - getAudioStreamIdSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_STREAM_ID_SYNC_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2585,28 +2721,28 @@ export default function audioCapturer() {
         streamInfo: AudioStreamInfo,
         capturerInfo: AudioCapturerInfo
       }
-      let audioCapPromise: audio.AudioCapturer;
+      let audioCapPromise: audio.AudioCapturer | null;
       try {
         audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
-        let StreamIdSync: long = audioCapPromise.getAudioStreamIdSync();
+        let StreamIdSync: long = audioCapPromise!.getAudioStreamIdSync();
           console.info(`${Tag}: getAudioStreamId : Converted: ${StreamIdSync}`);
         expect(true).assertTrue();
       } catch (err: BusinessError) {
         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
         expect(false).assertTrue();
       }
-      await audioCapPromise.release();
+      await audioCapPromise!.release();
       done();
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
-     * @tc.desc        AudioCapturer - getOverflowCount
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100
+     * @tc.desc   AudioCapturer - getOverflowCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_GET_AUDIO_OVERFLOW_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2625,7 +2761,7 @@ export default function audioCapturer() {
       }
       try {
         let audioCapPromise = await audio.createAudioCapturer(AudioCapturerOptions);
-        await audioCapPromise.getOverflowCount().then((data: long) => {
+        await audioCapPromise!.getOverflowCount().then((data: long) => {
           expect(data as number).assertLargerOrEqual(0.0);
           console.info(`${Tag}: getOverflowCount : Converted: ${data}`);
         }).catch((err: Error) => {
@@ -2633,7 +2769,7 @@ export default function audioCapturer() {
           console.error(`${Tag}: getOverflowCount : ERROR : ${err}`);
         });
 
-        await audioCapPromise.release();
+        await audioCapPromise!.release();
       } catch (err: BusinessError) {
         console.log(`${Tag} error code: ${err.code} ,message:${err.message}`);
         expect(false).assertTrue();
@@ -2642,12 +2778,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_STATIC_0100
-     * @tc.desc        AudioCapturer with parameter set
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_STATIC_0100
+     * @tc.desc   AudioCapturer with parameter set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_REC_VOICE_MESSAGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioStreamInfo: audio.AudioStreamInfo = {
@@ -2681,12 +2817,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0100
-     * @tc.desc        CAPTURER_RENDERER_FORMAT_F32LE_Test_0100
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0100
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2735,12 +2871,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0200
-     * @tc.desc        CAPTURER_RENDERER_FORMAT_F32LE_Test_0200
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0200
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2789,12 +2925,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0300
-     * @tc.desc        CAPTURER_RENDERER_FORMAT_F32LE_Test_0300
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0300
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2843,12 +2979,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0400
-     * @tc.desc        CAPTURER_RENDERER_FORMAT_F32LE_Test_0400
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0400
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2897,12 +3033,12 @@ export default function audioCapturer() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0500
-     * @tc.desc        CAPTURER_RENDERER_FORMAT_F32LE_Test_0500 with PRIVACY_TYPE_PRIVATE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0500
+     * @tc.desc   CAPTURER_RENDERER_FORMAT_F32LE_Test_0500 with PRIVACY_TYPE_PRIVATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_RENDERER_FORMAT_F32_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -2944,7 +3080,6 @@ export default function audioCapturer() {
 
         await resRendererPromise5(AudioRendererOptions, fileName);
         console.log(`${caseTag} audio playback success`);
-        expect(true).assertTrue();
       } catch (err: BusinessError) {
         console.log(`${caseTag} fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
@@ -2952,5 +3087,170 @@ export default function audioCapturer() {
         done();
       }
     })
+
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100
+     * @tc.desc   AudioCapturer ON MARKREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_ON_MARKREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+      let cb1: Callback<long> = () => {
+        console.info('Current callback is cb1');
+      }
+      let flag : boolean =false;
+      try {
+        let para1: long = 0;
+        audioCapturer!.onMarkReach(para1, cb1);
+      } catch (err: BusinessError) {
+        console.log(`err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100
+     * @tc.desc   AudioCapturer ON PERIODREACH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_ON_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_MIC,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+      let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+      let cb1: Callback<long> =() =>{
+        console.info('Current callback is cb1');
+      }
+      let flag: boolean =false;
+      try {
+        let para1: long = 0;
+        audioCapturer!.onPeriodReach(para1, cb1);
+      } catch (err: BusinessError) {
+        console.log(`err : ${err.message},Code:${err.code}`);
+        expect(Number(err.code)).assertEqual(6800101);
+        flag = true;
+      }
+      expect(flag).assertTrue();
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100
+     * @tc.number SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100
+     * @tc.desc   SOURCETYPE_UNPROCESSED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_AUDIO_AUDIOCAPTURE_SOURCETYPE_UNPROCESSED_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let AudioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      }
+      let AudioCapturerInfo: audio.AudioCapturerInfo = {
+        source: audio.SourceType.SOURCE_TYPE_UNPROCESSED,
+        capturerFlags: 0
+      }
+      let AudioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: AudioStreamInfo,
+        capturerInfo: AudioCapturerInfo
+      }
+
+      try {
+        let audioCapturer: audio.AudioCapturer | null = await audio.createAudioCapturer(AudioCapturerOptions);
+        done();
+      } catch (error: BusinessError) {
+        console.log(`error : ${error.message},Code:${error.code}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001
+     * @tc.desc   SourceType Live
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_FRAMEWORK_LIVE_FUNCTION_TEST_STATIC_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioCapturerOptions: audio.AudioCapturerOptions = {
+        streamInfo: {
+          samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // 采样率。
+          channels: audio.AudioChannel.CHANNEL_2, // 通道。
+          sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // 采样格式。
+          encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // 编码格式。
+        },
+        capturerInfo: {
+          source: audio.SourceType.SOURCE_TYPE_LIVE, // 音源类型
+          capturerFlags: 0 // 音频采集器标志。
+        }
+      };
+
+      let audioManager = audio.getAudioManager().getStreamManager();
+      let isSupportAEC = audioManager.isAcousticEchoCancelerSupported(audio.SourceType.SOURCE_TYPE_LIVE);
+
+      if (isSupportAEC) {
+        audioCapturerOptions.capturerInfo.source = audio.SourceType.SOURCE_TYPE_LIVE;
+      } else {
+        audioCapturerOptions.capturerInfo.source = audio.SourceType.SOURCE_TYPE_MIC;
+      }
+
+      try {
+        audio.createAudioCapturer(audioCapturerOptions, (err: BusinessError | null, data: audio.AudioCapturer | undefined | null) => {
+          if (err) {
+            expect(false).assertTrue();
+            done();
+            console.error(`AudioCapturer Created : Error: ${err}`);
+          } else {
+            console.info('AudioCapturer Created : Success : SUCCESS');
+            data?.release();
+            done();
+          }
+          done();
+        });
+      } catch (err) {
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
   })
 }

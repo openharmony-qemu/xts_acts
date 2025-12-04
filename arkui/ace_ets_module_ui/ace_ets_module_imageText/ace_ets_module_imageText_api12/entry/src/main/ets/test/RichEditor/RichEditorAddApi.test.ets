@@ -43,15 +43,15 @@ export default function RichEditorAddApi() {
       console.info("RichEditorAddApi after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_RichEditor_0010
-     * @tc.name       : RichEditorAddApi_001
-     * @tc.desc       : RichEditor Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   RichEditorAddApi_001
+     * @tc.number RichEditorAddApi_001
+     * @tc.desc   RichEditorAddApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditorAddApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[RichEditorAddApi_001] START');
       await CommonFunc.sleep(1000);

@@ -48,12 +48,12 @@ export default function RegExpTest003() {
     })
 
     /**
+     * @tc.name   testRegReplace0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0001
-     * @tc.name testRegReplace0001
-     * @tc.desc Replace the first occurrence of a substring
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first occurrence of a substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple banana apple";
@@ -62,12 +62,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0002
-     * @tc.name testRegReplace0002
-     * @tc.desc Replace all occurrences using global regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all occurrences using global regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple banana apple";
@@ -76,12 +76,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0003
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0003
-     * @tc.name testRegReplace0003
-     * @tc.desc Replace only first occurrence with regex without g flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace only first occurrence with regex without g flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple banana apple";
@@ -90,12 +90,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0004
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0004
-     * @tc.name testRegReplace0004
-     * @tc.desc Case-insensitive replacement using regex with i flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Case-insensitive replacement using regex with i flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple Banana apple";
@@ -104,12 +104,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0005
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0005
-     * @tc.name testRegReplace0005
-     * @tc.desc Replace using capture groups to rearrange text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using capture groups to rearrange text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "John Smith";
@@ -118,12 +118,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0007
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0007
-     * @tc.name testRegReplace0007
-     * @tc.desc Replace string containing regex special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing regex special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Price: 5.99";
@@ -132,12 +132,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0008
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0008
-     * @tc.name testRegReplace0008
-     * @tc.desc Replace Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Héllo Wörld";
@@ -146,12 +146,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0009
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0009
-     * @tc.name testRegReplace0009
-     * @tc.desc Replace numeric characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace numeric characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Contact: 123-456-7890";
@@ -160,12 +160,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0010
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0010
-     * @tc.name testRegReplace0010
-     * @tc.desc Replace alphabetic characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace alphabetic characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abcDEF";
@@ -174,12 +174,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0011
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0011
-     * @tc.name testRegReplace0011
-     * @tc.desc Replace leading and trailing spaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace leading and trailing spaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "  hello world  ";
@@ -188,12 +188,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0012
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0012
-     * @tc.name testRegReplace0012
-     * @tc.desc Replace consecutive repeated characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace consecutive repeated characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaa";
@@ -202,12 +202,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0013
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0013
-     * @tc.name testRegReplace0013
-     * @tc.desc Replace using function returning a constant
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using function returning a constant
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -216,12 +216,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0015
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0015
-     * @tc.name testRegReplace0015
-     * @tc.desc Replace using function returning empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using function returning empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -230,12 +230,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0016
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0016
-     * @tc.name testRegReplace0016
-     * @tc.desc Replace string containing newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\nline2";
@@ -244,12 +244,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0017
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0017
-     * @tc.name testRegReplace0017
-     * @tc.desc Replace string containing tab characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing tab characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "col1\tcol2";
@@ -258,12 +258,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0018
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0018
-     * @tc.name testRegReplace0018
-     * @tc.desc Replace string containing carriage return characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing carriage return characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\rline2";
@@ -272,12 +272,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0019
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0019
-     * @tc.name testRegReplace0019
-     * @tc.desc Replace string containing tab and space combinations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing tab and space combinations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a \tb";
@@ -286,12 +286,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0020
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0020
-     * @tc.name testRegReplace0020
-     * @tc.desc Replace string containing special symbols like $, #, @
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing special symbols like $, #, @
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Price: $100 #deal";
@@ -300,12 +300,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0021
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0021
-     * @tc.name testRegReplace0021
-     * @tc.desc Replace string containing emoji characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing emoji characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Hello 😊 World 😊";
@@ -314,12 +314,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0022
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0022
-     * @tc.name testRegReplace0022
-     * @tc.desc Replace multi-byte characters like Chinese, Japanese, Korean
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace multi-byte characters like Chinese, Japanese, Korean
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "你好世界";
@@ -328,12 +328,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0023
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0023
-     * @tc.name testRegReplace0023
-     * @tc.desc Replace the first matching substring
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first matching substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo bar foo";
@@ -342,12 +342,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0024
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0024
-     * @tc.name testRegReplace0024
-     * @tc.desc Replace the last matching substring
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the last matching substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo bar foo";
@@ -356,12 +356,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0025
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0025
-     * @tc.name testRegReplace0025
-     * @tc.desc Replace multiple consecutive matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace multiple consecutive matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaa bbb ccc";
@@ -370,12 +370,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0026
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0026
-     * @tc.name testRegReplace0026
-     * @tc.desc Replace non-consecutive matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-consecutive matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -384,12 +384,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0027
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0027
-     * @tc.name testRegReplace0027
-     * @tc.desc Replace empty string at the beginning
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace empty string at the beginning
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello";
@@ -398,12 +398,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0028
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0028
-     * @tc.name testRegReplace0028
-     * @tc.desc Replace empty string at the end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace empty string at the end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello";
@@ -412,12 +412,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0029
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0029
-     * @tc.name testRegReplace0029
-     * @tc.desc Use $& to reference matched text in replacement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $& to reference matched text in replacement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -426,12 +426,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0030
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0030
-     * @tc.name testRegReplace0030
-     * @tc.desc Use $1, $2 to reference capture groups in replacement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $1, $2 to reference capture groups in replacement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "John Smith";
@@ -440,12 +440,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0035
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0035
-     * @tc.name testRegReplace0035
-     * @tc.desc Replace all spaces in a string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all spaces in a string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a b c";
@@ -454,12 +454,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0036
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0036
-     * @tc.name testRegReplace0036
-     * @tc.desc Replace consecutive spaces with a single space
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace consecutive spaces with a single space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a   b    c";
@@ -468,12 +468,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0037
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0037
-     * @tc.name testRegReplace0037
-     * @tc.desc Replace repeated letter sequences
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated letter sequences
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaabbb";
@@ -482,12 +482,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0038
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0038
-     * @tc.name testRegReplace0038
-     * @tc.desc Replace repeated words
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated words
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo foo bar";
@@ -496,12 +496,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0039
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0039
-     * @tc.name testRegReplace0039
-     * @tc.desc Use $& to reference matched text in replacement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $& to reference matched text in replacement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -510,12 +510,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0040
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0040
-     * @tc.name testRegReplace0040
-     * @tc.desc Use $` to insert text before the match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $` to insert text before the match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -524,12 +524,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0041
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0041
-     * @tc.name testRegReplace0041
-     * @tc.desc Use $' to insert text after the match
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $' to insert text after the match
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -538,12 +538,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0042
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0042
-     * @tc.name testRegReplace0042
-     * @tc.desc Use $$ to insert $ character in replacement
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use $$ to insert $ character in replacement
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "price";
@@ -552,12 +552,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0043
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0043
-     * @tc.name testRegReplace0043
-     * @tc.desc Replace the first uppercase letter using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first uppercase letter using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aBcDe";
@@ -566,12 +566,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0044
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0044
-     * @tc.name testRegReplace0044
-     * @tc.desc Replace the first lowercase letter using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first lowercase letter using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "AbCDe";
@@ -580,12 +580,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0045
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0045
-     * @tc.name testRegReplace0045
-     * @tc.desc Replace the first digit using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the first digit using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2";
@@ -594,12 +594,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0046
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0046
-     * @tc.name testRegReplace0046
-     * @tc.desc Replace all digits using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all digits using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -608,12 +608,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0047
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0047
-     * @tc.name testRegReplace0047
-     * @tc.desc Replace all non-digit characters using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all non-digit characters using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -622,12 +622,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0048
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0048
-     * @tc.name testRegReplace0048
-     * @tc.desc Replace newline characters in a string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace newline characters in a string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\nline2";
@@ -636,12 +636,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0049
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0049
-     * @tc.name testRegReplace0049
-     * @tc.desc Replace matches in multi-line text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace matches in multi-line text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo\nbar\nbaz";
@@ -650,12 +650,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0050
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0050
-     * @tc.name testRegReplace0050
-     * @tc.desc Replace multi-byte character sequences (emoji + Chinese)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace multi-byte character sequences (emoji + Chinese)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "😊你好";
@@ -664,12 +664,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0051
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0051
-     * @tc.name testRegReplace0051
-     * @tc.desc Replace string containing escape characters (\n, \t, \\)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string containing escape characters (\n, \t, \\)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\\nline2\tend";
@@ -678,12 +678,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0052
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0052
-     * @tc.name testRegReplace0052
-     * @tc.desc Reverse string order using capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Reverse string order using capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a-b-c";
@@ -692,12 +692,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0053
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0053
-     * @tc.name testRegReplace0053
-     * @tc.desc Replace specific word ignoring case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace specific word ignoring case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Hello hello HeLLo";
@@ -706,12 +706,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0054
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0054
-     * @tc.name testRegReplace0054
-     * @tc.desc Replace first N occurrences of a pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace first N occurrences of a pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a a a a";
@@ -721,12 +721,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0055
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0055
-     * @tc.name testRegReplace0055
-     * @tc.desc Replace last N occurrences of a pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace last N occurrences of a pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a a a a";
@@ -737,12 +737,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0056
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0056
-     * @tc.name testRegReplace0056
-     * @tc.desc Replace repeated patterns in a string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated patterns in a string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "ababab";
@@ -751,12 +751,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0057
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0057
-     * @tc.name testRegReplace0057
-     * @tc.desc Replace non-ASCII characters (Unicode range)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-ASCII characters (Unicode range)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc你好";
@@ -765,12 +765,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0058
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0058
-     * @tc.name testRegReplace0058
-     * @tc.desc Replace consecutive numeric patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace consecutive numeric patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "123456";
@@ -779,12 +779,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0059
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0059
-     * @tc.name testRegReplace0059
-     * @tc.desc Replace consecutive non-numeric patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace consecutive non-numeric patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abcDEF";
@@ -793,12 +793,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0060
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0060
-     * @tc.name testRegReplace0060
-     * @tc.desc Replace mixed patterns of letters, numbers, and symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace mixed patterns of letters, numbers, and symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1!b2@c3#";
@@ -807,12 +807,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0061
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0061
-     * @tc.name testRegReplace0061
-     * @tc.desc Replace entire string (full match)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace entire string (full match)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello";
@@ -821,12 +821,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0062
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0062
-     * @tc.name testRegReplace0062
-     * @tc.desc Replace non-existent substring (should return original string)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-existent substring (should return original string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello";
@@ -835,12 +835,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0063
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0063
-     * @tc.name testRegReplace0063
-     * @tc.desc Replace substring at the start of the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace substring at the start of the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello world";
@@ -849,12 +849,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0064
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0064
-     * @tc.name testRegReplace0064
-     * @tc.desc Replace substring at the end of the string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace substring at the end of the string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello world";
@@ -863,12 +863,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0065
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0065
-     * @tc.name testRegReplace0065
-     * @tc.desc Replace empty string by inserting at start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace empty string by inserting at start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -877,12 +877,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0066
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0066
-     * @tc.name testRegReplace0066
-     * @tc.desc Replace empty string by inserting at end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace empty string by inserting at end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -891,12 +891,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0067
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0067
-     * @tc.name testRegReplace0067
-     * @tc.desc Replace multiple consecutive empty string matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace multiple consecutive empty string matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -905,12 +905,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0068
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0068
-     * @tc.name testRegReplace0068
-     * @tc.desc Replace matches with consecutive special characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace matches with consecutive special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a$$b@@c";
@@ -919,12 +919,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0069
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0069
-     * @tc.name testRegReplace0069
-     * @tc.desc Replace using function returning empty string multiple times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using function returning empty string multiple times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc123";
@@ -933,12 +933,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0072
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0072
-     * @tc.name testRegReplace0072
-     * @tc.desc Replace Unicode boundary characters (emoji sequences)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace Unicode boundary characters (emoji sequences)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "😊👍🏽";
@@ -947,12 +947,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0073
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0073
-     * @tc.name testRegReplace0073
-     * @tc.desc Replace each line in multi-line text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace each line in multi-line text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\nline2\nline3";
@@ -961,12 +961,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0074
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0074
-     * @tc.name testRegReplace0074
-     * @tc.desc Replace patterns containing tab characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace patterns containing tab characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a\tb\tc";
@@ -975,12 +975,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0075
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0075
-     * @tc.name testRegReplace0075
-     * @tc.desc Replace patterns containing carriage return characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace patterns containing carriage return characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a\rb\rc";
@@ -989,12 +989,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0076
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0076
-     * @tc.name testRegReplace0076
-     * @tc.desc Replace mixed letters + numbers + symbols pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace mixed letters + numbers + symbols pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1!b2@c3#";
@@ -1003,12 +1003,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0077
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0077
-     * @tc.name testRegReplace0077
-     * @tc.desc Replace nested patterns (e.g., digits in "a1b2c3")
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace nested patterns (e.g., digits in "a1b2c3")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1017,12 +1017,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0078
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0078
-     * @tc.name testRegReplace0078
-     * @tc.desc Replace repeated capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abcabc";
@@ -1031,12 +1031,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0079
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0079
-     * @tc.name testRegReplace0079
-     * @tc.desc Replace optional match patterns (e.g., a?)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace optional match patterns (e.g., a?)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aabb";
@@ -1045,12 +1045,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0080
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0080
-     * @tc.name testRegReplace0080
-     * @tc.desc Replace zero-width assertion match (e.g., (?=b))
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace zero-width assertion match (e.g., (?=b))
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1059,12 +1059,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0081
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0081
-     * @tc.name testRegReplace0081
-     * @tc.desc Replace using negative lookahead (e.g., (?!b))
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using negative lookahead (e.g., (?!b))
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1073,12 +1073,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0082
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0082
-     * @tc.name testRegReplace0082
-     * @tc.desc Replace using lookahead + capture group
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using lookahead + capture group
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1087,12 +1087,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0083
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0083
-     * @tc.name testRegReplace0083
-     * @tc.desc Replace using lookbehind + capture group
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using lookbehind + capture group
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1101,12 +1101,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0084
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0084
-     * @tc.name testRegReplace0084
-     * @tc.desc Replace using multiple grouped regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using multiple grouped regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc123";
@@ -1115,12 +1115,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0085
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0085
-     * @tc.name testRegReplace0085
-     * @tc.desc Replace string with multiple match patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace string with multiple match patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1129,12 +1129,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0086
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0086
-     * @tc.name testRegReplace0086
-     * @tc.desc Replace text between consecutive match patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace text between consecutive match patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1143,12 +1143,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0087
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0087
-     * @tc.name testRegReplace0087
-     * @tc.desc Replace repeated matches using function generating different values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated matches using function generating different values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1158,12 +1158,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0088
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0088
-     * @tc.name testRegReplace0088
-     * @tc.desc Replace numeric pattern returning dynamic computed values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace numeric pattern returning dynamic computed values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "123";
@@ -1172,12 +1172,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0089
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0089
-     * @tc.name testRegReplace0089
-     * @tc.desc Replace non-ASCII pattern returning different language characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-ASCII pattern returning different language characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "你好こんにちは";
@@ -1186,12 +1186,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplace0090
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACE_0090
-     * @tc.name testRegReplace0090
-     * @tc.desc Replace with global match + multiple groups + function generating dynamic values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with global match + multiple groups + function generating dynamic values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplace0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1206,12 +1206,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0001
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0001
-     * @tc.name testRegReplaceAll0001
-     * @tc.desc Replace simple word pattern using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace simple word pattern using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple banana apple";
@@ -1220,12 +1220,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0002
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0002
-     * @tc.name testRegReplaceAll0002
-     * @tc.desc Replace all occurrences globally using regex
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all occurrences globally using regex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "123-456-123";
@@ -1234,12 +1234,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0003
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0003
-     * @tc.name testRegReplaceAll0003
-     * @tc.desc Replace all digits with asterisks
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all digits with asterisks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Room 101, Floor 3";
@@ -1248,12 +1248,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0004
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0004
-     * @tc.name testRegReplaceAll0004
-     * @tc.desc Replace all letters with '#'
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace all letters with '#'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc123XYZ";
@@ -1262,12 +1262,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0005
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0005
-     * @tc.name testRegReplaceAll0005
-     * @tc.desc Replace ignoring case with /i flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace ignoring case with /i flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Hello hello HELLO";
@@ -1276,12 +1276,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0006
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0006
-     * @tc.name testRegReplaceAll0006
-     * @tc.desc Replace across multiple lines with /m flag
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace across multiple lines with /m flag
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "apple\nbanana\napple";
@@ -1290,12 +1290,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0007
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0007
-     * @tc.name testRegReplaceAll0007
-     * @tc.desc Replace match at string start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace match at string start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "start middle end";
@@ -1304,12 +1304,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0008
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0008
-     * @tc.name testRegReplaceAll0008
-     * @tc.desc Replace match at string end
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace match at string end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "start middle end";
@@ -1318,12 +1318,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0009
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0009
-     * @tc.name testRegReplaceAll0009
-     * @tc.desc Replace consecutive same substrings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace consecutive same substrings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "haha haha haha";
@@ -1332,12 +1332,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0010
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0010
-     * @tc.name testRegReplaceAll0010
-     * @tc.desc Replace identical matches at different positions
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace identical matches at different positions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "cat dog cat bird cat";
@@ -1346,12 +1346,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0011
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0011
-     * @tc.name testRegReplaceAll0011
-     * @tc.desc Replace spaces with underscores
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace spaces with underscores
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a b c d";
@@ -1360,12 +1360,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0012
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0012
-     * @tc.name testRegReplaceAll0012
-     * @tc.desc Replace tab characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace tab characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a\tb\tc";
@@ -1374,12 +1374,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0013
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0013
-     * @tc.name testRegReplaceAll0013
-     * @tc.desc Replace newline characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace newline characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a\nb\nc";
@@ -1388,12 +1388,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0014
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0014
-     * @tc.name testRegReplaceAll0014
-     * @tc.desc Replace Unicode emoji characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace Unicode emoji characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "😀😃😄";
@@ -1402,12 +1402,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0015
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0015
-     * @tc.name testRegReplaceAll0015
-     * @tc.desc Replace mixed alphanumeric patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace mixed alphanumeric patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1b2c3";
@@ -1416,12 +1416,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0016
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0016
-     * @tc.name testRegReplaceAll0016
-     * @tc.desc Replace special symbols like $, *, ?
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace special symbols like $, *, ?
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "$ * ? $";
@@ -1430,12 +1430,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0017
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0017
-     * @tc.name testRegReplaceAll0017
-     * @tc.desc Replace escaped digit pattern \\d
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace escaped digit pattern \\d
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "123abc";
@@ -1444,12 +1444,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0018
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0018
-     * @tc.name testRegReplaceAll0018
-     * @tc.desc Replace with multi-group regular expression
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with multi-group regular expression
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "12-34-56";
@@ -1458,12 +1458,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0019
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0019
-     * @tc.name testRegReplaceAll0019
-     * @tc.desc Replace using numeric capture groups ($1, $2)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using numeric capture groups ($1, $2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "name:John age:30";
@@ -1472,12 +1472,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0020
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0020
-     * @tc.name testRegReplaceAll0020
-     * @tc.desc Replace using named capture group
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using named capture group
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "x=10 y=20";
@@ -1486,12 +1486,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0021
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0021
-     * @tc.name testRegReplaceAll0021
-     * @tc.desc Replace non-capturing group pattern (?:)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-capturing group pattern (?:)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaabbbccc";
@@ -1500,12 +1500,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0022
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0022
-     * @tc.name testRegReplaceAll0022
-     * @tc.desc Replace pattern with + quantifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace pattern with + quantifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a123b456c";
@@ -1514,12 +1514,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0023
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0023
-     * @tc.name testRegReplaceAll0023
-     * @tc.desc Replace pattern with * quantifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace pattern with * quantifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaab";
@@ -1528,12 +1528,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0024
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0024
-     * @tc.name testRegReplaceAll0024
-     * @tc.desc Replace pattern with {n,m} quantifier
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace pattern with {n,m} quantifier
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaaaa";
@@ -1542,12 +1542,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0025
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0025
-     * @tc.name testRegReplaceAll0025
-     * @tc.desc Replace zero-width positive lookahead (?=...)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace zero-width positive lookahead (?=...)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1556,12 +1556,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0026
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0026
-     * @tc.name testRegReplaceAll0026
-     * @tc.desc Replace zero-width negative lookahead (?!...)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace zero-width negative lookahead (?!...)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc adc aec";
@@ -1570,12 +1570,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0027
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0027
-     * @tc.name testRegReplaceAll0027
-     * @tc.desc Replace positive lookbehind (?<=...)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace positive lookbehind (?<=...)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "cab dab";
@@ -1584,12 +1584,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0028
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0028
-     * @tc.name testRegReplaceAll0028
-     * @tc.desc Replace negative lookbehind (?<!...)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace negative lookbehind (?<!...)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "cab dab";
@@ -1598,12 +1598,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0029
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0029
-     * @tc.name testRegReplaceAll0029
-     * @tc.desc Replace empty string (insert between characters)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace empty string (insert between characters)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -1612,12 +1612,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0030
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0030
-     * @tc.name testRegReplaceAll0030
-     * @tc.desc Replace mixed line endings \r\n
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace mixed line endings \r\n
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "line1\r\nline2\r\nline3";
@@ -1626,12 +1626,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0031
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0031
-     * @tc.name testRegReplaceAll0031
-     * @tc.desc Use function replacement returning a fixed string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning a fixed string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc123abc";
@@ -1640,12 +1640,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0032
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0032
-     * @tc.name testRegReplaceAll0032
-     * @tc.desc Use function replacement returning the match itself
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning the match itself
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a1b2c3";
@@ -1654,12 +1654,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0033
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0033
-     * @tc.name testRegReplaceAll0033
-     * @tc.desc Use function replacement returning capture group values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning capture group values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "A12B34";
@@ -1668,12 +1668,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0034
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0034
-     * @tc.name testRegReplaceAll0034
-     * @tc.desc Use function replacement returning match position
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning match position
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abcabc";
@@ -1683,12 +1683,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0035
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0035
-     * @tc.name testRegReplaceAll0035
-     * @tc.desc Use function replacement returning original string length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning original string length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "hello";
@@ -1697,12 +1697,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0036
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0036
-     * @tc.name testRegReplaceAll0036
-     * @tc.desc Use function replacement to update a global counter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement to update a global counter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let count: number = 0;
@@ -1713,12 +1713,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0037
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0037
-     * @tc.name testRegReplaceAll0037
-     * @tc.desc Use function replacement concatenating dynamic content
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement concatenating dynamic content
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
@@ -1727,12 +1727,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0038
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0038
-     * @tc.name testRegReplaceAll0038
-     * @tc.desc Use function replacement returning empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc123";
@@ -1741,12 +1741,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0039
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0039
-     * @tc.name testRegReplaceAll0039
-     * @tc.desc Use function replacement returning null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc123";
@@ -1755,12 +1755,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0040
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0040
-     * @tc.name testRegReplaceAll0040
-     * @tc.desc Use function replacement returning undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc123";
@@ -1769,12 +1769,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0041
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0041
-     * @tc.name testRegReplaceAll0041
-     * @tc.desc Use function replacement handling multiple capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement handling multiple capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "x1y2z3";
@@ -1783,12 +1783,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0042
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0042
-     * @tc.name testRegReplaceAll0042
-     * @tc.desc Use function replacement handling nested regex patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement handling nested regex patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a1b2c3";
@@ -1797,12 +1797,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0043
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0043
-     * @tc.name testRegReplaceAll0043
-     * @tc.desc Use function replacement returning calculated number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning calculated number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let count: number = 0;
@@ -1812,12 +1812,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0044
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0044
-     * @tc.name testRegReplaceAll0044
-     * @tc.desc Use function replacement returning mixed type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning mixed type values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a1b2";
@@ -1826,12 +1826,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0045
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0045
-     * @tc.name testRegReplaceAll0045
-     * @tc.desc Use function replacement reversing capture group order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement reversing capture group order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "A1B2";
@@ -1840,12 +1840,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0046
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0046
-     * @tc.name testRegReplaceAll0046
-     * @tc.desc Use function replacement for Unicode characters
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement for Unicode characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "你好世界";
@@ -1854,12 +1854,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0047
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0047
-     * @tc.name testRegReplaceAll0047
-     * @tc.desc Use function replacement matching emoji patterns
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement matching emoji patterns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "😀😃😄";
@@ -1868,12 +1868,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0048
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0048
-     * @tc.name testRegReplaceAll0048
-     * @tc.desc Use function replacement with regex having multiple flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement with regex having multiple flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "AbC abc";
@@ -1882,12 +1882,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0049
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0049
-     * @tc.name testRegReplaceAll0049
-     * @tc.desc Use function replacement on multi-line text
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement on multi-line text
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "line1\nline2\nline3";
@@ -1896,12 +1896,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0050
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0050
-     * @tc.name testRegReplaceAll0050
-     * @tc.desc Use function replacement mixing newline and spaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement mixing newline and spaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a \n b \n c";
@@ -1910,12 +1910,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0051
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0051
-     * @tc.name testRegReplaceAll0051
-     * @tc.desc Use function replacement for zero-width matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement for zero-width matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "abc";
@@ -1924,12 +1924,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0052
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0052
-     * @tc.name testRegReplaceAll0052
-     * @tc.desc Use function replacement with accumulated global counter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement with accumulated global counter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let counter: number = 0;
@@ -1939,12 +1939,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0053
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0053
-     * @tc.name testRegReplaceAll0053
-     * @tc.desc Use function replacement with complex regex (group combination)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement with complex regex (group combination)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "a1-b2";
@@ -1953,12 +1953,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0054
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0054
-     * @tc.name testRegReplaceAll0054
-     * @tc.desc Use function replacement with named capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement with named capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "A1B2";
@@ -1979,12 +1979,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0055
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0055
-     * @tc.name testRegReplaceAll0055
-     * @tc.desc Use function replacement for alphanumeric combination
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement for alphanumeric combination
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "A1b2";
@@ -1993,12 +1993,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0056
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0056
-     * @tc.name testRegReplaceAll0056
-     * @tc.desc Use function replacement with lookbehind and lookahead
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement with lookbehind and lookahead
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "foo123bar";
@@ -2007,12 +2007,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0057
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0057
-     * @tc.name testRegReplaceAll0057
-     * @tc.desc Use function replacement changing Unicode case
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement changing Unicode case
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "ΩωΣσ";
@@ -2021,12 +2021,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0058
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0058
-     * @tc.name testRegReplaceAll0058
-     * @tc.desc Use function replacement counting matched items
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement counting matched items
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let count: number = 0;
@@ -2036,12 +2036,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0059
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0059
-     * @tc.name testRegReplaceAll0059
-     * @tc.desc Use function replacement returning JSON string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning JSON string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "A1";
@@ -2051,12 +2051,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0060
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0060
-     * @tc.name testRegReplaceAll0060
-     * @tc.desc Use function replacement returning template string combination
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Use function replacement returning template string combination
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str: string = "X9Y8";
@@ -2066,12 +2066,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0061
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0061
-     * @tc.name testRegReplaceAll0061
-     * @tc.desc Replace the entire string (full match)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace the entire string (full match)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -2080,12 +2080,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0062
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0062
-     * @tc.name testRegReplaceAll0062
-     * @tc.desc Replace nonexistent match (should return original string)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace nonexistent match (should return original string)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "hello world";
@@ -2094,12 +2094,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0063
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0063
-     * @tc.name testRegReplaceAll0063
-     * @tc.desc Replace with empty string input (empty source)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with empty string input (empty source)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "";
@@ -2108,12 +2108,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0064
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0064
-     * @tc.name testRegReplaceAll0064
-     * @tc.desc Replace with empty regex (zero-width matches)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with empty regex (zero-width matches)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -2122,12 +2122,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0065
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0065
-     * @tc.name testRegReplaceAll0065
-     * @tc.desc Replace with nested capture groups
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with nested capture groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc123";
@@ -2136,12 +2136,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0066
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0066
-     * @tc.name testRegReplaceAll0066
-     * @tc.desc Replace repeated capture group pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace repeated capture group pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a1a2a3";
@@ -2150,12 +2150,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0067
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0067
-     * @tc.name testRegReplaceAll0067
-     * @tc.desc Replace overlapping matches (ensure no overlap processing)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace overlapping matches (ensure no overlap processing)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaa";
@@ -2164,12 +2164,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0068
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0068
-     * @tc.name testRegReplaceAll0068
-     * @tc.desc Replace adjacent matches
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace adjacent matches
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abab";
@@ -2178,12 +2178,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0069
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0069
-     * @tc.name testRegReplaceAll0069
-     * @tc.desc Replace very long string (>10^5 characters)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace very long string (>10^5 characters)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a".repeat(100000);
@@ -2192,12 +2192,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0070
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0070
-     * @tc.name testRegReplaceAll0070
-     * @tc.desc Replace complex Unicode boundaries (grapheme cluster)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace complex Unicode boundaries (grapheme cluster)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "👩‍❤️‍💋‍👨love";
@@ -2206,12 +2206,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0071
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0071
-     * @tc.name testRegReplaceAll0071
-     * @tc.desc Replace multilingual mixed text (English + Chinese + digits)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace multilingual mixed text (English + Chinese + digits)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "Hello世界123";
@@ -2220,12 +2220,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0072
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0072
-     * @tc.name testRegReplaceAll0072
-     * @tc.desc Replace text with full-width punctuation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace text with full-width punctuation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "你好，世界。";
@@ -2234,12 +2234,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0073
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0073
-     * @tc.name testRegReplaceAll0073
-     * @tc.desc Replace non-BMP characters (emoji pairs)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace non-BMP characters (emoji pairs)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "😊👍😊";
@@ -2248,12 +2248,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0074
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0074
-     * @tc.name testRegReplaceAll0074
-     * @tc.desc Replace regex with escaped backslash
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace regex with escaped backslash
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "path\\to\\file";
@@ -2262,12 +2262,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0075
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0075
-     * @tc.name testRegReplaceAll0075
-     * @tc.desc Replace regex with Unicode escape pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace regex with Unicode escape pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "\\u4f60\\u597d";
@@ -2276,12 +2276,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0076
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0076
-     * @tc.name testRegReplaceAll0076
-     * @tc.desc Replace using regex with ^ and $ boundaries
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using regex with ^ and $ boundaries
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -2290,12 +2290,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0077
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0077
-     * @tc.name testRegReplaceAll0077
-     * @tc.desc Replace using \\b word boundary pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using \\b word boundary pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a test a-test";
@@ -2304,12 +2304,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0078
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0078
-     * @tc.name testRegReplaceAll0078
-     * @tc.desc Replace using \\B non-word boundary pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using \\B non-word boundary pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "foo-bar";
@@ -2318,12 +2318,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0079
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0079
-     * @tc.name testRegReplaceAll0079
-     * @tc.desc Replace with dynamically constructed RegExp object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with dynamically constructed RegExp object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const pattern: RegExp = new RegExp("test", "g");
@@ -2333,12 +2333,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0080
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0080
-     * @tc.name testRegReplaceAll0080
-     * @tc.desc Replace where RegExp object shares lastIndex between uses
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace where RegExp object shares lastIndex between uses
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex: RegExp = /a/g;
@@ -2350,12 +2350,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0081
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0081
-     * @tc.name testRegReplaceAll0081
-     * @tc.desc Compare behavior between g and y flags
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Compare behavior between g and y flags
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "aaa";
@@ -2366,12 +2366,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0082
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0082
-     * @tc.name testRegReplaceAll0082
-     * @tc.desc Replace with regex where lastIndex is not reset
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with regex where lastIndex is not reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex: RegExp = /b/g;
@@ -2383,12 +2383,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0083
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0083
-     * @tc.name testRegReplaceAll0083
-     * @tc.desc Replace using Unicode mode (u flag)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using Unicode mode (u flag)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "ππ";
@@ -2397,12 +2397,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0084
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0084
-     * @tc.name testRegReplaceAll0084
-     * @tc.desc Replace using dotAll mode (s flag)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using dotAll mode (s flag)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a\nb";
@@ -2411,12 +2411,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0085
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0085
-     * @tc.name testRegReplaceAll0085
-     * @tc.desc Replace using multiple flags /gimsu
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using multiple flags /gimsu
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "A\nA";
@@ -2425,12 +2425,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0086
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0086
-     * @tc.name testRegReplaceAll0086
-     * @tc.desc Replace using regex with special character class [^\\w\\s]
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using regex with special character class [^\\w\\s]
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "a!b@c#";
@@ -2439,12 +2439,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0087
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0087
-     * @tc.name testRegReplaceAll0087
-     * @tc.desc Replace using backreference \\1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace using backreference \\1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abab";
@@ -2453,12 +2453,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0088
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0088
-     * @tc.name testRegReplaceAll0088
-     * @tc.desc Replace with function where capture group is empty
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace with function where capture group is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "abc";
@@ -2467,12 +2467,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0089
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0089
-     * @tc.name testRegReplaceAll0089
-     * @tc.desc Replace containing escaped sequence \\\\ to avoid misinterpretation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace containing escaped sequence \\\\ to avoid misinterpretation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "C:\\\\Program Files\\\\App";
@@ -2481,12 +2481,12 @@ export default function RegExpTest003() {
     });
 
     /**
+     * @tc.name   testRegReplaceAll0090
      * @tc.number SUB_COMMONLIBRARY_REGEXP_REPLACEALL_0090
-     * @tc.name testRegReplaceAll0090
-     * @tc.desc Replace global + multi-capture + dynamic function mix
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Replace global + multi-capture + dynamic function mix
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegReplaceAll0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let count: number = 0;

@@ -15,6 +15,14 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertFail', function () {
+    /**
+     * @tc.name   assertFail
+     * @tc.number assertFail
+     * @tc.desc   assertFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let a = null
         expect(a).assertFail()

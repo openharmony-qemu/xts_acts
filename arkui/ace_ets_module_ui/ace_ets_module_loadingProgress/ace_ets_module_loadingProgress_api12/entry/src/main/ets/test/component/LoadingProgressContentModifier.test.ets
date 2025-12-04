@@ -45,14 +45,14 @@ export default function LoadingProgressContentModifier() {
       await Utils.sleep(1000);
       console.info('LoadingProgressContentModifier after each called');
     });
-    /*
-    * @tc.number     : LoadingProgressContentModifier_001
-    * @tc.name       : LoadingProgressContentModifier_001
-    * @tc.desc       : test LoadingProgressContentModifier_001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   LoadingProgressContentModifier_001
+     * @tc.number LoadingProgressContentModifier_001
+     * @tc.desc   test LoadingProgressContentModifier_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('LoadingProgressContentModifier_001', Level.LEVEL1, async (done: Function) => {
       console.info('[LoadingProgressContentModifier_001] START');
       let strJson2 = getInspectorByKey('loadingProgressContentModifierKey01');

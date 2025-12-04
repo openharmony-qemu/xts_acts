@@ -21,17 +21,17 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
+const START_ABILITY_TIMEOUT_FIVE_HUNDRED = 500;
 
 export default function ForegroundCallback() {
   describe("ForegroundCallback", () => {
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001
-     * @tc.name actsDoAbilityForegroundCallback0001
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001", Level.LEVEL0, async (done: Function) => {
 
@@ -43,80 +43,78 @@ export default function ForegroundCallback() {
         done();
         return;
       }
-      setTimeout(() => {
-        abilityDelegator.startAbility({
-          abilityName: "Main4Ability",
-          bundleName: "com.example.crossplatformcallback",
-          moduleName: "entry_test",
-        }, () => {
-          setTimeout(() => {
-            abilityDelegator.getCurrentTopAbility((error:BusinessError, ability1: UIAbility) => {
-              abilityDelegator.printSync(
-                "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main4Ability: " +
-                ability1.context.abilityInfo.name
-              );
-              abilityDelegator.startAbility({
-                abilityName: "Main3Ability",
-                bundleName: "com.example.crossplatformcallback",
-                moduleName: "entry_test",
-              }, () => {
-                setTimeout(() => {
-                  abilityDelegator.getCurrentTopAbility(
-                    (error:BusinessError, ability2: UIAbility) => {
-                      abilityDelegator.printSync(
-                        "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main3Ability: " +
-                        ability2.context.abilityInfo.name
-                      );
-                      abilityDelegator.doAbilityForeground(
-                        ability1,
-                        (error:BusinessError) => {
-                          setTimeout(() => {
-                            abilityDelegator.getCurrentTopAbility(
-                              (error:BusinessError, ability3: UIAbility) => {
-                                try {
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main4Ability: " +
-                                    ability3.context.abilityInfo.name
-                                  );
-                                  let stateNum =
-                                    abilityDelegator.getAbilityState(ability3);
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 getAbilityState stateNum :" +
-                                      stateNum
-                                  );
-                                  expect(stateNum).assertEqual(2);
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 pass"
-                                  );
-                                } catch (error) {
-                                  abilityDelegator.printSync(
-                                    "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 error:" +
-                                      error
-                                  );
-                                }
-                                done();
+      abilityDelegator.startAbility({
+        abilityName: "Main4Ability",
+        bundleName: "com.example.crossplatformcallback",
+        moduleName: "entry_test",
+      }, () => {
+        setTimeout(() => {
+          abilityDelegator.getCurrentTopAbility((error:BusinessError, ability1: UIAbility) => {
+            abilityDelegator.printSync(
+              "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main4Ability: " +
+              ability1.context.abilityInfo.name
+            );
+            abilityDelegator.startAbility({
+              abilityName: "Main3Ability",
+              bundleName: "com.example.crossplatformcallback",
+              moduleName: "entry_test",
+            }, () => {
+              setTimeout(() => {
+                abilityDelegator.getCurrentTopAbility(
+                  (error:BusinessError, ability2: UIAbility) => {
+                    abilityDelegator.printSync(
+                      "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main3Ability: " +
+                      ability2.context.abilityInfo.name
+                    );
+                    abilityDelegator.doAbilityForeground(
+                      ability1,
+                      (error:BusinessError) => {
+                        setTimeout(() => {
+                          abilityDelegator.getCurrentTopAbility(
+                            (error:BusinessError, ability3: UIAbility) => {
+                              try {
+                                abilityDelegator.printSync(
+                                  "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 Main4Ability: " +
+                                  ability3.context.abilityInfo.name
+                                );
+                                let stateNum =
+                                  abilityDelegator.getAbilityState(ability3);
+                                abilityDelegator.printSync(
+                                  "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 getAbilityState stateNum :" +
+                                    stateNum
+                                );
+                                expect(stateNum).assertEqual(2);
+                                abilityDelegator.printSync(
+                                  "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 pass"
+                                );
+                              } catch (error) {
+                                abilityDelegator.printSync(
+                                  "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0001 error:" +
+                                    error
+                                );
                               }
-                            );
-                          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-                        }
-                      );
-                    }
-                  );
-                }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-              });
+                              done();
+                            }
+                          );
+                        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
+                      }
+                    );
+                  }
+                );
+              }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
             });
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
-        });
-      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          });
+        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
+      });
     });
 
-   /**
+    /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002
-     * @tc.name actsDoAbilityForegroundCallbackError0002
-     * @tc.desc Test the api: doAbilityForeground, swith the wrong ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the wrong ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     /* it(
      "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0002",
@@ -180,19 +178,19 @@ export default function ForegroundCallback() {
                  }
                );
              }
-           }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+           }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
          });
        });
      }
    );*/
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003
-     * @tc.name actsDoAbilityForegroundCallbackError0003
-     * @tc.desc Test the api: doAbilityForeground, swith the empty ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the empty ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     /*it(
       "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0003",
@@ -253,21 +251,21 @@ export default function ForegroundCallback() {
                   }
                 );
               }
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
           });
         });
       }
     );*/
 
-    /**
-     * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
-     * @tc.name actsDoAbilityForegroundCallback0004
-     * @tc.desc Test the api: doAbilityForeground, swith the ability which is foregrond to foreground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.desc   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
         "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_0004 start"
@@ -331,25 +329,25 @@ export default function ForegroundCallback() {
                               done();
                             }
                           );
-                        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
                       }
                     );
                   }
                 );
-              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
             });
           });
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
       });
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005
-     * @tc.name actsDoAbilityForegroundCallbackError0005
-     * @tc.desc Test the api: doAbilityForeground, swith the wrong ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the wrong ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_CALLBACK_ERROR_0005",
@@ -396,11 +394,11 @@ export default function ForegroundCallback() {
                         );
                       }
                       done();
-                    }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                    }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
                   });
                 }
               );
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, START_ABILITY_TIMEOUT_FIVE_HUNDRED);
           });
         });
       }

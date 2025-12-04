@@ -55,12 +55,12 @@ export default function RichEditorTransformation004() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006
-     * @tc.desc  : Verify whether setTypingStyle takes effect after setting the zoom/pan/rotate attributes to test RichEditor AffineTransformation
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006
+     * @tc.desc   Verify whether setTypingStyle takes effect after setting the zoom/pan/rotate attributes to test RichEditor AffineTransformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_006 START');
@@ -90,7 +90,9 @@ export default function RichEditorTransformation004() {
       expect(textStyleText).assertContain('"fontSize":40');
       expect(textStyleText).assertContain('"fontStyle":1');
       expect(textStyleText).assertContain('"fontWeight":12');
-      expect(textStyleText).assertContain('"decoration":{"type":2,"color":"#80A91AF6"}');
+      expect(textStyleText).assertContain('"type":2');
+      expect(textStyleText).assertContain('"color":"#80A91AF6"');
+      expect(textStyleText).assertContain('"thicknessScale":1');
       expect(textStyleText).assertContain('"fontFeature":""');
       done();
     });

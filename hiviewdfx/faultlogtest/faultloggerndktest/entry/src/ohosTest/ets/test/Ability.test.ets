@@ -52,12 +52,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testFaultlogExtension_0100
      * @tc.number SUB_DFX_DFR_FaultlogExtension_C_0100
-     * @tc.name testFaultlogExtension_0100
-     * @tc.desc test testFaultlogExtension_0100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testFaultlogExtension_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFaultlogExtension_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testFaultlogExtension_0100  start");
@@ -91,12 +91,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testfaultloggerQuery_0100
      * @tc.number testfaultloggerQuery_0100
-     * @tc.name testfaultloggerQuery_0100
-     * @tc.desc test testfaultloggerQuery_0100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testfaultloggerQuery_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testfaultloggerQuery_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testfaultloggerQuery_0100 start');
@@ -115,12 +115,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testfaultloggerQuery_0200
      * @tc.number testfaultloggerQuery_0200
-     * @tc.name testfaultloggerQuery_0200
-     * @tc.desc test testfaultloggerQuery_0200
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testfaultloggerQuery_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testfaultloggerQuery_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testfaultloggerQuery_0200 start');
@@ -141,12 +141,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testfaultloggerQuery_0300
      * @tc.number testfaultloggerQuery_0300
-     * @tc.name testfaultloggerQuery_0300
-     * @tc.desc test testfaultloggerQuery_0300
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testfaultloggerQuery_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testfaultloggerQuery_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testfaultloggerQuery_0300 start');
@@ -170,12 +170,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testfaultloggerQuery_0400
      * @tc.number testfaultloggerQuery_0400
-     * @tc.name testfaultloggerQuery_0400
-     * @tc.desc test testfaultloggerQuery_04300
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testfaultloggerQuery_04300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testfaultloggerQuery_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testfaultloggerQuery_0400 start');
@@ -199,19 +199,19 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testquerySelfFaultLog_0100
      * @tc.number testquerySelfFaultLog_0100
-     * @tc.name testquerySelfFaultLog_0100
-     * @tc.desc test testquerySelfFaultLog_0100
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testquerySelfFaultLog_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testquerySelfFaultLog_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testquerySelfFaultLog_0100 start');
       const callback = queryFaultLogCallback;
       try {
         // 使用变量传递回调函数
-        await FaultLogger.query(FaultLogger.FaultType.JS_CRASH).then(
+        await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH).then(
           list =>{
             console.info("=====",JSON.stringify(list))
             expect(list.length==0).assertTrue();
@@ -223,12 +223,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testquerySelfFaultLog_0200
      * @tc.number testquerySelfFaultLog_0200
-     * @tc.name testquerySelfFaultLog_0200
-     * @tc.desc test testquerySelfFaultLog_0200
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testquerySelfFaultLog_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testquerySelfFaultLog_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testquerySelfFaultLog_0200 start');
@@ -237,7 +237,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        await FaultLogger.query(FaultLogger.FaultType.CPP_CRASH).then(
+        await FaultLogger.querySelfFaultLog(FaultLogger.FaultType.CPP_CRASH).then(
           list =>{
             console.info("=====",JSON.stringify(list))
             expect(list.length>0).assertTrue();
@@ -249,12 +249,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testquerySelfFaultLog_0300
      * @tc.number testquerySelfFaultLog_0300
-     * @tc.name testquerySelfFaultLog_0300
-     * @tc.desc test testquerySelfFaultLog_0300
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testquerySelfFaultLog_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testquerySelfFaultLog_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testquerySelfFaultLog_0300 start');
@@ -263,7 +263,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        FaultLogger.query(FaultLogger.FaultType.CPP_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
+        FaultLogger.querySelfFaultLog(FaultLogger.FaultType.CPP_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
           if (error) {
             console.error(`error code:${error.code}, error msg:${error.message}`);
           } else {
@@ -278,12 +278,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   testquerySelfFaultLog_0400
      * @tc.number testquerySelfFaultLog_0400
-     * @tc.name testquerySelfFaultLog_0400
-     * @tc.desc test testquerySelfFaultLog_0400
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test testquerySelfFaultLog_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testquerySelfFaultLog_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       console.info('testquerySelfFaultLog_0400 start');
@@ -292,7 +292,7 @@ export default function abilityTest() {
       try {
         await asyncSleep(2000)
         // 使用变量传递回调函数
-        FaultLogger.query(FaultLogger.FaultType.JS_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
+        FaultLogger.querySelfFaultLog(FaultLogger.FaultType.JS_CRASH,(error: BusinessError, list: Array<FaultLogger.FaultLogInfo>) => {
           if (error) {
             console.error(`error code:${error.code}, error msg:${error.message}`);
           } else {

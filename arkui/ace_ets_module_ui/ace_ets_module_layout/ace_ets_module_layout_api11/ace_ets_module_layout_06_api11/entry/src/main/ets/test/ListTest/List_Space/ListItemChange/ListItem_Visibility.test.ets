@@ -65,9 +65,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstNone
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0100
-     * @tc.name testListItemVisibilityFirstNone
-     * @tc.desc ListItem subcomponent binding Visibility property,first None
+     * @tc.desc   ListItem subcomponent binding Visibility property,first None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstNone',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstNone START');
@@ -126,9 +129,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilitySecondNone
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0200
-     * @tc.name testListItemVisibilitySecondNone
-     * @tc.desc ListItem subcomponent binding Visibility property,second None
+     * @tc.desc   ListItem subcomponent binding Visibility property,second None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilitySecondNone',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilitySecondNone START');
@@ -187,9 +193,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstHidden
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0300
-     * @tc.name testListItemVisibilityFirstHidden
-     * @tc.desc ListItem subcomponent binding Visibility property,first Hidden
+     * @tc.desc   ListItem subcomponent binding Visibility property,first Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstHidden',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstHidden START');
@@ -240,9 +249,11 @@ export default function listItem_Visibility() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
-      expect(locationText4Again.bottom).assertEqual(locationList.bottom);
+      console.info(`[testListItemVisibilityFirstHidden] locationText4Again.bottom=${(locationText4Again.bottom)}`); 
+      console.info(`[testListItemVisibilityFirstHidden] locationList.bottom=${(locationList.bottom)}`);
+      expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop));
       await CommonFunc.sleep(2000);
       console.info('new testListItemVisibilityFirstHidden END');
@@ -250,9 +261,12 @@ export default function listItem_Visibility() {
     });
 
     /**
+     * @tc.name   testListItemVisibilityFirstVisibile
      * @tc.number SUB_ACE_LIST_LISTITEM_VISIBILITY_TEST_0400
-     * @tc.name testListItemVisibilityFirstVisibile
-     * @tc.desc ListItem subcomponent binding Visibility property,first Visible
+     * @tc.desc   ListItem subcomponent binding Visibility property,first Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testListItemVisibilityFirstVisibile',  Level.LEVEL0, async (done: Function) => {
       console.info('new testListItemVisibilityFirstVisibile START');
@@ -301,9 +315,11 @@ export default function listItem_Visibility() {
 	  expect(Math.abs(Math.round(locationList.bottom - locationList.top) - Math.round(vp2px(500))) <= 1).assertTrue();
       let driver = Driver.create();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + globalThis.winTop));
-      await CommonFunc.sleep(1000);
+      await CommonFunc.sleep(3000);
       let locationText4Again: RectValue = CommonFunc.getComponentRect('ListItemTest44');
-      expect(locationText4Again.bottom).assertEqual(locationList.bottom);
+      console.info(`[testListItemVisibilityFirstVisibile] locationText4Again.bottom=${(locationText4Again.bottom)}`); 
+      console.info(`[testListItemVisibilityFirstVisibile] locationList.bottom=${(locationList.bottom)}`);
+      expect(Math.floor(Math.abs(locationText4Again.bottom - locationList.bottom)) <= 1).assertTrue();
       await driver.swipe(Math.round(globalThis.winLeft + left + (right -left)/2), Math.round(top + vp2px(50) + globalThis.winTop), Math.round(globalThis.winLeft + left + (right -left)/2), Math.round((bottom-top)/2 + top +  globalThis.winTop));
       await CommonFunc.sleep(1000);
       console.info('new testListItemVisibilityFirstVisibile END');

@@ -20,12 +20,12 @@ export default function rdbTest() {
   describe('RdbTest', () => {
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0010
-     * @tc.name       : testCreateValueObject001
-     * @tc.desc       : OH_Rdb_CreateValueObject Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateValueObject001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0010
+     * @tc.desc   OH_Rdb_CreateValueObject Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateValueObject001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.CreateValueObject();
@@ -35,12 +35,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0020
-     * @tc.name       : testCreateValuesBucket001
-     * @tc.desc       : OH_Rdb_CreateValuesBucket Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateValuesBucket001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0020
+     * @tc.desc   OH_Rdb_CreateValuesBucket Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateValuesBucket001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.CreateValuesBucket();
@@ -50,12 +50,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0030
-     * @tc.name       : testCreatePredicates001
-     * @tc.desc       : OH_Rdb_CreatePredicates Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreatePredicates001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0030
+     * @tc.desc   OH_Rdb_CreatePredicates Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreatePredicates001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.CreatePredicatesOne();
@@ -64,12 +64,12 @@ export default function rdbTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0040
-     * @tc.name       : testCreatePredicates002
-     * @tc.desc       : OH_Rdb_CreatePredicates Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testCreatePredicates002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0040
+     * @tc.desc   OH_Rdb_CreatePredicates Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCreatePredicates002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.CreatePredicatesTwo();
@@ -79,12 +79,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0050
-     * @tc.name       : testCreatePredicates003
-     * @tc.desc       : OH_Rdb_CreatePredicates Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testCreatePredicates003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0050
+     * @tc.desc   OH_Rdb_CreatePredicates Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCreatePredicates003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.CreatePredicatesThree();
@@ -94,12 +94,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0060
-     * @tc.name       : testGetOrOpen001
-     * @tc.desc       : OH_Rdb_GetOrOpen Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetOrOpen001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0060
+     * @tc.desc   OH_Rdb_GetOrOpen Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetOrOpen001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.GetOrOpenOne();
@@ -109,12 +109,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0070
-     * @tc.name       : testGetOrOpen002
-     * @tc.desc       : OH_Rdb_GetOrOpen Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetOrOpen002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0070
+     * @tc.desc   OH_Rdb_GetOrOpen Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetOrOpen002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.GetOrOpenTwo();
@@ -124,12 +124,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0080
-     * @tc.name       : testGetOrOpen003
-     * @tc.desc       : OH_Rdb_GetOrOpen Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetOrOpen003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0080
+     * @tc.desc   OH_Rdb_GetOrOpen Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetOrOpen003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.GetOrOpenThree();
@@ -139,12 +139,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0090
-     * @tc.name       : testGetOrOpen004
-     * @tc.desc       : OH_Rdb_GetOrOpen Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testGetOrOpen004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0090
+     * @tc.desc   OH_Rdb_GetOrOpen Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetOrOpen004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.GetOrOpenFour();
@@ -154,12 +154,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0100
-     * @tc.name       : testCloseStore001
-     * @tc.desc       : OH_Rdb_CloseStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCloseStore001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0100
+     * @tc.desc   OH_Rdb_CloseStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCloseStore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.CloseStoreOne();
@@ -169,12 +169,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0110
-     * @tc.name       : testCloseStore002
-     * @tc.desc       : OH_Rdb_CloseStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testCloseStore002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0110
+     * @tc.desc   OH_Rdb_CloseStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCloseStore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.CloseStoreTwo();
@@ -184,12 +184,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0120
-     * @tc.name       : testCloseStore003
-     * @tc.desc       : OH_Rdb_CloseStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testCloseStore003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0120
+     * @tc.desc   OH_Rdb_CloseStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCloseStore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.CloseStoreThree();
@@ -199,12 +199,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0130
-     * @tc.name       : testDeleteStore001
-     * @tc.desc       : OH_Rdb_DeleteStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDeleteStore001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0130
+     * @tc.desc   OH_Rdb_DeleteStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDeleteStore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.DeleteStoreOne();
@@ -214,12 +214,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0140
-     * @tc.name       : testDeleteStore002
-     * @tc.desc       : OH_Rdb_DeleteStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDeleteStore002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0140
+     * @tc.desc   OH_Rdb_DeleteStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeleteStore002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteStoreTwo();
@@ -229,12 +229,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0150
-     * @tc.name       : testDeleteStore003
-     * @tc.desc       : OH_Rdb_DeleteStore Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDeleteStore003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0150
+     * @tc.desc   OH_Rdb_DeleteStore Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDeleteStore003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteStoreThree();
@@ -244,12 +244,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0160
-     * @tc.name       : testInsert001
-     * @tc.desc       : OH_Rdb_Insert Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testInsert001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0160
+     * @tc.desc   OH_Rdb_Insert Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testInsert001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data = rdb.InsertOne();
@@ -259,12 +259,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0170
-     * @tc.name       : testInsert002
-     * @tc.desc       : OH_Rdb_Insert Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testInsert002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0170
+     * @tc.desc   OH_Rdb_Insert Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInsert002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.InsertTwo();
@@ -274,12 +274,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0180
-     * @tc.name       : testInsert003
-     * @tc.desc       : OH_Rdb_Insert Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testInsert003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0180
+     * @tc.desc   OH_Rdb_Insert Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInsert003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.InsertThree();
@@ -289,12 +289,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0190
-     * @tc.name       : testInsert004
-     * @tc.desc       : OH_Rdb_Insert Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testInsert004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0190
+     * @tc.desc   OH_Rdb_Insert Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInsert004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.InsertFour();
@@ -304,12 +304,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0200
-     * @tc.name       : testInsert005
-     * @tc.desc       : OH_Rdb_Insert Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testInsert005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0200
+     * @tc.desc   OH_Rdb_Insert Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testInsert005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.InsertFive();
@@ -319,12 +319,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0210
-     * @tc.name       : testUpdate001
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUpdate001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0210
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUpdate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let data = rdb.UpdateOne();
@@ -334,12 +334,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0220
-     * @tc.name       : testUpdate002
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0220
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateTwo();
@@ -349,12 +349,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0230
-     * @tc.name       : testUpdate003
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0230
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateThree();
@@ -364,12 +364,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0240
-     * @tc.name       : testUpdate004
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0240
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateFour();
@@ -379,12 +379,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0250
-     * @tc.name       : testUpdate005
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0250
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateFive();
@@ -394,12 +394,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0260
-     * @tc.name       : testUpdate006
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate006
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0260
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateSix();
@@ -409,12 +409,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0270
-     * @tc.name       : testUpdate007
-     * @tc.desc       : OH_Rdb_Update Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testUpdate007
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0270
+     * @tc.desc   OH_Rdb_Update Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUpdate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.UpdateSeven();
@@ -424,12 +424,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0280
-     * @tc.name       : testDelete001
-     * @tc.desc       : OH_Rdb_Delete Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDelete001
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0280
+     * @tc.desc   OH_Rdb_Delete Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDelete001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data = rdb.DeleteOne();
@@ -439,12 +439,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0290
-     * @tc.name       : testDelete002
-     * @tc.desc       : OH_Rdb_Delete Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDelete002
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0290
+     * @tc.desc   OH_Rdb_Delete Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDelete002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteTwo();
@@ -454,12 +454,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0300
-     * @tc.name       : testDelete003
-     * @tc.desc       : OH_Rdb_Delete Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDelete003
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0300
+     * @tc.desc   OH_Rdb_Delete Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDelete003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteThree();
@@ -469,12 +469,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0310
-     * @tc.name       : testDelete004
-     * @tc.desc       : OH_Rdb_Delete Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDelete004
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0310
+     * @tc.desc   OH_Rdb_Delete Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDelete004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteFour();
@@ -484,12 +484,12 @@ export default function rdbTest() {
     });
 
     /**
-     * @tc.number     : SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0320
-     * @tc.name       : testDelete005
-     * @tc.desc       : OH_Rdb_Delete Interface testing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testDelete005
+     * @tc.number SUB_DistributedData_RelationalStore_SDK_NdkApiTest_0320
+     * @tc.desc   OH_Rdb_Delete Interface testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testDelete005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let data = rdb.DeleteFive();

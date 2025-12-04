@@ -42,13 +42,13 @@ export default function ActsBackgroundProcessManagerNapTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001
-     * @tc.desc:Test that the setPowerSaveMode function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001
+     * @tc.desc   Test that the setPowerSaveMode function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -73,13 +73,13 @@ export default function ActsBackgroundProcessManagerNapTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_001 end---');
       })
     
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002
-     * @tc.desc:Test that the backgroundProcessManager enum PowerSaveMode of EFFICIENCY_MODE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002
+     * @tc.desc   Test that the backgroundProcessManager enum PowerSaveMode of EFFICIENCY_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -92,13 +92,13 @@ export default function ActsBackgroundProcessManagerNapTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_002 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003
-     * @tc.desc:Test that the backgroundProcessManager enum PowerSaveMode of DEFAULT_MODE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003
+     * @tc.desc   Test that the backgroundProcessManager enum PowerSaveMode of DEFAULT_MODE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -111,13 +111,13 @@ export default function ActsBackgroundProcessManagerNapTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_003 end---');
       })
       
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004
-     * @tc.desc:Test that the isPowerSaveMode function normal call and resetProcessPriority function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004
+     * @tc.desc   Test that the isPowerSaveMode function normal call and resetProcessPriority function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -147,13 +147,13 @@ export default function ActsBackgroundProcessManagerNapTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005
-     * @tc.desc:Test that the setPowerSaveMode function call with errcode is 31800002
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005
+     * @tc.desc   Test that the setPowerSaveMode function call with errcode is 31800002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -173,6 +173,42 @@ export default function ActsBackgroundProcessManagerNapTest() {
           }}
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_005 end---');
+      })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006
+     * @tc.desc   Test that the getPowerSaveMode function normal call and resetProcessPriority function normal call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 begin---');
+
+        try {
+          let pid = process.pid;
+          console.info('SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 backgroundTaskManager pid: ' + pid);
+          backgroundProcessManager.getPowerSaveMode(pid).then((res) => {
+          hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 getPowerSaveMode promise res: %{public}s', JSON.stringify(res));
+         expect(res === backgroundProcessManager.PowerSaveMode.DEFAULT_MODE ||
+          res === backgroundProcessManager.PowerSaveMode.EFFICIENCY_MODE).assertTrue();
+          done();
+          }).catch((error: BusinessError) => {
+            hilog.info(DOMAIN, TAG, 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 getPowerSaveMode promise error: %{public}s', JSON.stringify(error));
+          })
+        } catch (error) {
+          hilog.info(DOMAIN, TAG, '%{public}s', 'SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 has failed for' + error.message + ' code: ' + error.code);
+          if (error.code == 801) {
+            expect(error.code == 801).assertTrue();
+            done();
+          }else{
+            expect(false).assertTrue();
+            done();
+          }}
+
+        hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_BACKGROUND_PROCESS_MANAGER_NAP_XTS_006 end---');
       })
 
   })

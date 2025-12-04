@@ -37,14 +37,14 @@ export default function openLinkTest() {
     afterEach(() => {
     });
 
-    /*
-    * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0100
-    * @tc.name   : The input parameter want is null
-    * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0100`;
       console.log(`${tag}, it begin`);
@@ -66,13 +66,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0200
-     * @tc.name   : The input parameter want is undefined
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0200
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0200`;
@@ -98,13 +98,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0300
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0300
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0300`;
@@ -130,13 +130,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0400
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0400
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0400`;
@@ -162,13 +162,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0500
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0500
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0500`;
@@ -192,13 +192,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0600
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0600
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0600`;
@@ -222,13 +222,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0700
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0700
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0700`;
@@ -258,13 +258,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0800
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0800
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0800`;
@@ -294,13 +294,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_0900
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_0900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_0900
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_0900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_0900`;
@@ -328,13 +328,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1000
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 16000019
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1000
+     * @tc.desc   Call the interface startAbility through context, return errorcode 16000019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1000`;
@@ -362,13 +362,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1100
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1100`;
@@ -390,6 +390,7 @@ export default function openLinkTest() {
       }
       let options: OpenLinkOptions|undefined = {
         appLinkingOnly: true,
+        hideFailureTipDialog: false,
         completionHandler: handler
       }
       try {
@@ -414,13 +415,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1200
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1200
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1200`;
@@ -451,13 +452,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1300
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1300
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1300`;
@@ -486,13 +487,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1400
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1400
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1400`;
@@ -521,13 +522,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1500
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1500
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1500`;
@@ -553,13 +554,13 @@ export default function openLinkTest() {
 
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1600
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1600
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1600`;
@@ -584,13 +585,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1700
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1700
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1700`;
@@ -618,13 +619,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1800
-     * @tc.name   : The input parameter want is undefined
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1800
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1800`;
@@ -655,13 +656,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_1900
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_1900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_1900
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_1900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_1900`;
@@ -693,13 +694,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2000
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2000
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2000`;
@@ -730,13 +731,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2100
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2100`;
@@ -765,13 +766,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2200
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2200
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2200`;
@@ -800,13 +801,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2300
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2300
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2300`;
@@ -831,13 +832,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2400
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2400
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2400`;
@@ -862,13 +863,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2500
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2500
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2500`;
@@ -891,13 +892,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2600
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2600
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2600`;
@@ -920,13 +921,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2700
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2700
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2700`;
@@ -954,13 +955,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2800
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2800
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2800`;
@@ -988,13 +989,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_2900
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_2900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_2900
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_2900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_2900`;
@@ -1019,13 +1020,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3000
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3000
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3000`;
@@ -1050,13 +1051,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3100
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3100`;
@@ -1082,13 +1083,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3200
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3200
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3200`;
@@ -1114,13 +1115,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3300
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3300
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3300`;
@@ -1146,13 +1147,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3400
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3400
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3400`;
@@ -1178,13 +1179,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3500
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3500
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3500`;
@@ -1212,13 +1213,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3600
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3600
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3600`;
@@ -1246,13 +1247,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3700
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3700
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3700
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3700', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3700`;
@@ -1285,13 +1286,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3800
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3800
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3800', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3800`;
@@ -1322,13 +1323,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_3900
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_3900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_3900
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_3900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_3900`;
@@ -1358,13 +1359,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4000
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4000
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4000`;
@@ -1392,13 +1393,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4100
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4100`;
@@ -1423,13 +1424,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4200
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4200
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4200
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4200', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4200`;
@@ -1454,13 +1455,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4300
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4300
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4300
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4300', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4300`;
@@ -1488,13 +1489,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4400
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4400
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4400
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4400', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4400`;
@@ -1522,13 +1523,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4500
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4500
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4500
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4500', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4500`;
@@ -1553,13 +1554,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4600
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4600
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4600
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4600', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4600`;
@@ -1584,13 +1585,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_4900
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_4900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_4900
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_4900', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_4900`;
@@ -1621,13 +1622,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_5000
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5000
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_5000', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5000`;
@@ -1652,13 +1653,13 @@ export default function openLinkTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityBase_UIAbilityContext_5100
-     * @tc.name   : The input parameter want is null, options is an option object with parameter
-     * @tc.desc   : Call the interface startAbility through context, return errorcode 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_5100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_5100
+     * @tc.desc   Call the interface startAbility through context, return errorcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_5100', Level.LEVEL0, (done: Function) => {
       let tag = `SUB_Ability_AbilityBase_UIAbilityContext_5100`;

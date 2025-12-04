@@ -39,13 +39,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : ActsDADeviceId_0100
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   ActsDADeviceId_0100
+         * @tc.number ActsDADeviceId_0100
+         * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('ActsDADeviceId_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function(done){
             console.log("====>ActsDADeviceId_0100 test query distribtued id start");
             const accountAbility = account.getDistributedAccountAbility();
@@ -74,13 +74,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : getDistributedAccountAbility_test
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getDistributedAccountAbility API functionality.
-        * @tc.level    : Level0
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   getDistributedAccountAbility_test
+         * @tc.number getDistributedAccountAbility_test
+         * @tc.desc   Test distributedAccount.getDistributedAccountAbility API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getDistributedAccountAbility_test', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             var ret = false;
             const accountAbility = account.getDistributedAccountAbility()
@@ -93,13 +93,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : getOsAccountDistributedInfo_test001
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getOsAccountDistributedInfo API functionality.
-        * @tc.level    : Level0
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   getOsAccountDistributedInfo_test001
+         * @tc.number getOsAccountDistributedInfo_test001
+         * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getOsAccountDistributedInfo_test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let accountAbility = account.getDistributedAccountAbility()
             accountAbility.getOsAccountDistributedInfo().then( (data) => {
@@ -112,13 +112,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : getOsAccountDistributedInfo_test002
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
-        * @tc.level    : Level0
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   getOsAccountDistributedInfo_test002
+         * @tc.number getOsAccountDistributedInfo_test002
+         * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getOsAccountDistributedInfo_test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let accountAbility = account.getDistributedAccountAbility()
             accountAbility.getOsAccountDistributedInfo((err, data) => {
@@ -133,13 +133,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : getOsAccountDistributedInfoByLocalId_test001
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getOsAccountDistributedInfo API functionality.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   getOsAccountDistributedInfoByLocalId_test001
+         * @tc.number getOsAccountDistributedInfoByLocalId_test001
+         * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('getOsAccountDistributedInfoByLocalId_test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             let accountAbility = account.getDistributedAccountAbility()
             accountAbility.getOsAccountDistributedInfoByLocalId(100).then(function (data) {
@@ -152,13 +152,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : getOsAccountDistributedInfoByLocalId_test002
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
-        * @tc.level    : Level0
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   getOsAccountDistributedInfoByLocalId_test002
+         * @tc.number getOsAccountDistributedInfoByLocalId_test002
+         * @tc.desc   Test distributedAccount.getOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getOsAccountDistributedInfoByLocalId_test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let accountAbility = account.getDistributedAccountAbility()
             accountAbility.getOsAccountDistributedInfoByLocalId(100, function (err, data) {
@@ -173,13 +173,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test001
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test001
+         * @tc.number setOsAccountDistributedInfo_test001
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('setOsAccountDistributedInfo_test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -218,13 +218,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test002
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test002
+         * @tc.number setOsAccountDistributedInfo_test002
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async function (done)  {
             var accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -258,13 +258,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test003
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test setOsAccountDistributedInfo 12300003 errcode.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test003
+         * @tc.number setOsAccountDistributedInfo_test003
+         * @tc.desc   Test setOsAccountDistributedInfo 12300003 errcode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('setOsAccountDistributedInfo_test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let accountAbility = account.getDistributedAccountAbility();
             let tokenInvalidInfo = {
@@ -290,13 +290,13 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test0031
-        * @tc.name     : setOsAccountDistributedInfo_test0031
-        * @tc.desc     : Test setOsAccountDistributedInfo 12300003 errcode.
-        * @tc.level    : Level0
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test0031
+         * @tc.number setOsAccountDistributedInfo_test0031
+         * @tc.desc   Test setOsAccountDistributedInfo 12300003 errcode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('setOsAccountDistributedInfo_test0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let accountAbility = account.getDistributedAccountAbility();
             let tokenInvalidInfo = {
@@ -316,13 +316,13 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test004
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test004
+         * @tc.number setOsAccountDistributedInfo_test004
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('setOsAccountDistributedInfo_test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -358,14 +358,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test005
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    normal nickname
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test005
+         * @tc.number setOsAccountDistributedInfo_test005
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -403,14 +402,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test006
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   normal nickname
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test006
+         * @tc.number setOsAccountDistributedInfo_test006
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -447,14 +445,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test007
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    normal avatar
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test007
+         * @tc.number setOsAccountDistributedInfo_test007
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -492,14 +489,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test008
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   normal avatar
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test008
+         * @tc.number setOsAccountDistributedInfo_test008
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -539,14 +535,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test009
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                   overlength nickname 21
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test009
+         * @tc.number setOsAccountDistributedInfo_test009
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             var limitNickName = '';
@@ -569,14 +564,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test010
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *               overlength nickname 21
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test010
+         * @tc.number setOsAccountDistributedInfo_test010
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             var limitNickName = '';
@@ -603,14 +597,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test011
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                   overlength avatar 3*1024*1024+1
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test011
+         * @tc.number setOsAccountDistributedInfo_test011
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility();
             let limitAvatar = '';
@@ -637,14 +630,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test012
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by peomise.
-        *                   overlength avatar 3*1024*1024+1
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test012
+         * @tc.number setOsAccountDistributedInfo_test012
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by peomise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>setOsAccountDistributedInfo_test012 start");
             const accountAbility = account.getDistributedAccountAbility();
@@ -677,14 +669,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test013
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                   overlength scalableData
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test013
+         * @tc.number setOsAccountDistributedInfo_test013
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             var limitInfo = {};
@@ -705,14 +696,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfo_test014
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                 overlength scalableData
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfo_test014
+         * @tc.number setOsAccountDistributedInfo_test014
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfo_test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             var limitInfo = {};
@@ -737,14 +727,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfoByLocalId_test0100
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    setOsAccountDistributedInfoByLocalId callback
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfoByLocalId_test0100
+         * @tc.number setOsAccountDistributedInfoByLocalId_test0100
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfoByLocalId_test0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -782,14 +771,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : setOsAccountDistributedInfoByLocalId_test0200
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   setOsAccountDistributedInfoByLocalId promise
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   setOsAccountDistributedInfoByLocalId_test0200
+         * @tc.number setOsAccountDistributedInfoByLocalId_test0200
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('setOsAccountDistributedInfoByLocalId_test0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -829,13 +817,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountEnum_0100
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount Enum.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountEnum_0100
+         * @tc.number DistributedAccountEnum_0100
+         * @tc.desc   Test distributedAccount Enum.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             try {
                 expect(0).assertEqual(account.DistributedAccountStatus.NOT_LOGGED_IN)
@@ -849,13 +837,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountEnum_0200
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount Enum.
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountEnum_0200
+         * @tc.number DistributedAccountEnum_0200
+         * @tc.desc   Test distributedAccount Enum.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountEnum_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             try {
                 expect(1).assertEqual(account.DistributedAccountStatus.LOGGED_IN)
@@ -869,14 +857,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0100
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0100
+         * @tc.number DistributedAccountOptionalParameter_0100
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -916,14 +903,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0200
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0200
+         * @tc.number DistributedAccountOptionalParameter_0200
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -965,14 +951,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0300
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0300
+         * @tc.number DistributedAccountOptionalParameter_0300
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1012,14 +997,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0400
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0400
+         * @tc.number DistributedAccountOptionalParameter_0400
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1061,14 +1045,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0500
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0500
+         * @tc.number DistributedAccountOptionalParameter_0500
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1104,14 +1087,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0600
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   OptionalParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0600
+         * @tc.number DistributedAccountOptionalParameter_0600
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1149,14 +1131,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0700
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    setOsAccountDistributedInfoByLocalId callback null OptionParameter
-        * @tc.level    : Level3
-        * @tc.size     : MediumTest
-        * @tc.type     : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0700
+         * @tc.number DistributedAccountOptionalParameter_0700
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1196,14 +1177,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0800
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   setOsAccountDistributedInfoByLocalId promise null OptionParameter
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0800
+         * @tc.number DistributedAccountOptionalParameter_0800
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1245,14 +1225,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_0900
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
-        *                    setOsAccountDistributedInfoByLocalId callback undefined OptionParameter
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_0900
+         * @tc.number DistributedAccountOptionalParameter_0900
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1292,14 +1271,13 @@ export default function ActsDAGetSetTest() {
         })
 
         /**
-        * @tc.number   : DistributedAccountOptionalParameter_1000
-        * @tc.name     : testDistributedFunction
-        * @tc.desc     : Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
-        *                   setOsAccountDistributedInfoByLocalId promise undefined OptionParameter
-        * @tc.level   : Level3
-        * @tc.size    : MediumTest
-        * @tc.type    : Function
-        */
+         * @tc.name   DistributedAccountOptionalParameter_1000
+         * @tc.number DistributedAccountOptionalParameter_1000
+         * @tc.desc   Test distributedAccount.setOsAccountDistributedInfo API functionality by promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DistributedAccountOptionalParameter_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             const accountAbility = account.getDistributedAccountAbility()
             let obj = {
@@ -1341,12 +1319,12 @@ export default function ActsDAGetSetTest() {
         });
         
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_ErrCode_0100
-         * @tc.name    : testParameterVerify
-         * @tc.desc    : Test getOsAccountDistributedInfo no parameter interface but call with parameter null
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_ErrCode_0100
+         * @tc.number SUB_Account_DistributedAccount_ErrCode_0100
+         * @tc.desc   Test getOsAccountDistributedInfo no parameter interface but call with parameter null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_ErrCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>SUB_Account_DistributedAccount_ErrCode_0100 start====");
@@ -1370,12 +1348,12 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_ErrCode_0200
-         * @tc.name    : testParameterVerify
-         * @tc.desc    : Test getOsAccountDistributedInfo callback 401 errcode.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_ErrCode_0200
+         * @tc.number SUB_Account_DistributedAccount_ErrCode_0200
+         * @tc.desc   Test getOsAccountDistributedInfo callback 401 errcode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_ErrCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>SUB_Account_DistributedAccount_ErrCode_0200 start====");
@@ -1398,12 +1376,12 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_ErrCode_0300
-         * @tc.name    : testParameterVerify
-         * @tc.desc    : Test getOsAccountDistributedInfo callback 401 errcode.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_ErrCode_0300
+         * @tc.number SUB_Account_DistributedAccount_ErrCode_0300
+         * @tc.desc   Test getOsAccountDistributedInfo callback 401 errcode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_ErrCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>SUB_Account_DistributedAccount_ErrCode_0300 start====");
@@ -1426,12 +1404,12 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_ErrCode_0400
-         * @tc.name    : testParameterVerify
-         * @tc.desc    : Test getOsAccountDistributedInfo callback 401 errcode.
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_ErrCode_0400
+         * @tc.number SUB_Account_DistributedAccount_ErrCode_0400
+         * @tc.desc   Test getOsAccountDistributedInfo callback 401 errcode.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_ErrCode_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>SUB_Account_DistributedAccount_ErrCode_0400 start====");
@@ -1454,12 +1432,12 @@ export default function ActsDAGetSetTest() {
         });
 
         /**
-         * @tc.number  : SUB_Account_DistributedAccount_ErrCode_0500
-         * @tc.name    : testParameterVerify
-         * @tc.desc    : Test getOsAccountDistributedInfo no parameter interface but call with parameter undefined
-         * @tc.level   : Level3
-         * @tc.size    : MediumTest
-         * @tc.type    : Function
+         * @tc.name   SUB_Account_DistributedAccount_ErrCode_0500
+         * @tc.number SUB_Account_DistributedAccount_ErrCode_0500
+         * @tc.desc   Test getOsAccountDistributedInfo no parameter interface but call with parameter undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('SUB_Account_DistributedAccount_ErrCode_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
             console.info("====>SUB_Account_DistributedAccount_ErrCode_0500 start====");
@@ -1482,14 +1460,14 @@ export default function ActsDAGetSetTest() {
             }
         });
 
-        /*
-        * @tc.number    : DAErrCodeCheck_0100
-        * @tc.name      : test interface setOsAccountDistributedInfo callback
-        * @tc.desc      : 401 err code check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   DAErrCodeCheck_0100
+         * @tc.number DAErrCodeCheck_0100
+         * @tc.desc   401 err code check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DAErrCodeCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             let tag = "====>DAErrCodeCheck_0100 "
             console.info(tag + "start====");
@@ -1514,14 +1492,14 @@ export default function ActsDAGetSetTest() {
             }
         });
 
-        /*
-        * @tc.number    : DAErrCodeCheck_0200
-        * @tc.name      : test interface setOsAccountDistributedInfo promise
-        * @tc.desc      : 401 err code check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   DAErrCodeCheck_0200
+         * @tc.number DAErrCodeCheck_0200
+         * @tc.desc   401 err code check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DAErrCodeCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             let tag = "====>DAErrCodeCheck_0200 "
             console.info(tag + "start====");
@@ -1540,14 +1518,14 @@ export default function ActsDAGetSetTest() {
             }
         });
 
-        /*
-        * @tc.number    : DAErrCodeCheck_0300
-        * @tc.name      : test interface setOsAccountDistributedInfo callback
-        * @tc.desc      : 401 err code check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   DAErrCodeCheck_0300
+         * @tc.number DAErrCodeCheck_0300
+         * @tc.desc   401 err code check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DAErrCodeCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             let tag = "====>DAErrCodeCheck_0300 "
             console.info(tag + "start====");
@@ -1572,14 +1550,14 @@ export default function ActsDAGetSetTest() {
             }
         });
 
-        /*
-        * @tc.number    : DAErrCodeCheck_0400
-        * @tc.name      : test interface setOsAccountDistributedInfo promise
-        * @tc.desc      : 401 err code check
-        * @tc.level     : Level3
-        * @tc.size      : MediumTest
-        * @tc.type      : Function
-        */
+        /**
+         * @tc.name   DAErrCodeCheck_0400
+         * @tc.number DAErrCodeCheck_0400
+         * @tc.desc   401 err code check
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('DAErrCodeCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
             let tag = "====>DAErrCodeCheck_0400 "
             console.info(tag + "start====");

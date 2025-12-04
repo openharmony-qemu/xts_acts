@@ -29,20 +29,19 @@ export default function actsStServiceAbilityTest() {
             done();
         })
         beforeEach(async (done) => {
-            setTimeout(function () {
-                done();
-            }, gSetTimeout);
+            done();
         })
         afterEach(async (done) => {
-            setTimeout(function () {
-                done();
-            }, gSetTimeout);
+            done();
         })
 
         /**
-         * @tc.number: ACTS_AExecuteShellCommand_0100
-         * @tc.name: Execute a shell command without arguments (AsyncCallback).
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_AExecuteShellCommand_Callback_0100
+         * @tc.number ACTS_AExecuteShellCommand_0100
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AExecuteShellCommand_Callback_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_AExecuteShellCommand_Callback_0100 --- start")
@@ -80,9 +79,12 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AExecuteShellCommand_Promise_0100
-         * @tc.name: Execute a shell command without arguments (Promise).
-         * @tc.desc: Verify that the interface executes the Shell command successfully.
+         * @tc.name   ACTS_AExecuteShellCommand_Promise_0100
+         * @tc.number ACTS_AExecuteShellCommand_Promise_0100
+         * @tc.desc   Verify that the interface executes the Shell command successfully.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AExecuteShellCommand_Promise_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_AExecuteShellCommand_Promise_0100 --- start")
@@ -116,10 +118,13 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-          * @tc.number: ACTS_AGetDisplayOrientation_0100
-          * @tc.name: GetDisplayOrientation
-          * @tc.desc: Check the return value of the interface (by AsyncCallback)
-          */
+         * @tc.name   ACTS_AGetDisplayOrientation_0100
+         * @tc.number ACTS_AGetDisplayOrientation_0100
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_AGetDisplayOrientation_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_AGetDisplayOrientation_0100 --- start")
             var currentAlertTimeout = 0;
@@ -152,9 +157,12 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_AGetDisplayOrientation_0200
-         * @tc.name: GetDisplayOrientation
-         * @tc.desc: Check the return type of the interface (by promise)
+         * @tc.name   ACTS_AGetDisplayOrientation_0200
+         * @tc.number ACTS_AGetDisplayOrientation_0200
+         * @tc.desc   Check the return type of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_AGetDisplayOrientation_0200', Level.LEVEL0, async function (done) {
             console.log("ACTS_AGetDisplayOrientation_0200 --- start")
@@ -187,10 +195,13 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-        * @tc.number: ACTS_ASetDisplayOrientation_0100
-        * @tc.name: SetDisplayOrientation
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+         * @tc.name   ACTS_ASetDisplayOrientation_0100
+         * @tc.number ACTS_ASetDisplayOrientation_0100
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ASetDisplayOrientation_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetDisplayOrientation_0100 --- start")
             var currentAlertTimeout = 0;
@@ -218,9 +229,12 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ASetDisplayOrientation_0200
-         * @tc.name: SetDisplayOrientation
-         * @tc.desc: Check the return type of the interface (by promise)
+         * @tc.name   ACTS_ASetDisplayOrientation_0200
+         * @tc.number ACTS_ASetDisplayOrientation_0200
+         * @tc.desc   Check the return type of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ASetDisplayOrientation_0200', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetDisplayOrientation_0200 --- start")
@@ -246,10 +260,13 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-        * @tc.number: ACTS_ASetShowOnLockScreen_0100
-        * @tc.name: SetShowOnLockScreen
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+         * @tc.name   ACTS_ASetShowOnLockScreen_0100
+         * @tc.number ACTS_ASetShowOnLockScreen_0100
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ASetShowOnLockScreen_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetShowOnLockScreen_0100 --- start")
             var currentAlertTimeout = 0;
@@ -277,9 +294,12 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ASetShowOnLockScreen_0200
-         * @tc.name: SetShowOnLockScreen
-         * @tc.desc: Check the return type of the interface (by promise)
+         * @tc.name   ACTS_ASetShowOnLockScreen_0200
+         * @tc.number ACTS_ASetShowOnLockScreen_0200
+         * @tc.desc   Check the return type of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ASetShowOnLockScreen_0200', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetShowOnLockScreen_0200 --- start")
@@ -306,10 +326,13 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-        * @tc.number: ACTS_ASetWakeUpScreen_0100
-        * @tc.name: SetWakeUpScreen
-        * @tc.desc: Check the return value of the interface (by AsyncCallback)
-        */
+         * @tc.name   ACTS_ASetWakeUpScreen_0100
+         * @tc.number ACTS_ASetWakeUpScreen_0100
+         * @tc.desc   Check the return value of the interface (by AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ASetWakeUpScreen_0100', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetWakeUpScreen_0100 --- start")
             var currentAlertTimeout = 0;
@@ -337,9 +360,12 @@ export default function actsStServiceAbilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_ASetWakeUpScreen_0200
-         * @tc.name: SetWakeUpScreen
-         * @tc.desc: Check the return type of the interface (by promise)
+         * @tc.name   ACTS_ASetWakeUpScreen_0200
+         * @tc.number ACTS_ASetWakeUpScreen_0200
+         * @tc.desc   Check the return type of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_ASetWakeUpScreen_0200', Level.LEVEL0, async function (done) {
             console.log("ACTS_ASetWakeUpScreen_0200 --- start")
@@ -365,11 +391,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_ATestRunner_0200
-        * @tc.name      : start new ability
-        * @tc.desc      : Starting mainability2 with startability succeeded.(callback)
-        */
+        /**
+         * @tc.name   ACTS_ATestRunner_0200
+         * @tc.number ACTS_ATestRunner_0200
+         * @tc.desc   Starting mainability2 with startability succeeded.(callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('ACTS_ATestRunner_0200', Level.LEVEL0, async function (done) {
             console.debug('ACTS_ATestRunner_0200====<begin');
             let sa = '-b';
@@ -393,11 +422,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0100
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with undefined
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100
+         * @tc.number ACTS_SetMockList_0100
+         * @tc.desc   Set mock list with undefined
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0100====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -412,11 +444,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0200
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with null
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200
+         * @tc.number ACTS_SetMockList_0200
+         * @tc.desc   Set mock list with null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0200====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -431,11 +466,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0300
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with no param
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300
+         * @tc.number ACTS_SetMockList_0300
+         * @tc.desc   Set mock list with no param
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0300====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -450,11 +488,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0400
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with two param
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400
+         * @tc.number ACTS_SetMockList_0400
+         * @tc.desc   Set mock list with two param
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0400====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -469,11 +510,14 @@ export default function actsStServiceAbilityTest() {
             }
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0500
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with wrong type
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500
+         * @tc.number ACTS_SetMockList_0500
+         * @tc.desc   Set mock list with wrong type
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0500====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -489,11 +533,14 @@ export default function actsStServiceAbilityTest() {
         })
 
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0600
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with mixed data
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600
+         * @tc.number ACTS_SetMockList_0600
+         * @tc.desc   Set mock list with mixed data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0600====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -507,11 +554,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0700
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with empty param
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700
+         * @tc.number ACTS_SetMockList_0700
+         * @tc.desc   Set mock list with empty param
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0700====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -520,11 +570,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0800
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with valid param
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800
+         * @tc.number ACTS_SetMockList_0800
+         * @tc.desc   Set mock list with valid param
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0800====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -539,11 +592,14 @@ export default function actsStServiceAbilityTest() {
         })
 
 
-        /*
-        * @tc.number    : ACTS_SetMockList_0900
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with negative number
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900
+         * @tc.number ACTS_SetMockList_0900
+         * @tc.desc   Set mock list with negative number
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_0900====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -555,11 +611,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_1000
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with letter
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000
+         * @tc.number ACTS_SetMockList_1000
+         * @tc.desc   Set mock list with letter
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1000====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -571,11 +630,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_1100
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with no param
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100
+         * @tc.number ACTS_SetMockList_1100
+         * @tc.desc   Set mock list with no param
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1100====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -587,11 +649,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_1200
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with Special characters
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200
+         * @tc.number ACTS_SetMockList_1200
+         * @tc.desc   Set mock list with Special characters
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1200====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();
@@ -603,11 +668,14 @@ export default function actsStServiceAbilityTest() {
             done();
         })
 
-        /*
-        * @tc.number    : ACTS_SetMockList_1300
-        * @tc.name      : Set mock list
-        * @tc.desc      : Set mock list with number
-        */
+        /**
+         * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300
+         * @tc.number ACTS_SetMockList_1300
+         * @tc.desc   Set mock list with number
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300', Level.LEVEL0, async function (done) {
             console.debug('SUB_Ability_AbilityTools_AbilityDelegator_setMockList_1300====<begin');
             let abilityDelegator = abilityDelegatorRegistryNew.getAbilityDelegator();

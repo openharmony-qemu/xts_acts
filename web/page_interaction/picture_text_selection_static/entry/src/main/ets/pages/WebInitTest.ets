@@ -92,7 +92,7 @@ struct WebInitTest {
                     if ( this.pixelmap != undefined) {
                       Utils.emitEvent(true, 114)
                     }
-                  }, 3000)
+                  }, 4000)
                 } catch (error) {
                   error = error as BusinessError;
                   console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);

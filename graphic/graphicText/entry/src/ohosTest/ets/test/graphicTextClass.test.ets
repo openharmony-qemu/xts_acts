@@ -48,12 +48,12 @@ export default function graphicTextClass() {
       pixel = await image.createPixelMap(color, opts);
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
-     * @tc.name      : testParagraph_layoutSync_Parameter
-     * @tc.desc      : To test Paragraph layoutSyncSync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_001
+     * @tc.desc   To test Paragraph layoutSyncSync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutSync"
@@ -67,12 +67,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
-     * @tc.name      : testParagraph_Paint_Parameter
-     * @tc.desc      : To test Paragraph Paint interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testPaint
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_002
+     * @tc.desc   To test Paragraph Paint interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPaint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testPaint"
@@ -87,12 +87,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
-     * @tc.name      : testParagraph_GetMaxWidth_Parameter
-     * @tc.desc      : To test Paragraph GetMaxWidth interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMaxWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_003
+     * @tc.desc   To test Paragraph GetMaxWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMaxWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetMaxWidth"
@@ -107,12 +107,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
-     * @tc.name      : testParagraph_GetHeight_Parameter
-     * @tc.desc      : To test Paragraph GetHeight interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_004
+     * @tc.desc   To test Paragraph GetHeight interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetHeight"
@@ -127,12 +127,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
-     * @tc.name      : testParagraph_GetLongestLine_Parameter
-     * @tc.desc      : To test Paragraph GetLongestLine interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLongestLine
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_005
+     * @tc.desc   To test Paragraph GetLongestLine interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLongestLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetLongestLine"
@@ -148,12 +148,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
-     * @tc.name      : testParagraph_GetMinIntrinsicWidth_Parameter
-     * @tc.desc      : To test Paragraph GetMinIntrinsicWidth interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMinIntrinsicWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_006
+     * @tc.desc   To test Paragraph GetMinIntrinsicWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMinIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetMinIntrinsicWidth"
@@ -168,12 +168,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
-     * @tc.name      : testParagraph_GetMaxIntrinsicWidth_Parameter
-     * @tc.desc      : To test Paragraph GetMaxIntrinsicWidth interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetMaxIntrinsicWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_007
+     * @tc.desc   To test Paragraph GetMaxIntrinsicWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMaxIntrinsicWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetMaxIntrinsicWidth"
@@ -188,12 +188,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
-     * @tc.name      : testParagraph_GetAlphabeticBaseline_Parameter
-     * @tc.desc      : To test Paragraph GetAlphabeticBaseline interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetAlphabeticBaseline
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_008
+     * @tc.desc   To test Paragraph GetAlphabeticBaseline interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAlphabeticBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetAlphabeticBaseline"
@@ -209,12 +209,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
-     * @tc.name      : testParagraph_GetIdeographicBaseline_Parameter
-     * @tc.desc      : To test Paragraph GetIdeographicBaseline interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetIdeographicBaseline
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_009
+     * @tc.desc   To test Paragraph GetIdeographicBaseline interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetIdeographicBaseline', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetIdeographicBaseline"
@@ -229,12 +229,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
-     * @tc.name      : testParagraph_GetRectsForRange_Parameter
-     * @tc.desc      : To test Paragraph GetRectsForRange interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetRectsForRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_010
+     * @tc.desc   To test Paragraph GetRectsForRange interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetRectsForRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetRectsForRange"
@@ -252,12 +252,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
-     * @tc.name      : testParagraph_GetRectsForPlaceholders_Parameter
-     * @tc.desc      : To test Paragraph GetRectsForPlaceholders interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetRectsForPlaceholders
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_011
+     * @tc.desc   To test Paragraph GetRectsForPlaceholders interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetRectsForPlaceholders', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetRectsForPlaceholders"
@@ -272,12 +272,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
-     * @tc.name      : testParagraph_GetGlyphPositionAtCoordinate_Parameter
-     * @tc.desc      : To To test Paragraph GetGlyphPositionAtCoordinate interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetGlyphPositionAtCoordinate
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_012
+     * @tc.desc   To To test Paragraph GetGlyphPositionAtCoordinate interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetGlyphPositionAtCoordinate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetGlyphPositionAtCoordinate"
@@ -292,12 +292,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
-     * @tc.name      : testParagraph_GetWordBoundary_Parameter
-     * @tc.desc      : To test Paragraph GetWordBoundary interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetWordBoundary
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_013
+     * @tc.desc   To test Paragraph GetWordBoundary interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetWordBoundary', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetWordBoundary"
@@ -312,12 +312,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
-     * @tc.name      : testParagraph_GetLineCount_Parameter
-     * @tc.desc      : To test Paragraph GetLineCount interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_014
+     * @tc.desc   To test Paragraph GetLineCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLineCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetLineCount"
@@ -332,12 +332,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_015
-     * @tc.name      : testParagraph_GetLineHeight_Parameter
-     * @tc.desc      : To test Paragraph GetLineHeight interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineHeight
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_015
+     * @tc.desc   To test Paragraph GetLineHeight interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLineHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetLineHeight"
@@ -352,12 +352,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_016
-     * @tc.name      : testParagraph_GetLineWidth_Parameter
-     * @tc.desc      : To test Paragraph GetLineWidth interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_016
+     * @tc.desc   To test Paragraph GetLineWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetLineWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testGetLineWidth"
@@ -372,12 +372,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_017
-     * @tc.name      : testParagraph_DidExceedMaxLines_Parameter
-     * @tc.desc      : To test Paragraph DidExceedMaxLines interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testDidExceedMaxLines
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_017
+     * @tc.desc   To test Paragraph DidExceedMaxLines interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDidExceedMaxLines', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testDidExceedMaxLines"
@@ -392,12 +392,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_018
-     * @tc.name      : testTextLine_GetGlyphCount
-     * @tc.desc      : test TextLine GlyphCount
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextLine_GetGlyphCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_018
+     * @tc.desc   test TextLine GlyphCount
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testText_GetGlyphCount"
@@ -422,12 +422,12 @@ export default function graphicTextClass() {
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_019
-     * @tc.name      : testTextLine_GetTextRange
-     * @tc.desc      : test TextLine GetTextRange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextLine_GetTextRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_019
+     * @tc.desc   test TextLine GetTextRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testTextLine_GetTextRange"
@@ -452,12 +452,12 @@ export default function graphicTextClass() {
       
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_020
-     * @tc.name      : testTextLine_Paint
-     * @tc.desc      : test TextLine Paint
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTextLine_Paint
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_020
+     * @tc.desc   test TextLine Paint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testTextLine_Paint"
@@ -481,13 +481,13 @@ export default function graphicTextClass() {
       }
     })
 
-  /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_021
-     * @tc.name      : testParagraphBuilder_AonstructorAndAddText
-     * @tc.desc      : Constructs a ParagraphBuilder object and calls its methods
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+    /**
+     * @tc.name   testParagraphBuilder_AonstructorAndAddText
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_021
+     * @tc.desc   Constructs a ParagraphBuilder object and calls its methods
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParagraphBuilder_AonstructorAndAddText', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testParagraphBuilder_AonstructorAndAddText"
@@ -565,12 +565,12 @@ export default function graphicTextClass() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_022
-     * @tc.name      : Run GetGlyphCount
-     * @tc.desc      : To test Run GetGlyphCount interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTexRun_GetGlyphCount
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_022
+     * @tc.desc   To test Run GetGlyphCount interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTexRun_GetGlyphCount', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetGlyphCount';
@@ -599,12 +599,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_023
-     * @tc.name      : Run GetGlyphs
-     * @tc.desc      : To test Run GetGlyphs interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetGlyphs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_023
+     * @tc.desc   To test Run GetGlyphs interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
@@ -632,12 +632,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_024
-     * @tc.name      : Run GetPositions
-     * @tc.desc      : To test Run GetPositions interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetPositions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_024
+     * @tc.desc   To test Run GetPositions interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetPositions';
@@ -665,12 +665,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_025
-     * @tc.name      : Run GetOffsets
-     * @tc.desc      : To test Run GetOffsets interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetOffsets
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_025
+     * @tc.desc   To test Run GetOffsets interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetOffsets';
@@ -698,12 +698,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_026
-     * @tc.name      : Run GetFont
-     * @tc.desc      : To test Run GetFont interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetFont
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_026
+     * @tc.desc   To test Run GetFont interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetFont', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetFont';
@@ -731,12 +731,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_027
-     * @tc.name      : Run Paint
-     * @tc.desc      : To test Run Paint interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_Paint
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_027
+     * @tc.desc   To test Run Paint interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_Paint', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_Paint';
@@ -763,12 +763,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_028
-     * @tc.name      : Run GetGlyphs
-     * @tc.desc      : To test Run GetGlyphs interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetGlyphs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_028
+     * @tc.desc   To test Run GetGlyphs interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetGlyphs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetGlyphs';
@@ -825,12 +825,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_029
-     * @tc.name      : Run GetPositions
-     * @tc.desc      : To test Run GetPositions interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextRun_GetPositions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_029
+     * @tc.desc   To test Run GetPositions interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextRun_GetPositions', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_GetPositions';
@@ -887,13 +887,13 @@ export default function graphicTextClass() {
     })
 
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_030
-    * @tc.name      : Run getStringIndices
-    * @tc.desc      : To test Run getStringIndices interface.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+     * @tc.name   testTextRun_getStringIndices
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_030
+     * @tc.desc   To test Run getStringIndices interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextRun_getStringIndices', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=>{
       let msg = 'testTextRun_getStringIndices';
       console.info(msg + 'begin');
@@ -955,13 +955,13 @@ export default function graphicTextClass() {
     })
 
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_031
-    * @tc.name      : Run getStringRange
-    * @tc.desc      : To test Run getStringRange interface.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+     * @tc.name   testTextRun_getStringRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_031
+     * @tc.desc   To test Run getStringRange interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextRun_getStringRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_getStringRange';
       console.info(msg + 'begin');
@@ -989,13 +989,13 @@ export default function graphicTextClass() {
     })
 
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_032
-    * @tc.name      : Run getImageBounds
-    * @tc.desc      : To test Run getImageBounds interface.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+     * @tc.name   testTextRun_getImageBounds
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_032
+     * @tc.desc   To test Run getImageBounds interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextRun_getImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_getImageBounds';
       console.info(msg + 'begin');
@@ -1028,13 +1028,13 @@ export default function graphicTextClass() {
     })
 
     /**
-    * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_033
-    * @tc.name      : Run getTypographicBounds
-    * @tc.desc      : To test Run getTypographicBounds interface.
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    */
+     * @tc.name   testTextRun_getTypographicBounds
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_033
+     * @tc.desc   To test Run getTypographicBounds interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextRun_getTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextRun_getTypographicBounds';
       console.info(msg + 'begin');
@@ -1079,12 +1079,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0034
-     * @tc.name      : testlayoutByPromise_1
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0034
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_1 "
@@ -1099,12 +1099,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0035
-     * @tc.name      : testlayoutByPromise_2
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0035
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_2 "
@@ -1119,13 +1119,13 @@ export default function graphicTextClass() {
       });
     })
 
-   /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0036
-     * @tc.name      : testlayoutByPromise_3
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testlayoutByPromise_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0036
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_3 "
@@ -1141,12 +1141,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0037
-     * @tc.name      : testlayoutByPromise_4
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0037
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_4 "
@@ -1162,12 +1162,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0038
-     * @tc.name      : testlayoutByPromise_5
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_5
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0038
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_5 "
@@ -1182,12 +1182,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0039
-     * @tc.name      : testlayoutByPromise_6
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_6
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0039
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_6 "
@@ -1202,12 +1202,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0040
-     * @tc.name      : testlayoutByPromise_7
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_7
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0040
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_7 "
@@ -1222,12 +1222,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0041
-     * @tc.name      : testlayoutByPromise_8
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_8
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0041
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_8 "
@@ -1242,12 +1242,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0042
-     * @tc.name      : testlayoutByPromise_9
-     * @tc.desc      : To test Paragraph layoutAsync interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testlayoutByPromise_9
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_0042
+     * @tc.desc   To test Paragraph layoutAsync interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlayoutByPromise_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testlayoutByPromise_9 "
@@ -1263,12 +1263,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_043
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : Constructs a LineTypeset object test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_043
+     * @tc.desc   Constructs a LineTypeset object test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_1"
@@ -1317,12 +1317,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_044
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : getLineBreak interface abnormal parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_044
+     * @tc.desc   getLineBreak interface abnormal parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_2"
@@ -1365,12 +1365,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_045
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : getLineBreak interface parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_045
+     * @tc.desc   getLineBreak interface parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_3"
@@ -1437,12 +1437,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_046
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : getLineBreak interface parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_4
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_046
+     * @tc.desc   getLineBreak interface parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testParagraphBuilder_BuildLineTypeset_4"
@@ -1485,12 +1485,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_047
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : getLineBreak interface parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_5
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_047
+     * @tc.desc   getLineBreak interface parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_5"
@@ -1533,12 +1533,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_048
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : Constructs a LineTypeset object test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_6
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_048
+     * @tc.desc   Constructs a LineTypeset object test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_6"
@@ -1581,12 +1581,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_049
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : createLine interface parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_7
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_049
+     * @tc.desc   createLine interface parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
@@ -1653,12 +1653,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_050
-     * @tc.name      : run BuildLineTypeset
-     * @tc.desc      : createLine interface parameter test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testLineTypeset_BuildLineTypeset_8
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_050
+     * @tc.desc   createLine interface parameter test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLineTypeset_BuildLineTypeset_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = "testLineTypeset_BuildLineTypeset_7"
@@ -1717,12 +1717,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_051
-     * @tc.name      : Line CreateTruncatedLine
-     * @tc.desc      : To test Line CreateTruncatedLine interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_CreateTruncatedLine
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_051
+     * @tc.desc   To test Line CreateTruncatedLine interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_CreateTruncatedLine', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_CreateTruncatedLine';
@@ -1810,12 +1810,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_052
-     * @tc.name      : Line GetTypographicBounds
-     * @tc.desc      : To test Line GetTypographicBounds interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetTypographicBounds
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_052
+     * @tc.desc   To test Line GetTypographicBounds interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetTypographicBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetTypographicBounds';
@@ -1858,12 +1858,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_053
-     * @tc.name      : Line GetImageBounds
-     * @tc.desc      : To test Line GetImageBounds interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetImageBounds
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_053
+     * @tc.desc   To test Line GetImageBounds interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetImageBounds', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetImageBounds';
@@ -1906,12 +1906,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_054
-     * @tc.name      : Line GetTrailingSpaceWidth
-     * @tc.desc      : To test Line GetTrailingSpaceWidth interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetTrailingSpaceWidth
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_054
+     * @tc.desc   To test Line GetTrailingSpaceWidth interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetTrailingSpaceWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetTrailingSpaceWidth';
@@ -1936,12 +1936,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_055
-     * @tc.name      : Line GetStringIndexForPosition
-     * @tc.desc      : To test Line GetStringIndexForPosition interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetStringIndexForPosition
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_055
+     * @tc.desc   To test Line GetStringIndexForPosition interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetStringIndexForPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetStringIndexForPosition';
@@ -1997,12 +1997,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_056
-     * @tc.name      : Line GetOffsetForStringIndex
-     * @tc.desc      : To test Line GetOffsetForStringIndex interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetOffsetForStringIndex
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_056
+     * @tc.desc   To test Line GetOffsetForStringIndex interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetOffsetForStringIndex', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetOffsetForStringIndex';
@@ -2055,12 +2055,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_057
-     * @tc.name      : Line EnumerateCaretOffsets
-     * @tc.desc      : To test Line EnumerateCaretOffsets interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_EnumerateCaretOffsets
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_057
+     * @tc.desc   To test Line EnumerateCaretOffsets interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_EnumerateCaretOffsets', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_EnumerateCaretOffsets';
@@ -2119,12 +2119,12 @@ export default function graphicTextClass() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_058
-     * @tc.name      : Line GetAlignmentOffset
-     * @tc.desc      : To test Line GetAlignmentOffset interface.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextLine_GetAlignmentOffset
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDRAWING_JS_API_058
+     * @tc.desc   To test Line GetAlignmentOffset interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextLine_GetAlignmentOffset', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async ()=> {
       let msg = 'testTextLine_GetAlignmentOffset';

@@ -15,10 +15,26 @@
 import {describe, it, expect, Level, Size, TestType } from 'deccjsunit/index'
 
 describe('assertNull', function () {
+    /**
+     * @tc.name   assertNullSuccess
+     * @tc.number assertNullSuccess
+     * @tc.desc   assertNullSuccess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertNullSuccess', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let d
         expect(d).assertNull()
     })
+    /**
+     * @tc.name   assertNullFail
+     * @tc.number assertNullFail
+     * @tc.desc   assertNullFail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('assertNullFail', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let d = 100
         expect(d).assertNull()

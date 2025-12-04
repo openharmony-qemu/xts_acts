@@ -54,9 +54,12 @@ void CheckCreateOutputMemory(OH_NNExecutor *executor, uint32_t outputIndex, size
 } // namespace
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100
- * @tc.name   : 创建输入共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0100, Function | MediumTest | Level3)
 {
@@ -65,9 +68,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_01
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200
- * @tc.name   : 创建输入共享内存，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0200, Function | MediumTest | Level3)
 {
@@ -85,9 +91,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_02
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300
- * @tc.name   : 创建输入共享内存，length为0
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0300, Function | MediumTest | Level3)
 {
@@ -105,9 +114,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_03
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400
- * @tc.name   :创建输入共享内存，length为最大限制2G
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0400, Function | MediumTest | Level3)
 {
@@ -125,9 +137,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_04
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500
- * @tc.name   : 创建输入共享内存，inputIndex重复创建
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0500, Function | MediumTest | Level2)
 {
@@ -151,9 +166,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_05
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600
- * @tc.name   : 多线程创建不同index输入的共享内存
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_0600, Function | MediumTest | Level2)
 {
@@ -173,9 +191,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateInputMemory_06
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100
- * @tc.name   : 创建输出共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0100, Function | MediumTest | Level3)
 {
@@ -184,9 +205,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200
- * @tc.name   : 创建输出共享内存，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0200, Function | MediumTest | Level3)
 {
@@ -204,9 +228,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300
- * @tc.name   : 创建输出共享内存，length为0
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0300, Function | MediumTest | Level3)
 {
@@ -224,9 +251,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400
- * @tc.name   :创建输出共享内存，length为最大限制2G
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0400, Function | MediumTest | Level3)
 {
@@ -244,9 +274,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500
- * @tc.name   : 创建输出共享内存，outputIndex重复创建
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0500, Function | MediumTest | Level2)
 {
@@ -270,9 +303,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600
- * @tc.name   : 多线程创建不同index输出的共享内存
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0600, Function | MediumTest | Level2)
 {
@@ -295,9 +331,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_CreateOutputMemory_0
     Free(model, compilation, executor);
 }
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100
- * @tc.name   : 销毁输入共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0100, Function | MediumTest | Level3)
 {
@@ -319,9 +358,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200
- * @tc.name   : 销毁输入共享内存，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0200, Function | MediumTest | Level3)
 {
@@ -343,9 +385,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300
- * @tc.name   : 销毁输出共享内存，*memory为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0300, Function | MediumTest | Level3)
 {
@@ -363,9 +408,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400
- * @tc.name   : 销毁输出共享内存，inputIndex不同memory重复销毁
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0400, Function | MediumTest | Level3)
 {
@@ -389,9 +437,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500
- * @tc.name   : 多线销毁不同index输入的共享内存
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0500, Function | MediumTest | Level3)
 {
@@ -417,9 +468,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyInputMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100
- * @tc.name   : 销毁输出共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0100, Function | MediumTest | Level3)
 {
@@ -441,9 +495,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200
- * @tc.name   : 销毁输出共享内存，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0200, Function | MediumTest | Level3)
 {
@@ -465,9 +522,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300
- * @tc.name   : 销毁输出共享内存，*memory为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0300, Function | MediumTest | Level3)
 {
@@ -484,9 +544,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400
- * @tc.name   : 销毁输出共享内存，inputIndex不同memory重复销毁
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0400, Function | MediumTest | Level3)
 {
@@ -510,9 +573,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500
- * @tc.name   : 多线销毁不同index输出的共享内存
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_0500, Function | MediumTest | Level3)
 {
@@ -540,9 +606,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_DestroyOutputMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100
- * @tc.name   : 设置输入共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0100, Function | MediumTest | Level3)
 {
@@ -567,9 +636,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200
- * @tc.name   : 设置输入共享内存，inputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0200, Function | MediumTest | Level3)
 {
@@ -594,9 +666,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300
- * @tc.name   : 设置输入共享内存，operand为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0300, Function | MediumTest | Level3)
 {
@@ -617,9 +692,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400
- * @tc.name   : 设置输入共享内存，operand与输入不匹配
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0400, Function | MediumTest | Level2)
 {
@@ -644,9 +722,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500
- * @tc.name   : 设置输入共享内存，memory为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0500, Function | MediumTest | Level3)
 {
@@ -671,9 +752,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600
- * @tc.name   : 设置输入共享内存，重复设置相同inputIndex
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0600, Function | MediumTest | Level2)
 {
@@ -699,9 +783,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetInputFromMemory_0
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100
- * @tc.name   : 设置输出共享内存，executor为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0100, Function | MediumTest | Level3)
 {
@@ -722,9 +809,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200
- * @tc.name   : 设置输出共享内存，outputIndex不存在
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0200, Function | MediumTest | Level3)
 {
@@ -745,9 +835,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300
- * @tc.name   : 设置输出共享内存，memory为nullptr
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0300, Function | MediumTest | Level3)
 {
@@ -768,9 +861,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400
- * @tc.name   : 设置输出共享内存，重复设置相同outputIndex
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_0400, Function | MediumTest | Level2)
 {
@@ -792,9 +888,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_SetOutputFromMemory_
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100
- * @tc.name   : 共享内存模型推理，executor设置输入个数不足
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100, Function | MediumTest | Level3)
 {
@@ -837,9 +936,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0100, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200
- * @tc.name   : 共享内存模型推理，executor设置输出个数不足
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200, Function | MediumTest | Level3)
 {
@@ -872,9 +974,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0200, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300
- * @tc.name   : 共享内存，定长模型推理测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300, Function | MediumTest | Level1)
 {
@@ -905,9 +1010,12 @@ HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0300, Function |
 }
 
 /**
- * @tc.number : SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400
- * @tc.name   : 共享内存，变长模型推理测试
- * @tc.desc   : [C- SOFTWARE -0200]
+ * @tc.name   SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400
+ * @tc.number SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(MemoryTest, SUB_AI_NNRt_Func_North_Executor_Memory_Run_0400, Function | MediumTest | Level1)
 {

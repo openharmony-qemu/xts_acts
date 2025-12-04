@@ -33,11 +33,14 @@ describe('hiSysEventNormalTest', function () {
         console.info('hiSysEventNormalTest afterEach called')
     })
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5800
-	 * @tc.name testHiSysEventApi58
-	 * @tc.desc 验证普通应用调用write接口使用callback方式进行回调处理，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi58
+  * @tc.number DFX_DFT_HiSysEvent_JS_5800
+  * @tc.desc   验证普通应用调用write接口使用callback方式进行回调处理，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi58 start')
 		try {
@@ -63,11 +66,14 @@ describe('hiSysEventNormalTest', function () {
 		console.info('testHiSysEventApi58 end')
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_5900
-	 * @tc.name testHiSysEventApi59
-	 * @tc.desc 验证普通应用调用write接口使用Promise方式进行回调处理，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi59
+  * @tc.number DFX_DFT_HiSysEvent_JS_5900
+  * @tc.desc   验证普通应用调用write接口使用Promise方式进行回调处理，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventApi59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventApi59 start')
 		try {
@@ -96,11 +102,14 @@ describe('hiSysEventNormalTest', function () {
 		console.info('testHiSysEventApi59 end')
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6000
-	 * @tc.name testHiSysEventApi60
-	 * @tc.desc 验证普通应用调用订阅接口，规则为domain+eventName, rule=PREFIX，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi60
+  * @tc.number DFX_DFT_HiSysEvent_JS_6000
+  * @tc.desc   验证普通应用调用订阅接口，规则为domain+eventName, rule=PREFIX，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi60 start')
 		let watcher = {
@@ -138,11 +147,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6100
-	 * @tc.name testHiSysEventApi61
-	 * @tc.desc 验证普通应用调用订阅接口，规则为domain+eventName, rule=REGULAR，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi61
+  * @tc.number DFX_DFT_HiSysEvent_JS_6100
+  * @tc.desc   验证普通应用调用订阅接口，规则为domain+eventName, rule=REGULAR，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi61 start')
 		let watcher = {
@@ -179,11 +191,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6200
-	 * @tc.name testHiSysEventApi62
-	 * @tc.desc 验证普通应用调用订阅接口，规则为domain+eventName, rule=WHOLE_WORD，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi62
+  * @tc.number DFX_DFT_HiSysEvent_JS_6200
+  * @tc.desc   验证普通应用调用订阅接口，规则为domain+eventName, rule=WHOLE_WORD，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi62 start')
 		let watcher = {
@@ -220,11 +235,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6300
-	 * @tc.name testHiSysEventApi63
-	 * @tc.desc 验证普通应用调用订阅接口，规则为domain+eventName+tag, rule=PREFIX，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi63
+  * @tc.number DFX_DFT_HiSysEvent_JS_6300
+  * @tc.desc   验证普通应用调用订阅接口，规则为domain+eventName+tag, rule=PREFIX，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi63 start')
 		let watcher = {
@@ -262,11 +280,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6400
-	 * @tc.name testHiSysEventApi64
-	 * @tc.desc 验证普通应用调用订阅接口，规则为tag, rule=REGULAR，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi64
+  * @tc.number DFX_DFT_HiSysEvent_JS_6400
+  * @tc.desc   验证普通应用调用订阅接口，规则为tag, rule=REGULAR，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi64 start')
 		let watcher = {
@@ -302,11 +323,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6500
-	 * @tc.name testHiSysEventApi65
-	 * @tc.desc 验证普通应用调用删除订阅接口，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi65
+  * @tc.number DFX_DFT_HiSysEvent_JS_6500
+  * @tc.desc   验证普通应用调用删除订阅接口，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventApi65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventApi18 start')
 		let watcher = {
@@ -345,11 +369,14 @@ describe('hiSysEventNormalTest', function () {
         }, 1000)
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysEvent_JS_6600
-	 * @tc.name testHiSysEventApi66
-	 * @tc.desc 验证普通应用调用查询订阅接口，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventApi66
+  * @tc.number DFX_DFT_HiSysEvent_JS_6600
+  * @tc.desc   验证普通应用调用查询订阅接口，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL1
+  */
 	it('testHiSysEventApi66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventApi66 start')
 		try {
@@ -376,11 +403,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0100
-	 * @tc.name testHiSysEventBox01
-	 * @tc.desc 验证普通应用调用exportSysEvents接口，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventBox01
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0100
+  * @tc.desc   验证普通应用调用exportSysEvents接口，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL1
+  */
 	it('testHiSysEventBox01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventBox01 start')
 		try {
@@ -403,11 +433,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0200
-	 * @tc.name testHiSysEventBox02
-	 * @tc.desc 验证普通应用调用subscribe接口，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventBox02
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0200
+  * @tc.desc   验证普通应用调用subscribe接口，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL1
+  */
 	it('testHiSysEventBox02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventBox02 start')
 		try {
@@ -426,11 +459,14 @@ describe('hiSysEventNormalTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0300
-	 * @tc.name testHiSysEventBox03
-	 * @tc.desc 验证普通应用调用unsubscribe接口，返回错误码202
-	 */
+ /**
+  * @tc.name   testHiSysEventBox03
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0300
+  * @tc.desc   验证普通应用调用unsubscribe接口，返回错误码202
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL1
+  */
 	it('testHiSysEventBox03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
 		console.info('testHiSysEventBox03 start')
 		try {

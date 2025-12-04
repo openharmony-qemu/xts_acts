@@ -70,12 +70,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
-         * @tc.name testEnableWifi
-         * @tc.desc Test enableWifi Sync API functionality.
-         * @tc.size:LargeTest
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test enableWifi Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_Sta_0036', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done:Function) =>{
             try {
@@ -104,12 +104,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
-         * @tc.name testIsMeteredHotspot
-         * @tc.desc Test isMeteredHotspot Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test isMeteredHotspot Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -126,12 +126,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
-         * @tc.name testIsHotspotActive
-         * @tc.desc Test isHotspotActive Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 1
+         * @tc.desc   Test isHotspotActive Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_WiFi_XTS_Sta_0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
             try {
@@ -150,12 +150,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0038
-         * @tc.name testGetDeviceMacAddress
-         * @tc.desc Test getDeviceMacAddress Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 1
+         * @tc.desc   Test getDeviceMacAddress Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('SUB_Communication_WiFi_XTS_Sta_0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) =>{
             try {
@@ -175,12 +175,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0039
-         * @tc.name testGetMultiLinkedInfo
-         * @tc.desc Test getMultiLinkedInfo Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test getMultiLinkedInfo Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -199,12 +199,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0040
-         * @tc.name testGetLinkedInfoSync
-         * @tc.desc Test getLinkedInfoSync Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test getLinkedInfoSync Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -226,12 +226,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0041
-         * @tc.name testWifiLinkType
-         * @tc.desc Test WifiLinkType Sync API functionality.
-         * @tc.size:MediumTest
-         * @tc.type Function
-         * @tc.level Level 2
+         * @tc.desc   Test WifiLinkType Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
            try {
@@ -262,12 +262,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0044
-         * @tc.name testConnectToNetwork
-         * @tc.desc Test connectToNetwork Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test connectToNetwork Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -281,12 +281,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0045
-         * @tc.name testRemoveDevice
-         * @tc.desc Test removeDevice Sync API functionality.
-         * @tc.type Function
-         * @tc.size:MediumTest
-         * @tc.level Level 2
+         * @tc.desc   Test removeDevice Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_Communication_WiFi_XTS_Sta_0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) =>{
             try {
@@ -300,12 +300,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0046
-         * @tc.name SUB_Communication_WiFi_XTS_Sta_0046
-         * @tc.desc Test DisableWifi Sync API functionality.
-         * @tc.size:LARGETEST
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test DisableWifi Sync API functionality.
+         * @tc.type   FUNCTION
+         * @tc.size   LARGETEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_Sta_0046', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL0, async (done:Function) =>{
             try {
@@ -347,12 +347,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   SUB_Communication_WiFi_XTS_StartScan_0001
          * @tc.number SUB_Communication_WiFi_XTS_StartScan_0001
-         * @tc.name SUB_Communication_WiFi_XTS_StartScan_0001
-         * @tc.desc Test startScan Sync API21 functionality
-         * @tc.type Function
-         * @tc.size MediumTest
-         * @tc.level Level 0
+         * @tc.desc   Test startScan Sync API21 functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_Communication_WiFi_XTS_StartScan_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
             try {
@@ -371,12 +371,12 @@ export default function wifiSta() {
         })
 
         /**
+         * @tc.name   Communication_WiFi_XTS_IsWifiActive_0001
          * @tc.number Communication_WiFi_XTS_IsWifiActive_0001
-         * @tc.name Communication_WiFi_XTS_IsWifiActive_0001
-         * @tc.desc Test isWifiActive Sync API functionality result
-         * @tc.size MEDIUMTEST
-         * @tc.type Function
-         * @tc.level Level 0
+         * @tc.desc   Test isWifiActive Sync API functionality result
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('Communication_WiFi_XTS_IsWifiActive_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
             try {

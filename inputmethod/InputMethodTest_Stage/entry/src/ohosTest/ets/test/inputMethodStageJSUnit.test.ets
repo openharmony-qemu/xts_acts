@@ -35,13 +35,13 @@ export default function inputMethodStageJSUnit() {
       });
     })
 
-    /*
-     * @tc.number  inputMethod_test_getController_001
-     * @tc.name   get inputMethod controller
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_getController_001
+     * @tc.number inputMethod_test_getController_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_getController_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_getController_001 start---------------------");
@@ -64,13 +64,13 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-     * @tc.number  inputMethod_test_listInputMethodSubtype_001
-     * @tc.name   List subtype of the specified input method
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_listInputMethodSubtype_001
+     * @tc.number inputMethod_test_listInputMethodSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_listInputMethodSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_001 start---------------------");
@@ -107,14 +107,14 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_001 end---------------------");
     });
 
-    /*
-    * @tc.number  inputMethod_test_listInputMethodSubtype_002
-    * @tc.name   List subtype of the specified input method
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   inputMethod_test_listInputMethodSubtype_002
+     * @tc.number inputMethod_test_listInputMethodSubtype_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethod_test_listInputMethodSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_002 start---------------------");
       let inputM = inputMethod.getCurrentInputMethod()
@@ -138,21 +138,15 @@ export default function inputMethodStageJSUnit() {
             console.info("====>inputMethod_test_listInputMethodSubtype_002  failed" + JSON.stringify(err));
             expect().assertFail();
             done()
-          }
-          ;
+          };
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
-          ;
+          console.info(`====> inputMethod_test_listInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_002 inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_002 listInputMethodSubtype catch error" + JSON.stringify(error));
           done();
@@ -161,15 +155,15 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_002 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_listInputMethodSubtype_003
-     * @tc.name   List subtype of the specified input method
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
-     */
 
+    /**
+     * @tc.name   inputMethod_test_listInputMethodSubtype_003
+     * @tc.number inputMethod_test_listInputMethodSubtype_003
+     * @tc.desc   inputMethod_test_listInputMethodSubtype_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethod_test_listInputMethodSubtype_003', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_003 start---------------------");
       let inputM = inputMethod.getCurrentInputMethod()
@@ -206,13 +200,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_003 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_listInputMethodSubtype_004
-     * @tc.name   List subtype of the specified input method
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_listInputMethodSubtype_004
+     * @tc.number inputMethod_test_listInputMethodSubtype_004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_listInputMethodSubtype_004', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_004 start---------------------");
@@ -234,17 +228,13 @@ export default function inputMethodStageJSUnit() {
       inputMethodSetting.listInputMethodSubtype(inputMethodProperty).then((data) => {
         try {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype:" + JSON.stringify(data));
-          if (data.length >= 1) {
-            let inputMethodSubtype = data[0]
-            console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
-            expect(inputMethodSubtype.id != null).assertTrue();
-            expect(inputMethodSubtype.label != null).assertTrue();
-            done();
-          } else {
-            console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype length less 1");
-            expect().assertFail();
-            done();
-          }
+          console.info(`====> inputMethod_test_listInputMethodSubtype_004 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
+          let inputMethodSubtype = data[0]
+          console.info("====>inputMethod_test_listInputMethodSubtype_004  inputMethodSubtype" + JSON.stringify(inputMethodSubtype));
+          expect(inputMethodSubtype.id != null).assertTrue();
+          expect(inputMethodSubtype.label != null).assertTrue();
+          done();
         } catch (error) {
           console.info("====>inputMethod_test_listInputMethodSubtype_004 listInputMethodSubtype catch error" + JSON.stringify(error));
           expect().assertFail();
@@ -258,14 +248,14 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listInputMethodSubtype_004 end---------------------");
     });
 
-    /*
-    * @tc.number  inputMethod_test_listCurrentInputMethodSubtype_001
-    * @tc.name   List subtype of the specified input method
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_001
+     * @tc.number inputMethod_test_listCurrentInputMethodSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('inputMethod_test_listCurrentInputMethodSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_001 start---------------------");
       let inputMethodSetting = inputMethod.getSetting();
@@ -279,7 +269,8 @@ export default function inputMethodStageJSUnit() {
           }
           ;
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_001 listCurrentInputMethodSubtype: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_001 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
           done();
         } catch (error) {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_001 listCurrentInputMethodSubtype catch error" + JSON.stringify(error));
@@ -289,13 +280,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_001 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_listInputMethodSubtype_003
-     * @tc.name    List subtype of current input method
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_listCurrentInputMethodSubtype_002
+     * @tc.number inputMethod_test_listInputMethodSubtype_003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_listCurrentInputMethodSubtype_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_002 start---------------------");
@@ -304,7 +295,8 @@ export default function inputMethodStageJSUnit() {
         console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002 getSetting result:" + inputMethodSetting);
         inputMethodSetting.listCurrentInputMethodSubtype().then((data) => {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002 listCurrentInputMethodSubtype: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====> inputMethod_test_listCurrentInputMethodSubtype_002 success data: ${JSON.stringify(data)}`);
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info("====>inputMethod_test_listCurrentInputMethodSubtype_002  failed" + JSON.stringify(err));
@@ -320,13 +312,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_listCurrentInputMethodSubtype_002 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_getCurrentInputMethodSubtype_001
-     * @tc.name    Get the current input method subtype
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_getCurrentInputMethodSubtype_001
+     * @tc.number inputMethod_test_getCurrentInputMethodSubtype_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_getCurrentInputMethodSubtype_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_getCurrentInputMethodSubtype_001 start---------------------");
@@ -350,13 +342,13 @@ export default function inputMethodStageJSUnit() {
     });
 
 
-    /*
-     * @tc.number  inputMethod_test_showOptionalInputMethods_001
-     * @tc.name    Show input method setting extension dialog
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_showOptionalInputMethods_001
+     * @tc.number inputMethod_test_showOptionalInputMethods_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_showOptionalInputMethods_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_showOptionalInputMethods_001 start---------------------");
@@ -371,7 +363,8 @@ export default function inputMethodStageJSUnit() {
           }
           ;
           console.info("====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : " + data);
-          expect(true).assertTrue();
+          console.info(`====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : ${data}`);
+          expect(data).assertTrue();
           setTimeout(() => {
             done();
           }, 1500);
@@ -383,13 +376,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_showOptionalInputMethods_001 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_showOptionalInputMethods_002
-     * @tc.name    Show input method setting extension dialog
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_showOptionalInputMethods_002
+     * @tc.number inputMethod_test_showOptionalInputMethods_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_showOptionalInputMethods_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_showOptionalInputMethods_002 start---------------------");
@@ -398,7 +391,8 @@ export default function inputMethodStageJSUnit() {
         console.info("====>inputMethod_test_showOptionalInputMethods_002 result:" + JSON.stringify(inputMethodSetting));
         inputMethodSetting.showOptionalInputMethods().then((data) => {
           console.info("====>inputMethod_test_showOptionalInputMethods_002 showOptionalInputMethods success data is: " + JSON.stringify(data));
-          expect(true).assertTrue();
+          console.info(`====>inputMethod_test_showOptionalInputMethods_001 showOptionalInputMethods success data is : ${data}`);
+          expect(data).assertTrue();
           done();
         }).catch((err: BusinessError) => {
           console.info("====>inputMethod_test_showOptionalInputMethods_002 showOptionalInputMethods faild: " + JSON.stringify(err));
@@ -414,13 +408,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_showOptionalInputMethods_002 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_stopInputSession_002
-     * @tc.name   Stop input
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_stopInputSession_002
+     * @tc.number inputMethod_test_stopInputSession_002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_stopInputSession_002', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_stopInputSession_002 start---------------------");
@@ -444,13 +438,13 @@ export default function inputMethodStageJSUnit() {
       console.info("====>-----------------inputMethod_test_stopInputSession_002 end---------------------");
     });
 
-    /*
-     * @tc.number  inputMethod_test_stopInputSession_001
-     * @tc.name   Stop input
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+    /**
+     * @tc.name   inputMethod_test_stopInputSession_001
+     * @tc.number inputMethod_test_stopInputSession_001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('inputMethod_test_stopInputSession_001', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------inputMethod_test_stopInputSession_001 start---------------------");
@@ -474,13 +468,13 @@ export default function inputMethodStageJSUnit() {
       })
     });
 
-    /*
-     * @tc.number  Sub_Misc_inputMethod_TextInputType_0100
+    /**
      * @tc.name   Sub_Misc_inputMethod_TextInputType_0100
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+     * @tc.number Sub_Misc_inputMethod_TextInputType_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_inputMethod_TextInputType_0100', Level.LEVEL2, async (done: Function) => {
       let none = inputMethod.TextInputType.NONE;
@@ -531,13 +525,13 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-     * @tc.number  Sub_Misc_inputMethod_EnterKeyType_0100
+    /**
      * @tc.name   Sub_Misc_inputMethod_EnterKeyType_0100
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+     * @tc.number Sub_Misc_inputMethod_EnterKeyType_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_inputMethod_EnterKeyType_0100', Level.LEVEL2, async (done: Function) => {
       let unspecified = inputMethod.EnterKeyType.UNSPECIFIED;
@@ -570,13 +564,13 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-     * @tc.number  Sub_Misc_inputMethod_KeyboardStatus_0100
+    /**
      * @tc.name   Sub_Misc_inputMethod_KeyboardStatus_0100
-     * @tc.desc    Function test
-     * @tc.size    MEDIUMTEST
-     * @tc.type    Function
-     * @tc.level   2
+     * @tc.number Sub_Misc_inputMethod_KeyboardStatus_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Misc_inputMethod_KeyboardStatus_0100', Level.LEVEL2, async (done: Function) => {
       let none = inputMethod.KeyboardStatus.NONE;
@@ -591,14 +585,14 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_ExtendAction_0100
-    * @tc.name   Sub_Misc_inputMethod_ExtendAction_0100
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   Sub_Misc_inputMethod_ExtendAction_0100
+     * @tc.number Sub_Misc_inputMethod_ExtendAction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_ExtendAction_0100', Level.LEVEL2, async (done: Function) => {
       let select_all = inputMethod.ExtendAction.SELECT_ALL;
       console.info("====>Sub_Misc_inputMethod_ExtendAction_0100 select_all:" + select_all);
@@ -615,14 +609,14 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-    * @tc.number  Sub_Misc_inputMethod_Direction_0100
-    * @tc.name   Sub_Misc_inputMethod_Direction_0100
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   Sub_Misc_inputMethod_Direction_0100
+     * @tc.number Sub_Misc_inputMethod_Direction_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Misc_inputMethod_Direction_0100', Level.LEVEL2, async (done: Function) => {
       let cursor_up = inputMethod.Direction.CURSOR_UP;
       console.info("====>Sub_Misc_inputMethod_Direction_0100 cursor_up:" + cursor_up);
@@ -639,14 +633,14 @@ export default function inputMethodStageJSUnit() {
       done();
     });
 
-    /*
-    * @tc.number  SUB_InputMethod_IMF_ListControl_0600
-    * @tc.name   SUB_InputMethod_IMF_ListControl_0600
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   SUB_InputMethod_IMF_ListControl_0600
+     * @tc.number SUB_InputMethod_IMF_ListControl_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IMF_ListControl_0600', Level.LEVEL2, (done: Function) => {
       console.info("====>SUB_InputMethod_IMF_ListControl_0600 start");
       let result: ESObject = {
@@ -667,14 +661,14 @@ export default function inputMethodStageJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_InputMethod_IMF_Panel_0600
-    * @tc.name   SUB_InputMethod_IMF_Panel_0600
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   SUB_InputMethod_IMF_Panel_0600
+     * @tc.number SUB_InputMethod_IMF_Panel_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IMF_Panel_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>SUB_InputMethod_IMF_Panel_0600 start");
       try {
@@ -693,14 +687,14 @@ export default function inputMethodStageJSUnit() {
       }
     });
 
-    /*
-    * @tc.number  SUB_InputMethod_IMF_ListControl_0800
-    * @tc.name   SUB_InputMethod_IMF_ListControl_0800
-    * @tc.desc    Function test
-    * @tc.size    MEDIUMTEST
-    * @tc.type    Function
-    * @tc.level   2
-    */
+    /**
+     * @tc.name   SUB_InputMethod_IMF_ListControl_0800
+     * @tc.number SUB_InputMethod_IMF_ListControl_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_InputMethod_IMF_ListControl_0800', Level.LEVEL2, (done: Function) => {
       console.info("====>SUB_InputMethod_IMF_ListControl_0800 start");
       try {

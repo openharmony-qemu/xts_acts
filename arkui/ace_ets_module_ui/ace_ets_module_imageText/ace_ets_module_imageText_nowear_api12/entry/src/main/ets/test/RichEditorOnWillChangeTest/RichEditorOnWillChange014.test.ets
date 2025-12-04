@@ -55,12 +55,12 @@ export default function RichEditorOnWillChange014() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007
-     * @tc.desc  : Revoke deleted text content and then restore to test RichEditor on WillChange callback
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007
+     * @tc.desc   Revoke deleted text content and then restore to test RichEditor on WillChange callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0007 START');
@@ -123,7 +123,7 @@ export default function RichEditorOnWillChange014() {
       await CommonFunc.sleep(500);
 
       let int_callback_status = await driver.findComponent(ON.id('int_callback_status'));
-      int_callback_status.click();
+      await int_callback_status.click();
       await CommonFunc.sleep(500);
 
       onDidBefore = await onDidChange_rangeBefore.getText();

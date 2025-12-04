@@ -28,12 +28,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0100
-     * @tc.name      : testWorkerLoadingInHap01
-     * @tc.desc      : Load the worker file in the entry relative path.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHap01
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0100
+     * @tc.desc   Load the worker file in the entry relative path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerLoadingInHap01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName: string = "testWorkerLoadingInHap01";
@@ -59,12 +59,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0200
-     * @tc.name      : testWorkerLoadingInHap02
-     * @tc.desc      : The worker file in the entry is loaded in the absolute path.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHap02
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0200
+     * @tc.desc   The worker file in the entry is loaded in the absolute path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerLoadingInHap02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName: string = "testWorkerLoadingInHap02";
@@ -90,12 +90,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0300
-     * @tc.name      : testWorkerLoadingInHap03
-     * @tc.desc      : Load the worker file of the HSP.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHap03
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0300
+     * @tc.desc   Load the worker file of the HSP.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWorkerLoadingInHap03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async () => {
       const caseName: string = "testWorkerLoadingInHap03";
@@ -121,12 +121,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0400
-     * @tc.name      : testWorkerLoadingInHap04
-     * @tc.desc      : Load the worker file in the local HAR.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHap04
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0400
+     * @tc.desc   Load the worker file in the local HAR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerLoadingInHap04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHap04";
@@ -152,12 +152,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0600
-     * @tc.name      : testWorkerLoadingInHar01
-     * @tc.desc      : Worker is used in the test har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHar01
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0600
+     * @tc.desc   Worker is used in the test har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testWorkerLoadingInHar01", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHar01";
@@ -171,12 +171,12 @@ export default function workerLoad() {
       }
     })
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0700
-     * @tc.name      : testWorkerLoadingInHar02
-     * @tc.desc      : Worker is used in the test har.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHar02
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0700
+     * @tc.desc   Worker is used in the test har.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerLoadingInHar02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHar02";
@@ -191,12 +191,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0800
-     * @tc.name      : testWorkerLoadingInHsp01
-     * @tc.desc      : Worker is used in the test hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHsp01
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0800
+     * @tc.desc   Worker is used in the test hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerLoadingInHsp01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHsp01";
@@ -211,12 +211,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0900
-     * @tc.name      : testWorkerLoadingInHsp02
-     * @tc.desc      : Worker is used in the test hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHsp02
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_0900
+     * @tc.desc   Worker is used in the test hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerLoadingInHsp02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHsp02";
@@ -231,12 +231,12 @@ export default function workerLoad() {
     })
 
     /**
-     * @tc.number    : SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_1000
-     * @tc.name      : testWorkerLoadingInHsp03
-     * @tc.desc      : Worker is used in the test hsp.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWorkerLoadingInHsp03
+     * @tc.number SUB_COMPILER_RUNTIME_WORKER_PATH_LOAD_1000
+     * @tc.desc   Worker is used in the test hsp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWorkerLoadingInHsp03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const caseName: string = "testWorkerLoadingInHsp03";

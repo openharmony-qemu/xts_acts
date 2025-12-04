@@ -43,13 +43,13 @@ export default function translationTest() {
       done();
     });
     
-     /**
-     * @tc.number    SUB_ACE_translationTest_0100
-     * @tc.name      translationTest_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type : 
-     * @tc.size :
+    /**
+     * @tc.name   translationTest_0100
+     * @tc.number SUB_ACE_translationTest_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('translationTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('translationTest_0100 START');

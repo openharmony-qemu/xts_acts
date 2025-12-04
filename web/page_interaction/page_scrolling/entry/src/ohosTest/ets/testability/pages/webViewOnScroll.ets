@@ -96,7 +96,7 @@ struct webViewOnScroll {
   checkScrollPosition() {
     console.log("y:" + this.controller.getScrollOffset().y + ",webHeight :" + this.webHeight + ",getPageHeight:" +
     this.controller.getPageHeight());
-    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()) {
+    if (this.controller.getScrollOffset().y + this.webHeight >= this.controller.getPageHeight()- 2) {
       this.isWebBottom = true;
       console.log("页面已经滑动到底部");
     }
@@ -236,28 +236,17 @@ struct webViewOnScroll {
             case "emitpageDownAgain": {
               try {
                 this.isPageEnd = -1
-                this.controller.loadUrl($rawfile('indexCopyTwo.html'))
+                this.controller.loadUrl($rawfile('indexFive.html'))
                 await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                this.userAgentPC = this.controller.getUserAgent();
-                if ((this.userAgentPC).includes("Tablet")) {
-                  this.isPageEnd = -1
-                  this.controller.loadUrl($rawfile('indexCopyTwoTablet.html'))
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
-                }
-                this.controller.pageUp(true);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                this.controller.pageDown(false);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                this.controller.pageUp(false);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
                 this.controller.pageDown(true);
-                await Utils.waitForScrollStop(()=>this.controller.getPageOffset().y, this.str+' webYOffset');
-                if (this.isWebBottom) {
-                  console.log("页面已经滑动到底部");
-                  Utils.emitEvent(true, 179970)
-                } else {
-                  Utils.emitEvent(false, 179970)
-                }
+                setTimeout(() => {
+                  if (this.isWebBottom) {
+                    console.log("页面已经滑动到底部");
+                    Utils.emitEvent(true, 179970)
+                  } else {
+                    Utils.emitEvent(false, 179970)
+                  }
+                },3000)
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
@@ -322,7 +311,7 @@ struct webViewOnScroll {
             console.info("y = " + event.yOffset + this.secondId)
             Utils.emitEvent(event.yOffset, this.secondId)
           }
-        })
+        }).height('95%')
     }
   }
 }

@@ -26,78 +26,78 @@ export default function customComponentGrayscaleTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0100
-     * @tc.name       : testCustomComponentGrayscale001
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentGrayscale001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0100
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0200
-     * @tc.name       : testCustomComponentGrayscale002
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentGrayscale002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0200
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0300
-     * @tc.name       : testCustomComponentGrayscale003
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentGrayscale003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0300
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0400
-     * @tc.name       : testCustomComponentGrayscale004
-     * @tc.desc       : testing grayscale for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentGrayscale004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0400
+     * @tc.desc   testing grayscale for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0500
-     * @tc.name       : testCustomComponentGrayscale005
-     * @tc.desc       : testing grayscale for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentGrayscale005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0500
+     * @tc.desc   testing grayscale for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0600
-     * @tc.name       : testCustomComponentGrayscale006
-     * @tc.desc       : testing grayscale for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCustomComponentGrayscale006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_GRAYSCALE_0600
+     * @tc.desc   testing grayscale for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentGrayscale006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentGrayscale006()).assertEqual(0)

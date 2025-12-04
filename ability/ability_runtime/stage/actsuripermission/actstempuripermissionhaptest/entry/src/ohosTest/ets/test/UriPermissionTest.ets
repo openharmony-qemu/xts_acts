@@ -38,7 +38,7 @@ export default function UriPermissionTest() {
     console.info("-----------------UriPermissionTest is start----------------")
     beforeEach(async (done: Function) => {
       console.info('UriPermissionTest before each called');
-      await sleep(1000);
+      await sleep(300);
       done()
     });
 
@@ -59,11 +59,13 @@ export default function UriPermissionTest() {
     });
 
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0100
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0100
+     * @tc.number Temp_UriPermissionTest_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0100", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0100 is start---------------")
@@ -175,11 +177,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0100 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0200
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0200
+     * @tc.number Temp_UriPermissionTest_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0200", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0200 is start---------------")
@@ -305,11 +309,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0200 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0400
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0400
+     * @tc.number Temp_UriPermissionTest_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0400", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0400 is start---------------")
@@ -473,11 +479,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0400 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0500
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0500
+     * @tc.number Temp_UriPermissionTest_0500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0500", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0500 is start---------------")
@@ -599,11 +607,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0500 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0600
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0600
+     * @tc.number Temp_UriPermissionTest_0600
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0600", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0600 is start---------------")
@@ -763,11 +773,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0600 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0700
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0700
+     * @tc.number Temp_UriPermissionTest_0700
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0700", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0700 is start---------------")
@@ -899,11 +911,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0700 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_0800
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_0800
+     * @tc.number Temp_UriPermissionTest_0800
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_0800", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_0800 is start---------------")
@@ -1051,11 +1065,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_0800 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_1000
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_1000
+     * @tc.number Temp_UriPermissionTest_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_1000", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_1000 is start---------------")
@@ -1183,11 +1199,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_1000 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_1100
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_1100
+     * @tc.number Temp_UriPermissionTest_1100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_1100", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_1100 is start---------------")
@@ -1282,11 +1300,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_1100 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_1200
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_1200
+     * @tc.number Temp_UriPermissionTest_1200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_1200", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_1200 is start---------------")
@@ -1374,11 +1394,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_1200 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_1400
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_1400
+     * @tc.number Temp_UriPermissionTest_1400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_1400", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_1400 is start---------------")
@@ -1484,11 +1506,13 @@ export default function UriPermissionTest() {
       console.info("---------------Temp_UriPermissionTest_1400 is end---------------")
     });
 
-    /*
-     * @tc.number  Temp_UriPermissionTest_1500
-     * @tc.name    The ability of HAP A grant uri permission to the ability of HAP B
-     * @tc.desc    Function test
-     * @tc.level   0
+    /**
+     * @tc.name   Temp_UriPermissionTest_1500
+     * @tc.number Temp_UriPermissionTest_1500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Temp_UriPermissionTest_1500", Level.LEVEL0, async (done: Function) => {
       console.info("---------------Temp_UriPermissionTest_1500 is start---------------")

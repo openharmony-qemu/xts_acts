@@ -61,14 +61,14 @@ export default function webenableFollowSystemFontWeightJsunit() {
       console.info('enableFollowSystemFontWeight beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
-    * @tc.name       : enableFollowSystemFontWeightStatic01
-    * @tc.desc       : test enableSmoothDragResize01 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type: Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   enableFollowSystemFontWeightStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_ENABLESMOOTHDRAGRESIZE_API_001
+     * @tc.desc   test enableSmoothDragResize01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('enableFollowSystemFontWeightStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done:()=>void):Promise<void> =>{
       Utils.emitEvent('emitenableFollowSystemFontWeight01', 10)
@@ -84,6 +84,14 @@ export default function webenableFollowSystemFontWeightJsunit() {
       done();
     })
 
+    /**
+     * @tc.name   asvb1
+     * @tc.number asvb1
+     * @tc.desc   asvb1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('asvb1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent("emitonSwitchNextPage1", 10)

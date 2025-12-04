@@ -143,12 +143,12 @@ export default function WindowEnterpriseTest() {
        
      
     /**
-     * @tc.number    : SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0100
-     * @tc.name      : test_GET_VISIBLEWINDOWINFO_0100
-     * @tc.desc      : test_GET_VISIBLEWINDOWINFO_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_GET_VISIBLEWINDOWINFO_0100
+     * @tc.number SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0100
+     * @tc.desc   test_GET_VISIBLEWINDOWINFO_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_GET_VISIBLEWINDOWINFO_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_GET_VISIBLEWINDOWINFO_0100 ';
@@ -208,12 +208,12 @@ export default function WindowEnterpriseTest() {
     });
 
       /**
-       * @tc.number    : SUB_BASIC_WMS_FUNCTION_GET_GLOBAL_RECT_0200
-       * @tc.name      : testGetVisibleWindowInfo
-       * @tc.desc      : 验证getVisibleWindowInfo接口可以正常获取到窗口的全局坐标
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level 1
+       * @tc.name   testGetVisibleWindowInfo
+       * @tc.number SUB_BASIC_WMS_GET_VISIBLEWINDOWINFO_0200
+       * @tc.desc   验证getVisibleWindowInfo接口可以正常获取到窗口的全局坐标
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
        */
       it('testGetVisibleWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
         let caseName: string = 'testGetVisibleWindowInfo ';
@@ -275,6 +275,7 @@ export default function WindowEnterpriseTest() {
           }
         }
       });
+      
 
     })
 }

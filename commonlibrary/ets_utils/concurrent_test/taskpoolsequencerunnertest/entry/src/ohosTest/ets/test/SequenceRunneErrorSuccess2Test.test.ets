@@ -51,12 +51,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
     })
 
     /**
+     * @tc.name   TestSequenceRunnerErrorSuccess0200
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0200
-     * @tc.name TestSequenceRunnerErrorSuccess0200
-     * @tc.desc Testing Task worker-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing Task worker-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TestSequenceRunnerErrorSuccess0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -103,12 +103,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
 
 
     /**
+     * @tc.name   SequenceRunnerErrorSuccess0300
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0300
-     * @tc.name SequenceRunnerErrorSuccess0300
-     * @tc.desc Testing Task worker-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing Task worker-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SequenceRunnerErrorSuccess0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -159,12 +159,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
 
 
     /**
+     * @tc.name   SequenceRunnerErrorSuccess0400
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0400
-     * @tc.name SequenceRunnerErrorSuccess0400
-     * @tc.desc Testing Task task-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing Task task-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SequenceRunnerErrorSuccess0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -208,12 +208,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
 
 
     /**
+     * @tc.name   SequenceRunnerErrorSuccess0500
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0500
-     * @tc.name SequenceRunnerErrorSuccess0500
-     * @tc.desc Testing Task task-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing Task task-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SequenceRunnerErrorSuccess0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -257,12 +257,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
 
 
     /**
+     * @tc.name   SequenceRunnerErrorSuccess0600
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0600
-     * @tc.name SequenceRunnerErrorSuccess0600
-     * @tc.desc Testing Task task-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing Task task-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SequenceRunnerErrorSuccess0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();
@@ -306,12 +306,12 @@ export default function SequenceRunnerErrorSuccess2Test() {
 
 
     /**
+     * @tc.name   SequenceRunnerErrorSuccess0700
      * @tc.number SUB_SEQUENCERUNNER_ERROR_SUCCESS_TEST_0700
-     * @tc.name SequenceRunnerErrorSuccess0700
-     * @tc.desc Testing Task task-error
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing Task task-error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SequenceRunnerErrorSuccess0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let sequenceRunner: taskpool.SequenceRunner = new taskpool.SequenceRunner();

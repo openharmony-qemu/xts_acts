@@ -24,70 +24,95 @@ struct Page {
   @State localOutput: string = '';
 
   build() {
-    Row(){
-      Column(){
-        Text(this.globalOutput).id('globalOutputRichEditor').fontSize(24).width('80%').margin({ bottom: 10 })
+    Row() {
+      Column() {
+        Text('global:' + this.globalOutput).id('globalOutputRichEditor').fontSize(20).width('80%').height('5%')
+        Text('local:' + this.localOutput).id('localOutputRichEditor').fontSize(20).width('80%').height('5%')
+        Text('监听textChange开关按钮').fontSize(15).fontWeight(FontWeight.Bold).height('6%')
 
-        Text(this.localOutput).id('localOutputRichEditor').fontSize(24).width('80%').margin({ bottom: 10 })
-
-        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).margin({ bottom: 10 })
-
-        Row(){
+        Row() {
           Button('全局监听(开)')
             .id('全局监听(开)')
             .width('40%')
-            .fontSize('20vp')
-            .margin({ right: 10 })
-            .onClick(()=>{
-              this.observer.on('textChange', (info: uiObserver.TextChangeEventInfo)=>{
-                console.info('[TEST INFO] [uiObserver] [textChange] [global] [id: ' + JSON.stringify(info.id) + '] [uniqueId: ' + JSON.stringify(info.uniqueId) + '] [content: ' + JSON.stringify(info.content) + ']');
+            .fontSize('10vp')
+            .margin({ right: 5 })
+            .onClick(() => {
+              this.observer.on('textChange', (info: uiObserver.TextChangeEventInfo) => {
+                console.info('[TEST INFO] [uiObserver] [textChange] [global] [id: ' + JSON.stringify(info.id) +
+                  '] [uniqueId: ' + JSON.stringify(info.uniqueId) + '] [content: ' + JSON.stringify(info.content) +
+                  ']');
                 this.globalOutput = info.content;
               });
             })
           Button('全局监听(关)')
             .id('全局监听(关)')
             .width('40%')
-            .fontSize('20vp')
-            .margin({ left: 10 })
-            .onClick(()=>{
+            .fontSize('10vp')
+            .margin({ left: 5 })
+            .onClick(() => {
               this.observer.off('textChange');
             })
-        }.margin({ bottom: 10 })
+        }.height('10%')
 
-        Row(){
-          Button('局部richEditor(开)')
+        Row() {
+          Button('局部监听(开)')
             .id('局部richEditor(开)')
             .width('40%')
-            .fontSize('20vp')
-            .margin({ right: 10 })
-            .onClick(()=>{
-              this.observer.on('textChange', { id: 'richEditor' }, (info: uiObserver.TextChangeEventInfo)=>{
-                console.info('[TEST INFO] [uiObserver] [textChange] [richEditor] [id: ' + JSON.stringify(info.id) + '] [uniqueId: ' + JSON.stringify(info.uniqueId) + '] [content: ' + JSON.stringify(info.content) + ']');
+            .fontSize('10vp')
+            .margin({ right: 5 })
+            .onClick(() => {
+              this.observer.on('textChange', { id: 'richEditor' }, (info: uiObserver.TextChangeEventInfo) => {
+                console.info('[TEST INFO] [uiObserver] [textChange] [richEditor] [id: ' + JSON.stringify(info.id) +
+                  '] [uniqueId: ' + JSON.stringify(info.uniqueId) + '] [content: ' + JSON.stringify(info.content) +
+                  ']');
                 this.localOutput = info.content;
               });
             })
-          Button('局部richEditor(关)')
+          Button('局部监听(关)')
             .id('局部richEditor(关)')
             .width('40%')
-            .fontSize('20vp')
-            .margin({ left: 10 })
-            .onClick(()=>{
+            .fontSize('10vp')
+            .margin({ left: 5 })
+            .onClick(() => {
               this.observer.off('textChange', { id: 'richEditor' });
             })
-        }.margin({ bottom: 10 })
+        }.height('10%')
 
-        Text('RichEditor').margin({ bottom: 5 })
+        Row() {
+          Button('输入文本richEditorTest_0010')
+            .id('输入文本richEditorTest_0010')
+            .width('40%')
+            .fontSize('10vp')
+            .margin({ left: 5 })
+            .onClick(() => {
+              this.controller.addTextSpan('richEditorTest_0010')
+            })
+          Button('输入文本Add')
+            .id('输入文本Add')
+            .width('40%')
+            .fontSize('10vp')
+            .margin({ left: 5 })
+            .onClick(() => {
+              this.controller.addTextSpan('Add')
+            })
+        }.height('10%')
+
+        Text('RichEditor').height('5%')
         RichEditor({ controller: this.controller })
-		  .id('richEditor')
+          .id('richEditor')
           .width('80%')
+          .height('15%')
           .draggable(true)
           .draggable(true)
-          .onDragStart(()=>{})
+          .onDragStart(() => {
+          })
           .margin({ bottom: 10 })
-          .placeholder('默认输入文本')
+          .placeholder('')
       }
       .width('100%')
+      .height('100%')
+      .justifyContent(FlexAlign.Start)
+      .alignItems(HorizontalAlign.Center)
     }
-    .height('100%')
   }
 }

@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanImageless_framebufferTestCase
+     * @tc.number TestVulkanImageless_framebufferTestCase
+     * @tc.desc   TestVulkanImageless_framebufferTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanImagelessframebufferTest, TestVulkanImageless_framebufferTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanImagelessframebufferTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/imageless-framebuffer.txt "
                 "--deqp-log-filename=ActsVulkanImagelessframebufferTest.qpa");
         }

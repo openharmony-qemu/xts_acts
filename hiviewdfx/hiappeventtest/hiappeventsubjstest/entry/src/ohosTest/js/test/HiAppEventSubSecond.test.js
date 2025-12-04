@@ -20,12 +20,12 @@ export default function HiAppEventSubSecondTest() {
 describe('HiAppEventSubSecondTest', function () {
 
     /**
+     * @tc.name   HiAppEventSub30
      * @tc.number DFX_DFT_HiAppEvent_Sub_3000
-     * @tc.name HiAppEventSub30
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('HiAppEventSub30', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.info('testHiAppEventSub30 start')
@@ -46,12 +46,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub31
      * @tc.number DFX_DFT_HiAppEvent_Sub_3100
-     * @tc.name HiAppEventSub31
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub31', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub31 start')
@@ -78,12 +78,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub32
      * @tc.number DFX_DFT_HiAppEvent_Sub_3200
-     * @tc.name HiAppEventSub32
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub32', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub32 start')
@@ -121,12 +121,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub33
      * @tc.number DFX_DFT_HiAppEvent_Sub_3300
-     * @tc.name HiAppEventSub33
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub33', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub33 start')
@@ -157,12 +157,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub34
      * @tc.number DFX_DFT_HiAppEvent_Sub_3400
-     * @tc.name HiAppEventSub34
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub34', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub34 start')
@@ -193,12 +193,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub35
      * @tc.number DFX_DFT_HiAppEvent_Sub_3500
-     * @tc.name HiAppEventSub35
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub35', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub35 start')
@@ -229,9 +229,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub36
      * @tc.number DFX_DFT_HiAppEvent_Sub_3600
-     * @tc.name HiAppEventSub36
-     * @tc.desc HiAppEvent write interface test.
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub36', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub36 start')
@@ -262,12 +265,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub37
      * @tc.number DFX_DFT_HiAppEvent_Sub_3700
-     * @tc.name HiAppEventSub37
-     * @tc.desc 验证调用write接口，事件领域名称大写字母开头，32字符，打点成功.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证调用write接口，事件领域名称大写字母开头，32字符，打点成功.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub37', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub37 start')
@@ -301,12 +304,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub38
      * @tc.number DFX_DFT_HiAppEvent_Sub_3800
-     * @tc.name HiAppEventSub38
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub38', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub38 start')
@@ -337,12 +340,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub39
      * @tc.number DFX_DFT_HiAppEvent_Sub_3900
-     * @tc.name HiAppEventSub39
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub39', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub39 start')
@@ -373,12 +376,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub40
      * @tc.number DFX_DFT_HiAppEvent_Sub_4000
-     * @tc.name HiAppEventSub40
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub40', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub40 start')
@@ -409,12 +412,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub41
      * @tc.number DFX_DFT_HiAppEvent_Sub_4100
-     * @tc.name HiAppEventSub41
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub41', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub41 start')
@@ -445,12 +448,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub42
      * @tc.number DFX_DFT_HiAppEvent_Sub_4200
-     * @tc.name HiAppEventSub42
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub42', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub42 start')
@@ -481,12 +484,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub43
      * @tc.number DFX_DFT_HiAppEvent_Sub_4300
-     * @tc.name HiAppEventSub43
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub43', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub43 start')
@@ -518,12 +521,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub44
      * @tc.number DFX_DFT_HiAppEvent_Sub_4400
-     * @tc.name HiAppEventSub44
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub44', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub44 start')
@@ -555,12 +558,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub45
      * @tc.number DFX_DFT_HiAppEvent_Sub_4500
-     * @tc.name HiAppEventSub45
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub45', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub45 start')
@@ -591,12 +594,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub46
      * @tc.number DFX_DFT_HiAppEvent_Sub_4600
-     * @tc.name HiAppEventSub46
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub46', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub46 start')
@@ -627,12 +630,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub47
      * @tc.number DFX_DFT_HiAppEvent_Sub_4700
-     * @tc.name HiAppEventSub47
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub47', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub47 start')
@@ -663,12 +666,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub48
      * @tc.number DFX_DFT_HiAppEvent_Sub_4800
-     * @tc.name HiAppEventSub48
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub48', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub48 start')
@@ -699,12 +702,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub49
      * @tc.number DFX_DFT_HiAppEvent_Sub_4900
-     * @tc.name HiAppEventSub49
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub49', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub49 start')
@@ -735,12 +738,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub50
      * @tc.number DFX_DFT_HiAppEvent_Sub_5000
-     * @tc.name HiAppEventSub50
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub50', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub50 start')
@@ -776,12 +779,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub51
      * @tc.number DFX_DFT_HiAppEvent_Sub_5100
-     * @tc.name HiAppEventSub51
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub51', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub11 start')
@@ -809,12 +812,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub52
      * @tc.number DFX_DFT_HiAppEvent_Sub_5200
-     * @tc.name HiAppEventSub52
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub52', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub11 start')
@@ -842,12 +845,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub53
      * @tc.number DFX_DFT_HiAppEvent_Sub_5300
-     * @tc.name HiAppEventSub53
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub53', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub53 start')
@@ -875,12 +878,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub54
      * @tc.number DFX_DFT_HiAppEvent_Sub_5400
-     * @tc.name HiAppEventSub54
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub54', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub54 start')
@@ -908,12 +911,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub55
      * @tc.number DFX_DFT_HiAppEvent_Sub_5500
-     * @tc.name HiAppEventSub55
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub55', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub55 start')
@@ -942,12 +945,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub56
      * @tc.number DFX_DFT_HiAppEvent_Sub_5600
-     * @tc.name HiAppEventSub56
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub56', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub56 start')
@@ -975,12 +978,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub57
      * @tc.number DFX_DFT_HiAppEvent_Sub_5700
-     * @tc.name HiAppEventSub57
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub57', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub57 start')
@@ -1008,12 +1011,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub58
      * @tc.number DFX_DFT_HiAppEvent_Sub_5800
-     * @tc.name HiAppEventSub58
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub58', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub58 start')
@@ -1041,12 +1044,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub59
      * @tc.number DFX_DFT_HiAppEvent_Sub_5900
-     * @tc.name HiAppEventSub59
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub59', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub59 start')
@@ -1074,12 +1077,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub60
      * @tc.number DFX_DFT_HiAppEvent_Sub_6000
-     * @tc.name HiAppEventSub60
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub60', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub60 start')
@@ -1108,12 +1111,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub61
      * @tc.number DFX_DFT_HiAppEvent_Sub_6100
-     * @tc.name HiAppEventSub61
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub61', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub61 start')
@@ -1141,12 +1144,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub62
      * @tc.number DFX_DFT_HiAppEvent_Sub_6200
-     * @tc.name HiAppEventSub62
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub62', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub11 start')
@@ -1174,12 +1177,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub63
      * @tc.number DFX_DFT_HiAppEvent_Sub_6300
-     * @tc.name HiAppEventSub63
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub63', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub63 start')
@@ -1207,12 +1210,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub64
      * @tc.number DFX_DFT_HiAppEvent_Sub_6400
-     * @tc.name HiAppEventSub64
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub64 start')
@@ -1229,12 +1232,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub65
      * @tc.number DFX_DFT_HiAppEvent_Sub_6500
-     * @tc.name HiAppEventSub65
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub65', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub65 start')
@@ -1251,12 +1254,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub66
      * @tc.number DFX_DFT_HiAppEvent_Sub_6600
-     * @tc.name HiAppEventSub66
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub66', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub66 start')
@@ -1274,12 +1277,12 @@ describe('HiAppEventSubSecondTest', function () {
     })
 
     /**
+     * @tc.name   HiAppEventSub67
      * @tc.number DFX_DFT_HiAppEvent_Sub_6700
-     * @tc.name HiAppEventSub67
-     * @tc.desc HiAppEvent write interface test.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   HiAppEvent write interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('HiAppEventSub67', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         console.info('testHiAppEventSub67 start')

@@ -20,6 +20,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect ,TestT
 
 const MODULE_NAME = "entry_test";
 const MODULE_NAME1 = "test1";
+const MODULE_NAME_TARGET = "entry";
 const MODULE_NAME2 = "hsp";
 const ERROR_INCOMING_MODULE_NAME_NOT_INSTALL = 17700002;
 const ERROR_INCOMING_MODULE_NAME_IS_OVERLAY = 17700034;
@@ -27,10 +28,13 @@ const ERROR_CODE = 401;
 
 export default function getTargetOverlayModuleInfos() {
   describe('getTargetOverlayModuleInfos', () => {
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0600
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameIsNull
-     * @tc.desc: The query fails when the incoming moduleName is empty
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameIsNull
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0600
+     * @tc.desc   The query fails when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetTargetOverlayModuleInfosModuleNameIsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       try {
@@ -55,10 +59,13 @@ export default function getTargetOverlayModuleInfos() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0800
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameNotInstall
-     * @tc.desc: The query fails when the incoming moduleName is not installed
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameNotInstall
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0800
+     * @tc.desc   The query fails when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('GetTargetOverlayModuleInfosModuleNameNotInstall', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       try {
@@ -83,10 +90,13 @@ export default function getTargetOverlayModuleInfos() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_0810
-     * @tc.name: GetTargetOverlayModuleInfosModuleNameNotOverlay
-     * @tc.desc: The query fails when the incoming moduleName is not overlay
+    /**
+     * @tc.name   GetTargetOverlayModuleInfosModuleNameNotOverlay
+     * @tc.number Sub_Bms_Framework_Overlay_Query_0810
+     * @tc.desc   The query fails when the incoming moduleName is not overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('GetTargetOverlayModuleInfosModuleNameNotOverlay', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async () => {
       try {
@@ -112,6 +122,91 @@ export default function getTargetOverlayModuleInfos() {
           expect().assertFail();
       }
     })
+
+        /**
+         * @tc.name   Sub_Bms_Framework_Overlay_Query_0910
+         * @tc.number Sub_Bms_Framework_Overlay_Query_0910
+         * @tc.desc   test getTargetOverlayModuleInfos promise length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Bms_Framework_Overlay_Query_0910', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
+          try {
+            await overlay.getTargetOverlayModuleInfos(MODULE_NAME_TARGET).then(data => {
+              console.info("Sub_Bms_Framework_Overlay_Query_0910 result" + JSON.stringify(data));
+              expect(data.length == 1).assertTrue();
+              data.forEach((val,idx,array)=>{
+                 if (idx == 0) {
+                     console.info("Sub_Bms_Framework_Overlay_Query_0910 idx" + idx);
+                     expect(val.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+                     expect(val.moduleName).assertEqual("hsp")
+                     expect(val.targetModuleName).assertEqual("entry")
+                     expect(val.priority == 1).assertTrue();
+                     expect(val.state == 1).assertTrue();
+                    
+                 }
+    
+              });
+            }).catch((err: BusinessError) => {
+              console.info("Sub_Bms_Framework_Overlay_Query_0910 fail" + JSON.stringify(err));
+              expect().assertFail()
+            });
+          }catch (e) {
+            console.info("Sub_Bms_Framework_Overlay_Query_0910 catch" + JSON.stringify(e));
+            expect().assertFail();
+          }
+          done();
+    
+        })
+    
+    
+        /**
+         * @tc.name   Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.number Sub_Bms_Framework_Overlay_Query_0920
+         * @tc.desc   test getTargetOverlayModuleInfos callback length
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
+        it('Sub_Bms_Framework_Overlay_Query_0920', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done:Function) => {
+          try {
+    
+            overlay.getTargetOverlayModuleInfos(MODULE_NAME_TARGET, (err, data) => {
+              if (err) {
+                console.error('Sub_Bms_Framework_Overlay_Query_0920 failed due to err code : ' + err.code + ' ' + 'message :' + err.message);
+                expect().assertFail();
+              } else {
+                console.info("Sub_Bms_Framework_Overlay_Query_0920 result" + JSON.stringify(data));
+                expect(data.length == 1).assertTrue();
+                data.forEach((val,idx,array)=>{
+                  if (idx == 0) {
+                    console.info("Sub_Bms_Framework_Overlay_Query_0920 idx" + idx);
+                    expect(val.bundleName).assertEqual("ohos.acts.bundle.overlay.test");
+                    expect(val.moduleName).assertEqual("hsp")
+                    expect(val.targetModuleName).assertEqual("entry")
+                    expect(val.priority == 1).assertTrue();
+                    expect(val.state == 1).assertTrue();
+                  }
+    
+                });
+                
+              }
+              
+            });
+    
+    
+          }catch (e) {
+            console.info("Sub_Bms_Framework_Overlay_Query_0920 catch" + JSON.stringify(e));
+            expect().assertFail();
+          }
+          done();
+    
+        })
+    
+
+
+
 
 
   })

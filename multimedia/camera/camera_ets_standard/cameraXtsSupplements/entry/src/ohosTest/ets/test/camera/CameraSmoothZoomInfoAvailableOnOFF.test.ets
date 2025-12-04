@@ -285,12 +285,13 @@ async function videoSetSmoothZoomTest(testName: string, done: Function, targetZo
       if (offCallback) {
         mVideoSession.off('smoothZoomInfoAvailable',offCallback);
       }
-    } else {
-      done();
     }
+    await releaseVideoSession();
+    done();
   } catch (err) {
     console.info(TAG ,testName + err,err.code);
     expect(err.code).assertFail();
+    await releaseVideoSession();
     done();
   }
 }
@@ -309,12 +310,13 @@ async function photoSetSmoothZoomTest(testName: string, done: Function, targetZo
       if (offCallback) {
         mPhotoSession.off('smoothZoomInfoAvailable',offCallback);
       }
-    }else {
-      done();
     }
+    await releasePhotoSession();
+    done();
   } catch (err) {
     console.info(TAG , testName + err,err.code);
     expect(err.code).assertFail();
+    await releasePhotoSession();
     done();
   }
 }
@@ -328,7 +330,6 @@ export default function CameraVideoSessionOnOffTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
     });
 
     beforeEach(() => {
@@ -345,12 +346,12 @@ export default function CameraVideoSessionOnOffTest() {
       await closeFd(fdNumber);
     });
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001
-     * @tc.desc      Create VideoSession on min
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001
+     * @tc.desc   Create VideoSession on min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_001'
@@ -373,12 +374,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002
-     * @tc.desc      Create VideoSession on max
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002
+     * @tc.desc   Create VideoSession on max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_002'
@@ -400,12 +401,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003
-     * @tc.desc      Create VideoSession on min - 1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003
+     * @tc.desc   Create VideoSession on min - 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_003'
@@ -428,12 +429,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004
-     * @tc.desc      Create VideoSession on  max +1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004
+     * @tc.desc   Create VideoSession on  max +1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_004'
@@ -455,12 +456,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005
-     * @tc.desc      Create VideoSession on min=0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005
+     * @tc.desc   Create VideoSession on min=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_005'
@@ -483,12 +484,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006
-     * @tc.desc      Create VideoSession on max + 10000
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006
+     * @tc.desc   Create VideoSession on max + 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_ON_006'
@@ -511,12 +512,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001
-     * @tc.desc      Create PhotoSession on min
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001
+     * @tc.desc   Create PhotoSession on min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_001'
@@ -538,12 +539,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002
-     * @tc.desc      Create PhotoSession on max
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002
+     * @tc.desc   Create PhotoSession on max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_002'
@@ -565,12 +566,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003
-     * @tc.desc      Create PhotoSession on min -1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003
+     * @tc.desc   Create PhotoSession on min -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_003'
@@ -592,12 +593,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004
-     * @tc.desc      Create PhotoSession on max +1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004
+     * @tc.desc   Create PhotoSession on max +1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_004'
@@ -619,12 +620,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005
-     * @tc.desc      Create PhotoSession on min=0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005
+     * @tc.desc   Create PhotoSession on min=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_005'
@@ -646,12 +647,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006
-     * @tc.desc      Create PhotoSession on  max + 10000
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006
+     * @tc.desc   Create PhotoSession on  max + 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_ON_006'
@@ -674,12 +675,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001
-     * @tc.desc      Create VideoSession off min
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001
+     * @tc.desc   Create VideoSession off min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_001'
@@ -711,12 +712,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,oncallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002
-     * @tc.desc      Create VideoSession off max
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002
+     * @tc.desc   Create VideoSession off max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_002'
@@ -748,12 +749,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003
-     * @tc.desc      Create VideoSession off min-1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003
+     * @tc.desc   Create VideoSession off min-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_003'
@@ -785,12 +786,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,oncallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004
-     * @tc.desc      Create VideoSession off max+1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004
+     * @tc.desc   Create VideoSession off max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_004'
@@ -822,12 +823,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005
-     * @tc.desc      Create VideoSession off min=0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005
+     * @tc.desc   Create VideoSession off min=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_005'
@@ -859,12 +860,12 @@ export default function CameraVideoSessionOnOffTest() {
       videoSetSmoothZoomTest(testName,done,targetCallback, 0,oncallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006
-     * @tc.name      SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006
-     * @tc.desc      Create VideoSession off max + 10000
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006
+     * @tc.desc   Create VideoSession off max + 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_OFF_006'
@@ -897,12 +898,12 @@ export default function CameraVideoSessionOnOffTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001
-     * @tc.desc      Create PhotoSession off max
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001
+     * @tc.desc   Create PhotoSession off max
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_001'
@@ -934,12 +935,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002
-     * @tc.desc      Create PhotoSession off min
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002
+     * @tc.desc   Create PhotoSession off min
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_002'
@@ -971,12 +972,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003
-     * @tc.desc      Create PhotoSession off  max+1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003
+     * @tc.desc   Create PhotoSession off  max+1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_003'
@@ -1008,12 +1009,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004
-     * @tc.desc      Create PhotoSession off min-1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004
+     * @tc.desc   Create PhotoSession off min-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_004'
@@ -1045,12 +1046,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005
-     * @tc.desc      Create PhotoSession off max+10000
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005
+     * @tc.desc   Create PhotoSession off max+10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_005'
@@ -1082,12 +1083,12 @@ export default function CameraVideoSessionOnOffTest() {
       photoSetSmoothZoomTest(testName,done,targetCallback, 0,onCallback,offCallback);
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006
-     * @tc.name      SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006
-     * @tc.desc      Create PhotoSession off min=0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006
+     * @tc.desc   Create PhotoSession off min=0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_OFF_006'

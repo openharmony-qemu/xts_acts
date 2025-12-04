@@ -31,12 +31,12 @@ export default function stringOperationsTest() {
     }
 
     /**
-     * @tc.number    STRING_UTF8_0100
-     * @tc.name      test_String_Utf8_0001
-     * @tc.desc      new string 'hello world' and get string is ok
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0001
+     * @tc.number STRING_UTF8_0100
+     * @tc.desc   new string 'hello world' and get string is ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -50,12 +50,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0200
-     * @tc.name      test_String_Utf8_0002
-     * @tc.desc      new string and get UTF8 multiByte
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0002
+     * @tc.number STRING_UTF8_0200
+     * @tc.desc   new string and get UTF8 multiByte
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -69,12 +69,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0300
-     * @tc.name      test_String_Utf8_0003
-     * @tc.desc      new string and get UTF8 basic string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0003
+     * @tc.number STRING_UTF8_0300
+     * @tc.desc   new string and get UTF8 basic string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -88,12 +88,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0400
-     * @tc.name      test_String_Utf8_0004
-     * @tc.desc      new string and get UTF8 empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0004
+     * @tc.number STRING_UTF8_0400
+     * @tc.desc   new string and get UTF8 empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -107,12 +107,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0500
-     * @tc.name      test_String_Utf8_0005
-     * @tc.desc      new string and get UTF8 empty buffer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0005
+     * @tc.number STRING_UTF8_0500
+     * @tc.desc   new string and get UTF8 empty buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -126,12 +126,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0600
-     * @tc.name      test_String_Utf8_0006
-     * @tc.desc      new string and get UTF8 special buffer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0006
+     * @tc.number STRING_UTF8_0600
+     * @tc.desc   new string and get UTF8 special buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -145,12 +145,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0700
-     * @tc.name      test_String_Utf8_0007
-     * @tc.desc      new string and get UTF8 buffer size 0
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0007
+     * @tc.number STRING_UTF8_0700
+     * @tc.desc   new string and get UTF8 buffer size 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -164,12 +164,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0800
-     * @tc.name      test_String_Utf8_0008
-     * @tc.desc      new string and get UTF8 null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0008
+     * @tc.number STRING_UTF8_0800
+     * @tc.desc   new string and get UTF8 null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_0900
-     * @tc.name      test_String_Utf8_0009
-     * @tc.desc      new string get UTF8 null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0009
+     * @tc.number STRING_UTF8_0900
+     * @tc.desc   new string get UTF8 null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -202,12 +202,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1000
-     * @tc.name      test_String_Utf8_0010
-     * @tc.desc      new string and get UTF8 null buffer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0010
+     * @tc.number STRING_UTF8_1000
+     * @tc.desc   new string and get UTF8 null buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -221,12 +221,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1100
-     * @tc.name      test_String_Utf8_0011
-     * @tc.desc      new string and get UTF8 null result pointer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0011
+     * @tc.number STRING_UTF8_1100
+     * @tc.desc   new string and get UTF8 null result pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -240,12 +240,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1200
-     * @tc.name      test_String_Utf8_0012
-     * @tc.desc      new string and get UTF8 buffer too small
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0012
+     * @tc.number STRING_UTF8_1200
+     * @tc.desc   new string and get UTF8 buffer too small
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -259,12 +259,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1300
-     * @tc.name      test_String_Utf8_0013
-     * @tc.desc      new string and get UTF8 managed
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0013
+     * @tc.number STRING_UTF8_1300
+     * @tc.desc   new string and get UTF8 managed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -278,12 +278,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1400
-     * @tc.name      test_String_Utf8_0014
-     * @tc.desc      new string and get UTF8 repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0014
+     * @tc.number STRING_UTF8_1400
+     * @tc.desc   new string and get UTF8 repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_1500
-     * @tc.name      test_String_Utf8_0015
-     * @tc.desc      new string and get UTF8 zero symbol
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_0015
+     * @tc.number STRING_UTF8_1500
+     * @tc.desc   new string and get UTF8 zero symbol
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -316,12 +316,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0100
-     * @tc.name      test_String_Utf8_Size_0001
-     * @tc.desc      new string and get UTF8 size null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0001
+     * @tc.number STRING_UTF8_SIZE_0100
+     * @tc.desc   new string and get UTF8 size null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -335,12 +335,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0200
-     * @tc.name      test_String_Utf8_Size_0002
-     * @tc.desc      new string and get UTF8 size null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0002
+     * @tc.number STRING_UTF8_SIZE_0200
+     * @tc.desc   new string and get UTF8 size null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -354,12 +354,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0300
-     * @tc.name      test_String_Utf8_Size_0003
-     * @tc.desc      new string get UTF8 size null result pointer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0003
+     * @tc.number STRING_UTF8_SIZE_0300
+     * @tc.desc   new string get UTF8 size null result pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -373,12 +373,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0400
-     * @tc.name      test_String_Utf8_Size_0004
-     * @tc.desc      new string and get UTF8 size valid string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0004
+     * @tc.number STRING_UTF8_SIZE_0400
+     * @tc.desc   new string and get UTF8 size valid string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -392,12 +392,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0500
-     * @tc.name      test_String_Utf8_Size_0005
-     * @tc.desc      new string and get UTF8 size valid multi byte string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0005
+     * @tc.number STRING_UTF8_SIZE_0500
+     * @tc.desc   new string and get UTF8 size valid multi byte string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -411,12 +411,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0600
-     * @tc.name      test_String_Utf8_Size_0006
-     * @tc.desc      new string and get UTF8 size empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0006
+     * @tc.number STRING_UTF8_SIZE_0600
+     * @tc.desc   new string and get UTF8 size empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -430,12 +430,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SIZE_0700
-     * @tc.name      test_String_Utf8_Size_0007
-     * @tc.desc      new string and get UTF8 size repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Size_0007
+     * @tc.number STRING_UTF8_SIZE_0700
+     * @tc.desc   new string and get UTF8 size repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Size_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -449,12 +449,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0100
-     * @tc.name      test_String_Utf8_Substr_0001
-     * @tc.desc      new string and get UTF8 substring, substr size mismatch multibyte
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0001
+     * @tc.number STRING_UTF8_SUBSTR_0100
+     * @tc.desc   new string and get UTF8 substring, substr size mismatch multibyte
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -468,12 +468,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0200
-     * @tc.name      test_String_Utf8_Substr_0002
-     * @tc.desc      new string and get UTF8 substring substr contain end
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0002
+     * @tc.number STRING_UTF8_SUBSTR_0200
+     * @tc.desc   new string and get UTF8 substring substr contain end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -487,12 +487,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0300
-     * @tc.name      test_String_Utf8_Substr_0003
-     * @tc.desc      new string and get UTF8 substring special string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0003
+     * @tc.number STRING_UTF8_SUBSTR_0300
+     * @tc.desc   new string and get UTF8 substring special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -506,12 +506,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0400
-     * @tc.name      test_String_Utf8_Substr_0004
-     * @tc.desc      new string and get UTF8 substring empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0004
+     * @tc.number STRING_UTF8_SUBSTR_0400
+     * @tc.desc   new string and get UTF8 substring empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -525,12 +525,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0500
-     * @tc.name      test_String_Utf8_Substr_0005
-     * @tc.desc      new string and get UTF8 substring null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0005
+     * @tc.number STRING_UTF8_SUBSTR_0500
+     * @tc.desc   new string and get UTF8 substring null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -544,12 +544,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0600
-     * @tc.name      test_String_Utf8_Substr_0006
-     * @tc.desc      new string and get UTF8 substring null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0006
+     * @tc.number STRING_UTF8_SUBSTR_0600
+     * @tc.desc   new string and get UTF8 substring null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -563,12 +563,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0700
-     * @tc.name      test_String_Utf8_Substr_0007
-     * @tc.desc      new string and get UTF8 substring null buffer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0007
+     * @tc.number STRING_UTF8_SUBSTR_0700
+     * @tc.desc   new string and get UTF8 substring null buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0800
-     * @tc.name      test_String_Utf8_Substr_0008
-     * @tc.desc      new string get UTF8 substring null result pointer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0008
+     * @tc.number STRING_UTF8_SUBSTR_0800
+     * @tc.desc   new string get UTF8 substring null result pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -601,12 +601,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_0900
-     * @tc.name      test_String_Utf8_Substr_0009
-     * @tc.desc      new string and get UTF8 substring valid substring
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0009
+     * @tc.number STRING_UTF8_SUBSTR_0900
+     * @tc.desc   new string and get UTF8 substring valid substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -620,12 +620,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1000
-     * @tc.name      test_String_Utf8_Substr_0010
-     * @tc.desc      new string and get UTF8 substring offset negative
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0010
+     * @tc.number STRING_UTF8_SUBSTR_1000
+     * @tc.desc   new string and get UTF8 substring offset negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -639,12 +639,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1100
-     * @tc.name      test_String_Utf8_Substr_0011
-     * @tc.desc      new string and get UTF8 substring offset out of range
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0011
+     * @tc.number STRING_UTF8_SUBSTR_1100
+     * @tc.desc   new string and get UTF8 substring offset out of range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -658,12 +658,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1200
-     * @tc.name      test_String_Utf8_Substr_0012
-     * @tc.desc      new string and get UTF8 substring size out of range
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0012
+     * @tc.number STRING_UTF8_SUBSTR_1200
+     * @tc.desc   new string and get UTF8 substring size out of range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1300
-     * @tc.name      test_String_Utf8_Substr_0013
-     * @tc.desc      new string and get UTF8 substring size out of bounds
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0013
+     * @tc.number STRING_UTF8_SUBSTR_1300
+     * @tc.desc   new string and get UTF8 substring size out of bounds
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -696,12 +696,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1400
-     * @tc.name      test_String_Utf8_Substr_0014
-     * @tc.desc      new string and get UTF8 substring empty substring
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0014
+     * @tc.number STRING_UTF8_SUBSTR_1400
+     * @tc.desc   new string and get UTF8 substring empty substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -715,12 +715,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1500
-     * @tc.name      test_String_Utf8_Substr_0015
-     * @tc.desc      new string and get UTF8 substring substr size negative
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0015
+     * @tc.number STRING_UTF8_SUBSTR_1500
+     * @tc.desc   new string and get UTF8 substring substr size negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -734,12 +734,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1600
-     * @tc.name      test_String_Utf8_Substr_0016
-     * @tc.desc      new string and get UTF8 substring buffer empty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0016
+     * @tc.number STRING_UTF8_SUBSTR_1600
+     * @tc.desc   new string and get UTF8 substring buffer empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -753,12 +753,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1700
-     * @tc.name      test_String_Utf8_Substr_0017
-     * @tc.desc      new string and get UTF8 substring buffer special
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0017
+     * @tc.number STRING_UTF8_SUBSTR_1700
+     * @tc.desc   new string and get UTF8 substring buffer special
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -772,12 +772,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1800
-     * @tc.name      test_String_Utf8_Substr_0018
-     * @tc.desc      new string and get UTF8 substring buffer size negative
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0018
+     * @tc.number STRING_UTF8_SUBSTR_1800
+     * @tc.desc   new string and get UTF8 substring buffer size negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -791,12 +791,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_1900
-     * @tc.name      test_String_Utf8_Substr_0019
-     * @tc.desc      new string and get UTF8 substring buffer size 0
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0019
+     * @tc.number STRING_UTF8_SUBSTR_1900
+     * @tc.desc   new string and get UTF8 substring buffer size 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -810,12 +810,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_2000
-     * @tc.name      test_String_Utf8_Substr_0020
-     * @tc.desc      new string and get UTF8 substring buffer too small
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0020
+     * @tc.number STRING_UTF8_SUBSTR_2000
+     * @tc.desc   new string and get UTF8 substring buffer too small
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -829,12 +829,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_2100
-     * @tc.name      test_String_Utf8_Substr_0021
-     * @tc.desc      new string and get UTF8 substring repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0021
+     * @tc.number STRING_UTF8_SUBSTR_2100
+     * @tc.desc   new string and get UTF8 substring repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -848,12 +848,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_2200
-     * @tc.name      test_String_Utf8_Substr_0022
-     * @tc.desc      new string and get UTF8 substring comUTF8
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0022
+     * @tc.number STRING_UTF8_SUBSTR_2200
+     * @tc.desc   new string and get UTF8 substring comUTF8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -867,12 +867,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF8_SUBSTR_2300
-     * @tc.name      test_String_Utf8_Substr_0023
-     * @tc.desc      new string and get UTF8 substring com get UTF8 substring
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf8_Substr_0023
+     * @tc.number STRING_UTF8_SUBSTR_2300
+     * @tc.desc   new string and get UTF8 substring com get UTF8 substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf8_Substr_0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -886,12 +886,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0100
-     * @tc.name      test_String_New_Utf8_0001
-     * @tc.desc      new string new UTF8 null UTF8 string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0001
+     * @tc.number STRING_NEW_UTF8_0100
+     * @tc.desc   new string new UTF8 null UTF8 string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -905,12 +905,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0200
-     * @tc.name      test_String_New_Utf8_0002
-     * @tc.desc      new string new UTF8 empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0002
+     * @tc.number STRING_NEW_UTF8_0200
+     * @tc.desc   new string new UTF8 empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -924,12 +924,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0300
-     * @tc.name      test_String_New_Utf8_0003
-     * @tc.desc      new string new UTF8 long string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0003
+     * @tc.number STRING_NEW_UTF8_0300
+     * @tc.desc   new string new UTF8 long string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -943,12 +943,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0400
-     * @tc.name      test_String_New_Utf8_0004
-     * @tc.desc      new string new UTF8 valid multibyte string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0004
+     * @tc.number STRING_NEW_UTF8_0400
+     * @tc.desc   new string new UTF8 valid multibyte string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0500
-     * @tc.name      test_String_New_Utf8_0005
-     * @tc.desc      new string new UTF8 null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0005
+     * @tc.number STRING_NEW_UTF8_0500
+     * @tc.desc   new string new UTF8 null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -981,12 +981,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0600
-     * @tc.name      test_String_New_Utf8_0006
-     * @tc.desc      new string new UTF8 smaller size
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0006
+     * @tc.number STRING_NEW_UTF8_0600
+     * @tc.desc   new string new UTF8 smaller size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1000,12 +1000,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_NEW_UTF8_0700
-     * @tc.name      test_String_New_Utf8_0007
-     * @tc.desc      new string new UTF8 zero size
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_New_Utf8_0007
+     * @tc.number STRING_NEW_UTF8_0700
+     * @tc.desc   new string new UTF8 zero size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1018,13 +1018,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf8_0007 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF8_0800
-     * @tc.name      test_String_New_Utf8_0008
-     * @tc.desc      new string new UTF8 repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf8_0008
+     * @tc.number STRING_NEW_UTF8_0800
+     * @tc.desc   new string new UTF8 repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf8_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1037,13 +1037,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf8_0008 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0100
-     * @tc.name      test_String_Utf16_0001
-     * @tc.desc      new value num and get result is ok
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0001
+     * @tc.number STRING_UTF16_0100
+     * @tc.desc   new value num and get result is ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1056,13 +1056,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0001 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0200
-     * @tc.name      test_String_Utf16_0002
-     * @tc.desc      new string and get UTF16 null UTF16 string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0002
+     * @tc.number STRING_UTF16_0200
+     * @tc.desc   new string and get UTF16 null UTF16 string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1075,13 +1075,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0002 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0300
-     * @tc.name      test_String_Utf16_0003
-     * @tc.desc      new string and get UTF16 null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0003
+     * @tc.number STRING_UTF16_0300
+     * @tc.desc   new string and get UTF16 null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1094,13 +1094,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0003 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0400
-     * @tc.name      test_String_Utf16_0004
-     * @tc.desc      new string and get UTF16 empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0004
+     * @tc.number STRING_UTF16_0400
+     * @tc.desc   new string and get UTF16 empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1113,13 +1113,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0004 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0500
-     * @tc.name      test_String_Utf16_0005
-     * @tc.desc      new string and get UTF16 special string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0005
+     * @tc.number STRING_UTF16_0500
+     * @tc.desc   new string and get UTF16 special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1132,13 +1132,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0005 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0600
-     * @tc.name      test_String_Utf16_0006
-     * @tc.desc      new string and get UTF16 ascii string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0006
+     * @tc.number STRING_UTF16_0600
+     * @tc.desc   new string and get UTF16 ascii string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1151,13 +1151,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0006 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0700
-     * @tc.name      test_String_Utf16_0007
-     * @tc.desc      new string and get UTF16 ascii string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0007
+     * @tc.number STRING_UTF16_0700
+     * @tc.desc   new string and get UTF16 ascii string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1170,13 +1170,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0007 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0800
-     * @tc.name      test_String_Utf16_0008
-     * @tc.desc      new string and get UTF16 non ascii string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0008
+     * @tc.number STRING_UTF16_0800
+     * @tc.desc   new string and get UTF16 non ascii string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1189,13 +1189,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0008 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_0900
-     * @tc.name      test_String_Utf16_0009
-     * @tc.desc      new string get UTF16 null result
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0009
+     * @tc.number STRING_UTF16_0900
+     * @tc.desc   new string get UTF16 null result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1208,13 +1208,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0009 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1000
-     * @tc.name      test_String_Utf16_0010
-     * @tc.desc      new string get UTF16 buffer empty
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0010
+     * @tc.number STRING_UTF16_1000
+     * @tc.desc   new string get UTF16 buffer empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1227,13 +1227,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0010 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1100
-     * @tc.name      test_String_Utf16_0011
-     * @tc.desc      new string get UTF16 buffer bound
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0011
+     * @tc.number STRING_UTF16_1100
+     * @tc.desc   new string get UTF16 buffer bound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1246,13 +1246,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0011 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1200
-     * @tc.name      test_String_Utf16_0012
-     * @tc.desc      new string get UTF16 buffer bound
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0012
+     * @tc.number STRING_UTF16_1200
+     * @tc.desc   new string get UTF16 buffer bound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1265,13 +1265,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0012 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1300
-     * @tc.name      test_String_Utf16_0013
-     * @tc.desc      new string and get UTF16 buffer too small
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0013
+     * @tc.number STRING_UTF16_1300
+     * @tc.desc   new string and get UTF16 buffer too small
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1284,13 +1284,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0013 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1400
-     * @tc.name      test_String_Utf16_0014
-     * @tc.desc      new string and get UTF16 buffer too small1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0014
+     * @tc.number STRING_UTF16_1400
+     * @tc.desc   new string and get UTF16 buffer too small1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1303,13 +1303,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0014 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1500
-     * @tc.name      test_String_Utf16_0015
-     * @tc.desc      new string get UTF16 buffer too small
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0015
+     * @tc.number STRING_UTF16_1500
+     * @tc.desc   new string get UTF16 buffer too small
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1322,13 +1322,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0015 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_1600
-     * @tc.name      test_String_Utf16_0016
-     * @tc.desc      new string and get UTF16 repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_0016
+     * @tc.number STRING_UTF16_1600
+     * @tc.desc   new string and get UTF16 repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1342,12 +1342,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_1700
-     * @tc.name      test_String_Utf16_0017
-     * @tc.desc      new string and get UTF16 comUTF8 to UTF16
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_0017
+     * @tc.number STRING_UTF16_1700
+     * @tc.desc   new string and get UTF16 comUTF8 to UTF16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1360,13 +1360,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_0017 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0100
-     * @tc.name      test_String_Utf16_Size_0001
-     * @tc.desc      new string and get UTF16 size null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0001
+     * @tc.number STRING_UTF16_SIZE_0100
+     * @tc.desc   new string and get UTF16 size null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1379,13 +1379,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0001 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0200
-     * @tc.name      test_String_Utf16_Size_0002
-     * @tc.desc      new string and get UTF16 size null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0002
+     * @tc.number STRING_UTF16_SIZE_0200
+     * @tc.desc   new string and get UTF16 size null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1398,13 +1398,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0002 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0300
-     * @tc.name      test_String_Utf16_Size_0003
-     * @tc.desc      new string get UTF16 size null result pointer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0003
+     * @tc.number STRING_UTF16_SIZE_0300
+     * @tc.desc   new string get UTF16 size null result pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1417,13 +1417,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0003 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0400
-     * @tc.name      test_String_Utf16_Size_0004
-     * @tc.desc      new string and get UTF16 size valid string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0004
+     * @tc.number STRING_UTF16_SIZE_0400
+     * @tc.desc   new string and get UTF16 size valid string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1436,13 +1436,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0004 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0500
-     * @tc.name      test_String_Utf16_Size_0005
-     * @tc.desc      new string and get UTF16 size valid multi byte string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0005
+     * @tc.number STRING_UTF16_SIZE_0500
+     * @tc.desc   new string and get UTF16 size valid multi byte string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1455,13 +1455,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0005 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0600
-     * @tc.name      test_String_Utf16_Size_0006
-     * @tc.desc      new string get UTF16 size empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0006
+     * @tc.number STRING_UTF16_SIZE_0600
+     * @tc.desc   new string get UTF16 size empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1474,13 +1474,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0006 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SIZE_0700
-     * @tc.name      test_String_Utf16_Size_0007
-     * @tc.desc      new string and get UTF16 size repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Size_0007
+     * @tc.number STRING_UTF16_SIZE_0700
+     * @tc.desc   new string and get UTF16 size repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Size_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1493,13 +1493,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Size_0007 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0100
-     * @tc.name      test_String_Utf16_Substr_0001
-     * @tc.desc      new string and get UTF16 substring multi byte
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0001
+     * @tc.number STRING_UTF16_SUBSTR_0100
+     * @tc.desc   new string and get UTF16 substring multi byte
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1512,13 +1512,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0001 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0200
-     * @tc.name      test_String_Utf16_Substr_0002
-     * @tc.desc      new string and get UTF16 substring contain end
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0002
+     * @tc.number STRING_UTF16_SUBSTR_0200
+     * @tc.desc   new string and get UTF16 substring contain end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1531,13 +1531,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0002 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0300
-     * @tc.name      test_String_Utf16_Substr_0003
-     * @tc.desc      new string and get UTF16 substring string size bound
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0003
+     * @tc.number STRING_UTF16_SUBSTR_0300
+     * @tc.desc   new string and get UTF16 substring string size bound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1550,13 +1550,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0003 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0400
-     * @tc.name      test_String_Utf16_Substr_0004
-     * @tc.desc      new string and get UTF16 substring string size bound
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0004
+     * @tc.number STRING_UTF16_SUBSTR_0400
+     * @tc.desc   new string and get UTF16 substring string size bound
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1569,13 +1569,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0004 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0500
-     * @tc.name      test_String_Utf16_Substr_0005
-     * @tc.desc      new string get UTF16 substring null string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0005
+     * @tc.number STRING_UTF16_SUBSTR_0500
+     * @tc.desc   new string get UTF16 substring null string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1588,13 +1588,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0005 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0600
-     * @tc.name      test_String_Utf16_Substr_0006
-     * @tc.desc      new string and get UTF16 substring null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0006
+     * @tc.number STRING_UTF16_SUBSTR_0600
+     * @tc.desc   new string and get UTF16 substring null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1607,13 +1607,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0006 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0700
-     * @tc.name      test_String_Utf16_Substr_0007
-     * @tc.desc      new string and get UTF16 substring null buffer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0007
+     * @tc.number STRING_UTF16_SUBSTR_0700
+     * @tc.desc   new string and get UTF16 substring null buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1626,13 +1626,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0007 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0800
-     * @tc.name      test_String_Utf16_Substr_0008
-     * @tc.desc      new string and get UTF16 substring null result pointer
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0008
+     * @tc.number STRING_UTF16_SUBSTR_0800
+     * @tc.desc   new string and get UTF16 substring null result pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1645,13 +1645,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0008 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_0900
-     * @tc.name      test_String_Utf16_Substr_0009
-     * @tc.desc      new string and get UTF16 substring empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0009
+     * @tc.number STRING_UTF16_SUBSTR_0900
+     * @tc.desc   new string and get UTF16 substring empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1664,13 +1664,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0009 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1000
-     * @tc.name      test_String_Utf16_Substr_0010
-     * @tc.desc      new string and get UTF16 substring special string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0010
+     * @tc.number STRING_UTF16_SUBSTR_1000
+     * @tc.desc   new string and get UTF16 substring special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1683,13 +1683,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0010 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1100
-     * @tc.name      test_String_Utf16_Substr_0011
-     * @tc.desc      new string and get UTF16 substring get partial string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0011
+     * @tc.number STRING_UTF16_SUBSTR_1100
+     * @tc.desc   new string and get UTF16 substring get partial string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1703,12 +1703,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1200
-     * @tc.name      test_String_Utf16_Substr_0012
-     * @tc.desc      new string and get UTF16 substring off set negative
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_Substr_0012
+     * @tc.number STRING_UTF16_SUBSTR_1200
+     * @tc.desc   new string and get UTF16 substring off set negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1722,12 +1722,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1300
-     * @tc.name      test_String_Utf16_Substr_0013
-     * @tc.desc      new string and get UTF16 substring offset out of range1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_Substr_0013
+     * @tc.number STRING_UTF16_SUBSTR_1300
+     * @tc.desc   new string and get UTF16 substring offset out of range1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1741,12 +1741,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1400
-     * @tc.name      test_String_Utf16_Substr_0014
-     * @tc.desc      new string and get UTF16 substring offset out of range2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_Substr_0014
+     * @tc.number STRING_UTF16_SUBSTR_1400
+     * @tc.desc   new string and get UTF16 substring offset out of range2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1760,12 +1760,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1500
-     * @tc.name      test_String_Utf16_Substr_0015
-     * @tc.desc      new string and get UTF16 substring size negative
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_Substr_0015
+     * @tc.number STRING_UTF16_SUBSTR_1500
+     * @tc.desc   new string and get UTF16 substring size negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1779,12 +1779,12 @@ export default function stringOperationsTest() {
       });
 
     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1600
-     * @tc.name      test_String_Utf16_Substr_0016
-     * @tc.desc      new string and get UTF16 substring empty substring
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   test_String_Utf16_Substr_0016
+     * @tc.number STRING_UTF16_SUBSTR_1600
+     * @tc.desc   new string and get UTF16 substring empty substring
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1797,13 +1797,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0016 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1700
-     * @tc.name      test_String_Utf16_Substr_0017
-     * @tc.desc      new string and get UTF16 substring buffer size 0
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0017
+     * @tc.number STRING_UTF16_SUBSTR_1700
+     * @tc.desc   new string and get UTF16 substring buffer size 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1816,13 +1816,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0017 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1800
-     * @tc.name      test_String_Utf16_Substr_0018
-     * @tc.desc      new string and get UTF16 substring buffer too small1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0018
+     * @tc.number STRING_UTF16_SUBSTR_1800
+     * @tc.desc   new string and get UTF16 substring buffer too small1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1835,13 +1835,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0018 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_1900
-     * @tc.name      test_String_Utf16_Substr_0019
-     * @tc.desc      new string and get UTF16 substring buffer too small2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0019
+     * @tc.number STRING_UTF16_SUBSTR_1900
+     * @tc.desc   new string and get UTF16 substring buffer too small2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1854,13 +1854,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0019 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_2000
-     * @tc.name      test_String_Utf16_Substr_0020
-     * @tc.desc      new string and get UTF16 substring repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0020
+     * @tc.number STRING_UTF16_SUBSTR_2000
+     * @tc.desc   new string and get UTF16 substring repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1873,13 +1873,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0020 end');
       });
 
-     /**
-     * @tc.number    STRING_UTF16_SUBSTR_2100
-     * @tc.name      test_String_Utf16_Substr_0021
-     * @tc.desc      new string and get UTF16 substring com UTF16
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_Utf16_Substr_0021
+     * @tc.number STRING_UTF16_SUBSTR_2100
+     * @tc.desc   new string and get UTF16 substring com UTF16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_Utf16_Substr_0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1892,13 +1892,13 @@ export default function stringOperationsTest() {
         console.log('test_String_Utf16_Substr_0021 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0100
-     * @tc.name      test_String_New_Utf16_0001
-     * @tc.desc      new string new UTF16 null UTF16 string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0001
+     * @tc.number STRING_NEW_UTF16_0100
+     * @tc.desc   new string new UTF16 null UTF16 string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1911,13 +1911,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0001 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0200
-     * @tc.name      test_String_New_Utf16_0002
-     * @tc.desc      new string new UTF16 empty string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0002
+     * @tc.number STRING_NEW_UTF16_0200
+     * @tc.desc   new string new UTF16 empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1930,13 +1930,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0002 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0300
-     * @tc.name      test_String_New_Utf16_0003
-     * @tc.desc      new string new UTF16 null env
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0003
+     * @tc.number STRING_NEW_UTF16_0300
+     * @tc.desc   new string new UTF16 null env
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1949,13 +1949,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0003 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0400
-     * @tc.name      test_String_New_Utf16_0004
-     * @tc.desc      new string new UTF16 ascii string1
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0004
+     * @tc.number STRING_NEW_UTF16_0400
+     * @tc.desc   new string new UTF16 ascii string1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1968,13 +1968,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0004 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0500
-     * @tc.name      test_String_New_Utf16_0005
-     * @tc.desc      new string new UTF16 ascii string2
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0005
+     * @tc.number STRING_NEW_UTF16_0500
+     * @tc.desc   new string new UTF16 ascii string2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1987,13 +1987,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0005 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0600
-     * @tc.name      test_String_New_Utf16_0006
-     * @tc.desc      new string new UTF16 non ascii string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0006
+     * @tc.number STRING_NEW_UTF16_0600
+     * @tc.desc   new string new UTF16 non ascii string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2006,13 +2006,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0006 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0700
-     * @tc.name      test_String_New_Utf16_0007
-     * @tc.desc      new string new UTF16 mixed string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0007
+     * @tc.number STRING_NEW_UTF16_0700
+     * @tc.desc   new string new UTF16 mixed string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2025,13 +2025,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0007 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0800
-     * @tc.name      test_String_New_Utf16_0008
-     * @tc.desc      new string new UTF16 too long string
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0008
+     * @tc.number STRING_NEW_UTF16_0800
+     * @tc.desc   new string new UTF16 too long string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2044,13 +2044,13 @@ export default function stringOperationsTest() {
         console.log('test_String_New_Utf16_0008 end');
       });
 
-     /**
-     * @tc.number    STRING_NEW_UTF16_0900
-     * @tc.name      test_String_New_Utf16_0009
-     * @tc.desc      new string new UTF16 repeat
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 0
+    /**
+     * @tc.name   test_String_New_Utf16_0009
+     * @tc.number STRING_NEW_UTF16_0900
+     * @tc.desc   new string new UTF16 repeat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("test_String_New_Utf16_0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

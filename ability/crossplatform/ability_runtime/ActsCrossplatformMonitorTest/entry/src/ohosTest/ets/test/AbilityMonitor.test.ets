@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2023-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,11 +16,15 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { describe, beforeEach, afterEach, expect, it, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
-import UIAbility from '@ohos.app.ability.UIAbility';
+import commonEvent from '@ohos.commonEventManager';
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let monitor: AbilityDelegatorRegistry.AbilityMonitor | null | undefined
 let TAG: string = "";
 let LABLE: string = "AbilityMonitorTest";
+const want: Want = { bundleName: 'com.example.delegatortest', abilityName: 'Main2Ability', moduleName: 'entry' };
+let ACTS_CallFunction: commonEvent.CommonEventSubscribeInfo = {
+  events: ['Main2Ability.onAbilityCreate']
+};
 
 function sleep(time: number) {
   return new Promise((resolve: (value: string) => void) => {
@@ -33,22 +37,11 @@ function sleep(time: number) {
 }
 
 export default function AbilityMonitorTest() {
-  const factoryWant = (
-    bundleName: string,
-    abilityName: string,
-    moduleName: string
-  ): Want => {
-    return {
-      bundleName: bundleName,
-      abilityName: abilityName,
-      moduleName: moduleName,
-    };
-  };
 
   describe("AbilityMonitorTest", () => {
     beforeEach(async (done: Function) => {
       console.info("AbilityMonitorTest before each called");
-      await sleep(1000);
+      await sleep(500);
       done();
     });
 
@@ -61,6 +54,8 @@ export default function AbilityMonitorTest() {
         });
       }
       if (LABLE + TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200" ||
+        TAG === "ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300" ||
+        TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500" ||
         TAG === "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200" ||
@@ -82,17 +77,17 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_0100
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_0100
-     * @tc.name actsAddAbilityMonitorCallback0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_0100";
       console.log(LABLE + TAG + ":start")
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       monitor = null;
       try {
         abilityDelegator.addAbilityMonitor(monitor, (err: BusinessError) => {
@@ -120,22 +115,16 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_0200
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_0200
-     * @tc.name actsAddAbilityMonitorCallback0200
-     * @tc.desc Pass in a monitor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a monitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_0200";
       console.log(LABLE + TAG + ":start")
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data)=> {
@@ -162,26 +151,20 @@ export default function AbilityMonitorTest() {
       });
       setTimeout(() => {
         abilityDelegator.startAbility(want);
-      }, 1000);
+      }, 500);
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300
      * @tc.number ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300
-     * @tc.name actsAddAbilityMonitorCallback0300
-     * @tc.desc Pass in a monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_CALLBACK_0300";
       console.log(LABLE + TAG + ":start")
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -209,17 +192,17 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_0100
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_0100
-     * @tc.name actsAddAbilityMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_0100";
       console.log(LABLE + TAG + ":start")
-      let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+      abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       let monitor = null;
       try {
         let result = await abilityDelegator.addAbilityMonitor(monitor);
@@ -246,22 +229,16 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_0200
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_0200
-     * @tc.name actsAddAbilityMonitorPromise0200
-     * @tc.desc Pass in a monitor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a monitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_0200";
       console.log(LABLE + TAG + ":start")
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate:  (data) =>{
@@ -277,28 +254,24 @@ export default function AbilityMonitorTest() {
         },
       };
       await abilityDelegator.addAbilityMonitor(monitor);
-      setTimeout(() => {
-        abilityDelegator.startAbility(want);
-      }, 2000);
+      await abilityDelegator.startAbility(want).then((data) => {
+        console.log(LABLE + TAG + "startAbility successful data: " + JSON.stringify(data));
+      }).catch((error:BusinessError) => {
+        console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+      });
     });
 
     /**
+     * @tc.name   ACTS_ADD_ABILITY_MONITOR_PROMISE_0300
      * @tc.number ACTS_ADD_ABILITY_MONITOR_PROMISE_0300
-     * @tc.name actsAddAbilityMonitorPromise0300
-     * @tc.desc Pass in a monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_ADD_ABILITY_MONITOR_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_ADD_ABILITY_MONITOR_PROMISE_0300";
       console.log(LABLE + TAG + ":start")
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -324,12 +297,12 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0100
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0100
-     * @tc.name actsRemoveAbilityMonitorCallback0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0100";
@@ -361,22 +334,18 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200
-     * @tc.name actsRemoveAbilityMonitorCallback0200
-     * @tc.desc Pass in an Add monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an Add monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
+      let id: number;
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: () => {
@@ -391,27 +360,42 @@ export default function AbilityMonitorTest() {
       abilityDelegator.removeAbilityMonitor(monitor, (err: BusinessError) => {
         monitor = undefined;
       });
-      setTimeout(() => {
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
         console.log(LABLE + TAG + "startAbility");
-        abilityDelegator.startAbility(want);
-      }, 2000);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result=" + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200 pass"
-        );
-        done();
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0200 pass"
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300
-     * @tc.name actsRemoveAbilityMonitorCallback0300
-     * @tc.desc Pass in an unadded monitor to monitor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an unadded monitor to monitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300";
@@ -437,33 +421,28 @@ export default function AbilityMonitorTest() {
         monitor = undefined;
       });
 
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result=" + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300 pass "
-        );
-        done();
-      }, 3000);
+      await sleep(100);
+      console.log(LABLE + TAG + "assertEqual result=" + result);
+      expect(result).assertEqual(0);
+      abilityDelegator.printSync(
+        "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0300 pass "
+      );
+      done();
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400
-     * @tc.name actsRemoveAbilityMonitorCallback0400
-     * @tc.desc remove a monitor that has already been wait.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   remove a monitor that has already been wait.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
+      let id: number;
 
       monitor = {
         abilityName: "Main2Ability",
@@ -480,35 +459,48 @@ export default function AbilityMonitorTest() {
         console.log(LABLE + TAG + "removeAbilityMonitor callback");
         monitor = undefined;
       });
-      console.log(LABLE + TAG + "startAbility");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result=" + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400 pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0400 pass "
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500
-     * @tc.name actsRemoveAbilityMonitorCallback0500
-     * @tc.desc Pass in an Add monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an Add monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
+      let id: number;
 
       monitor = {
         abilityName: "Main2Ability",
@@ -524,26 +516,42 @@ export default function AbilityMonitorTest() {
         console.log(LABLE + TAG + "removeAbilityMonitor callback" + JSON.stringify(err));
         monitor = undefined;
       });
-      await sleep(200)
-      console.log(LABLE + TAG + "startAbility");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result=" + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500 pass"
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_CALLBACK_0500 pass"
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0100
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0100
-     * @tc.name actsRemoveAbilityMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0100";
@@ -577,22 +585,18 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200
-     * @tc.name actsRemoveAbilityMonitorPromise0200
-     * @tc.desc Pass in an Add monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an Add monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
+      let id: number;
 
       monitor = {
         abilityName: "Main2Ability",
@@ -621,34 +625,46 @@ export default function AbilityMonitorTest() {
             "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200 error:" + error
           );
         });
-      console.log(LABLE + TAG + "startAbility");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result" + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200 pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });;
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0200 pass "
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300
-     * @tc.name actsRemoveAbilityMonitorPromise0300
-     * @tc.desc Pass in an unadded monitor to monitor
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an unadded monitor to monitor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
 
       monitor = {
@@ -684,33 +700,28 @@ export default function AbilityMonitorTest() {
           done();
         });
 
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result = " + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300 pass "
-        );
-        done();
-      }, 3000);
+      await sleep(100);
+      console.log(LABLE + TAG + "assertEqual result = " + result);
+      expect(result).assertEqual(0);
+      abilityDelegator.printSync(
+        "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0300 pass "
+      );
+      done();
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400
-     * @tc.name actsRemoveAbilityMonitorPromise0400
-     * @tc.desc remove a monitor that has already been wait.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   remove a monitor that has already been wait.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 0;
+      let id: number;
 
       monitor = {
         abilityName: "Main2Ability",
@@ -738,35 +749,48 @@ export default function AbilityMonitorTest() {
           expect().assertFail();
           done();
         });
-      console.log(LABLE + TAG + "startAbility");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result = " + result);
-        expect(result).assertEqual(0);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400 pass "
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });;
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(0);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0400 pass "
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500
      * @tc.number ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500
-     * @tc.name actsRemoveAbilityMonitorPromise0500
-     * @tc.desc Pass in an unadded monitor to monitor whether the monitor container size increases.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an unadded monitor to monitor whether the monitor container size increases.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       let result = 1;
+      let id: number;
 
       monitor = {
         abilityName: "Main2Ability",
@@ -798,25 +822,42 @@ export default function AbilityMonitorTest() {
           expect().assertFail();
           done();
         });
-      console.log(LABLE + TAG + "startAbility");
-      await abilityDelegator.startAbility(want);
-      setTimeout(() => {
-        console.log(LABLE + TAG + "assertEqual result = " + result);
-        expect(result).assertEqual(1);
-        abilityDelegator.printSync(
-          "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500 pass"
-        );
-        done();
+      let subscriber: commonEvent.CommonEventSubscriber;
+      commonEvent.createSubscriber(ACTS_CallFunction).then(async (data) => {
+        subscriber = data
+        commonEvent.subscribe(data, subscribeCallBack)
+        console.log(LABLE + TAG + "startAbility");
+        abilityDelegator.startAbility(want).then((data) => {
+          console.log(LABLE + TAG + "successful data: " + JSON.stringify(data));
+        }).catch((error:BusinessError) => {
+          console.log(LABLE + TAG + "startAbility error: " + JSON.stringify(error));
+        });;
+      });
+      let subscribeCallBack = (err: BusinessError, data: commonEvent.CommonEventData) => {
+        if (data.event == 'Main2Ability.onAbilityCreate') {
+          console.log(LABLE + TAG + "assertEqual result=" + result);
+          expect(result).assertEqual(1);
+          abilityDelegator.printSync(
+            "AbilityMonitorTest ACTS_REMOVE_ABILITY_MONITOR_PROMISE_0500 pass"
+          );
+          clearTimeout(id);
+          commonEvent.unsubscribe(subscriber, done());
+        }
+      };
+      id = setTimeout(() => {
+        console.log(LABLE + TAG + "startAbility fail");
+        expect().assertFail();
+        commonEvent.unsubscribe(subscriber, done());
       }, 3000);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0100
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0100
-     * @tc.name actsWaitAbilityMonitorCallback0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0100";
@@ -849,12 +890,12 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0300
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0300
-     * @tc.name actsWaitAbilityMonitorCallback0300
-     * @tc.desc Pass in an added monitor and start the monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an added monitor and start the monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0300";
@@ -886,17 +927,16 @@ export default function AbilityMonitorTest() {
       abilityDelegator.waitAbilityMonitor(monitor, () => {
       });
       console.log(LABLE + TAG + "startAbility");
-      await sleep(500);
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0400
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0400
-     * @tc.name actsWaitAbilityMonitorCallback0400
-     * @tc.desc Pass in an empty monitor, timeout=6000.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Pass in an empty monitor, timeout=6000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0400";
@@ -930,21 +970,16 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500
-     * @tc.name actsWaitAbilityMonitorCallback0500
-     * @tc.desc Pass in a monitor that has been added, timeout=10000.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a monitor that has been added, timeout=10000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500";
       console.log(LABLE + TAG + "start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
 
       monitor = {
         abilityName: "Main2Ability",
@@ -959,14 +994,11 @@ export default function AbilityMonitorTest() {
       };
       abilityDelegator.waitAbilityMonitor(
         monitor,
-        6000,
+        100,
         (err: BusinessError) => {
           console.log(LABLE + TAG + "waitAbilityMonitor callback, err = " + JSON.stringify(err));
           abilityDelegator.printSync(
-            "AbilityMonitorTest ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500 : " + err.code
-          );
-          abilityDelegator.printSync(
-            "AbilityMonitorTest ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500 : " + err.message
+            "AbilityMonitorTest ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0500 : " + err.code + " " + err.message
           );
           expect(err.code).assertEqual(16000100);
           expect(true).assertTrue();
@@ -979,22 +1011,16 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0600
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0600
-     * @tc.name actsWaitAbilityMonitorCallback0600
-     * @tc.desc Pass in an already added monitor and start this monitor, timeout<5.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added monitor and start this monitor, timeout<5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0600", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0600";
       console.log(LABLE + TAG + "start");
-
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1020,27 +1046,20 @@ export default function AbilityMonitorTest() {
         }
       );
       console.log(LABLE + TAG + "startAbility");
-      await sleep(500);
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0700
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0700
-     * @tc.name actsWaitAbilityMonitorCallback0700
-     * @tc.desc Pass in an already added monitor and start this monitor, timeout=0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added monitor and start this monitor, timeout=0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0700", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0700";
       console.log(LABLE + TAG + "start");
-
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1066,28 +1085,21 @@ export default function AbilityMonitorTest() {
           console.log(LABLE + TAG + "waitAbilityMonitor callback");
         }
       );
-      await sleep(500);
       console.log(LABLE + TAG + "startAbility");
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0800
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0800
-     * @tc.name actsWaitAbilityMonitorCallback0800
-     * @tc.desc Pass in an already added monitor and start this monitor, timeout<5.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added monitor and start this monitor, timeout<5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0800", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0800";
       console.log(LABLE + TAG + "start");
-
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1113,28 +1125,21 @@ export default function AbilityMonitorTest() {
           console.log(LABLE + TAG + "waitAbilityMonitor callback");
         }
       );
-      await sleep(500);
       console.log(LABLE + TAG + "startAbility");
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0900
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0900
-     * @tc.name actsWaitAbilityMonitorCallback0900
-     * @tc.desc Pass in an already added monitor and start this monitor, timeout<0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added monitor and start this monitor, timeout<0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0900", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_0900";
       console.log(LABLE + TAG + "start");
-
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1160,30 +1165,21 @@ export default function AbilityMonitorTest() {
           console.log(LABLE + TAG + "waitAbilityMonitor callback");
         }
       );
-      await sleep(500);
       console.log(LABLE + TAG + "startAbility start");
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_CALLBACK_1000
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_CALLBACK_1000
-     * @tc.name actsWaitAbilityMonitorCallback1000
-     * @tc.desc Pass in an added monitor and start this monitor to get the current bundleName.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an added monitor and start this monitor to get the current bundleName.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_CALLBACK_1000", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_CALLBACK_1000";
       console.log(LABLE + TAG + " start");
-
-
-
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1209,18 +1205,17 @@ export default function AbilityMonitorTest() {
       };
       console.log(LABLE + TAG + " waitAbilityMonitor start");
       abilityDelegator.waitAbilityMonitor(monitor);
-      await sleep(500);
       console.log(LABLE + TAG + " startAbility start");
       abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_PROMISE_0100
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_PROMISE_0100
-     * @tc.name actsWaitAbilityMonitorPromise0100
-     * @tc.desc pass in a null monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   pass in a null monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_PROMISE_0100", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0100";
@@ -1251,22 +1246,16 @@ export default function AbilityMonitorTest() {
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200
-     * @tc.name actsWaitAbilityMonitorPromise0200
-     * @tc.desc Pass in a Monitor that has already been added.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in a Monitor that has already been added.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0200";
       console.log(LABLE + TAG + " start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1302,30 +1291,21 @@ export default function AbilityMonitorTest() {
           expect().assertFail();
           done();
         });
-      await sleep(500);
       console.log(LABLE + TAG + " startAbility start");
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_PROMISE_0300
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_PROMISE_0300
-     * @tc.name actsWaitAbilityMonitorPromise0300
-     * @tc.desc Pass in an already added Monitor and start the Monitor.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added Monitor and start the Monitor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_PROMISE_0300", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0300";
       console.log(LABLE + TAG + " start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
-
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1361,27 +1341,20 @@ export default function AbilityMonitorTest() {
           done();
         });
       console.log(LABLE + TAG + " startAbility start");
-      await sleep(500);
       await abilityDelegator.startAbility(want);
     });
 
     /**
+     * @tc.name   ACTS_WAIT_ABILITY_MONITOR_PROMISE_0400
      * @tc.number ACTS_WAIT_ABILITY_MONITOR_PROMISE_0400
-     * @tc.name actsWaitAbilityMonitorPromise0400
-     * @tc.desc Pass in an already added StageMonitor and start this Monitor, passing in a timeout=0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Pass in an already added StageMonitor and start this Monitor, passing in a timeout=0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_WAIT_ABILITY_MONITOR_PROMISE_0400", Level.LEVEL0, async (done: Function) => {
       TAG = "ACTS_WAIT_ABILITY_MONITOR_PROMISE_0400";
       console.log(LABLE + TAG + " start");
-      const want = factoryWant(
-        "com.example.delegatortest",
-        "Main2Ability",
-        "entry"
-      );
-
       monitor = {
         abilityName: "Main2Ability",
         onAbilityCreate: (data) =>{
@@ -1416,7 +1389,6 @@ export default function AbilityMonitorTest() {
           done();
         });
       console.log(LABLE + TAG + " startAbility start");
-      await sleep(500);
       await abilityDelegator.startAbility(want);
     });
   });

@@ -25,11 +25,11 @@ struct Page {
   build() {
     Row(){
       Column(){
-        Text(this.globalOutput).id('globalOutputSearch').fontSize(24).width('80%').margin({ bottom: 10 })
+        Text('global:' + this.globalOutput).id('globalOutputSearch').fontSize(24).width('80%').height('5%')
 
-        Text(this.localOutput).id('localOutputSearch').fontSize(24).width('80%').margin({ bottom: 10 })
+        Text('local:' + this.localOutput).id('localOutputSearch').fontSize(24).width('80%').height('5%')
 
-        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).margin({ bottom: 10 })
+        Text('监听textChange开关按钮').fontSize(18).fontWeight(FontWeight.Bold).height('6%')
 
         Row(){
           Button('全局监听(开)')
@@ -51,7 +51,7 @@ struct Page {
             .onClick(()=>{
               this.observer.off('textChange');
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
         Row(){
           Button('局部Search(开)')
@@ -60,7 +60,7 @@ struct Page {
             .fontSize('20vp')
             .margin({ right: 10 })
             .onClick(()=>{
-              this.observer.on('textChange', { id: '__SearchField__search' }, (info: uiObserver.TextChangeEventInfo)=>{
+              this.observer.on('textChange', { id: 'search' }, (info: uiObserver.TextChangeEventInfo)=>{
                 console.info('[TEST INFO] [uiObserver] [textChange] [Search] [id: ' + JSON.stringify(info.id) + '] [uniqueId: ' + JSON.stringify(info.uniqueId) + '] [content: ' + JSON.stringify(info.content) + ']');
                 this.localOutput = info.content;
               });
@@ -71,14 +71,15 @@ struct Page {
             .fontSize('20vp')
             .margin({ left: 10 })
             .onClick(()=>{
-              this.observer.off('textChange', { id: '__SearchField__search' });
+              this.observer.off('textChange', { id: 'search' });
             })
-        }.margin({ bottom: 10 })
+        }.height('7%')
 
-        Text('Search').margin({ bottom: 5 })
-        Search({ value: 'Search默认输入文本' })
+        Text('Search').height('5%')
+        Search({ value: '' })
           .id('search')
           .width('80%')
+          .height('15%')
           .draggable(true)
           .onDragStart(()=>{})
           .cancelButton({ style: CancelButtonStyle.CONSTANT })

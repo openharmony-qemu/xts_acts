@@ -28,14 +28,14 @@ const ExpectTrue: (n: boolean) => void = (n: boolean) => {
 export default function EtherNetNoPTest() {
   describe('EtherNetNoPTest', () => {
 
-    /* *
-    * @tc.number: SUB_NetworkMgr_GetMacAddress_NoP0100
-    * @tc.name  : testNetworkMgrGetMacAddressNoP0100
-    * @tc.desc  : getMacAddress Permission denied
-    * @tc.size  : MediumTest
-    * @tc.type  : Function
-    * @tc.level : level 0
-    */
+    /**
+     * @tc.name   testNetworkMgrGetMacAddressNoP0100
+     * @tc.number SUB_NetworkMgr_GetMacAddress_NoP0100
+     * @tc.desc   getMacAddress Permission denied
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testNetworkMgrGetMacAddressNoP0100",  TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = 'testNetworkMgrGetMacAddressNoP0100';
       console.info(`${caseName} test start `)

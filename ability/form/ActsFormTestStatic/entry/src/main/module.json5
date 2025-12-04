@@ -60,6 +60,7 @@
       },
       {
         "name": "TestFormAbility",
+        "launchType": "standard",
         "srcEntry": "./ets/testform/TestFormAbility.ets",
         "description": "$string:EntryAbility_desc",
         "icon": "$media:layered_image",

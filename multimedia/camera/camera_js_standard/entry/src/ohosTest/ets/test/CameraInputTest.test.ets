@@ -336,12 +336,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_0100
-     * @tc.name      : camera status callback on CameraInput async api for error
-     * @tc.desc      : camera status callback on CameraInput async api for error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_0100
+     * @tc.desc   camera status callback on CameraInput async api for error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_ON_ERROR_0100--------------");
@@ -383,12 +383,12 @@ export default function CameraInputTest() {
       }
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100
-     * @tc.name      : camera status callback on RELEASE async api for error
-     * @tc.desc      : camera status callback on RELEASE async api for error
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100
+     * @tc.desc   camera status callback on RELEASE async api for error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_RELEASE_ERROR_0100--------------");
@@ -415,12 +415,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
-     * @tc.name      : open/close Camera with cameraInput callback api
-     * @tc.desc      : open/close Camera with cameraInput callback api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100
+     * @tc.desc   open/close Camera with cameraInput callback api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_0100--------------");
@@ -469,12 +469,12 @@ export default function CameraInputTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN__ERRORCODE_0100
-     * @tc.name      : open/close Camera with cameraInput open api errorcode
-     * @tc.desc      : open/close Camera with cameraInput open api errorcode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN__ERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN__ERRORCODE_0100
+     * @tc.desc   open/close Camera with cameraInput open api errorcode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN__ERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN__ERRORCODE_0100--------------");
@@ -511,12 +511,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
-     * @tc.name      : open/close Camera with cameraInput promise api
-     * @tc.desc      : open/close Camera with cameraInput promise api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100
+     * @tc.desc   open/close Camera with cameraInput promise api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_PROMISE_0100";
@@ -571,12 +571,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100
-     * @tc.name      : query whether physical camera orientation is variable under different fold status
-     * @tc.desc      : query whether physical camera orientation is variable under different fold status
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100
+     * @tc.desc   query whether physical camera orientation is variable under different fold status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100', Level.LEVEL0, async (done: Function) => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_IS_ORIENTATION_VARIABLE_0100";
@@ -613,12 +613,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
-     * @tc.name      : get physical camera orientation under current fold status
-     * @tc.desc      : get physical camera orientation under current fold status
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100
+     * @tc.desc   get physical camera orientation under current fold status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async (done: Function) => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_GETPHYSICALCAMERAORIENTATION_0100";
@@ -655,12 +655,12 @@ export default function CameraInputTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
-     * @tc.name      : get physical camera orientation under current fold status
-     * @tc.desc      : get physical camera orientation under current fold status
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100
+     * @tc.desc   get physical camera orientation under current fold status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100', Level.LEVEL0, async (done: Function) => {
       let functionTag = "SUB_MULTIMEDIA_CAMERA_INPUT_USEPHYSICALCAMERAORIENTATION_0100";

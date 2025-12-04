@@ -39,13 +39,13 @@ const ExpectTrue = (n: boolean) => {
 export default function HttpRequestInStreamTest() {
   describe("HttpRequestInStreamTest", () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0100
-     * @tc.name:    testNetworkMgrHttpRequestInStream0100
-     * @tc.desc:    test requestInStream
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequestInStream0100
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0100
+     * @tc.desc   test requestInStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequestInStream0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestInStream0100";
@@ -82,13 +82,13 @@ export default function HttpRequestInStreamTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0200
-     * @tc.name:    testHttpRequestInStream0200
-     * @tc.desc:    test requestInStream with destory httpRequest
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestInStream0200
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0200
+     * @tc.desc   test requestInStream with destory httpRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestInStream0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequestInStream0200";
@@ -125,13 +125,13 @@ export default function HttpRequestInStreamTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0300
-     * @tc.name:    testNetworkMgrHttpRequestInStream0300
-     * @tc.desc:    test requestInStream
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testNetworkMgrHttpRequestInStream0300
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0300
+     * @tc.desc   test requestInStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNetworkMgrHttpRequestInStream0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testNetworkMgrHttpRequestInStream0300";
@@ -166,13 +166,13 @@ export default function HttpRequestInStreamTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0400
-     * @tc.name:    testHttpRequestInStream0400
-     * @tc.desc:    test requestInStream with destroy httpRequest
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestInStream0400
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0400
+     * @tc.desc   test requestInStream with destroy httpRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestInStream0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequestInStream0400";
@@ -209,13 +209,13 @@ export default function HttpRequestInStreamTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0500
-     * @tc.name  :  testHttpRequestInStream0500
-     * @tc.desc  :  test requestInStream
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequestInStream0500
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0500
+     * @tc.desc   test requestInStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestInStream0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequestInStream0500";
@@ -251,13 +251,13 @@ export default function HttpRequestInStreamTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0600
-     * @tc.name  :  testHttpRequestInStream0600
-     * @tc.desc  :  test requestInStream with illegal url
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequestInStream0600
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0600
+     * @tc.desc   test requestInStream with illegal url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestInStream0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequestInStream0600";
@@ -294,13 +294,13 @@ export default function HttpRequestInStreamTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_RequestInStream_0700
-     * @tc.name  :  testHttpRequestInStream0700
-     * @tc.desc  :  test requestInStream with illegal url
-     * @tc.size  :  MediumTest
-     * @tc.type  :  Function
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequestInStream0700
+     * @tc.number SUB_NetworkMgr_Http_RequestInStream_0700
+     * @tc.desc   test requestInStream with illegal url
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestInStream0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName: string = "testHttpRequestInStream0700";

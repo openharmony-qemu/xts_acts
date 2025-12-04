@@ -43,11 +43,12 @@ export default function RelativeBarrier8() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0350
-     * @tc.desc      chainMode test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   RelativeBarrier8_001
+     * @tc.number SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0350
+     * @tc.desc   chainMode test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('RelativeBarrier8_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeBarrier8_001] START');

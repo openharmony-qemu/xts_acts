@@ -20,10 +20,13 @@ export default function actsGetLauncherAbilityInfo2Test() {
   describe("actsGetLauncherAbilityInfo2Test", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200
-     * @tc.desc: Test getLauncherAbilityInfoSync with permission denied return errcode 201.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200
+     * @tc.desc   Test getLauncherAbilityInfoSync with permission denied return errcode 201.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_1200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {

@@ -34,12 +34,14 @@ const ABILITIY_NAME8 = "com.example.third5.MainAbilityB";
 export default function ActsBmsJsTest() {
 describe('ActsBmsJsTest', function () {
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AppInfo_0140
-    * @tc.name: test the multi js ability
-    * @tc.desc: 1.install a js hap which has an ability with full domain name
-    *           2.check the ability name by the interface of getBundleInfo
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_0140
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0140
+     * @tc.desc   1.install a js hap which has an ability with full domain name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Bms_Framework_Query_AppInfo_0140', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
         let result = await bundle.getBundleInfo(BUNDLE_NAME2, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
         expect(result.abilityInfos.length).assertEqual(NUM_TWO);
@@ -80,11 +82,13 @@ describe('ActsBmsJsTest', function () {
         done();
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_0160
-     * @tc.name: test the multi js ability
-     * @tc.desc: 1.install a js hap with two ability
-     *           2.check the ability name by the interface of getBundleInfo
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_0160
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0160
+     * @tc.desc   1.install a js hap with two ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Sub_Bms_Framework_Query_AppInfo_0160', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
         let result = await bundle.getBundleInfo(BUNDLE_NAME3, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -111,11 +115,13 @@ describe('ActsBmsJsTest', function () {
         done();
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_0180
-     * @tc.name: test the multi js ability
-     * @tc.desc: 1.install a js hap which has an ability with short domain name
-     *           2.check the ability name by the interface of getBundleInfo
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_0180
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0180
+     * @tc.desc   1.install a js hap which has an ability with short domain name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Bms_Framework_Query_AppInfo_0180', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let result = await bundle.getBundleInfo(BUNDLE_NAME4, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
@@ -153,12 +159,14 @@ describe('ActsBmsJsTest', function () {
         done();
     });
 
-    /*
-    * @tc.number: Sub_Bms_Framework_Query_AppInfo_0200
-    * @tc.name: test the multi js ability
-    * @tc.desc: 1.install a c++ hap which has an ability with short domain name
-    *           2.check the ability name by the interface of getBundleInfo
-    */
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_AppInfo_0200
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_0200
+     * @tc.desc   1.install a c++ hap which has an ability with short domain name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Bms_Framework_Query_AppInfo_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
         let result = await bundle.getBundleInfo(BUNDLE_NAME5, bundle.BundleFlag.GET_BUNDLE_WITH_ABILITIES);
         expect(result.abilityInfos.length).assertEqual(1);

@@ -17,13 +17,6 @@ import batteryInfoNdk from 'libentry.so';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import batteryInfo from '@ohos.batteryInfo';
 
-const PluggedType = [
-  'NONE',
-  'AC',
-  'USB',
-  'WIRELESS'
-];
-
 export default function batteryInfoNdkTest() {
   describe('batteryInfoNdkTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -47,12 +40,12 @@ export default function batteryInfoNdkTest() {
     })
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0100
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0100
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -70,12 +63,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0200
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0200
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -83,9 +76,9 @@ export default function batteryInfoNdkTest() {
         try {
           let pluggedType = batteryInfoNdk.getPluggedType();
           console.info(TAG + ` pluggedType: ${pluggedType}`);
-          let pt = PluggedType[batteryInfo.pluggedType];
+          let pt = batteryInfo.pluggedType;
           console.info(TAG + ` pt: ${pt}`);
-          expect(pluggedType).assertEqual(pt.toString());
+          expect(pluggedType).assertEqual(pt);
           done();
         } catch (error) {
           console.info(TAG + ` getPluggedType err: ${error.code}  ${error.message}`);
@@ -95,12 +88,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0300
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0300
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -118,12 +111,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0400
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0400
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -141,12 +134,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0500
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0500
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -164,12 +157,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0600
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0600
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -187,12 +180,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0700
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0700
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -210,12 +203,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0800
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0800
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -233,12 +226,12 @@ export default function batteryInfoNdkTest() {
       });
 
     /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_0900
      * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_0900
-     * @tc.name Test testNapi BatteryInfo.
-     * @tc.desc Test testNapi BatteryInfo.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_PowerSystem_BatteryInfo_NdkTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -247,6 +240,29 @@ export default function batteryInfoNdkTest() {
           let wireless = batteryInfoNdk.BatteryInfo_BatteryPluggedType.WIRELESS;
           console.info(`${TAG} wireless:${wireless}`);
           expect(wireless).assertEqual(batteryInfo.BatteryPluggedType.WIRELESS);
+          done();
+        } catch (error) {
+          console.info(TAG + ` error: ${error.code}  ${error.message}`);
+          expect().assertFail();
+          done();
+        }
+      });
+
+    /**
+     * @tc.name   SUB_PowerSystem_BatteryInfo_NdkTest_1000
+     * @tc.number SUB_PowerSystem_BatteryInfo_NdkTest_1000
+     * @tc.desc   Test testNapi BatteryInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_PowerSystem_BatteryInfo_NdkTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: Function) => {
+        let TAG = 'SUB_PowerSystem_BatteryInfo_NdkTest_1000';
+        try {
+          let butt = batteryInfoNdk.BatteryInfo_BatteryPluggedType.BUTT;
+          console.info(`${TAG} butt:${butt}`);
+          expect(butt).assertEqual(4);
           done();
         } catch (error) {
           console.info(TAG + ` error: ${error.code}  ${error.message}`);

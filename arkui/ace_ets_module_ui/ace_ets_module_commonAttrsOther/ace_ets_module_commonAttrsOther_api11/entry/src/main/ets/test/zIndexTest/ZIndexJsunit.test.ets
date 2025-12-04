@@ -45,6 +45,14 @@ export default function zIndexJsunit() {
       console.info("zIndex after each called");
     });
 
+    /**
+     * @tc.name   testZIndex01
+     * @tc.number testZIndex01
+     * @tc.desc   testZIndex01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testZIndex01', Level.LEVEL0, async () => {
       console.info('[testZIndex01] START');
       await CommonFunc.sleep(2000);
@@ -55,6 +63,14 @@ export default function zIndexJsunit() {
 
     });
 
+    /**
+     * @tc.name   testZIndex02
+     * @tc.number testZIndex02
+     * @tc.desc   testZIndex02
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testZIndex02', Level.LEVEL0, async () => {
       console.info('[testZIndex02] START');
       try {
@@ -80,6 +96,14 @@ export default function zIndexJsunit() {
 
     });
 
+    /**
+     * @tc.name   testZIndex03
+     * @tc.number testZIndex03
+     * @tc.desc   testZIndex03
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testZIndex03', Level.LEVEL0, async () => {
       console.info('[testZIndex03] START');
       try {
@@ -105,6 +129,14 @@ export default function zIndexJsunit() {
 
     });
 
+    /**
+     * @tc.name   testZIndex04
+     * @tc.number testZIndex04
+     * @tc.desc   testZIndex04
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testZIndex04', Level.LEVEL0, async () => {
       console.info('[testZIndex04] START');
       try {

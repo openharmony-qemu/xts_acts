@@ -37,17 +37,24 @@ export default function ActsCallbackTest() {
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+      console.info(`${tag} testAbilityContext 1`)
       await Utils.msSleep(2000)
+      console.info(`${tag} testAbilityContext 2`)
       abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${JSON.stringify(bundle)}`)
-      await Utils.msSleep(2000)
+      console.info(`${tag} testAbilityContext 3`)
+      await Utils.msSleep(4000)
+      console.info(`${tag} testAbilityContext 4`)
       testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
       hilog.info(domain, tag, '%{public}s', 'beforeAll end');
     })
 
     /**
-     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
-     * @tc.desc       requestEnableNotification allowed button is clicked
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100
+     * @tc.desc   requestEnableNotification allowed button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Callback_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,

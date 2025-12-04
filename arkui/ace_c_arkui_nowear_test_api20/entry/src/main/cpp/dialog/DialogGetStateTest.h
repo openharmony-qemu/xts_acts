@@ -28,8 +28,8 @@ class DialogGetStateTest {
 public:
     ~DialogGetStateTest();
     static napi_value CreateNativeNode(napi_env env, napi_callback_info info);
-    static napi_value GetResult(napi_env env, napi_callback_info info);
-    static std::vector<int32_t> result;
+    static napi_value GetStateErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value GetStateErrorCode_002(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_DIALOG_GET_STATE_TEST_H

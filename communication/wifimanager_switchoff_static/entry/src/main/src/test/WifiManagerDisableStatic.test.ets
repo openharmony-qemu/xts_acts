@@ -33,12 +33,12 @@ export default function wifiDisableTest() {
         })
 
         /**
+         * @tc.name   isMeteredHotspotErrCode2501001Test
          * @tc.number isMeteredHotspotErrCode2501001Test
-         * @tc.name isMeteredHotspotErrCode2501001Test
-         * @tc.desc Test isMeteredHotspotErrCode2501001Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test isMeteredHotspotErrCode2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("isMeteredHotspotErrCode2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try{
@@ -59,12 +59,12 @@ export default function wifiDisableTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoPromise2501001Test
          * @tc.number getLinkedInfoPromise2501001Test
-         * @tc.name getLinkedInfoPromise2501001Test
-         * @tc.desc Test getLinkedInfoPromise2501001Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoPromise2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoPromise2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {
@@ -84,12 +84,12 @@ export default function wifiDisableTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoCallback2501001Test
          * @tc.number getLinkedInfoCallback2501001Test
-         * @tc.name getLinkedInfoCallback2501001Test
-         * @tc.desc Test getLinkedInfoCallback2501001Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoCallback2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoCallback2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             wifiManager.getLinkedInfo((err: BusinessError | null, data: wifiManager.WifiLinkedInfo| undefined) => {
@@ -118,12 +118,12 @@ export default function wifiDisableTest() {
         })
 
         /**
+         * @tc.name   getLinkedInfoSync2501001Test
          * @tc.number getLinkedInfoSync2501001Test
-         * @tc.name getLinkedInfoSync2501001Test
-         * @tc.desc Test getLinkedInfoSync2501001Test API functionality
-         * @tc.level Level 0
-         * @tc.type Function
-         * @tc.size MEDIUMTEST
+         * @tc.desc   Test getLinkedInfoSync2501001Test API functionality
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("getLinkedInfoSync2501001Test", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
             try {

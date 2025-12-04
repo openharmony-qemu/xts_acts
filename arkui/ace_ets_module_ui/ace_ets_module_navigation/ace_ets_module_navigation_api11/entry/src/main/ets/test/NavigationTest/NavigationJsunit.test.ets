@@ -62,9 +62,12 @@ export default function navigationJsunit() {
     });
 
     /**
+     * @tc.name   testNavigation010
      * @tc.number SUB_ACE_BASIC_ETS_API_1310
-     * @tc.name testNavigation010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation010',  Level.LEVEL0, async (done: Function) => {
       console.info('testNavigation010 START');
@@ -81,9 +84,12 @@ export default function navigationJsunit() {
 
 
     /**
+     * @tc.name   testNavigation020
      * @tc.number SUB_ACE_BASIC_ETS_API_1320
-     * @tc.name testNavigation020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testNavigation020',  Level.LEVEL0, async (done: Function) => {
       console.info('testNavigation020 START');

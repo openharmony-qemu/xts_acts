@@ -92,13 +92,14 @@ export default function geolocationTest_4() {
             done();
         })
     
-    /**
-     * @tc.number SUB_HSS_LocationSystem_CountryCode_0100
-     * @tc.name Test getCountryCode
-     * @tc.desc Obtaining Country Code Information
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_HSS_LocationSystem_CountryCode_0100
+      * @tc.number SUB_HSS_LocationSystem_CountryCode_0100
+      * @tc.desc   Obtaining Country Code Information
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_HSS_LocationSystem_CountryCode_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             await geolocationm.getCountryCode().then((result) => {
@@ -119,13 +120,14 @@ export default function geolocationTest_4() {
         done();
     })
 
-    /**
-     * @tc.number SUB_HSS_LocationSystem_CountryCode_0200
-     * @tc.name Test getCountryCode
-     * @tc.desc Obtaining Country Code Information
-     * @tc.type Function
-     * @tc.level Level 2
-     */
+     /**
+      * @tc.name   SUB_HSS_LocationSystem_CountryCode_0200
+      * @tc.number SUB_HSS_LocationSystem_CountryCode_0200
+      * @tc.desc   Obtaining Country Code Information
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_HSS_LocationSystem_CountryCode_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
             geolocationm.getCountryCode((err,data) => {
@@ -145,11 +147,12 @@ export default function geolocationTest_4() {
     })
 
     /**
+     * @tc.name   SUB_HSS_LocationSystem_CountryCode_0300
      * @tc.number SUB_HSS_LocationSystem_CountryCode_0300
-     * @tc.name getCountryCode_on_off
-     * @tc.desc The interception country code is changed.
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   The interception country code is changed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_HSS_LocationSystem_CountryCode_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info("[lbs_js] countryCodeChange");

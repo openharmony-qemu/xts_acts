@@ -121,9 +121,12 @@ export default function SerialAddTest() {
 
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0300
-     * @tc.name     : testGetAttribute005
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute005
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0300
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -150,9 +153,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0400
-     * @tc.name     : testGetAttribute006
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute006
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0400
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -179,9 +185,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0700
-     * @tc.name     : testGetAttribute007
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute007
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0700
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -208,9 +217,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0900
-     * @tc.name     : testGetAttribute008
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute008
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_0900
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -237,9 +249,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1000
-     * @tc.name     : testGetAttribute009
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute009
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1000
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -266,9 +281,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1100
-     * @tc.name     : testGetAttribute010
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute010
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1100
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -295,9 +313,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1200
-     * @tc.name     : testGetAttribute011
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute011
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1200
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -324,9 +345,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1300
-     * @tc.name     : testGetAttribute012
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute012
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1300
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -353,9 +377,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1400
-     * @tc.name     : testGetAttribute013
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute013
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1400
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -382,9 +409,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1500
-     * @tc.name     : testGetAttribute014
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute014
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1500
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -411,9 +441,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1600
-     * @tc.name     : testGetAttribute015
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute015
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1600
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -440,9 +473,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1700
-     * @tc.name     : testGetAttribute016
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute016
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1700
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -469,9 +505,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1800
-     * @tc.name     : testGetAttribute017
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute017
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1800
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -498,9 +537,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1900
-     * @tc.name     : testGetAttribute018
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute018
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_1900
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -527,9 +569,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2000
-     * @tc.name     : testGetAttribute019
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute019
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2000
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -556,9 +601,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2100
-     * @tc.name     : testGetAttribute020
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute020
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2100
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -585,9 +633,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2200
-     * @tc.name     : testGetAttribute021
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute021
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2200
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -614,9 +665,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2300
-     * @tc.name     : testGetAttribute022
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute022
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2300
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -643,9 +697,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2400
-     * @tc.name     : testGetAttribute023
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute023
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2400
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -672,9 +729,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2500
-     * @tc.name     : testGetAttribute024
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute024
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2500
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -701,9 +761,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2600
-     * @tc.name     : testGetAttribute025
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute025
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2600
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -730,9 +793,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2700
-     * @tc.name     : testGetAttribute026
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute026
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_2700
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -759,9 +825,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3000
-     * @tc.name     : testGetAttribute027
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute027
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3000
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -788,9 +857,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3100
-     * @tc.name     : testGetAttribute028
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute028
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3100
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -817,9 +889,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3200
-     * @tc.name     : testGetAttribute029
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute029
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3200
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -846,9 +921,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3300
-     * @tc.name     : testGetAttribute030
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute030
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3300
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -875,9 +953,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3400
-     * @tc.name     : testGetAttribute031
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute031
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3400
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -904,9 +985,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3500
-     * @tc.name     : testGetAttribute032
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute032
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3500
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -933,9 +1017,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3600
-     * @tc.name     : testGetAttribute033
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute033
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3600
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -962,9 +1049,12 @@ export default function SerialAddTest() {
     })
 
     /**
-     * @tc.number   : SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3700
-     * @tc.name     : testGetAttribute034
-     * @tc.desc     : getAttribute successfully.
+     * @tc.name   testGetAttribute034
+     * @tc.number SUB_USB_HostMgr_Serial_JS_getAttribute_Func_3700
+     * @tc.desc   getAttribute successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAttribute034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {

@@ -21,7 +21,6 @@ import backgroundTaskManager from '@ohos.backgroundTaskManager';
 export default function ContextJsunit() {
   describe('faContextTest', () => {
     let TAG1 = "SUB_AA_OpenHarmony == faContextTest: ";
-    let sleepTimeOne = 1000;
     let id: number;
     beforeAll(async (done: Function) => {
       console.log(TAG1 + "beforeAll called");
@@ -31,19 +30,15 @@ export default function ContextJsunit() {
       })
       id = delayInfo.requestId;
       console.log(TAG1 + "requestId is : " + id);
-      setTimeout(() => {
-        console.log(TAG1 + "beforeAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "beforeAll end");
+      done();
     })
 
     afterAll(async (done: Function) => {
       console.log(TAG1 + "afterAll called");
       backgroundTaskManager.cancelSuspendDelay(id);
-      setTimeout(() => {
-        console.log(TAG1 + "afterAll end");
-        done();
-      }, sleepTimeOne);
+      console.log(TAG1 + "afterAll end");
+      done();
     })
     beforeEach(async (done: Function) => {
       console.info("context before each called");
@@ -51,15 +46,16 @@ export default function ContextJsunit() {
     })
 
     afterEach(async () => {
-      await Utils.sleep(2000);
       console.info("context after each called");
     })
 
-    /*
-     * @tc.number: context_getCacheDir_test_0100
-     * @tc.name: getCacheDir : Obtains the Cache directory on internal storage.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getCacheDir_test_0100
+     * @tc.number context_getCacheDir_test_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getCacheDir_test_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getCacheDir_test_0100-------------------");
@@ -83,11 +79,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getCacheDir_test_0200
-     * @tc.name: getCacheDir : Obtains the Cache directory on internal storage.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getCacheDir_test_0200
+     * @tc.number context_getCacheDir_test_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getCacheDir_test_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getCacheDir_test_0200-------------------");
@@ -110,11 +108,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getFilesDir_test_0100
-     * @tc.name: getFilesDir : Obtains the files directory on internal storage.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getFilesDir_test_0100
+     * @tc.number context_getFilesDir_test_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getFilesDir_test_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getFilesDir_test_0100-------------------");
@@ -138,11 +138,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getFilesDir_test_0200
-     * @tc.name: getFilesDir : Obtains the files directory on internal storage.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getFilesDir_test_0200
+     * @tc.number context_getFilesDir_test_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getFilesDir_test_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getFilesDir_test_0200-------------------");
@@ -166,11 +168,13 @@ export default function ContextJsunit() {
     })
 
 
-    /*
-     * @tc.number: context_getOrCreateDistributedDir_test_0100
-     * @tc.name: getOrCreateDistributedDir : Obtains the directory of Distributed files.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getOrCreateDistributedDir_0100
+     * @tc.number context_getOrCreateDistributedDir_test_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getOrCreateDistributedDir_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getOrCreateDistributedDir_0100-------------------");
@@ -193,11 +197,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getOrCreateDistributedDir_0200
-     * @tc.name: getOrCreateDistributedDir : Obtains the directory of Distributed files.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getOrCreateDistributedDir_0200
+     * @tc.number context_getOrCreateDistributedDir_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getOrCreateDistributedDir_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getOrCreateDistributedDir_0200-------------------");
@@ -220,11 +226,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getAppType_0100
-     * @tc.name: getAppType : Obtains the type of current application.
-     * @tc.desc: Check the return value of the interface (by promise)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getAppType_0100
+     * @tc.number context_getAppType_0100
+     * @tc.desc   Check the return value of the interface (by promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getAppType_0100", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getAppType_0100-------------------");
@@ -248,11 +256,13 @@ export default function ContextJsunit() {
       }
     })
 
-    /*
-     * @tc.number: context_getAppType_0200
-     * @tc.name: getAppType : Obtains the type of current application.
-     * @tc.desc: Check the return value of the interface (by AsyncCallback)
-     * @tc.level   0
+    /**
+     * @tc.name   context_getAppType_0200
+     * @tc.number context_getAppType_0200
+     * @tc.desc   Check the return value of the interface (by AsyncCallback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("context_getAppType_0200", Level.LEVEL0, async (done: Function) => {
       console.log("------------------start context_getAppType_0200-------------------");

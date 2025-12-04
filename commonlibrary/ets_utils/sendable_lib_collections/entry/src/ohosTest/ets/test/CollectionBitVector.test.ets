@@ -85,12 +85,12 @@ export default function collectionsBitVectorTest() {
     })
 
     /**
-     * @tc.number    : CollectionsTestClass001
-     * @tc.name      : ArkTS Collections bitvector
-     * @tc.desc      : ArkTS Collections bitvector
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestClass001
+     * @tc.number CollectionsTestClass001
+     * @tc.desc   ArkTS Collections bitvector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestClass001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let flag:boolean = false;
@@ -114,12 +114,12 @@ export default function collectionsBitVectorTest() {
     });
 
     /**
-     * @tc.number    : CollectionsTestClass002
-     * @tc.name      : ArkTS Collections bitvector
-     * @tc.desc      : ArkTS Collections bitvector
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass002
+     * @tc.number CollectionsTestClass002
+     * @tc.desc   ArkTS Collections bitvector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let t = new Test();
@@ -135,12 +135,12 @@ export default function collectionsBitVectorTest() {
     });
 
     /**
-     * @tc.number    : CollectionsTestClass003
-     * @tc.name      : ArkTS Collections bitvector
-     * @tc.desc      : ArkTS Collections bitvector
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   CollectionsTestClass003
+     * @tc.number CollectionsTestClass003
+     * @tc.desc   ArkTS Collections bitvector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('CollectionsTestClass003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
        let bitvector = new collections.BitVector(0);

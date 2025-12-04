@@ -26,65 +26,65 @@ export default function imageRenderModeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0100
-     * @tc.name       : testImageRenderMode001
-     * @tc.desc       : testing renderMode for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRenderMode001
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0100
+     * @tc.desc   testing renderMode for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRenderMode001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRenderMode001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0200
-     * @tc.name       : testImageRenderMode002
-     * @tc.desc       : testing renderMode for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRenderMode002
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0200
+     * @tc.desc   testing renderMode for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRenderMode002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRenderMode002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0300
-     * @tc.name       : testImageRenderMode003
-     * @tc.desc       : testing renderMode for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRenderMode003
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0300
+     * @tc.desc   testing renderMode for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRenderMode003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRenderMode003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0400
-     * @tc.name       : testImageRenderMode004
-     * @tc.desc       : testing renderMode for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRenderMode004
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0400
+     * @tc.desc   testing renderMode for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRenderMode004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRenderMode004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0500
-     * @tc.name       : testImageRenderMode005
-     * @tc.desc       : testing renderMode for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRenderMode005
+     * @tc.number SUB_ARKUI_CAPI_NODE_IMAGE_RENDER_MOD_0500
+     * @tc.desc   testing renderMode for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRenderMode005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRenderMode005()).assertEqual(0)

@@ -112,14 +112,14 @@ export default function avVideoRecorderTestTWO() {
       console.info('afterAll case');
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100
-            * @tc.desc      : Recorder video start-pause-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100
+     * @tc.desc   Recorder video start-pause-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -154,14 +154,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_MPEG4_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400
-            * @tc.desc      : Recorder video start-pause-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400
+     * @tc.desc   Recorder video start-pause-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -196,14 +196,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500
-            * @tc.desc      : Recorder video start-stop-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500
+     * @tc.desc   Recorder video start-stop-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -238,14 +238,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600
-            * @tc.desc      : Recorder video start-reset-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600
+     * @tc.desc   Recorder video start-reset-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -280,14 +280,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800
-            * @tc.desc      : Recorder create-prepare-getInputSurface-start-pause-resume-resume-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-pause-resume-resume-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -326,14 +326,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -368,14 +368,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -410,14 +410,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -452,14 +452,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -498,14 +498,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500
-            * @tc.desc      : Recorder start-pause-resume-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500
+     * @tc.desc   Recorder start-pause-resume-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -540,14 +540,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500
-            * @tc.desc      : Recorder video resume-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500
+     * @tc.desc   Recorder video resume-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -582,14 +582,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500
-            * @tc.desc      : Recorder video start-resume-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500
+     * @tc.desc   Recorder video start-resume-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -624,14 +624,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100
-            * @tc.desc      : Recorder video create-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100
+     * @tc.desc   Recorder video create-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -659,14 +659,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200
-            * @tc.desc      : Recorder video prepare-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200
+     * @tc.desc   Recorder video prepare-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -693,14 +693,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -733,14 +733,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0700
-            * @tc.desc      : Recorder create-prepare-getInputSurface-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -770,14 +770,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -810,14 +810,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -850,14 +850,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -890,14 +890,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0700
-            * @tc.desc      : Recorder video start-resume
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0700
+     * @tc.desc   Recorder video start-resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESUME_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -929,14 +929,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300
-            * @tc.desc      : Recorder video start-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300
+     * @tc.desc   Recorder video start-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -967,14 +967,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0400
-            * @tc.desc      : Recorder video start-pause-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0400
+     * @tc.desc   Recorder video start-pause-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1008,14 +1008,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600
-            * @tc.desc      : Recorder start-reset-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600
+     * @tc.desc   Recorder start-reset-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1048,14 +1048,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800
-            * @tc.desc      : Recorder start-stop-stop-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800
+     * @tc.desc   Recorder start-stop-stop-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1090,14 +1090,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_CALLBACK_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100
-            * @tc.desc      : Recorder video create-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100
+     * @tc.desc   Recorder video create-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1124,14 +1124,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200
-            * @tc.desc      : Recorder video prepare-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200
+     * @tc.desc   Recorder video prepare-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1158,14 +1158,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0300
-            * @tc.desc      : Recorder video start-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0300
+     * @tc.desc   Recorder video start-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1197,14 +1197,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0400
-            * @tc.desc      : Recorder video pause-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0400
+     * @tc.desc   Recorder video pause-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1238,14 +1238,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600
-            * @tc.desc      : Recorder video reset-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600
+     * @tc.desc   Recorder video reset-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1278,14 +1278,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700
-            * @tc.desc      : Recorder video getInputSurface-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700
+     * @tc.desc   Recorder video getInputSurface-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1316,14 +1316,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800
-            * @tc.desc      : Recorder video start-stop-stop-stop
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800
+     * @tc.desc   Recorder video start-stop-stop-stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1360,14 +1360,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_STOP_PROMISE_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100
-            * @tc.desc      : Recorder video create-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100
+     * @tc.desc   Recorder video create-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1395,14 +1395,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200
-            * @tc.desc      : Recorder video prepare-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200
+     * @tc.desc   Recorder video prepare-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1429,14 +1429,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300
-            * @tc.desc      : Recorder video start-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300
+     * @tc.desc   Recorder video start-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1469,14 +1469,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400
-            * @tc.desc      : Recorder video start-pause-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400
+     * @tc.desc   Recorder video start-pause-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1509,14 +1509,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500
-            * @tc.desc      : Recorder video start-resume-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500
+     * @tc.desc   Recorder video start-resume-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1549,14 +1549,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600
-            * @tc.desc      : Recorder video start-stop-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600
+     * @tc.desc   Recorder video start-stop-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1589,14 +1589,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700
-            * @tc.desc      : Recorder create-prepare-getInputSurface-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1625,14 +1625,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800
-            * @tc.desc      : Recorder create-prepare-getInputSurface-start-reset-reset-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-reset-reset-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1667,14 +1667,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_CALLBACK_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100
-            * @tc.desc      : Recorder video create-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100
+     * @tc.desc   Recorder video create-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1701,14 +1701,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200
-            * @tc.desc      : Recorder video prepare-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200
+     * @tc.desc   Recorder video prepare-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1735,14 +1735,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300
-            * @tc.desc      : Recorder video start-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300
+     * @tc.desc   Recorder video start-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1773,14 +1773,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0400
-            * @tc.desc      : Recorder video start-pause-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0400
+     * @tc.desc   Recorder video start-pause-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1814,14 +1814,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600
-            * @tc.desc      : Recorder video start-stop-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600
+     * @tc.desc   Recorder video start-stop-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1854,14 +1854,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700
-            * @tc.desc      : Recorder create-prepare-getInputSurface-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700
+     * @tc.desc   Recorder create-prepare-getInputSurface-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1890,14 +1890,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0800
-            * @tc.desc      : Recorder create-prepare-getInputSurface-start-reset-reset-reset
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0800
+     * @tc.desc   Recorder create-prepare-getInputSurface-start-reset-reset-reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_RESET_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1935,14 +1935,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
     // promise prepare
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100
-            * @tc.desc      : 1.create 2.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100
+     * @tc.desc   1.create 2.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -1971,14 +1971,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200
-            * @tc.desc      : 1.create 2.prepare 3.start 4.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200
+     * @tc.desc   1.create 2.prepare 3.start 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2017,14 +2017,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0200 end')
     })
 
-    /* *
-           * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300
-           * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300
-           * @tc.desc      : 1.create 2.prepare 3.start 4.pause 5.prepare
-           * @tc.size      : MediumTest
-           * @tc.type      : Function
-           * @tc.level     : Level 2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2064,14 +2064,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0300 end')
     })
 
-    /* *
-           * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400
-           * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400
-           * @tc.desc      : 1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
-           * @tc.size      : MediumTest
-           * @tc.type      : Function
-           * @tc.level     : Level 2
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400
+     * @tc.desc   1.create 2.prepare 3.start 4.pause 5.resume 6.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2113,14 +2113,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500
-            * @tc.desc      : 1.create 2.prepare 3.start 4.stop 5.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500
+     * @tc.desc   1.create 2.prepare 3.start 4.stop 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2160,14 +2160,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600
-            * @tc.desc      : 1.create 2.prepare 3.start 4.reset 5.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600
+     * @tc.desc   1.create 2.prepare 3.start 4.reset 5.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2207,14 +2207,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2249,14 +2249,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800
-            * @tc.desc      : 1.create 2.prepare 3.prepare 4.prepare
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800
+     * @tc.desc   1.create 2.prepare 3.prepare 4.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2294,14 +2294,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900
-            * @tc.desc      : 1.create 2.prepare (audioBitrate -1)
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900
+     * @tc.desc   1.create 2.prepare (audioBitrate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2351,14 +2351,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_0900 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000
-            * @tc.desc      : 1.create 2.prepare (audioSampleRate -1)
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000
+     * @tc.desc   1.create 2.prepare (audioSampleRate -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2409,14 +2409,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1000 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1100
-            * @tc.desc      : 1.create 2.prepare (videoBitrateRange -1)
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1100
+     * @tc.desc   1.create 2.prepare (videoBitrateRange -1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PREPARE_PROMISE_1100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2469,14 +2469,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
     // Promise getInputSurface
-    /* *
-             * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100
-             * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100
-             * @tc.desc      : 1.create 2.getInputSurface
-             * @tc.size      : MediumTest
-             * @tc.type      : Function
-             * @tc.level     : Level 2
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100
+     * @tc.desc   1.create 2.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2505,14 +2505,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200
+     * @tc.desc   1.create 2.prepare 3.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2545,14 +2545,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2589,14 +2589,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2637,14 +2637,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2687,14 +2687,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600
-            * @tc.desc      :1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2735,14 +2735,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2783,14 +2783,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0800
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.getInputSurface 5.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_GETSURFACE_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2830,14 +2830,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
     // Promise start
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100
-            * @tc.desc      : 1.create 2.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100
+     * @tc.desc   1.create 2.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2866,14 +2866,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200
-            * @tc.desc      : 1.create 2.prepare 4.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200
+     * @tc.desc   1.create 2.prepare 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2904,14 +2904,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -2952,14 +2952,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3002,14 +3002,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3050,14 +3050,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3098,14 +3098,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3140,14 +3140,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0800
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.start 6.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_START_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3196,14 +3196,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
     // Promise pause
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100
-            * @tc.desc      : 1.create 2.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100
+     * @tc.desc   1.create 2.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3232,14 +3232,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200
-            * @tc.desc      : 1.create 2.prepare 3.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200
+     * @tc.desc   1.create 2.prepare 3.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3270,14 +3270,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3314,14 +3314,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3362,14 +3362,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.stop 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3410,14 +3410,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.reset 6.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3458,14 +3458,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3500,14 +3500,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0800
-            * @tc.desc      : 1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0800
+     * @tc.desc   1.create 2.prepare 3.getInputSurface 4.start 5.pause 6.pause 7.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_PAUSE_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3553,14 +3553,14 @@ export default function avVideoRecorderTestTWO() {
 
     // 状态切换
     // 01.promise回调方式
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3595,14 +3595,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3639,14 +3639,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3687,14 +3687,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3731,14 +3731,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0400 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3775,14 +3775,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0500 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.stop 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3821,14 +3821,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0600 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.reset 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3867,14 +3867,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0700 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.stop 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3915,14 +3915,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0800 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.reset 8.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -3963,14 +3963,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_0900 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4022,14 +4022,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1000 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4083,14 +4083,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4146,14 +4146,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4207,14 +4207,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1400
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.reset 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_PROMISE_1400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4269,14 +4269,14 @@ export default function avVideoRecorderTestTWO() {
     })
 
     // 02.callback回调
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4307,14 +4307,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0100 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4345,14 +4345,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0200 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.pause 6.resume 7.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');
@@ -4387,14 +4387,14 @@ export default function avVideoRecorderTestTWO() {
       console.info(TAG + 'SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0300 end')
     })
 
-    /* *
-            * @tc.number    : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0400
-            * @tc.name      : SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0400
-            * @tc.desc      : 1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
-            * @tc.size      : MediumTest
-            * @tc.type      : Function
-            * @tc.level     : Level 2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0400
+     * @tc.number SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0400
+     * @tc.desc   1.createAVRecorder 2.prepare 3.getInputSurface 4.start 5.stop 6.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AVRECORDER_VIDEO_TWO_FUNCTION_CALLBACK_0400', Level.LEVEL0, async (done: Function) => {
       if (!avRecorderBase.isSupportCameraVideoProfiles) {
         console.info('Failed to obtain the default videoProfiles object.Not support usb camera');

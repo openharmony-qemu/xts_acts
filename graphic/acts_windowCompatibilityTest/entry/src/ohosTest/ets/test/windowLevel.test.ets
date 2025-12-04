@@ -62,12 +62,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       console.log(msg + ' beforeEach end!!!')
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0010
-     * @tc.name      : testGetLastWindow_SubWindow_Promise
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_SubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0010
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_SubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetLastWindow_SubWindow_Promise';
@@ -111,12 +111,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       await (subWindow as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0020
-     * @tc.name      : testGetLastWindow_SubWindow_Callback
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_SubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0020
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_SubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetLastWindow_SubWindow_Callback';
@@ -172,12 +172,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0030
-     * @tc.name      : testGetLastWindow_TwoSubWindow_Promise
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_TwoSubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0030
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_TwoSubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetLastWindow_TwoSubWindow_Promise';
@@ -246,12 +246,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       await (subWindowTwo as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0040
-     * @tc.name      : testGetLastWindow_TwoSubWindow_Callback
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_TwoSubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0040
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_TwoSubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetLastWindow_TwoSubWindow_Callback';
@@ -337,12 +337,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0050
-     * @tc.name      : testGetLastWindow_DialogWindow_Promise
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_DialogWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0050
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_DialogWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetLastWindow_DialogWindow_Promise';
@@ -391,12 +391,12 @@ export default function windowLevelTest(context: common.UIAbilityContext, window
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0060
-     * @tc.name      : testGetLastWindow_DialogWindow_Callback
-     * @tc.desc      : Gets the last window displayed in the current app.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testGetLastWindow_DialogWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWLEVEL_JS_API_0060
+     * @tc.desc   Gets the last window displayed in the current app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetLastWindow_DialogWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testGetLastWindow_DialogWindow_Callback';

@@ -39,11 +39,19 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanQuery_poolTestCase
+     * @tc.number TestVulkanQuery_poolTestCase
+     * @tc.desc   TestVulkanQuery_poolTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanQuerypoolTest, TestVulkanQuery_poolTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanQuerypoolTest------\n");
         if (canIUse("SystemCapability.Graphic.Vulkan")) {
-            system("/data/local/tmp/vulkan/vk-default/deqp_vk_execute "
+            system("/data/local/tmp/deqp_vk_execute "
                 "--deqp-caselist-file=/data/local/tmp/vulkan/vk-default/query-pool.txt "
                 "--deqp-log-filename=ActsVulkanQuerypoolTest.qpa");
         }

@@ -66,7 +66,7 @@ export default class MediaTestBase {
 
   setAVScreenCaptueCallback(avScreenCaptureRecorder: media.AVScreenCaptureRecorder | null, done: () => void) {
     // 状态机变化回调函数
-    avScreenCaptureRecorder?.on('stateChange', (state) => {
+    avScreenCaptureRecorder?.onStateChange((state) => {
       console.info('avScreenCapture stateChange to ' + state);
       switch (state) {
         case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED:
@@ -97,7 +97,7 @@ export default class MediaTestBase {
       }
     })
 
-    avScreenCaptureRecorder?.on('error', (err) => {
+    avScreenCaptureRecorder?.onError((err) => {
       console.error('avScreenCaptureRecorder error:' + err.message);
       expect().assertFail()
     })
@@ -257,7 +257,7 @@ export default class MediaTestBase {
 
         let surfaceID: string = AppStorage.get<string>('surfaceId') as string;
         console.error(`case INITIALIZED , surfaceID is ${surfaceID}`);
-        this.avPlayer?.on('stateChange', (state: media.AVPlayerState, reason: media.StateChangeReason) => {
+        this.avPlayer?.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
           switch (state) {
             case 'initialized':
               if (!this.avPlayer) {
@@ -455,7 +455,7 @@ export default class MediaTestBase {
     }
   }
 
-  audioRen: audio.AudioRenderer | undefined;
+  audioRen: audio.AudioRenderer | undefined | null;
 
   async playPcmPromise() {
     console.info(`${this.TAG}: Promise : Audio playPcmPromise Function`);
@@ -480,7 +480,7 @@ export default class MediaTestBase {
       return undefined;
     }
 
-    await audio.createAudioRenderer(audioRendererOptions).then((data: audio.AudioRenderer) => {
+    await audio.createAudioRenderer(audioRendererOptions).then((data: audio.AudioRenderer | null) => {
       this.audioRen = data;
       console.info(`${this.TAG}: AudioRender Created : Success : Stream Type: SUCCESS`);
     }).catch((err: Error) => {
@@ -494,7 +494,7 @@ export default class MediaTestBase {
     let stat = await fs.stat(filePath)
     let file: fs.File = fs.openSync(filePath, fs.OpenMode.READ_ONLY);
 
-    this.audioRen!!.on('writeData', (buffer: ArrayBuffer) => {
+    this.audioRen!!.onWriteData((buffer: ArrayBuffer) => {
       // console.info(`${this.TAG}: writeDataCallback : ${buffer.byteLength}`);
       if (buffer.byteLength <= 0) {
         return audio.AudioDataCallbackResult.INVALID;

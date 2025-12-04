@@ -44,12 +44,12 @@ export default function PercentReferenceTest() {
       console.info("PercentReferenceTest after each called");
     });
     /**
-     * @tc.number    PercentReferenceTest
-     * @tc.name      testBack
-     * @tc.desc      Return specified page by index value
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
+     * @tc.name   PercentReferenceTest_001
+     * @tc.number PercentReferenceTest
+     * @tc.desc   Return specified page by index value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("PercentReferenceTest_001", Level.LEVEL0, async (done: Function) => {
       console.info("[PercentReferenceTest_001] START");

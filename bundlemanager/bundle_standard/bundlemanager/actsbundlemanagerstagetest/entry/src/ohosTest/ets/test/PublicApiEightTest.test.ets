@@ -27,10 +27,13 @@ const BMSJSTEST1 = "bmsJstest1.hap";
 export default function PublicApiEightTest() {
   describe('PublicApiEightTest', () =>  {
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_7980
-     * @tc.name:  getBundleInfoTest
-     * @tc.desc: Test getBundleInfo of API8 in version9 normal project
+    /**
+     * @tc.name   getBundleInfoTest
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_7980
+     * @tc.desc   Test getBundleInfo of API8 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getBundleInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getBundleInfo(BUNDLE_NAME , bundle.BundleFlag.GET_BUNDLE_DEFAULT).then(data => {
@@ -49,10 +52,13 @@ export default function PublicApiEightTest() {
       })
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_8340
-     * @tc.name:  getAbilityInfoTest
-     * @tc.desc: Test getAbilityInfo of API8 in version9 normal project
+    /**
+     * @tc.name   getAbilityInfoTest
+     * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8340
+     * @tc.desc   Test getAbilityInfo of API8 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAbilityInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) =>  {
       await bundle.getAbilityInfo(BUNDLE_NAME, ABILITY_NAME).then((data) => {
@@ -71,10 +77,13 @@ export default function PublicApiEightTest() {
       })
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Query_AppInfo_8000
-     * @tc.name:  getApplicationInfoTest
-     * @tc.desc: Test getApplicationInfo of API8 in version9 normal project
+    /**
+     * @tc.name   getApplicationInfoTest
+     * @tc.number Sub_Bms_Framework_Query_AppInfo_8000
+     * @tc.desc   Test getApplicationInfo of API8 in version9 normal project
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('getApplicationInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
       await bundle.getApplicationInfo(BUNDLE_NAME, bundle.BundleFlag.GET_BUNDLE_DEFAULT).then(data => {
@@ -93,10 +102,13 @@ export default function PublicApiEightTest() {
       });
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8360
-      * @tc.name queryAbilityByWantTest
-      * @tc.desc Test queryAbilityByWant of API8 in version9 normal project
-      */
+       * @tc.name   queryAbilityByWantTest
+       * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8360
+       * @tc.desc   Test queryAbilityByWant of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
       it('queryAbilityByWantTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) =>  {
         await bundle.queryAbilityByWant(
           {
@@ -123,10 +135,13 @@ export default function PublicApiEightTest() {
       })
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_8020
-      * @tc.name getAllBundleInfoTest
-      * @tc.desc Test getAllBundleInfo of API8 in version9 normal project
-      */
+       * @tc.name   getAllBundleInfoTest
+       * @tc.number Sub_Bms_Framework_Query_AppInfo_8020
+       * @tc.desc   Test getAllBundleInfo of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getAllBundleInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getAllBundleInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT).then(data => {
           console.info("getAllBundleInfoTest success:" + JSON.stringify(data));
@@ -145,10 +160,13 @@ export default function PublicApiEightTest() {
       })
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_8040
-      * @tc.name getAllApplicationInfoTest
-      * @tc.desc Test getAllApplicationInfo of API8 in version9 normal project
-      */
+       * @tc.name   getAllApplicationInfoTest
+       * @tc.number Sub_Bms_Framework_Query_AppInfo_8040
+       * @tc.desc   Test getAllApplicationInfo of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getAllApplicationInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getAllApplicationInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT).then(data => {
           console.info("getAllApplicationInfoTest success:" + JSON.stringify(data));
@@ -167,10 +185,13 @@ export default function PublicApiEightTest() {
       })
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_8060
-      * @tc.name getNameForUidTest
-      * @tc.desc Test getNameForUid of API8 in version9 normal project
-      */
+       * @tc.name   getNameForUidTest
+       * @tc.number Sub_Bms_Framework_Query_AppInfo_8060
+       * @tc.desc   Test getNameForUid of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getNameForUidTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         let dataInfo = await bundle.getBundleInfo(BUNDLE_NAME, bundle.BundleFlag.GET_BUNDLE_DEFAULT);
         await bundle.getNameForUid(dataInfo.uid).then(data => {
@@ -187,10 +208,13 @@ export default function PublicApiEightTest() {
       });
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AppInfo_8080
-      * @tc.name getBundleArchiveInfoTest
-      * @tc.desc Test getBundleArchiveInfo of API8 in version9 normal project
-      */
+       * @tc.name   getBundleArchiveInfoTest
+       * @tc.number Sub_Bms_Framework_Query_AppInfo_8080
+       * @tc.desc   Test getBundleArchiveInfo of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getBundleArchiveInfoTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getBundleArchiveInfo(PATH + BMSJSTEST1, bundle.BundleFlag.GET_BUNDLE_DEFAULT).then(data => {
           console.info("getBundleArchiveInfoTest success:" + JSON.stringify(data));
@@ -209,10 +233,13 @@ export default function PublicApiEightTest() {
       })
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8380
-      * @tc.name getLaunchWantForBundleTest
-      * @tc.desc Test getLaunchWantForBundle of API8 in version9 normal project
-      */
+       * @tc.name   getLaunchWantForBundleTest
+       * @tc.number Sub_Bms_Framework_Query_AbilityInfo_8380
+       * @tc.desc   Test getLaunchWantForBundle of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getLaunchWantForBundleTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getLaunchWantForBundle(BUNDLE_NAME).then(data => {
           console.info("getLaunchWantForBundleTest success:" + JSON.stringify(data));
@@ -231,10 +258,13 @@ export default function PublicApiEightTest() {
       });
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_Label_5300
-      * @tc.name getAbilityLabelTest
-      * @tc.desc Test getAbilityLabel of API8 in version9 normal project
-      */
+       * @tc.name   getAbilityLabelTest
+       * @tc.number Sub_Bms_Framework_Query_Label_5300
+       * @tc.desc   Test getAbilityLabel of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getAbilityLabelTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getAbilityLabel(BUNDLE_NAME, ABILITY_NAME).then((data) => {
           console.info("getAbilityLabelTest success:" + JSON.stringify(data));
@@ -252,10 +282,13 @@ export default function PublicApiEightTest() {
       });
 
       /**
-      * @tc.number Sub_Bms_Framework_Query_Icon_4100
-      * @tc.name getAbilityIconTest
-      * @tc.desc Test getAbilityIcon of API8 in version9 normal project
-      */
+       * @tc.name   getAbilityIconTest
+       * @tc.number Sub_Bms_Framework_Query_Icon_4100
+       * @tc.desc   Test getAbilityIcon of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('getAbilityIconTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.getAbilityIcon(BUNDLE_NAME, ABILITY_NAME).then(data => {
           console.info("getAbilityIconTest success:" + JSON.stringify(data));
@@ -274,10 +307,13 @@ export default function PublicApiEightTest() {
 
 
       /**
-      * @tc.number Sub_Bms_Framework_Status_AppEnable_4300
-      * @tc.name isApplicationEnabledTest
-      * @tc.desc Test isApplicationEnabled of API8 in version9 normal project
-      */
+       * @tc.name   isApplicationEnabledTest
+       * @tc.number Sub_Bms_Framework_Status_AppEnable_4300
+       * @tc.desc   Test isApplicationEnabled of API8 in version9 normal project
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('isApplicationEnabledTest', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
         await bundle.isApplicationEnabled(BUNDLE_NAME).then((data) => {
           expect(data).assertFalse();
@@ -290,6 +326,62 @@ export default function PublicApiEightTest() {
           done();
         });
       });
+
+
+
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_bundleInfo_9110
+     * @tc.number Sub_Bms_Framework_Query_bundleInfo_9110
+     * @tc.desc   Sub_Bms_Framework_Query_bundleInfo_9110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_bundleInfo_9110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+      try {
+        bundle.getAllBundleInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT,100,(err,data) => {
+          console.info("Sub_Bms_Framework_Query_bundleInfo_9110 success:" + JSON.stringify(data));
+          console.info("Sub_Bms_Framework_Query_bundleInfo_9110 err" + JSON.stringify(err));
+          expect(data.length).assertEqual(0);
+          expect(err).assertEqual(0);
+        })
+
+      } catch (err) {
+        console.info("Sub_Bms_Framework_Query_bundleInfo_9110 catch" + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
+
+    /**
+     * @tc.name   Sub_Bms_Framework_Query_applicationInfo_9110
+     * @tc.number Sub_Bms_Framework_Query_applicationInfo_9110
+     * @tc.desc   Sub_Bms_Framework_Query_applicationInfo_9110
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('Sub_Bms_Framework_Query_applicationInfo_9110', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) =>  {
+      try {
+        bundle.getAllApplicationInfo(bundle.BundleFlag.GET_BUNDLE_DEFAULT,100, (err,data) => {
+          console.info("Sub_Bms_Framework_Query_applicationInfo_9110 success:" + JSON.stringify(data));
+          console.info("Sub_Bms_Framework_Query_applicationInfo_9110 err" + JSON.stringify(err));
+          expect(data.length).assertEqual(0);
+          expect(err.code).assertEqual(0);
+        })
+      } catch (err) {
+        console.info("Sub_Bms_Framework_Query_applicationInfo_9110 catch" + JSON.stringify(err));
+        expect().assertFail();
+      }
+      done();
+
+    })
+
+
 
 
     })

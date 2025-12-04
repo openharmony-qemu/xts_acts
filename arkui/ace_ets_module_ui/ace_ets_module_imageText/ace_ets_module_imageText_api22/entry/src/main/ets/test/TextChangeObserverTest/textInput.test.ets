@@ -47,12 +47,12 @@ export default function textInputTest() {
     });
 
     /**
-     * @tc.number    textInputTest_0010
-     * @tc.name      textInputTest_0010
-     * @tc.desc      Global observer enabled or disabled, text change of the textInput component, Expected: observed text is 'textInputTest_0010'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textInputTest_0010
+     * @tc.number textInputTest_0010
+     * @tc.desc   Global observer enabled or disabled, text change of the textInput component, Expected: observed text is 'global:textInputTest_0010'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest_0010] START');
@@ -63,35 +63,44 @@ export default function textInputTest() {
       await globalObserverOpenButton.click();
 
       let textInput: Component = await driver.findComponent(ON.id('textInput'));
-      await textInput.inputText('textInputTest_0010', { paste: true, addition: false });
+      await textInput.inputText('textInputTest_0010');
 
-      let globalOutputTextInput: Component = await driver.findComponent(ON.id('globalOutputTextInput'));
-      let globalOutput = await globalOutputTextInput.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputTextInput1: Component = await driver.findComponent(ON.id('globalOutputTextInput'));
+      let globalOutput1 = await globalOutputTextInput1.getText();
       
-      console.info('[textInputTest_0010] textContent: ' + globalOutput);
-      expect(globalOutput).assertEqual('textInputTest_0010');
+      console.info('[textInputTest_0010] textContent: ' + globalOutput1);
+      expect(globalOutput1).assertEqual('global:textInputTest_0010');
 
       let globalObserverCloseButton: Component = await driver.findComponent(ON.id('全局监听(关)'));
       await globalObserverCloseButton.click();
 
-      await textInput.inputText('Add', { paste: true, addition: true });
+      await textInput.inputText('Add');
 
-      let globalOutput2 = await globalOutputTextInput.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let globalOutputTextInput2: Component = await driver.findComponent(ON.id('globalOutputTextInput'));
+      let globalOutput2 = await globalOutputTextInput2.getText();
 
       console.info('[textInputTest_0010] textContent: ' + globalOutput2);
-      expect(globalOutput2).assertEqual('textInputTest_0010');
+      expect(globalOutput2).assertEqual('global:textInputTest_0010');
 
       console.info('[textInputTest_0010] END');
       done();
     });
 
     /**
-     * @tc.number    textInputTest_0011
-     * @tc.name      textInputTest_0011
-     * @tc.desc      Local observer enabled or disabled, text change of the textInput component, Expected: observed text is 'textInputTest_0011'
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textInputTest_0011
+     * @tc.number textInputTest_0011
+     * @tc.desc   Local observer enabled or disabled, text change of the textInput component, Expected: observed text is 'local:textInputTest_0011'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('textInputTest_0011', Level.LEVEL1, async (done: Function) => {
       console.info('[textInputTest_0011] START');
@@ -102,23 +111,32 @@ export default function textInputTest() {
       await localObserverOpenButton.click();
 
       let textInput: Component = await driver.findComponent(ON.id('textInput'));
-      await textInput.inputText('textInputTest_0011', { paste: true, addition: false });
+      await textInput.inputText('textInputTest_0011');
 
-      let localOutputTextInput: Component = await driver.findComponent(ON.id('localOutputTextInput'));
-      let localOutput = await localOutputTextInput.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
 
-      console.info('[textInputTest_0011] textContent: ' + localOutput);
-      expect(localOutput).assertEqual('textInputTest_0011');
+      let localOutputTextInput1: Component = await driver.findComponent(ON.id('localOutputTextInput'));
+      let localOutput1 = await localOutputTextInput1.getText();
+
+      console.info('[textInputTest_0011] textContent: ' + localOutput1);
+      expect(localOutput1).assertEqual('local:textInputTest_0011');
 
       let localObserverCloseButton: Component = await driver.findComponent(ON.id('局部textInput(关)'));
       await localObserverCloseButton.click();
 
-      await textInput.inputText('Add', { paste: true, addition: true });
+      await textInput.inputText('Add');
 
-      let localOutput2 = await localOutputTextInput.getText();
+      await CommonFunc.sleep(500);
+      await driver.triggerKey(2070);
+      await CommonFunc.sleep(500);
+
+      let localOutputTextInput2: Component = await driver.findComponent(ON.id('localOutputTextInput'));
+      let localOutput2 = await localOutputTextInput2.getText();
 
       console.info('[textInputTest_0011] textContent: ' + localOutput2);
-      expect(localOutput2).assertEqual('textInputTest_0011');
+      expect(localOutput2).assertEqual('local:textInputTest_0011');
 
       console.info('[textInputTest_0011] END');
       done();

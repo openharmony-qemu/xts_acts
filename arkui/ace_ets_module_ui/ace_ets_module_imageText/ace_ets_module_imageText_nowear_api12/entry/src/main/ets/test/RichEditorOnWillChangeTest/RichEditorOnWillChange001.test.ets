@@ -54,10 +54,12 @@ export default function RichEditorOnWillChange001() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021
      * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021
-     * @tc.name SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021
-     * @tc.desc SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021 test
-     * @tc.level Level 2
+     * @tc.desc   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_ONWILLCHANGE_0021 START');
@@ -66,7 +68,7 @@ export default function RichEditorOnWillChange001() {
       await CommonFunc.sleep(1000);
 
       let add_emoji = await driver.findComponent(ON.id('add_emoji'));
-      add_emoji.click();
+      await add_emoji.click();
       await CommonFunc.sleep(1000);
 
       let replacedSpans_callback = await driver.findComponent(ON.id('replacedSpans_callback'));

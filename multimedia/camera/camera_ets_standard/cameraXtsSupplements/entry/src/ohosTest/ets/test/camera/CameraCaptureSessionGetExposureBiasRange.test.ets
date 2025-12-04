@@ -222,7 +222,6 @@ export default function cameraCaptureSessionGetExposureBiasRangeTest() {
       getCameraManager();
       getSupportedCameraDeviceArray();
       getCameraInput();
-      await getVideoSurfaceId();
       AppStorage.setOrCreate('test', [])
     });
 
@@ -241,12 +240,12 @@ export default function cameraCaptureSessionGetExposureBiasRangeTest() {
       AppStorage.delete('string1')
     });
     /**
-     * @tc.number    SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001
-     * @tc.name      SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001
-     * @tc.desc      Create Photo session getExposureBiasRange
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001
+     * @tc.number SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001
+     * @tc.desc   Create Photo session getExposureBiasRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_CAPTURESESSION_GET_EXPOSURE_BIAS_RANGE_001--------------");

@@ -105,9 +105,12 @@ export default function ReminderAgentManagerTest() {
         console.info('start################################start');
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0001
-         * @tc.desc      test ReminderRequest Attribute tapDismissed and autoDeletedTime
+         * @tc.name   reminderRequestAttribute_0001
+         * @tc.number reminderRequestAttribute_0001
+         * @tc.desc   test ReminderRequest Attribute tapDismissed and autoDeletedTime
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0001", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0001---------------------------');
@@ -133,9 +136,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0002
-         * @tc.desc      test ReminderRequest Attribute groupId
+         * @tc.name   reminderRequestAttribute_0002
+         * @tc.number reminderRequestAttribute_0002
+         * @tc.desc   test ReminderRequest Attribute groupId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0002", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0002---------------------------');
@@ -160,9 +166,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0003
-         * @tc.desc      test ReminderRequest ActionButton titleResource
+         * @tc.name   reminderRequestAttribute_0003
+         * @tc.number reminderRequestAttribute_0003
+         * @tc.desc   test ReminderRequest ActionButton titleResource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0003", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0003---------------------------');
@@ -211,9 +220,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0005
-         * @tc.desc      test ReminderRequest snoozeSlotType
+         * @tc.name   reminderRequestAttribute_0005
+         * @tc.number reminderRequestAttribute_0005
+         * @tc.desc   test ReminderRequest snoozeSlotType
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0005", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0005---------------------------');
@@ -239,9 +251,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0006
-         * @tc.desc      test ReminderRequest customRingUri
+         * @tc.name   reminderRequestAttribute_0006
+         * @tc.number reminderRequestAttribute_0006
+         * @tc.desc   test ReminderRequest customRingUri
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0006", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0006---------------------------');
@@ -266,9 +281,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0004
-         * @tc.desc      test timer normal parameter,return with promise.
+         * @tc.name   reminderRequestAttribute_0004
+         * @tc.number reminderRequestAttribute_0004
+         * @tc.desc   test timer normal parameter,return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0004", Level.LEVEL0, async function (done) {
             console.info('----------------------testPublishReminderTimer_030---------------------------');
@@ -284,10 +302,13 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-          * @tc.number    
-          * @tc.name      reminderRequestAttribute_0007
-          * @tc.desc      test publishReminder callbacl REMINDER_TYPE_CALENDAR
-          */
+         * @tc.name   reminderRequestAttribute_0007
+         * @tc.number reminderRequestAttribute_0007
+         * @tc.desc   test publishReminder callbacl REMINDER_TYPE_CALENDAR
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("reminderRequestAttribute_0007", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0007---------------------------');
             let calendar = {
@@ -349,10 +370,13 @@ export default function ReminderAgentManagerTest() {
 
 
         /**
-          * @tc.number    
-          * @tc.name      reminderRequestAttribute_0008
-          * @tc.desc      test publishReminder promise REMINDER_TYPE_CALENDAR
-          */
+         * @tc.name   reminderRequestAttribute_0008
+         * @tc.number reminderRequestAttribute_0008
+         * @tc.desc   test publishReminder promise REMINDER_TYPE_CALENDAR
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("reminderRequestAttribute_0008", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0008---------------------------');
             let calendar = {
@@ -411,9 +435,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0009
-         * @tc.desc      test getValidReminders callback
+         * @tc.name   reminderRequestAttribute_0009
+         * @tc.number reminderRequestAttribute_0009
+         * @tc.desc   test getValidReminders callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0009", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0009---------------------------');
@@ -433,9 +460,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0010
-         * @tc.desc      test getValidReminders promise
+         * @tc.name   reminderRequestAttribute_0010
+         * @tc.number reminderRequestAttribute_0010
+         * @tc.desc   test getValidReminders promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0010", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0010---------------------------');
@@ -453,9 +483,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0011
-         * @tc.desc      test cancelAllReminders callback.
+         * @tc.name   reminderRequestAttribute_0011
+         * @tc.number reminderRequestAttribute_0011
+         * @tc.desc   test cancelAllReminders callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0011", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0011---------------------------');
@@ -475,9 +508,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name    reminderRequestAttribute_0012
-         * @tc.desc    test addNotificationSlot promise mySlot type 3
+         * @tc.name   reminderRequestAttribute_0012
+         * @tc.number reminderRequestAttribute_0012
+         * @tc.desc   test addNotificationSlot promise mySlot type 3
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('reminderRequestAttribute_0012', Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0012---------------------------');
@@ -498,9 +534,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number  
-         * @tc.name    reminderRequestAttribute_0013
-         * @tc.desc    test removeNotificationSlot promise
+         * @tc.name   reminderRequestAttribute_0013
+         * @tc.number reminderRequestAttribute_0013
+         * @tc.desc   test removeNotificationSlot promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('reminderRequestAttribute_0013', Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0013---------------------------');
@@ -518,9 +557,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number   
-         * @tc.name    reminderRequestAttribute_0014
-         * @tc.desc    test addNotificationSlot callback mySlot type 2
+         * @tc.name   reminderRequestAttribute_0014
+         * @tc.number reminderRequestAttribute_0014
+         * @tc.desc   test addNotificationSlot callback mySlot type 2
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('reminderRequestAttribute_0014', Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0014---------------------------');
@@ -543,9 +585,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number  
-         * @tc.name    reminderRequestAttribute_0015
-         * @tc.desc    test removeNotificationSlot callback
+         * @tc.name   reminderRequestAttribute_0015
+         * @tc.number reminderRequestAttribute_0015
+         * @tc.desc   test removeNotificationSlot callback
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('reminderRequestAttribute_0015', Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0015---------------------------');
@@ -566,9 +611,12 @@ export default function ReminderAgentManagerTest() {
 
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0016
-         * @tc.desc      test UNKNOWN_TYPE default parameter with 0.
+         * @tc.name   reminderRequestAttribute_0016
+         * @tc.number reminderRequestAttribute_0016
+         * @tc.desc   test UNKNOWN_TYPE default parameter with 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0016", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0016---------------------------');
@@ -578,9 +626,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0017
-         * @tc.desc      test SOCIAL_COMMUNICATION default parameter with 1.
+         * @tc.name   reminderRequestAttribute_0017
+         * @tc.number reminderRequestAttribute_0017
+         * @tc.desc   test SOCIAL_COMMUNICATION default parameter with 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0017", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0017---------------------------');
@@ -590,9 +641,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0018
-         * @tc.desc      test SERVICE.INFORMATION default parameter with 2.
+         * @tc.name   reminderRequestAttribute_0018
+         * @tc.number reminderRequestAttribute_0018
+         * @tc.desc   test SERVICE.INFORMATION default parameter with 2.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0018", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0018---------------------------');
@@ -602,9 +656,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0019
-         * @tc.desc      test CONTENT_INFORMATION default parameter with 3.
+         * @tc.name   reminderRequestAttribute_0019
+         * @tc.number reminderRequestAttribute_0019
+         * @tc.desc   test CONTENT_INFORMATION default parameter with 3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0019", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0019---------------------------');
@@ -614,9 +671,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0020
-         * @tc.desc      test CONTENT_INFORMATION default parameter with 3.
+         * @tc.name   reminderRequestAttribute_0020
+         * @tc.number reminderRequestAttribute_0020
+         * @tc.desc   test CONTENT_INFORMATION default parameter with 3.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0020", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0020---------------------------');
@@ -626,9 +686,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0021
-         * @tc.desc      test OTHER_TYPES default parameter with 65535.
+         * @tc.name   reminderRequestAttribute_0021
+         * @tc.number reminderRequestAttribute_0021
+         * @tc.desc   test OTHER_TYPES default parameter with 65535.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0021", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0021`---------------------------');
@@ -638,9 +701,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0022
-         * @tc.desc      test button close default parameter with 0.
+         * @tc.name   reminderRequestAttribute_0022
+         * @tc.number reminderRequestAttribute_0022
+         * @tc.desc   test button close default parameter with 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0022", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0022---------------------------');
@@ -650,9 +716,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0023
-         * @tc.desc      test button snooze default parameter with 1.
+         * @tc.name   reminderRequestAttribute_0023
+         * @tc.number reminderRequestAttribute_0023
+         * @tc.desc   test button snooze default parameter with 1.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0023", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0023---------------------------');
@@ -662,9 +731,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0024
-         * @tc.desc      test publishReminder REMINDER_TYPE_ALARM 
+         * @tc.name   reminderRequestAttribute_0024
+         * @tc.number reminderRequestAttribute_0024
+         * @tc.desc   test publishReminder REMINDER_TYPE_ALARM
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0024", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0024---------------------------');
@@ -691,9 +763,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0025
-         * @tc.desc      test reminderRequest WantAgent parameters.
+         * @tc.name   reminderRequestAttribute_0025
+         * @tc.number reminderRequestAttribute_0025
+         * @tc.desc   test reminderRequest WantAgent parameters.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0025", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0025---------------------------');
@@ -730,9 +805,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0026
-         * @tc.desc      test getValidReminders promise. 
+         * @tc.name   reminderRequestAttribute_0026
+         * @tc.number reminderRequestAttribute_0026
+         * @tc.desc   test getValidReminders promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0026", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0026---------------------------');
@@ -767,9 +845,12 @@ export default function ReminderAgentManagerTest() {
         })
         
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0027
-         * @tc.desc      test timer normal parameter, return with promise. 
+         * @tc.name   reminderRequestAttribute_0027
+         * @tc.number reminderRequestAttribute_0027
+         * @tc.desc   test timer normal parameter, return with promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0027", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0027---------------------------');
@@ -785,9 +866,12 @@ export default function ReminderAgentManagerTest() {
         })
         
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0028
-         * @tc.desc      test addExcludeDate promise. 
+         * @tc.name   reminderRequestAttribute_0028
+         * @tc.number reminderRequestAttribute_0028
+         * @tc.desc   test addExcludeDate promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0028", Level.LEVEL0, async function (done) {
             let calendar = {
@@ -866,9 +950,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0029
-         * @tc.desc      test getExcludeDates promise. 
+         * @tc.name   reminderRequestAttribute_0029
+         * @tc.number reminderRequestAttribute_0029
+         * @tc.desc   test getExcludeDates promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0029", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0029---------------------------');
@@ -905,9 +992,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number    
-         * @tc.name      reminderRequestAttribute_0030
-         * @tc.desc      test deleteExcludeDates promise. 
+         * @tc.name   reminderRequestAttribute_0030
+         * @tc.number reminderRequestAttribute_0030
+         * @tc.desc   test deleteExcludeDates promise.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0030", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0030---------------------------');
@@ -944,12 +1034,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0031
-         * @tc.name: reminderRequestAttribute_0031
-         * @tc.desc: test cancelReminder promise function 
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0031
+         * @tc.number reminderRequestAttribute_0031
+         * @tc.desc   test cancelReminder promise function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderRequestAttribute_0031", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0031---------------------------');
@@ -1000,12 +1090,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0032
-         * @tc.name: reminderRequestAttribute_0032
-         * @tc.desc: test cancelReminder callback function 
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0032
+         * @tc.number reminderRequestAttribute_0032
+         * @tc.desc   test cancelReminder callback function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderRequestAttribute_0032", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0032---------------------------');
@@ -1059,12 +1149,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0033
-         * @tc.name: reminderRequestAttribute_0033
-         * @tc.desc: test reminderAgent.RingChannel.RING_CHANNEL_ALARM is 0.
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0033
+         * @tc.number reminderRequestAttribute_0033
+         * @tc.desc   test reminderAgent.RingChannel.RING_CHANNEL_ALARM is 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderRequestAttribute_0033", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0033---------------------------');
@@ -1074,12 +1164,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0034
-         * @tc.name: reminderRequestAttribute_0034
-         * @tc.desc: test reminderAgent.RingChannel.RING_CHANNEL_ALARM is 0.
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0034
+         * @tc.number reminderRequestAttribute_0034
+         * @tc.desc   test reminderAgent.RingChannel.RING_CHANNEL_ALARM is 0.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0034", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0034---------------------------');
@@ -1089,12 +1179,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0035
-         * @tc.name: reminderRequestAttribute_0035
-         * @tc.desc: test updateReminder promise function 
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0035
+         * @tc.number reminderRequestAttribute_0035
+         * @tc.desc   test updateReminder promise function
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("reminderRequestAttribute_0035", Level.LEVEL3, async function (done) {
             console.info('----------------------reminderRequestAttribute_0035---------------------------');
@@ -1149,38 +1239,38 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0036
-         * @tc.name: reminderRequestAttribute_0036
-         * @tc.desc: test getValidReminders promise function res is null
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0036
+         * @tc.number reminderRequestAttribute_0036
+         * @tc.desc   test getValidReminders promise function res is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0036", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0036---------------------------');
-            reminderAgent.cancelAllReminders().then((err, data) => {
+            reminderAgent.cancelAllReminders().then((err) => {
                 console.info('reminderRequestAttribute_0036 cancelAllReminders success');
+                try {
+                    reminderAgent.getValidReminders().then((reminders) => {
+                        console.info('reminderRequestAttribute_0036 promise reminders.length = ' + reminders.length);
+                        expect(reminders.length).assertEqual(0);
+                        done();
+                    }).catch((err) => {
+                        console.info('reminderRequestAttribute_0036 promise err.code is :' + err.code);
+                    })
+                } catch (error) {
+                    console.info("reminderRequestAttribute_0036 getValidReminders error.code:" + error.code);
+                }
             });
-            try {
-                reminderAgent.getValidReminders().then((reminders) => {
-                    console.info('reminderRequestAttribute_0036 promise reminders.length = ' + reminders.length);
-                    expect(reminders.length).assertEqual(0);
-                    done();
-                }).catch((err) => {
-                    console.info('reminderRequestAttribute_0036 promise err.code is :' + err.code);
-                })
-            } catch (error) {
-                console.info("reminderRequestAttribute_0036 getValidReminders error.code:" + error.code);
-            }
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0037
-         * @tc.name: reminderRequestAttribute_0037
-         * @tc.desc: test getValidReminders callback function res is null
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0037
+         * @tc.number reminderRequestAttribute_0037
+         * @tc.desc   test getValidReminders callback function res is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0037", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0037---------------------------');
@@ -1203,12 +1293,12 @@ export default function ReminderAgentManagerTest() {
         })
 
         /**
-         * @tc.number: reminderRequestAttribute_0038
-         * @tc.name: reminderRequestAttribute_0038
-         * @tc.desc: test getAllValidReminders promise function res is null
-         * @tc.level: Level 3
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   reminderRequestAttribute_0038
+         * @tc.number reminderRequestAttribute_0038
+         * @tc.desc   test getAllValidReminders promise function res is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("reminderRequestAttribute_0038", Level.LEVEL0, async function (done) {
             console.info('----------------------reminderRequestAttribute_0038---------------------------');
@@ -1229,6 +1319,87 @@ export default function ReminderAgentManagerTest() {
                 })
             } catch (error) {
                 console.info("reminderRequestAttribute_0038 publishReminder error.code:" + error.code);
+            }
+        })
+
+        /**
+         * @tc.name   reminderRequestAttribute_0039
+         * @tc.number reminderRequestAttribute_0039
+         * @tc.desc   test getExcludeDates promise function res is null
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("reminderRequestAttribute_0039", Level.LEVEL0, async function (done) {
+            let calendar = {
+                reminderType: reminderAgent.ReminderType.REMINDER_TYPE_CALENDAR,
+                dateTime: {
+                    year: 2037,
+                    month: 7,
+                    day: 28,
+                    hour: 13,
+                    minute: 30,
+                    second: 32
+                },
+                endDateTime: {
+                    year: 2037,
+                    month: 7,
+                    day: 31,
+                    hour: 10,
+                    minute: 30,
+                    second: 10
+                },
+                repeatMonths: [3],
+                repeatDays: [6, 7],
+                actionButton: [
+                    {
+                        title: "close",
+                        titleResource: 'English',
+                        type: 0,
+                    },
+                    {
+                        title: "snooze",
+                        titleResource: 'English',
+                        type: 1
+                    }
+                ],
+                wantAgent: {
+                    pkgName: "ohos.acts.resourceschedule.reminderagentMgr.js.function",
+                    abilityName: "ohos.acts.resourceschedule.reminderagentMgr.js.function.MainAbility"
+                },
+                maxScreenWantAgent: {
+                    pkgName: "ohos.acts.resourceschedule.reminderagentMgr.js.function",
+                    abilityName: "ohos.acts.resourceschedule.reminderagentMgr.js.function.MainAbility"
+                },
+                ringDuration: 2,
+                snoozeTimes: 1,
+                timeInterval: 3,
+                title: "this is addExcludeDate title",
+                content: "this is content",
+                expiredContent: "this reminder has expired",
+                snoozeContent: "remind later",
+                notificationId: 500,
+                groupId: 'this is groupId',
+            }
+            try {
+                reminderAgent.publishReminder(calendar, (err, reminderId) => {
+                    if (err) {
+                        console.info('reminderRequestAttribute_0039 callback err.code is :' + err.code);
+                    } else {
+                        console.info('reminderRequestAttribute_0039 callback reminderId = ' + reminderId);
+                        reminderAgent.getExcludeDates(reminderId).then((dates) => {
+                            console.info('reminderRequestAttribute_0039 dates: ' + JSON.stringify(dates));
+                            expect(dates.length).assertEqual(0)
+                            done();
+                        }).catch((err) => {
+                            console.error("reminderRequestAttribute_0039 promise err code:" + err.code + " message:" + err.message);
+                            expect(false).assertTrue();
+                            done();
+                        });
+                    }
+                })
+            } catch (error) {
+                console.info("reminderRequestAttribute_0039 publishReminder error.code:" + error.code);
             }
         })
     })

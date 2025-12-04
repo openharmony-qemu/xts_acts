@@ -13,17 +13,16 @@
  * limitations under the License.
  */
 import web_webview from '@ohos.web.webview'
-import { Callback } from '@ohos.base';
+import { Callback, RecordData } from '@ohos.base';
 import { Entry, Text, Column, Component, Button, ClickEvent, Row } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import hilog from '@ohos.hilog';
 import image from '@ohos.multimedia.image';
 import events_emitter from '@ohos.events.emitter';
-import { Web ,WebMediaOptions,OnAudioStateChangedEvent} from '@ohos.arkui.component';
+import { Web, OnAudioStateChangedEvent} from '@ohos.arkui.component';
 import { BusinessError } from '@ohos.base';
 import emitter from '@ohos.events.emitter';
-import { Hypium } from '../../../hypium';
 import Utils from '../../src/test/Util.test.ets';
+import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
   public str: string = '';
@@ -32,9 +31,9 @@ class StringFields {
 @Entry
 @Component
 struct WebMediaOption{
+  stringObj: StringFields  = new StringFields ();
   controller: web_webview.WebviewController = new web_webview.WebviewController(undefined);
   controllerTwo: web_webview.WebviewController = new web_webview.WebviewController(undefined);
-  stringObj: StringFields  = new StringFields ();
   @State javaScriptAccess: boolean = true;
   @State fileAccess: boolean = true;
   @State domStorageAccess: boolean = false;
@@ -42,31 +41,25 @@ struct WebMediaOption{
   @State onlineImageAccess: boolean = true;
   @State databaseAccess: boolean = true;
   @State playing: boolean = false
-  @State checkResult: string = "";
-  @State checkResultTwo: string = "";
+  @State checkResult: string = '';
+  @State checkResultTwo: string = '';
   @State firstId: number = 415;
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
     let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
       priority: events_emitter.EventPriority.LOW
     }
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear');
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION value: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -74,13 +67,13 @@ struct WebMediaOption{
   build(){
     Column(){
       Row(){
-        Button("mediaOptionTest").key('webViewMediaOptionTestButton').onClick((e: ClickEvent) => {
-          console.info("key==>" + this.stringObj.str)
+        Button('mediaOptionTest').key('webViewMediaOptionTestButton').onClick((e: ClickEvent) => {
+          console.info('key==>' + this.stringObj.str)
           switch (this.stringObj.str) {
-            case "emitMediaOptions001": {
+            case 'emitMediaOptions001': {
               try {
                 this.controller.requestFocus();
-                this.controller.runJavaScript("play()", (error, result) => {
+                this.controller.runJavaScript('play()', (error, result) => {
                   if (error) {
                     console.log(`The controller.play() return error is: ${error}`);
                   }
@@ -91,7 +84,7 @@ struct WebMediaOption{
 
                 setTimeout(() => {
                 this.controllerTwo.requestFocus();
-                this.controllerTwo.runJavaScript("play()", (error, result) => {
+                this.controllerTwo.runJavaScript('play()', (error, result) => {
                   if (error) {
                     console.log(`The controller.play() return error is: ${error}`);
                   }
@@ -100,7 +93,7 @@ struct WebMediaOption{
                 }, 500)
 
                 setTimeout(() => {
-                this.controller.runJavaScript("checkState()", (error, result) => {
+                this.controller.runJavaScript('checkState()', (error, result) => {
                   if (error) {
                     console.log(`The controller.checkState() return error is: ${error}`);
                   }
@@ -112,7 +105,7 @@ struct WebMediaOption{
                 }, 800)
 
                 setTimeout(() => {
-                this.controllerTwo.runJavaScript("checkState()", (error, result) => {
+                this.controllerTwo.runJavaScript('checkState()', (error, result) => {
                   if (error) {
                     console.log(`The controller.checkState() return error is: ${error}`);
                   }
@@ -122,7 +115,8 @@ struct WebMediaOption{
                   }
                 })
                 }, 1200)
-              } catch (error:BusinessError) {
+              } catch (error) {
+                error = error as BusinessError;
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
               }
 
@@ -132,11 +126,18 @@ struct WebMediaOption{
               }, 2000)
               break;
             }
+
+            case 'SwitchNextPageStatic' : {
+              let uiContext: UIContext = this.getUIContext();
+              let router: Router = uiContext.getRouter();
+              router.pushUrl({ url: 'pages/WebOnFullScreenEnter' })
+              console.log('push URL success')
+            }
           }
         })
       }
 
-      Web({ src: "resource://rawfile/videoTest.html", controller: this.controller })
+      Web({ src: 'resource://rawfile/videoTest.html', controller: this.controller })
         .height('30%')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)
@@ -151,7 +152,7 @@ struct WebMediaOption{
           console.log('onAudioStateChanged playing: ' + this.playing + this.firstId);
         })
 
-      Web({ src: "resource://rawfile/audioTest.html", controller: this.controllerTwo })
+      Web({ src: 'resource://rawfile/audioTest.html', controller: this.controllerTwo })
         .height('30%')
         .javaScriptAccess(this.javaScriptAccess)
         .fileAccess(this.fileAccess)

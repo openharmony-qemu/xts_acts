@@ -64,14 +64,14 @@ export default function ActsAceWebviewPressureLevel() {
     })
 
 
-    /*
-    *@tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0001
-    *@tc.name testWebviewPressureLevelModerate
-    *@tc.desc test testWebviewPressureLevelModerate
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level 0
-    */
+    /**
+     * @tc.name   testWebviewPressureLevelModerate
+     * @tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0001
+     * @tc.desc   test testWebviewPressureLevelModerate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebviewPressureLevelModerate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebviewPressureLevelModerate"
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);
@@ -83,14 +83,14 @@ export default function ActsAceWebviewPressureLevel() {
     })
 
 
-    /*
-    *@tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0002
-    *@tc.name testWebviewPressureLevelCritical
-    *@tc.desc test testWebviewPressureLevelCritical
-    *@tc.size MediumTest
-    *@tc.type Function
-    *@tc.level 1
-    */
+    /**
+     * @tc.name   testWebviewPressureLevelCritical
+     * @tc.number SUB_ACE_WEBVIEW_PRESSURE_LEVEL_API_0002
+     * @tc.desc   test testWebviewPressureLevelCritical
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebviewPressureLevelCritical', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebviewPressureLevelCritical"
       Utils.emitEvent(emitKey, EVENT_ID_SET_SUITE_KEY);

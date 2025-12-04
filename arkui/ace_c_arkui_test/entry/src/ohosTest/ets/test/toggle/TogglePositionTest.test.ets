@@ -26,39 +26,39 @@ export default function togglePositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_POSITION_0100
-     * @tc.name       : testTogglePosition001
-     * @tc.desc       : testing position for toggle with normal value (positive number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTogglePosition001
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_POSITION_0100
+     * @tc.desc   testing position for toggle with normal value (positive number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTogglePosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTogglePosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_POSITION_0200
-     * @tc.name       : testTogglePosition002
-     * @tc.desc       : testing position for toggle with normal value (negative number)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTogglePosition002
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_POSITION_0200
+     * @tc.desc   testing position for toggle with normal value (negative number)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTogglePosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTogglePosition002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TOGGLE_POSITION_0300
-     * @tc.name       : testTogglePosition003
-     * @tc.desc       : testing position for toggle with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTogglePosition003
+     * @tc.number SUB_ARKUI_CAPI_TOGGLE_POSITION_0300
+     * @tc.desc   testing position for toggle with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTogglePosition003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTogglePosition003()).assertEqual(0)

@@ -33,12 +33,12 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0001
-     * @tc.name: test hsp so load
-     * @tc.desc: Test the loading of SO files in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0001
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0001
+     * @tc.desc   Test the loading of SO files in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0001';
@@ -51,12 +51,12 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0002
-     * @tc.name: test hsp loading from hap
-     * @tc.desc: Test loading the HAR package into the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0002
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0002
+     * @tc.desc   Test loading the HAR package into the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0002';
@@ -69,12 +69,12 @@ export default function HspNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0003
-     * @tc.name: test har file loading from hsp
-     * @tc.desc: Test loading files from the Har package into the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0003
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0003
+     * @tc.desc   Test loading files from the Har package into the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0003';
@@ -87,12 +87,12 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0004
-     * @tc.name: test hsp file loading from hsp
-     * @tc.desc: Test loading files from the HSP package in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0004
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0004
+     * @tc.desc   Test loading files from the HSP package in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0004';
@@ -105,12 +105,12 @@ export default function HspNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0005
-     * @tc.name: test hsp file loading from hsp
-     * @tc.desc: Test loading files from the HSP package in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0005
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0005
+     * @tc.desc   Test loading files from the HSP package in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0005';
@@ -123,13 +123,13 @@ export default function HspNapiLoadTest() {
     })
 
       /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0006
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading system modules in HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
+       * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0006
+       * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0006
+       * @tc.desc   Test loading system modules in HSP package
+       * @tc.type   FUNCTION
+       * @tc.size   SMALLTEST
+       * @tc.level  LEVEL1
+       */
       it('ARK_ETSRuntime_HSP_NAPI_LOAD_0006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
         TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0006';
         console.info(TAG, ' start');
@@ -141,12 +141,12 @@ export default function HspNapiLoadTest() {
       })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0007
-     * @tc.name: test hsp so load
-     * @tc.desc: Test the loading of SO files in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0007
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0007
+     * @tc.desc   Test the loading of SO files in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0007';
@@ -159,12 +159,12 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0008
-     * @tc.name: test hsp loading from hap
-     * @tc.desc: Test loading the HAR package into the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0008
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0008
+     * @tc.desc   Test loading the HAR package into the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0008';
@@ -177,12 +177,12 @@ export default function HspNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0009
-     * @tc.name: test har file loading from hsp
-     * @tc.desc: Test loading files from the Har package into the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0009
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0009
+     * @tc.desc   Test loading files from the Har package into the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0009';
@@ -195,12 +195,12 @@ export default function HspNapiLoadTest() {
     })
     
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0010
-     * @tc.name: test hsp file loading from hsp
-     * @tc.desc: Test loading files from the HSP package in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0010
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0010
+     * @tc.desc   Test loading files from the HSP package in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0010';
@@ -213,12 +213,12 @@ export default function HspNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0011
-     * @tc.name: test hsp file loading from hsp
-     * @tc.desc: Test loading files from the HSP package in the HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0011
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0011
+     * @tc.desc   Test loading files from the HSP package in the HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0011';
@@ -231,12 +231,12 @@ export default function HspNapiLoadTest() {
     })
 
     /**
-     * @tc.number: ARK_ETSRuntime_HSP_NAPI_LOAD_0012
-     * @tc.name: test loading system modules
-     * @tc.desc: Test loading system modules in HSP package
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   ARK_ETSRuntime_HSP_NAPI_LOAD_0012
+     * @tc.number ARK_ETSRuntime_HSP_NAPI_LOAD_0012
+     * @tc.desc   Test loading system modules in HSP package
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ARK_ETSRuntime_HSP_NAPI_LOAD_0012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, () => {
       TAG = 'ARK_ETSRuntime_HSP_NAPI_LOAD_0012';

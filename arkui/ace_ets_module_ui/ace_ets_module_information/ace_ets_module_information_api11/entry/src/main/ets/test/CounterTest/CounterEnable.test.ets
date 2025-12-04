@@ -22,7 +22,9 @@ import CommonFunc from '../../MainAbility/common/Common';
 export default function CounterEnableTest() {
 
   const SUITE: string = 'CounterEnable'
-  const waitUiReadyMs: number = 500;
+  const waitUiReadyMs = 500;
+
+
   describe('CounterEnableTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
@@ -46,10 +48,13 @@ export default function CounterEnableTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Counter_0100
-     *tc.name   Counter support maximum and minimum
-     *tc.desc   Counter support maximum and minimum
+    /**
+     * @tc.name   ArkUI_Counter_0100
+     * @tc.number ArkUI_Counter_0100
+     * @tc.desc   Counter support maximum and minimum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Counter_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Counter_0100'
@@ -64,10 +69,13 @@ export default function CounterEnableTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Counter_0200
-     *tc.name   Counter support maximum and minimum
-     *tc.desc   Counter support maximum and minimum
+    /**
+     * @tc.name   ArkUI_Counter_0200
+     * @tc.number ArkUI_Counter_0200
+     * @tc.desc   Counter support maximum and minimum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Counter_0200', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Counter_0200'
