@@ -2466,7 +2466,7 @@ export default function AudioSuiteEngineTest() {
      */
     it('OH_AudioSuiteEngine_SampleRate_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
-      let result : number = audiosuiteenginetest.AudioSOH_AudioSuiteEngine_SampleRate_001uiteEngine_StopPipeline_0004();
+      let result : number = audiosuiteenginetest.OH_AudioSuiteEngine_SampleRate_001();
       console.info(`Tag: OH_AudioSuiteEngine_SampleRate_001 : ${result}`);
       expect(result).assertEqual(TEST_RESULT.TEST_PASS);
       done();
