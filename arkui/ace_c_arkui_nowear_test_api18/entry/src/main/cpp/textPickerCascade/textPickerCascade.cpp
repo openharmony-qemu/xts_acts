@@ -176,7 +176,7 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_d2(napi_env env, napi_ca
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     int len = 0;
     auto ret = OH_ArkUI_TextCascadePickerRangeContentArray_Create(len);
-    ASSERT_EQ(ret, nullptr);
+    ASSERT_OBJ(ret, nullptr);
     NAPI_END;
 }
 

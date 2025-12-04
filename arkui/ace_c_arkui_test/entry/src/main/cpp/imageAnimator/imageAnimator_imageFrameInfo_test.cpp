@@ -101,7 +101,7 @@ static napi_value TestImageAniMatorImageFramelnfo005(napi_env env, napi_callback
 {
     auto ret = OH_ArkUI_ImageAnimatorFrameInfo_CreateFromString(nullptr);
     ASSERT_OBJ(ret, nullptr);
-    NAPI_END;   
+    NAPI_END;
 }
 
 static napi_value TestImageAniMatorImageFramelnfo006(napi_env env, napi_callback_info info)
