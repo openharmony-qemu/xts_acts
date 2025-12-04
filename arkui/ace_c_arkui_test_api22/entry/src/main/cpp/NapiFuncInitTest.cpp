@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
-#include "NodeSwiperItemFillpolocyTest/NodeSwiperItemFillpolocyTest.cpp"
+#include "swiper/NodeSwiperItemFillpolocyTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
