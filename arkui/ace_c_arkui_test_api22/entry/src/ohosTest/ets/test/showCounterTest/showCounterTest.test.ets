@@ -38,7 +38,7 @@ export default function ShowCounterTest(){
      */
     it('TextAreaTest_0010', Level.LEVEL2, async (done: Function) => {
       console.info('[TextAreaTest_0010] START');
-      let strJson = getInspectorByKey('textArea');
+      let strJson = getInspectorByKey('textArea_01');
       let obj: ESObject = JSON.parse(strJson);
       console.info('[TextAreaTest_0010] showCounter: ' + JSON.stringify(obj.$attrs.showCounterApi22));
       expect(obj.$attrs.showCounterApi22.options.counterTextColor+'').assertEqual('#FF0000FF');
