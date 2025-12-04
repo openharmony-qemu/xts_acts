@@ -76,5 +76,24 @@ export const SetVersionTwo: () => number;
 export const LockRowOne: () => number;
 export const UnLockRowOne: () => number;
 export const QueryLockRowOne: () => number;
-
-
+export const RdbStoreCorruptHandlerTest_0100:() => number;
+export const RdbStoreCorruptHandlerTest_0200:() => number;
+export const RdbStoreCorruptHandlerTest_0300:() => number;
+export const RdbStoreCorruptHandlerTest_0400:() => number;
+export const RdbStoreCorruptHandlerTest_0500:() => number;
+export const RdbStoreCorruptHandlerTest_0600:() => number;
+export const RdbStoreCorruptHandlerTest_0700:() => number;
+export const RdbStoreCorruptHandlerTest_0800:() => number;
+export const RdbStoreCorruptHandlerTest_0900:() => number;
+export const RdbStoreCorruptHandlerTest_1000:() => number;
+export const RdbStoreCorruptHandlerTest_1100:() => number;
+export const RdbStoreCorruptHandlerTest_1200:() => number;
+export const RdbStoreCorruptHandlerTest_1300:() => number;
+export const RdbStoreCorruptHandlerTest_1400:() => number;
+export const RdbStoreCorruptHandlerTest_1500:() => number;
+export const RdbStoreCorruptHandlerTest_1600:() => number;
+export const RdbStoreCorruptHandlerTest_1700:() => number;
+export const RdbStoreCorruptHandlerTest_1800:() => number;
+export const RdbStoreCorruptHandlerTest_1900:() => number;
+export const RdbStoreCorruptHandlerTest_2000:() => number;
+export const RdbStoreCorruptHandlerTest_2100:() => number;
