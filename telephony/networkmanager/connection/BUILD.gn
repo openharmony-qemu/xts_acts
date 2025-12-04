@@ -23,6 +23,7 @@ group("connection") {
 "ActsNetworkMgrConnectionNoAnyPTestStatic:ActsNetworkMgrConnectionNopStaticTest",
 "ActsNetworkMgrConnectionNoNetTestStatic:ActsNetworkMgrConnectionNoNetStaticTest",
 "ActsNetworkMgrConnectionTestStatic:ActsNetworkMgrConnectionStaticTest"
+"ActsMgrConnectionRegisterHasNetTestStatic:ActsMgrConnectionRegisterHasNetStaticTest"
     ]
   }
 }

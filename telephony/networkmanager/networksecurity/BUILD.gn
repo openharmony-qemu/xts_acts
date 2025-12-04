@@ -18,6 +18,7 @@ group("networksecurity") {
     deps = [
 "networksecuritytest:ActsNetWorkMgrNetworkSecurityTest",
 "ActsNetWorkMgrNetworkSecurityTestStatic:ActsNetWorkMgrNetworkSecurityStaticTest"
+"ActsNetworkMgrSysNetworkNoPermissionTestStatic:ActsNetworkMgrSysNetworkNoPermissionStaticTest"
 ]
   }
 }
