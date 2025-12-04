@@ -61,6 +61,21 @@ export default function TextPickerCascadeTest(){
     })
 
     /**
+     * @tc.name   TextPickerCascadeTest_a2
+     * @tc.number TextPickerCascadeTest_a2
+     * @tc.desc   TextPickerCascadeTest_a2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_a2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_a2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_a2 will drag and check:: ')
+      await Utils.sleep(200)     
+      done()
+    })
+
+    /**
      * @tc.name   TextPickerCascadeTest_b
      * @tc.number TextPickerCascadeTest_b
      * @tc.desc   TextPickerCascadeTest_b
@@ -153,6 +168,21 @@ export default function TextPickerCascadeTest(){
       console.log('TextPickerCascadeTest_d1 will drag and check:: ')
       await Utils.sleep(200)
       
+      done()
+    })
+
+    /**
+     * @tc.name   TextPickerCascadeTest_d2
+     * @tc.number TextPickerCascadeTest_d2
+     * @tc.desc   TextPickerCascadeTest_d2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('TextPickerCascadeTest_d2',  Level.LEVEL0, async (done: Function) => {
+      expect(nativeRender.TextPickerCascadeTest_d2()).assertEqual(0)
+      console.log('TextPickerCascadeTest_d2 will drag and check:: ')
+      await Utils.sleep(200)     
       done()
     })
 

@@ -55,6 +55,17 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_a1(napi_env env, napi_ca
     ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_a2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_a2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = -5;
+    auto array = OH_ArkUI_TextPickerRangeContentArray_Create(len);
+    ASSERT_OBJ(array, nullptr);
+    NAPI_END;
+}
+
 typedef const char* ArkUI_CharPtr;
 typedef struct RangeContent_ {
     ArkUI_CharPtr icon;
@@ -156,6 +167,16 @@ napi_value TextPickerCascadeTest::TextPickerCascadeTest_d1(napi_env env, napi_ca
     int check = ((ret == nullptr) ? ARKUI_ERROR_CODE_PARAM_INVALID : ARKUI_ERROR_CODE_NO_ERROR);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_d1", "check %{public}d", check);
     ASSERT_EQ(check, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TextPickerCascadeTest::TextPickerCascadeTest_d2(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TextPickerCascadeTest_d2", "CreateNativeNode");
+    NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
+    int len = 0;
+    auto ret = OH_ArkUI_TextCascadePickerRangeContentArray_Create(len);
+    ASSERT_EQ(ret, nullptr);
     NAPI_END;
 }
 
