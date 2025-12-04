@@ -229,12 +229,12 @@ export default function radioSecondJsunit() {
       let slotId = 0;
       let promise = radio.getRadioTech(slotId);
       promise.then(data => {
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 data:" + JSON.stringify(data));
+        console.error("Telephony_NetworkSearch_getRadioTech_Promise_0500 data:" + JSON.stringify(data));
         expect(data.psRadioTech.toString() == "-1").assertFalse();
         expect(data.csRadioTech.toString() == "-1").assertFalse();
         done();
       }).catch((err:BusinessError) => {
-        console.error("Telephony_NetworkSearch_getRadioTech_Async_0500 err:" + JSON.stringify(err));
+        console.error("Telephony_NetworkSearch_getRadioTech_Promise_0500 err:" + JSON.stringify(err));
         expect(true).assertEqual(false);
         done();
       });
@@ -270,7 +270,7 @@ export default function radioSecondJsunit() {
 
     /**
      * @tc.name   Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600
-     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Async_0700
+     * @tc.number Telephony_NetworkSearch_getNetworkSelectionMode_Promise_0600
      * @tc.desc   SlotId parameter input is 0, test getNetworkSelectionMode() api by promise.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -367,6 +367,9 @@ export default function radioSecondJsunit() {
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0700
      * @tc.name Telephony_NetworkSearch_getSignalInformation_Async_0700
      * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       radio.getSignalInformation(0, (err, data) => {
@@ -384,9 +387,9 @@ export default function radioSecondJsunit() {
     });
 
     /**
-     * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0600
+     * @tc.number Telephony_NetworkSearch_getSignalInformation_Promise_0500
      * @tc.desc   SlotId parameter input is 0, test getSignalInformation() api by promise.
-     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0600
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Promise_0500
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
