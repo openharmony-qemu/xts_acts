@@ -144,7 +144,7 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersionEvergreen();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    console.log('emitActiveWebEngineVersion00566' + tmp_result);
+                    console.log('emitActiveWebEngineVersion005' + tmp_result);
                     Utils.emitEvent(tmp_result, 20251218);
                   } else {
                     Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251218);
@@ -161,7 +161,7 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersionEvergreen132();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    console.log('emitActiveWebEngineVersion00566' + tmp_result);
+                    console.log('emitActiveWebEngineVersion006' + tmp_result);
                     Utils.emitEvent(tmp_result, 20251219);
                   } else {
                     Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251219);
@@ -178,10 +178,12 @@ struct Index {
                   if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
                     test_ndk.test_ndk_setActiveWebEngineVersionEvergreen114();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
-                    console.log('emitActiveWebEngineVersion00566' + tmp_result);
-                    Utils.emitEvent(tmp_result, 20251220);
+                    console.log('emitActiveWebEngineVersion007' + tmp_result);
+                    if(tmp_result) {
+                      Utils.emitEvent(true, 20251220);
+                    }
                   } else {
-                    Utils.emitEvent(webview.ArkWebEngineVersion.M132, 20251220);
+                    Utils.emitEvent(true, 20251220);
                   }
                 } catch (error) {
                   let e:business_error.BusinessError = error as business_error.BusinessError;
@@ -190,7 +192,26 @@ struct Index {
                 break;
               }
 
-
+              case 'emitActiveWebEngineVersion008': {
+                try {
+                  if(canIUse('SystemCapability.UIDesign.HDSPattern.Standard')) {
+                    test_ndk.IsActiveWebEngineEvergreen_c();
+                    let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
+                    console.log('emitActiveWebEngineVersion008' + tmp_result);
+                    if(tmp_result == 1 || tmp_result == 2) {
+                      Utils.emitEvent(true, 20251221);
+                    } else {
+                      Utils.emitEvent(false, 20251221);
+                    }
+                  } else {
+                    Utils.emitEvent(true, 20251221);
+                  }
+                } catch (error) {
+                  let e:business_error.BusinessError = error as business_error.BusinessError;
+                  console.error(`ErrorCode: ${e.code},  Message: ${e.message}`);
+                }
+                break;
+              }
 
             }
           })

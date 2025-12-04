@@ -91,6 +91,14 @@ napi_value test_ndk_setActiveWebEngineVersionEvergreen132(napi_env env, napi_cal
     return nullptr;
 } 
 
+static napi_value IsActiveWebEngineEvergreen_c(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    bool isEvergreen = OH_NativeArkWeb_IsActiveWebEngineEvergreen();
+    napi_get_boolean(env, isEvergreen, &result);
+    return result;
+}
+
 napi_value test_ndk_getActiveWebEngineVersion(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
@@ -109,6 +117,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "test_ndk_setActiveWebEngineVersionEvergreen", nullptr, test_ndk_setActiveWebEngineVersionEvergreen, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen114", nullptr, test_ndk_setActiveWebEngineVersionEvergreen114, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "test_ndk_setActiveWebEngineVersionEvergreen132", nullptr, test_ndk_setActiveWebEngineVersionEvergreen132, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "IsActiveWebEngineEvergreen_c", nullptr, IsActiveWebEngineEvergreen_c, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
