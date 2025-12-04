@@ -128,6 +128,8 @@ napi_value CreateNodeArkUIPostAsyncUITask(napi_env env, napi_callback_info info)
 }
 napi_value CreateNodeArkUIPostAsyncUITaskResultValueS(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -180,6 +182,8 @@ napi_value CreateNodeArkUIPostAsyncUITaskResultValueS(napi_env env, napi_callbac
 }
 napi_value CreateNodeArkUIPostAsyncUITaskResultValueF(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -287,6 +291,8 @@ napi_value CreateNodeArkUIPostUITask(napi_env env, napi_callback_info info)
 }
 napi_value CreateNodeArkUIPostUITaskResultValueS(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -340,6 +346,8 @@ napi_value CreateNodeArkUIPostUITaskResultValueS(napi_env env, napi_callback_inf
 }
 napi_value CreateNodeArkUIPostUITaskResultValueF(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -448,6 +456,8 @@ napi_value CreateNodeArkUIPostUITaskAndWait(napi_env env, napi_callback_info inf
 }
 napi_value CreateNodeArkUIPostUITaskAndWaitResultValueS(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
@@ -501,6 +511,8 @@ napi_value CreateNodeArkUIPostUITaskAndWaitResultValueS(napi_env env, napi_callb
 }
 napi_value CreateNodeArkUIPostUITaskAndWaitResultValueF(napi_env env, napi_callback_info info)
 {
+    ArkUI_NativeNodeAPI_1 *nodeAPI;
+    OH_ArkUI_GetModuleInterface(ARKUI_MULTI_THREAD_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
     size_t argc = 2;
     napi_value args[2] = { nullptr, nullptr };
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
