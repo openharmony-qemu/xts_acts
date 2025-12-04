@@ -115,9 +115,15 @@ import PictureGetMetadataFirstParameters from './Picture/PictureGetMetadataFirPa
 import CreatePixelMapUsingAllocatorAndSync from './image/ImageCreatePixelMapUsingAllocatorSuppAb.test';
 import ImageCreateIncrementalSourceSupp from './image/ImageCreateIncrementalSourceSupp.test';
 import modifyImagePropertyValueTest from './image/ModifyImagePropertyValue.test';
+import SendableImagecreateImageSourceTest from './sendableImage/SendableImageCreateImageSource.test';
+import ImageCreatePixelMapPicture from './image/ImageCreatePixelMapPicture.test';
+import imagePackerPackingPictureTest from './image/ImagePackerPackingPicture.test';
+import ImagePackerPackingToFilePictureTest from './image/ImagePackerPackingToFilePicture.test';
 import ImagePixelMapCropTest from './image/ImagePixelMapCrop.Test.test';
 import ImagePictureSetAuxiliaryPictureTest from './image/ImagePictureSetAuxiliaryPicture.Test.test';
 
+import UpdateDataTest from './image/ImageSourceUpdateDataTest.test';
+import SendableImageTest from './image/SendableImageTest.test';
 export default function testsuite() {
   ImagePropertyKeyTest();
   ImageCreateImageSourceBufTest();
@@ -219,7 +225,12 @@ export default function testsuite() {
   imagePackerPackToFileFromPixelmapSequenceTest();
   PictureSetMetadataTest();
   sendableCreatePixelMapSyncAbnormalTest();
-
+  SendableImagecreateImageSourceTest();
+  ImageCreatePixelMapPicture();
+  imagePackerPackingPictureTest();
+  ImagePackerPackingToFilePictureTest();
   ImagePictureSetAuxiliaryPictureTest();
   ImagePixelMapCropTest();
+  UpdateDataTest();
+  SendableImageTest();
 }
