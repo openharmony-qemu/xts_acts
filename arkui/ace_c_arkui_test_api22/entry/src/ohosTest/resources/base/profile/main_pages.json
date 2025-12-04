@@ -14,6 +14,7 @@
     "MainAbility/pages/textLineHeight/TextLineHeightTest",
     "MainAbility/pages/textArea/TextAreaBarStateTest",
     "MainAbility/pages/scrollbarTest/scrollbarTest",
-    "MainAbility/pages/showCounterTest/showCounterTest"
+    "MainAbility/pages/showCounterTest/showCounterTest",
+    "MainAbility/pages/swiper/finishAnimationTest"
   ]
 }
