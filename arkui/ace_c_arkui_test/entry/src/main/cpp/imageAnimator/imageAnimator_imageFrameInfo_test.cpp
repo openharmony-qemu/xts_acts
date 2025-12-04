@@ -96,4 +96,18 @@ static napi_value TestImageAniMatorImageFramelnfo004(napi_env env, napi_callback
     OH_ArkUI_ImageAnimatorFrameInfo_Dispose(ret);
     return result;
 }
+
+static napi_value TestImageAniMatorImageFramelnfo005(napi_env env, napi_callback_info info)
+{
+    auto ret = OH_ArkUI_ImageAnimatorFrameInfo_CreateFromString(nullptr);
+    ASSERT_OBJ(ret, nullptr);
+    NAPI_END;   
+}
+
+static napi_value TestImageAniMatorImageFramelnfo006(napi_env env, napi_callback_info info)
+{
+    auto ret = OH_ArkUI_ImageAnimatorFrameInfo_CreateFromDrawableDescriptor(nullptr);
+    ASSERT_OBJ(ret, nullptr);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

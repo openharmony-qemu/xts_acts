@@ -2419,6 +2419,10 @@ export const testImageAniMatorImageFramelnfo003: () => number;
 
 export const testImageAniMatorImageFramelnfo004: () => number;
 
+export const testImageAniMatorImageFramelnfo005: () => number;
+
+export const testImageAniMatorImageFramelnfo006: () => number;
+
 export const testImageAnimatorImages001: () => number;
 
 export const testImageAnimatorImages002: () => number;
