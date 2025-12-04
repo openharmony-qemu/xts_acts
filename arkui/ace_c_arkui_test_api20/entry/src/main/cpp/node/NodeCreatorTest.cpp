@@ -224,7 +224,7 @@ napi_value CreateNodeArkUIPostAsyncUITaskResultValueF(napi_env env, napi_callbac
         asyncData->parent = columnItem;
         asyncData->cardInfo = g_cardTypeInfos[i];
         // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
-        result = OH_ArkUI_PostAsyncUITask(contextHandle, nullptr, CreateCardNodeTree, MountNodeTree);
+        result = OH_ArkUI_PostAsyncUITask(nullptr, asyncData, CreateCardNodeTree, MountNodeTree);
         ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
         if (result != ARKUI_ERROR_CODE_NO_ERROR) {
             OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostAsyncUITask Failed %{public}d", result);
@@ -389,7 +389,7 @@ napi_value CreateNodeArkUIPostUITaskResultValueF(napi_env env, napi_callback_inf
         asyncData->cardInfo = g_cardTypeInfos[i];
         // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
         CreateCardNodeTree(asyncData);
-        result = OH_ArkUI_PostUITask(contextHandle, nullptr, MountNodeTree);
+        result = OH_ArkUI_PostUITask(nullptr, asyncData, MountNodeTree);
         ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
         if (result != ARKUI_ERROR_CODE_NO_ERROR) {
             OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITask Failed %{public}d", result);
@@ -554,7 +554,7 @@ napi_value CreateNodeArkUIPostUITaskAndWaitResultValueF(napi_env env, napi_callb
         asyncData->cardInfo = g_cardTypeInfos[i];
         CreateCardNodeTree(asyncData);
         // 在非UI线程创建组件树，创建完成后回到主线程挂载到主树上
-        result = OH_ArkUI_PostUITaskAndWait(contextHandle, nullptr, MountNodeTree);
+        result = OH_ArkUI_PostUITaskAndWait(nullptr, asyncData, MountNodeTree);
         ASSERT_EQ(result, ARKUI_ERROR_CODE_PARAM_INVALID);
         if (result != ARKUI_ERROR_CODE_NO_ERROR) {
             OH_LOG_ERROR(LOG_APP, "OH_ArkUI_PostUITaskAndWait Failed %{public}d", result);
