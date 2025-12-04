@@ -38,7 +38,7 @@ export default function CapiPostUITaskS() {
     beforeEach(async (done: Function) => {
       console.info("ListCNode beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/capi/ArkUIPostUITaskF',
+        url: 'MainAbility/pages/capi/ArkUIPostUITaskS',
       }
       try {
         router.clear();

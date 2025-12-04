@@ -21,7 +21,7 @@ struct CAPIComponent5 {
   private rootSlot = new NodeContent();
 
   aboutToAppear(): void {
-    entry.CreateNodeArkUIPostAsyncUITaskResultValueS(this.rootSlot, this.getUIContext());
+    entry.CreateNodeArkUIPostUITaskResultValueS(this.rootSlot, this.getUIContext());
   }
 
   aboutToDisappear(): void {
