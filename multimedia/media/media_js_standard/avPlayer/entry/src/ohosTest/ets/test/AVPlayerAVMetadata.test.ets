@@ -984,7 +984,7 @@ export default function AVMetadata() {
       await mediaTestBase.msleepAsync(SLEEP_TIME)
       done();
     });
-    /* *
+    /**
      * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
      * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
      * @tc.desc   Local Video playback control test
