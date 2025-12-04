@@ -41,3 +41,5 @@ export const scrollBarTest: (a: string) => void;
 export const showCounterTest: (a: string) => void;
 
 export const FinishAnimationTest: (a: string) => void;
+
+export const imageSpanTest: (a: string) => void;

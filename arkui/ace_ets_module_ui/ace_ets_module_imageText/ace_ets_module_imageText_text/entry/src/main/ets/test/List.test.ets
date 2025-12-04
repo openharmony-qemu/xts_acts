@@ -33,6 +33,7 @@ import ImageSpanVisibilityTest from './ImageSpanTest/ImageSpanVisibility.test';
 import ImageTextTest from './ImageSpanTest/ImageTextTest.test';
 import OnCompleteTest from './ImageSpanTest/OnCompleteTest.test';
 import ImageSpanSupportSvg2 from './ImageSpanTest/ImageSpanSupportSvg2.test';
+import spanExample from './ImageSpanTest/ImageSpanTest9.test';
 
 import Span3JsunitTest from './SpanTest/Span3JsunitTest.test';
 import SpanApi1Test from './SpanTest/SpanApi1Test.test';
@@ -180,4 +181,5 @@ export default function testsuite() {
   ModifierTextVerticalAlignTest()
   TextTextDecorationTest()
   lineHeight();
+  spanExample();
 }
