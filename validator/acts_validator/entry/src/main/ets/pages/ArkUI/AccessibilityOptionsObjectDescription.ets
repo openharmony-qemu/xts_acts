@@ -15,7 +15,8 @@
 
 import hilog from '@ohos.hilog';
 import { window } from '@kit.ArkUI';
-
+import DemoActionManager from './model/DemoActionManager';	
+import XComponentContext from "./interface/XComponentContext"
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 import fs from '@ohos.file.fs';
@@ -274,7 +275,7 @@ struct AccessibilityOptionsObjectDescription {
       }
 
       Row() {
-        this.PassBtn($r('app.string.app_name'), true);
+        this.PassBtn($r('app.string.btn_fullscreen'), true);
         Button() {
           Image($r('app.media.ic_public_help'))
             .width('20vp')
@@ -298,7 +299,7 @@ struct AccessibilityOptionsObjectDescription {
           )
         })
 
-        this.FailBtn($r('app.string.app_name'), true);
+        this.FailBtn($r('app.string.btn_fullscreen'), true);
       }
       .height('10%')
       .width('100%')
