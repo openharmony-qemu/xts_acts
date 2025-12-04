@@ -202,7 +202,6 @@ export default function bluetoothProfilesTest() {
 
             try{
                 a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
-                a2dp.createA2dpSrcProfile().onConnectionStateChange(onReceiveEvent);
                 hfp.createHfpAgProfile().onConnectionStateChange(onReceiveEvent);
                 hid.createHidHostProfile().onConnectionStateChange(onReceiveEvent);
             }catch(err: BusinessError){
