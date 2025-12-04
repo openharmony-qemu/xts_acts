@@ -98,7 +98,7 @@ import {
   
       /**
        * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
-       * @tc.name testReadOnly0100
+       * @tc.name ReadonlyErrCode001
        * @tc.desc 1. set isReadOnly as true
        *          2. open read-only database
        * @tc.size MediumTest
