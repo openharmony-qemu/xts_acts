@@ -15,7 +15,7 @@
 
 import hilog from '@ohos.hilog';
 import { window } from '@kit.ArkUI';
-import DemoActionManager from './model/DemoActionManager';
+import DemoActionManager from './model/DemoActionManager';	
 import XComponentContext from "./interface/XComponentContext"
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
@@ -52,9 +52,9 @@ struct AccessibilityOptionsObjectDescription {
   @State StepTips: string = '测试目的：验证无障碍接口AccessibilityOptions对象:stateControllerRoleType,stateControllerId,actionControllerRoleType,actionControllerId。\n' +
     '\n' +
     '设备支持屏幕朗读时\n' + '操作步骤:\n' + '1、开启屏幕朗读，从上到下依次滑动并按照语音提示操作观察屏幕朗读情况\n' + '\n' +
-  '预期结果：1、绿框绘制聚焦在第一个优先级组件上，屏幕朗读播报“已选中，匹配Id一致的，复选框，单指双击即可取消选中”，双击绿框，播报“未选中”，复选框取消选中\n' +
-  '2、绿框绘制聚焦在第二个优先级组件上，屏幕朗读播报“开启，匹配类型一致的，checkbox3，开关，单指双击即可关闭”，双击绿框，播报“关闭”，开关关闭;\n' +
-  '若不支持屏幕朗读，直接按照失败处理走豁免。';
+    '预期结果：1、绿框绘制聚焦在第一个优先级组件上，屏幕朗读播报“已选中，匹配Id一致的，复选框，单指双击即可取消选中”，双击绿框，播报“未选中”，复选框取消选中\n' +
+    '2、绿框绘制聚焦在第二个优先级组件上，屏幕朗读播报“开启，匹配类型一致的，checkbox3，开关，单指双击即可关闭”，双击绿框，播报“关闭”，开关关闭;\n' +
+    '若不支持屏幕朗读，直接按照失败处理走豁免。';
   @State Vue: boolean = false;
   @State active: boolean = false;
   @State isToggleSwitch : boolean = false
@@ -181,7 +181,6 @@ struct AccessibilityOptionsObjectDescription {
       Column({ space: 12 }) {
         Row() {
           Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp')
-            //.margin({ top: 20 })
         }
 
         Row() {
@@ -209,12 +208,10 @@ struct AccessibilityOptionsObjectDescription {
               })
           }
         }.height('10%')
-      }
-      
-      // 业务代码
-      Column({ space: 30 }) {
-        Column({ space: 30 }) {
-            Column() {
+
+        // 业务代码
+        Column() {
+          Column() {
             Text("优先级 优先匹配ID一致的")
             Column() {
               Flex({ justifyContent: FlexAlign.SpaceEvenly, alignItems: ItemAlign.Center }) {
@@ -271,10 +268,11 @@ struct AccessibilityOptionsObjectDescription {
               actionControllerId : "checkBoxTest1"})
             .border({ color: Color.Black, width: 2 }).padding(10)
           }
-        }
-      }.height('70%')
-      .width('80%')
-      .backgroundColor(Color.White)
+        }.height('50%')
+        .width('80%')
+        .backgroundColor(Color.White)
+
+      }
 
       Row() {
         this.PassBtn($r('app.string.btn_fullscreen'), true);
@@ -307,6 +305,7 @@ struct AccessibilityOptionsObjectDescription {
       .width('100%')
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
+      .margin({ bottom: '20vp' })
 
     }.width('100%')
     .height('100%')
