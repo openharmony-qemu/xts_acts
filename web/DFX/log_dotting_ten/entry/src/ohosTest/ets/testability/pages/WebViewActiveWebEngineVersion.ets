@@ -200,7 +200,7 @@ struct Index {
                     console.log('emitActiveWebEngineVersion008' + tmp_result);
                     if(tmp_result == 1) {
                       Utils.emitEvent(true, 20251221);
-                    } else if(tmp_result == 0) {
+                    } else if(tmp_result == 2) {
                       Utils.emitEvent(true, 20251221);
                     } else {
                       Utils.emitEvent(false, 20251221);
