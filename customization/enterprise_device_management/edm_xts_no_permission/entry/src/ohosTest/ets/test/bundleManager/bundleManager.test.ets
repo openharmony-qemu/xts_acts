@@ -264,6 +264,28 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.name   test_get_installed_bundle_list_002
+     * @tc.number SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_002
+     * @tc.desc   test get installed bundle list method with normal admin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("test_get_installed_bundle_list_002", Level.LEVEL2, async (done: Function) => {
+      try {
+        await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 201).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_getDisallowedInstallBundlesSync_002
      * @tc.number SUB_CUSTOMIZATION_EDM_GETDISALLOWEDINSTALLBUNDLESSYNC_002
      * @tc.desc   test getDisallowedInstallBundlesSync method with normal admin
