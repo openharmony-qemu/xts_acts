@@ -78,238 +78,238 @@ export default function AVPlayerAmr() {
         await mediaTestBase.closeFdNumber(fdNumbers[i]);
       }
     });
-    /* *
-   * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100
-   * @tc.name      : 001.test play source amrnb_4.75k_8000.amr
-   * @tc.desc      : Local Video play source amrnb_4.75k_8000.amr
-   * @tc.size      : MediumTest
-   * @tc.type      : Function test
-   * @tc.level     : Level2
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100
+     * @tc.desc   Local Video play source amrnb_4.75k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100 start');
       await getConverts('amrnb_4.75k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0100 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200
-        * @tc.name      : 001.test play source amrnb_5.9k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_5.9k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200
+     * @tc.desc   Local Video play source amrnb_5.9k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200 start');
       await getConverts('amrnb_5.9k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200
-        * @tc.name      : 001.test play source amrnb_5.15k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_5.15k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0200
+     * @tc.desc   Local Video play source amrnb_5.15k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0300', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0300 start');
       await getConverts('amrnb_5.15k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0300 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400
-        * @tc.name      : 001.test play source amrnb_6.7k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_6.7k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400
+     * @tc.desc   Local Video play source amrnb_6.7k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400 start');
       await getConverts('amrnb_6.7k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0400 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500
-        * @tc.name      : 001.test play source amrnb_7.4k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_7.4k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500
+     * @tc.desc   Local Video play source amrnb_7.4k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500 start');
       await getConverts('amrnb_7.4k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0500 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600
-        * @tc.name      : 001.test play source amrnb_7.95k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_7.95k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600
+     * @tc.desc   Local Video play source amrnb_7.95k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600 start');
       await getConverts('amrnb_7.95k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0600 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700
-        * @tc.name      : 001.test play source amrnb_10.2k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_10.2k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700
+     * @tc.desc   Local Video play source amrnb_10.2k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700 start');
       await getConverts('amrnb_10.2k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0700 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800
-        * @tc.name      : 001.test play source amrnb_12.2k_8000.amr
-        * @tc.desc      : Local Video play source amrnb_12.2k_8000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800
+     * @tc.desc   Local Video play source amrnb_12.2k_8000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800 start');
       await getConverts('amrnb_12.2k_8000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0800 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900
-        * @tc.name      : 001.test play source amrwb_6.6k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_6.6k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900
+     * @tc.desc   Local Video play source amrwb_6.6k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900 start');
       await getConverts('amrwb_6.6k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_0900 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000
-        * @tc.name      : 001.test play source amrwb_8.85k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_8.85k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000
+     * @tc.desc   Local Video play source amrwb_8.85k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000 start');
       await getConverts('amrwb_8.85k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1000 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100
-        * @tc.name      : 001.test play source amrwb_12.65k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_12.65k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100
+     * @tc.desc   Local Video play source amrwb_12.65k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100 start');
       await getConverts('amrwb_12.65k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1100 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200
-        * @tc.name      : 001.test play source amrwb_14.25k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_14.25k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200
+     * @tc.desc   Local Video play source amrwb_14.25k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200 start');
       await getConverts('amrwb_14.25k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1200 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300
-        * @tc.name      : 001.test play source amrwb_15.85k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_15.85k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300
+     * @tc.desc   Local Video play source amrwb_15.85k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300 start');
       await getConverts('amrwb_15.85k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1300 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400
-        * @tc.name      : 001.test play source amrwb_18.25k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_18.25k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400
+     * @tc.desc   Local Video play source amrwb_18.25k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400 start');
       await getConverts('amrwb_18.25k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1400 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500
-        * @tc.name      : 001.test play source amrwb_19.85k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_19.85k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500
+     * @tc.desc   Local Video play source amrwb_19.85k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500 start');
       await getConverts('amrwb_19.85k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1500 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600
-        * @tc.name      : 001.test play source amrwb_23.05k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_23.05k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600
+     * @tc.desc   Local Video play source amrwb_23.05k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600 start');
       await getConverts('amrwb_23.05k_16000.amr');
       await AVPlayerTestBase.avPlayerPlay(fdPath, avPlayer, done);
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1600 end');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1700
-        * @tc.name      : 001.test play source amrwb_23.85k_16000.amr
-        * @tc.desc      : Local Video play source amrwb_23.85k_16000.amr
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level2
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1700
+     * @tc.desc   Local Video play source amrwb_23.85k_16000.amr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1700', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVPLAYER_AMR_1700 start');
       await getConverts('amrwb_23.85k_16000.amr');

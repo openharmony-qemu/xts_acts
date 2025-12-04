@@ -25,26 +25,26 @@ export default function TestImageContentTransitionEffect(){
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestImageContentTransitionEffect_0100
-     * @tc.name       : TestImageContentTransitionEffect_001
-     * @tc.desc       : Test ContentTransitionEffect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestImageContentTransitionEffect_001
+     * @tc.number SUB_ARKUI_CAPI_TestImageContentTransitionEffect_0100
+     * @tc.desc   Test ContentTransitionEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestImageContentTransitionEffect_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestImageContentTransitionEffect001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TestImageContentTransitionEffect_0200
-     * @tc.name       : TestImageContentTransitionEffect_002
-     * @tc.desc       : Test ContentTransitionEffect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   TestImageContentTransitionEffect_002
+     * @tc.number SUB_ARKUI_CAPI_TestImageContentTransitionEffect_0200
+     * @tc.desc   Test ContentTransitionEffect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestImageContentTransitionEffect_002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestImageContentTransitionEffect002()).assertEqual(0)

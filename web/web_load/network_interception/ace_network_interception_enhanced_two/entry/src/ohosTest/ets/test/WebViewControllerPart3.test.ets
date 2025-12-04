@@ -57,28 +57,28 @@ export default function webViewControllerPart3Test() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
-    * @tc.name       : testSetNetworkAvailable001
-    * @tc.desc       : test setNetworkAvailable
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSetNetworkAvailable001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0100
+     * @tc.desc   test setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSetNetworkAvailable001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testSetNetworkAvailable001", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testSetNetworkAvailable001", 'false', 142310, done);
       Utils.waitAndClickComponent(driver, "WebViewControllerTestButton");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0200
-    * @tc.name       : testSetNetworkAvailable002
-    * @tc.desc       : test setNetworkAvailable
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSetNetworkAvailable002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETNETWORKAVAILABLE_0200
+     * @tc.desc   test setNetworkAvailable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetNetworkAvailable002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSetNetworkAvailable002", EVENT_ID_SET_EIMIT_KEY)
       Utils.registerEvent("testSetNetworkAvailable002", 'true', 142320, done);

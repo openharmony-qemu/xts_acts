@@ -46,12 +46,12 @@ export default function RepeatTest0200() {
     });
 
     /**
-     * @tc.number    RepeatTest0200_001
-     * @tc.name      RepeatTest0200_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0200_001
+     * @tc.number RepeatTest0200_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0200_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0200_001] START');
@@ -91,12 +91,12 @@ export default function RepeatTest0200() {
     });
 
     /**
-     * @tc.number    RepeatTest0200_002
-     * @tc.name      RepeatTest0200_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0200_002
+     * @tc.number RepeatTest0200_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0200_002', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0200_001] START');
@@ -136,12 +136,12 @@ export default function RepeatTest0200() {
     });
 
     /**
-     * @tc.number    RepeatTest0200_003
-     * @tc.name      RepeatTest0200_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   RepeatTest0200_003
+     * @tc.number RepeatTest0200_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatTest0200_003', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatTest0200_001] START');

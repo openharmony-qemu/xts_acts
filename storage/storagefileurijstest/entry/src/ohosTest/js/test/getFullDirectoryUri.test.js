@@ -28,14 +28,12 @@ from '@ohos/hypium'
   
   const CONTENT = "Hello World!";
   /**
+   * @tc.name   test_Fileuri_GetFullDirectoryUri_Async_001
    * @tc.number SUB_BASIC_FM_FileAPI_FileUri_getFullDirectory_0100
-   * @tc.name test_Fileuri_GetFullDirectoryUri_Async_001
-   * @tc.desc Test getFullDirectoryUri() interface.
-   * Retrieve the URI of the current path through the file URI.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getFullDirectoryUri() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_Fileuri_GetFullDirectoryUri_Async_001', Level.LEVEL0, async function () {
     let fpath = '/data/storage/el2/base/haps/test_Fileuri_GetFullDirectoryUri_Async_001';
@@ -52,14 +50,12 @@ from '@ohos/hypium'
   });
 
   /**
+   * @tc.name   test_Fileuri_GetFullDirectoryUri_Async_002
    * @tc.number SUB_BASIC_FM_FileAPI_FileUri_getFullDirectory_0200
-   * @tc.name test_Fileuri_GetFullDirectoryUri_Async_002
-   * @tc.desc Test getFullDirectoryUri() interface.
-   * Retrieve the URI of the current path through the folder URI.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test getFullDirectoryUri() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('test_Fileuri_GetFullDirectoryUri_Async_002', Level.LEVEL0, async function () {
     let dpath = '/data/storage/el2/base/haps/test_Fileuri_GetFullDirectoryUri_Async_002';
@@ -76,14 +72,12 @@ from '@ohos/hypium'
   });
   
   /**
+   * @tc.name   test_Fileuri_GetFullDirectoryUri_Async_003
    * @tc.number SUB_BASIC_FM_FileAPI_FileUri_getFullDirectory_0300
-   * @tc.name test_Fileuri_GetFullDirectoryUri_Async_003
-   * @tc.desc Test getFullDirectoryUri() interface.
-   * File does not exist.
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getFullDirectoryUri() interface.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_Fileuri_GetFullDirectoryUri_Async_003', Level.LEVEL3, async function () {
     let fpath = '/data/storage/el2/base/haps/entry/files/test_Fileuri_GetFullDirectoryUri_Async_003.txt';
@@ -99,13 +93,12 @@ from '@ohos/hypium'
   });
 
   /**
+   * @tc.name   test_Fileuri_GetFullDirectoryUri_Async_004
    * @tc.number SUB_BASIC_FM_FileAPI_FileUri_getFullDirectory_0400
-   * @tc.name test_Fileuri_GetFullDirectoryUri_Async_004
-   * @tc.desc Test getFullDirectoryUri() interface. -1
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getFullDirectoryUri() interface. -1
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_Fileuri_GetFullDirectoryUri_Async_004', Level.LEVEL3, async function () {
     let fpath = '/data/storage/el2/base/haps/test_Fileuri_GetFullDirectoryUri_Async_004';
@@ -122,13 +115,12 @@ from '@ohos/hypium'
   });
 
   /**
+   * @tc.name   test_Fileuri_GetFullDirectoryUri_Async_005
    * @tc.number SUB_BASIC_FM_FileAPI_FileUri_getFullDirectory_0500
-   * @tc.name test_Fileuri_GetFullDirectoryUri_Async_005
-   * @tc.desc Test getFullDirectoryUri() interface. Witout Uri
-   * @tc.size MediumTest
-   * @tc.type Function
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test getFullDirectoryUri() interface. Witout Uri
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('test_Fileuri_GetFullDirectoryUri_Async_005', Level.LEVEL3, async function () {
     let fpath = '/data/storage/el2/base/haps/fileuri_test_getFullDirectoryUri_async_005';

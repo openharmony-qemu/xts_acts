@@ -57,9 +57,12 @@ export default function Grid_ReachStartAndEnd() {
 
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd_0100
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd_0100
-     * @tc.name testGrid
-     * @tc.desc Sliding the grid to the end position triggers the onReachEnd event, and sliding to the start position triggers the onReachStart event
+     * @tc.desc   Sliding the grid to the end position triggers the onReachEnd event, and sliding to the start position triggers the onReachStart event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0100] START');
@@ -96,9 +99,12 @@ export default function Grid_ReachStartAndEnd() {
     });
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd_0600
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd_0600
-     * @tc.name testGrid
-     * @tc.desc Quickly sliding the grid to the end position triggers the onReachEnd event
+     * @tc.desc   Quickly sliding the grid to the end position triggers the onReachEnd event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0600] START');

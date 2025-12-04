@@ -55,14 +55,14 @@ export default function webErrorCode() {
 
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ZOOMIN_0100
-    * @tc.name       : testZoomInErrorStatic001
-    * @tc.desc       : test zoomIn error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testZoomInErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_ZOOMIN_0100
+     * @tc.desc   test zoomIn error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomInErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoomIn', 10)
@@ -74,14 +74,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ZOOMIN_0200
-    * @tc.name       : testZoomInErrorStatic002
-    * @tc.desc       : test zoomIn error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testZoomInErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_ZOOMIN_0200
+     * @tc.desc   test zoomIn error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomInErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoomIn2', 10)
@@ -93,14 +93,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ZOOMOUT_0100
-    * @tc.name       : testZoomOutErrorStatic001
-    * @tc.desc       : test zoomOut error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testZoomOutErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_ZOOMOUT_0100
+     * @tc.desc   test zoomOut error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomOutErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoomOut', 10)
@@ -112,14 +112,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-   * @tc.number     : SUB_WEB_ERRORCODE_ZOOMOUT_0200
-   * @tc.name       : testZoomOutErrorStatic002
-   * @tc.desc       : test zoomOut error
-   * @tc.size       : MEDIUM
-   * @tc.type       : Function
-   * @tc.level      : Level 3
-   */
+    /**
+     * @tc.name   testZoomOutErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_ZOOMOUT_0200
+     * @tc.desc   test zoomOut error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomOutErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoomOut2', 10)
@@ -131,14 +131,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_SLIDESCROLL_0100
-    * @tc.name       : testSlideScrollErrorStatic001
-    * @tc.desc       : test slideScroll error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testSlideScrollErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_SLIDESCROLL_0100
+     * @tc.desc   test slideScroll error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSlideScrollErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitSlideScroll', 10)
@@ -150,14 +150,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_SCROLLBY_0100
-    * @tc.name       : testScrollByErrorStatic001
-    * @tc.desc       : test scrollBy error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testScrollByErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_SCROLLBY_0100
+     * @tc.desc   test scrollBy error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollByErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitScrollBy', 10)
@@ -169,14 +169,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ZOOM_0100
-    * @tc.name       : testZoomErrorStatic001
-    * @tc.desc       : test zoom error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testZoomErrorStatic001
+     * @tc.number SUB_WEB_ERRORCODE_ZOOM_0100
+     * @tc.desc   test zoom error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomErrorStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoom', 10)
@@ -188,14 +188,14 @@ export default function webErrorCode() {
         done()
       })
 
-    /*
-    * @tc.number     : SUB_WEB_ERRORCODE_ZOOM_0200
-    * @tc.name       : testZoomErrorStatic002
-    * @tc.desc       : test zoom error
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   testZoomErrorStatic002
+     * @tc.number SUB_WEB_ERRORCODE_ZOOM_0200
+     * @tc.desc   test zoom error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testZoomErrorStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitZoom2', 10)
@@ -207,6 +207,14 @@ export default function webErrorCode() {
         done()
       })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage', 10)

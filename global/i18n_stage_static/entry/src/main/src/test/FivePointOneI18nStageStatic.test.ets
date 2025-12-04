@@ -57,7 +57,6 @@ export default function FivePointOne_i18nStageTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0160
      * @tc.number SUB_GLOBAL_refinedFormat_static_0160
      * @tc.desc   begin code same as stop code
@@ -72,7 +71,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0170
      * @tc.number SUB_GLOBAL_refinedFormat_static_0170
      * @tc.desc   normally (begin code & stop code)
@@ -87,7 +85,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0180
      * @tc.number SUB_GLOBAL_refinedFormat_static_0180
      * @tc.desc   begin code with negative ,stop code with decimal
@@ -102,7 +99,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0190
      * @tc.number SUB_GLOBAL_refinedFormat_static_0190
      * @tc.desc   begin code large than stop code
@@ -117,7 +113,6 @@ export default function FivePointOne_i18nStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_static_0100
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0100
      * @tc.desc   i18n.TemperatureType.CELSIUS
@@ -132,7 +127,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_static_0200
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0200
      * @tc.desc   i18n.TemperatureType.FAHRENHEIT
@@ -147,7 +141,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_static_0300
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0300
      * @tc.desc   i18n.TemperatureType.KELVIN
@@ -162,7 +155,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureName_static_0400
      * @tc.number SUB_GLOBAL_I18N_getTemperatureName_static_0400
      * @tc.desc   input number zero
@@ -180,7 +172,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0100
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0100
      * @tc.desc   en-GB & en-Latn-US
@@ -198,7 +189,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0200
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0200
      * @tc.desc   zh-Hant-HK & zh-Hant-TW
@@ -216,7 +206,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0300
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0300
      * @tc.desc   es-ES & es-US
@@ -234,7 +223,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0400
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0400
      * @tc.desc   pt-PT & pt-BR
@@ -252,7 +240,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0500
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0500
      * @tc.desc   en-CN & en-Test
@@ -270,7 +257,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0600
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0600
      * @tc.desc   zh-Hant-CN & zh-Hant-Test
@@ -288,7 +274,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0700
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0700
      * @tc.desc   es-CN & es-Test
@@ -306,7 +291,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0800
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0800
      * @tc.desc   pt-CN & pt-Test
@@ -324,7 +308,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_0900
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_0900
      * @tc.desc   bo-CN & bo-Test & bo-Test
@@ -345,7 +328,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_1000
      * @tc.number SUB_GLOBAL_I18N_getSimplifiedLanguage_static_01_static_1000
      * @tc.desc   pt-CN & pt-Test
@@ -364,7 +346,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0310
      * @tc.number SUB_GLOBAL_refinedFormat_static_0310
      * @tc.desc   maximumFractionDigits: 2 & maximumSignificantDigits: 6 & roundingPriority: "lessPrecision"
@@ -384,7 +365,6 @@ export default function FivePointOne_i18nStageTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0320
      * @tc.number SUB_GLOBAL_refinedFormat_static_0320
      * @tc.desc   maximumFractionDigits: 2 & roundingIncrement: 1
@@ -402,7 +382,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_FilePathMirroring_static_0100
      * @tc.number SUB_GLOBAL_FilePathMirroring_static_0100
      * @tc.desc   path /data/out/tmp & delimiter /
@@ -420,7 +399,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0020
      * @tc.number SUB_GLOBAL_refinedFormat_static_0020
      * @tc.desc   Date(2024, 11, 13, 6, 30, 25) & 'y'/'M'/'d' 'h':'m':'s'
@@ -438,7 +416,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0630
      * @tc.number SUB_GLOBAL_refinedFormat_static_0630
      * @tc.desc   roundingMode: "halfExpand" & maximumSignificantDigits: 5
@@ -458,7 +435,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_0790
      * @tc.number SUB_GLOBAL_refinedFormat_static_0790
      * @tc.desc   skeletonFormat (1230000) & getSimpleNumberFormatBySkeleton "engineering/sign-always"
@@ -475,7 +451,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   SUB_GLOBAL_refinedFormat_static_008
      * @tc.number SUB_GLOBAL_refinedFormat_static_008
      * @tc.desc   local is CN
@@ -492,7 +467,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimplifiedLanguage_static_01_static_1010
      * @tc.number I18N_test_getSimplifiedLanguage_static_01_static_1010
      * @tc.desc   no param
@@ -507,7 +481,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getTemperatureType_static_0100
      * @tc.number I18N_test_getTemperatureType_static_0100
      * @tc.desc   no param
@@ -522,7 +495,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getFirstDayOfWeek_static_0100
      * @tc.number I18N_test_getFirstDayOfWeek_static_0100
      * @tc.desc   no param
@@ -537,7 +509,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0100
      * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0100
      * @tc.desc   890001
@@ -558,7 +529,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0200
      * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0200
      * @tc.desc   path & delimiter
@@ -575,7 +545,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getUnicodeWrappedFilePath_static_0300
      * @tc.number I18N_test_getUnicodeWrappedFilePath_static_0300
      * @tc.desc   path
@@ -591,7 +560,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_static_0100
      * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_static_0100
      * @tc.desc   89001
@@ -610,7 +578,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatByPattern_static_0200
      * @tc.number I18N_test_getSimpleDateTimeFormatByPattern_static_0200
      * @tc.desc   only date
@@ -628,7 +595,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
      * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_static_0100
      * @tc.desc   89001
@@ -647,7 +613,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
      * @tc.number I18N_test_getSimpleDateTimeFormatBySkeleton_static_0200
      * @tc.desc   only date
@@ -664,7 +629,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   roundingMode_test_static_0100
      * @tc.number roundingMode_test_static_0100
      * @tc.desc   test roundingIncrement success
@@ -690,7 +654,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   roundingIncrement_test_static_0100
      * @tc.number roundingIncrement_test_static_0100
      * @tc.desc   test roundingIncrement success
@@ -716,7 +679,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_static_0100
      * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_static_0100
      * @tc.desc   89001
@@ -735,7 +697,6 @@ export default function FivePointOne_i18nStageTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   I18N_test_getSimpleNumberFormatBySkeleton_static_0200
      * @tc.number I18N_test_getSimpleNumberFormatBySkeleton_static_0200
      * @tc.desc   only skeletonFormatter

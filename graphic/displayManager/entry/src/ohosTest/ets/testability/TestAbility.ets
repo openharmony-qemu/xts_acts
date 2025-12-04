@@ -25,6 +25,7 @@ export default class TestAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onCreate');
         hilog.info(0x0000, 'testTag', '%{public}s', 'want param:' + JSON.stringify(want) ?? '');
         hilog.info(0x0000, 'testTag', '%{public}s', 'launchParam:'+ JSON.stringify(launchParam) ?? '');
+        AppStorage.setOrCreate('bundleName',want.bundleName);
         let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
@@ -48,7 +49,7 @@ export default class TestAbility extends UIAbility {
                 JSON.stringify(data) ?? '');
         });
         AppStorage.setOrCreate('windowStage',windowStage);
-        AppStorage.setOrCreate('common',this.context);
+        AppStorage.setOrCreate('context',this.context);
     }
 
     onWindowStageDestroy() {

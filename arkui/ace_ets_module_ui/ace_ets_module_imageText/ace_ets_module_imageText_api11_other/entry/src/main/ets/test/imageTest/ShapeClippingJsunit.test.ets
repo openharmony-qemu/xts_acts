@@ -45,6 +45,14 @@ export default function shapeClippingJsunit() {
       console.info("shapeClipping after each called");
     });
 
+    /**
+     * @tc.name   testShapeClipping001
+     * @tc.number testShapeClipping001
+     * @tc.desc   testShapeClipping001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testShapeClipping001', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping001] START');
       await CommonFunc.sleep(1000);
@@ -58,6 +66,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testShapeClipping002
+     * @tc.number testShapeClipping002
+     * @tc.desc   testShapeClipping002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testShapeClipping002', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping002] START');
       await CommonFunc.sleep(1000);
@@ -70,6 +86,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testShapeClipping003
+     * @tc.number testShapeClipping003
+     * @tc.desc   testShapeClipping003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testShapeClipping003', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping003] START');
       try {
@@ -98,6 +122,14 @@ export default function shapeClippingJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   testShapeClipping004
+     * @tc.number testShapeClipping004
+     * @tc.desc   testShapeClipping004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testShapeClipping004', Level.LEVEL1, async (done: Function) => {
       console.info('[testShapeClipping004] START');
       try {

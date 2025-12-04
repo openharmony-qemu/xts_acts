@@ -99,6 +99,7 @@ struct IndexPage {
     { title: 'NavigationEnableHoverMode', uri: 'pages/ArkUI/NavigationEnableHoverMode' },
     { title: 'AccessibilityProperty', uri: 'pages/ArkUI/AccessibilityProperty' },
     { title: 'AccessibilityOptions', uri: 'pages/ArkUI/AccessibilityOptions' },
+    { title: 'AccessibilityOptionsObjectDescription', uri: 'pages/ArkUI/AccessibilityOptionsObjectDescription' },
     { title: 'AccessibilityThirdFramework00', uri: 'pages/ArkUI/AccessibilityThirdFramework00' },
     { title: 'AccessibilityThirdFramework01', uri: 'pages/ArkUI/AccessibilityThirdFramework01' },
     { title: 'GetBarRect', uri: 'pages/ArkUI/GetBarRect' },

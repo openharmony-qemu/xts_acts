@@ -57,9 +57,12 @@ export default function rowMarPad_TextMarPadTest() {
       console.info("RowMarPad_TextMarPadTest after each called");
     });
     /**
+     * @tc.name   testRowMarPadTextPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0900
-     * @tc.name testRowMarPadTextPad
-     * @tc.desc The parent component set margin to 5,padding to 10,and the first subcomponent set padding to 10
+     * @tc.desc   The parent component set margin to 5,padding to 10,and the first subcomponent set padding to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarPadTextPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarPadTextPad] START');
@@ -116,9 +119,12 @@ export default function rowMarPad_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowMarPadTextMar
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1000
-     * @tc.name testRowMarPadTextMar
-     * @tc.desc The parent component set margin to 5,padding to 10,and the first subcomponent set margin to 10
+     * @tc.desc   The parent component set margin to 5,padding to 10,and the first subcomponent set margin to 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarPadTextMar',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarPadTextMar] START');
@@ -174,10 +180,12 @@ export default function rowMarPad_TextMarPadTest() {
       done();
     });
     /**
+     * @tc.name   testRowMarPadTextMarPad
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_1100
-     * @tc.name testRowMarPadTextMarPad
-     * @tc.desc The parent component set margin to 5，padding to 10,
-     *              and the first subcomponent set margin to 10,padding to 10
+     * @tc.desc   The parent component set margin to 5，padding to 10,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowMarPadTextMarPad',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowMarPadTextMarPad] START');

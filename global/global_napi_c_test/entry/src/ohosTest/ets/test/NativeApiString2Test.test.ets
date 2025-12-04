@@ -35,7 +35,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralString0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0100
      * @tc.desc   overriding error code
@@ -57,7 +56,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralString0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0200
      * @tc.desc   overriding error code
@@ -79,7 +77,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralString0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0300
      * @tc.desc   overriding error code
@@ -101,7 +98,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralString0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0400
      * @tc.desc   overriding error code
@@ -123,7 +119,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralString0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRING_0500
      * @tc.desc   overriding error code
@@ -145,7 +140,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralString0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0100
      * @tc.desc   overriding error code
@@ -167,7 +161,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralString0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0200
      * @tc.desc   overriding error code
@@ -189,7 +182,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralString0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0300
      * @tc.desc   overriding error code
@@ -211,7 +203,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralString0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0400
      * @tc.desc   overriding error code
@@ -233,7 +224,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralString0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRING_0500
      * @tc.desc   overriding error code
@@ -255,7 +245,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralStringByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0100
      * @tc.desc   overriding error code
@@ -277,7 +266,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralStringByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0200
      * @tc.desc   overriding error code
@@ -299,7 +287,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralStringByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0300
      * @tc.desc   overriding error code
@@ -321,7 +308,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntPluralStringByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTPLURALSTRINGBYNAME_0400
      * @tc.desc   overriding error code
@@ -343,7 +329,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralStringByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0100
      * @tc.desc   overriding error code
@@ -365,7 +350,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralStringByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0200
      * @tc.desc   overriding error code
@@ -387,7 +371,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralStringByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0300
      * @tc.desc   overriding error code
@@ -409,7 +392,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetDoublePluralStringByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETDOUBLEPLURALSTRINGBYNAME_0400
      * @tc.desc   overriding error code
@@ -431,7 +413,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColor0100
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0100
      * @tc.desc   overriding error code
@@ -453,7 +434,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColor0200
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0200
      * @tc.desc   overriding error code
@@ -475,7 +455,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColor0300
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0300
      * @tc.desc   overriding error code
@@ -497,7 +476,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColor0400
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0400
      * @tc.desc   overriding error code
@@ -519,7 +497,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColor0500
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColor_0500
      * @tc.desc   overriding error code
@@ -541,7 +518,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorByName0100
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0100
      * @tc.desc   overriding error code
@@ -563,7 +539,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorByName0200
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0200
      * @tc.desc   overriding error code
@@ -585,7 +560,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorByName0300
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0300
      * @tc.desc   overriding error code
@@ -607,7 +581,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetColorByName0400
      * @tc.number SUB_GLOBAL_OH_ResourceManager_GetColorByName_0400
      * @tc.desc   overriding error code
@@ -629,7 +602,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInt0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0100
      * @tc.desc   overriding error code
@@ -651,7 +623,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInt0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0200
      * @tc.desc   overriding error code
@@ -673,7 +644,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInt0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0300
      * @tc.desc   overriding error code
@@ -695,7 +665,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInt0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0400
      * @tc.desc   overriding error code
@@ -717,7 +686,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetInt0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINT_0500
      * @tc.desc   overriding error code
@@ -739,7 +707,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0100
      * @tc.desc   overriding error code
@@ -761,7 +728,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0200
      * @tc.desc   overriding error code
@@ -783,7 +749,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0300
      * @tc.desc   overriding error code
@@ -805,7 +770,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetIntByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETINTBYNAME_0400
      * @tc.desc   overriding error code
@@ -827,7 +791,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloat0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0100
      * @tc.desc   overriding error code
@@ -849,7 +812,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloat0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0200
      * @tc.desc   overriding error code
@@ -871,7 +833,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloat0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0300
      * @tc.desc   overriding error code
@@ -893,7 +854,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloat0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0400
      * @tc.desc   overriding error code
@@ -915,7 +875,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloat0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOAT_0500
      * @tc.desc   overriding error code
@@ -937,7 +896,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloatByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0100
      * @tc.desc   overriding error code
@@ -959,7 +917,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloatByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0200
      * @tc.desc   overriding error code
@@ -981,7 +938,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloatByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0300
      * @tc.desc   overriding error code
@@ -1003,7 +959,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetFloatByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETFLOATBYNAME_0400
      * @tc.desc   overriding error code
@@ -1025,7 +980,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBool0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0100
      * @tc.desc   overriding error code
@@ -1047,7 +1001,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBool0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0200
      * @tc.desc   overriding error code
@@ -1069,7 +1022,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBool0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0300
      * @tc.desc   overriding error code
@@ -1091,7 +1043,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBool0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0400
      * @tc.desc   overriding error code
@@ -1113,7 +1064,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBool0500
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOL_0500
      * @tc.desc   overriding error code
@@ -1135,7 +1085,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBoolByName0100
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0100
      * @tc.desc   overriding error code
@@ -1157,7 +1106,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBoolByName0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0200
      * @tc.desc   overriding error code
@@ -1179,7 +1127,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBoolByName0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0300
      * @tc.desc   overriding error code
@@ -1201,7 +1148,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestGetBoolByName0400
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_GETBOOLBYNAME_0400
      * @tc.desc   overriding error code
@@ -1223,7 +1169,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestAddResource0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0200
      * @tc.desc   overriding error code
@@ -1245,7 +1190,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestAddResource0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_ADDRESOURCE_0300
      * @tc.desc   overriding error code
@@ -1267,7 +1211,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestRemoveResource0200
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0200
      * @tc.desc   overriding error code
@@ -1289,7 +1232,6 @@ export default function NativeApiString2Test() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   TestRemoveResource0300
      * @tc.number SUB_GLOBAL_OH_RESOURCEMANAGER_REMOVERESOURCE_0300
      * @tc.desc   overriding error code

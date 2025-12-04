@@ -64,14 +64,14 @@ export default function webGetProgressTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_GETPROGRESS_ERRORCODE_API_0100
-    * @tc.name       : testGetProgressErrorCode001
-    * @tc.desc       : test getProgress error code 801
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testGetProgressErrorCode001
+     * @tc.number SUB_ACE_WEB_GETPROGRESS_ERRORCODE_API_0100
+     * @tc.desc   test getProgress error code 801
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetProgressErrorCode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitGetProgressErrorCode001', 118);
       Utils.registerBaseEvent('testGetProgressErrorCode001', true, 2025090201, done, (backData: events_emitter.EventData, expected: Object) => {

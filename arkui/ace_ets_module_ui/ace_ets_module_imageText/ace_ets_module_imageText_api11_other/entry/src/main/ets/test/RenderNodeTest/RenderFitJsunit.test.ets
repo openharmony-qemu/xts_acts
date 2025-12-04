@@ -43,6 +43,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0100
+     * @tc.number RenderFitJsunit_0100
+     * @tc.desc   RenderFitJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0100] START');
@@ -55,6 +63,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0200
+     * @tc.number RenderFitJsunit_0200
+     * @tc.desc   RenderFitJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0200] START');
@@ -67,6 +83,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0300
+     * @tc.number RenderFitJsunit_0300
+     * @tc.desc   RenderFitJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0300] START');
@@ -79,6 +103,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0400
+     * @tc.number RenderFitJsunit_0400
+     * @tc.desc   RenderFitJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0400', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0400] START');
@@ -91,6 +123,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0500
+     * @tc.number RenderFitJsunit_0500
+     * @tc.desc   RenderFitJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0500', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0500] START');
@@ -103,6 +143,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0600
+     * @tc.number RenderFitJsunit_0600
+     * @tc.desc   RenderFitJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0600', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0600] START');
@@ -115,6 +163,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0700
+     * @tc.number RenderFitJsunit_0700
+     * @tc.desc   RenderFitJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0700', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0700] START');
@@ -127,6 +183,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0800
+     * @tc.number RenderFitJsunit_0800
+     * @tc.desc   RenderFitJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0800', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0800] START');
@@ -139,6 +203,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_0900
+     * @tc.number RenderFitJsunit_0900
+     * @tc.desc   RenderFitJsunit_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_0900', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_0900] START');
@@ -151,6 +223,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_1000
+     * @tc.number RenderFitJsunit_1000
+     * @tc.desc   RenderFitJsunit_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_1000', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_1000] START');
@@ -163,6 +243,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_1100
+     * @tc.number RenderFitJsunit_1100
+     * @tc.desc   RenderFitJsunit_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_1100', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_1100] START');
@@ -175,6 +263,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_1200
+     * @tc.number RenderFitJsunit_1200
+     * @tc.desc   RenderFitJsunit_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_1200', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_1200] START');
@@ -187,6 +283,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_1300
+     * @tc.number RenderFitJsunit_1300
+     * @tc.desc   RenderFitJsunit_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_1300', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_1300] START');
@@ -199,6 +303,14 @@ export default function RenderFitJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   RenderFitJsunit_1400
+     * @tc.number RenderFitJsunit_1400
+     * @tc.desc   RenderFitJsunit_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('RenderFitJsunit_1400', Level.LEVEL2, async (done: Function) => {
       // Get the information of the RenderFit
       console.info('[RenderFitJsunit_1400] START');

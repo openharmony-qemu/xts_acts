@@ -67,6 +67,14 @@ export default function SecurityHuksExportSupportJsunit() {
             useSoftware = await checkSoftware();
             done();
         })
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0100
+         * @tc.number Security_HUKS_Export_API8_0100
+         * @tc.desc   Security_HUKS_Export_API8_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0100";
             let HuksOptions = {
@@ -88,6 +96,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0200
+         * @tc.number Security_HUKS_Export_API8_0200
+         * @tc.desc   Security_HUKS_Export_API8_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0200";
             let HuksOptions = {
@@ -109,6 +125,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0300
+         * @tc.number Security_HUKS_Export_API8_0300
+         * @tc.desc   Security_HUKS_Export_API8_0300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0300";
             let HuksOptions = {
@@ -130,6 +154,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0400
+         * @tc.number Security_HUKS_Export_API8_0400
+         * @tc.desc   Security_HUKS_Export_API8_0400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0400";
             let HuksOptions = {
@@ -149,6 +181,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0500
+         * @tc.number Security_HUKS_Export_API8_0500
+         * @tc.desc   Security_HUKS_Export_API8_0500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0500";
             let HuksOptions = {
@@ -168,6 +208,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0600
+         * @tc.number Security_HUKS_Export_API8_0600
+         * @tc.desc   Security_HUKS_Export_API8_0600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0600";
             let HuksOptions = {
@@ -187,6 +235,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0700
+         * @tc.number Security_HUKS_Export_API8_0700
+         * @tc.desc   Security_HUKS_Export_API8_0700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0700";
             let HuksOptions = {
@@ -206,6 +262,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0800
+         * @tc.number Security_HUKS_Export_API8_0800
+         * @tc.desc   Security_HUKS_Export_API8_0800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0800";
             let HuksOptions = {
@@ -223,6 +287,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_0900
+         * @tc.number Security_HUKS_Export_API8_0900
+         * @tc.desc   Security_HUKS_Export_API8_0900
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_0900";
             let HuksOptions = {
@@ -240,6 +312,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1000
+         * @tc.number Security_HUKS_Export_API8_1000
+         * @tc.desc   Security_HUKS_Export_API8_1000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1000";
             let HuksOptions = {
@@ -257,6 +337,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1100
+         * @tc.number Security_HUKS_Export_API8_1100
+         * @tc.desc   Security_HUKS_Export_API8_1100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1100";
             let HuksOptions = {
@@ -278,6 +366,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1200
+         * @tc.number Security_HUKS_Export_API8_1200
+         * @tc.desc   Security_HUKS_Export_API8_1200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1200";
             let HuksOptions = {
@@ -297,6 +393,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1300
+         * @tc.number Security_HUKS_Export_API8_1300
+         * @tc.desc   Security_HUKS_Export_API8_1300
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1300";
             let HuksOptions = {
@@ -316,6 +420,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1400
+         * @tc.number Security_HUKS_Export_API8_1400
+         * @tc.desc   Security_HUKS_Export_API8_1400
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1400";
             let HuksOptions = {
@@ -335,6 +447,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1500
+         * @tc.number Security_HUKS_Export_API8_1500
+         * @tc.desc   Security_HUKS_Export_API8_1500
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1500";
             let HuksOptions = {
@@ -352,6 +472,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1600
+         * @tc.number Security_HUKS_Export_API8_1600
+         * @tc.desc   Security_HUKS_Export_API8_1600
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1600";
             let HuksOptions = {
@@ -371,6 +499,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1700
+         * @tc.number Security_HUKS_Export_API8_1700
+         * @tc.desc   Security_HUKS_Export_API8_1700
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1700";
             let HuksOptions = {
@@ -390,6 +526,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_1800
+         * @tc.number Security_HUKS_Export_API8_1800
+         * @tc.desc   Security_HUKS_Export_API8_1800
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAlias = "Security_HUKS_Export_API8_1800";
             let HuksOptions = {
@@ -407,6 +551,14 @@ export default function SecurityHuksExportSupportJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Export_API8_2000
+         * @tc.number Security_HUKS_Export_API8_2000
+         * @tc.desc   Security_HUKS_Export_API8_2000
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Export_API8_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAlias = '****'
             let HuksOptions = {

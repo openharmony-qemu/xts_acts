@@ -183,15 +183,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_0100");
@@ -201,15 +198,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_HEIC_0100");
@@ -224,15 +218,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_PNG_0100");
@@ -242,15 +233,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WEBP_0100");
@@ -260,15 +248,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_JPEG_0100");
@@ -278,15 +263,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_HEIC_0100");
@@ -301,15 +283,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_PNG_0100");
@@ -319,15 +298,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced
-     *                 1.create imageSource using jpeg images without exif
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set normal values for all readable and writable property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_WITHOUT_EXIF_WEBP_0100");
@@ -337,15 +313,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Set outliers for some property keys
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0100");
@@ -361,15 +334,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   set unsupported property key
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0200");
@@ -412,15 +382,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   set unsupported property key
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0300");
@@ -444,15 +411,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   Modify the read-only key
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0400");
@@ -475,15 +439,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     *                   set unsupported mime type image
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0500");
@@ -507,15 +468,12 @@ export default function imageModifyPropertiesEnhanced() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600
-     * @tc.name        SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600
-     * @tc.desc        test modifyImagePropertiesEnhanced error
-     *                 1.create imageSource
-     *                   release imageSource
-     *                 2.modifyImagePropertiesEnhanced(records: Record<string, string | null>)
-     * @tc.size        MEDIUM
-     * @tc.type        Functional
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600
+     * @tc.desc   test modifyImagePropertiesEnhanced error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600", Level.LEVEL0, async (done: ()=> void) => {
       let logger = new Logger("SUB_MULTIMEDIA_IMAGE_MODIFY_PROPERTY_ENHANCED_JPEG_ERROR_0600");

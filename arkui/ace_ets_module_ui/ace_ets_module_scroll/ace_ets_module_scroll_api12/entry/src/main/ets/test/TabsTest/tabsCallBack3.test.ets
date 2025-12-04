@@ -46,12 +46,12 @@ export default function tabsCallBack3() {
     });
 
     /**
-     * @tc.number    tabsCallBack3_001
-     * @tc.name      tabsCallBack3_0100
-     * @tc.desc      Switch pages and trigger callbacks through the changeIndex interface.
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   tabsCallBack3_0100
+     * @tc.number tabsCallBack3_001
+     * @tc.desc   Switch pages and trigger callbacks through the changeIndex interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('tabsCallBack3_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[tabsCallBack3_0100] START');

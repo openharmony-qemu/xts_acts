@@ -47,13 +47,13 @@ export default function repeatNoTemplateIdJsunit() {
     });
 
     /**
-    * @tc.number repeatNoTemplateIdJsunit_0100
-    * @tc.name repeatNoTemplateIdJsunit_0100
-    * @tc.desc The Repeat component template test.
-    * @tc.level Level 2
-    * @tc.type
-    * @tc.size
-    */
+     * @tc.name   repeatNoTemplateIdJsunit_0100
+     * @tc.number repeatNoTemplateIdJsunit_0100
+     * @tc.desc   The Repeat component template test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('repeatNoTemplateIdJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('RepeatEachJsunit_0100 START');
       await CommonFunc.sleep(1000);

@@ -56,13 +56,13 @@ export default function SwiperAutoPlay_1() {
       console.info("SwiperAutoPlay_1 after each called");
     });
 
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1120
-     * @tc.name       : SwiperAutoPlay_1120
-     * @tc.desc       : set autoPlay to false
-     * @tc.level      : Level 0
-     * @tc.type       : Function
-     * @tc.size       :
+    /**
+     * @tc.name   SwiperAutoPlay_1120
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1120
+     * @tc.desc   set autoPlay to false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SwiperAutoPlay_1120', Level.LEVEL1, async (done: Function) => {
       console.info('[SwiperAutoPlay_1120] START');

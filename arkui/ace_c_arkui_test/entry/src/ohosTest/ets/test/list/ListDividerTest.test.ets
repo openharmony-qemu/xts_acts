@@ -21,61 +21,61 @@ export default function listDividerTest() {
 
   describe('ListDividerTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_DIVIDER_0001
-     * @tc.name       : testListDivider001
-     * @tc.desc       : testing divider for list with {COLOR_YELLOW 1 1 1}
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListDivider001
+     * @tc.number SUB_ARKUI_CAPI_LIST_DIVIDER_0001
+     * @tc.desc   testing divider for list with {COLOR_YELLOW 1 1 1}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListDivider001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListDivider001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_DIVIDER_0002
-     * @tc.name       : testListDivider002
-     * @tc.desc       : testing divider for list with {COLOR_YELLOW 0 0 0}
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListDivider002
+     * @tc.number SUB_ARKUI_CAPI_LIST_DIVIDER_0002
+     * @tc.desc   testing divider for list with {COLOR_YELLOW 0 0 0}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListDivider002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListDivider002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_DIVIDER_0003
-     * @tc.name       : testListDivider003
-     * @tc.desc       : testing divider for list with {COLOR_YELLOW -1 -1 -1}
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListDivider003
+     * @tc.number SUB_ARKUI_CAPI_LIST_DIVIDER_0003
+     * @tc.desc   testing divider for list with {COLOR_YELLOW -1 -1 -1}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListDivider003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListDivider003()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_DIVIDER_0004
-     * @tc.name       : testListDivider004
-     * @tc.desc       : testing divider for list with {COLOR_YELLOW 1000 1000 1000}
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListDivider004
+     * @tc.number SUB_ARKUI_CAPI_LIST_DIVIDER_0004
+     * @tc.desc   testing divider for list with {COLOR_YELLOW 1000 1000 1000}
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListDivider004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListDivider004()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_DIVIDER_0005
-     * @tc.name       : testListDivider005
-     * @tc.desc       : testing divider for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListDivider005
+     * @tc.number SUB_ARKUI_CAPI_LIST_DIVIDER_0005
+     * @tc.desc   testing divider for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListDivider005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListDivider005()).assertEqual(0)

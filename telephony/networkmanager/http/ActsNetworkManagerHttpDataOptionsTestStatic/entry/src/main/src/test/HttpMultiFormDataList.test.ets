@@ -70,12 +70,12 @@ export default function httpMultiFormDataListTest() {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0100
-         * @tc.name  : testHttpMultiFormDataList_static_0100
-         * @tc.desc  : test multiFormDataList with contentType(text/plain) hasData
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0100
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0100
+         * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0100';
@@ -119,12 +119,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0200
-         * @tc.name  : testHttpMultiFormDataList_static_0200
-         * @tc.desc  : test multiFormDataList with contentType(text/plain) hasData
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0200
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0200
+         * @tc.desc   test multiFormDataList with contentType(text/plain) hasData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0200';
@@ -167,12 +167,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0300
-         * @tc.name  : testHttpMultiFormDataList_static_0300
-         * @tc.desc  : test multiFormDataList with contentType(image/png) hasData
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0300
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0300
+         * @tc.desc   test multiFormDataList with contentType(image/png) hasData
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0300';
@@ -216,12 +216,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0400
-         * @tc.name  : testHttpMultiFormDataList_static_0400
-         * @tc.desc  : test multiFormDataList with contentType(text/plain) no data
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0400
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0400
+         * @tc.desc   test multiFormDataList with contentType(text/plain) no data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0400';
@@ -269,12 +269,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0500
-         * @tc.name  : testHttpMultiFormDataList_static_0500
-         * @tc.desc  : test multiFormDataList with no data
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0500
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0500
+         * @tc.desc   test multiFormDataList with no data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0500';
@@ -329,12 +329,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0600
-         * @tc.name  : testHttpMultiFormDataList_static_0600
-         * @tc.desc  : test multiFormDataList with no data
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0600
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0600
+         * @tc.desc   test multiFormDataList with no data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0600';
@@ -385,12 +385,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0700
-         * @tc.name  : testHttpMultiFormDataList_static_0700
-         * @tc.desc  : test multiFormDataList with  filePath and data
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0700
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0700
+         * @tc.desc   test multiFormDataList with  filePath and data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0700';
@@ -448,12 +448,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0800
-         * @tc.name  : testHttpMultiFormDataList_static_0800
-         * @tc.desc  : test multiFormDataList with  filePath and data
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0800
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0800
+         * @tc.desc   test multiFormDataList with  filePath and data
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0800';
@@ -507,12 +507,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_0900
-         * @tc.name  : testHttpMultiFormDataList_static_0900
-         * @tc.desc  : test multiFormDataList with  filePath
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_0900
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_0900
+         * @tc.desc   test multiFormDataList with  filePath
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_0900';
@@ -568,12 +568,12 @@ export default function httpMultiFormDataListTest() {
         })
 
         /**
-         * @tc.number: SUB_NetworkMgr_Http_MultiFormDataList_1000
-         * @tc.name  : testHttpMultiFormDataList_static_1000
-         * @tc.desc  : test multiFormDataList with  filePath
-         * @tc.size  : smallTest
-         * @tc.type  : Function
-         * @tc.level : level 2
+         * @tc.name   testHttpMultiFormDataList_static_1000
+         * @tc.number SUB_NetworkMgr_Http_MultiFormDataList_1000
+         * @tc.desc   test multiFormDataList with  filePath
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testHttpMultiFormDataList_static_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testHttpMultiFormDataList_static_1000';

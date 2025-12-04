@@ -40,10 +40,13 @@ export default function CanvasShaderTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_Shader_0100
-     *tc.name   CanvasRenderingContext2D support createConicGradient
-     *tc.desc   CanvasRenderingContext2D support createConicGradient
+    /**
+     * @tc.name   ArkUI_Canvas_Shader_0100
+     * @tc.number ArkUI_Canvas_Shader_0100
+     * @tc.desc   CanvasRenderingContext2D support createConicGradient
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_Shader_0100', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_Shader_0100'
@@ -54,10 +57,13 @@ export default function CanvasShaderTest() {
       done()
     });
 
-    /*
-     *tc.number ArkUI_Canvas_Shader_0200
-     *tc.name   CanvasRenderingContext2D.createPattern support "clamp" and "mirror"
-     *tc.desc   CanvasRenderingContext2D.createPattern support "clamp" and "mirror"
+    /**
+     * @tc.name   ArkUI_Canvas_Shader_0200
+     * @tc.number ArkUI_Canvas_Shader_0200
+     * @tc.desc   CanvasRenderingContext2D.createPattern support "clamp" and "mirror"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUI_Canvas_Shader_0200', Level.LEVEL0, async (done: Function) => {
       let CASE: string = 'ArkUI_Canvas_Shader_0200'

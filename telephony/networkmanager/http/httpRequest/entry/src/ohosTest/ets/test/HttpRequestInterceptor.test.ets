@@ -349,12 +349,12 @@ export default function HttpRequestInterceptor() {
   describe('HttpRequestInterceptor', () => {
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0100
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0100
-     * @tc.desc: test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true  BODY_NO_CHANGE interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0100
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0100
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true  BODY_NO_CHANGE interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -404,12 +404,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0200
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0200
-     * @tc.desc: test CACHE_CHECKED true BODY_NO_CHANGE interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0200
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0200
+     * @tc.desc   test CACHE_CHECKED true BODY_NO_CHANGE interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -465,12 +465,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0300
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0300
-     * @tc.desc: test REDIRECTION true BODY_NO_CHANGE interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0300
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0300
+     * @tc.desc   test REDIRECTION true BODY_NO_CHANGE interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -515,12 +515,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0400
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0400
-     * @tc.desc: test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0400
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0400
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -570,12 +570,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0500
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0500
-     * @tc.desc: test INITIAL_REQUEST && CACHE_CHECKED && FINAL_RESPONSE true BODY_NOT_CHANGE_URL interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0500
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0500
+     * @tc.desc   test INITIAL_REQUEST && CACHE_CHECKED && FINAL_RESPONSE true BODY_NOT_CHANGE_URL interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -640,12 +640,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0600
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0600
-     * @tc.desc: test INITIAL_REQUEST && NETWORK_CONNECT && REDIRECTION && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0600
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0600
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && REDIRECTION && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -696,12 +696,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0700
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0700
-     * @tc.desc: test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0700
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0700
+     * @tc.desc   test INITIAL_REQUEST && NETWORK_CONNECT && FINAL_RESPONSE true BODY_CHANGE_URL interceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -751,12 +751,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0800
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0800
-     * @tc.desc: test INITIAL_REQUEST false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0800
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0800
+     * @tc.desc   test INITIAL_REQUEST false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -801,12 +801,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0900
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions0900
-     * @tc.desc: test NETWORK_CONNECT false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions0900
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_0900
+     * @tc.desc   test NETWORK_CONNECT false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -851,12 +851,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1000
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1000
-     * @tc.desc: test FINAL_RESPONSE false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1000
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1000
+     * @tc.desc   test FINAL_RESPONSE false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -901,12 +901,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1100
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1100
-     * @tc.desc: test REDIRECTION false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1100
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1100
+     * @tc.desc   test REDIRECTION false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -951,12 +951,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1200
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1200
-     * @tc.desc: test CACHE_CHECKED false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1200
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1200
+     * @tc.desc   test CACHE_CHECKED false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1012,12 +1012,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1300
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1300
-     * @tc.desc: test INITIAL_REQUEST && CACHE_CHECKED && FINAL_RESPONSE true BODY_NOT_CHANGE_URL and noHttpRequestInterceptor HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1300
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1300
+     * @tc.desc   test INITIAL_REQUEST && CACHE_CHECKED && FINAL_RESPONSE true BODY_NOT_CHANGE_URL and noHttpRequestInterceptor HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1080,12 +1080,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1400
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1400
-     * @tc.desc: test INITIAL_REQUEST false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1400
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1400
+     * @tc.desc   test INITIAL_REQUEST false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1136,12 +1136,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1500
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1500
-     * @tc.desc: test NETWORK_CONNECT false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1500
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1500
+     * @tc.desc   test NETWORK_CONNECT false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1193,12 +1193,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1600
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1600
-     * @tc.desc: test FINAL_RESPONSE false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1600
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1600
+     * @tc.desc   test FINAL_RESPONSE false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1249,12 +1249,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1700
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1700
-     * @tc.desc: test REDIRECTION false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1700
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1700
+     * @tc.desc   test REDIRECTION false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1305,12 +1305,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1800
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1800
-     * @tc.desc: test CACHE_CHECKED false BODY_NO_CHANGE HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1800
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1800
+     * @tc.desc   test CACHE_CHECKED false BODY_NO_CHANGE HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1372,12 +1372,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1900
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900
-     * @tc.desc: test chain.apply(undefined) catch Parameter type not supported by the interceptor error 2300801 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_1900
+     * @tc.desc   test chain.apply(undefined) catch Parameter type not supported by the interceptor error 2300801 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1426,12 +1426,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2000
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000
-     * @tc.desc: test chain.addChain(undefined) catch Duplicated interceptor type in the chain error 2300801 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2000
+     * @tc.desc   test chain.addChain(undefined) catch Duplicated interceptor type in the chain error 2300801 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1478,12 +1478,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2100
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2100
-     * @tc.desc: test chain.addChain([c1, c1, c1]) catch Duplicated interceptor type in the chain error 2300802 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2100
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2100
+     * @tc.desc   test chain.addChain([c1, c1, c1]) catch Duplicated interceptor type in the chain error 2300802 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1532,12 +1532,12 @@ export default function HttpRequestInterceptor() {
       });
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2200
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2200
-     * @tc.desc: test chain.addChain([undefined]) catch Internal error error 2300999 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2200
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2200
+     * @tc.desc   test chain.addChain([undefined]) catch Internal error error 2300999 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -1585,12 +1585,12 @@ export default function HttpRequestInterceptor() {
 
 
     /**
-     * @tc.number: SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2300
-     * @tc.name: testNetworkMgrHttpRequestInterceptorHttpRequestOptions2300
-     * @tc.desc: test chain.getChain() type catch Internal error error 2300999 HttpRequestInterceptor
-     * @tc.size: SmallTest
-     * @tc.type: Function
-     * @tc.level: level 2
+     * @tc.name   testNetworkMgrHttpRequestInterceptorHttpRequestOptions2300
+     * @tc.number SUB_NetworkMgr_HttpRequestInterceptor_HttpRequestOptions_2300
+     * @tc.desc   test chain.getChain() type catch Internal error error 2300999 HttpRequestInterceptor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrHttpRequestInterceptorHttpRequestOptions2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

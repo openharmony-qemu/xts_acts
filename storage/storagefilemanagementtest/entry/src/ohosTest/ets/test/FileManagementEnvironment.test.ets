@@ -24,13 +24,12 @@ export default function FileManagementEnvironment(){
   describe('FileManagementEnvironment', async () => {
 
     /**
+     * @tc.name   EnvironmentErrCodeErrOk001
      * @tc.number SUB_ENVIRONMENT_ERRCODE_ERR_OK_0100
-     * @tc.name EnvironmentErrCodeErrOk001
-     * @tc.desc test ERR_OK
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_OK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentErrCodeErrOk001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -45,13 +44,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentErrCodeErrInvalidParameter001
      * @tc.number SUB_ENVIRONMENT_ERRCODE_ERR_INVALIDPARAMETER_0100
-     * @tc.name EnvironmentErrCodeErrInvalidParameter001
-     * @tc.desc test ERR_INVALID_PARAMETER
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_INVALID_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentErrCodeErrInvalidParameter001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -66,13 +64,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentErrCodeErrDeviceNotSupported001
      * @tc.number SUB_ENVIRONMENT_ERRCODE_ERR_DEVICENOTSUPPORTED_0100
-     * @tc.name EnvironmentErrCodeErrDeviceNotSupported001
-     * @tc.desc test ERR_DEVICE_NOT_SUPPORTED
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test ERR_DEVICE_NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentErrCodeErrDeviceNotSupported001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -87,13 +84,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDownloadDir001
      * @tc.number SUB_ENVIRONMENT_GETUSERDOWNLOADDIR_0100
-     * @tc.name EnvironmentGetUserDownloadDir001
-     * @tc.desc test EnvironmentGetUserDownloadDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDownloadDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDownloadDir001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -108,13 +104,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDownloadDir002
      * @tc.number SUB_ENVIRONMENT_GETUSERDOWNLOADDIR_0200
-     * @tc.name EnvironmentGetUserDownloadDir002
-     * @tc.desc test EnvironmentGetUserDownloadDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDownloadDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDownloadDir002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -129,13 +124,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDownloadDir003
      * @tc.number SUB_ENVIRONMENT_GETUSERDOWNLOADDIR_0300
-     * @tc.name EnvironmentGetUserDownloadDir003
-     * @tc.desc test EnvironmentGetUserDownloadDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDownloadDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDownloadDir003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -150,13 +144,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDesktopDir001
      * @tc.number SUB_ENVIRONMENT_GETUSERDESKTOPDIR_0100
-     * @tc.name EnvironmentGetUserDesktopDir001
-     * @tc.desc test EnvironmentGetUserDesktopDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDesktopDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDesktopDir001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -171,13 +164,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDesktopDir002
      * @tc.number SUB_ENVIRONMENT_GETUSERDESKTOPDIR_0200
-     * @tc.name EnvironmentGetUserDesktopDir002
-     * @tc.desc test EnvironmentGetUserDesktopDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDesktopDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDesktopDir002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -192,13 +184,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDesktopDir003
      * @tc.number SUB_ENVIRONMENT_GETUSERDESKTOPDIR_0300
-     * @tc.name EnvironmentGetUserDesktopDir003
-     * @tc.desc test EnvironmentGetUserDesktopDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDesktopDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDesktopDir003', Level.LEVEL1, async (done: Function) => {
       try {
@@ -213,13 +204,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDocumentDir001
      * @tc.number SUB_ENVIRONMENT_GETUSERDOCUMENTDIR_0100
-     * @tc.name EnvironmentGetUserDocumentDir001
-     * @tc.desc test EnvironmentGetUserDocumentDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDocumentDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDocumentDir001', Level.LEVEL1, async (done: Function) => {
       try {
@@ -234,13 +224,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDocumentDir002
      * @tc.number SUB_ENVIRONMENT_GETUSERDOCUMENTDIR_0200
-     * @tc.name EnvironmentGetUserDocumentDir002
-     * @tc.desc test EnvironmentGetUserDocumentDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDocumentDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDocumentDir002', Level.LEVEL1, async (done: Function) => {
       try {
@@ -255,13 +244,12 @@ export default function FileManagementEnvironment(){
     });
 
     /**
+     * @tc.name   EnvironmentGetUserDocumentDir003
      * @tc.number SUB_ENVIRONMENT_GETUSERDOCUMENTDIR_0300
-     * @tc.name EnvironmentGetUserDocumentDir003
-     * @tc.desc test EnvironmentGetUserDocumentDir
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
-     * @tc.require
+     * @tc.desc   test EnvironmentGetUserDocumentDir
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('EnvironmentGetUserDocumentDir003', Level.LEVEL1, async (done: Function) => {
       try {

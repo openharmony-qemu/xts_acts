@@ -62,7 +62,6 @@ static size_t getDeviceNum(unordered_map<uint64_t, shared_ptr<Device>> map)
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   BusExtensionRegisterTest
  * @tc.number BusExtensionRegisterTest
  * @tc.desc   BusExtensionRegisterTest
@@ -79,7 +78,6 @@ HWTEST_F(DeviceManagerTest, BusExtensionRegisterTest, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   InitTest
  * @tc.number InitTest
  * @tc.desc   InitTest
@@ -96,7 +94,6 @@ HWTEST_F(DeviceManagerTest, InitTest, TestSize.Level1)
 
 // test OnDeviceAdd and OnDeviceRemove
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   OnDeviceAddRemoveTest001
  * @tc.number OnDeviceAddRemoveTest001
  * @tc.desc   OnDeviceAddRemoveTest001
@@ -122,7 +119,6 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest001, Function | MediumTest | Le
 
 // test adding device repeatedly
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   OnDeviceAddRemoveTest002
  * @tc.number OnDeviceAddRemoveTest002
  * @tc.desc   OnDeviceAddRemoveTest002
@@ -151,7 +147,6 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest002, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   OnDeviceAddRemoveTest003
  * @tc.number OnDeviceAddRemoveTest003
  * @tc.desc   OnDeviceAddRemoveTest003
@@ -184,7 +179,6 @@ HWTEST_F(DeviceManagerTest, OnDeviceAddRemoveTest003, Function | MediumTest | Le
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   QueryDeviceTest
  * @tc.number QueryDeviceTest
  * @tc.desc   QueryDeviceTest
@@ -217,7 +211,6 @@ HWTEST_F(DeviceManagerTest, QueryDeviceTest, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   GetBusExtensionByNameTest
  * @tc.number GetBusExtensionByNameTest
  * @tc.desc   GetBusExtensionByNameTest
@@ -273,7 +266,6 @@ public:
 };
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   ConnectDeviceTest
  * @tc.number ConnectDeviceTest
  * @tc.desc   ConnectDeviceTest
@@ -329,7 +321,6 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   ConnectDeviceTest1
  * @tc.number ConnectDeviceTest1
  * @tc.desc   ConnectDeviceTest1
@@ -365,7 +356,6 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest1, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   ConnectDeviceTest2
  * @tc.number ConnectDeviceTest2
  * @tc.desc   ConnectDeviceTest2
@@ -401,7 +391,6 @@ HWTEST_F(DeviceManagerTest, ConnectDeviceTest2, Function | MediumTest | Level1)
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   DisConnectDeviceTest
  * @tc.number DisConnectDeviceTest
  * @tc.desc   DisConnectDeviceTest
@@ -464,7 +453,6 @@ HWTEST_F(DeviceManagerTest, DisConnectDeviceTest, Function | MediumTest | Level1
 }
 
 /**
- * @generated.time 2025-11-09 20:49:59
  * @tc.name   DisConnectDeviceTest1
  * @tc.number DisConnectDeviceTest1
  * @tc.desc   DisConnectDeviceTest1

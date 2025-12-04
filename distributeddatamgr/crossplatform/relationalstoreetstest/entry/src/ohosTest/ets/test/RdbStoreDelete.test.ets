@@ -97,7 +97,6 @@ export default function rdbStoreDeleteTest() {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0450
      * @tc.desc   RdbStore delete callback test
@@ -130,7 +129,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete002
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0440
      * @tc.desc   RdbStore delete callback test
@@ -161,7 +159,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete003
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0480
      * @tc.desc   RdbStore delete callback test
@@ -192,7 +189,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete004
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0460
      * @tc.desc   RdbStore delete promise test
@@ -227,7 +223,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0500
      * @tc.desc   RdbStore delete promise test
@@ -260,7 +255,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete006
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0490
      * @tc.desc   RdbStore delete promise test
@@ -292,7 +286,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete007
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0530
      * @tc.desc   RdbStore delete callback test: parameter missing
@@ -330,7 +323,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDelete008
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0470
      * @tc.desc   RdbStore delete callback test: predicate nonexistence
@@ -363,7 +355,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDeleteError001
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0510
      * @tc.desc   RdbStore delete callback test: undefined
@@ -393,7 +384,6 @@ export default function rdbStoreDeleteTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   testRdbStoreDeleteError005
      * @tc.number SUB_DistributeData_CrossPlatform_SDK_RelationStore_RdbStoreJsAPITest_0520
      * @tc.desc   RdbStore delete promise test: undefined

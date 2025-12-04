@@ -136,10 +136,13 @@ protected:
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0010
- * @tc.name      : Valid service can be registered
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testRegisterService0010
+ * @tc.number DMSLite_SAMGR_RegisterService_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ServiceTest, testRegisterService0010, Function | MediumTest | Level1) {
     BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     ASSERT_EQ(result, TRUE);
@@ -148,20 +151,26 @@ HWTEST_F(ServiceTest, testRegisterService0010, Function | MediumTest | Level1) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0020
- * @tc.name      : Service which is nullptr failed to register
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testRegisterService0020
+ * @tc.number DMSLite_SAMGR_RegisterService_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testRegisterService0020, Function | MediumTest | Level2) {
     BOOL result = SAMGR_GetInstance()->RegisterService(NULL);
     ASSERT_EQ(result, FALSE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_RegisterService_0030
- * @tc.name      : Service which already exist in samgr failed to register
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testRegisterService0030
+ * @tc.number DMSLite_SAMGR_RegisterService_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testRegisterService0030, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     BOOL result = SAMGR_GetInstance()->RegisterService((Service *)&g_service);
@@ -170,10 +179,13 @@ HWTEST_F(ServiceTest, testRegisterService0030, Function | MediumTest | Level2) {
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0010
- * @tc.name      : Service can be unregistered
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0010
+ * @tc.number DMSLite_SAMGR_UnregisterService_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0010, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     Service *resultService = SAMGR_GetInstance()->UnregisterService("serviceName101");
@@ -181,10 +193,13 @@ HWTEST_F(ServiceTest, testUnregisterService0010, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0020
- * @tc.name      : Service which contains NULL failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0020
+ * @tc.number DMSLite_SAMGR_UnregisterService_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0020, Function | MediumTest | Level2) {
     Service *resultService = SAMGR_GetInstance()->UnregisterService(NULL);
     ASSERT_EQ(resultService == nullptr, TRUE);
@@ -194,20 +209,26 @@ HWTEST_F(ServiceTest, testUnregisterService0020, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0030
- * @tc.name      : Service which does not exist in samgr failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0030
+ * @tc.number DMSLite_SAMGR_UnregisterService_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0030, Function | MediumTest | Level2) {
     Service *resultService = SAMGR_GetInstance()->UnregisterService("noExistServiceName");
     ASSERT_EQ(resultService == nullptr, TRUE);
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0040
- * @tc.name      : Service which contains api failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0040
+ * @tc.number DMSLite_SAMGR_UnregisterService_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0040, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterDefaultFeatureApi("serviceName101", GET_IUNKNOWN(g_service));
@@ -220,10 +241,13 @@ HWTEST_F(ServiceTest, testUnregisterService0040, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0050
- * @tc.name      : Service which contains feature failed to unregister
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0050
+ * @tc.number DMSLite_SAMGR_UnregisterService_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0050, Function | MediumTest | Level2) {
     SAMGR_GetInstance()->RegisterService((Service *)&g_service);
     SAMGR_GetInstance()->RegisterFeature("serviceName101", (Feature *)&g_feature);
@@ -236,10 +260,13 @@ HWTEST_F(ServiceTest, testUnregisterService0050, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_UnregisterService_0060
- * @tc.name      : Register and unregister service repeatedly, no memory leak
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testUnregisterService0060
+ * @tc.number DMSLite_SAMGR_UnregisterService_0060
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testUnregisterService0060, Function | MediumTest | Level2) {
     // RegisterService and unregister service over and over again, if there is memory leak samgr will crash
     for (int i = 0; i < PRESSURE_BASE; i++) {
@@ -252,10 +279,13 @@ HWTEST_F(ServiceTest, testUnregisterService0060, Function | MediumTest | Level2)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Bootstrap_0010
- * @tc.name      : Restart SAMGR service function is normal.
- * @tc.desc      : [C- SOFTWARE -0200]
-*/
+ * @tc.name   testBootstrap0010
+ * @tc.number DMSLite_SAMGR_Bootstrap_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
 HWTEST_F(ServiceTest, testBootstrap0010, Function | MediumTest | Level2) {
     SAMGR_Bootstrap();
     usleep(OPER_INTERVAL);

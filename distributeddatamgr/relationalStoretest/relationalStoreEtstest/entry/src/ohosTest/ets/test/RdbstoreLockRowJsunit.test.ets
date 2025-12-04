@@ -157,7 +157,6 @@ export default function rdbstoreLockRowJsunitTest() {
         console.log(TAG + "*************JS Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreLockRow0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0100
      * @tc.desc   1.Insert data, check status
@@ -213,7 +212,6 @@ export default function rdbstoreLockRowJsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreLockRow0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0200
      * @tc.desc   Configure predicates (TABLE name: "")
@@ -235,7 +233,6 @@ export default function rdbstoreLockRowJsunitTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreLockRow0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_LockRow_0300
      * @tc.desc   Configure predicates (TABLE name: "")

@@ -110,7 +110,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_0900
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_0900
          * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
@@ -167,7 +166,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1000
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1000
          * @tc.desc   open LogicalChannel Check whether the channel is closed.
@@ -223,7 +221,6 @@ export default function channelCallbacktest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1100
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1100
          * @tc.desc   open BasicChannel Returns the data received from the application selection command.
@@ -278,7 +275,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1200
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1200
          * @tc.desc   open LogicalChannel Send an APDU command to the SE
@@ -335,7 +331,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1300
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1300
          * @tc.desc   open LogicalChannel Send an APDU command to the SE
@@ -374,7 +369,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1400
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1400
          * @tc.desc   open LogicalChannel Check whether the channel is a basic channel.
@@ -420,7 +414,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1500
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1500
          * @tc.desc   open BasicChannel Check whether the channel is a basic channel.
@@ -466,7 +459,6 @@ export default function channelCallbacktest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_Ese_LogicalChannel_js_1600
          * @tc.number SUB_Communication_Ese_LogicalChannel_js_1600
          * @tc.desc   Check whether the channel is closed.

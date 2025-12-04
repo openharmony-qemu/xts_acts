@@ -26,52 +26,52 @@ export default function textSelectedBackgroundColorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0100
-     * @tc.name       : testTextSelectedBackgroundColor001
-     * @tc.desc       : testing selectedBackgroundColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSelectedBackgroundColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0100
+     * @tc.desc   testing selectedBackgroundColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSelectedBackgroundColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSelectedBackgroundColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0200
-     * @tc.name       : testTextSelectedBackgroundColor002
-     * @tc.desc       : testing selectedBackgroundColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSelectedBackgroundColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0200
+     * @tc.desc   testing selectedBackgroundColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSelectedBackgroundColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSelectedBackgroundColor002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0400
-     * @tc.name       : testTextSelectedBackgroundColor003
-     * @tc.desc       : testing selectedBackgroundColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSelectedBackgroundColor003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0400
+     * @tc.desc   testing selectedBackgroundColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSelectedBackgroundColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSelectedBackgroundColor003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0400
-     * @tc.name       : testTextSelectedBackgroundColor004
-     * @tc.desc       : testing selectedBackgroundColor for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextSelectedBackgroundColor004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_SELECTED_BACKGROUND_COLOR_0400
+     * @tc.desc   testing selectedBackgroundColor for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextSelectedBackgroundColor004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextSelectedBackgroundColor004()).assertEqual(0)

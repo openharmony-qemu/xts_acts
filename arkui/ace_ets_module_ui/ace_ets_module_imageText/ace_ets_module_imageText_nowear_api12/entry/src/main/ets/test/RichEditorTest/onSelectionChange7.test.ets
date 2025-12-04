@@ -45,12 +45,12 @@ export default function onSelectionChange7() {
       console.info("onSelectionChange7 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_onSelectionChange7_0100
-     * @tc.name      testRichEditor
-     * @tc.desc      Determine whether the cursor change triggers onSelectionChange
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   onSelectionChange7_0100
+     * @tc.number SUB_ACE_onSelectionChange7_0100
+     * @tc.desc   Determine whether the cursor change triggers onSelectionChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('onSelectionChange7_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[onSelectionChange7_0100] START');

@@ -15,24 +15,25 @@
 
 import InsightIntentExecutor from '@ohos.app.ability.InsightIntentExecutor';
 import UIExtensionContentSession from '@ohos.app.ability.UIExtensionContentSession';
-import insightIntent from '@ohos.app.ability.insightIntent';
+import insightIntent from '@ohos.app.ability.insightIntent'
 import window from '@ohos.window';
-import hilog from '@ohos.hilog';
+import hilog from '@ohos.hilog'
+import { RecordData } from '@ohos.base';
 
-async function executeInsightIntent(param: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
+async function executeInsightIntent(param: Record<string, RecordData>): Promise<insightIntent.ExecuteResult> {
   return new Promise<insightIntent.ExecuteResult>((resolve, reject) => {
     let result: insightIntent.ExecuteResult = {
       code: 0,
       result: {
         'message': 'Execute insight intent succeed.',
-      } as Record<string, Object>
+      } as Record<string, RecordData>
     };
     resolve(result);
   })
 }
 
 export default class IntentExecutorImplAsync extends InsightIntentExecutor {
-  async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, 
+  async onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, RecordData>,
     pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
     let result: insightIntent.ExecuteResult;
     if (name !== 'SupportedInsightIntentName') {
@@ -42,7 +43,7 @@ export default class IntentExecutorImplAsync extends InsightIntentExecutor {
         code: 404,
         result: {
           'message': 'Unsupported insight intent.',
-        } as Record<string, Object>
+        } as Record<string, RecordData>
       };
       return result;
     }
@@ -51,13 +52,13 @@ export default class IntentExecutorImplAsync extends InsightIntentExecutor {
     return result;
   }
 
-  async onExecuteInUIAbilityBackgroundMode(name: string, 
-    param: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
+  async onExecuteInUIAbilityBackgroundMode(name: string,
+    param: Record<string, RecordData>): Promise<insightIntent.ExecuteResult> {
     let result: insightIntent.ExecuteResult = await executeInsightIntent(param);
     return result;
   }
 
-  async onExecuteInUIExtensionAbility(name: string, param: Record<string, Object>, 
+  async onExecuteInUIExtensionAbility(name: string, param: Record<string, RecordData>,
     pageLoader: UIExtensionContentSession): Promise<insightIntent.ExecuteResult> {
     let result: insightIntent.ExecuteResult;
     if (name !== 'SupportedInsightIntentName') {
@@ -67,7 +68,7 @@ export default class IntentExecutorImplAsync extends InsightIntentExecutor {
         code: 404,
         result: {
           'message': 'Unsupported insight intent.',
-        } as Record<string, Object>
+        } as Record<string, RecordData>
       };
       return result;
     }
@@ -76,8 +77,8 @@ export default class IntentExecutorImplAsync extends InsightIntentExecutor {
     return result;
   }
 
-  async onExecuteInServiceExtensionAbility(name: string, 
-    param: Record<string, Object>): Promise<insightIntent.ExecuteResult> {
+  async onExecuteInServiceExtensionAbility(name: string,
+    param: Record<string, RecordData>): Promise<insightIntent.ExecuteResult> {
     let result: insightIntent.ExecuteResult;
     if (name !== 'SupportedInsightIntentName') {
       hilog.warn(0x0000, 'testTag', 'Unsupported insight intent %{public}s', name);
@@ -86,7 +87,7 @@ export default class IntentExecutorImplAsync extends InsightIntentExecutor {
         code: 404,
         result: {
           'message': 'Unsupported insight intent.',
-        } as Record<string, Object>,
+        } as Record<string, RecordData>,
         uris: [],
         flags: 2
       };

@@ -41,12 +41,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_001
      * @tc.number test_qrCode_001
-     * @tc.name Test the properties of components
-     * @tc.desc Set opacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set opacity values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_001] START');
@@ -59,12 +59,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_002
      * @tc.number test_qrCode_002
-     * @tc.name Test the properties of components
-     * @tc.desc Set color values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set color values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_002] START');
@@ -79,12 +79,12 @@ export default function qrCodeJsunit() {
     });
 
     /**
+     * @tc.name   test_qrCode_003
      * @tc.number test_qrCode_003
-     * @tc.name Test the properties of components
-     * @tc.desc Set contentOpacity values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set contentOpacity values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_003] START');
@@ -97,12 +97,12 @@ export default function qrCodeJsunit() {
       done();
     });
     /**
+     * @tc.name   test_qrCode_004
      * @tc.number test_qrCode_004
-     * @tc.name Test the properties of components
-     * @tc.desc Change backgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change backgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_qrCode_004', Level.LEVEL0, async (done: Function) => {
       console.info('test_qrCode_004 START');

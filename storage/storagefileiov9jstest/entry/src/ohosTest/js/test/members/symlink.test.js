@@ -23,14 +23,12 @@ export default function fileIOSymlink() {
 describe('fileIO_fs_symlink', function () {
 
   /**
+   * @tc.name   fileIO_test_symlink_sync_000
    * @tc.number SUB_DF_FILEIO_SYMLINK_SYNC_0000
-   * @tc.name fileIO_test_symlink_sync_000
-   * @tc.desc Test symlinkSync() interfaces.
-   * Create a symbolic link to verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 0
-   * @tc.require
+   * @tc.desc   Test symlinkSync() interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_symlink_sync_000', Level.LEVEL0, async function () {
     let fpath = await nextFileName('fileIO_test_symlink_sync_000');
@@ -47,14 +45,12 @@ describe('fileIO_fs_symlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_symlink_async_001
    * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0100
-   * @tc.name fileIO_test_symlink_async_001
-   * @tc.desc Test SymlinkAsync interfaces. await Promise.
-   * Create a symbolic link to verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test SymlinkAsync interfaces. await Promise.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_symlink_async_001', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_symlink_async_001');
@@ -73,14 +69,12 @@ describe('fileIO_fs_symlink', function () {
   });
 
   /**
+   * @tc.name   fileIO_test_symlink_async_002
    * @tc.number SUB_DF_FILEIO_SYMLINK_ASYNC_0200
-   * @tc.name fileIO_test_symlink_async_002
-   * @tc.desc Test SymlinkAsync interfaces. 
-   * Create a symbolic link to verify normal function.
-   * @tc.size MEDIUM
-   * @tc.type Functoin
-   * @tc.level Level 3
-   * @tc.require
+   * @tc.desc   Test SymlinkAsync interfaces.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it('fileIO_test_symlink_async_002', Level.LEVEL0, async function (done) {
     let fpath = await nextFileName('fileIO_test_symlink_async_002');

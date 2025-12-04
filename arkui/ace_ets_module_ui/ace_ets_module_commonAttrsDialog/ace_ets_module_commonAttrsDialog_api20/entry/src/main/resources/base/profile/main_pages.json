@@ -3,6 +3,7 @@
         "MainAbility/pages/index/index",
         "MainAbility/pages/BindPopup/bindpopup",
         "MainAbility/pages/BindContextMenu/contextMenuLife",
-        "MainAbility/pages/PromptAction/showActionMenuLife"
+        "MainAbility/pages/PromptAction/showActionMenuLife",
+        "MainAbility/pages/SafeArea/enableSafeArea"
     ]
 }

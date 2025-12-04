@@ -2,6 +2,7 @@
   "src": [
     "testability/pages/webViewSrollableJsunit",
     "testability/pages/WebNestedScrollOptionsScrollBackwardTest",
-	"testability/pages/WebViewGetPageOffSet"
+	"testability/pages/WebViewGetPageOffSet",
+    "testability/pages/WebBackToTop"
   ]
 }

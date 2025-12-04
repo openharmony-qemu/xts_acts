@@ -91,7 +91,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************insertSync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0100
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase
@@ -124,7 +123,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0200
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
@@ -149,7 +147,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0300
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
@@ -181,7 +178,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0400
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
@@ -213,7 +209,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0500
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
@@ -244,7 +239,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0600
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase illegal paramter
@@ -276,7 +270,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0700
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase
@@ -313,7 +306,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_0800
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
@@ -356,7 +348,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************updateSync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1000
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 001
@@ -399,7 +390,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1100
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 002
@@ -442,7 +432,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1200
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 003
@@ -480,7 +469,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1400
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 004
@@ -516,7 +504,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1500
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 005
@@ -551,7 +538,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1600
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 006
@@ -587,7 +573,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1700
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 007
@@ -622,7 +607,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1800
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 009
@@ -664,7 +648,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_1900
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 010
@@ -706,7 +689,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2000
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 011
@@ -742,7 +724,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2100
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 012
@@ -784,7 +765,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2200
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 013
@@ -827,7 +807,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
      * @tc.desc   Test Js Api relationalStore.updateSync() testcase 014
@@ -872,7 +851,6 @@ export default function RelationalStoreSyncApiTest() {
     /***************************************deleteSync***************************/
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2400
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 001
@@ -908,7 +886,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2500
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 002
@@ -944,7 +921,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2600
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
@@ -980,7 +956,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2700
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
@@ -1016,7 +991,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2800
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 003
@@ -1052,7 +1026,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_2900
      * @tc.desc   Test Js Api relationalStore.deleteSync() testcase 013
@@ -1091,7 +1064,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************querySync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3100
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1134,7 +1106,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3200
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1176,7 +1147,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3300
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1211,7 +1181,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3400
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1248,7 +1217,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************batchInsertSync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3500
      * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
@@ -1294,7 +1262,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3600
      * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
@@ -1340,7 +1307,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3700
      * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
@@ -1386,7 +1352,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3800
      * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
@@ -1433,7 +1398,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_3900
      * @tc.desc   Test Js Api relationalStore.batchInsertSync() testcase 001
@@ -1462,7 +1426,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4000
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
@@ -1501,7 +1464,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4100
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase the wal File is 200M
@@ -1551,7 +1513,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************querySqlSync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4200
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1594,7 +1555,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4300
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1633,7 +1593,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4400
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1666,7 +1625,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4500
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1701,7 +1659,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4600
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1737,7 +1694,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4700
      * @tc.desc   Test Js Api relationalStore.querySync() testcase 001
@@ -1779,7 +1735,6 @@ export default function RelationalStoreSyncApiTest() {
 
     /***************************************executeSync***************************/
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4800
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1805,7 +1760,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_4900
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1833,7 +1787,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5000
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1859,7 +1812,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5100
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1885,7 +1837,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5200
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1911,7 +1862,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5300
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -1938,7 +1888,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5500
      * @tc.desc   Test Js Api relationalStore.insertSync() testcase Corrupt database
@@ -1977,7 +1926,6 @@ export default function RelationalStoreSyncApiTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5700
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003
@@ -2024,7 +1972,6 @@ export default function RelationalStoreSyncApiTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_SyncAPITest_5800
      * @tc.desc   Test Js Api SingleKvStore.GetResultSet() testcase 003

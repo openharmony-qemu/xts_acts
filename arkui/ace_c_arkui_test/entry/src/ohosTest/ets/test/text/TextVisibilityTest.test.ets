@@ -26,52 +26,52 @@ export default function textVisibilityTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_VISIBILITY_0100
-     * @tc.name       : testTextVisibility001
-     * @tc.desc       : testing visibility for text with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextVisibility001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_VISIBILITY_0100
+     * @tc.desc   testing visibility for text with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextVisibility001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextVisibility001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_VISIBILITY_0200
-     * @tc.name       : testTextVisibility002
-     * @tc.desc       : testing visibility for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextVisibility002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_VISIBILITY_0200
+     * @tc.desc   testing visibility for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextVisibility002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextVisibility002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_VISIBILITY_0300
-     * @tc.name       : testTextVisibility003
-     * @tc.desc       : testing visibility for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextVisibility003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_VISIBILITY_0300
+     * @tc.desc   testing visibility for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextVisibility003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextVisibility003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_VISIBILITY_0400
-     * @tc.name       : testTextVisibility004
-     * @tc.desc       : testing visibility for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextVisibility004
+     * @tc.number SUB_ARKUI_CAPI_TEXT_VISIBILITY_0400
+     * @tc.desc   testing visibility for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextVisibility004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextVisibility004()).assertEqual(0)

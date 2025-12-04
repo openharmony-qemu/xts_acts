@@ -41,12 +41,12 @@ export default function IsAfterLastTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Is_Last_Obj_001
-     * @tc.name      : album_isAfterLast_000
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isAfterLast_000
+     * @tc.number Sub_Photo_Access_Sendable_Is_Last_Obj_001
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'isAfterLast_000';

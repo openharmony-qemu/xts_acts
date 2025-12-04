@@ -42,12 +42,12 @@ export default function shadowLayerTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0100
-     * @tc.name      : testShadowLayerCreateNormal
-     * @tc.desc      : Test for testShadowLayerCreateNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testShadowLayerCreateNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0100
+     * @tc.desc   Test for testShadowLayerCreateNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testShadowLayerCreateNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testShadowLayerCreateNormal';
@@ -85,12 +85,12 @@ export default function shadowLayerTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0101
-     * @tc.name      : testShadowLayerCreateNull
-     * @tc.desc      : Test for testShadowLayerCreateNull.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShadowLayerCreateNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0101
+     * @tc.desc   Test for testShadowLayerCreateNull.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShadowLayerCreateNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShadowLayerCreateNull';
@@ -165,12 +165,12 @@ export default function shadowLayerTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0103
-     * @tc.name      : testShadowLayerCreateMultipleCalls
-     * @tc.desc      : Test for testShadowLayerCreateMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShadowLayerCreateMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0103
+     * @tc.desc   Test for testShadowLayerCreateMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShadowLayerCreateMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShadowLayerCreateMultipleCalls';
@@ -196,12 +196,12 @@ export default function shadowLayerTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0104
-     * @tc.name      : testShadowLayerCreateBoundaryValue
-     * @tc.desc      : Test for testShadowLayerCreateBoundaryValue.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testShadowLayerCreateBoundaryValue
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_SHADOWLAYER_0104
+     * @tc.desc   Test for testShadowLayerCreateBoundaryValue.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testShadowLayerCreateBoundaryValue', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testShadowLayerCreateBoundaryValue';

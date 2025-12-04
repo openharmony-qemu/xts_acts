@@ -45,9 +45,12 @@ export default function flexOffset_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterSetOffset
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_1000
-     * @tc.name testFlexItemAlignCenterSetOffset
-     * @tc.desc First subcomponent set offset attribute.
+     * @tc.desc   First subcomponent set offset attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterSetOffset',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterSetOffset START');

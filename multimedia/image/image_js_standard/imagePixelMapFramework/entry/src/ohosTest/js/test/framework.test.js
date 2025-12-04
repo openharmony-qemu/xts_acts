@@ -681,13 +681,12 @@ export default function imagePixelMapFramework() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_BASE64_0100
-         * @tc.name      : BASE64 Image
-         * @tc.desc      : 1.create imagesource with base64Image
-         *               : 2.create pixelmap
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_BASE64_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_BASE64_0100
+         * @tc.desc   1.create imagesource with base64Image
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_BASE64_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
             async function (done) {
@@ -715,15 +714,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0100
-         * @tc.name      : Pixelmap Scale-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -738,15 +734,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0200
-         * @tc.name      : Pixelmap Scale-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -761,15 +754,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_CALLBACK_0100
-         * @tc.name      : Pixelmap Scale-callback
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -784,15 +774,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0100
-         * @tc.name      : Pixelmap Translate -promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -807,15 +794,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0200
-         * @tc.name      : Pixelmap Translate-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -830,15 +814,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_CALLBACK_0100
-         * @tc.name      : Pixelmap Translate-callback
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -853,15 +834,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_PROMISE_0100
-         * @tc.name      : Pixelmap Rotate-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -876,15 +854,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_CALLBACK_0100
-         * @tc.name      : Pixelmap Rotate-callback
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -899,15 +874,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_PROMISE_0100
-         * @tc.name      : Pixelmap Flip-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -922,15 +894,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_CALLBACK_0100
-         * @tc.name      : Pixelmap Flip-callback
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         *               : 3.get pixelbytesnumber
-         *               : 4.read pixels to buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -945,15 +914,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSUPPORTALPHA_SETSUPPORTALPHA_0100
-         * @tc.name      : isSupportAlpha SetSupportAlpha
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.call setAlphaAble
-         *               : 4.call isSupportAlpha
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSUPPORTALPHA_SETSUPPORTALPHA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSUPPORTALPHA_SETSUPPORTALPHA_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSUPPORTALPHA_SETSUPPORTALPHA_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -991,15 +957,12 @@ export default function imagePixelMapFramework() {
             }
         })
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_PROMISE_0100
-         * @tc.name      : createAlphaPixelmap-promise
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmap
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_PROMISE_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1008,15 +971,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_CALLBACK_0100
-         * @tc.name      : createAlphaPixelmap-callback
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmap
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_CALLBACK_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1025,15 +985,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0100
-         * @tc.name      : createAlphaPixelmap-Jpg
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmap
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1042,15 +999,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0200
-         * @tc.name      : createAlphaPixelmap
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmap
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1059,15 +1013,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0300
-         * @tc.name      : createAlphaPixelmap
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.create AlphaPixelmap
-         *               : 4.call getImageInfo
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CREATEALPHAPIXELMAP_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1076,15 +1027,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_PROMISE_0100
-         * @tc.name      : setAlpha-promise
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.setAlpha
-         *               : 3.get PixelBytesNumber
-         *               : 4.read Pixels To Buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1121,15 +1069,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_CALLBACK_0100
-         * @tc.name      : setAlpha -callback
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.setAlpha
-         *               : 3.get PixelBytesNumber
-         *               : 4.read Pixels To Buffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETALPHA_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1167,14 +1112,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0100
-         * @tc.name      : SourceOptions getDensity fitDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1183,14 +1126,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0100
-         * @tc.name      : fitDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap with fitDensity
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1200,15 +1141,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0200
-         * @tc.name      : setDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         *               : 4.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1217,14 +1155,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0200
-         * @tc.name      : SourceOptions getDensity fitDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1233,14 +1169,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0300
-         * @tc.name      : SourceOptions getDensity fitDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1249,14 +1183,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0400
-         * @tc.name      : SourceOptions getDensity fitDensity
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0400
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SOURCEOPTIONS_GETDENSITY_FITDENSITY_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1265,14 +1197,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0300
-         * @tc.name      : fitDensity-JPG
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap with fitDensity
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1282,14 +1212,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0400
-         * @tc.name      : fitDensity-bmp
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap with fitDensity
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0400
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1299,14 +1227,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0500
-         * @tc.name      : fitDensity-gif
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap with fitDensity
-         *               : 3.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0500
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_FITDENSITY_0500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1316,15 +1242,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0100
-         * @tc.name      : setDensity-Jpg
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         *               : 4.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1333,15 +1256,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0200
-         * @tc.name      : setDensity-bmp
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         *               : 4.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1350,15 +1270,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0300
-         * @tc.name      : setDensity-gif
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         *               : 4.getDensity
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1367,16 +1284,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_0100
-         * @tc.name      : crop-promise
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1393,16 +1306,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_0100
-         * @tc.name      : crop -callback
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1419,13 +1328,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0100
-         * @tc.name      : Pixelmap Scale-promise-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1433,13 +1341,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0200
-         * @tc.name      : Pixelmap Scale-promise-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1447,13 +1354,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0300
-         * @tc.name      : Pixelmap Scale-promise-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1462,13 +1368,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0400
-         * @tc.name      : Pixelmap Scale-promise-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_PROMISE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1477,13 +1382,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0100
-         * @tc.name      : Pixelmap Scale-callback-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1491,13 +1395,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0200
-         * @tc.name      : Pixelmap Scale-callback-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1505,13 +1408,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0300
-         * @tc.name      : Pixelmap Scale-callback-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1519,13 +1421,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0400
-         * @tc.name      : Pixelmap Scale-callback-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call scale
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_SCALE_ERROR_CALLBACK_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1533,13 +1434,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0100
-         * @tc.name      : Pixelmap Translate -promise-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1547,55 +1447,51 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0200
-        * @tc.name      : Pixelmap Translate -promise-wrong x
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0200', 'promise', 'translate', 'a', 1.0)
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0300
-        * @tc.name      : Pixelmap Translate -promise-wrong y
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0300', 'promise', 'translate', 1.0, null)
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0400
-        * @tc.name      : Pixelmap Translate -promise-wrong y
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_PROMISE_0400', 'promise', 'translate', 1.0, false)
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0100
-         * @tc.name      : Pixelmap Translate -callback-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call translate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1603,55 +1499,51 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0200
-        * @tc.name      : Pixelmap Translate -callback-wrong x
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0200', 'callback', 'translate', 'a', 1.0)
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0300
-        * @tc.name      : Pixelmap Translate -callback-wrong y
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0300', 'callback', 'translate', 1.0, null)
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0400
-        * @tc.name      : Pixelmap Translate -callback-wrong y
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call translate
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_TRANSLATE_ERROR_CALLBACK_0400', 'callback', 'translate', 1.0, false)
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0100
-         * @tc.name      : Pixelmap Rotate-promise-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1659,13 +1551,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0200
-         * @tc.name      : Pixelmap Rotate-promise-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1673,13 +1564,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0300
-         * @tc.name      : Pixelmap Rotate-promise-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1687,13 +1577,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0400
-         * @tc.name      : Pixelmap Rotate-promise-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_PROMISE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1701,13 +1590,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0100
-         * @tc.name      : Pixelmap Rotate-callback-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1715,13 +1603,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0200
-         * @tc.name      : Pixelmap Rotate-callback-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1729,13 +1616,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0300
-         * @tc.name      : Pixelmap Rotate-callback-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1743,13 +1629,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0400
-         * @tc.name      : Pixelmap Rotate-callback-wrong angle
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call rotate
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_ROTATE_ERROR_ANGLE_CALLBACK_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1757,13 +1642,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0100
-         * @tc.name      : Pixelmap Flip-promise-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1771,13 +1655,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0200
-         * @tc.name      : Pixelmap Flip-promise-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1785,13 +1668,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0300
-         * @tc.name      : Pixelmap Flip-promise-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1799,13 +1681,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0400
-         * @tc.name      : Pixelmap Flip-promise-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_PROMISE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1813,27 +1694,25 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0100
-        * @tc.name      : Pixelmap Flip-callback-wrong x
-        * @tc.desc      : 1.create pixelmap
-        *               : 2.call flip
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             await pixelMapModifySizeTestErr(done, 'SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0100', 'callback', 'flip', 'false', true)
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0200
-         * @tc.name      : Pixelmap Flip-callback-wrong x
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1841,13 +1720,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0300
-         * @tc.name      : Pixelmap Flip-callback-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1855,13 +1733,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0400
-         * @tc.name      : Pixelmap Flip-callback-wrong y
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.call flip
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_PIXELMAP_FLIP_ERROR_CALLBACK_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1869,14 +1746,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0100
-         * @tc.name      : SetSupportAlpha-wrong alpha
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.call setAlphaAble
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0100
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1884,14 +1759,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0200
-         * @tc.name      : SetSupportAlpha-wrong alpha
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.call setAlphaAble
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0200
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1899,14 +1772,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0300
-         * @tc.name      : SetSupportAlpha-wrong alpha
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.call setAlphaAble
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0300
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1914,14 +1785,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0400
-         * @tc.name      : SetSupportAlpha-wrong alpha
-         * @tc.desc      : 1.create imagesource
-         *               : 2.create pixelmap
-         *               : 3.call setAlphaAble
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0400
+         * @tc.desc   1.create imagesource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETSUPPORTALPHA_ERROR_ALPHA_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1929,16 +1798,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0100
-         * @tc.name      : crop-promise- size: { height: 3, width: 3 }, x: -1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1947,16 +1812,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0200
-         * @tc.name      : crop-promise-size: { height: 3, width: 3 }, x: 1, y: -1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1965,16 +1826,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0300
-         * @tc.name      : crop-promise-size: { height: 3, width: -3 }, x: 1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0300
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -1983,16 +1840,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0400
-         * @tc.name      : crop-promise-size: { height: -3, width: 3 }, x: 1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0400
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_PROMISE_SIZE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2001,16 +1854,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0100
-         * @tc.name      : crop-callback-size: { height: 3, width: 3 }, x: -1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0100
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2019,16 +1868,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0200
-         * @tc.name      : crop-callback-size: { height: 3, width: 3 }, x: 1, y: -1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0200
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2037,16 +1882,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0300
-         * @tc.name      : crop-callback-size: { height: 3, width: -3 }, x: 1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0300
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2055,16 +1896,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0400
-         * @tc.name      : crop-callback-size: { height: -3, width: 3 }, x: 1, y: 1
-         * @tc.desc      : 1.create PixelMap
-         *               : 2.crop
-         *               : 3.getImageInfo
-         *               : 4.getPixelBytesNumber
-         *               : 5.readPixelsToBuffer
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0400
+         * @tc.desc   1.create PixelMap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_CROP_CALLBACK_SIZE_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2073,14 +1910,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0100
-         * @tc.name      : setDensity-gif-wrong density
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2089,14 +1924,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0200
-         * @tc.name      : setDensity-gif-wrong density
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0200
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2105,14 +1938,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0300
-         * @tc.name      : setDensity-gif-wrong density
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0300
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2121,14 +1952,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0400
-         * @tc.name      : setDensity-gif-wrong density
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap
-         *               : 3.set Density
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0400
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_SETDENSITY_GIF_ERROR_DENSITY_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2137,13 +1966,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0100
-         * @tc.name      : opacity-promise-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2151,13 +1979,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0200
-         * @tc.name      : opacity-promise-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2165,13 +1992,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0300
-         * @tc.name      : opacity-promise-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2179,13 +2005,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0400
-         * @tc.name      : opacity-promise-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_PROMISE_ERROR_ALPHA_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2193,13 +2018,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0100
-         * @tc.name      : opacity-callback-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0100
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2207,13 +2031,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0200
-         * @tc.name      : opacity-callback-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0200
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2221,13 +2044,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0300
-         * @tc.name      : opacity-callback-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacityErr
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0300
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2235,13 +2057,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0400
-         * @tc.name      : opacity-callback-wrong alpha
-         * @tc.desc      : 1.create pixelmap
-         *               : 2.opacity
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0400
+         * @tc.desc   1.create pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_OPACITY_CALLBACK_ERROR_ALPHA_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2249,14 +2070,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSTRIDEALIGNMENT_0100
-         * @tc.name      : isStrideAlignment
-         * @tc.desc      : 1.create ImageSource
-         *               : 2.create PixelMap with isStrideAlignment
-         *               : 3.isStrideAlignment
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSTRIDEALIGNMENT_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSTRIDEALIGNMENT_0100
+         * @tc.desc   1.create ImageSource
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAPFRAMEWORK_ISSTRIDEALIGNMENT_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2265,13 +2084,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEPIXELMAPFROMSURFACE_0100
-         * @tc.name      : on
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.createPixelMapFromSurface
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEPIXELMAPFROMSURFACE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEPIXELMAPFROMSURFACE_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEPIXELMAPFROMSURFACE_0100",
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2338,14 +2156,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0100
-         * @tc.name      : test convert pixelformat RGBA_1010102 to NV21
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(NV21)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0100
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2364,14 +2180,12 @@ export default function imagePixelMapFramework() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0200
-         * @tc.name      : test convert pixelformat RGBA_1010102 to NV12
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(NV12)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0200
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2390,14 +2204,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0300
-         * @tc.name      : test convert pixelformat RGBA_1010102 to YCRCB_P010
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(YCRCB_P010)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0300
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2416,14 +2228,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0400
-         * @tc.name      : test convert pixelformat RGBA_1010102 to YCBCR_P010
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(YCBCR_P010)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0400
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2442,14 +2252,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0500
-         * @tc.name      : test convert pixelformat YCBCR_P010 to RGB_565
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_565)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0500
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2468,14 +2276,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0600
-         * @tc.name      : test convert pixelformat YCBCR_P010 to RGBA_8888
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0600
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2494,14 +2300,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0700
-         * @tc.name      : test convert pixelformat YCBCR_P010 to BGRA_8888
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(BGRA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0700
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2520,14 +2324,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0800
-         * @tc.name      : test convert pixelformat YCBCR_P010 to RGB_888
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0800
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2546,14 +2348,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0900
-         * @tc.name      : test convert pixelformat YCBCR_P010 to RGBA_F16
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_F16)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0900
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_0900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2572,14 +2372,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1000
-         * @tc.name      : test convert pixelformat YCRCB_P010 to RGB_565
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_565)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1000
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2598,14 +2396,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1100
-         * @tc.name      : test convert pixelformat YCRCB_P010 to RGBA_8888
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1100
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2624,14 +2420,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1200
-         * @tc.name      : test convert pixelformat YCRCB_P010 to BGRA_8888
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(BGRA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1200
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2650,14 +2444,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1300
-         * @tc.name      : test convert pixelformat YCRCB_P010 to RGB_888
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1300
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2676,14 +2468,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1400
-         * @tc.name      : test convert pixelformat YCRCB_P010 to RGBA_F16
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_F16)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1400
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2702,14 +2492,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1500
-         * @tc.name      : test convert pixelformat NV21 to RGBA_1010102
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(NV21)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1500
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2728,14 +2516,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1600
-         * @tc.name      : test convert pixelformat NV12 to RGBA_1010102
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(NV12)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1600
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2754,14 +2540,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1700
-         * @tc.name      : test convert pixelformat YCRCB_P010 to RGBA_1010102
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(YCRCB_P010)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1700
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2780,14 +2564,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1800
-         * @tc.name      : test convert pixelformat YCBCR_P010 to RGBA_1010102
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(YCBCR_P010)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1800
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2806,14 +2588,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1900
-         * @tc.name      : test convert pixelformat RGB_565 to YCBCR_P010
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_565)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1900
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_1900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2832,14 +2612,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2000
-         * @tc.name      : test convert pixelformat RGBA_8888 to YCBCR_P010
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2000
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2858,14 +2636,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2100
-         * @tc.name      : test convert pixelformat BGRA_8888 to YCBCR_P010
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(BGRA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2100
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2884,14 +2660,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2200
-         * @tc.name      : test convert pixelformat RGB_888 to YCBCR_P010
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2200
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2910,14 +2684,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2300
-         * @tc.name      : test convert pixelformat RGBA_F16 to YCBCR_P010
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_F16)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2300
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2936,14 +2708,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2400
-         * @tc.name      : test convert pixelformat RGB_565 to YCRCB_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_565)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2400
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2962,14 +2732,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2500
-         * @tc.name      : test convert pixelformat RGBA_8888 to YCRCB_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2500
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -2988,14 +2756,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2600
-         * @tc.name      : test convert pixelformat BGRA_8888 to YCRCB_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(BGRA_8888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2600
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3014,14 +2780,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2700
-         * @tc.name      : test convert pixelformat RGB_888 to YCRCB_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGB_888)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2700
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3040,14 +2804,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2800
-         * @tc.name      : test convert pixelformat RGBA_F16 to YCRCB_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(RGBA_F16)
-         *                 3.get pixelformat
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2800
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_FUNC_2800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3066,14 +2828,12 @@ export default function imagePixelMapFramework() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0100
-         * @tc.name      : test convert pixelformat RGBA_1010102 to RGB_565
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(RGB_565)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0100
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0100',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3091,14 +2851,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0200
-         * @tc.name      : test convert pixelformat RGBA_1010102 to RGBA_8888
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(RGBA_8888)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0200
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0200',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3116,14 +2874,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0300
-         * @tc.name      : test convert pixelformat RGBA_1010102 to BGRA_8888
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(BGRA_8888)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0300
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0300',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3141,14 +2897,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0400
-         * @tc.name      : test convert pixelformat RGBA_1010102 to RGB_888
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(RGB_888)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0400
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0400',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3166,14 +2920,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0500
-         * @tc.name      : test convert pixelformat RGBA_1010102 to RGBA_F16
-         * @tc.desc      : 1.create RGBA_1010102 pixelmap
-         *                 2.call convertPixelFormat(RGBA_F16)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0500
+         * @tc.desc   1.create RGBA_1010102 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0500',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3191,14 +2943,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0600
-         * @tc.name      : test convert pixelformat YCBCR_P010 to NV21
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(NV21)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0600
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0600',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3216,14 +2966,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0700
-         * @tc.name      : test convert pixelformat YCBCR_P010 to NV12
-         * @tc.desc      : 1.create YCBCR_P010 pixelmap
-         *                 2.call convertPixelFormat(NV12)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0700
+         * @tc.desc   1.create YCBCR_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0700',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3241,15 +2989,13 @@ export default function imagePixelMapFramework() {
             }
         });
          /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0800
-         * @tc.name      : test convert pixelformat YCRCB_P010 to NV21
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(NV21)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
-         */
+          * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0800
+          * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0800
+          * @tc.desc   1.create YCRCB_P010 pixelmap
+          * @tc.type   FUNCTION
+          * @tc.size   MEDIUMTEST
+          * @tc.level  LEVEL0
+          */
          it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0800',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
             let logger = loger('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0800')
@@ -3266,14 +3012,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0900
-         * @tc.name      : test convert pixelformat YCRCB_P010 to NV12
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(NV12)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0900
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_0900',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
@@ -3291,14 +3035,12 @@ export default function imagePixelMapFramework() {
             }
         });
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_1000
-         * @tc.name      : test convert pixelformat YCRCB_P010 to YCBCR_P010
-         * @tc.desc      : 1.create YCRCB_P010 pixelmap
-         *                 2.call convertPixelFormat(YCBCR_P010)
-         *                 3.check error code
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_1000
+         * @tc.desc   1.create YCRCB_P010 pixelmap
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_PIXELMAP_CONVERTPIXELFORMAT_ERROR_1000',
             TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {

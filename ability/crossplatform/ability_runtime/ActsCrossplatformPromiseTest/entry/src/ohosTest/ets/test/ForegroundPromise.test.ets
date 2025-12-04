@@ -41,12 +41,12 @@ export default function ForegroundPromise() {
 
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001
-     * @tc.name actsDoAbilityForegroundPromise0001
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
@@ -125,12 +125,12 @@ export default function ForegroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002
-     * @tc.name actsDoAbilityForegroundPromiseError0002
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002",
@@ -205,12 +205,12 @@ export default function ForegroundPromise() {
     );
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004
-     * @tc.name actsDoAbilityForegroundPromise004
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
 
@@ -292,12 +292,12 @@ export default function ForegroundPromise() {
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005
-     * @tc.name actsDoAbilityForegroundPromiseError0005
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005",

@@ -26,13 +26,13 @@ export default function ImageErrorTest(){
       done();
     })
 
-    /*
-     * @tc.number: imageErrorTest001
-     * @tc.name: imageErrorTest001
-     * @tc.desc: Test the SetAnimationFrameDurations interface to set ErrorCode values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   imageErrorTest001
+     * @tc.number imageErrorTest001
+     * @tc.desc   Test the SetAnimationFrameDurations interface to set ErrorCode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('imageErrorTest001', Level.LEVEL3, async (done: Function) => {
       console.info('imageErrorTest001 START');
@@ -54,14 +54,13 @@ export default function ImageErrorTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageErrorTest002
-     * @tc.name: imageErrorTest002
-     * @tc.desc: Test the ErrorCode of the StartAnimation, StopAnimation,
-     *  PauseAnimation, and ResumeAnimation interfaces
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   imageErrorTest002
+     * @tc.number imageErrorTest002
+     * @tc.desc   Test the ErrorCode of the StartAnimation, StopAnimation,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('imageErrorTest002', Level.LEVEL1, async (done: Function) => {
       console.info('imageErrorTest002 START');
@@ -109,13 +108,13 @@ export default function ImageErrorTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageErrorTest003
-     * @tc.name: imageErrorTest003
-     * @tc.desc: Test the AutoPlay interface to set ErrorCode values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   imageErrorTest003
+     * @tc.number imageErrorTest003
+     * @tc.desc   Test the AutoPlay interface to set ErrorCode values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('imageErrorTest003', Level.LEVEL2, async (done: Function) => {
       console.info('imageErroTest003 START');

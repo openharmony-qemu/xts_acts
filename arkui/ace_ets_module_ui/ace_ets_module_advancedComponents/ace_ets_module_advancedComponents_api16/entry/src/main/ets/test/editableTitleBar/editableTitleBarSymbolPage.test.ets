@@ -49,12 +49,12 @@ export default function editableTitleBarSymbolTest() {
     })
 
     /**
+     * @tc.name   editableTitleBarSymbolPage_0100
      * @tc.number editableTitleBarSymbolPage
-     * @tc.name   editableTitleBarSymbolPage
      * @tc.desc   Test editableTitleBarSymbolPage
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('editableTitleBarSymbolPage_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('[editableTitleBarSymbolPage_0100] START');

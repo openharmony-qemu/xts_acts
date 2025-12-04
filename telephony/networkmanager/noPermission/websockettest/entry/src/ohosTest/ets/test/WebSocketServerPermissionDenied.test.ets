@@ -54,13 +54,13 @@ let serverConfig: webSocket.WebSocketServerConfig ={
 export default function WebSocketServerPermissionDeniedTest() {
   describe('WebSocketServerPermissionDeniedTest', ()=> {
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStart201Error_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStart201Error0100
-     * @tc.desc  : Start a WebSocketServer (201)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStart201Error0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStart201Error_0100
+     * @tc.desc   Start a WebSocketServer (201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStart201Error0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStart201Error0100';
@@ -107,13 +107,13 @@ export default function WebSocketServerPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections201Error_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerListAllConnections201Error0100
-     * @tc.desc  : WebSocketServer list all connections(201)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerListAllConnections201Error0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerListAllConnections201Error_0100
+     * @tc.desc   WebSocketServer list all connections(201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerListAllConnections201Error0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerListAllConnections201Error0100';
@@ -185,13 +185,13 @@ export default function WebSocketServerPermissionDeniedTest() {
       }
     })
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerSend201Error_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerSend201Error0100
-     * @tc.desc  : WebSocketServer send a massage(201)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerSend201Error0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerSend201Error_0100
+     * @tc.desc   WebSocketServer send a massage(201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerSend201Error0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerSend201Error0100';
@@ -256,13 +256,13 @@ export default function WebSocketServerPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerClose201Error_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerClose201Error0100
-     * @tc.desc  : WebSocketServer close a connection(201)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerClose201Error0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerClose201Error_0100
+     * @tc.desc   WebSocketServer close a connection(201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerClose201Error0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerClose201Error0100';
@@ -322,13 +322,13 @@ export default function WebSocketServerPermissionDeniedTest() {
       }
     });
 
-    /* *
-     * @tc.number: SUB_NetworkMgr_WebSocket_WebSocketServerStop201Error_0100
-     * @tc.name  : testNetworkMgrWebSocketWebSocketServerStop201Error0100
-     * @tc.desc  : Stop WebSocketServer(201)
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : level 3
+    /**
+     * @tc.name   testNetworkMgrWebSocketWebSocketServerStop201Error0100
+     * @tc.number SUB_NetworkMgr_WebSocket_WebSocketServerStop201Error_0100
+     * @tc.desc   Stop WebSocketServer(201)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrWebSocketWebSocketServerStop201Error0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'testNetworkMgrWebSocketWebSocketServerStop201Error0100';

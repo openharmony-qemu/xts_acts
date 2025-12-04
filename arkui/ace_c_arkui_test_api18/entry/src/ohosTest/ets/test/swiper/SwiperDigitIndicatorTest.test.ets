@@ -26,104 +26,104 @@ export default function swiperDigitIndicatorTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDICATOR_0100
-     * @tc.name       : testSwiperDigitIndicator001
-     * @tc.desc       : testing Indicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDICATOR_0100
+     * @tc.desc   testing Indicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator001', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0200
-     * @tc.name       : testSwiperDigitIndicator002
-     * @tc.desc       : testing DigitIndicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0200
+     * @tc.desc   testing DigitIndicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator002', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0300
-     * @tc.name       : testSwiperDigitIndicator003
-     * @tc.desc       : testing DigitIndicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0300
+     * @tc.desc   testing DigitIndicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator003', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0400
-     * @tc.name       : testSwiperDigitIndicator004
-     * @tc.desc       : testing DigitIndicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator004
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0400
+     * @tc.desc   testing DigitIndicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator004', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0500
-     * @tc.name       : testSwiperDigitIndicator005
-     * @tc.desc       : testing DigitIndicator for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator005
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0500
+     * @tc.desc   testing DigitIndicator for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator005', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0600
-     * @tc.name       : testSwiperDigitIndicator006
-     * @tc.desc       : testing DigitIndicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator006
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0600
+     * @tc.desc   testing DigitIndicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator006', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0700
-     * @tc.name       : testSwiperDigitIndicator007
-     * @tc.desc       : testing DigitIndicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator007
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0700
+     * @tc.desc   testing DigitIndicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator007', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator007()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0800
-     * @tc.name       : testSwiperDigitIndicator008
-     * @tc.desc       : testing DigitIndicator for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperDigitIndicator008
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_DIGITINDICATOR_0800
+     * @tc.desc   testing DigitIndicator for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSwiperDigitIndicator008', Level.LEVEL0, async (done: Function) => {
       expect(nativeFunc.testSwiperDigitIndicator008()).assertEqual(0)

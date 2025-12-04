@@ -33,13 +33,13 @@ export default function getResourceDirNdkHaveResTest() {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100
-     * @tc.desc: Buffer is empty, other parameters are normal
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100
+     * @tc.desc   Buffer is empty, other parameters are normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0100'
@@ -52,13 +52,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200
-     * @tc.desc: WriteLength is empty, other parameters are normal
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200
+     * @tc.desc   WriteLength is empty, other parameters are normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0200'
@@ -71,13 +71,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300
-     * @tc.desc: BufferSize is smaller than the actual written size
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300
+     * @tc.desc   BufferSize is smaller than the actual written size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0300'
@@ -90,13 +90,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400
-     * @tc.desc: Buffer is empty, other parameters are normal
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400
+     * @tc.desc   Buffer is empty, other parameters are normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0400'
@@ -109,13 +109,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500
-     * @tc.desc: WriteLength is empty, other parameters are normal
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500
+     * @tc.desc   WriteLength is empty, other parameters are normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0500'
@@ -128,13 +128,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600
-     * @tc.desc: BufferSize is smaller than the actual written size
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600
+     * @tc.number SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600
+     * @tc.desc   BufferSize is smaller than the actual written size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetLaunchParameterAndGetLatestParameter_0600'

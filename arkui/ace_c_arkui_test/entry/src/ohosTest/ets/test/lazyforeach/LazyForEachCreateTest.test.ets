@@ -26,13 +26,13 @@ export default function lazyForEachCreateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LAZYFOREACH_CREATE_0100
-     * @tc.name       : testLazyForEachCreate001
-     * @tc.desc       : testing alignment for customDialog with normal
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLazyForEachCreate001
+     * @tc.number SUB_ARKUI_CAPI_LAZYFOREACH_CREATE_0100
+     * @tc.desc   testing alignment for customDialog with normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLazyForEachCreate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testLazyForEachCreate001()).assertEqual(0)

@@ -42,12 +42,12 @@ export default function albumGetPositionObjectTest () {
 
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_0000
-     * @tc.name      : album_getObjectByPosition_callback_000
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getObjectByPosition_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_0000
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getObjectByPosition_callback_000', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getObjectByPosition_callback_000';
@@ -89,12 +89,12 @@ export default function albumGetPositionObjectTest () {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_0100
-     * @tc.name      : album_getObjectByPosition_callback_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getObjectByPosition_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_OBJECT_BY_POSITION_0100
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getObjectByPosition_callback_001', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getObjectByPosition_callback_001';
@@ -129,12 +129,12 @@ export default function albumGetPositionObjectTest () {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_0000
-     * @tc.name      : album_getObjectByPosition_promise_000
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getObjectByPosition_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_0000
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getObjectByPosition_promise_000', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getObjectByPosition_promise_000';
@@ -165,12 +165,12 @@ export default function albumGetPositionObjectTest () {
     });
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_0100
-     * @tc.name      : album_getObjectByPosition_promise_001
-     * @tc.desc      : getObjectByPosition
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   album_getObjectByPosition_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_OBJECT_BY_POSITION_0100
+     * @tc.desc   getObjectByPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getObjectByPosition_promise_001', Level.LEVEL0, async (done: Function) => {
 			const testNum = 'album_getObjectByPosition_promise_001';

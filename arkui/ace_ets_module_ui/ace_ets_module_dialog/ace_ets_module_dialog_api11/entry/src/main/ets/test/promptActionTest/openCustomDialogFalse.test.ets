@@ -48,12 +48,12 @@ export default function openCustomDialogFalse() {
     });
 
     /**
-     * @tc.number    SUB_ACE_openCustomDialogFalse_0100
-     * @tc.name      openCustomDialogFalse_0100
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   openCustomDialogFalse_0100
+     * @tc.number SUB_ACE_openCustomDialogFalse_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('openCustomDialogFalse_0100', Level.LEVEL2, async (done: Function) => {
       console.info('openCustomDialogFalse_0100 START');

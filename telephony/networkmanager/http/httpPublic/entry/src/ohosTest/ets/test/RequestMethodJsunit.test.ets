@@ -35,12 +35,12 @@ function expectTrue(data : boolean){
 export default function requestMethodJsunit() {
   describe('requestMethodJsunit', () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_Options_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodOptions0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodOptions0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Options_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodOptions0100';
@@ -70,12 +70,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_Options_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodOptions0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodOptions0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Options_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodOptions0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodOptions0200';
@@ -110,12 +110,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_GET_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodGET0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodGET0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_GET_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodGET0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodGET0100';
@@ -145,12 +145,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_GET_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodGET0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodGET0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_GET_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodGET0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodGET0200';
@@ -184,12 +184,12 @@ export default function requestMethodJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_POST_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodPOST0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPOST0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_POST_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodPOST0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPOST0100';
@@ -227,12 +227,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_POST_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodPOST0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPOST0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_POST_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodPOST0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPOST0200'
@@ -274,12 +274,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodTRACE0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodTRACE0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodTRACE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodTRACE0100';
@@ -308,12 +308,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodTRACE0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodTRACE0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_TRACE_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodTRACE0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodTRACE0200';
@@ -347,12 +347,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodPUT0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPUT0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodPUT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPUT0100';
@@ -381,12 +381,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodPUT0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodPUT0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_PUT_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodPUT0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodPUT0200';
@@ -420,12 +420,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_Head_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodHead0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodHead0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_Head_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodHead0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodHead0100';
@@ -454,12 +454,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_HEAD_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodHEAD0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodHEAD0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_HEAD_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodHEAD0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodHEAD0200';
@@ -493,12 +493,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodDELETE0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodDELETE0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodDELETE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodDELETE0100';
@@ -527,12 +527,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodDELETE0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodDELETE0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_DELETE_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodDELETE0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodDELETE0200';
@@ -566,12 +566,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0100
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodCONNECT0100
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodCONNECT0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0100
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodCONNECT0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodCONNECT0100';
@@ -600,12 +600,12 @@ export default function requestMethodJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0200
-     * @tc.name: testNetworkMgrHttpHttpRequestMethodCONNECT0200
-     * @tc.desc: Test Test HttpRequestMethod property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpHttpRequestMethodCONNECT0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequestMethod_CONNECT_0200
+     * @tc.desc   Test Test HttpRequestMethod property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkMgrHttpHttpRequestMethodCONNECT0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName:string = 'testNetworkMgrHttpHttpRequestMethodCONNECT0200';

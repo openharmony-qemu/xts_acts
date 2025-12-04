@@ -43,13 +43,15 @@ export default function tabsOnContentWillChangeIndex03JsunitTest() {
       console.info("tabsOnContentWillChangeIndex3JsunitTest after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_UI_COMPONENT_NAV_TABS_INTERCEPTION_0030
-     * @tc.name   tabsOnContentWillChangeJsunitTest_0030
-     * @tc.desc   it can  swipe specify index 3 page when trigger the OnContentWillChange interface
-     * @tc.level  3
-     */
 
+    /**
+     * @tc.name   tabsOnContentWillChangeJsunitTest_0030
+     * @tc.number tabsOnContentWillChangeJsunitTest_0030
+     * @tc.desc   tabsOnContentWillChangeJsunitTest_0030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('tabsOnContentWillChangeJsunitTest_0030', Level.LEVEL1, async (done: Function) => {
       console.info('tabsOnContentWillChangeIndex03JsunitTest START');
 

@@ -22,15 +22,13 @@ export default function FileSahre_ActivatePermission_test() {
     describe('ActivatePermission_test', function () {
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0100
-      * @tc.name FileShare_activatePermission_001
-      * @tc.desc Test activatePermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_activatePermission_001
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0100
+       * @tc.desc   Test activatePermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_activatePermission_001', Level.LEVEL0, async function (done) {
           try {
           let fileStr = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_001.txt";
@@ -62,15 +60,13 @@ export default function FileSahre_ActivatePermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0200
-      * @tc.name FileShare_activatePermission_002
-      * @tc.desc Test activatePermission() interfaces
-      * Test normal uri and OperationMode is READ_MODE and WRITE_MODE .
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 0
-      * @tc.require
-      */
+       * @tc.name   FileShare_activatePermission_002
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0200
+       * @tc.desc   Test activatePermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('FileShare_activatePermission_002', Level.LEVEL0, async function (done) {
           try {
           let fileStr = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_002.txt";
@@ -102,15 +98,13 @@ export default function FileSahre_ActivatePermission_test() {
       });
 
       /**
-      * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0300
-      * @tc.name FileShare_activatePermission_003
-      * @tc.desc Test activatePermission() interfaces
-      * Test INVALID_PATH uri and OperationMode is READ_MODE.
-      * @tc.size MEDIUM
-      * @tc.type Function
-      * @tc.level Level 3
-      * @tc.require
-      */
+       * @tc.name   FileShare_activatePermission_003
+       * @tc.number SUB_BASIC_FM_FileAPI_FileShare_ActivatePermission_0300
+       * @tc.desc   Test activatePermission() interfaces
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
       it('FileShare_activatePermission_003', Level.LEVEL3, async function (done) {
           try {
           let fileStr1 = "/data/storage/el2/base/haps/entry/files/FileShare_activatePermission_003.txt";

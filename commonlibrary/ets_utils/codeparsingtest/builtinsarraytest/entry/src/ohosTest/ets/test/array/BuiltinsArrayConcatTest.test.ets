@@ -42,12 +42,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0100
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0100
-     * @tc.name builtinsArrayConcatTest0100
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayConcatTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0100'
@@ -61,12 +61,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0200
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0200
-     * @tc.name builtinsArrayConcatTest0200
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayConcatTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0200'
@@ -80,12 +80,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0300
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0300
-     * @tc.name builtinsArrayConcatTest0300
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayConcatTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0200'
@@ -98,12 +98,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0400
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0400
-     * @tc.name builtinsArrayConcatTest0400
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0400'
@@ -117,12 +117,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0500
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0500
-     * @tc.name builtinsArrayConcatTest0500
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0500'
@@ -135,12 +135,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0600
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0600
-     * @tc.name builtinsArrayConcatTest0600
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0600'
@@ -154,12 +154,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0700
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0700
-     * @tc.name builtinsArrayConcatTest0700
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0700'
@@ -172,12 +172,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0800
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0800
-     * @tc.name builtinsArrayConcatTest0800
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0800'
@@ -190,12 +190,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest0900
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_0900
-     * @tc.name builtinsArrayConcatTest0900
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest0900'
@@ -208,12 +208,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1000
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1000
-     * @tc.name builtinsArrayConcatTest1000
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1000'
@@ -228,12 +228,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1100
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1100
-     * @tc.name builtinsArrayConcatTest1100
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1100'
@@ -247,12 +247,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1200
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1200
-     * @tc.name builtinsArrayConcatTest1200
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1200'
@@ -271,12 +271,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1300
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1300
-     * @tc.name builtinsArrayConcatTest1300
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1300'
@@ -295,12 +295,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1400
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1400
-     * @tc.name builtinsArrayConcatTest1400
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1400'
@@ -314,12 +314,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1500
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1500
-     * @tc.name builtinsArrayConcatTest1500
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1500'
@@ -333,12 +333,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1600
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1600
-     * @tc.name builtinsArrayConcatTest1600
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1600'
@@ -352,12 +352,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1700
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1700
-     * @tc.name builtinsArrayConcatTest1700
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1700'
@@ -372,12 +372,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1800
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1800
-     * @tc.name builtinsArrayConcatTest1800
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1800'
@@ -391,12 +391,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest1900
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_1900
-     * @tc.name builtinsArrayConcatTest1900
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest1900'
@@ -410,12 +410,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest2000
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_2000
-     * @tc.name builtinsArrayConcatTest2000
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2000'
@@ -430,12 +430,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest2100
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_2100
-     * @tc.name builtinsArrayConcatTest2100
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2100'
@@ -449,12 +449,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest2300
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_2300
-     * @tc.name builtinsArrayConcatTest2300
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2300'
@@ -469,12 +469,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest2400
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_2400
-     * @tc.name builtinsArrayConcatTest2400
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2400'
@@ -492,12 +492,12 @@ export default function builtinsArrayConcatTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayConcatTest2500
      * @tc.number SUB_BUILTINS_ARRAY_CONCAT_TEST_2500
-     * @tc.name builtinsArrayConcatTest2500
-     * @tc.desc test Concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayConcatTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsArrayConcatTest2500'

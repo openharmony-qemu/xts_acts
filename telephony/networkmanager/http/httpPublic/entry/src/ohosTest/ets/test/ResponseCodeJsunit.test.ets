@@ -35,12 +35,12 @@ function expectTrue(data : boolean){
 export default function responseCodeJsunit() {
   describe("responseCodeJsunitTest", () => {
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_OK_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeOK0100
-     * @tc.desc: Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeOK0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_OK_0100
+     * @tc.desc   Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeOK0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeOK0100';
@@ -58,12 +58,12 @@ export default function responseCodeJsunit() {
     });
 
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_ACCEPTED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeACCEPTED0100
-     * @tc.desc: Test Test ResponseCode property
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeACCEPTED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_ACCEPTED_0100
+     * @tc.desc   Test Test ResponseCode property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeACCEPTED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeACCEPTED0100';
@@ -80,12 +80,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NOT_AUTHORITATIVE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOTAUTHORITATIVE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOTAUTHORITATIVE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NOT_AUTHORITATIVE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOTAUTHORITATIVE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOTAUTHORITATIVE0100';
@@ -102,12 +102,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NO_CONTENT_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOCONTENT0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOCONTENT0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NO_CONTENT_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOCONTENT0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOCONTENT0100';
@@ -124,12 +124,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_MULT_CHOICE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeMULTCHOICE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeMULTCHOICE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_MULT_CHOICE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeMULTCHOICE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeMULTCHOICE0100';
@@ -146,12 +146,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_MOVED_PERM_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeMOVEDPERM0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeMOVEDPERM0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_MOVED_PERM_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeMOVEDPERM0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeMOVEDPERM0100';
@@ -168,12 +168,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_SEE_OTHER_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeSEEOTHER0100
-     * @tc.desc Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeSEEOTHER0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_SEE_OTHER_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeSEEOTHER0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeSEEOTHER0100';
@@ -190,12 +190,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NOT_MODIFIED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOTMODIFIED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOTMODIFIED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NOT_MODIFIED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOTMODIFIED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOTMODIFIED0100';
@@ -212,12 +212,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_USE_PROXY_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeUSEPROXY0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeUSEPROXY0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_USE_PROXY_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeUSEPROXY0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeUSEPROXY0100';
@@ -234,12 +234,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_BAD_REQUEST_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeBADREQUEST0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeBADREQUEST0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_BAD_REQUEST_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeBADREQUEST0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeBADREQUEST0100';
@@ -256,12 +256,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_UNAUTHORIZED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeUNAUTHORIZED0100
-     * @tc.desc: Test Test ResponseCode property
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeUNAUTHORIZED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_UNAUTHORIZED_0100
+     * @tc.desc   Test Test ResponseCode property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeUNAUTHORIZED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeUNAUTHORIZED0100';
@@ -278,12 +278,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_PAYMENT_REQUIRED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodePAYMENTREQUIRED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodePAYMENTREQUIRED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_PAYMENT_REQUIRED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodePAYMENTREQUIRED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodePAYMENTREQUIRED0100';
@@ -300,12 +300,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_BAD_METHOD_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeBADMETHOD0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeBADMETHOD0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_BAD_METHOD_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeBADMETHOD0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeBADMETHOD0100';
@@ -322,12 +322,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NOT_ACCEPTABLE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOTACCEPTABLE0100
-     * @tc.desc Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOTACCEPTABLE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NOT_ACCEPTABLE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOTACCEPTABLE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOTACCEPTABLE0100';
@@ -344,12 +344,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_PROXY_AUTH_0100
-     * @tc.name: testNetworkMgrHttpResponseCodePROXYAUTH0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodePROXYAUTH0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_PROXY_AUTH_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodePROXYAUTH0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodePROXYAUTH0100';
@@ -366,12 +366,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_CLIENT_TIMEOUT_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeCLIENTTIMEOUT0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeCLIENTTIMEOUT0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_CLIENT_TIMEOUT_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeCLIENTTIMEOUT0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeCLIENTTIMEOUT0100';
@@ -388,12 +388,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_LENGTH_REQUIRED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeLENGTHREQUIRED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeLENGTHREQUIRED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_LENGTH_REQUIRED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeLENGTHREQUIRED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeLENGTHREQUIRED0100';
@@ -410,12 +410,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_PRECON_FAILED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodePRECONFAILED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodePRECONFAILED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_PRECON_FAILED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodePRECONFAILED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodePRECONFAILED0100';
@@ -432,12 +432,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_ENTITY_TOO_LARGE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeENTITYTOOLARGE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeENTITYTOOLARGE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_ENTITY_TOO_LARGE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeENTITYTOOLARGE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeENTITYTOOLARGE0100';
@@ -454,12 +454,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_REQ_TOO_LONG_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeREQTOOLONG0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeREQTOOLONG0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_REQ_TOO_LONG_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeREQTOOLONG0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeREQTOOLONG0100';
@@ -476,12 +476,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_UNSUPPORTED_TYPE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeUNSUPPORTEDTYPE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeUNSUPPORTEDTYPE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_UNSUPPORTED_TYPE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeUNSUPPORTEDTYPE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeUNSUPPORTEDTYPE0100';
@@ -498,12 +498,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_RANGE_NOT_SATISFIABLE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_RANGE_NOT_SATISFIABLE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeRANGENOTSATISFIABLE0100';
@@ -520,12 +520,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_INTERNAL_ERROR_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeINTERNALERROR0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeINTERNALERROR0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_INTERNAL_ERROR_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeINTERNALERROR0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeINTERNALERROR0100';
@@ -542,12 +542,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NOT_IMPLEMENTED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOTIMPLEMENTED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOTIMPLEMENTED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NOT_IMPLEMENTED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOTIMPLEMENTED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOTIMPLEMENTED0100';
@@ -564,12 +564,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_BAD_GATEWAY_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeBADGATEWAY0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeBADGATEWAY0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_BAD_GATEWAY_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeBADGATEWAY0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeBADGATEWAY0100';
@@ -586,12 +586,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_GATEWAY_TIMEOUT_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeGATEWAYTIMEOUT0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeGATEWAYTIMEOUT0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_GATEWAY_TIMEOUT_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeGATEWAYTIMEOUT0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeGATEWAYTIMEOUT0100';
@@ -608,12 +608,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_VERSION_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeVERSION0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeVERSION0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_VERSION_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeVERSION0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeVERSION0100';
@@ -630,12 +630,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_CREATED_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeCREATED0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeCREATED0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_CREATED_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeCREATED0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeCREATED0100';
@@ -652,12 +652,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_RESET_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeRESET0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeRESET0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_RESET_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeRESET0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeRESET0100';
@@ -674,12 +674,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_PARTIAL_0100
-     * @tc.name: testNetworkMgrHttpResponseCodePARTIAL0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodePARTIAL0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_PARTIAL_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodePARTIAL0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodePARTIAL0100';
@@ -696,12 +696,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_MOVED_TEMP_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeMOVEDTEMP0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeMOVEDTEMP0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_MOVED_TEMP_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeMOVEDTEMP0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeMOVEDTEMP0100';
@@ -718,12 +718,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_FORBIDDEN_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeFORBIDDEN0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeFORBIDDEN0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_FORBIDDEN_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeFORBIDDEN0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeFORBIDDEN0100';
@@ -740,12 +740,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_NOT_FOUND_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeNOTFOUND0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeNOTFOUND0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_NOT_FOUND_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeNOTFOUND0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeNOTFOUND0100';
@@ -762,12 +762,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_CONFLICT_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeCONFLICT0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeCONFLICT0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_CONFLICT_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeCONFLICT0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeCONFLICT0100';
@@ -784,12 +784,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_GONE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeGONE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeGONE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_GONE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeGONE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeGONE0100';
@@ -806,12 +806,12 @@ export default function responseCodeJsunit() {
       }
     });
     /**
-     * @tc.number: SUB_NetworkMgr_Http_ResponseCode_UNAVAILABLE_0100
-     * @tc.name: testNetworkMgrHttpResponseCodeUNAVAILABLE0100
-     * @tc.desc: Test Test ResponseCode property.
-     * @tc.level: level1
-     * @tc.type: Function
-     * @tc.size: MediumTest
+     * @tc.name   testNetworkMgrHttpResponseCodeUNAVAILABLE0100
+     * @tc.number SUB_NetworkMgr_Http_ResponseCode_UNAVAILABLE_0100
+     * @tc.desc   Test Test ResponseCode property.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkMgrHttpResponseCodeUNAVAILABLE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       let caseName:string = 'testNetworkMgrHttpResponseCodeUNAVAILABLE0100';

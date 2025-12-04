@@ -37,12 +37,12 @@ export default function processTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUID_0100
-     * @tc.name       : testGetUid0001
-     * @tc.desc       : Returns the digital user ID of the process.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetUid0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUID_0100
+     * @tc.desc   Returns the digital user ID of the process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetUid0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testGetUid0001";
@@ -56,12 +56,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETPID_0100
-     * @tc.name       : testGetPid0001
-     * @tc.desc       : Returns the digital process ID of the process.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetPid0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETPID_0100
+     * @tc.desc   Returns the digital process ID of the process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetPid0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testGetPid0001";
@@ -75,12 +75,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETTID_0100
-     * @tc.name       : testGetTid0001
-     * @tc.desc       : Returns the digital thread ID of the process.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testGetTid0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETTID_0100
+     * @tc.desc   Returns the digital thread ID of the process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetTid0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testGetTid0001";
@@ -96,12 +96,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISOLATEDPROCESS_0100
-     * @tc.name       : testisIsolatedProcess0001
-     * @tc.desc       : Returns a boolean whether the process is isolated.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testisIsolatedProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISOLATEDPROCESS_0100
+     * @tc.desc   Returns a boolean whether the process is isolated.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testisIsolatedProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testisIsolatedProcess0001";
@@ -115,12 +115,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_IS64BIT_0100
-     * @tc.name       : testIs64Bit0001
-     * @tc.desc       : Returns a boolean whether the process is running in a 64-bit environment.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIs64Bit0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_IS64BIT_0100
+     * @tc.desc   Returns a boolean whether the process is running in a 64-bit environment.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIs64Bit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testIs64Bit0001";
@@ -134,12 +134,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSTARTREALTIME_0100
-     * @tc.name       : testGetStartRealtime0001
-     * @tc.desc       : Returns the elapsed real time (in milliseconds) taken from the start of the system to the start of the process.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetStartRealtime0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSTARTREALTIME_0100
+     * @tc.desc   Returns the elapsed real time (in milliseconds) taken from the start of the system to the start of the process.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetStartRealtime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetStartRealtime0001";
@@ -159,12 +159,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETPASTCPUTIME_0100
-     * @tc.name       : testGetPastCpuTime0001
-     * @tc.desc       : Returns the cpu time (in milliseconds) from the time when the process starts to the current time.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetPastCpuTime0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETPASTCPUTIME_0100
+     * @tc.desc   Returns the cpu time (in milliseconds) from the time when the process starts to the current time.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetPastCpuTime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetPastCpuTime0001";
@@ -184,12 +184,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UPTIME_0100
-     * @tc.name       : testUptime0001
-     * @tc.desc       : Returns the running time of the system.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUptime0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UPTIME_0100
+     * @tc.desc   Returns the running time of the system.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUptime0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testUptime0001";
@@ -207,12 +207,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0100
-     * @tc.name       : testGetUidForName0001
-     * @tc.desc       : Gets the uid of the "root" user.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForName0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0100
+     * @tc.desc   Gets the uid of the "root" user.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForName0001";
@@ -226,12 +226,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0200
-     * @tc.name       : testGetUidForName0002
-     * @tc.desc       : Attempts to get the uid of a non-existent user and expects failure.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForName0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0200
+     * @tc.desc   Attempts to get the uid of a non-existent user and expects failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForName0002";
@@ -247,12 +247,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0300
-     * @tc.name       : testGetUidForName0003
-     * @tc.desc       : Attempts to get the uid with an undefined user name and expects an error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForName0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_0300
+     * @tc.desc   Attempts to get the uid with an undefined user name and expects an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForName0003";
@@ -266,12 +266,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0100
-     * @tc.name       : testProcessManagerKill0001
-     * @tc.desc       : Attempt to send a signal to the current process and expect success.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKill0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0100
+     * @tc.desc   Attempt to send a signal to the current process and expect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKill0001";
@@ -287,12 +287,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0200
-     * @tc.name       : testProcessManagerKill0002
-     * @tc.desc       : Attempt to send a signal to a non-existent process and expect failure.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKill0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_0200
+     * @tc.desc   Attempt to send a signal to a non-existent process and expect failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKill0002";
@@ -307,12 +307,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_0400
-     * @tc.name       : testProcessManagerKill0004
-     * @tc.desc       : Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKill0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_0400
+     * @tc.desc   Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKill0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKill0004";
@@ -327,12 +327,12 @@ export default function processTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0100
-     * @tc.name       : testGetThreadPriority0001
-     * @tc.desc       : Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetThreadPriority0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0100
+     * @tc.desc   Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetThreadPriority0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetThreadPriority0001";
@@ -351,12 +351,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0300
-     * @tc.name       : testGetThreadPriority0003
-     * @tc.desc       : Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetThreadPriority0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_0300
+     * @tc.desc   Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetThreadPriority0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetThreadPriority0003";
@@ -371,13 +371,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0100
-     * @tc.name       : testIsappuid0001
-     * @tc.desc       : Given a user's UID, testing if it belongs to the current application,
-     *                  expecting the method to return true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuid0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0100
+     * @tc.desc   Given a user's UID, testing if it belongs to the current application,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuid0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuid0001";
@@ -393,13 +392,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0200
-     * @tc.name       : testIsappuid0002
-     * @tc.desc       : Given a user's UID, testing if it belongs to the current application,
-     *                  expecting the method to return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuid0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0200
+     * @tc.desc   Given a user's UID, testing if it belongs to the current application,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuid0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuid0002";
@@ -415,12 +413,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0300
-     * @tc.name       : testIsappuid0003
-     * @tc.desc       : Given undefined input, expect a thrown exception with error code: 401.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuid0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_0300
+     * @tc.desc   Given undefined input, expect a thrown exception with error code: 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuid0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuid0003";
@@ -434,12 +432,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0100
-     * @tc.name       : testGetSystemConfig0001
-     * @tc.desc       : Given system config parameter 0, expect a return value greater than 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfig0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0100
+     * @tc.desc   Given system config parameter 0, expect a return value greater than 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfig0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfig0001";
@@ -463,12 +461,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0200
-     * @tc.name       : testGetSystemConfig0002
-     * @tc.desc       : Given a non-existent system config parameter 111111, expect a return value of -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfig0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0200
+     * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfig0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfig0002";
@@ -483,12 +481,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0300
-     * @tc.name       : testGetSystemConfig0003
-     * @tc.desc       : Given a non-existent system config parameter 111111, expect a return value of -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfig0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_0300
+     * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfig0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfig0003";
@@ -503,12 +501,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0100
-     * @tc.name       : testGetEnvironmentVar0001
-     * @tc.desc       : testing if the PATH environment variable is set and not empty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVar0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0100
+     * @tc.desc   testing if the PATH environment variable is set and not empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVar0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVar0001";
@@ -531,12 +529,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0200
-     * @tc.name       : testGetEnvironmentVar0002
-     * @tc.desc       : testing if the PATH1111 environment variable is set and return undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVar0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0200
+     * @tc.desc   testing if the PATH1111 environment variable is set and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVar0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVar0002";
@@ -551,12 +549,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0300
-     * @tc.name       : testGetEnvironmentVar0003
-     * @tc.desc       : testing if the undefined environment variable is set and return err.name is Error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVar0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_0300
+     * @tc.desc   testing if the undefined environment variable is set and return err.name is Error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVar0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVar0003";
@@ -570,12 +568,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0100
-     * @tc.name       : testExit0001
-     * @tc.desc       : testing exit(undefined) return err.name is Error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testExit0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EXIT_0100
+     * @tc.desc   testing exit(undefined) return err.name is Error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testExit0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testExit0001";
@@ -588,12 +586,12 @@ export default function processTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0100
-     * @tc.name       : testGetUidForName0001
-     * @tc.desc       : Gets the uid of the "root" user.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForNameProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0100
+     * @tc.desc   Gets the uid of the "root" user.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForNameProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForNameProcess0001";
@@ -608,12 +606,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0200
-     * @tc.name       : testGetUidForName0002
-     * @tc.desc       : Attempts to get the uid of a non-existent user and expects failure.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForNameProcess0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0200
+     * @tc.desc   Attempts to get the uid of a non-existent user and expects failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForNameProcess0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForNameProcess0002";
@@ -630,12 +628,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0300
-     * @tc.name       : testGetUidForName0003
-     * @tc.desc       : Attempts to get the uid with an undefined user name and expects an error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetUidForNameProcess0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETUIDFORNAME_PROCESS_0300
+     * @tc.desc   Attempts to get the uid with an undefined user name and expects an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetUidForNameProcess0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetUidForNameProcess0003";
@@ -650,12 +648,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0100
-     * @tc.name       : testProcessManagerKill0001
-     * @tc.desc       : Attempt to send a signal to the current process and expect success.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKillProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0100
+     * @tc.desc   Attempt to send a signal to the current process and expect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKillProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKillProcess0001";
@@ -671,12 +669,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0200
-     * @tc.name       : testProcessManagerKill0002
-     * @tc.desc       : Attempt to send a signal to a non-existent process and expect failure.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKillProcess0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_KILL_PROCESS_0200
+     * @tc.desc   Attempt to send a signal to a non-existent process and expect failure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKillProcess0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKillProcess0002";
@@ -691,12 +689,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_PROCESS_0400
-     * @tc.name       : testProcessManagerKill0004
-     * @tc.desc       : Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testProcessManagerKillProcess0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGERKILL_PROCESS_0400
+     * @tc.desc   Attempt to send a signal to the current process with an out-of-range signal and expect an err.code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProcessManagerKillProcess0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testProcessManagerKillProcess0004";
@@ -711,12 +709,12 @@ export default function processTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0100
-     * @tc.name       : testGetThreadPriority0001
-     * @tc.desc       : Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetThreadPriorityProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0100
+     * @tc.desc   Get thread priority using the specified thread ID (tid) and verify the priority range is -20 to 19.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetThreadPriorityProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetThreadPriorityProcess0001";
@@ -735,12 +733,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0300
-     * @tc.name       : testGetThreadPriority0003
-     * @tc.desc       : Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetThreadPriorityProcess0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PROCESSMANAGER_GETTHREADPRIORITY_PROCESS_0300
+     * @tc.desc   Attempt to get thread priority using an undefined thread ID (tid) and expect an error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetThreadPriorityProcess0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetThreadPriorityProcess0003";
@@ -755,13 +753,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0100
-     * @tc.name       : testIsappuid0001
-     * @tc.desc       : Given a user's UID, testing if it belongs to the current application,
-     *                  expecting the method to return true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuidProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0100
+     * @tc.desc   Given a user's UID, testing if it belongs to the current application,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuidProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuidProcess0001";
@@ -778,13 +775,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0200
-     * @tc.name       : testIsappuid0002
-     * @tc.desc       : Given a user's UID, testing if it belongs to the current application,
-     *                  expecting the method to return false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuidProcess0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0200
+     * @tc.desc   Given a user's UID, testing if it belongs to the current application,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuidProcess0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuidProcess0002";
@@ -801,12 +797,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0300
-     * @tc.name       : testIsappuid0003
-     * @tc.desc       : Given undefined input, expect a thrown exception with error code: 401.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testIsappuidProcess0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISAPPUID_PROCESS_0300
+     * @tc.desc   Given undefined input, expect a thrown exception with error code: 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsappuidProcess0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testIsappuidProcess0003";
@@ -821,12 +817,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0100
-     * @tc.name       : testGetSystemConfig0001
-     * @tc.desc       : Given system config parameter 0, expect a return value greater than 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfigProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0100
+     * @tc.desc   Given system config parameter 0, expect a return value greater than 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfigProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfigProcess0001";
@@ -851,12 +847,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0200
-     * @tc.name       : testGetSystemConfig0002
-     * @tc.desc       : Given a non-existent system config parameter 111111, expect a return value of -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfigProcess0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0200
+     * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfigProcess0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfigProcess0002";
@@ -872,12 +868,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0300
-     * @tc.name       : testGetSystemConfig0003
-     * @tc.desc       : Given a non-existent system config parameter 111111, expect a return value of -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetSystemConfigProcess0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETSYSTEMCONFIG_PROCESS_0300
+     * @tc.desc   Given a non-existent system config parameter 111111, expect a return value of -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetSystemConfigProcess0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetSystemConfigProcess0003";
@@ -893,12 +889,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0100
-     * @tc.name       : testGetEnvironmentVar0001
-     * @tc.desc       : testing if the PATH environment variable is set and not empty.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVarProcess0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0100
+     * @tc.desc   testing if the PATH environment variable is set and not empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVarProcess0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVarProcess0001";
@@ -922,12 +918,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0200
-     * @tc.name       : testGetEnvironmentVar0002
-     * @tc.desc       : testing if the PATH1111 environment variable is set and return undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVarProcess0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0200
+     * @tc.desc   testing if the PATH1111 environment variable is set and return undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVarProcess0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVarProcess0002";
@@ -943,12 +939,12 @@ export default function processTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0300
-     * @tc.name       : testGetEnvironmentVar0003
-     * @tc.desc       : testing if the undefined environment variable is set and return err.name is Error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetEnvironmentVarProcess0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETENVVAR_PROCESS_0300
+     * @tc.desc   testing if the undefined environment variable is set and return err.name is Error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetEnvironmentVarProcess0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testGetEnvironmentVarProcess0003";

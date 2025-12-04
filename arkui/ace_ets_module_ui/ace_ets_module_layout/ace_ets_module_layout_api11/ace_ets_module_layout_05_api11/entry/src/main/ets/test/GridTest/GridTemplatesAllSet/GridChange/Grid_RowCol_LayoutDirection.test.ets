@@ -46,9 +46,12 @@ export default function Grid_RowCol_LayoutDirection() {
       console.info("Grid_RowCol_LayoutDirection after each called")
     });
     /**
+     * @tc.name   testGridRowColGridLayoutDirection
      * @tc.number SUB_ACE_GRID_GRIDTEMPLATESALLSET_GRIDCHANGE_0900
-     * @tc.name testGridRowColGridLayoutDirection
-     * @tc.desc The Grid layout layoutDirection property does not take effect
+     * @tc.desc   The Grid layout layoutDirection property does not take effect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGridRowColGridLayoutDirection',  Level.LEVEL0, async (done: Function) => {
       console.info('[testGridRowColGridLayoutDirection] START');

@@ -51,12 +51,12 @@ export default function ColumnSplitJsunit() {
 
    
     /**
+     * @tc.name   testColumnSplitResizeable01
      * @tc.number test ColumnSplit resizeable
-     * @tc.name   Test the show property of the ColumnSplit component
      * @tc.desc   set the ColumnSplit property value is boolean
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplitResizeable01',  Level.LEVEL0, async (done: Function) => {
       let tagName = 'testColumnSplitResizeable01';

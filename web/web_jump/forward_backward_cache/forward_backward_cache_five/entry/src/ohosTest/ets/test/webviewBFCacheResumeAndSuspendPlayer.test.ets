@@ -60,13 +60,13 @@ export default function ActsAceWebviewBFCacheResumeAndSuspendPlayer() {
     })
 
     /**
-    * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_RESUMEPLAYERANDSUSPENDPLAYER_API_0001
-    * @tc.name          testWebviewBFCacheResumePlayer
-    * @tc.desc          test WebviewBFCacheResumePlayer
-    * @tc.size          MediumTest
-    * @tc.type          Function
-    * @tc.level         Level 2
-    */
+     * @tc.name   testWebviewBFCacheResumePlayer
+     * @tc.number SUB_ACE_WEBVIEW_BFCACHE_RESUMEPLAYERANDSUSPENDPLAYER_API_0001
+     * @tc.desc   test WebviewBFCacheResumePlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewBFCacheResumePlayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewBFCacheResumePlayer', 137450);
       Utils.registerBaseEvent('testWebviewBFCacheResumePlayer', 'success', 137460, done,
@@ -77,13 +77,13 @@ export default function ActsAceWebviewBFCacheResumeAndSuspendPlayer() {
     })
 
     /**
-    * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_RESUMEPLAYERANDSUSPENDPLAYER_API_0002
-    * @tc.name          testWebviewBFCacheSuspendPlayer
-    * @tc.desc          test WebviewBFCacheSuspendPlayer
-    * @tc.size          MediumTest
-    * @tc.type          Function
-    * @tc.level         Level 2
-    */
+     * @tc.name   testWebviewBFCacheSuspendPlayer
+     * @tc.number SUB_ACE_WEBVIEW_BFCACHE_RESUMEPLAYERANDSUSPENDPLAYER_API_0002
+     * @tc.desc   test WebviewBFCacheSuspendPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewBFCacheSuspendPlayer', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         Utils.emitEvent('emitWebviewBFCacheSuspendPlayer', 137450);

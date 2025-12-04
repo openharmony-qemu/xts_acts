@@ -43,6 +43,14 @@ export default function textAenEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textAenEnabledJsunit_0100
+     * @tc.number textAenEnabledJsunit_0100
+     * @tc.desc   textAenEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAenEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('textAenEnabledJsunit_0100 START');
@@ -59,6 +67,14 @@ export default function textAenEnabledJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   textAenEnabledJsunit_0100
+     * @tc.number textAenEnabledJsunit_0100
+     * @tc.desc   textAenEnabledJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('textAenEnabledJsunit_0100', Level.LEVEL1, async (done: Function) => {
 
       console.info('textAenEnabledJsunit_0100 START');

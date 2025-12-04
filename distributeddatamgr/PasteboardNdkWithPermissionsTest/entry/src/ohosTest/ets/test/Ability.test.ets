@@ -87,7 +87,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress001
      * @tc.number OH_Pasteboard_GetDataWithProgress001
      * @tc.desc   OH_Pasteboard_GetDataWithProgress001
@@ -113,7 +112,6 @@ export default function pasteboardTestNdkPermissionTest() {
     
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress002
      * @tc.number OH_Pasteboard_GetDataWithProgress002
      * @tc.desc   OH_Pasteboard_GetDataWithProgress002
@@ -141,7 +139,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress003
      * @tc.number OH_Pasteboard_GetDataWithProgress003
      * @tc.desc   OH_Pasteboard_GetDataWithProgress003
@@ -158,7 +155,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress004
      * @tc.number OH_Pasteboard_GetDataWithProgress004
      * @tc.desc   OH_Pasteboard_GetDataWithProgress004
@@ -183,7 +179,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress005
      * @tc.number OH_Pasteboard_GetDataWithProgress005
      * @tc.desc   OH_Pasteboard_GetDataWithProgress005
@@ -209,7 +204,6 @@ export default function pasteboardTestNdkPermissionTest() {
     
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress006
      * @tc.number OH_Pasteboard_GetDataWithProgress006
      * @tc.desc   OH_Pasteboard_GetDataWithProgress006
@@ -234,7 +228,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress007
      * @tc.number OH_Pasteboard_GetDataWithProgress007
      * @tc.desc   OH_Pasteboard_GetDataWithProgress007
@@ -259,7 +252,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress008
      * @tc.number OH_Pasteboard_GetDataWithProgress008
      * @tc.desc   OH_Pasteboard_GetDataWithProgress008
@@ -285,7 +277,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress012
      * @tc.number OH_Pasteboard_GetDataWithProgress012
      * @tc.desc   OH_Pasteboard_GetDataWithProgress012
@@ -309,7 +300,6 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress013
      * @tc.number OH_Pasteboard_GetDataWithProgress013
      * @tc.desc   OH_Pasteboard_GetDataWithProgress013
@@ -334,7 +324,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress014
      * @tc.number OH_Pasteboard_GetDataWithProgress014
      * @tc.desc   OH_Pasteboard_GetDataWithProgress014
@@ -359,7 +348,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress015
      * @tc.number OH_Pasteboard_GetDataWithProgress015
      * @tc.desc   OH_Pasteboard_GetDataWithProgress015
@@ -384,7 +372,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress016
      * @tc.number OH_Pasteboard_GetDataWithProgress016
      * @tc.desc   OH_Pasteboard_GetDataWithProgress016
@@ -409,7 +396,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress017
      * @tc.number OH_Pasteboard_GetDataWithProgress017
      * @tc.desc   OH_Pasteboard_GetDataWithProgress017
@@ -434,7 +420,6 @@ export default function pasteboardTestNdkPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress018
      * @tc.number OH_Pasteboard_GetDataWithProgress018
      * @tc.desc   OH_Pasteboard_GetDataWithProgress018
@@ -459,7 +444,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress019
      * @tc.number OH_Pasteboard_GetDataWithProgress019
      * @tc.desc   OH_Pasteboard_GetDataWithProgress019
@@ -484,7 +468,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress020
      * @tc.number OH_Pasteboard_GetDataWithProgress020
      * @tc.desc   OH_Pasteboard_GetDataWithProgress020
@@ -509,7 +492,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress021
      * @tc.number OH_Pasteboard_GetDataWithProgress021
      * @tc.desc   OH_Pasteboard_GetDataWithProgress021
@@ -534,7 +516,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress011
      * @tc.number OH_Pasteboard_GetDataWithProgress011
      * @tc.desc   OH_Pasteboard_GetDataWithProgress011
@@ -559,7 +540,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress010
      * @tc.number OH_Pasteboard_GetDataWithProgress010
      * @tc.desc   OH_Pasteboard_GetDataWithProgress010
@@ -584,7 +564,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetDataWithProgress009
      * @tc.number OH_Pasteboard_GetDataWithProgress009
      * @tc.desc   OH_Pasteboard_GetDataWithProgress009
@@ -610,7 +589,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetChangeCount0100
      * @tc.number OH_Pasteboard_GetChangeCount0100
      * @tc.desc   OH_Pasteboard_GetChangeCount0100
@@ -628,7 +606,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
     
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetChangeCount0200
      * @tc.number OH_Pasteboard_GetChangeCount0200
      * @tc.desc   OH_Pasteboard_GetChangeCount0200
@@ -646,7 +623,6 @@ export default function pasteboardTestNdkPermissionTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   OH_Pasteboard_GetChangeCount0300
      * @tc.number OH_Pasteboard_GetChangeCount0300
      * @tc.desc   OH_Pasteboard_GetChangeCount0300

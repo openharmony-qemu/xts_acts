@@ -44,13 +44,13 @@ export default function webInitTest() {
       done();
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_AVOIDAREA_API_0005
-     *@tc.name testWebViewAvoidArea05
-     *@tc.desc test onAvoidAreaChange
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewAvoidArea05
+     * @tc.number SUB_ACE_WEB_AVOIDAREA_API_0005
+     * @tc.desc   test onAvoidAreaChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewAvoidArea05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = 'emitWebViewAvoidArea05';

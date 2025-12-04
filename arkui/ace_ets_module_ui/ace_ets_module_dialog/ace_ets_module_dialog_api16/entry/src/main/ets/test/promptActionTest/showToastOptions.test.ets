@@ -62,13 +62,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0100
      * @tc.number SUB_ACE_showToastOptions_0100
-     * @tc.name showToastOptions_0100
-     * @tc.desc To test showToastOptions  shadow：ShadowStyle.OUTER_DEFAULT_MD
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test showToastOptions  shadow：ShadowStyle.OUTER_DEFAULT_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       
       console.info('showToastOptions_0100 START');
@@ -96,13 +96,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0200
      * @tc.number SUB_ACE_showToastOptions_0200
-     * @tc.name showToastOptions_0200
-     * @tc.desc To test  showToastOptions
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0200 START');
       let driver = await Driver.create()
@@ -139,13 +139,13 @@ export default function showToastOptions() {
     });
     
     /**
+     * @tc.name   showToastOptions_0300
      * @tc.number SUB_ACE_showToastOptions_0300
-     * @tc.name showToastOptions_0300
-     * @tc.desc To test  showToastOptions undefined
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0300', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0300 START');
       let driver = await Driver.create()
@@ -170,13 +170,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0400
      * @tc.number SUB_ACE_showToastOptions_0400
-     * @tc.name showToastOptions_0400
-     * @tc.desc To test  showToastOptions shadow: ShadowStyle.OUTER_DEFAULT_SM
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions shadow: ShadowStyle.OUTER_DEFAULT_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0400', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0400 START');
       let driver = await Driver.create()
@@ -204,13 +204,13 @@ export default function showToastOptions() {
 
     
     /**
+     * @tc.name   showToastOptions_0500
      * @tc.number SUB_ACE_showToastOptions_0500
-     * @tc.name showToastOptions_0500
-     * @tc.desc To test  showToastOptions shadow: ShadowStyle.OUTER_FLOATING_LG
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions shadow: ShadowStyle.OUTER_FLOATING_LG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0500 START');
       let driver = await Driver.create()
@@ -238,13 +238,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0600
      * @tc.number SUB_ACE_showToastOptions_0600
-     * @tc.name showToastOptions_0600
-     * @tc.desc To test  showToastOptions shadow: ShadowStyle.OUTER_FLOATING_SM
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions shadow: ShadowStyle.OUTER_FLOATING_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0600', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0600 START');
       let driver = await Driver.create()
@@ -273,14 +273,14 @@ export default function showToastOptions() {
     });
 
 
-     /**
+    /**
+     * @tc.name   showToastOptions_0700
      * @tc.number SUB_ACE_showToastOptions_0700
-     * @tc.name showToastOptions_0700
-     * @tc.desc To test  showToastOptions backgroundBlurStyle
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions backgroundBlurStyle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0700', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0700 START');
       let driver = await Driver.create()
@@ -310,13 +310,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0800
      * @tc.number SUB_ACE_showToastOptions_0800
-     * @tc.name showToastOptions_0800
-     * @tc.desc To test  showToastOptions shadow: null
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions shadow: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0800', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0800 START');
       let driver = await Driver.create()
@@ -342,13 +342,13 @@ export default function showToastOptions() {
     });
 
     /**
+     * @tc.name   showToastOptions_0900
      * @tc.number SUB_ACE_showToastOptions_0900
-     * @tc.name showToastOptions_0900
-     * @tc.desc To test  showToastOptions shadow: null
-     * @tc.level: Level 0
-     * @tc.type : Function
-     * @tc.size : MEDIUMTEST
-    */
+     * @tc.desc   To test  showToastOptions shadow: null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('showToastOptions_0900', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('showToastOptions_0900 START');
       let driver = await Driver.create()

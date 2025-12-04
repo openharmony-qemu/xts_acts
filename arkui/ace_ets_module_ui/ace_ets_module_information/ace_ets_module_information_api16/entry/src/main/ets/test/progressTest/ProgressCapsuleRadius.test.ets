@@ -43,12 +43,12 @@ export default function ProgressCapsuleRadius() {
     });
 
     /**
-     * @tc.number    testProgressCapsuleRadius0001
-     * @tc.name      testProgressCapsuleRadius0001
-     * @tc.desc      Test progress capsule radius attributes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testProgressCapsuleRadius0001
+     * @tc.number testProgressCapsuleRadius0001
+     * @tc.desc   Test progress capsule radius attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testProgressCapsuleRadius0001', Level.LEVEL2, async (done: Function) => {
       console.info('testProgressCapsuleRadius0001 START');
@@ -64,12 +64,12 @@ export default function ProgressCapsuleRadius() {
     });
 
     /**
-     * @tc.number    testProgressCapsuleRadius0002
-     * @tc.name      testProgressCapsuleRadius0002
-     * @tc.desc      Test progress capsule radius attributes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testProgressCapsuleRadius0002
+     * @tc.number testProgressCapsuleRadius0002
+     * @tc.desc   Test progress capsule radius attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testProgressCapsuleRadius0002', Level.LEVEL2, async (done: Function) => {
       console.info('testProgressCapsuleRadius0002 START');
@@ -85,12 +85,12 @@ export default function ProgressCapsuleRadius() {
     });
 
     /**
-     * @tc.number    testProgressCapsuleRadius0003
-     * @tc.name      testProgressCapsuleRadius0003
-     * @tc.desc      Test progress capsule radius attributes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testProgressCapsuleRadius0003
+     * @tc.number testProgressCapsuleRadius0003
+     * @tc.desc   Test progress capsule radius attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testProgressCapsuleRadius0003', Level.LEVEL2, async (done: Function) => {
       console.info('testProgressCapsuleRadius0003 START');

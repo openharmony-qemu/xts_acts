@@ -409,14 +409,6 @@ KdfSpec g_kdfSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_TEST, ::testing::ValuesIn(g_kdfSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0100
-* @tc.name OHCryptoFrameworkKdfNapiTest/KDF_TEST.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0100/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(KDF_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0100, TestSize.Level0)
 {
     KdfSpec infoSpec = GetParam();
@@ -453,13 +445,13 @@ HWTEST_P(KDF_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0100, TestSize.Lev
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0200
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0200
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0200
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0200, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -482,13 +474,13 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0300
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0300
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0300
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0300, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -512,13 +504,13 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0400
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0400
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0400
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0400, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -541,13 +533,13 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0500
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0500
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0500
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0500, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -634,14 +626,6 @@ KdfSpec g_scryptErrorSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_SCRYPT_TEST, ::testing::ValuesIn(g_scryptErrorSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0600
-* @tc.name OHCryptoFrameworkKdfNapiTest/KDF_SCRYPT_TEST.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0600
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(KDF_SCRYPT_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0600, TestSize.Level0)
 {
     KdfSpec infoSpec = GetParam();
@@ -667,13 +651,13 @@ HWTEST_P(KDF_SCRYPT_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0600, TestS
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0700
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0700
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0700
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0700, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -710,13 +694,13 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0800
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0800
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0800
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0800, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -747,13 +731,13 @@ HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Tes
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0900
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_0900
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_0900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_0900
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_0900, TestSize.Level0)
 {
     KdfSpec infoSpec = {
@@ -843,14 +827,6 @@ KdfSpec g_hkdfErrorSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_HKDF_TEST, ::testing::ValuesIn(g_hkdfErrorSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1000
-* @tc.name OHCryptoFrameworkKdfNapiTest/KDF_HKDF_TEST.SUB_Security_CryptoFramework_NAPI_Kdf_Test_1000
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(KDF_HKDF_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1000, TestSize.Level0)
 {
     KdfSpec infoSpec = GetParam();
@@ -895,14 +871,6 @@ KdfSpec g_pbkdf2ErrorSpec[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_PBKDF2_TEST, ::testing::ValuesIn(g_pbkdf2ErrorSpec));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1100
-* @tc.name OHCryptoFrameworkKdfNapiTest/KDF_PBKDF2_TEST.SUB_Security_CryptoFramework_NAPI_Kdf_Test_1100/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(KDF_PBKDF2_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1100, TestSize.Level0)
 {
     KdfSpec infoSpec = GetParam();
@@ -928,13 +896,13 @@ HWTEST_P(KDF_PBKDF2_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1100, TestS
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1200
-* @tc.name OHCryptoFrameworkKdfNapiTest.SUB_Security_CryptoFramework_NAPI_Kdf_Test_1200
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_1200
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1200
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1200, TestSize.Level0)
 {
     const char *algoName = "KDF_TLS12";
@@ -1247,14 +1215,6 @@ KdfVectorSpec g_vectors[] = {
 };
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkKdfNapiTest, KDF_VECTOR_TEST, ::testing::ValuesIn(g_vectors));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100
-* @tc.name OHCryptoFrameworkKdfNapiTest/KDF_VECTOR_TEST.SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100/x
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(KDF_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100, TestSize.Level0)
 {
     KdfVectorSpec infoSpec = GetParam();
@@ -1291,13 +1251,13 @@ HWTEST_P(KDF_VECTOR_TEST, SUB_Security_CryptoFramework_NAPI_Kdf_Vector_Test_0100
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
-* @tc.name SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
-* @tc.desc algorithm is Kdf
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300
+ * @tc.desc   algorithm is Kdf
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkKdfNapiTest, SUB_Security_CryptoFramework_NAPI_Kdf_Test_1300, TestSize.Level0)
 {
     KdfSpec infoSpec = {

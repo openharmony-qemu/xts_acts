@@ -177,12 +177,12 @@ export default function actsterminateselfwithresulttest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0900
      * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0900
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test a cpp crash occurs for a single Module and Ability, but it will not trigger the OnDestroy callback for AbilityStage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test a cpp crash occurs for a single Module and Ability, but it will not trigger the OnDestroy callback for AbilityStage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0900', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0900';
@@ -228,12 +228,12 @@ export default function actsterminateselfwithresulttest() {
 
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0600
      * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0600
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test a js crash occurs for a single Module and Ability, but it will not trigger the OnDestroy callback for AbilityStage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test a js crash occurs for a single Module and Ability, but it will not trigger the OnDestroy callback for AbilityStage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0600', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0600';
@@ -286,12 +286,12 @@ export default function actsterminateselfwithresulttest() {
 
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0700
      * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0700
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test terminate self more than three times
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test terminate self more than three times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0700', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0700';
@@ -353,12 +353,12 @@ export default function actsterminateselfwithresulttest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
      * @tc.number SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test different module life cycle
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test different module life cycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_AbilityStage_OnDestroy_0500';
@@ -416,12 +416,12 @@ export default function actsterminateselfwithresulttest() {
     });
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0100
      * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0100
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test  promise call back
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test  promise call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0100', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0100';
@@ -475,12 +475,12 @@ export default function actsterminateselfwithresulttest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0300
      * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0300
-     * @tc.name test  AbilityStage life cycle
-     * @tc.desc test no promise call back
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test no promise call back
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0300', Level.LEVEL0, async (done: Function) => {
       const TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_AsynchronousCallback_0300';

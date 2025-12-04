@@ -40,12 +40,12 @@ export default function getAlbumsTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_STATIC_0200
-      * @tc.name    getAlbums_callback_static_002
-      * @tc.desc    get system albums by albumType
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   getAlbums_callback_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_STATIC_0200
+     * @tc.desc   get system albums by albumType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("getAlbums_callback_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function getAlbumsTest() {
       })
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_STATIC_0300
-      * @tc.name    getAlbums_callback_static_003
-      * @tc.desc    get user albums by albumName error code 13900020 or 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   getAlbums_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_ALBUMS_STATIC_0300
+     * @tc.desc   get user albums by albumName error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void):
       Promise<void> => {

@@ -14,6 +14,7 @@
  */
 import resourceManager from '@ohos.resourceManager';
 export const AudioLowLatencyOut: () => number;
+export const audioCreateEngine: () => number;
 export const AudioWorkGroupSet: () => number;
 export const StopAndReleaseRenderer: () => number;
 export const GetRawFileContent: (resmgr: resourceManager.ResourceManager, path: string) => Uint8Array;
@@ -298,3 +299,9 @@ export const audioStreamBuilderSetCapturerFastStatusChangeCallback_001: () => nu
 export const audioStreamBuilderSetCapturerFastStatusChangeCallback_002: () => number;
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_001: () => number;
 export const audioStreamBuilderSetRendererFastStatusChangeCallback_002: () => number;
+export const isIntelligentNoiseReductionEnabledForCurrentDevice_001: () => number;
+export const audioSessionManagerAvailableDevices_001: () => number;
+export const audioSessionManagerAvailableDevices_002: () => number;
+export const audioSessionManagerAvailableDevices_003: () => number;
+export const audioSessionManagerAvailableDevices_004: () => number;
+export const bluetoothAndNearlinkPreferredRecordCategory_001: () => number;

@@ -47,13 +47,13 @@ export default function OptimizeTrailingSpaceTest() {
       console.info("OptimizeTrailingSpaceTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_OPTIMIZE_TRAILING_SPACE_ETS_API_0001
-    * @tc.name         OptimizeTrailingSpaceTest0001
-    * @tc.desc         test optimizeTrailingSpace set true
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   OptimizeTrailingSpaceTest0001
+     * @tc.number SUB_ACE_BASIC_OPTIMIZE_TRAILING_SPACE_ETS_API_0001
+     * @tc.desc   test optimizeTrailingSpace set true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OptimizeTrailingSpaceTest0001', Level.LEVEL3, async (done: Function) => {
       console.info('OptimizeTrailingSpaceTest0001 START');
@@ -65,13 +65,13 @@ export default function OptimizeTrailingSpaceTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_OPTIMIZE_TRAILING_SPACE_ETS_API_0002
-    * @tc.name         OptimizeTrailingSpaceTest0002
-    * @tc.desc         test optimizeTrailingSpace set false
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        3
+    /**
+     * @tc.name   OptimizeTrailingSpaceTest0002
+     * @tc.number SUB_ACE_BASIC_OPTIMIZE_TRAILING_SPACE_ETS_API_0002
+     * @tc.desc   test optimizeTrailingSpace set false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('OptimizeTrailingSpaceTest0002', Level.LEVEL3, async (done: Function) => {
       console.info('OptimizeTrailingSpaceTest0002 START');

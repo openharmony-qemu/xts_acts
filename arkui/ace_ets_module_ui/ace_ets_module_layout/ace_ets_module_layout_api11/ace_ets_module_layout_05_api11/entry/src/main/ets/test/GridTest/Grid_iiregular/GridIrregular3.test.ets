@@ -57,12 +57,14 @@ export default function scrollByJsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : GridIrregular31Jsunit_0001
-    * @tc.desc  : irregularIndexes: [undefined], items are all rule sizes
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   GridIrregular3Jsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   irregularIndexes: [undefined], items are all rule sizes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridIrregular3Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridIrregular3Jsunit_0000] START');
       await CommonFunc.sleep(1000);

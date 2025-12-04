@@ -21,7 +21,6 @@ export default function baseDdkCanIUseTest() {
     const TAG: string = "[baseDdkCanIUseTest]";
     
     /**
-     * @generated.time 2025-11-09 20:49:58
      * @tc.name   testBaseDdkDdkCanIUseTest001
      * @tc.number SUB_Driver_Ext_BaseDdkCanIUse_0100
      * @tc.desc   Operation success

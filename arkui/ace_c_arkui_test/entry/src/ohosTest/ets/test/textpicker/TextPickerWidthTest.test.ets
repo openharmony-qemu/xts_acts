@@ -26,39 +26,39 @@ export default function textPickerWidthTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0100
-     * @tc.name: testTextPickerWidth001
-     * @tc.desc: testing width for textPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextPickerWidth001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0100
+     * @tc.desc   testing width for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerWidth001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerWidth001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0200
-     * @tc.name: testTextPickerWidth002
-     * @tc.desc: testing width for textPicker with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testTextPickerWidth002
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0200
+     * @tc.desc   testing width for textPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerWidth002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerWidth002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0300
-     * @tc.name: testTextPickerWidth003
-     * @tc.desc: testing width for textPicker with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextPickerWidth003
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_WIDTH_0300
+     * @tc.desc   testing width for textPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerWidth003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerWidth003()).assertEqual(0)

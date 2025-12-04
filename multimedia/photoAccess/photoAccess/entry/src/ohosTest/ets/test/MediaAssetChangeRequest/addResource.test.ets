@@ -31,12 +31,12 @@ export default function addResourceChangeRequestTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0000
-     * @tc.name      : add_resource_change_request_000
-     * @tc.desc      : add resource by ArrayBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   add_resource_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0000
+     * @tc.desc   add resource by ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_resource_change_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'add_resource_change_request_000';
@@ -63,12 +63,12 @@ export default function addResourceChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
-     * @tc.name      : add_resource_change_request_001
-     * @tc.desc      : add resource by invalid fileUri
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   add_resource_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0100
+     * @tc.desc   add resource by invalid fileUri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('add_resource_change_request_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'add_resource_change_request_001';
@@ -91,12 +91,12 @@ export default function addResourceChangeRequestTest() {
 
     
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
-     * @tc.name      : add_resource_change_request_002
-     * @tc.desc      : add VIDEO resource by IMAGE_RESOURCE,error code is 13900002 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   add_resource_change_request_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_ADD_RESOURCE_CHANGE_REQUEST_0200
+     * @tc.desc   add VIDEO resource by IMAGE_RESOURCE,error code is 13900002 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('add_resource_change_request_002', Level.LEVEL0, async (done: Function) => {
       let testNum = 'add_resource_change_request_002';

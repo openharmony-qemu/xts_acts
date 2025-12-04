@@ -66,9 +66,12 @@ export default function ListItem_Delete_Start_String() {
       console.info("ListItem_Delete_Start_String after each called");
     });
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_String_0100
      * @tc.number SUB_ACE_ListItem_Delete_Start_String_0100
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to 'abc' and slide 100
+     * @tc.desc   Set actionAreaDistance to 'abc' and slide 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_String_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_String_0100] START');
@@ -106,9 +109,12 @@ export default function ListItem_Delete_Start_String() {
     });
 
     /**
+     * @tc.name   SUB_ACE_ListItem_Delete_Start_String_0200
      * @tc.number SUB_ACE_ListItem_Delete_Start_String_0200
-     * @tc.name testListItem
-     * @tc.desc Set actionAreaDistance to ''10%'' and slide 100
+     * @tc.desc   Set actionAreaDistance to ''10%'' and slide 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_ListItem_Delete_Start_String_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_ListItem_Delete_Start_String_0200] START');

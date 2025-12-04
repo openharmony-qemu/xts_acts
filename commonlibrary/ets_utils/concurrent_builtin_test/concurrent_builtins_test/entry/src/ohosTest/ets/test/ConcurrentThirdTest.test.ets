@@ -82,12 +82,12 @@ export default function globalTest3() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0100
-     * @tc.name      : test_concurrent_builtins_array_constructor_001
-     * @tc.desc      : test_concurrent_builtins_array_constructor_001 - test Array constructor with single element
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_constructor_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0100
+     * @tc.desc   test_concurrent_builtins_array_constructor_001 - test Array constructor with single element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_constructor_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -117,12 +117,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0200
-     * @tc.name      : test_concurrent_builtins_array_from_001
-     * @tc.desc      : test_concurrent_builtins_array_from_001 - test Array.from with Set
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_from_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0200
+     * @tc.desc   test_concurrent_builtins_array_from_001 - test Array.from with Set
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_from_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -152,12 +152,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0300
-     * @tc.name      : test_concurrent_builtins_array_isarray_001
-     * @tc.desc      : test_concurrent_builtins_array_isarray_001 - test Array.isArray with empty array
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_isarray_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0300
+     * @tc.desc   test_concurrent_builtins_array_isarray_001 - test Array.isArray with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_isarray_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -187,12 +187,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0400
-     * @tc.name      : test_concurrent_builtins_array_of_001
-     * @tc.desc      : test_concurrent_builtins_array_of_001 - test Array.of with single element
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_of_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0400
+     * @tc.desc   test_concurrent_builtins_array_of_001 - test Array.of with single element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_of_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -222,12 +222,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0500
-     * @tc.name      : test_concurrent_builtins_array_concat_001
-     * @tc.desc      : test_concurrent_builtins_array_concat_001 - test Array concat method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_concat_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0500
+     * @tc.desc   test_concurrent_builtins_array_concat_001 - test Array concat method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_concat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -257,12 +257,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0600
-     * @tc.name      : test_concurrent_builtins_array_copywithin_001
-     * @tc.desc      : test_concurrent_builtins_array_copywithin_001 - test Array copyWithin method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_copywithin_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0600
+     * @tc.desc   test_concurrent_builtins_array_copywithin_001 - test Array copyWithin method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_copywithin_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -292,12 +292,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0700
-     * @tc.name      : test_concurrent_builtins_array_fill_001
-     * @tc.desc      : test_concurrent_builtins_array_fill_001 - test Array fill method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_fill_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0700
+     * @tc.desc   test_concurrent_builtins_array_fill_001 - test Array fill method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_fill_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -327,12 +327,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0800
-     * @tc.name      : test_concurrent_builtins_array_find_001
-     * @tc.desc      : test_concurrent_builtins_array_find_001 - test Array find method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_find_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0800
+     * @tc.desc   test_concurrent_builtins_array_find_001 - test Array find method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_find_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -362,12 +362,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_0900
-     * @tc.name      : test_concurrent_builtins_array_flat_001
-     * @tc.desc      : test_concurrent_builtins_array_flat_001 - test Array flat method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_flat_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_0900
+     * @tc.desc   test_concurrent_builtins_array_flat_001 - test Array flat method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_flat_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -397,12 +397,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1000
-     * @tc.name      : test_concurrent_builtins_array_flatmap_001
-     * @tc.desc      : test_concurrent_builtins_array_flatmap_001 - test Array flatMap method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_flatmap_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1000
+     * @tc.desc   test_concurrent_builtins_array_flatmap_001 - test Array flatMap method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_flatmap_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -432,12 +432,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1100
-     * @tc.name      : test_concurrent_builtins_array_includes_001
-     * @tc.desc      : test_concurrent_builtins_array_includes_001 - test Array includes method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_includes_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1100
+     * @tc.desc   test_concurrent_builtins_array_includes_001 - test Array includes method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_includes_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -467,12 +467,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1200
-     * @tc.name      : test_concurrent_builtins_array_indexof_001
-     * @tc.desc      : test_concurrent_builtins_array_indexof_001 - test Array indexOf method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_indexof_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1200
+     * @tc.desc   test_concurrent_builtins_array_indexof_001 - test Array indexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_indexof_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -502,12 +502,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1300
-     * @tc.name      : test_concurrent_builtins_array_join_001
-     * @tc.desc      : test_concurrent_builtins_array_join_001 - test Array join method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_join_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1300
+     * @tc.desc   test_concurrent_builtins_array_join_001 - test Array join method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_join_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -537,12 +537,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1400
-     * @tc.name      : test_concurrent_builtins_array_keys_001
-     * @tc.desc      : test_concurrent_builtins_array_keys_001 - test Array keys method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_keys_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1400
+     * @tc.desc   test_concurrent_builtins_array_keys_001 - test Array keys method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_keys_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -572,12 +572,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1500
-     * @tc.name      : test_concurrent_builtins_array_lastindexof_001
-     * @tc.desc      : test_concurrent_builtins_array_lastindexof_001 - test Array lastIndexOf method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_lastindexof_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1500
+     * @tc.desc   test_concurrent_builtins_array_lastindexof_001 - test Array lastIndexOf method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_lastindexof_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -607,12 +607,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1600
-     * @tc.name      : test_concurrent_builtins_array_map_001
-     * @tc.desc      : test_concurrent_builtins_array_map_001 - test Array map method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_map_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1600
+     * @tc.desc   test_concurrent_builtins_array_map_001 - test Array map method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_map_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -642,12 +642,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1700
-     * @tc.name      : test_concurrent_builtins_array_pop_001
-     * @tc.desc      : test_concurrent_builtins_array_pop_001 - test Array pop method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_pop_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1700
+     * @tc.desc   test_concurrent_builtins_array_pop_001 - test Array pop method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_pop_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -677,12 +677,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1800
-     * @tc.name      : test_concurrent_builtins_array_push_001
-     * @tc.desc      : test_concurrent_builtins_array_push_001 - test Array push method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_push_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1800
+     * @tc.desc   test_concurrent_builtins_array_push_001 - test Array push method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_push_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -712,12 +712,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_1900
-     * @tc.name      : test_concurrent_builtins_array_reduce_001
-     * @tc.desc      : test_concurrent_builtins_array_reduce_001 - test Array reduce method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_reduce_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_1900
+     * @tc.desc   test_concurrent_builtins_array_reduce_001 - test Array reduce method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_reduce_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -747,12 +747,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2000
-     * @tc.name      : test_concurrent_builtins_array_reduceright_001
-     * @tc.desc      : test_concurrent_builtins_array_reduceright_001 - test Array reduceRight method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_reduceright_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2000
+     * @tc.desc   test_concurrent_builtins_array_reduceright_001 - test Array reduceRight method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_reduceright_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -782,12 +782,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2100
-     * @tc.name      : test_concurrent_builtins_array_reverse_001
-     * @tc.desc      : test_concurrent_builtins_array_reverse_001 - test Array reverse method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_reverse_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2100
+     * @tc.desc   test_concurrent_builtins_array_reverse_001 - test Array reverse method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_reverse_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -817,12 +817,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2200
-     * @tc.name      : test_concurrent_builtins_array_shift_001
-     * @tc.desc      : test_concurrent_builtins_array_shift_001 - test Array shift method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_shift_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2200
+     * @tc.desc   test_concurrent_builtins_array_shift_001 - test Array shift method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_shift_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -852,12 +852,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2300
-     * @tc.name      : test_concurrent_builtins_array_slice_001
-     * @tc.desc      : test_concurrent_builtins_array_slice_001 - test Array slice method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_slice_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2300
+     * @tc.desc   test_concurrent_builtins_array_slice_001 - test Array slice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_slice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -887,12 +887,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2400
-     * @tc.name      : test_concurrent_builtins_array_some_001
-     * @tc.desc      : test_concurrent_builtins_array_some_001 - test Array some method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_some_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2400
+     * @tc.desc   test_concurrent_builtins_array_some_001 - test Array some method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_some_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -922,12 +922,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2500
-     * @tc.name      : test_concurrent_builtins_array_sort_001
-     * @tc.desc      : test_concurrent_builtins_array_sort_001 - test Array sort method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_sort_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2500
+     * @tc.desc   test_concurrent_builtins_array_sort_001 - test Array sort method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_sort_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -957,12 +957,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2600
-     * @tc.name      : test_concurrent_builtins_array_splice_001
-     * @tc.desc      : test_concurrent_builtins_array_splice_001 - test Array splice method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_splice_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2600
+     * @tc.desc   test_concurrent_builtins_array_splice_001 - test Array splice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_splice_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -992,12 +992,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2700
-     * @tc.name      : test_concurrent_builtins_array_symboliterator_001
-     * @tc.desc      : test_concurrent_builtins_array_symboliterator_001 - test Array Symbol.iterator method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_symboliterator_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2700
+     * @tc.desc   test_concurrent_builtins_array_symboliterator_001 - test Array Symbol.iterator method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_symboliterator_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1027,12 +1027,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2800
-     * @tc.name      : test_concurrent_builtins_array_tolocalestring_001
-     * @tc.desc      : test_concurrent_builtins_array_tolocalestring_001 - test Array toLocaleString method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_tolocalestring_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2800
+     * @tc.desc   test_concurrent_builtins_array_tolocalestring_001 - test Array toLocaleString method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_tolocalestring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1062,12 +1062,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_2900
-     * @tc.name      : test_concurrent_builtins_array_tostring_001
-     * @tc.desc      : test_concurrent_builtins_array_tostring_001 - test Array toString method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_tostring_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_2900
+     * @tc.desc   test_concurrent_builtins_array_tostring_001 - test Array toString method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_tostring_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1097,12 +1097,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_3000
-     * @tc.name      : test_concurrent_builtins_array_unshift_001
-     * @tc.desc      : test_concurrent_builtins_array_unshift_001 - test Array unshift method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_unshift_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_3000
+     * @tc.desc   test_concurrent_builtins_array_unshift_001 - test Array unshift method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_unshift_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1132,12 +1132,12 @@ export default function globalTest3() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_BUILTINS_THIRD_TEST_3100
-     * @tc.name      : test_concurrent_builtins_array_values_001
-     * @tc.desc      : test_concurrent_builtins_array_values_001 - test Array values method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_builtins_array_values_001
+     * @tc.number SUB_CONCURRENT_BUILTINS_THIRD_TEST_3100
+     * @tc.desc   test_concurrent_builtins_array_values_001 - test Array values method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_builtins_array_values_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

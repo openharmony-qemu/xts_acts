@@ -23,12 +23,12 @@ export default function FocusMoveTest() {
       await Utils.pushPageNoClear(`NativeXComponent/NodeAttributeNativeXComponent`, done);
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_FORWARD_0100
-     * @tc.name    : testCheckNodeFocusMove0100
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_FORWARD_0100
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function FocusMoveTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_BACKWARD_0200
-     * @tc.name    : testCheckNodeFocusMove0200
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_BACKWARD_0200
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -61,12 +61,12 @@ export default function FocusMoveTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_UP_0300
-     * @tc.name    : testCheckNodeFocusMove0300
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_UP_0300
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -80,12 +80,12 @@ export default function FocusMoveTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_DOWN_0400
-     * @tc.name    : testCheckNodeFocusMove0400
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_DOWN_0400
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -99,12 +99,12 @@ export default function FocusMoveTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_LEFT_0500
-     * @tc.name    : testCheckNodeFocusMove0500
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0500
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_LEFT_0500
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0500', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -118,12 +118,12 @@ export default function FocusMoveTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_RIGHT_0600
-     * @tc.name    : testCheckNodeFocusMove0600
-     * @tc.desc    : Test ArkUI_FocusMove.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testCheckNodeFocusMove0600
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_FOCUS_MOVE_RIGHT_0600
+     * @tc.desc   Test ArkUI_FocusMove.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckNodeFocusMove0600', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

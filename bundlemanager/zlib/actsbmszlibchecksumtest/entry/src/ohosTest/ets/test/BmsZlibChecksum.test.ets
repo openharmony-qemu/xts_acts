@@ -42,12 +42,12 @@ export default function bmsZlibChecksumTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_0100
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_0100
-     * @tc.desc: test createChecksum
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_0100
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_0100
+     * @tc.desc   test createChecksum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       try {
@@ -61,12 +61,12 @@ export default function bmsZlibChecksumTest() {
       done();
     });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_0200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_0200
-     * @tc.desc: test createChecksumSync
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_0200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_0200
+     * @tc.desc   test createChecksumSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       try {

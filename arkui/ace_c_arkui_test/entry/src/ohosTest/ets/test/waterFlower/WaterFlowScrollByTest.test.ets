@@ -21,13 +21,13 @@ export default function waterFlowScrollByTest() {
 
   describe('WaterFlowScrollByTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0100
-     * @tc.name       : testWaterFlowScrollBy001
-     * @tc.desc       : testing scroll by for waterFlow with {0 0} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollBy001
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0100
+     * @tc.desc   testing scroll by for waterFlow with {0 0} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollBy001', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollBy001Test`);
@@ -43,13 +43,13 @@ export default function waterFlowScrollByTest() {
       expect(state2Data.length-1 == 0).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0200
-     * @tc.name       : testWaterFlowScrollBy002
-     * @tc.desc       : testing scroll by for waterFlow with {100 100} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollBy002
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0200
+     * @tc.desc   testing scroll by for waterFlow with {100 100} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollBy002', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollBy002Test`);
@@ -65,13 +65,13 @@ export default function waterFlowScrollByTest() {
       expect(state2Data[state2Data.length-1] == 11).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0300
-     * @tc.name       : testWaterFlowScrollBy003
-     * @tc.desc       : testing scroll by for waterFlow with {100000 100000} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollBy003
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0300
+     * @tc.desc   testing scroll by for waterFlow with {100000 100000} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollBy003', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollBy003Test`);
@@ -87,13 +87,13 @@ export default function waterFlowScrollByTest() {
       expect(state2Data[state2Data.length-1] == 39).assertEqual(true)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0400
-     * @tc.name       : testWaterFlowScrollBy004
-     * @tc.desc       : testing scroll by for waterFlow with {-100 -100} value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testWaterFlowScrollBy004
+     * @tc.number SUB_ARKUI_CAPI_WATER_FLOW_SCROLL_BY_0400
+     * @tc.desc   testing scroll by for waterFlow with {-100 -100} value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWaterFlowScrollBy004', Level.LEVEL1, async (done: Function) => {
       await Utils.pushPage(`waterflow/WaterFlowScrollBy004Test`);

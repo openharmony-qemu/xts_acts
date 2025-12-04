@@ -25,24 +25,24 @@ export default function dlfcnNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DLFCN_DLSYM_0100
-     * @tc.name       : testMuslDlFcnDlSym001
-     * @tc.desc       : test dlsym
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslDlFcnDlSym001
+     * @tc.number SUB_THIRDPARTY_MUSL_DLFCN_DLSYM_0100
+     * @tc.desc   test dlsym
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDlFcnDlSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(dlfcnndk.dlsym()).assertEqual(0);
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_DLFCN_DLVSYM_0100
-     * @tc.name       : testMuslDlFcnDlVSym001
-     * @tc.desc       : test dlvsym
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslDlFcnDlVSym001
+     * @tc.number SUB_THIRDPARTY_MUSL_DLFCN_DLVSYM_0100
+     * @tc.desc   test dlvsym
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslDlFcnDlVSym001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       expect(dlfcnndk.dlvsym()).assertEqual(0);

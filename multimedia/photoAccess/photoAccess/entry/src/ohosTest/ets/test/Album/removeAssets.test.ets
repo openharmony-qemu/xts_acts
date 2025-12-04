@@ -42,13 +42,13 @@ export default function removeAssetsTest () {
 
     //callback
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0000
-      * @tc.name      : removeAssets_callback_000
-      * @tc.desc      : user album remove image asset
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   removeAssets_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0000
+     * @tc.desc   user album remove image asset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('removeAssets_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_callback_000';
       try {
@@ -85,13 +85,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0200
-      * @tc.name      : removeAssets_callback_002
-      * @tc.desc      : user album remove image&video asset
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_callback_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0200
+     * @tc.desc   user album remove image&video asset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_callback_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_002';
       try {
@@ -133,13 +133,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0300
-      * @tc.name      : removeAssets_callback_003
-      * @tc.desc      : user album remove empty array
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_callback_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0300
+     * @tc.desc   user album remove empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_callback_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_003';
       try {
@@ -163,13 +163,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0400
-      * @tc.name      : removeAssets_callback_004
-      * @tc.desc      : user album remove undefined array,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_callback_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0400
+     * @tc.desc   user album remove undefined array,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_callback_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_004';
       try {
@@ -186,13 +186,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0500
-      * @tc.name      : removeAssets_callback_005
-      * @tc.desc      : user album image asset twice
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_callback_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0500
+     * @tc.desc   user album image asset twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_callback_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_callback_005';
       try {
@@ -218,14 +218,14 @@ export default function removeAssetsTest () {
       }
     });
 
-    /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0600
-      * @tc.name      : removeAssets_callback_006
-      * @tc.desc      : user album remove [123123] array,error code 14000011
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+        /**
+         * @tc.name   removeAssets_callback_006
+         * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_REMOVE_ASSETS_0600
+         * @tc.desc   user album remove [123123] array,error code 14000011
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('removeAssets_callback_006', Level.LEVEL2, async (done: Function) => {
           const testNum = 'removeAssets_callback_006';
           try {
@@ -243,13 +243,13 @@ export default function removeAssetsTest () {
 
     //promise
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0000
-      * @tc.name      : removeAssets_promise_000
-      * @tc.desc      : user album remove image asset
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 0
-    */
+     * @tc.name   removeAssets_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0000
+     * @tc.desc   user album remove image asset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('removeAssets_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'removeAssets_promise_000';
       try {
@@ -276,13 +276,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0200
-      * @tc.name      : removeAssets_promise_002
-      * @tc.desc      : user album remove image&video asset
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_promise_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0200
+     * @tc.desc   user album remove image&video asset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_promise_002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_002';
       try {
@@ -312,13 +312,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0300
-      * @tc.name      : removeAssets_promise_003
-      * @tc.desc      : user album remove empty array
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_promise_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0300
+     * @tc.desc   user album remove empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_promise_003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_003';
       try {
@@ -333,13 +333,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0400
-      * @tc.name      : removeAssets_promise_004
-      * @tc.desc      : user album remove undefined array,error code 13900020
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_promise_004
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0400
+     * @tc.desc   user album remove undefined array,error code 13900020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_promise_004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_004';
       try {
@@ -355,13 +355,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0500
-      * @tc.name      : removeAssets_promise_005
-      * @tc.desc      : remove image asset twice
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_promise_005
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0500
+     * @tc.desc   remove image asset twice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_promise_005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_005';
       try {
@@ -383,13 +383,13 @@ export default function removeAssetsTest () {
     });
 
     /**
-      * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0600
-      * @tc.name      : removeAssets_promise_006
-      * @tc.desc      : user album remove 123123 array,error code 14000011
-      * @tc.size      : MEDIUM
-      * @tc.type      : Function
-      * @tc.level     : Level 2
-    */
+     * @tc.name   removeAssets_promise_006
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_REMOVE_ASSETS_0600
+     * @tc.desc   user album remove 123123 array,error code 14000011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('removeAssets_promise_006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'removeAssets_promise_006';
       try {

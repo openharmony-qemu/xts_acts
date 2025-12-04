@@ -67,12 +67,12 @@ export default function MediaAssetChangeRequestCreateAssetRequestTest() {
     });
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_001
-     * @tc.name      : MediaAssetChangeRequest_createAssetRequest_promise_001
-     * @tc.desc      : createAssetRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_createAssetRequest_promise_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_001
+     * @tc.desc   createAssetRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_createAssetRequest_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'MediaAssetChangeRequest_createAssetRequest_promise_001';
@@ -85,12 +85,12 @@ export default function MediaAssetChangeRequestCreateAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_002
-     * @tc.name      : MediaAssetChangeRequest_createAssetRequest_promise_002
-     * @tc.desc      : createAssetRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_createAssetRequest_promise_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_002
+     * @tc.desc   createAssetRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_createAssetRequest_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'MediaAssetChangeRequest_createAssetRequest_promise_002';
@@ -103,12 +103,12 @@ export default function MediaAssetChangeRequestCreateAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_003
-     * @tc.name      : MediaAssetChangeRequest_createAssetRequest_promise_003
-     * @tc.desc      : createAssetRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_createAssetRequest_promise_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_003
+     * @tc.desc   createAssetRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_createAssetRequest_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'MediaAssetChangeRequest_createAssetRequest_promise_003';
@@ -121,12 +121,12 @@ export default function MediaAssetChangeRequestCreateAssetRequestTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_004
-     * @tc.name      : MediaAssetChangeRequest_createAssetRequest_promise_004
-     * @tc.desc      : createAssetRequest
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MediaAssetChangeRequest_createAssetRequest_promise_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_CREATE_ASSET_REQUEST_004
+     * @tc.desc   createAssetRequest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MediaAssetChangeRequest_createAssetRequest_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName: string = 'MediaAssetChangeRequest_createAssetRequest_promise_004';

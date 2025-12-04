@@ -76,12 +76,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_001
-     * @tc.name      : imageSource_getDisposalTypeList_promise_001
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_001
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_001
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_001';
@@ -92,12 +92,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_002
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_001
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_001
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_002
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_001';
@@ -108,12 +108,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_003
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_002
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_002
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_003
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_002';
@@ -124,12 +124,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_004
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_003
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_003
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_004
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_003';
@@ -140,12 +140,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_005
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_004
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_004
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_005
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_004';
@@ -156,12 +156,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_006
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_005
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_005
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_006
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_005';
@@ -172,12 +172,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_007
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_006
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_006
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_007
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_006';
@@ -188,12 +188,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_008
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_007
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_007
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_008
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_007';
@@ -204,12 +204,12 @@ export default function imageSourceGetDisposalTypeListTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_009
-     * @tc.name      : imageSource_getDisposalTypeList_promise_abnormal_008
-     * @tc.desc      : imageSource_getDisposalTypeList
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_getDisposalTypeList_promise_abnormal_008
+     * @tc.number IMAGE_SOURCE_GET_DISPOSAL_TYPE_LIST_009
+     * @tc.desc   imageSource_getDisposalTypeList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_getDisposalTypeList_promise_abnormal_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_getDisposalTypeList_promise_abnormal_008';

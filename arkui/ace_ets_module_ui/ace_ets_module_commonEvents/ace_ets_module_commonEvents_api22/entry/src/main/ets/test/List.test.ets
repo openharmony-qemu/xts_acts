@@ -13,8 +13,10 @@
  * limitations under the License.
  */
 
-import HasAxisTest from './HasAxisTest/HasAxisTest.test'
+import HasAxisTest from './HasAxisTest/HasAxisTest.test';
+import AllowableMovementTest from "./LongPress/allowableMovement.test";
 
 export default function testsuite() {
   HasAxisTest();
+  AllowableMovementTest();
 }

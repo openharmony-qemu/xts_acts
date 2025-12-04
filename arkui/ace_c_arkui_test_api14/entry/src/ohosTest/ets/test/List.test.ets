@@ -26,6 +26,7 @@ import KeyEventStopPropagationTest from './keyEvent/KeyEventStopPropagationTest.
 import NativeXComponent_RegisterKeyEventCallbackWithResultTest from './keyEvent/NativeXComponent_RegisterKeyEventCallbackWithResultTest.test'
 import tabStop from './tabStop/tabStop.test'
 import ScrollSizeTest from './scrollSize/ScrollSizeTest.test'
+import NodeUtilsMethodTest from './customproperty/NodeUtilsMethodTest.test'
 
 export default function testsuite() {
   customPropertyTest()
@@ -42,4 +43,5 @@ export default function testsuite() {
   NativeXComponent_RegisterKeyEventCallbackWithResultTest()
   tabStop()
   ScrollSizeTest()
+  NodeUtilsMethodTest()
 }

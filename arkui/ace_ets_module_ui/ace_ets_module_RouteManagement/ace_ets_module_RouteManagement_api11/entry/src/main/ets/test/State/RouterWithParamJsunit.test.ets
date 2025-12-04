@@ -47,12 +47,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_021
-     * @tc.name      RouterWithParamJsunit_001
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_001
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_021
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_001', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_001] START');
@@ -71,12 +71,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_020
-     * @tc.name      RouterWithParamJsunit_002
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_002
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_020
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_002', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_002] START');
@@ -95,12 +95,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_022
-     * @tc.name      RouterWithParamJsunit_003
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_003
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_022
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_003', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_003] START');
@@ -119,12 +119,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_018
-     * @tc.name      RouterWithParamJsunit_004
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_004
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_018
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_004', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_004] START');
@@ -143,12 +143,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_019
-     * @tc.name      RouterWithParamJsunit_005
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_005
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_019
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_005', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_005] START');
@@ -167,12 +167,12 @@ export default function RouterWithParamJsunit() {
     });
 
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_015
-     * @tc.name      RouterWithParamJsunit_006
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_006
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_015
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_006', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_006] START');
@@ -192,12 +192,12 @@ export default function RouterWithParamJsunit() {
     });
   
     /**
-     * @tc.number    SUB_ACE_BASICABILITY_ROUTERPAGE_017
-     * @tc.name      RouterWithParamJsunit_007
-     * @tc.desc      The route input parameter is abnormally redirected
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RouterWithParamJsunit_007
+     * @tc.number SUB_ACE_BASICABILITY_ROUTERPAGE_017
+     * @tc.desc   The route input parameter is abnormally redirected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RouterWithParamJsunit_007', Level.LEVEL2, async  (done:Function) =>{
       console.info('[RouterWithParamJsunit_007] START');

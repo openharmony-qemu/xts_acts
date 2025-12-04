@@ -52,12 +52,12 @@ export default function getSupportedCamerasTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_GET_SUPPORTED_CAMERAS_001
-     * @tc.name      : getSupportedCameras_001
-     * @tc.desc      : No abnormal scenarios--Get supported camera device objects
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getSupportedCameras_001
+     * @tc.number CAMERA_MANAGER_GET_SUPPORTED_CAMERAS_001
+     * @tc.desc   No abnormal scenarios--Get supported camera device objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getSupportedCameras_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getSupportedCameras_001';

@@ -49,10 +49,12 @@ export default function SplitPlaceholder() {
 
 
     /**
-     * @tc.number    SplitPlaceholder_0100
-     * @tc.name      SplitPlaceholder_0100
-     * @tc.desc      Test  SplitPlaceholder exist
-     * @tc.level     Level 0
+     * @tc.name   SplitPlaceholder_0100
+     * @tc.number SplitPlaceholder_0100
+     * @tc.desc   Test  SplitPlaceholder exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SplitPlaceholder_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[SplitPlaceholder_0100] START');
@@ -73,10 +75,12 @@ export default function SplitPlaceholder() {
     });
 
     /**
-     * @tc.number    SplitPlaceholder_0200
-     * @tc.name      SplitPlaceholder_0200
-     * @tc.desc      Test set SplitPlaceholder null
-     * @tc.level     Level 0
+     * @tc.name   SplitPlaceholder_0200
+     * @tc.number SplitPlaceholder_0200
+     * @tc.desc   Test set SplitPlaceholder null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SplitPlaceholder_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[SplitPlaceholder_0200] START');
@@ -97,10 +101,12 @@ export default function SplitPlaceholder() {
     });
 
     /**
-     * @tc.number    SplitPlaceholder_0300
-     * @tc.name      SplitPlaceholder_0300
-     * @tc.desc      Test set SplitPlaceholder undefined
-     * @tc.level     Level 0
+     * @tc.name   SplitPlaceholder_0300
+     * @tc.number SplitPlaceholder_0300
+     * @tc.desc   Test set SplitPlaceholder undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SplitPlaceholder_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[SplitPlaceholder_0300] START');
@@ -120,10 +126,12 @@ export default function SplitPlaceholder() {
     });
 
     /**
-     * @tc.number    SplitPlaceholder_0400
-     * @tc.name      SplitPlaceholder_0400
-     * @tc.desc      Test set SplitPlaceholder 空节点
-     * @tc.level     Level 0
+     * @tc.name   SplitPlaceholder_0400
+     * @tc.number SplitPlaceholder_0400
+     * @tc.desc   Test set SplitPlaceholder 空节点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SplitPlaceholder_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[SplitPlaceholder_0400] START');

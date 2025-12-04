@@ -18,7 +18,7 @@ import { getPermission, driveFn, LOG_TAG, fetchAllOption, sleep, isEmpty, copyIm
 import common from '@ohos.app.ability.common';
 import { Driver, MatchPattern, ON } from '@kit.TestKit';
 import { fileIo, fileUri } from '@kit.CoreFileKit';
-
+import { dataSharePredicates } from '@kit.ArkData';
 
 
 const TAG = LOG_TAG + 'GetAssetChange';
@@ -79,14 +79,14 @@ export default function mediaAssetManagerGetAssetsTest() {
       console.info(TAG, 'afterAll case.');
     });
 
-  /**
- * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001
- * @tc.name      : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001
- * @tc.desc      : phAccessHelper.getAssets fileUri ""
- * @tc.size      : MEDIUM
- * @tc.type      : Function
- * @tc.level     : Level 0
- */
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001
+     * @tc.desc   phAccessHelper.getAssets fileUri ""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001', Level.LEVEL0, async (done: Function, pathUri: string) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_001';
       let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
@@ -104,12 +104,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002
-     * @tc.desc      : phAccessHelper.getAssets fileUri null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002
+     * @tc.desc   phAccessHelper.getAssets fileUri null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002', Level.LEVEL0, async (done: Function, pathUri: string) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_002';
@@ -129,12 +129,12 @@ export default function mediaAssetManagerGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003
-     * @tc.name      : PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003
-     * @tc.desc      : phAccessHelper.getAssets fileUri undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003
+     * @tc.desc   phAccessHelper.getAssets fileUri undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003', Level.LEVEL0, async (done: Function, pathUri: string) => {
       const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_ERROR_003';
@@ -154,12 +154,12 @@ export default function mediaAssetManagerGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001
-     * @tc.desc      : getWriteCacheHandler photoType undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001
+     * @tc.desc   getWriteCacheHandler photoType undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_001';
@@ -170,12 +170,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002
-     * @tc.desc      : getWriteCacheHandler photoType null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002
+     * @tc.desc   getWriteCacheHandler photoType null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_002';
@@ -186,12 +186,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003
-     * @tc.desc      : getWriteCacheHandler photoType 3
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003
+     * @tc.desc   getWriteCacheHandler photoType 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_003';
@@ -202,12 +202,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004
-     * @tc.desc      : getWriteCacheHandler photoType 0
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004
+     * @tc.desc   getWriteCacheHandler photoType 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_004';
@@ -219,12 +219,12 @@ export default function mediaAssetManagerGetAssetsTest() {
     })
 
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005
-     * @tc.desc      : getWriteCacheHandler extension  null
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005
+     * @tc.desc   getWriteCacheHandler extension  null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_005';
@@ -236,12 +236,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006
-     * @tc.desc      : getWriteCacheHandler extension  undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006
+     * @tc.desc   getWriteCacheHandler extension  undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_006';
@@ -253,12 +253,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007
-     * @tc.desc      : getWriteCacheHandler extension string
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007
+     * @tc.desc   getWriteCacheHandler extension string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_007';
@@ -270,12 +270,12 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
     /**
-     * @tc.number    : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008
-     * @tc.name      : MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008
-     * @tc.desc      : getWriteCacheHandler extension string empty
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008
+     * @tc.number MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008
+     * @tc.desc   getWriteCacheHandler extension string empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'MEDIA_ASSET_CHANGE_REQUEST_GET_WRITE_CACHE_HANDLER_ERROR_008';
@@ -287,5 +287,167 @@ export default function mediaAssetManagerGetAssetsTest() {
       done();
     })
 
+
+
+
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_001
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_001', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_001';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+        console.info(TAG,'phAccessHelper.getAssets with fetchOptions null ' + fetchResult);
+        expect().assertFalse()
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_002
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_002', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_002';
+      try {
+        AppStorage.setOrCreate('key', undefined);
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+        console.info(TAG,'phAccessHelper.getAssets with fetchOptions null ' + fetchResult);
+        expect().assertFalse()
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_003
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_003', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_FETCH_OPTIONS_NULL_003';
+      try {
+        AppStorage.setOrCreate('key', null);
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> = await phAccessHelper.getAssets(fetchOptions);
+        console.info(TAG,'phAccessHelper.getAssets with fetchOptions null ' + fetchResult);
+        expect().assertFalse()
+      } catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_001
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_001', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_001';
+      try {
+        AppStorage.setOrCreate('key', '');
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+          if (fetchResult !== undefined) {
+            console.info(TAG,testName,'fetchResult success');
+            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+            if (photoAsset !== undefined) {
+              console.info(TAG,testName,'photoAsset.displayName : ' + photoAsset.displayName);
+              expect().assertFail();
+            }
+          } else {
+            console.error(TAG,testName,`fetchResult fail with error: ${err.code}, ${err.message}`);
+          }
+      })
+      }catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_002
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_002', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_002';
+      try {
+        AppStorage.setOrCreate('key', undefined);
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+          if (fetchResult !== undefined) {
+            console.info(TAG,testName,'fetchResult success');
+            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+            if (photoAsset !== undefined) {
+              console.info(TAG,testName,'photoAsset.displayName : ' + photoAsset.displayName);
+              expect().assertFail();
+            }
+          } else {
+            console.error(TAG,testName,`fetchResult fail with error: ${err.code}, ${err.message}`);
+          }
+        })
+      }catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
+    /**
+     * @tc.name   PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_003
+     * @tc.desc   phAccessHelper.getAssets fetchOptions is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_003', Level.LEVEL0, async (done: Function, phAccessHelper: photoAccessHelper.PhotoAccessHelper) => {
+      const testName = 'PHOTO_ACCESS_HELPER_GET_ASSETS_CALLBACK_FETCH_OPTIONS_NULL_003';
+      try {
+        AppStorage.setOrCreate('key', null);
+        let fetchOptions: photoAccessHelper.FetchOptions  = AppStorage.get('key') as ESObject;
+        phAccessHelper.getAssets(fetchOptions, async (err, fetchResult) => {
+          if (fetchResult !== undefined) {
+            console.info(TAG,testName,'fetchResult success');
+            let photoAsset: photoAccessHelper.PhotoAsset = await fetchResult.getFirstObject();
+            if (photoAsset !== undefined) {
+              console.info(TAG,testName,'photoAsset.displayName : ' + photoAsset.displayName);
+              expect().assertFail();
+            }
+          } else {
+            console.error(TAG,testName,`fetchResult fail with error: ${err.code}, ${err.message}`);
+          }
+        })
+      }catch (error) {
+        console.error(TAG,testName, `failed; error: ${error},${error.code},${error.message}`);
+        expect( ).assertUndefined();
+      }
+      done();
+    })
   })
 }

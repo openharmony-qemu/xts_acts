@@ -47,12 +47,12 @@ export default function RenderNodeDisposeTest() {
     });
 
     /**
-     * @tc.number    renderNodeDisposeTest_0100
-     * @tc.name      renderNodeDisposeTest_0100
-     * @tc.desc      frameNode: renderNode Dispose Test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   renderNodeDisposeTest_0100
+     * @tc.number renderNodeDisposeTest_0100
+     * @tc.desc   frameNode: renderNode Dispose Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('renderNodeDisposeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('renderNodeDisposeTest_0100 START');

@@ -166,7 +166,6 @@ export default function ActsRpcRequestJsTest() {
         }        
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0100
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -199,7 +198,6 @@ export default function ActsRpcRequestJsTest() {
         });       
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0200
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -232,7 +230,6 @@ export default function ActsRpcRequestJsTest() {
         });      
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0300
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -265,7 +262,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0400
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -299,7 +295,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0500
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -334,7 +329,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0600
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -368,7 +362,6 @@ export default function ActsRpcRequestJsTest() {
         });  
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0700
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -403,7 +396,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0800
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -437,7 +429,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_0900
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_0900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -475,7 +466,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1000
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -513,7 +503,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1100
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -541,7 +530,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1200
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -577,7 +565,6 @@ export default function ActsRpcRequestJsTest() {
         });  
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1300
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -606,7 +593,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1400
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -643,7 +629,6 @@ export default function ActsRpcRequestJsTest() {
         });  
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1500
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -670,7 +655,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_OnRemoteRequest_1600
          * @tc.number SUB_DSoftbus_IPC_API_OnRemoteRequest_1600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -695,7 +679,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -742,7 +725,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -766,7 +748,6 @@ export default function ActsRpcRequestJsTest() {
         });        
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -791,7 +772,6 @@ export default function ActsRpcRequestJsTest() {
         });         
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -815,7 +795,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -838,7 +817,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -862,7 +840,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -885,7 +862,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -908,7 +884,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -931,7 +906,6 @@ export default function ActsRpcRequestJsTest() {
         });  
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_0900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_0900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -954,7 +928,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -977,7 +950,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1000,7 +972,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1023,7 +994,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1047,7 +1017,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1070,7 +1039,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1094,7 +1062,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1117,7 +1084,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1141,7 +1107,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1164,7 +1129,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_1900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_1900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1188,7 +1152,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1211,7 +1174,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1235,7 +1197,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1258,7 +1219,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1282,7 +1242,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1305,7 +1264,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1329,7 +1287,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1352,7 +1309,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1376,7 +1332,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1400,7 +1355,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_2900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_2900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1426,7 +1380,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1450,7 +1403,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1475,7 +1427,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1499,7 +1450,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1524,7 +1474,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1548,7 +1497,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1573,7 +1521,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1597,7 +1544,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1622,7 +1568,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1646,7 +1591,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_3900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_3900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1671,7 +1615,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1695,7 +1638,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1720,7 +1662,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1744,7 +1685,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1769,7 +1709,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1793,7 +1732,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1818,7 +1756,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1842,7 +1779,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1867,7 +1803,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1890,7 +1825,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_4900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_4900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1913,7 +1847,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1938,7 +1871,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -1965,7 +1897,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2001,7 +1932,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2038,7 +1968,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2059,7 +1988,6 @@ export default function ActsRpcRequestJsTest() {
         });         
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2089,7 +2017,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2120,7 +2047,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2146,7 +2072,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2173,7 +2098,6 @@ export default function ActsRpcRequestJsTest() {
         }); 
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_5900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_5900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2197,7 +2121,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2222,7 +2145,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2244,7 +2166,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2266,7 +2187,6 @@ export default function ActsRpcRequestJsTest() {
         });      
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2292,7 +2212,6 @@ export default function ActsRpcRequestJsTest() {
         });
         
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2316,7 +2235,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2340,7 +2258,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2365,7 +2282,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2389,7 +2305,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2417,7 +2332,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_6900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_6900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2442,7 +2356,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2466,7 +2379,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2491,7 +2403,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2515,7 +2426,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2540,7 +2450,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2564,7 +2473,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2589,7 +2497,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2613,7 +2520,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2637,7 +2543,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2661,7 +2566,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_7900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_7900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2686,7 +2590,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2710,7 +2613,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2735,7 +2637,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2759,7 +2660,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2784,7 +2684,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2808,7 +2707,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2831,7 +2729,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2853,7 +2750,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2878,7 +2774,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2902,7 +2797,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_8900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_8900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2927,7 +2821,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2951,7 +2844,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -2976,7 +2868,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3000,7 +2891,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3025,7 +2915,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3049,7 +2938,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3077,7 +2965,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3101,7 +2988,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3126,7 +3012,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3150,7 +3035,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_9900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_9900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3175,7 +3059,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3199,7 +3082,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3223,7 +3105,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3248,7 +3129,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3272,7 +3152,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3296,7 +3175,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3320,7 +3198,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3345,7 +3222,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3369,7 +3245,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3393,7 +3268,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_10900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_10900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3417,7 +3291,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3442,7 +3315,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3466,7 +3338,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3490,7 +3361,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3514,7 +3384,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3539,7 +3408,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3563,7 +3431,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3587,7 +3454,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3611,7 +3477,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3635,7 +3500,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_11900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_11900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3659,7 +3523,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3683,7 +3546,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3707,7 +3569,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3731,7 +3592,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3755,7 +3615,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3779,7 +3638,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3803,7 +3661,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3827,7 +3684,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3851,7 +3707,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3875,7 +3730,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3899,7 +3753,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_12900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_12900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3923,7 +3776,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3947,7 +3799,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3971,7 +3822,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -3995,7 +3845,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4019,7 +3868,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4043,7 +3891,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4064,7 +3911,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4085,7 +3931,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4109,7 +3954,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4133,7 +3977,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4158,7 +4001,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_13900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_13900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4182,7 +4024,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4206,7 +4047,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4227,7 +4067,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4265,7 +4104,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4291,7 +4129,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4313,7 +4150,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4335,7 +4171,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4357,7 +4192,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4379,7 +4213,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14800
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14800
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4401,7 +4234,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_14900
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_14900
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4423,7 +4255,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15000
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15000
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4462,7 +4293,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15100
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15100
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4484,7 +4314,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15200
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15200
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4508,7 +4337,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15300
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15300
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4533,7 +4361,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15400
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15400
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4558,7 +4385,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15500
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15500
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4584,7 +4410,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15600
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15600
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
@@ -4609,7 +4434,6 @@ export default function ActsRpcRequestJsTest() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_DSoftbus_IPC_API_Errorcode_15700
          * @tc.number SUB_DSoftbus_IPC_API_Errorcode_15700
          * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现

@@ -31,7 +31,7 @@ let g_context: common.UIAbilityContext;
 
 export default function audioRendererEnhanceTest() {
   describe('SetVolumeWithRampTest', () => {
-    let audioRen: audio.AudioRenderer;
+    let audioRen: audio.AudioRenderer | null;
     let Tag = "SetVolumeWithRampTest";
     beforeAll(async () => {
       try {
@@ -73,9 +73,9 @@ export default function audioRendererEnhanceTest() {
         rendererInfo: AudioRendererInfo
       }
       try {
-        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer) => {
+        await audio.createAudioRenderer(AudioRendererOptions).then((data: audio.AudioRenderer | null) => {
           audioRen = data;
-          console.info(`${Tag}: AudioRender Created : Success : Stream Type: SUCCESS data state: ` + Object.keys(data));
+          console.info(`${Tag}: AudioRender Created : Success : Stream Type: SUCCESS data state: ` + Object.keys(data!));
           console.info(`${Tag}: AudioRender Created : Success : Stream Type: SUCCESS data value: ` +
           JSON.stringify(data));
         }).catch((err: Error) => {
@@ -88,7 +88,7 @@ export default function audioRendererEnhanceTest() {
     afterEach(async () => {
       console.info(`${Tag}: afterEach: Test case-level clearance conditions`);
       await Utils.msSleep(2000);
-      await audioRen.release().then(() => {
+      await audioRen!.release().then(() => {
         console.info(`${Tag}: Renderer release : SUCCESS`);
       }).catch((err: Error) => {
         console.info(`${Tag}: Renderer release :ERROR : ${err.message}`);
@@ -102,9 +102,9 @@ export default function audioRendererEnhanceTest() {
     let renderPlay = async () => {
       let bufferSize: long;
       try {
-        bufferSize = await audioRen.getBufferSize();
+        bufferSize = await audioRen!.getBufferSize();
         console.info(`${Tag}: audioRenderer getBufferSize success,bufferSize:${bufferSize} \n`);
-        await audioRen.start();
+        await audioRen!.start();
         console.info(`${Tag}: audioRenderer start success\n`);
       } catch (err) {
         console.info(`${Tag}: audioRenderer start : Error: ${JSON.stringify(err)}\n`);
@@ -158,22 +158,22 @@ export default function audioRendererEnhanceTest() {
     }
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->1)_Duration(1000 ms)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(0->1)_Duration(1000 ms)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(0);
+        await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(1, 1000);
+        audioRen!.setVolumeWithRamp(1, 1000);
         console.info(`${Tag}: setVolumeWithRamp 1,1000 :SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -185,22 +185,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->0)_Duration(100 ms)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(1->0)_Duration(100 ms)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(1);
+        await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(0, 100)
+        audioRen!.setVolumeWithRamp(0, 100)
         console.info(`${Tag}: setVolumeWithRamp 0,100 : SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -212,22 +212,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->0.5)_Duration(10 ms)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(1->0.5)_Duration(10 ms)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(1);
+        await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(0.5, 10)
+        audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -239,22 +239,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->0.5)_Duration(10 ms)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(0->0.5)_Duration(10 ms)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(0);
+        await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(0.5, 10)
+        audioRen!.setVolumeWithRamp(0.5, 10)
         console.info(`${Tag}: setVolumeWithRamp 0.5,10 : SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -266,22 +266,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(0->0)_Duration(10 ms)
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(0->0)_Duration(10 ms)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(0);
+        await audioRen!.setVolume(0);
         console.info(`${Tag}: setVolume 0: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(0, 10)
+        audioRen!.setVolumeWithRamp(0, 10)
         console.info(`${Tag}: setVolumeWithRamp 0,10 : SUCCESS`);
         expect(true).assertTrue();
         done();
@@ -293,22 +293,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->-1)_Duration(1000 ms)_Test 6800101
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(1->-1)_Duration(1000 ms)_Test 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(1);
+        await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(-1, 1000);
+        audioRen!.setVolumeWithRamp(-1, 1000);
         console.info(`${Tag}: setVolumeWithRamp -1,1000: SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -320,22 +320,22 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Volume(1->1.2)_Duration(1000 ms)_Test 6800101
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Volume(1->1.2)_Duration(1000 ms)_Test 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.setVolume(1);
+        await audioRen!.setVolume(1);
         console.info(`${Tag}: setVolume 1: SUCCESS`);
       } catch (error: BusinessError) {
         console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
       }
       try {
-        audioRen.setVolumeWithRamp(1.2, 1000);
+        audioRen!.setVolumeWithRamp(1.2, 1000);
         console.info(`${Tag}: setVolumeWithRamp 1.2,1000: SUCCESS`);
         expect(false).assertTrue();
         done();
@@ -347,19 +347,19 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - On Error State_Stopped Use - Test 6800103
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - On Error State_Stopped Use - Test 6800103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.start();
-        await audioRen.stop();
+        await audioRen!.start();
+        await audioRen!.stop();
         try {
-          audioRen.setVolumeWithRamp(0, 1);
+          audioRen!.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp after stop: SUCCESS`);
           expect(false).assertTrue();
           done();
@@ -376,18 +376,18 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - On Error State_Released Use - Test 6800103
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - On Error State_Released Use - Test 6800103
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
-        await audioRen.release();
+        await audioRen!.release();
         try {
-          audioRen.setVolumeWithRamp(0, 1);
+          audioRen!.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp after stop: SUCCESS`);
           expect(false).assertTrue();
           done();
@@ -404,12 +404,12 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - ALL StreamUsage
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - ALL StreamUsage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -428,7 +428,7 @@ export default function audioRendererEnhanceTest() {
             streamInfo: AudioStreamInfo,
             rendererInfo: AudioRendererInfo
           }
-          let audioRender: audio.AudioRenderer;
+          let audioRender: audio.AudioRenderer | null;
           try {
             let data = await audio.createAudioRenderer(AudioRendererOptions);
             audioRender = data;
@@ -437,13 +437,13 @@ export default function audioRendererEnhanceTest() {
             console.info(`${Tag}: createAudioRenderer : ${testConst.StreamUsage[index]} ERROR : ${err.message}, ${err.code}`);
           }
           try {
-            await audioRen.setVolume(1);
+            await audioRen!.setVolume(1);
             console.info(`${Tag}: setVolume 1: SUCCESS`);
           } catch (error: BusinessError) {
             console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
           }
           try {
-            audioRen.setVolumeWithRamp(0, 1000);
+            audioRen!.setVolumeWithRamp(0, 1000);
             console.info(`${Tag}: setVolumeWithRamp : ${testConst.StreamUsage[index]} success`);
             await Utils.msSleep(20);
           } catch (error: BusinessError) {
@@ -452,7 +452,7 @@ export default function audioRendererEnhanceTest() {
             done();
           }
           if (audioRender != null) {
-            await audioRender.release().then(() => {
+            await audioRender!.release().then(() => {
               // audioRender = null;
             }).catch((err: Error) => {
               console.info(`${Tag}: setVolumeWithRamp Renderer release :fail :${err.message}`);
@@ -470,24 +470,24 @@ export default function audioRendererEnhanceTest() {
     });
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
-     * @tc.desc        AudioRenderer - setVolumeWithRamp - Play a misic
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400
+     * @tc.desc   AudioRenderer - setVolumeWithRamp - Play a misic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_RENDERER_SETVOLUMEWITHRAMP_STATIC_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
         await renderPlay();
         try {
           try {
-            await audioRen.setVolume(1);
+            await audioRen!.setVolume(1);
             console.info(`${Tag}: setVolume 1: SUCCESS`);
           } catch (error: BusinessError) {
             console.info(`${Tag}: setVolume catch error: ${error.code}, ${error.message}`);
           }
-          audioRen.setVolumeWithRamp(0, 1);
+          audioRen!.setVolumeWithRamp(0, 1);
           console.info(`${Tag}: attachVolumeRamp renderPlay: SUCCESS`);
           done();
         } catch (err: BusinessError) {

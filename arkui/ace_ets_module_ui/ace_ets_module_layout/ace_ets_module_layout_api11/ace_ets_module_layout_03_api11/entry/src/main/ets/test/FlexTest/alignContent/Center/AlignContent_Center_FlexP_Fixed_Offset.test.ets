@@ -51,13 +51,15 @@ export default function AlignContent_Center_FlexP_Fixed_Offset() {
       console.info("AlignContent_Center_FlexP_Fixed_Offset after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_CENTER_1000
-     * @tc.name testAlignContentCenterFlexPfixedOffset
-     * @tc.desc Set the AlignContent property of the Flex component to FlexAlign.Center and set the offsize for
-     *               the subcomponent
-     */
 
+    /**
+     * @tc.name   testAlignContentCenterFlexPfixedOffset
+     * @tc.number testAlignContentCenterFlexPfixedOffset
+     * @tc.desc   testAlignContentCenterFlexPfixedOffset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentCenterFlexPfixedOffset',  Level.LEVEL0, async () => {
       console.info('testAlignContentCenterFlexPfixedOffset START');
       let strJson = getInspectorByKey('AlignContent_Center_FlexP_Fixed_Offset_flex001');

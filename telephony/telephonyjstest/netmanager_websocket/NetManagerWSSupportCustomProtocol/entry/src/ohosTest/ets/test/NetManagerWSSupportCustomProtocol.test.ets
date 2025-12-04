@@ -37,12 +37,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     }
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0100
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0100
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0100
-     * @tc.desc Test callback options protocol connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options protocol connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0100 test start")
@@ -70,12 +70,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0200
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0200
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0200
-     * @tc.desc Test promise options protocol connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options protocol connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0200 test start")
@@ -106,12 +106,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0300
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0300
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0300
-     * @tc.desc Test callback options proxy and protocol connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options proxy and protocol connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0300 test start")
@@ -141,12 +141,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0400
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0400
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0400
-     * @tc.desc Test promise options proxy and protocol connect success.
-     * @tc.level 0
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options proxy and protocol connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0400 test start")
@@ -179,12 +179,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0500
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0500
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0500
-     * @tc.desc Test callback options protocol null connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options protocol null connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0500 test start")
@@ -218,12 +218,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0600
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0600
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0600
-     * @tc.desc Test callback options protocol undefined connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test callback options protocol undefined connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0600 test start")
@@ -256,12 +256,12 @@ export default function NetManagerWSSupportCustomProtocol() {
     })
 
     /**
+     * @tc.name   SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0700
      * @tc.number SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0700
-     * @tc.name SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0700
-     * @tc.desc Test promise options protocol undefined connect success.
-     * @tc.level 3
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test promise options protocol undefined connect success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done : Function) => {
       console.info("SUB_NetworkManager_NetStack_Api_WSSupportCustomProtocol_0700 test start")

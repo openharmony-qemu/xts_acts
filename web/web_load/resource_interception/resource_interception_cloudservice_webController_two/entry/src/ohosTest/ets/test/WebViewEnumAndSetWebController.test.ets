@@ -57,14 +57,14 @@ export default function WebViewEnumAndSetWebController() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_ONTOUCHICONURLRECEIVED_0100
-    * @tc.name       : testOnTouchIconUrlReceived001
-    * @tc.desc       : test onTouchIconUrlReceived
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testOnTouchIconUrlReceived001
+     * @tc.number SUB_WEB_ONTOUCHICONURLRECEIVED_0100
+     * @tc.desc   test onTouchIconUrlReceived
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOnTouchIconUrlReceived001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnTouchIconUrlReceived", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

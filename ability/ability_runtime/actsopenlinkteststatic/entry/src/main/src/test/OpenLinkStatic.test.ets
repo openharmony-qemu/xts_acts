@@ -17,7 +17,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach, aft
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import OpenLinkOptions from '@ohos.app.ability.OpenLinkOptions';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
@@ -30,17 +30,17 @@ let linkNotExist = 'demo://www.example.com';
 let invalidParamErrNo = 401;
 let componentNotExistErrNo = 16000019;
 let resultCode = 111;
-let trueparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let trueparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let trueParamOptions: OpenLinkOptions = {
   appLinkingOnly: true,
   parameters: trueparameters
 };
-let falseparameters: Record<String,Object> = {"demo_key": "demo_value"};
+let falseparameters: Record<String, RecordData> = {"demo_key": "demo_value"};
 let falseParamOptions: OpenLinkOptions = {
   appLinkingOnly: false,
   parameters: falseparameters
 };
-let parameters: Record<String,Object> = {"demo_key": "demo_value", "demo_num": 111}
+let parameters: Record<String, RecordData> = {"demo_key": "demo_value", "demo_num": 111}
 let paramOptions: OpenLinkOptions = {
   parameters: parameters
 };
@@ -60,12 +60,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0100
-     * @tc.name    AbilityRuntime_OpenLink_static_0100
-     * @tc.desc    The input parameter 'link' is empty，Call the openLink interface through context,and catch parameter invalid exception
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0100
+     * @tc.desc   The input parameter 'link' is empty，Call the openLink interface through context,and catch parameter invalid exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0100`;
@@ -88,12 +88,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0300
-     * @tc.name    AbilityRuntime_OpenLink_static_0300
-     * @tc.desc    The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through context, open target app successfully
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0300
+     * @tc.desc   The input parameter 'link' is legal uri string and target app exist,Call the openLink interface through context, open target app successfully
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0300 begin');
@@ -115,12 +115,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0400
-     * @tc.name    AbilityRuntime_OpenLink_static_0400
-     * @tc.desc    The input parameter 'link' is legal uri string but target app not exist,Call the openLink interface through context, open target app failed
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0400
+     * @tc.desc   The input parameter 'link' is legal uri string but target app not exist,Call the openLink interface through context, open target app failed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0400`;
@@ -143,12 +143,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0500
-     * @tc.name    AbilityRuntime_OpenLink_static_0500
-     * @tc.desc    The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0500
+     * @tc.desc   The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0500', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0500`;
@@ -172,12 +172,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0600
-     * @tc.name    AbilityRuntime_OpenLink_static_0600
-     * @tc.desc    The input parameter 'link' is valid, appLinkingOnly is false,Call the openLink interface through context, open target app success.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0600
+     * @tc.desc   The input parameter 'link' is valid, appLinkingOnly is false,Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0600`;
@@ -200,12 +200,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0700
-     * @tc.name    AbilityRuntime_OpenLink_static_0700
-     * @tc.desc    The input parameter 'link' is valid, set parameters,Call the openLink interface through context, open target app success.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0700
+     * @tc.desc   The input parameter 'link' is valid, set parameters,Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0700', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0700 begin');
@@ -227,12 +227,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0800
-     * @tc.name    AbilityRuntime_OpenLink_static_0800
-     * @tc.desc    The input parameter 'link' is valid, set parameters,Call the openLink interface through context, open target app success.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0800
+     * @tc.desc   The input parameter 'link' is valid, set parameters,Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0800', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'AbilityRuntime_OpenLink_static_0800 begin');
@@ -261,12 +261,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_0900
-     * @tc.name    AbilityRuntime_OpenLink_static_0900
-     * @tc.desc    The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_0900
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_0900
+     * @tc.desc   The input parameter 'link' is valid, appLinkingOnly is true,Call the openLink interface through context, open target app failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_0900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_0900`;
@@ -297,12 +297,12 @@ export default function openLinkStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OpenLink_static_1000
-     * @tc.name    AbilityRuntime_OpenLink_static_1000
-     * @tc.desc    The input parameter 'link' is valid, appLinkingOnly is false,Call the openLink interface through context, open target app success.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   AbilityRuntime_OpenLink_static_1000
+     * @tc.number SUB_Ability_AbilityRuntime_OpenLink_static_1000
+     * @tc.desc   The input parameter 'link' is valid, appLinkingOnly is false,Call the openLink interface through context, open target app success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('AbilityRuntime_OpenLink_static_1000', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_OpenLink_static_1000`;

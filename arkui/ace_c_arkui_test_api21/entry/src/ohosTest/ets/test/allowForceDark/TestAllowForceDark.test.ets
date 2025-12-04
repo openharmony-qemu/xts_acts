@@ -26,12 +26,12 @@ export default function TestAllowForceDark(){
     });
 
     /**
-     * @tc.number     : SUB_ARKUI_CAPI_TestAllowForceDark_0100
-     * @tc.name       : TestAllowForceDark_001
-     * @tc.desc       : Test AllowForceDark.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   TestAllowForceDark_001
+     * @tc.number SUB_ARKUI_CAPI_TestAllowForceDark_0100
+     * @tc.desc   Test AllowForceDark.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('TestAllowForceDark_001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.TestAllowForceDark()).assertEqual(0)

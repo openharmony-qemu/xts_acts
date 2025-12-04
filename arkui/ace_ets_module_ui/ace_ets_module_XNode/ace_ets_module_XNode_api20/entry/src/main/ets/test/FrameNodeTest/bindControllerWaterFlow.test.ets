@@ -42,12 +42,12 @@ export default function bindControllerWaterFlow() {
     });
 
     /**
-     * @tc.number    bindControllerWaterFlow_0100
-     * @tc.name      bindControllerWaterFlow_0100
-     * @tc.desc      frameNode: test bindController error code for WaterFlow
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   bindControllerWaterFlow_0100
+     * @tc.number bindControllerWaterFlow_0100
+     * @tc.desc   frameNode: test bindController error code for WaterFlow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerWaterFlow_0100', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerWaterFlow_0100 START');
@@ -65,12 +65,12 @@ export default function bindControllerWaterFlow() {
     });
 
     /**
-     * @tc.number    bindControllerWaterFlow_0200
-     * @tc.name      bindControllerWaterFlow_0200
-     * @tc.desc      frameNode: test bindController error code for WaterFlow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindControllerWaterFlow_0200
+     * @tc.number bindControllerWaterFlow_0200
+     * @tc.desc   frameNode: test bindController error code for WaterFlow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindControllerWaterFlow_0200', Level.LEVEL2, async (done: Function) => {
       console.info('bindControllerWaterFlow_0200 START');

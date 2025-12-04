@@ -22,12 +22,12 @@ export default function HidebugNewNdkTest() {
 describe('HidebugNewNdkTest', function () {
 
     /**
+     * @tc.name   SUB_DFX_DFR_Hidebug_StackBack_Fun_0100
      * @tc.number SUB_DFX_DFR_Hidebug_StackBack_Fun_0100
-     * @tc.name SUB_DFX_DFR_Hidebug_StackBack_Fun_0100
-     * @tc.desc 验证获取HiDebug开放调用栈回溯20新增接口
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   验证获取HiDebug开放调用栈回溯20新增接口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DFX_DFR_Hidebug_StackBack_Fun_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
@@ -41,12 +41,12 @@ describe('HidebugNewNdkTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFR_Hidebug_StackBack_NDK_0800
      * @tc.number SUB_DFX_DFR_Hidebug_StackBack_NDK_0800
-     * @tc.name SUB_DFX_DFR_Hidebug_StackBack_NDK_0800
-     * @tc.desc OH_HiDebug_SymbolicAddress接口 返回11400200
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level2
+     * @tc.desc   OH_HiDebug_SymbolicAddress接口 返回11400200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_DFX_DFR_Hidebug_StackBack_NDK_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         try {
@@ -60,12 +60,12 @@ describe('HidebugNewNdkTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiDebug_Mem_C_0700
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_0700
-     * @tc.name SUB_DFX_DFT_HiDebug_Mem_C_0700
-     * @tc.desc 内定泄漏定制能力开放-支持calloc等内存分配
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   内定泄漏定制能力开放-支持calloc等内存分配
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiDebug_Mem_C_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -81,12 +81,12 @@ describe('HidebugNewNdkTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiDebug_Mem_C_1300
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_1300
-     * @tc.name SUB_DFX_DFT_HiDebug_Mem_C_1300
-     * @tc.desc 内定泄漏定制能力开放-结束hook操作
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   内定泄漏定制能力开放-结束hook操作
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiDebug_Mem_C_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {
@@ -102,12 +102,12 @@ describe('HidebugNewNdkTest', function () {
     })
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiDebug_Mem_C_1400
      * @tc.number SUB_DFX_DFT_HiDebug_Mem_C_1400
-     * @tc.name SUB_DFX_DFT_HiDebug_Mem_C_1400
-     * @tc.desc 内定泄漏定制能力开放-内存分配参数无效
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   内定泄漏定制能力开放-内存分配参数无效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiDebug_Mem_C_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
         try {

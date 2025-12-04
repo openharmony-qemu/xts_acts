@@ -46,12 +46,12 @@ export default function StateSet0010TestJsunit() {
     });
 
     /**
-     * @tc.number    StateSet0010TestJsunit
-     * @tc.name      StateSet0010TestJsunit
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   StateSet0010TestJsunit
+     * @tc.number StateSet0010TestJsunit
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('StateSet0010TestJsunit', Level.LEVEL0, async (done: Function) => {
       console.info('[StateSet0010TestJsunit] START');

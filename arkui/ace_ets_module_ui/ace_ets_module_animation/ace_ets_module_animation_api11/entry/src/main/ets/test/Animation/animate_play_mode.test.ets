@@ -41,11 +41,14 @@ export default function playModeReverseJsunit() {
       await Utils.sleep(1000);
       console.info("playModeReverse after each called");
     });
-    /*
- * @tc.number       SUB_ACE_BASIC_ETS_API_0001
- * @tc.name         testPlayModeReverse0001
- * @tc.desic         acePlayModeReverseEtsTest0001
- */
+    /**
+     * @tc.name   testPlayModeReverse0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testPlayModeReverse0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPlayModeReverse0001', Level.LEVEL0, async (done: Function) => {
       console.info('PlayModeReverse testPlayModeReverse0001 START');
       await Utils.sleep(2000);
@@ -62,11 +65,14 @@ export default function playModeReverseJsunit() {
       console.info("[testPlayModeReverse0001] width value :" + JSON.parse(strJson).$attrs.animation);
       done();
     });
-    /*
- * @tc.number       SUB_ACE_BASIC_ETS_API_0001
- * @tc.name         testPlayModeAlternate0001
- * @tc.desic         acePlayModeAlternateEtsTest0009
- */
+    /**
+     * @tc.name   testPlayModeAlternate0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testPlayModeAlternate0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPlayModeAlternate0001', Level.LEVEL0, async (done: Function) => {
       console.info('radioGroup testPlayModeAlternate0001 START');
       await Utils.sleep(2000);

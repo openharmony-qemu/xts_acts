@@ -45,10 +45,13 @@ export default function list_itemOnSelectJsunit() {
       console.info("list_itemOnSelect after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlist_itemOnSelect0001
-     * @tc.desic         acelist_itemOnSelectEtsTest0001
+    /**
+     * @tc.name   testlist_itemOnSelect0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testlist_itemOnSelect0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_itemOnSelect0001', Level.LEVEL1, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0001 START');
@@ -62,10 +65,13 @@ export default function list_itemOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlist_itemOnSelect0002
-     * @tc.desic         acelist_itemOnSelectEtsTest0002
+    /**
+     * @tc.name   testlist_itemOnSelect0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlist_itemOnSelect0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_itemOnSelect0002', Level.LEVEL1, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0002 START');
@@ -79,10 +85,13 @@ export default function list_itemOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testlist_itemOnSelect0003
-     * @tc.desic         acelist_itemOnSelectEtsTest0002
+    /**
+     * @tc.name   testlist_itemOnSelect0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testlist_itemOnSelect0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_itemOnSelect0003', Level.LEVEL1, async () => {
       console.info('selectOnSelect testlist_itemOnSelect0003 START');
@@ -96,10 +105,13 @@ export default function list_itemOnSelectJsunit() {
 
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-     * @tc.name         testlist_itemSwipeAction0004
-     * @tc.desic         acelist_itemSwipeActionEtsTest0004
+    /**
+     * @tc.name   testlist_itemSwipeAction0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   testlist_itemSwipeAction0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlist_itemSwipeAction0004', Level.LEVEL1, async () => {
       console.info('selectOnSelect testlist_itemSwipeAction0004 START');

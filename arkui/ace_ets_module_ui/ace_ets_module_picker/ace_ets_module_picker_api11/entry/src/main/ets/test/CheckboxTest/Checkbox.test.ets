@@ -38,10 +38,13 @@ export default function CheckboxTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0110
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 0
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0110
+     * @tc.number ArkUX_CheckBox_Visual_0110
+     * @tc.desc   Sets the shape property parameter to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_CheckBox_Visual_0110', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0110 START');
@@ -62,10 +65,13 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0120
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to 1
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0120
+     * @tc.number ArkUX_CheckBox_Visual_0120
+     * @tc.desc   Sets the shape property parameter to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_CheckBox_Visual_0120', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0120 START');
@@ -86,10 +92,13 @@ export default function CheckboxTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_CheckBox_Visual_0130
-     *@tc.name   Support modifying the checkBox style change of Checkbox component
-     *@tc.desc   Sets the shape property parameter to default value
+    /**
+     * @tc.name   ArkUX_CheckBox_Visual_0130
+     * @tc.number ArkUX_CheckBox_Visual_0130
+     * @tc.desc   Sets the shape property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_CheckBox_Visual_0130', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_CheckBox_Visual_0130 START');

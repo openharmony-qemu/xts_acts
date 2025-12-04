@@ -152,7 +152,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     }
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetDevicesParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0100
      * @tc.desc   Negative test: Param is null
@@ -177,7 +176,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetDevicesParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0200
      * @tc.desc   Negative test: Param is undefined
@@ -202,7 +200,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetDevicesParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0300
      * @tc.desc   Negative test: Param is null string
@@ -227,7 +224,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRightParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0400
      * @tc.desc   Negative test: Param is null
@@ -252,7 +248,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testHasRightParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0500
      * @tc.desc   Negative test: Param is undefined
@@ -279,7 +274,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRightParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0600
      * @tc.desc   Negative test: Param is null
@@ -304,7 +298,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRightParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0700
      * @tc.desc   Negative test: Param is undefined
@@ -329,7 +322,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRequestRightParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0800
      * @tc.desc   Negative test: Enter two parameters
@@ -357,7 +349,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0900
      * @tc.desc   Negative test: Param is null
@@ -382,7 +373,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1000
      * @tc.desc   Negative test: Param is undefined
@@ -407,7 +397,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testRemoveRightParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1100
      * @tc.desc   Negative test: Enter two parameters
@@ -439,7 +428,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1200
      * @tc.desc   Negative test: Param is null
@@ -464,7 +452,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1300
      * @tc.desc   Negative test: Param is undefined
@@ -489,7 +476,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1400
      * @tc.desc   Negative test: Param is null string ""
@@ -514,7 +500,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1500
      * @tc.desc   Negative test: Enter two parameters
@@ -540,7 +525,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1600
      * @tc.desc   Negative test: devices name is null
@@ -566,7 +550,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1700
      * @tc.desc   Negative test: devices name is undefined
@@ -592,7 +575,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1800
      * @tc.desc   Negative test: devices name is number 123
@@ -618,7 +600,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1900
      * @tc.desc   Negative test: devices busNum is null
@@ -644,7 +625,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2000
      * @tc.desc   Negative test: devices busNum is undefined
@@ -670,7 +650,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2100
      * @tc.desc   Negative test: devices busNum null string ""
@@ -696,7 +675,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2200
      * @tc.desc   Negative test: devices devAddress is null
@@ -722,7 +700,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2300
      * @tc.desc   Negative test: devices devAddress is undefined
@@ -748,7 +725,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2400
      * @tc.desc   Negative test: devices devAddress is null string
@@ -774,7 +750,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2500
      * @tc.desc   Negative test: devices serial is null
@@ -800,7 +775,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2600
      * @tc.desc   Negative test: devices serial is undefined
@@ -826,7 +800,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2700
      * @tc.desc   Negative test: devices serial is number 123
@@ -852,7 +825,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2800
      * @tc.desc   Negative test: devices manufacturerName is null
@@ -878,7 +850,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2900
      * @tc.desc   Negative test: devices manufacturerName is undefined
@@ -904,7 +875,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3000
      * @tc.desc   Negative test: devices manufacturerName is number 123
@@ -930,7 +900,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3100
      * @tc.desc   Negative test: devices productName is null
@@ -956,7 +925,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3200
      * @tc.desc   Negative test: devices productName is undefined
@@ -982,7 +950,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3300
      * @tc.desc   Negative test: devices productName is number 123
@@ -1008,7 +975,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3400
      * @tc.desc   Negative test: devices version is null
@@ -1034,7 +1000,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3500
      * @tc.desc   Negative test: devices version is undefined
@@ -1060,7 +1025,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3600
      * @tc.desc   Negative test: devices vendorId is null
@@ -1086,7 +1050,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3700
      * @tc.desc   Negative test: devices vendorId is undefined
@@ -1112,7 +1075,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3800
      * @tc.desc   Negative test: devices vendorId is null string ""
@@ -1138,7 +1100,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_3900
      * @tc.desc   Negative test: devices productId is null
@@ -1164,7 +1125,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4000
      * @tc.desc   Negative test: devices productId is undefined
@@ -1190,7 +1150,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4100
      * @tc.desc   Negative test: devices productId is null string ""
@@ -1216,7 +1175,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4200
      * @tc.desc   Negative test: devices clazz is null
@@ -1242,7 +1200,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4300
      * @tc.desc   Negative test: devices clazz is undefined
@@ -1268,7 +1225,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4400
      * @tc.desc   Negative test: devices clazz is null string ""
@@ -1294,7 +1250,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4500
      * @tc.desc   Negative test: devices subClass is null
@@ -1320,7 +1275,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr035
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4600
      * @tc.desc   Negative test: devices subClass is undefined
@@ -1346,7 +1300,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr036
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4700
      * @tc.desc   Negative test: devices subClass is null string ""
@@ -1372,7 +1325,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr037
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4800
      * @tc.desc   Negative test: devices protocol is null
@@ -1398,7 +1350,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr038
      * @tc.number SUB_USB_HostManager_JS_ParamErr_4900
      * @tc.desc   Negative test: devices protocol is undefined
@@ -1424,7 +1375,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr039
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5000
      * @tc.desc   Negative test: devices protocol is null string ""
@@ -1450,7 +1400,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr040
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5100
      * @tc.desc   Negative test: devices configs is null
@@ -1476,7 +1425,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr041
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5200
      * @tc.desc   Negative test: devices configs is undefined
@@ -1502,7 +1450,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr042
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5300
      * @tc.desc   Negative test: devices configs is null string ""
@@ -1528,7 +1475,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testConnectDeviceParamErr043
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5400
      * @tc.desc   Negative test: devices configs is number 123
@@ -1554,7 +1500,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5500
      * @tc.desc   Negative test: Enter two parameters
@@ -1580,7 +1525,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5600
      * @tc.desc   Negative test: pipe busNum is null
@@ -1606,7 +1550,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5700
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -1632,7 +1575,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5800
      * @tc.desc   Negative test: pipe busNum is null string ""
@@ -1658,7 +1600,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_5900
      * @tc.desc   Negative test: pipe devAddress is null
@@ -1684,7 +1625,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6000
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -1710,7 +1650,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6100
      * @tc.desc   Negative test: devices devAddress is null string ""
@@ -1736,7 +1675,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6200
      * @tc.desc   Negative test: Param is null
@@ -1761,7 +1699,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6300
      * @tc.desc   Negative test: Param is undefined
@@ -1786,7 +1723,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClosePipeParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6400
      * @tc.desc   Negative test: Param is null string ""
@@ -1811,7 +1747,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6500
      * @tc.desc   Negative test: Enter two parameters
@@ -1838,7 +1773,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6600
      * @tc.desc   Negative test: Param is null
@@ -1863,7 +1797,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6700
      * @tc.desc   Negative test: Param is undefined
@@ -1888,7 +1821,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6800
      * @tc.desc   Negative test: Param is null string ""
@@ -1913,7 +1845,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_6900
      * @tc.desc   Negative test: pipe busNum is null
@@ -1939,7 +1870,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7000
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -1965,7 +1895,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7100
      * @tc.desc   Negative test: pipe busNum is null string ""
@@ -1991,7 +1920,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7200
      * @tc.desc   Negative test: pipe devAddress is null
@@ -2017,7 +1945,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7300
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -2043,7 +1970,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetRawDescriptorParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7400
      * @tc.desc   Negative test: devices devAddress is null string ""
@@ -2069,7 +1995,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7500
      * @tc.desc   Negative test: Enter two parameters
@@ -2097,7 +2022,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7600
      * @tc.desc   Negative test: Param is null
@@ -2123,7 +2047,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7700
      * @tc.desc   Negative test: Param is undefined
@@ -2149,7 +2072,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7800
      * @tc.desc   Negative test: Param is null string ""
@@ -2175,7 +2097,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_7900
      * @tc.desc   Negative test: pipe busNum is null
@@ -2202,7 +2123,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8000
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -2229,7 +2149,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8100
      * @tc.desc   Negative test: pipe busNum is null string ""
@@ -2256,7 +2175,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8200
      * @tc.desc   Negative test: pipe devAddress is null
@@ -2282,7 +2200,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8300
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -2309,7 +2226,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testGetFileDescriptorParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8400
      * @tc.desc   Negative test: devices devAddress is null string ""
@@ -2336,7 +2252,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8500
      * @tc.desc   Negative test: Param is null
@@ -2361,7 +2276,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8600
      * @tc.desc   Negative test: Param is undefined
@@ -2386,7 +2300,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8700
      * @tc.desc   Negative test: Param is null string ""
@@ -2411,7 +2324,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8800
      * @tc.desc   Negative test: pipe busNum is null
@@ -2438,7 +2350,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_8900
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -2465,7 +2376,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9000
      * @tc.desc   Negative test: pipe busNum is null string ""
@@ -2492,7 +2402,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9100
      * @tc.desc   Negative test: pipe devAddress is null
@@ -2519,7 +2428,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9200
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -2546,7 +2454,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9300
      * @tc.desc   Negative test: pipe devAddress is null string ""
@@ -2573,7 +2480,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9400
      * @tc.desc   Negative test: interfaces id is null
@@ -2602,7 +2508,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9500
      * @tc.desc   Negative test: interfaces id is undefined
@@ -2631,7 +2536,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9600
      * @tc.desc   Negative test: interfaces id is null string ""
@@ -2660,7 +2564,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9700
      * @tc.desc   Negative test: interfaces protocol is null
@@ -2689,7 +2592,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9800
      * @tc.desc   Negative test: interfaces protocol is undefined
@@ -2718,7 +2620,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_9900
      * @tc.desc   Negative test: interfaces protocol is null string ""
@@ -2747,7 +2648,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0110
      * @tc.desc   Negative test: interfaces clazz is null
@@ -2776,7 +2676,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0120
      * @tc.desc   Negative test: interfaces clazz is undefined
@@ -2805,7 +2704,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0130
      * @tc.desc   Negative test: interfaces clazz is null string ""
@@ -2834,7 +2732,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0140
      * @tc.desc   Negative test: interfaces name is null
@@ -2863,7 +2760,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0150
      * @tc.desc   Negative test: interfaces name is undefined
@@ -2892,7 +2788,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0160
      * @tc.desc   Negative test: interfaces name is number
@@ -2921,7 +2816,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0170
      * @tc.desc   Negative test: interfaces subClass is null
@@ -2950,7 +2844,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0180
      * @tc.desc   Negative test: interfaces subClass is undefined
@@ -2979,7 +2872,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0190
      * @tc.desc   Negative test: interfaces subClass is null string ""
@@ -3008,7 +2900,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0210
      * @tc.desc   Negative test: interfaces alternateSetting is null
@@ -3037,7 +2928,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0220
      * @tc.desc   Negative test: interfaces alternateSetting is undefined
@@ -3066,7 +2956,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0230
      * @tc.desc   Negative test: interfaces alternateSetting is null string ""
@@ -3095,7 +2984,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0240
      * @tc.desc   Negative test: interfaces endpoints is null
@@ -3124,7 +3012,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0250
      * @tc.desc   Negative test: interfaces endpoints is undefined
@@ -3153,7 +3040,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0260
      * @tc.desc   Negative test: interfaces endpoints is null string ""
@@ -3182,7 +3068,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0270
      * @tc.desc   Negative test: Enter four parameters
@@ -3211,7 +3096,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0280
      * @tc.desc   Negative test: iface is null
@@ -3238,7 +3122,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0290
      * @tc.desc   Negative test: iface is undefined
@@ -3265,7 +3148,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0310
      * @tc.desc   Negative test: iface is ""
@@ -3292,7 +3174,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr035
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0320
      * @tc.desc   Negative test: pipe is null
@@ -3318,7 +3199,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr036
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0330
      * @tc.desc   Negative test: pipe is undefined
@@ -3344,7 +3224,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testClaimInterfaceParamErr037
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0340
      * @tc.desc   Negative test: pipe is ""
@@ -3370,7 +3249,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:57:56
       * @tc.name   testClaimInterfaceParamErr038
       * @tc.number SUB_USB_HostManager_JS_ParamErr_0350
       * @tc.desc   Negative test: force is null string
@@ -3399,7 +3277,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0360
      * @tc.desc   Negative test: Enter two parameters
@@ -3429,7 +3306,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0370
      * @tc.desc   Negative test: Param is null
@@ -3454,7 +3330,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0380
      * @tc.desc   Negative test: Param is undefined
@@ -3479,7 +3354,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0390
      * @tc.desc   Negative test: Param is ""
@@ -3504,7 +3378,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0410
      * @tc.desc   Negative test: pipe is null
@@ -3530,7 +3403,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0420
      * @tc.desc   Negative test: pipe is undefined
@@ -3556,7 +3428,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0430
      * @tc.desc   Negative test: pipe is ""
@@ -3582,7 +3453,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0440
      * @tc.desc   Negative test: config is null
@@ -3609,7 +3479,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0450
      * @tc.desc   Negative test: config is undefined
@@ -3636,7 +3505,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0460
      * @tc.desc   Negative test: config is ""
@@ -3663,7 +3531,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0470
      * @tc.desc   Negative test: config id is null
@@ -3692,7 +3559,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0480
      * @tc.desc   Negative test: config id is undefined
@@ -3721,7 +3587,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0490
      * @tc.desc   Negative test: config id is ""
@@ -3750,7 +3615,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0510
      * @tc.desc   Negative test: config attributes is null
@@ -3779,7 +3643,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0520
      * @tc.desc   Negative test: config attributes is undefined
@@ -3808,7 +3671,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0530
      * @tc.desc   Negative test: config attributes is ""
@@ -3837,7 +3699,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0540
      * @tc.desc   Negative test: config maxPower is null
@@ -3866,7 +3727,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0550
      * @tc.desc   Negative test: config maxPower is undefined
@@ -3895,7 +3755,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0560
      * @tc.desc   Negative test: config maxPower is ""
@@ -3924,7 +3783,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0570
      * @tc.desc   Negative test: config name is null
@@ -3953,7 +3811,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0580
      * @tc.desc   Negative test: config name is undefined
@@ -3982,7 +3839,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0590
      * @tc.desc   Negative test: config name is 123
@@ -4011,7 +3867,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0610
      * @tc.desc   Negative test: config isRemoteWakeup is null
@@ -4040,7 +3895,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0620
      * @tc.desc   Negative test: config isRemoteWakeup is undefined
@@ -4069,7 +3923,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0630
      * @tc.desc   Negative test: config isRemoteWakeup is ""
@@ -4098,7 +3951,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0640
      * @tc.desc   Negative test: config isSelfPowered is null
@@ -4127,7 +3979,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0650
      * @tc.desc   Negative test: config isSelfPowered is undefined
@@ -4156,7 +4007,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0660
      * @tc.desc   Negative test: config isSelfPowered is ""
@@ -4185,7 +4035,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0670
      * @tc.desc   Negative test: config interfaces is null
@@ -4214,7 +4063,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0680
      * @tc.desc   Negative test: config interfaces is undefined
@@ -4243,7 +4091,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0690
      * @tc.desc   Negative test: config interfaces is ""
@@ -4272,7 +4119,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0710
      * @tc.desc   Negative test: config isRemoteWakeup is 123
@@ -4301,7 +4147,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0720
      * @tc.desc   Negative test: config isSelfPowered is 123
@@ -4330,7 +4175,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetConfigurationParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0730
      * @tc.desc   Negative test: config interfaces is 123
@@ -4359,7 +4203,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0740
      * @tc.desc   Negative test: Enter three parameters
@@ -4390,7 +4233,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0750
      * @tc.desc   Negative test: Param is null
@@ -4415,7 +4257,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0760
      * @tc.desc   Negative test: Param is undefined
@@ -4440,7 +4281,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0770
      * @tc.desc   Negative test: Param is ""
@@ -4465,7 +4305,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0780
      * @tc.desc   Negative test: pipe is null
@@ -4491,7 +4330,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0790
      * @tc.desc   Negative test: pipe is undefined
@@ -4517,7 +4355,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0810
      * @tc.desc   Negative test: pipe is ""
@@ -4543,7 +4380,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0820
      * @tc.desc   Negative test: iface is null
@@ -4570,7 +4406,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0830
      * @tc.desc   Negative test: iface is undefined
@@ -4597,7 +4432,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0840
      * @tc.desc   Negative test: iface is ""
@@ -4624,7 +4458,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0850
      * @tc.desc   Negative test: pipe busNum is null
@@ -4652,7 +4485,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0860
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -4680,7 +4512,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0870
      * @tc.desc   Negative test: pipe busNum is ""
@@ -4708,7 +4539,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0880
      * @tc.desc   Negative test: pipe devAddress is null
@@ -4736,7 +4566,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0890
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -4764,7 +4593,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0910
      * @tc.desc   Negative test: pipe devAddress is ""
@@ -4792,7 +4620,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0920
      * @tc.desc   Negative test: interface id is null
@@ -4819,7 +4646,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0930
      * @tc.desc   Negative test: interface id is undefined
@@ -4846,7 +4672,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0940
      * @tc.desc   Negative test: interface id is ""
@@ -4873,7 +4698,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0950
      * @tc.desc   Negative test: interface protocol is null
@@ -4900,7 +4724,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0960
      * @tc.desc   Negative test: interface protocol is undefined
@@ -4927,7 +4750,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0970
      * @tc.desc   Negative test: interface protocol is ""
@@ -4954,7 +4776,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0980
      * @tc.desc   Negative test: interface clazz is null
@@ -4981,7 +4802,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_0990
      * @tc.desc   Negative test: interface clazz is undefined
@@ -5008,7 +4828,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1010
      * @tc.desc   Negative test: interface clazz is ""
@@ -5035,7 +4854,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1020
      * @tc.desc   Negative test: interface subClass is null
@@ -5062,7 +4880,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1030
      * @tc.desc   Negative test: interface subClass is undefined
@@ -5089,7 +4906,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1040
      * @tc.desc   Negative test: interface subClass is ""
@@ -5116,7 +4932,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1050
      * @tc.desc   Negative test: interface alternateSetting is null
@@ -5143,7 +4958,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1060
      * @tc.desc   Negative test: interface alternateSetting is undefined
@@ -5170,7 +4984,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1070
      * @tc.desc   Negative test: interface alternateSetting is ""
@@ -5197,7 +5010,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1080
      * @tc.desc   Negative test: interface name is null
@@ -5224,7 +5036,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1090
      * @tc.desc   Negative test: interface name is undefined
@@ -5251,7 +5062,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1110
      * @tc.desc   Negative test: interface name is 123
@@ -5278,7 +5088,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr035
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1120
      * @tc.desc   Negative test: interface endpoints is null
@@ -5305,7 +5114,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr036
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1130
      * @tc.desc   Negative test: interface endpoints is undefined
@@ -5332,7 +5140,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testSetInterfaceParamErr037
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1140
      * @tc.desc   Negative test: interface endpoints is ""
@@ -5359,7 +5166,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1150
      * @tc.desc   Negative test: Enter three parameters
@@ -5389,7 +5195,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1160
      * @tc.desc   Negative test: Param is null
@@ -5414,7 +5219,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1170
      * @tc.desc   Negative test: Param is undefined
@@ -5439,7 +5243,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1180
      * @tc.desc   Negative test: Param is ""
@@ -5464,7 +5267,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1190
      * @tc.desc   Negative test: pipe is null
@@ -5490,7 +5292,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1210
      * @tc.desc   Negative test: pipe is undefined
@@ -5516,7 +5317,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1220
      * @tc.desc   Negative test: pipe is ""
@@ -5542,7 +5342,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1230
      * @tc.desc   Negative test: interface is null
@@ -5569,7 +5368,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1240
      * @tc.desc   Negative test: interface is undefined
@@ -5596,7 +5394,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1250
      * @tc.desc   Negative test: interface is ""
@@ -5623,7 +5420,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1260
      * @tc.desc   Negative test: pipe busNum is null
@@ -5651,7 +5447,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1270
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -5679,7 +5474,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1280
      * @tc.desc   Negative test: pipe busNum is ""
@@ -5707,7 +5501,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1290
      * @tc.desc   Negative test: pipe devAddress is null
@@ -5735,7 +5528,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1310
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -5763,7 +5555,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1320
      * @tc.desc   Negative test: pipe devAddress is ""
@@ -5791,7 +5582,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1330
      * @tc.desc   Negative test: interface id is null
@@ -5820,7 +5610,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1340
      * @tc.desc   Negative test: interface id is undefined
@@ -5849,7 +5638,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1350
      * @tc.desc   Negative test: interface id is ""
@@ -5878,7 +5666,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1360
      * @tc.desc   Negative test: interface name is null
@@ -5907,7 +5694,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1370
      * @tc.desc   Negative test: interface name is undefined
@@ -5936,7 +5722,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1380
      * @tc.desc   Negative test: interface name is 123
@@ -5965,7 +5750,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1390
      * @tc.desc   Negative test: interface protocol is null
@@ -5994,7 +5778,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1410
      * @tc.desc   Negative test: interface protocol is undefined
@@ -6023,7 +5806,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1420
      * @tc.desc   Negative test: interface protocol is ""
@@ -6052,7 +5834,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1430
      * @tc.desc   Negative test: interface clazz is null
@@ -6081,7 +5862,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1440
      * @tc.desc   Negative test: interface clazz is undefined
@@ -6110,7 +5890,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1450
      * @tc.desc   Negative test: interface clazz is ""
@@ -6139,7 +5918,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1460
      * @tc.desc   Negative test: interface subClass is null
@@ -6168,7 +5946,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1470
      * @tc.desc   Negative test: interface subClass is undefined
@@ -6197,7 +5974,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1480
      * @tc.desc   Negative test: interface subClass is ""
@@ -6226,7 +6002,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1490
      * @tc.desc   Negative test: interface alternateSetting is null
@@ -6255,7 +6030,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1510
      * @tc.desc   Negative test: interface alternateSetting is undefined
@@ -6284,7 +6058,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1520
      * @tc.desc   Negative test: interface alternateSetting is ""
@@ -6313,7 +6086,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr035
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1530
      * @tc.desc   Negative test: interface endpoints is null
@@ -6342,7 +6114,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr036
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1540
      * @tc.desc   Negative test: interface endpoints is undefined
@@ -6371,7 +6142,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testReleaseInterfaceParamErr037
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1550
      * @tc.desc   Negative test: interface endpoints is ""
@@ -6400,7 +6170,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1560
      * @tc.desc   Negative test: Param is null
@@ -6425,7 +6194,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1570
      * @tc.desc   Negative test: Param is undefined
@@ -6450,7 +6218,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1580
      * @tc.desc   Negative test: Param is ""
@@ -6475,7 +6242,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1590
      * @tc.desc   Negative test: pipe is null
@@ -6502,7 +6268,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1610
      * @tc.desc   Negative test: pipe is undefined
@@ -6529,7 +6294,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1620
      * @tc.desc   Negative test: pipe is ""
@@ -6556,7 +6320,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1630
      * @tc.desc   Negative test: endpoint is null
@@ -6584,7 +6347,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1640
      * @tc.desc   Negative test: endpoint is undefined
@@ -6612,7 +6374,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1650
      * @tc.desc   Negative test: endpoint is ""
@@ -6640,7 +6401,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1660
      * @tc.desc   Negative test: buffer is null
@@ -6668,7 +6428,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1670
      * @tc.desc   Negative test: buffer is undefined
@@ -6696,7 +6455,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1680
      * @tc.desc   Negative test: buffer is ""
@@ -6724,7 +6482,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1690
      * @tc.desc   Negative test: pipe busNum is null
@@ -6753,7 +6510,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1710
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -6782,7 +6538,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1720
      * @tc.desc   Negative test: pipe busNum is ""
@@ -6811,7 +6566,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1730
      * @tc.desc   Negative test: pipe devAddress is null
@@ -6840,7 +6594,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1740
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -6869,7 +6622,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1750
      * @tc.desc   Negative test: pipe devAddress is ""
@@ -6898,7 +6650,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1760
      * @tc.desc   Negative test: endpoint address is null
@@ -6928,7 +6679,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1770
      * @tc.desc   Negative test: endpoint address is undefined
@@ -6958,7 +6708,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1780
      * @tc.desc   Negative test: endpoint address is ""
@@ -6988,7 +6737,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1790
      * @tc.desc   Negative test: endpoint number is null
@@ -7018,7 +6766,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1810
      * @tc.desc   Negative test: endpoint number is undefined
@@ -7048,7 +6795,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1820
      * @tc.desc   Negative test: endpoint number is ""
@@ -7078,7 +6824,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1830
      * @tc.desc   Negative test: endpoint type is null
@@ -7106,7 +6851,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1840
      * @tc.desc   Negative test: endpoint type is undefined
@@ -7136,7 +6880,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1850
      * @tc.desc   Negative test: endpoint type is ""
@@ -7166,7 +6909,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1860
      * @tc.desc   Negative test: endpoint attributes is null
@@ -7196,7 +6938,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1870
      * @tc.desc   Negative test: endpoint attributes is undefined
@@ -7226,7 +6967,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1880
      * @tc.desc   Negative test: endpoint attributes is ""
@@ -7256,7 +6996,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1890
      * @tc.desc   Negative test: endpoint interval is null
@@ -7286,7 +7025,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1910
      * @tc.desc   Negative test: endpoint interval is undefined
@@ -7316,7 +7054,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1920
      * @tc.desc   Negative test: endpoint interval is ""
@@ -7346,7 +7083,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr034
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1930
      * @tc.desc   Negative test: endpoint maxPacketSize is null
@@ -7376,7 +7112,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr035
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1940
      * @tc.desc   Negative test: endpoint maxPacketSize is undefined
@@ -7406,7 +7141,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr036
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1950
      * @tc.desc   Negative test: endpoint maxPacketSize is ""
@@ -7436,7 +7170,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr037
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1960
      * @tc.desc   Negative test: endpoint direction is null
@@ -7466,7 +7199,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr038
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1970
      * @tc.desc   Negative test: endpoint direction is undefined
@@ -7496,7 +7228,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr039
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1980
      * @tc.desc   Negative test: endpoint direction is ""
@@ -7526,7 +7257,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr040
      * @tc.number SUB_USB_HostManager_JS_ParamErr_1990
      * @tc.desc   Negative test: endpoint interfaceId is null
@@ -7556,7 +7286,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr041
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2010
      * @tc.desc   Negative test: endpoint interfaceId is undefined
@@ -7586,7 +7315,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testBulkTransferParamErr042
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2020
      * @tc.desc   Negative test: endpoint interfaceId is ""
@@ -7616,7 +7344,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr001
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2030
      * @tc.desc   Negative test: Param is null
@@ -7641,7 +7368,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr002
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2040
      * @tc.desc   Negative test: Param is undefined
@@ -7666,7 +7392,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr003
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2050
      * @tc.desc   Negative test: Param is ""
@@ -7691,7 +7416,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr004
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2060
      * @tc.desc   Negative test: pipe is null
@@ -7717,7 +7441,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr005
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2070
      * @tc.desc   Negative test: pipe is undefined
@@ -7743,7 +7466,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr006
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2080
      * @tc.desc   Negative test: pipe is ""
@@ -7769,7 +7491,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr007
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2090
      * @tc.desc   Negative test: requestparam is null
@@ -7797,7 +7518,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr008
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2110
      * @tc.desc   Negative test: requestparam is undefined
@@ -7825,7 +7545,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr009
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2120
      * @tc.desc   Negative test: requestparam is ""
@@ -7853,7 +7572,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr010
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2130
      * @tc.desc   Negative test: pipe busNum is null
@@ -7881,7 +7599,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr011
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2140
      * @tc.desc   Negative test: pipe busNum is undefined
@@ -7909,7 +7626,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr012
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2150
      * @tc.desc   Negative test: pipe busNum is ""
@@ -7937,7 +7653,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr013
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2160
      * @tc.desc   Negative test: pipe devAddress is null
@@ -7965,7 +7680,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr014
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2170
      * @tc.desc   Negative test: pipe devAddress is undefined
@@ -7993,7 +7707,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr015
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2180
      * @tc.desc   Negative test: pipe devAddress is ""
@@ -8021,7 +7734,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr016
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2190
      * @tc.desc   Negative test: requestparam bmRequestType is null
@@ -8051,7 +7763,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr017
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2210
      * @tc.desc   Negative test: requestparam bmRequestType is undefined
@@ -8081,7 +7792,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr018
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2220
      * @tc.desc   Negative test: requestparam bmRequestType is ""
@@ -8111,7 +7821,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr019
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2230
      * @tc.desc   Negative test: requestparam bRequest is null
@@ -8141,7 +7850,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr020
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2240
      * @tc.desc   Negative test: requestparam bRequest is undefined
@@ -8171,7 +7879,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr021
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2250
      * @tc.desc   Negative test: requestparam bRequest is ""
@@ -8201,7 +7908,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr022
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2260
      * @tc.desc   Negative test: requestparam wValue is null
@@ -8231,7 +7937,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr023
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2270
      * @tc.desc   Negative test: requestparam wValue is undefined
@@ -8261,7 +7966,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr024
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2280
      * @tc.desc   Negative test: requestparam wValue is ""
@@ -8291,7 +7995,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr025
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2290
      * @tc.desc   Negative test: requestparam wIndex is null
@@ -8321,7 +8024,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr026
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2310
      * @tc.desc   Negative test: requestparam wIndex is undefined
@@ -8351,7 +8053,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr027
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2320
      * @tc.desc   Negative test: requestparam wIndex is ""
@@ -8381,7 +8082,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr028
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2330
      * @tc.desc   Negative test: requestparam wLength is null
@@ -8411,7 +8111,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr029
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2340
      * @tc.desc   Negative test: requestparam wLength is undefined
@@ -8441,7 +8140,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr030
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2350
      * @tc.desc   Negative test: requestparam wLength is ""
@@ -8471,7 +8169,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr031
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2360
      * @tc.desc   Negative test: requestparam data is null
@@ -8502,7 +8199,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr032
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2370
      * @tc.desc   Negative test: requestparam data is undefined
@@ -8533,7 +8229,6 @@ describe('UsbApiParamErrJsunitTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbControlTransferParamErr033
      * @tc.number SUB_USB_HostManager_JS_ParamErr_2380
      * @tc.desc   Negative test: requestparam data is ""

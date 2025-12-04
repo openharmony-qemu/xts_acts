@@ -41,12 +41,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0100
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0100
-     * @tc.name Test ECC RFC5915 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -64,12 +64,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0200
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0200
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -93,12 +93,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0201
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0201
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0201", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -122,12 +122,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0202
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0202
-     * @tc.name Test ECC RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is ECC
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is ECC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0202", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -151,12 +151,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0300
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0300
-     * @tc.name Test RSA RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is RSA
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is RSA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -185,12 +185,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0400
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0400
-     * @tc.name Test DSA RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is DSA
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DSA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -217,12 +217,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0500
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0500
-     * @tc.name Test SM2_256 RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is SM2_256
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is SM2_256
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -244,12 +244,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0600
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0600
-     * @tc.name Test Ed25519 RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is Ed25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is Ed25519
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -271,12 +271,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0700
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0700
-     * @tc.name Test DH_modp2048 RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is DH_modp2048
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is DH_modp2048
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -298,12 +298,12 @@ export default function SecurityCryptoFwECCRfc5208TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_ECCRFC5915_Func_0800
      * @tc.number SUB_Security_CryptoFramework_ECCRFC5915_Func_0800
-     * @tc.name Test X25519 RFC5208 algorithm traversal test. Promise style. Process success
-     * @tc.desc algorithm is X25519
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   algorithm is X25519
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_ECCRFC5915_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

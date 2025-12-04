@@ -60,13 +60,13 @@ export default function getSurfaceId() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0100
-     * @tc.name       : emitSetUrlTrustList0100
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   emitSetUrlTrustList0100
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0100
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSetUrlTrustList0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0100", EVENT_ID_SET_EIMIT_KEY)
@@ -79,13 +79,13 @@ export default function getSurfaceId() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0200
-     * @tc.name       : emitSetUrlTrustList0200
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   emitSetUrlTrustList0200
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0200
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSetUrlTrustList0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0200", EVENT_ID_SET_EIMIT_KEY)
@@ -98,14 +98,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0300
-    * @tc.name       : emitSetUrlTrustList0300
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList0300
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0300
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0300", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -117,13 +117,13 @@ export default function getSurfaceId() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0400
-     * @tc.name       : emitSetUrlTrustList0400
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   emitSetUrlTrustList0400
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0400
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSetUrlTrustList0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0400", EVENT_ID_SET_EIMIT_KEY)
@@ -136,13 +136,13 @@ export default function getSurfaceId() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0500
-     * @tc.name       : emitSetUrlTrustList0500
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   emitSetUrlTrustList0500
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0500
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSetUrlTrustList0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0500", EVENT_ID_SET_EIMIT_KEY)
@@ -155,13 +155,13 @@ export default function getSurfaceId() {
       done();
     })
 
-     /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0600
-     * @tc.name       : emitSetUrlTrustList0600
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   emitSetUrlTrustList0600
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0600
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitSetUrlTrustList0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0600", EVENT_ID_SET_EIMIT_KEY)
@@ -174,14 +174,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0700
-    * @tc.name       : emitSetUrlTrustList0700
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList0700
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0700
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0700", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -193,14 +193,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0800
-    * @tc.name       : emitSetUrlTrustList0800
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList0800
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0800
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0800", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -212,14 +212,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0900
-    * @tc.name       : emitSetUrlTrustList0900
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList0900
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_0900
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList0900", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -231,14 +231,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1000
-     * @tc.name       : emitSetUrlTrustList1000
-     * @tc.desc       : SetUrlTrustList
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList1000
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1000
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList1000", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -250,14 +250,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1100
-    * @tc.name       : emitSetUrlTrustList1100
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList1100
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1100
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList1100", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -269,14 +269,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1200
-    * @tc.name       : emitSetUrlTrustList1200
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList1200
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1200
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList1200", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -288,14 +288,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1300
-    * @tc.name       : emitSetUrlTrustList1300
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList1300
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1300
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList1300", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;
@@ -307,14 +307,14 @@ export default function getSurfaceId() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1400
-    * @tc.name       : emitSetUrlTrustList1400
-    * @tc.desc       : SetUrlTrustList
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   emitSetUrlTrustList1400
+     * @tc.number SUB_ACE_BASIC_ETS_SETURLTRUSTLIST_API_1400
+     * @tc.desc   SetUrlTrustList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitSetUrlTrustList1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSetUrlTrustList1400", EVENT_ID_SET_EIMIT_KEY)
       let isReturn = 0;

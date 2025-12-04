@@ -101,9 +101,12 @@ static OH_Huks_Result HksHmacTestCase(const struct OH_Huks_Blob *keyAlias, struc
 }
 
 /**
- * @tc.name: HksHmacTest.Security_HUKS_NAPI_HMAC_hmac_0100
- * @tc.desc: alg-HMAC pur-MAC dig-SHA384.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_HMAC_hmac_0100
+ * @tc.number Security_HUKS_NAPI_HMAC_hmac_0100
+ * @tc.desc   alg-HMAC pur-MAC dig-SHA384.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksHmacTest, Security_HUKS_NAPI_HMAC_hmac_0100, TestSize.Level1)
 {
@@ -124,9 +127,12 @@ HWTEST_F(HksHmacTest, Security_HUKS_NAPI_HMAC_hmac_0100, TestSize.Level1)
 }
 
 /**
- * @tc.name: HksHmacTest.Security_HUKS_NAPI_HMAC_SM3_0100
- * @tc.desc: alg-HMAC pur-MAC dig-sm3.
- * @tc.type: FUNC
+ * @tc.name   Security_HUKS_NAPI_HMAC_SM3_0100
+ * @tc.number Security_HUKS_NAPI_HMAC_SM3_0100
+ * @tc.desc   alg-HMAC pur-MAC dig-sm3.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(HksHmacTest, Security_HUKS_NAPI_HMAC_SM3_0100, TestSize.Level1)
 {

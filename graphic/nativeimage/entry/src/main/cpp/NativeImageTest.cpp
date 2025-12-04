@@ -210,6 +210,8 @@ napi_property_descriptor desc[] = {
         OHNativeImageAcquireLatestNativeWindowBufferAbNormal03, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHNativeImageAcquireLatestNativeWindowBufferCall", nullptr,
         OHNativeImageAcquireLatestNativeWindowBufferCall, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHNativeImageCreateWithSingleBufferModeChangeTextureTarget", nullptr,
+        OHNativeImageCreateWithSingleBufferModeChangeTextureTarget, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

@@ -53,12 +53,12 @@ export default function getBurstAssetsTest() {
     });
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Get_BurstAssets_Static_003
-      * @tc.name    get_image_burst_assets_static_003 
-      * @tc.desc    getBurstAssets by burstKey not exist
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   get_image_burst_assets_static_003 
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_Static_003
+     * @tc.desc   getBurstAssets by burstKey not exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_image_burst_assets_static_003 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -82,12 +82,12 @@ export default function getBurstAssetsTest() {
       })
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Get_BurstAssets_Static_004
-      * @tc.name    get_burst_asset_by_subtype_static_001
-      * @tc.desc    getBurstAssets by subtype
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   get_burst_asset_by_subtype_static_001
+     * @tc.number Sub_PhotoAccess_Helper_Get_BurstAssets_Static_004
+     * @tc.desc   getBurstAssets by subtype
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("get_burst_asset_by_subtype_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

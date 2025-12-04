@@ -37,10 +37,13 @@ export default function SelectTest() {
       done();
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0030
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 200
+    /**
+     * @tc.name   ArkUX_Select_Visual_0030
+     * @tc.number ArkUX_Select_Visual_0030
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to 200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Select_Visual_0030', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0030 START');
@@ -63,10 +66,13 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0040
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to 400
+    /**
+     * @tc.name   ArkUX_Select_Visual_0040
+     * @tc.number ArkUX_Select_Visual_0040
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to 400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Select_Visual_0040', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0040 START');
@@ -89,10 +95,13 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0050
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
+    /**
+     * @tc.name   ArkUX_Select_Visual_0050
+     * @tc.number ArkUX_Select_Visual_0050
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_TRIGGER and 600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Select_Visual_0050', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0050 START');
@@ -115,10 +124,13 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0060
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
+    /**
+     * @tc.name   ArkUX_Select_Visual_0060
+     * @tc.number ArkUX_Select_Visual_0060
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to FIT_CONTENT and 600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Select_Visual_0060', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0060 START');
@@ -141,10 +153,13 @@ export default function SelectTest() {
       }, 500);
     });
 
-    /*
-     *@tc.number ArkUX_Select_Visual_0070
-     *@tc.name   Support modifying the select optionWidth and optionHeight change of Select component
-     *@tc.desc   Sets the optionWidth and optionHeight property parameter to default value
+    /**
+     * @tc.name   ArkUX_Select_Visual_0070
+     * @tc.number ArkUX_Select_Visual_0070
+     * @tc.desc   Sets the optionWidth and optionHeight property parameter to default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ArkUX_Select_Visual_0070', Level.LEVEL1, async (done: Function) => {
       console.info('ArkUX_Select_Visual_0070 START');

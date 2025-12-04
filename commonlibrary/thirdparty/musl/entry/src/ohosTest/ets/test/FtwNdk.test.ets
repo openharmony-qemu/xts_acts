@@ -25,12 +25,12 @@ export default function ftwNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_FTW_0100
-     * @tc.name       : testMuslFtwFtw001
-     * @tc.desc       : test ftw
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwFtw001
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_FTW_0100
+     * @tc.desc   test ftw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwFtw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -40,12 +40,12 @@ export default function ftwNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_FTW64_0100
-     * @tc.name       : testMuslFtwFtw64001
-     * @tc.desc       : test ftw64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwFtw64001
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_FTW64_0100
+     * @tc.desc   test ftw64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwFtw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 0;
@@ -54,12 +54,12 @@ export default function ftwNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_NFTW_0100
-     * @tc.name       : testMuslFtwNftw001
-     * @tc.desc       : nftw
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwNftw001
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_NFTW_0100
+     * @tc.desc   nftw
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwNftw001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = ftw.nftw();
@@ -67,12 +67,12 @@ export default function ftwNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_FTW_NFTW64_0100
-     * @tc.name       : testMuslFtwNftw64001
-     * @tc.desc       : nftw64
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslFtwNftw64001
+     * @tc.number SUB_THIRDPARTY_MUSL_FTW_NFTW64_0100
+     * @tc.desc   nftw64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslFtwNftw64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = ftw.nftw64();

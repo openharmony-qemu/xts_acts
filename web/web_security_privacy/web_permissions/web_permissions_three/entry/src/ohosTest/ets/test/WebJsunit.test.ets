@@ -41,10 +41,13 @@ export default function webJsunit() {
     })
 
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_021
-     *tc.name geolocationAccessFalse
-     *tc.desic Sets false not allow access to geographical locations
+    /**
+     * @tc.name   geolocationAccessFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_021
+     * @tc.desc   geolocationAccessFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('geolocationAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGeolocationAccessFalse", 160950)
@@ -52,30 +55,39 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_024
-     *tc.name onGeolocationShow
-     *tc.desic Triggered when requesting to show the geolocation permission
+    /**
+     * @tc.name   onGeolocationShow
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_024
+     * @tc.desc   onGeolocationShow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onGeolocationShow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnGeolocationShow", 160950)
       Utils.registerContainEvent("onGeolocationShow", "onGeolocationShow", 160970, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_025
-     *tc.name domStorageAccessFalse
-     *tc.desic Sets not to enable the DOM Storage API permission
+    /**
+     * @tc.name   domStorageAccessFalse
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_025
+     * @tc.desc   domStorageAccessFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('domStorageAccessFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDomStorageAccessFalse", 160950)
       Utils.registerContainEvent("domStorageAccessFalse", "sorry", 160980, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_026
-     *tc.name domStorageAccessTrue
-     *tc.desic Sets  enable the DOM Storage API permission
+    /**
+     * @tc.name   domStorageAccessTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_026
+     * @tc.desc   domStorageAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('domStorageAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDomStorageAccessTrue", 160950)
@@ -83,10 +95,13 @@ export default function webJsunit() {
       sendEventByKey('webcomponent', 10, '');
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_031
-     *tc.name databaseAccessTrue
-     *tc.desic Sets allow the Web access the database
+    /**
+     * @tc.name   databaseAccessTrue
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_031
+     * @tc.desc   databaseAccessTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('databaseAccessTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDatabaseAccessTrue", 160950)

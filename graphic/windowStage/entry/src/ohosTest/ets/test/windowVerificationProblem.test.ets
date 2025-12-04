@@ -37,6 +37,8 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
   describe('window_verification_problem_test', () => {
     console.log('describe window_verification_problem_test start!!!')
     let isPCStatus: string = '';
+    let isAutoWindow: string = '';
+    let isFreeWindowMode = false;
     beforeAll(() => {
       console.info('window_layout_test beforeAll begin');
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
@@ -44,15 +46,22 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
+      console.error(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let windowClass = windowStage.getMainWindowSync();
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
       console.info('window_layout_test beforeAll end');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4040
-     * @tc.name      : testSetWindowBrightness_NotAppWin_Callback
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_NotAppWin_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4040
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_NotAppWin_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_NotAppWin_Callback';
@@ -93,12 +102,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4050
-     * @tc.name      : testSetWindowBrightness_NotAppWin_Promise
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_NotAppWin_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4050
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_NotAppWin_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowBrightness_NotAppWin_Promise';
@@ -131,12 +140,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       await (win as ohosWindow.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4060
-     * @tc.name      : testSetWindowBrightness_MainWin_DefaultValue_Promise
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowBrightness_MainWin_DefaultValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4060
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowBrightness_MainWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async () => {
       let caseName = 'testSetWindowBrightness_MainWin_DefaultValue_Promise';
@@ -158,12 +167,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4070
-     * @tc.name      : testSetWindowBrightness_MainWin_DefaultValue_Callback
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetWindowBrightness_MainWin_DefaultValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4070
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowBrightness_MainWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_NotAppWin_Callback';
@@ -191,12 +200,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4080
-     * @tc.name      : testSetWindowBrightness_SubWin_DefaultValue_Callback
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_SubWin_DefaultValue_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4080
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_SubWin_DefaultValue_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetWindowBrightness_SubWin_DefaultValue_Callback';
@@ -232,12 +241,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4090
-     * @tc.name      : testSetWindowBrightness_SubWin_DefaultValue_Promise
-     * @tc.desc      : Set the screen brightness value
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetWindowBrightness_SubWin_DefaultValue_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4090
+     * @tc.desc   Set the screen brightness value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowBrightness_SubWin_DefaultValue_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetWindowBrightness_SubWin_DefaultValue_Promise';
@@ -265,12 +274,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
-     * @tc.name      : testResize_FullScreen_Promise
-     * @tc.desc      : Verify the full screen window resize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_FullScreen_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4100
+     * @tc.desc   Verify the full screen window resize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_FullScreen_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_FullScreen_Promise';
@@ -331,12 +340,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
-     * @tc.name      : testResizeAsync_FullScreen
-     * @tc.desc      : Verify the full screen window resize
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResizeAsync_FullScreen
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4600
+     * @tc.desc   Verify the full screen window resize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResizeAsync_FullScreen', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResizeAsync_FullScreen';
@@ -415,12 +424,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4610
-     * @tc.name      : testMoveWindowToAsync_FullScreen
-     * @tc.desc      : Verify the full screen window move
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testMoveWindowToAsync_FullScreen
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4610
+     * @tc.desc   Verify the full screen window move
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToAsync_FullScreen', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testMoveWindowToAsync_FullScreen';
@@ -501,12 +510,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4110
-     * @tc.name      : testSetAspectRatio_Max_Value_Promise
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Max_Value_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4110
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Max_Value_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_Max_Value_Promise';
@@ -528,12 +537,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4120
-     * @tc.name      : testSetAspectRatio_Max_Value_Callback
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Max_Value_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4120
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Max_Value_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetAspectRatio_Max_Value_Callback';
@@ -562,12 +571,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4130
-     * @tc.name      : testSetAspectRatio_Min_Value_Promise
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Min_Value_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4130
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Min_Value_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_Min_Value_Promise';
@@ -590,12 +599,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4140
-     * @tc.name      : testSetAspectRatio_Minus_Min_Value_Promise
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Minus_Min_Value_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4140
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Minus_Min_Value_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetAspectRatio_Minus_Min_Value_Promise';
@@ -618,12 +627,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4150
-     * @tc.name      : testSetAspectRatio_Min_Value_Callback
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Min_Value_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4150
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Min_Value_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetAspectRatio_Min_Value_Callback';
@@ -652,12 +661,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4160
-     * @tc.name      : testSetAspectRatio_Minus_Min_Value_Callback
-     * @tc.desc      : Validate the scenario where the content layout proportion of the main window is abnormal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testSetAspectRatio_Minus_Min_Value_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4160
+     * @tc.desc   Validate the scenario where the content layout proportion of the main window is abnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetAspectRatio_Minus_Min_Value_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetAspectRatio_Minus_Min_Value_Callback';
@@ -686,12 +695,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4270
-     * @tc.name      : testResize_Dialog_SetLessThenWindowLimits
-     * @tc.desc      : Verify that get and set values are the same
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testResize_Dialog_SetLessThenWindowLimits
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4270
+     * @tc.desc   Verify that get and set values are the same
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testResize_Dialog_SetLessThenWindowLimits', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testResize_Dialog_SetLessThenWindowLimits';
@@ -734,12 +743,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       await (tempWnd as ohosWindow.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4280
-     * @tc.name      : testGetPreferredOrientation_AutoRotationUnspecified
-     * @tc.desc      : Sets the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_AutoRotationUnspecified
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4280
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_AutoRotationUnspecified', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testGetPreferredOrientation_AutoRotationUnspecified';
@@ -770,12 +779,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
-     * @tc.name      : testGetPreferredOrientation_UserRotationPortrait
-     * @tc.desc      : Sets the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_UserRotationPortrait
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_UserRotationPortrait', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testGetPreferredOrientation_UserRotationPortrait';
@@ -806,12 +815,12 @@ export default function windowVerificationProblemTest(context: common.UIAbilityC
       });
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
-     * @tc.name      : testGetPreferredOrientation_WindowAbnormal
-     * @tc.desc      : Sets the display direction property of the window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_WindowAbnormal
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4290
+     * @tc.desc   Sets the display direction property of the window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_WindowAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName: string = 'testGetPreferredOrientation_WindowAbnormal';

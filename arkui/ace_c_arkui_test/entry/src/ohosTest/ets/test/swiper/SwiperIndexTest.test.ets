@@ -26,39 +26,39 @@ export default function swiperIndexTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDEX_0100
-     * @tc.name       : testSwiperIndex001
-     * @tc.desc       : testing index for swiper with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperIndex001
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDEX_0100
+     * @tc.desc   testing index for swiper with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndex001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndex001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDEX_0200
-     * @tc.name       : testSwiperIndex002
-     * @tc.desc       : testing index for swiper with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwiperIndex002
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDEX_0200
+     * @tc.desc   testing index for swiper with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndex002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndex002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPER_INDEX_0300
-     * @tc.name       : testSwiperIndex003
-     * @tc.desc       : testing index for swiper with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testSwiperIndex003
+     * @tc.number SUB_ARKUI_CAPI_SWIPER_INDEX_0300
+     * @tc.desc   testing index for swiper with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwiperIndex003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSwiperIndex003()).assertEqual(0)

@@ -63,59 +63,99 @@ export default function WebViewActiveWebEngineVersion() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0100
-    * @tc.name       : emitActiveWebEngineVersion001
-    * @tc.desc       : emitActiveWebEngineVersion001
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0100
+    * @tc.name       testActiveWebEngineVersion001
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 0
     */
-    it('emitActiveWebEngineVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testActiveWebEngineVersion001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion001', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion001', webview.ArkWebEngineVersion.M132, 20250903, done);
+      Utils.registerEvent('testActiveWebEngineVersion001', webview.ArkWebEngineVersion.M132, 20250903, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0200
-    * @tc.name       : emitActiveWebEngineVersion002
-    * @tc.desc       : emitActiveWebEngineVersion002
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 2
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0200
+    * @tc.name       testActiveWebEngineVersion002
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 2
     */
-    it('emitActiveWebEngineVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+    it('testActiveWebEngineVersion002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion002', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion002', true, 20250904, done);
+      Utils.registerEvent('testActiveWebEngineVersion002', true, 20250904, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0300
-    * @tc.name       : emitActiveWebEngineVersion003
-    * @tc.desc       : emitActiveWebEngineVersion003
-    * @tc.size       : MEDIUM
-    * @tc.type       : Function
-    * @tc.level      : Level 0
+    /**
+    * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0300
+    * @tc.name       testActiveWebEngineVersion003
+    * @tc.desc       WebEngineVersion
+    * @tc.size       MEDIUM
+    * @tc.type       Function
+    * @tc.level      Level 0
     */
-    it('emitActiveWebEngineVersion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testActiveWebEngineVersion003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion003', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion003', webview.ArkWebEngineVersion.M132, 20250905, done);
+      Utils.registerEvent('testActiveWebEngineVersion003', webview.ArkWebEngineVersion.M132, 20250905, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 
     /**
     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0400
-    * @tc.name       emitActiveWebEngineVersion004
-    * @tc.desc       emitActiveWebEngineVersion004
+    * @tc.name       testActiveWebEngineVersion004
+    * @tc.desc       WebEngineVersion
     * @tc.size       MEDIUM
     * @tc.type       Function
     * @tc.level      Level 0
     */
-    it('emitActiveWebEngineVersion004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('testActiveWebEngineVersion004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitActiveWebEngineVersion004', 10)
-      Utils.registerEvent('emitActiveWebEngineVersion004', webview.ArkWebEngineVersion.M132, 20250940, done);
+      Utils.registerEvent('testActiveWebEngineVersion004', webview.ArkWebEngineVersion.M132, 20250940, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0500
+     * @tc.name       testActiveWebEngineVersion005
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion005', 10)
+      Utils.registerEvent('testActiveWebEngineVersion005', webview.ArkWebEngineVersion.M132, 20251218, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0600
+     * @tc.name       testActiveWebEngineVersion006
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion006', 10)
+      Utils.registerEvent('testActiveWebEngineVersion006', webview.ArkWebEngineVersion.M132, 20251219, done);
+      sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
+    })
+    /**
+     * @tc.number     SUB_WEB_WEBVIEWACTIVEWEBENGINEVERSION_0700
+     * @tc.name       testActiveWebEngineVersion007
+     * @tc.desc       WebEngineVersion
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testActiveWebEngineVersion007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      Utils.emitEvent('emitActiveWebEngineVersion007', 10)
+      Utils.registerEvent('testActiveWebEngineVersion007', webview.ArkWebEngineVersion.M132, 20251220, done);
       sendEventByKey('WebViewActiveWebEngineVersionButton', 10, '');
     })
 

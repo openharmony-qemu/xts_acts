@@ -54,7 +54,6 @@ export default function I18NTest() {
     });
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_static_8800
      * @tc.number SUB_GLOBAL_I18N_JS_static_8800
      * @tc.desc   get the isRTL value, test isRTL interface with zh-CN param
@@ -70,7 +69,6 @@ export default function I18NTest() {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_static_8900
      * @tc.number i18n_test_static_8900
      * @tc.desc   get the isRTL value
@@ -86,7 +84,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_static_9000
      * @tc.number i18n_test_static_9000
      * @tc.desc   get the isRTL value
@@ -103,7 +100,6 @@ export default function I18NTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   SUB_GLOBAL_I18N_EntityRecognizer_static_1100
      * @tc.number SUB_GLOBAL_I18N_EntityRecognizer_static_1100
      * @tc.desc   findEntityInfo - Identifying Entity Information in Text

@@ -27,12 +27,12 @@ export default function addProcessorTestFromConfigTest() {
     hilog.info(logDomain, tag, 'describe start');
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3000
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3000
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3000
-     * @tc.desc 验证addProcessorFromConfig入参name正常，返回对应代理id
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name正常，返回对应代理id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3000', Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3000 start');
@@ -54,12 +54,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3001
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3001
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3001
-     * @tc.desc 验证addProcessorFromConfig入参name正常，返回对应代理id
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name正常，返回对应代理id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3001', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3001 start');
@@ -81,12 +81,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3002
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3002
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3002
-     * @tc.desc 验证addProcessorFromConfig入参configName为异常字符串，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参configName为异常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3002', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3002 start');
@@ -102,12 +102,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3003
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3003
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3003
-     * @tc.desc 验证addProcessorFromConfig入参configName为空常字符串，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参configName为空常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3003', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3003 start');
@@ -123,12 +123,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3005
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3005
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3005
-     * @tc.desc 验证addProcessorFromConfig入参configName为数字，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参configName为数字，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3005', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3005 start');
@@ -144,12 +144,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3006
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3006
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3006
-     * @tc.desc 验证addProcessorFromConfig入参configName为257字节，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参configName为257字节，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3006', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3006 start');
@@ -166,12 +166,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3007
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3007
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3007
-     * @tc.desc 验证addProcessorFromConfig入参name为异常字符串，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name为异常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3007', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3007 start');
@@ -187,12 +187,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3008
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3008
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3008
-     * @tc.desc 验证addProcessorFromConfig入参name为空字符串，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name为空字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3008', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3008 start');
@@ -208,12 +208,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3010
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3010
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3010
-     * @tc.desc 验证addProcessorFromConfig入参name为数字，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name为数字，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3010', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3010 start');
@@ -229,12 +229,12 @@ export default function addProcessorTestFromConfigTest() {
     });
 
     /**
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Static_Js_3011
      * @tc.number SUB_DFX_DFT_HiAppEvent_Static_Js_3011
-     * @tc.name SUB_DFX_DFT_HiAppEvent_Static_Js_3011
-     * @tc.desc 验证addProcessorFromConfig入参name为257字节，返回值11105001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证addProcessorFromConfig入参name为257字节，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_DFX_DFT_HiAppEvent_Static_Js_3011', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(logDomain, tag, 'SUB_DFX_DFT_HiAppEvent_Static_Js_3011 start');

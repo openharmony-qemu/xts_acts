@@ -41,12 +41,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0100
      * @tc.number textTimerJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0100 START');
@@ -66,12 +66,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0100
      * @tc.number textTimerJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0100 START');
@@ -91,12 +91,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0100
      * @tc.number textTimerJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0100 START');
@@ -116,12 +116,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0100
      * @tc.number textTimerJsunit_0100
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0100 START');
@@ -135,12 +135,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0200
      * @tc.number textTimerJsunit_0200
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0200', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0200 START');
@@ -155,12 +155,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0300
      * @tc.number textTimerJsunit_0300
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0300', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0300 START');
@@ -175,12 +175,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0400
      * @tc.number textTimerJsunit_0400
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0400 START');
@@ -195,12 +195,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0500
      * @tc.number textTimerJsunit_0500
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0500', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0500 START');
@@ -215,12 +215,12 @@ export default function textTimer() {
     });
 
     /**
+     * @tc.name   textTimerJsunit_0600
      * @tc.number textTimerJsunit_0600
-     * @tc.name   Test the properties of components
      * @tc.desc   Set attribute values
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textTimerJsunit_0600', Level.LEVEL0, async (done: Function) => {
       console.info('textTimerJsunit_0600 START');

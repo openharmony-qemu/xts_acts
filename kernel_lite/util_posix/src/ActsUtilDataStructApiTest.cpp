@@ -49,10 +49,13 @@ static int NumCompare(const void *p1, const void *p2)
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0100
-* @tc.name       test bsearch api with key in array
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testBsearch0100
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testBsearch0100, Function | MediumTest | Level1) {
     int numArray[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int *itemPtr = nullptr;
@@ -65,10 +68,13 @@ HWTEST_F(ActsUtilDataStructApiTest, testBsearch0100, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0200
-* @tc.name       test bsearch api with key not in array
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testBsearch0200
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_BSEARCH_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testBsearch0200, Function | MediumTest | Level1) {
     int numArray[10] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
     int *itemPtr = nullptr;
@@ -81,10 +87,13 @@ HWTEST_F(ActsUtilDataStructApiTest, testBsearch0200, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0300
-* @tc.name       test hcreate api with key and value in hash
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testHcreate0300
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testHcreate0300, Function | MediumTest | Level1) {
     int createResult;
     size_t netVal = 10;
@@ -113,10 +122,13 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreate0300, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0400
-* @tc.name       test hcreate api with key and value not in hash
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testHcreate0400
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testHcreate0400, Function | MediumTest | Level1) {
     int createResult;
     size_t netVal = 10;
@@ -137,10 +149,13 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreate0400, Function | MediumTest | Lev
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0500
-* @tc.name       test hcreate_r api with key and value in hash
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testHcreateR0500
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testHcreateR0500, Function | MediumTest | Level1) {
     int createResult;
     int returnVal = 0;
@@ -171,10 +186,13 @@ HWTEST_F(ActsUtilDataStructApiTest, testHcreateR0500, Function | MediumTest | Le
 }
 
 /**
-* @tc.number     SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0600
-* @tc.name       test hcreate_r api with key and value not in hash
-* @tc.desc       [C- SOFTWARE -0200]
-*/
+ * @tc.name   testHcreateR0600
+ * @tc.number SUB_KERNEL_UTIL_DATASTRUCT_HCREATE_R_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 HWTEST_F(ActsUtilDataStructApiTest, testHcreateR0600, Function | MediumTest | Level1) {
     int createResult;
     int returnVal = 0;

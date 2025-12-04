@@ -50,12 +50,15 @@ export default function AlignContentFlexP_Fixed_Visibility() {
       console.info("AlignContentFlexP_Fixed_Visibility after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_1300
-     * @tc.name testAlignContentSpaceEvenlyFlexfixedVisibilityHidden
-     * @tc.desc Set the visibility property of the subcomponents of flex to Visibility.Hidden.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexfixedVisibilityHidden
+     * @tc.number testAlignContentSpaceEvenlyFlexfixedVisibilityHidden
+     * @tc.desc   testAlignContentSpaceEvenlyFlexfixedVisibilityHidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexfixedVisibilityHidden START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -111,12 +114,15 @@ export default function AlignContentFlexP_Fixed_Visibility() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEEVENLY_1400
-     * @tc.name testAlignContentSpaceEvenlyFlexfixedVisibilityNone
-     * @tc.desc Set the visibility property of the subcomponents of flex to Visibility.None.
-     */
 
+    /**
+     * @tc.name   testAlignContentSpaceEvenlyFlexfixedVisibilityNone
+     * @tc.number testAlignContentSpaceEvenlyFlexfixedVisibilityNone
+     * @tc.desc   testAlignContentSpaceEvenlyFlexfixedVisibilityNone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentSpaceEvenlyFlexfixedVisibilityNone',  Level.LEVEL0, async () => {
       console.info('testAlignContentSpaceEvenlyFlexfixedVisibilityNone START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

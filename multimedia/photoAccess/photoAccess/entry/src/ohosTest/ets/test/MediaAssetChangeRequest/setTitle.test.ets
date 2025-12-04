@@ -29,12 +29,12 @@ export default function setTitleChangeRequestTest() {
       await sleep(1000);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0000
-     * @tc.name      : set_title_change_request_000
-     * @tc.desc      : change asset title
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   set_title_change_request_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0000
+     * @tc.desc   change asset title
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_title_change_request_000', Level.LEVEL0, async (done: Function) => {
       let testNum = 'set_title_change_request_000';
@@ -60,12 +60,12 @@ export default function setTitleChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0100
-     * @tc.name      : set_title_change_request_001
-     * @tc.desc      : change asset title '', error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   set_title_change_request_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0100
+     * @tc.desc   change asset title '', error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_title_change_request_001', Level.LEVEL2, async (done: Function) => {
       let testNum = 'set_title_change_request_001';
@@ -84,12 +84,12 @@ export default function setTitleChangeRequestTest() {
     })
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0200
-     * @tc.name      : set_title_change_request_002
-     * @tc.desc      : change asset title undefined,error code is 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   set_title_change_request_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_TITLE_CHANGE_REQUEST_0200
+     * @tc.desc   change asset title undefined,error code is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_title_change_request_002', Level.LEVEL2, async (done: Function) => {
       let testNum = 'set_title_change_request_002';

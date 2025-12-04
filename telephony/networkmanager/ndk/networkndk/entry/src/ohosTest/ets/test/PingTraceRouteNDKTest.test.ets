@@ -55,12 +55,12 @@ export default function PingTraceRouteNDKTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerPingErrorCode401_0100
      * @tc.number SUB_NetworkManager_Ping_ErrorCode401_0100
-     * @tc.name testNetworkManagerPingErrorCode401_0100
-     * @tc.desc Test Ping Error Code 401 of destination is null
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test Ping Error Code 401 of destination is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerPingErrorCode401_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerPingErrorCode401_0100';
@@ -80,12 +80,12 @@ export default function PingTraceRouteNDKTest() {
     });
 
     /**
+     * @tc.name   testNetworkManagerPing_destination_int_0100
      * @tc.number SUB_NetworkManager_Ping_destination_int_0100
-     * @tc.name testNetworkManagerPing_destination_int_0100
-     * @tc.desc Test Ping destination is int
-     * @tc.level Level1
-     * @tc.type: Function
-     * @tc.size: SmallTest
+     * @tc.desc   Test Ping destination is int
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testNetworkManagerPing_destination_int_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
       const caseName: string = 'testNetworkManagerPing_destination_int_0100';

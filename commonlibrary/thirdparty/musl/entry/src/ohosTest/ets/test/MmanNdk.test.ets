@@ -25,12 +25,12 @@ export default function mmanNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MEMFDCREATE_0100
-     * @tc.name       : testMuslMmanmemfdCreate001
-     * @tc.desc       : test memfd_create
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslMmanmemfdCreate001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MEMFDCREATE_0100
+     * @tc.desc   test memfd_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanmemfdCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.memfdCreate();
@@ -39,12 +39,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MINCORE_0100
-     * @tc.name       : testMuslMmanMinCore001
-     * @tc.desc       : test mincore
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testMuslMmanMinCore001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MINCORE_0100
+     * @tc.desc   test mincore
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMinCore001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mincore();
@@ -54,12 +54,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MUNMAP_0100
-     * @tc.name       : testMuslMmanMunmap001
-     * @tc.desc       : test munmap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMunmap001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MUNMAP_0100
+     * @tc.desc   test munmap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMunmap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a = 4;
@@ -69,12 +69,12 @@ export default function mmanNdkTest() {
       done();
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MPROTECT_0100
-     * @tc.name       : testMuslMmanMProtect001
-     * @tc.desc       : test mprotect
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMProtect001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MPROTECT_0100
+     * @tc.desc   test mprotect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMProtect001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mProtect();
@@ -83,12 +83,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MREMAP_0100
-     * @tc.name       : testMuslMmanMreMap001
-     * @tc.desc       : test mremap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMreMap001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MREMAP_0100
+     * @tc.desc   test mremap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMreMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mreMap();
@@ -97,12 +97,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MSYNC_0100
-     * @tc.name       : testMuslMmanMSync001
-     * @tc.desc       : test mremap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMSync001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MSYNC_0100
+     * @tc.desc   test mremap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMSync001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mSync();
@@ -111,12 +111,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MUNLOCK_0100
-     * @tc.name       : testMuslMmanMunlock001
-     * @tc.desc       : test munlock
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMunlock001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MUNLOCK_0100
+     * @tc.desc   test munlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMunlock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mUnLock();
@@ -125,12 +125,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MUNLOCKALL_0100
-     * @tc.name       : testMuslMmanMunlockAll001
-     * @tc.desc       : test munlockall
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMunlockAll001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MUNLOCKALL_0100
+     * @tc.desc   test munlockall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMunlockAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mUnLockAll();
@@ -139,12 +139,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MMAN_MADVISE_0100
-     * @tc.name       : testMuslMmanMadvise001
-     * @tc.desc       : test madvise
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMmanMadvise001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MADVISE_0100
+     * @tc.desc   test madvise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMadvise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let data: number = mman.mAdvise();
@@ -153,12 +153,12 @@ export default function mmanNdkTest() {
       done()
     });
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MLOCK_0100
-     * @tc.name     : testMuslMmanMLock001
-     * @tc.desc     : test mlock
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMmanMLock001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MLOCK_0100
+     * @tc.desc   test mlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMLock001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mLock(0);
@@ -167,12 +167,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MLOCK_0200
-     * @tc.name     : testMuslMmanMLock002
-     * @tc.desc     : test mlock
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslMmanMLock002
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MLOCK_0200
+     * @tc.desc   test mlock
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMLock002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mLock(-1);
@@ -181,12 +181,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MLOCK2_0100
-     * @tc.name     : testMuslMmanMLock2001
-     * @tc.desc     : test mlock2
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMmanMLock2001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MLOCK2_0100
+     * @tc.desc   test mlock2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMLock2001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mLock2(0);
@@ -195,12 +195,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MLOCK2_0200
-     * @tc.name     : testMuslMmanMLock2002
-     * @tc.desc     : test mlock2
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 2
+     * @tc.name   testMuslMmanMLock2002
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MLOCK2_0200
+     * @tc.desc   test mlock2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMLock2002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mLock2(-1);
@@ -209,12 +209,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MLOCKALL_0100
-     * @tc.name     : testMuslMmanMLockAll001
-     * @tc.desc     : test mlockall
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMmanMLockAll001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MLOCKALL_0100
+     * @tc.desc   test mlockall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMLockAll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mLockAll();
@@ -223,12 +223,12 @@ export default function mmanNdkTest() {
     });
 
     /**
-     * @tc.number   : SUB_THIRDPARTY_MUSL_MMAN_MMAP64_0100
-     * @tc.name     : testMuslMmanMmap64001
-     * @tc.desc     : test mmap64
-     * @tc.size     : MediumTest
-     * @tc.type     : Function
-     * @tc.level    : Level 1
+     * @tc.name   testMuslMmanMmap64001
+     * @tc.number SUB_THIRDPARTY_MUSL_MMAN_MMAP64_0100
+     * @tc.desc   test mmap64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMmanMmap64001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: number = mman.mmap64();

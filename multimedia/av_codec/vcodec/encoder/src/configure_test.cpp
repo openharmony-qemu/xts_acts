@@ -83,9 +83,12 @@ void HwEncConfigureNdkTest::TearDown()
 namespace {
 
 /**
- * @tc.number    : VIDEO_ENCODE_HEVC_CAPABILITY_1800
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_HEVC_CAPABILITY_1800
+ * @tc.number VIDEO_ENCODE_HEVC_CAPABILITY_1800
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_1800, TestSize.Level2)
 {
@@ -118,9 +121,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_HEVC_CAPABILITY_1800, TestSize.Leve
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_4000
- * @tc.name      : OH_AVCapability_GetVideoWidthRangeForHeight param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_4000
+ * @tc.number VIDEO_ENCODE_CAPABILITY_4000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4000, TestSize.Level2)
 {
@@ -156,9 +162,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4000, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_4400
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_4400
+ * @tc.number VIDEO_ENCODE_CAPABILITY_4400
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4400, TestSize.Level2)
 {
@@ -194,9 +203,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4400, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_4410
- * @tc.name      : OH_AVCapability_GetVideoHeightRangeForWidth param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_4410
+ * @tc.number VIDEO_ENCODE_CAPABILITY_4410
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4410, TestSize.Level2)
 {
@@ -232,9 +244,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4410, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_4700
- * @tc.name      : OH_AVCapability_GetVideoWidthRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_4700
+ * @tc.number VIDEO_ENCODE_CAPABILITY_4700
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4700, TestSize.Level2)
 {
@@ -270,9 +285,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4700, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_4710
- * @tc.name      : OH_AVCapability_GetVideoWidthRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_4710
+ * @tc.number VIDEO_ENCODE_CAPABILITY_4710
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4710, TestSize.Level2)
 {
@@ -308,9 +326,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_4710, TestSize.Level2)
 }
 
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_5000
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_5000
+ * @tc.number VIDEO_ENCODE_CAPABILITY_5000
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_5000, TestSize.Level2)
 {
@@ -345,9 +366,12 @@ HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_5000, TestSize.Level2)
     }
 }
 /**
- * @tc.number    : VIDEO_ENCODE_CAPABILITY_5010
- * @tc.name      : OH_AVCapability_GetVideoHeightRange param correct
- * @tc.desc      : api test
+ * @tc.name   VIDEO_ENCODE_CAPABILITY_5010
+ * @tc.number VIDEO_ENCODE_CAPABILITY_5010
+ * @tc.desc   api test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(HwEncConfigureNdkTest, VIDEO_ENCODE_CAPABILITY_5010, TestSize.Level2)
 {

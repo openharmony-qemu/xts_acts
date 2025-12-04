@@ -59,42 +59,42 @@ export default function WebViewGetMode() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMODE_0100
-    * @tc.name       : testWebViewGetMode01
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMode01
+     * @tc.number SUB_WEB_WEBVIEWGETMODE_0100
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMode01", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMode01", FileSelectorMode.FileOpenMode, 20251121, done);
       await Utils.waitAndClickComponent(driver, "WebViewGetModeButton","testWebViewGetMode01");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMODE_0200
-    * @tc.name       : testWebViewGetMode02
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMode02
+     * @tc.number SUB_WEB_WEBVIEWGETMODE_0200
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMode02", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMode02", FileSelectorMode.FileOpenMultipleMode, 20251122, done);
       await Utils.waitAndClickComponent(driver, "WebViewGetModeButton","testWebViewGetMode02");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMODE_0300
-    * @tc.name       : testWebViewGetMode03
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMode03
+     * @tc.number SUB_WEB_WEBVIEWGETMODE_0300
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMode03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMode03", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMode03", FileSelectorMode.FileOpenFolderMode, 20251123, done);
@@ -103,14 +103,14 @@ export default function WebViewGetMode() {
 
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETMODE_0400
-    * @tc.name       : testWebViewGetMode04
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetMode04
+     * @tc.number SUB_WEB_WEBVIEWGETMODE_0400
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetMode04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetMode04", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetMode04", FileSelectorMode.FileSaveMode, 20251124, done);

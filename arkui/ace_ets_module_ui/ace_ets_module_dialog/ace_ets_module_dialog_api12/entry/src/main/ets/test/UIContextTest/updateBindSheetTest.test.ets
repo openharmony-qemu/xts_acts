@@ -40,12 +40,12 @@ export default function updateBindSheetTest() {
       done();
     });
     /**
-     * @tc.number    updateBindSheet
-     * @tc.name      updateBindSheetTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   updateBindSheetTest_0100
+     * @tc.number updateBindSheet
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('updateBindSheetTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('updateBindSheetTest_0100 START');

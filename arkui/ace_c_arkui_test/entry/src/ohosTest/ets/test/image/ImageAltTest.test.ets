@@ -26,13 +26,13 @@ export default function imageAltTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_ALT_0100
-     * @tc.name       : testImageAlt001
-     * @tc.desc       : testing alt for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageAlt001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_ALT_0100
+     * @tc.desc   testing alt for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageAlt001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageAlt001()).assertEqual(0)

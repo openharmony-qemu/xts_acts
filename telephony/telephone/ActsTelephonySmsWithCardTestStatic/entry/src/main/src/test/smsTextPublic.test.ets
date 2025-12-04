@@ -53,12 +53,12 @@ export default function smsTextPublic() {
     let specification2: string = '3gpp2';
 
     /**
-     * @tc.number    : SUB_Telephony_SmsMms_HasSmsCapability_0100
-     * @tc.name      : testTelephonySmsMmsHasSmsCapability0100
-     * @tc.desc      : Check if the current device has the ability to send and receive text messages, which is a synchronization method. version 7
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testTelephonySmsMmsHasSmsCapability0100
+     * @tc.number SUB_Telephony_SmsMms_HasSmsCapability_0100
+     * @tc.desc   Check if the current device has the ability to send and receive text messages, which is a synchronization method. version 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTelephonySmsMmsHasSmsCapability0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonySmsMmsHasSmsCapability0100'

@@ -43,6 +43,14 @@ export default function AlertDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   AlertDialogAJsunit_0100
+     * @tc.number AlertDialogAJsunit_0100
+     * @tc.desc   AlertDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('AlertDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('AlertDialogAJsunit_0100 START');

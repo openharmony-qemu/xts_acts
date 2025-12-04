@@ -58,13 +58,13 @@ const TEST_MORE_REQUEST_LEN: number = 2;
 export default function HttpRequestOnOffTest() {
   describe("HttpRequestOnTest", () => {
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0100
-     * @tc.name:    testHttpRequestOn0100
-     * @tc.desc:    test on with type headerReceive  send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testHttpRequestOn0100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0100
+     * @tc.desc   test on with type headerReceive  send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHttpRequestOn0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0100";
@@ -128,13 +128,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0200
-     * @tc.name:    testHttpRequestOn0200
-     * @tc.desc:    test on with type headerReceive send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testTypeHeaderReceive0200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0200
+     * @tc.desc   test on with type headerReceive send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypeHeaderReceive0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0200SUB_Global_httpRequest_on_0200";
@@ -199,13 +199,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0300
-     * @tc.name:    testHttpRequestOn0300
-     * @tc.desc:    test on with type headerReceive  send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testOnTypeHeaderReceive0300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0300
+     * @tc.desc   test on with type headerReceive  send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnTypeHeaderReceive0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = "testHttpRequestOn0300";
@@ -269,13 +269,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0400
-     * @tc.name:    testHttpRequestOn0400
-     * @tc.desc:    test on with type headersReceive  send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 0
+    /**
+     * @tc.name   testHttpRequestOn0400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0400
+     * @tc.desc   test on with type headersReceive  send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHttpRequestOn0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0400";
@@ -340,13 +340,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0500
-     * @tc.name:    testHttpRequestOn0500
-     * @tc.desc:    test on with type headersReceive  send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn0500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0500
+     * @tc.desc   test on with type headersReceive  send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0500";
@@ -412,13 +412,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0600
-     * @tc.name:    testHttpRequestOn0600
-     * @tc.desc:    test on with type headersReceive  send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn0600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0600
+     * @tc.desc   test on with type headersReceive  send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0600";
@@ -484,13 +484,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0700
-     * @tc.name:    testHttpRequestOn0700
-     * @tc.desc:    test on with type dataReceive send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn0700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0700
+     * @tc.desc   test on with type dataReceive send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0700";
@@ -555,13 +555,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0800
-     * @tc.name:    testHttpRequestOn0800
-     * @tc.desc:    test on with type dataReceive send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn0800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0800
+     * @tc.desc   test on with type dataReceive send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0800";
@@ -627,13 +627,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_0900
-     * @tc.name:    testHttpRequestOn0900
-     * @tc.desc:    test on with type dataReceive send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn0900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_0900
+     * @tc.desc   test on with type dataReceive send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0900";
@@ -699,13 +699,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1000
-     * @tc.name:    testHttpRequestOn1000
-     * @tc.desc:    test on with type dataEnd send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1000
+     * @tc.desc   test on with type dataEnd send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn0900";
@@ -772,13 +772,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1100
-     * @tc.name:    testHttpRequestOn1100
-     * @tc.desc:    test on with type dataEnd send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1100
+     * @tc.desc   test on with type dataEnd send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1100";
@@ -846,13 +846,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1200
-     * @tc.name:    testHttpRequestOn1200
-     * @tc.desc:    test on with type dataEnd send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1200
+     * @tc.desc   test on with type dataEnd send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1200";
@@ -919,13 +919,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1300
-     * @tc.name:    testHttpRequestOn1300
-     * @tc.desc:    test on with type dataReceiveProgress send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1300
+     * @tc.desc   test on with type dataReceiveProgress send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1300";
@@ -989,13 +989,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1400
-     * @tc.name:    testHttpRequestOn1400
-     * @tc.desc:    test on with type dataReceiveProgress send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1400
+     * @tc.desc   test on with type dataReceiveProgress send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1400";
@@ -1060,13 +1060,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1500
-     * @tc.name:    testHttpRequestOn1500
-     * @tc.desc:    test on with type dataReceiveProgress send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1500
+     * @tc.desc   test on with type dataReceiveProgress send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1500";
@@ -1131,13 +1131,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1600
-     * @tc.name  :  SUB_NetworkMgr_Http_HttpRequest_On_1600
-     * @tc.desc  :  test on with type dataSendProgress send one request with httpRequest.requestInStream only one listener
-     * @tc.size  :  MediumTest
-     * @tc.type  :  method
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequestOn1600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1600
+     * @tc.desc   test on with type dataSendProgress send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1600";
@@ -1203,13 +1203,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1700
-     * @tc.name:    testHttpRequestOn1700
-     * @tc.desc:    test on with type dataSendProgress send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1700
+     * @tc.desc   test on with type dataSendProgress send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1700";
@@ -1274,13 +1274,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_1800
-     * @tc.name:    testHttpRequestOn1800
-     * @tc.desc:    test on with type dataSendProgress send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn1800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_1800
+     * @tc.desc   test on with type dataSendProgress send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn1800";
@@ -1347,13 +1347,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_1900
-     * @tc.name:   SUB_NetworkMgr_Http_HttpRequest_Once_1900
-     * @tc.desc:    test once with type headersReceive  send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce1900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_1900
+     * @tc.desc   test once with type headersReceive  send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce1900";
@@ -1419,13 +1419,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_2000
-     * @tc.name:    testHttpRequestOnce2000
-     * @tc.desc:    test once with type headersReceive  send more request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce2000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_2000
+     * @tc.desc   test once with type headersReceive  send more request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce2000";
@@ -1490,13 +1490,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_2100
-     * @tc.name:    testHttpRequestOnce2100
-     * @tc.desc:    test once with type headersReceive  send more request with httpRequest.requestInStream  one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce2100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_2100
+     * @tc.desc   test once with type headersReceive  send more request with httpRequest.requestInStream  one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce2100";
@@ -1562,13 +1562,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_2200
-     * @tc.name:    testHttpRequestOnce2200
-     * @tc.desc:    test once with type headersReceive  send more request with httpRequest.request only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce2200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_2200
+     * @tc.desc   test once with type headersReceive  send more request with httpRequest.request only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce2200";
@@ -1634,13 +1634,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_2300
-     * @tc.name:    testHttpRequestOnce2300
-     * @tc.desc:    test once with type headersReceive  send one request with httpRequest.request  one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce2300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_2300
+     * @tc.desc   test once with type headersReceive  send one request with httpRequest.request  one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce2300";
@@ -1706,13 +1706,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_Once_2400
-     * @tc.name:    testHttpRequestOnce2400
-     * @tc.desc:    test once with type headersReceive  send more request with httpRequest.request  one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOnce2400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_Once_2400
+     * @tc.desc   test once with type headersReceive  send more request with httpRequest.request  one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOnce2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOnce2400";
@@ -1778,13 +1778,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_2500
-     * @tc.name:    testHttpRequestOn2500
-     * @tc.desc:    test on with type dataReceive with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn2500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_2500
+     * @tc.desc   test on with type dataReceive with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn2500";
@@ -1839,13 +1839,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_2600
-     * @tc.name:    testHttpRequestOn2600
-     * @tc.desc:    test on with type dataReceiveProgress with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn2600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_2600
+     * @tc.desc   test on with type dataReceiveProgress with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn2600";
@@ -1901,13 +1901,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_2700
-     * @tc.name:    testHttpRequestOn2700
-     * @tc.desc:    test on with type dataEnd with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn2700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_2700
+     * @tc.desc   test on with type dataEnd with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn2700";
@@ -1963,13 +1963,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_2800
-     * @tc.name:    testHttpRequestOn2800
-     * @tc.desc:    test on with type dataSendProgress with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn2800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_2800
+     * @tc.desc   test on with type dataSendProgress with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn2800";
@@ -2025,14 +2025,14 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-    * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_2900
-    * @tc.name:    testHttpRequestOn2900
-    * @tc.desc:    test on with type headerReceive  send one request with httpRequest.requestInStream only one listener Promise
-    * @tc.size:    MediumTest
-    * @tc.type:    Function
-    * @tc.level:   level 2
-    */
+    /**
+     * @tc.name   testHttpRequestOn2900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_2900
+     * @tc.desc   test on with type headerReceive  send one request with httpRequest.requestInStream only one listener Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testHttpRequestOn2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn2900";
       console.info(`${caseName} test Start`);
@@ -2087,13 +2087,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3000
-     * @tc.name:    testHttpRequestOn3000
-     * @tc.desc:    test on with type headerReceive  send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3000
+     * @tc.desc   test on with type headerReceive  send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3000";
@@ -2149,13 +2149,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3100
-     * @tc.name:    testHttpRequestOn3100
-     * @tc.desc:    test on with type headerReceive  send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3100
+     * @tc.desc   test on with type headerReceive  send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3100";
@@ -2212,13 +2212,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3200
-     * @tc.name:    testHttpRequestOn3200
-     * @tc.desc:    test on with type headersReceive  send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3200
+     * @tc.desc   test on with type headersReceive  send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3200";
@@ -2275,13 +2275,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3300
-     * @tc.name:    testHttpRequestOn3300
-     * @tc.desc:    test on with type headersReceive  send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3300
+     * @tc.desc   test on with type headersReceive  send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3300";
@@ -2338,13 +2338,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3400
-     * @tc.name:    testHttpRequestOn3400
-     * @tc.desc:    test on with type headersReceive  send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3400
+     * @tc.desc   test on with type headersReceive  send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3400";
@@ -2401,13 +2401,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3500
-     * @tc.name:    testHttpRequestOn3500
-     * @tc.desc:    test on with type dataReceive send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3500
+     * @tc.desc   test on with type dataReceive send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3500";
@@ -2463,13 +2463,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3600
-     * @tc.name:    testHttpRequestOn3600
-     * @tc.desc:    test on with type dataReceive send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3600
+     * @tc.desc   test on with type dataReceive send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3600";
@@ -2526,13 +2526,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3700
-     * @tc.name:    testHttpRequestOn3700
-     * @tc.desc:    test on with type dataReceive send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3700
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3700
+     * @tc.desc   test on with type dataReceive send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3700";
@@ -2589,13 +2589,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3800
-     * @tc.name:    testHttpRequestOn3800
-     * @tc.desc:    test on with type dataEnd send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3800
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3800
+     * @tc.desc   test on with type dataEnd send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3800";
@@ -2654,13 +2654,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_3900
-     * @tc.name:    testHttpRequestOn3900
-     * @tc.desc:    test on with type dataEnd send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn3900
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_3900
+     * @tc.desc   test on with type dataEnd send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn3900";
@@ -2721,13 +2721,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4000
-     * @tc.name:    testHttpRequestOn4000
-     * @tc.desc:    test on with type dataEnd send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4000
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4000
+     * @tc.desc   test on with type dataEnd send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4000";
@@ -2787,13 +2787,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4100
-     * @tc.name:    testHttpRequestOn4100
-     * @tc.desc:    test on with type dataReceiveProgress send one request with httpRequest.requestInStream only one listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4100
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4100
+     * @tc.desc   test on with type dataReceiveProgress send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4100";
@@ -2849,13 +2849,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4200
-     * @tc.name:    testHttpRequestOn4200
-     * @tc.desc:    test on with type dataReceiveProgress send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4200
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4200
+     * @tc.desc   test on with type dataReceiveProgress send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4200";
@@ -2912,13 +2912,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4300
-     * @tc.name:    testHttpRequestOn4300
-     * @tc.desc:    test on with type dataReceiveProgress send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4300
+     * @tc.desc   test on with type dataReceiveProgress send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4300";
@@ -2975,13 +2975,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4400
-     * @tc.name  :  SUB_NetworkMgr_Http_HttpRequest_On_4400
-     * @tc.desc  :  test on with type dataSendProgress send one request with httpRequest.requestInStream only one listener
-     * @tc.size  :  MediumTest
-     * @tc.type  :  method
-     * @tc.level :  level 2
+    /**
+     * @tc.name   testHttpRequestOn4400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4400
+     * @tc.desc   test on with type dataSendProgress send one request with httpRequest.requestInStream only one listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4400";
@@ -3037,13 +3037,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4500
-     * @tc.name:    testHttpRequestOn4500
-     * @tc.desc:    test on with type dataSendProgress send one request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4500
+     * @tc.desc   test on with type dataSendProgress send one request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4500";
@@ -3100,13 +3100,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_4600
-     * @tc.name:    testHttpRequestOn4600
-     * @tc.desc:    test on with type dataSendProgress send more request with httpRequest.requestInStream one more listener
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn4600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_4600
+     * @tc.desc   test on with type dataSendProgress send more request with httpRequest.requestInStream one more listener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn4600";
@@ -3162,13 +3162,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_5300
-     * @tc.name:    testHttpRequestOn5300
-     * @tc.desc:    test on with type dataReceive with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn5300
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_5300
+     * @tc.desc   test on with type dataReceive with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn5300";
@@ -3215,13 +3215,13 @@ export default function HttpRequestOnOffTest() {
       console.info(`${caseName} test End`);
     });
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_5400
-     * @tc.name:    testHttpRequestOn5400
-     * @tc.desc:    test on with type dataReceiveProgress with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn5400
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_5400
+     * @tc.desc   test on with type dataReceiveProgress with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn5400";
@@ -3269,13 +3269,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_5500
-     * @tc.name:    testHttpRequestOn5500
-     * @tc.desc:    test on with type dataEnd with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn5500
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_5500
+     * @tc.desc   test on with type dataEnd with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn5500";
@@ -3323,13 +3323,13 @@ export default function HttpRequestOnOffTest() {
     });
 
 
-    /* *
-     * @tc.number:  SUB_NetworkMgr_Http_HttpRequest_On_5600
-     * @tc.name:    testHttpRequestOn5600
-     * @tc.desc:    test on with type dataSendProgress with httpRequest.request not support
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.level:   level 2
+    /**
+     * @tc.name   testHttpRequestOn5600
+     * @tc.number SUB_NetworkMgr_Http_HttpRequest_On_5600
+     * @tc.desc   test on with type dataSendProgress with httpRequest.request not support
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHttpRequestOn5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2 , async (done: Function) => {
       const caseName: string = "testHttpRequestOn5600";

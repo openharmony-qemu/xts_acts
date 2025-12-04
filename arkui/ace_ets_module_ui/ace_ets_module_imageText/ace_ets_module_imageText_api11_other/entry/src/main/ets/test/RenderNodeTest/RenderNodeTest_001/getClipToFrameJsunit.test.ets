@@ -45,12 +45,12 @@ export default function getClipToFrameJsunit() {
     });
     
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_getClipToFrameJsunit_001
-     * @tc.name      getClipToFrameJsunit
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   getClipToFrameJsunit_001
+     * @tc.number SUB_ACE_RICHEDITOR_getClipToFrameJsunit_001
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getClipToFrameJsunit_001', Level.LEVEL2, async (done: Function) => {
       console.info('[getClipToFrameJsunit_001] START');

@@ -79,13 +79,12 @@ export default function AVPlayerAudioEffectModeTest() {
       await mediaTestBase.closeFdNumber(fileDescriptor3.fd);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100
-      * @tc.desc    Local Video playback control test
-      *               : 001.test audioEffectMode - base function
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void ) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
@@ -105,7 +104,7 @@ export default function AVPlayerAudioEffectModeTest() {
         }
       }).catch(mediaTestBase.catchCallback);
       console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_555")
-      avPlayer?.on('stateChange', (state, reason) => {
+      avPlayer?.onStateChange((state, reason) => {
         switch (state) {
           case IDLE:
             console.log("SUB_MULTIMEDIA_MEDIA_AVPLAYER_AUDIOEFFECTMODE_FUNCTION_0100_11")
@@ -225,7 +224,7 @@ export default function AVPlayerAudioEffectModeTest() {
             break;
         }
       });
-      avPlayer?.on('error', (err) => {
+      avPlayer?.onError((err) => {
         console.error(`error occurred, message is ${err.message}`);
         expect().assertFail();
         avPlayer?.release();
@@ -234,13 +233,12 @@ export default function AVPlayerAudioEffectModeTest() {
       setSource(avPlayer!, fileDescriptor);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
-      * @tc.desc    test get max amplitude
-      *               : 001.test get max amplitude
-      * @tc.size    MediumTest
-      * @tc.type    performance test
-      * @tc.level   Level3
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100
+     * @tc.desc   test get max amplitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_GET_MAX_AMPLITUDE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let audioEffectMode = [EFFECT_DEFAULT, EFFECT_NONE];
@@ -252,7 +250,7 @@ export default function AVPlayerAudioEffectModeTest() {
           done();
         }
       }).catch(mediaTestBase.catchCallback);
-      avPlayer?.on('stateChange', (state, reason) => {
+      avPlayer?.onStateChange((state, reason) => {
         switch (state) {
           case INITIALIZED:
               if (!avPlayer) {
@@ -273,7 +271,7 @@ export default function AVPlayerAudioEffectModeTest() {
             avPlayer?.release();
             break;
           case RELEASED:
-            avPlayer?.off('amplitudeUpdate')
+            avPlayer?.offAmplitudeUpdate()
             avPlayer = null;
             done();
             break;
@@ -281,11 +279,11 @@ export default function AVPlayerAudioEffectModeTest() {
             break;
         }
       });
-      avPlayer?.on('amplitudeUpdate', (value) => {
+      avPlayer?.onAmplitudeUpdate((value) => {
         console.info(`get max amplitude ${value}`);
         expect(value.length).assertEqual(5);
       });
-      avPlayer?.on('error', (err) => {
+      avPlayer?.onError((err) => {
         console.error(`error occurred, message is ${err.message}`);
         expect().assertFail();
         avPlayer?.release();

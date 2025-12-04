@@ -20,12 +20,12 @@ export default function AVTranscoderConfigNdkTest() {
   describe('AVTranscoderConfigNdkTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_Release0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -42,12 +42,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetSrcFD0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetSrcFD0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetSrcFD0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetSrcFD0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetSrcFD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -64,12 +64,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstFD0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -108,12 +108,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstAudioType0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -130,12 +130,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstVideoResolution0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstVideoResolution0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstVideoResolution0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstVideoResolution0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoderConfig_SetDstVideoResolution0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -153,12 +153,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Pause0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Pause0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Pause0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Pause0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Pause0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -176,12 +176,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Pause0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Pause0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Pause0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Pause0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Pause0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -199,12 +199,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Resume0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Resume0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Resume0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Resume0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Resume0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -222,12 +222,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Resume0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Resume0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Resume0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Resume0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Resume0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -245,12 +245,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Cancel0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Cancel0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Cancel0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Cancel0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Cancel0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -268,12 +268,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_Release0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_Release0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_Release0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -291,12 +291,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -314,12 +314,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetStateCallback0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -337,12 +337,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -360,12 +360,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetErrorCallback0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -383,12 +383,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -406,12 +406,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0101
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0101
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_SetProgressUpdateCallback0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -429,12 +429,12 @@ export default function AVTranscoderConfigNdkTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVTranscoder_EnableBFrame0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVTranscoder_EnableBFrame0100
-     * @tc.desc       : test OH_AVTranscoder
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVTranscoder_EnableBFrame0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVTranscoder_EnableBFrame0100
+     * @tc.desc   test OH_AVTranscoder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVTranscoder_EnableBFrame0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

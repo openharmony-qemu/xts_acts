@@ -69,7 +69,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0100
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0100
@@ -112,7 +111,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0200
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0200
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0200
@@ -155,7 +153,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0300
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0300
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0300
@@ -199,7 +196,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0400
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0400
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0400
@@ -242,7 +238,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0500
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0500
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0500
@@ -285,7 +280,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0600
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0600
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0600
@@ -328,7 +322,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0700
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0700
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0700
@@ -363,7 +356,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0800
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0800
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0800
@@ -399,7 +391,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution0900
      * @tc.number testRdbStoreBatchInsertWithConflictResolution0900
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution0900
@@ -435,7 +426,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution1000
      * @tc.number testRdbStoreBatchInsertWithConflictResolution1000
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution1000
@@ -478,7 +468,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbStoreBatchInsertWithConflictResolution1100
      * @tc.number testRdbStoreBatchInsertWithConflictResolution1100
      * @tc.desc   testRdbStoreBatchInsertWithConflictResolution1100
@@ -525,7 +514,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfo0100
      * @tc.number testRdbGetInsertSqlInfo0100
      * @tc.desc   testRdbGetInsertSqlInfo0100
@@ -558,7 +546,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoTabkleNameTooLength0100
      * @tc.number testRdbGetInsertSqlInfoTabkleNameTooLength0100
      * @tc.desc   testRdbGetInsertSqlInfoTabkleNameTooLength0100
@@ -594,7 +581,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoBucketTooLength0100
      * @tc.number testRdbGetInsertSqlInfoBucketTooLength0100
      * @tc.desc   testRdbGetInsertSqlInfoBucketTooLength0100
@@ -623,7 +609,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoBucketColumTooLength0100
      * @tc.number testRdbGetInsertSqlInfoBucketColumTooLength0100
      * @tc.desc   testRdbGetInsertSqlInfoBucketColumTooLength0100
@@ -660,7 +645,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoTableNameIsEmpty0100
      * @tc.number testRdbGetInsertSqlInfoTableNameIsEmpty0100
      * @tc.desc   testRdbGetInsertSqlInfoTableNameIsEmpty0100
@@ -695,7 +679,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
      * @tc.number testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
      * @tc.desc   testRdbGetInsertSqlInfoConflictResolutionIsEmpty0100
@@ -730,7 +713,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoBucketIsNull0100
      * @tc.number testRdbGetInsertSqlInfoBucketIsNull0100
      * @tc.desc   testRdbGetInsertSqlInfoBucketIsNull0100
@@ -760,7 +742,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetInsertSqlInfoBucketIsAssets0100
      * @tc.number testRdbGetInsertSqlInfoBucketIsAssets0100
      * @tc.desc   testRdbGetInsertSqlInfoBucketIsAssets0100
@@ -803,7 +784,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfo0100
      * @tc.number testRdbGetUpdateSqlInfo0100
      * @tc.desc   testRdbGetUpdateSqlInfo0100
@@ -837,7 +817,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoBucketIsNull0100
      * @tc.number testRdbGetUpdateSqlInfoBucketIsNull0100
      * @tc.desc   testRdbGetUpdateSqlInfoBucketIsNull0100
@@ -868,7 +847,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoBucketTooLength0100
      * @tc.number testRdbGetUpdateSqlInfoBucketTooLength0100
      * @tc.desc   testRdbGetUpdateSqlInfoBucketTooLength0100
@@ -898,7 +876,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoBucketCloumTooLength0100
      * @tc.number testRdbGetUpdateSqlInfoBucketCloumTooLength0100
      * @tc.desc   testRdbGetUpdateSqlInfoBucketCloumTooLength0100
@@ -936,7 +913,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoTableTooLength0100
      * @tc.number testRdbGetUpdateSqlInfoTableTooLength0100
      * @tc.desc   testRdbGetUpdateSqlInfoTableTooLength0100
@@ -976,7 +952,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoWhereClauseTooLength0100
      * @tc.number testRdbGetUpdateSqlInfoWhereClauseTooLength0100
      * @tc.desc   testRdbGetUpdateSqlInfoWhereClauseTooLength0100
@@ -1017,7 +992,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
      * @tc.number testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
      * @tc.desc   testRdbGetUpdateSqlInfoConflictResolutionIsEmpty0100
@@ -1054,7 +1028,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetDeleteSqlInfo0100
      * @tc.number testRdbGetDeleteSqlInfo0100
      * @tc.desc   testRdbGetDeleteSqlInfo0100
@@ -1081,7 +1054,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetDeleteSqlInfoTableNameTooLength0100
      * @tc.number testRdbGetDeleteSqlInfoTableNameTooLength0100
      * @tc.desc   testRdbGetDeleteSqlInfoTableNameTooLength0100
@@ -1108,7 +1080,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetDeleteSqlInfoTableNameTooLength0200
      * @tc.number testRdbGetDeleteSqlInfoTableNameTooLength0200
      * @tc.desc   testRdbGetDeleteSqlInfoTableNameTooLength0200
@@ -1139,7 +1110,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfo0100
      * @tc.number testRdbGetQuerySqlInfo0100
      * @tc.desc   testRdbGetQuerySqlInfo0100
@@ -1165,7 +1135,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoColumnsIsNullList0100
      * @tc.number testRdbGetQuerySqlInfoColumnsIsNullList0100
      * @tc.desc   testRdbGetQuerySqlInfoColumnsIsNullList0100
@@ -1191,7 +1160,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoByColumns0100
      * @tc.number testRdbGetQuerySqlInfoByColumns0100
      * @tc.desc   testRdbGetQuerySqlInfoByColumns0100
@@ -1217,7 +1185,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoTableNameTooLength0100
      * @tc.number testRdbGetQuerySqlInfoTableNameTooLength0100
      * @tc.desc   testRdbGetQuerySqlInfoTableNameTooLength0100
@@ -1244,7 +1211,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoWhereClauseTooLength0100
      * @tc.number testRdbGetQuerySqlInfoWhereClauseTooLength0100
      * @tc.desc   testRdbGetQuerySqlInfoWhereClauseTooLength0100
@@ -1275,7 +1241,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoTableNameTooLength0200
      * @tc.number testRdbGetQuerySqlInfoTableNameTooLength0200
      * @tc.desc   testRdbGetQuerySqlInfoTableNameTooLength0200
@@ -1302,7 +1267,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbGetQuerySqlInfoColumnsTooLength0100
      * @tc.number testRdbGetQuerySqlInfoColumnsTooLength0100
      * @tc.desc   testRdbGetQuerySqlInfoColumnsTooLength0100
@@ -1333,7 +1297,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbToSendableValues0100
      * @tc.number testRdbToSendableValues0100
      * @tc.desc   testRdbToSendableValues0100
@@ -1365,7 +1328,6 @@ export default function relationalStoreBatchInsertTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   testRdbToSendableValues0300
      * @tc.number testRdbToSendableValues0300
      * @tc.desc   testRdbToSendableValues0300

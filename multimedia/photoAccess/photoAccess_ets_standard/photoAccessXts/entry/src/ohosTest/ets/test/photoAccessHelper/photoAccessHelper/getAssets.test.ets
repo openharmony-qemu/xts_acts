@@ -138,12 +138,12 @@ export default function getAssetsTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_001
-     * @tc.name      : getAssets_callback_image_001
-     * @tc.desc      : callback, image, fetchOps -> normal image name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_callback_image_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_001
+     * @tc.desc   callback, image, fetchOps -> normal image name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_image_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_callback_image_001';
@@ -154,12 +154,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_002
-     * @tc.name      : getAssets_callback_image_002
-     * @tc.desc      : callback, image, fetchOps -> abnormal image name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_callback_image_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_002
+     * @tc.desc   callback, image, fetchOps -> abnormal image name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_image_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_callback_image_002';
@@ -171,12 +171,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_003
-     * @tc.name      : getAssets_callback_image_003
-     * @tc.desc      : callback, image, fetchOps -> abnormal fetchColumns and new predicates
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_callback_image_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_003
+     * @tc.desc   callback, image, fetchOps -> abnormal fetchColumns and new predicates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_image_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_callback_image_003';
@@ -190,12 +190,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_004
-     * @tc.name      : getAssets_callback_image_abnormal_001
-     * @tc.desc      : callback, image, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_callback_image_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_004
+     * @tc.desc   callback, image, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_callback_image_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAssets_callback_image_abnormal_001';
@@ -204,12 +204,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_005
-     * @tc.name      : getAssets_callback_image_abnormal_002
-     * @tc.desc      : callback, image, fetchOps->invalid strings
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   getAssets_callback_image_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_005
+     * @tc.desc   callback, image, fetchOps->invalid strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('getAssets_callback_image_abnormal_002', Level.LEVEL4, async (done: Function) => {
       const testName = 'getAssets_callback_image_abnormal_002';
@@ -218,12 +218,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_006
-     * @tc.name      : getAssets_callback_video_001
-     * @tc.desc      : callback, video, fetchOps->normal video name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_callback_video_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_006
+     * @tc.desc   callback, video, fetchOps->normal video name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_callback_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_callback_video_001';
@@ -234,12 +234,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_007
-     * @tc.name      : getAssets_callback_video_002
-     * @tc.desc      : callback, video, fetchOps -> abnormal video name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_callback_video_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_007
+     * @tc.desc   callback, video, fetchOps -> abnormal video name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_callback_video_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAssets_callback_video_002';
@@ -251,12 +251,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_008
-     * @tc.name      : getAssets_callback_video_003
-     * @tc.desc      : callback, video, fetchOps -> abnormal fetchColumns and new predicates
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_callback_video_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_008
+     * @tc.desc   callback, video, fetchOps -> abnormal fetchColumns and new predicates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_callback_video_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAssets_callback_video_003';
@@ -270,12 +270,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_009
-     * @tc.name      : getAssets_callback_video_abnormal_001
-     * @tc.desc      : callback, video, fetchOps -> undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_callback_video_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_009
+     * @tc.desc   callback, video, fetchOps -> undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_callback_video_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAssets_callback_video_abnormal_001';
@@ -284,12 +284,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_010
-     * @tc.name      : getAssets_callback_video_abnormal_002
-     * @tc.desc      : callback, video, fetchOps -> invalid strings
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   getAssets_callback_video_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_010
+     * @tc.desc   callback, video, fetchOps -> invalid strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('getAssets_callback_video_abnormal_002', Level.LEVEL4, async (done: Function) => {
       const testName = 'getAssets_callback_video_abnormal_001';
@@ -298,12 +298,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_011
-     * @tc.name      : getAssets_promise_image_001
-     * @tc.desc      : promise, image, fetchOps -> normal image name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_image_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_011
+     * @tc.desc   promise, image, fetchOps -> normal image name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_image_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_image_001';
@@ -314,12 +314,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_012
-     * @tc.name      : getAssets_promise_image_002
-     * @tc.desc      : promise, image, fetchOps -> abnormal image name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_image_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_012
+     * @tc.desc   promise, image, fetchOps -> abnormal image name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_image_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_image_002';
@@ -331,12 +331,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_013
-     * @tc.name      : getAssets_promise_image_003
-     * @tc.desc      : promise, image, fetchOps -> abnormal fetchColumns and new predicates
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_image_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_013
+     * @tc.desc   promise, image, fetchOps -> abnormal fetchColumns and new predicates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_image_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_image_003';
@@ -350,12 +350,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_014
-     * @tc.name      : getAssets_promise_image_abnormal_001
-     * @tc.desc      : promise, image, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_promise_image_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_014
+     * @tc.desc   promise, image, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_image_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_image_abnormal_001';
@@ -364,12 +364,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_015
-     * @tc.name      : getAssets_promise_image_abnormal_002
-     * @tc.desc      : promise, image, fetchOps->invalid strings
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   getAssets_promise_image_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_015
+     * @tc.desc   promise, image, fetchOps->invalid strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('getAssets_promise_image_abnormal_002', Level.LEVEL4, async (done: Function) => {
       const testName = 'getAssets_promise_image_abnormal_002';
@@ -378,12 +378,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_016
-     * @tc.name      : getAssets_promise_video_001
-     * @tc.desc      : promise, video, fetchOps -> normal video name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_video_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_016
+     * @tc.desc   promise, video, fetchOps -> normal video name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_video_001';
@@ -394,12 +394,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_017
-     * @tc.name      : getAssets_promise_video_002
-     * @tc.desc      : promise, video, fetchOps -> abnormal video name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_video_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_017
+     * @tc.desc   promise, video, fetchOps -> abnormal video name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_video_002';
@@ -411,12 +411,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_018
-     * @tc.name      : getAssets_promise_video_003
-     * @tc.desc      : promise, video, fetchOps -> abnormal fetchColumns and new predicates
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAssets_promise_video_003
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_018
+     * @tc.desc   promise, video, fetchOps -> abnormal fetchColumns and new predicates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAssets_promise_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAssets_promise_video_003';
@@ -430,12 +430,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_019
-     * @tc.name      : getAssets_promise_video_abnormal_001
-     * @tc.desc      : promise, video, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAssets_promise_video_abnormal_001
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_019
+     * @tc.desc   promise, video, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAssets_promise_video_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAssets_promise_video_abnormal_001';
@@ -444,12 +444,12 @@ export default function getAssetsTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ACCESS_HELPER_GET_ASSETS_020
-     * @tc.name      : getAssets_promise_video_abnormal_002
-     * @tc.desc      : promise, video, fetchOps->invalid strings
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 4
+     * @tc.name   getAssets_promise_video_abnormal_002
+     * @tc.number PHOTO_ACCESS_HELPER_GET_ASSETS_020
+     * @tc.desc   promise, video, fetchOps->invalid strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('getAssets_promise_video_abnormal_002', Level.LEVEL4, async (done: Function) => {
       const testName = 'getAssets_promise_video_abnormal_002';

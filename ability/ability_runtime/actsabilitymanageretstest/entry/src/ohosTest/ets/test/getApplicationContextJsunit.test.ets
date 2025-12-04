@@ -42,10 +42,12 @@ export default function getHapModuleInfoJsunit() {
     })
 
     /**
-     * @tc.number: context_getApplicationContext_test_0100
-     * @tc.name: getApplicationContext:Gets the application context information.
-     * @tc.desc: Check the return value of the interface
-     * @tc.level 0
+     * @tc.name   context_getApplicationContext_test_0100
+     * @tc.number context_getApplicationContext_test_0100
+     * @tc.desc   Check the return value of the interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('context_getApplicationContext_test_0100', Level.LEVEL0, async (done: Function) => {
       try {

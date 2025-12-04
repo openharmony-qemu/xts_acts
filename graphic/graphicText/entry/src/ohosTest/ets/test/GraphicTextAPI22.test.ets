@@ -28,14 +28,14 @@ export default function GraphicTextAPI22() {
     });
 
     /**
-     * @tc.number     GraphicTextAPI22Test_0100
-     * @tc.name       GraphicTextAPI22Test_0100
-     * @tc.desc       text newAPI22
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level1
+     * @tc.name   GraphicTextAPI22Test_0100
+     * @tc.number GraphicTextAPI22Test_0100
+     * @tc.desc   text newAPI22
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('GraphicTextAPI22Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('GraphicTextAPI22Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let fontCollection = text.FontCollection.getLocalInstance();
       fontCollection.loadFontSync('Clock_01', 'file:///system/fonts/HarmonyClock_01.ttf')
       let fontFamilies: Array<string> = ["Clock_01"]
@@ -67,6 +67,40 @@ export default function GraphicTextAPI22() {
             "\nsymbolic:" + fontFullDescriptors[index].symbolic);
           expect(fontFullDescriptors[index].path).assertEqual('/system/fonts/HarmonyOS_Sans.ttf');
         }
+      })
+      done();
+    })
+
+    /**
+     * @tc.name   GetFontDescriptorsFromPath_0100
+     * @tc.number GetFontDescriptorsFromPath_0100
+     * @tc.desc   test getFontDescriptorsFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontDescriptorsFromPath_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans.ttf").then((fontFullDescriptors) => {
+        console.info('www data 111 fontFullDescriptors', fontFullDescriptors);
+        console.info('www data 111 fontFullDescriptors length', fontFullDescriptors.length);
+        expect(fontFullDescriptors.length > 0).assertTrue();
+      })
+      done();
+    })
+
+    /**
+     * @tc.name   GetFontDescriptorsFromPath_0200
+     * @tc.number GetFontDescriptorsFromPath_0200
+     * @tc.desc   test getFontDescriptorsFromPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('GetFontDescriptorsFromPath_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      text.getFontDescriptorsFromPath("file:///system/fonts/HarmonyOS_Sans123.ttf").then((fontFullDescriptors) => {
+        console.info('www data 111 fontFullDescriptors', fontFullDescriptors);
+        console.info('www data 111 fontFullDescriptors length', fontFullDescriptors.length);
+        expect(fontFullDescriptors.length == 0).assertTrue();
       })
       done();
     })

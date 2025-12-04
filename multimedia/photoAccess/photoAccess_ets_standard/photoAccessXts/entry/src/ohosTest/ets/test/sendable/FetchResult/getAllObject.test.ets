@@ -63,12 +63,12 @@ export default function sendableGetAllObjectTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_001
-     * @tc.name      : albumName_sendable_promise_001
-     * @tc.desc      : getAllObjects
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   albumName_sendable_promise_001
+     * @tc.number SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_001
+     * @tc.desc   getAllObjects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('albumName_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'albumName_sendable_promise_001';
@@ -77,12 +77,12 @@ export default function sendableGetAllObjectTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_002
-     * @tc.name      : albumName_sendable_promise_002
-     * @tc.desc      : getAllObjects
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   albumName_sendable_promise_002
+     * @tc.number SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_002
+     * @tc.desc   getAllObjects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('albumName_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'albumName_sendable_promise_002';
@@ -92,12 +92,12 @@ export default function sendableGetAllObjectTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_003
-     * @tc.name      : albumName_sendable_promise_003
-     * @tc.desc      : getAllObjects
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   albumName_sendable_promise_003
+     * @tc.number SENDABLE_FETCH_RESULT_GET_ALL_OBJECTS_003
+     * @tc.desc   getAllObjects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('albumName_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'albumName_sendable_promise_003';

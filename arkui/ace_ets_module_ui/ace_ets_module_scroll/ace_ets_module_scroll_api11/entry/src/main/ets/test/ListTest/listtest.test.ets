@@ -46,10 +46,13 @@ export default function listtestIdleJsunit() {
       console.info("listtestIdle after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testlisttestIdle0001
-     * @tc.desic         acelisttestIdleEtsTest0001
+    /**
+     * @tc.name   testlisttestIdle0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testlisttestIdle0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testlisttestIdle0001', Level.LEVEL1, async (done: Function) => {
       console.info('listtestIdle testlisttestIdle0001 START');

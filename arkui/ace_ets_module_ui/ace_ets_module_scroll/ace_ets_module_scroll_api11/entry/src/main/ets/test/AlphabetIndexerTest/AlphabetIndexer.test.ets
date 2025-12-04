@@ -101,6 +101,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     })
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0100
+     * @tc.number ArkUI_AlphabetIndexer_0100
+     * @tc.desc   ArkUI_AlphabetIndexer_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_0100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0100 start");
       let strJson = getInspectorByKey('alphabetIndexerTest1');
@@ -114,6 +122,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0600
+     * @tc.number ArkUI_AlphabetIndexer_0600
+     * @tc.desc   ArkUI_AlphabetIndexer_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_0600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0600 start");
       let strJson = getInspectorByKey('alphabetIndexerTest6');
@@ -123,6 +139,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0700
+     * @tc.number ArkUI_AlphabetIndexer_0700
+     * @tc.desc   ArkUI_AlphabetIndexer_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_0700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0700 start");
       let strJson = getInspectorByKey('alphabetIndexerTest7');
@@ -131,6 +155,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0800
+     * @tc.number ArkUI_AlphabetIndexer_0800
+     * @tc.desc   ArkUI_AlphabetIndexer_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_0800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0800 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -156,6 +188,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_0900
+     * @tc.number ArkUI_AlphabetIndexer_0900
+     * @tc.desc   ArkUI_AlphabetIndexer_0900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_0900', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_0900 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -181,6 +221,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1000
+     * @tc.number ArkUI_AlphabetIndexer_1000
+     * @tc.desc   ArkUI_AlphabetIndexer_1000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1000', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1000 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -206,6 +254,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1100
+     * @tc.number ArkUI_AlphabetIndexer_1100
+     * @tc.desc   ArkUI_AlphabetIndexer_1100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1100 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -231,6 +287,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1200
+     * @tc.number ArkUI_AlphabetIndexer_1200
+     * @tc.desc   ArkUI_AlphabetIndexer_1200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1200', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1200 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -256,6 +320,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1300
+     * @tc.number ArkUI_AlphabetIndexer_1300
+     * @tc.desc   ArkUI_AlphabetIndexer_1300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1300', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1300 start");
       let strJson = getInspectorByKey('alphabetIndexerTest2');
@@ -281,6 +353,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1400
+     * @tc.number ArkUI_AlphabetIndexer_1400
+     * @tc.desc   ArkUI_AlphabetIndexer_1400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1400', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1400 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -306,6 +386,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1500
+     * @tc.number ArkUI_AlphabetIndexer_1500
+     * @tc.desc   ArkUI_AlphabetIndexer_1500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1500', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1500 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -331,6 +419,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1600
+     * @tc.number ArkUI_AlphabetIndexer_1600
+     * @tc.desc   ArkUI_AlphabetIndexer_1600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1600 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -356,6 +452,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1700
+     * @tc.number ArkUI_AlphabetIndexer_1700
+     * @tc.desc   ArkUI_AlphabetIndexer_1700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1700 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -381,6 +485,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1800
+     * @tc.number ArkUI_AlphabetIndexer_1800
+     * @tc.desc   ArkUI_AlphabetIndexer_1800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1800 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -406,6 +518,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_1900
+     * @tc.number ArkUI_AlphabetIndexer_1900
+     * @tc.desc   ArkUI_AlphabetIndexer_1900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_1900', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_1900 start");
       let strJson = getInspectorByKey('alphabetIndexerTest3');
@@ -431,6 +551,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     })
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_2600
+     * @tc.number ArkUI_AlphabetIndexer_2600
+     * @tc.desc   ArkUI_AlphabetIndexer_2600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_2600', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_2600 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');
@@ -456,6 +584,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_2700
+     * @tc.number ArkUI_AlphabetIndexer_2700
+     * @tc.desc   ArkUI_AlphabetIndexer_2700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_2700', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_2700 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');
@@ -481,6 +617,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_2800
+     * @tc.number ArkUI_AlphabetIndexer_2800
+     * @tc.desc   ArkUI_AlphabetIndexer_2800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_2800', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_2800 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');
@@ -506,6 +650,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_2900
+     * @tc.number ArkUI_AlphabetIndexer_2900
+     * @tc.desc   ArkUI_AlphabetIndexer_2900
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_2900', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_2900 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');
@@ -531,6 +683,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_3000
+     * @tc.number ArkUI_AlphabetIndexer_3000
+     * @tc.desc   ArkUI_AlphabetIndexer_3000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_3000', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_3000 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');
@@ -556,6 +716,14 @@ export default function ActsAlphabetIndexerUxTest() {
       done();
     });
 
+    /**
+     * @tc.name   ArkUI_AlphabetIndexer_3100
+     * @tc.number ArkUI_AlphabetIndexer_3100
+     * @tc.desc   ArkUI_AlphabetIndexer_3100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ArkUI_AlphabetIndexer_3100', Level.LEVEL1, async (done: Function) => {
       console.info("ArkUI_AlphabetIndexer_3100 start");
       let strJson = getInspectorByKey('alphabetIndexerTest4');

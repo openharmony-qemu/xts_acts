@@ -27,7 +27,7 @@ import {
 } from "@ohos.arkui.component"
 import { State } from "@ohos.arkui.stateManagement" // should be insert by ui-plugins
 import web_webview from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Hypium } from "../../../hypium";
 import emitter from '@ohos.events.emitter';
 import testsuite from '../../src/test/List.test';
@@ -56,7 +56,7 @@ struct webAttributeTest {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

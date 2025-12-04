@@ -43,12 +43,14 @@ export default function search_maxLength() {
       done();
     });
 
-    /* *
-          * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0010
-          * @tc.name  : SearchMaxLength_001
-          * @tc.desc  : set maxLength to 6
-          * @tc.level : Level 3
-          */
+    /**
+     * @tc.name   SearchMaxLength_001
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0010
+     * @tc.desc   set maxLength to 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SearchMaxLength_001', Level.LEVEL3, async (done:Function)=> {
 
       console.info('SearchMaxLength_001 START');
@@ -71,12 +73,14 @@ export default function search_maxLength() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_UI_TEXT_NEWINTERFACE_0030
-      * @tc.name  : SearchMaxLength_003
-      * @tc.desc  : set maxLength to 4
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   SearchMaxLength_003
+     * @tc.number SUB_ACE_UI_TEXT_NEWINTERFACE_0030
+     * @tc.desc   set maxLength to 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SearchMaxLength_003', Level.LEVEL3, async (done:Function)=> {
 
       console.info('SearchMaxLength_003 START');

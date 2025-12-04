@@ -17,18 +17,12 @@ import { NodeContent, router } from '@kit.ArkUI';
 import entry from 'libnativerender.so';
 
 @Component
-struct CAPIComponent {
+struct CAPIComponent7 {
   private rootSlot = new NodeContent();
   @State postType: number = 0;
 
   aboutToAppear(): void {
-    if (this.postType == 0) {
-      entry.CreateNodeArkUIPostAsyncUITask(this.rootSlot, this.getUIContext());
-    } else if (this.postType == 1) {
-      entry.CreateNodeArkUIPostUITask(this.rootSlot, this.getUIContext());
-    } else if (this.postType == 2) {
-      entry.CreateNodeArkUIPostUITaskAndWait(this.rootSlot, this.getUIContext());
-    }
+    entry.CreateNodeArkUIPostUITaskAndWait(this.rootSlot, this.getUIContext());
   }
 
   aboutToDisappear(): void {
@@ -46,12 +40,13 @@ struct CAPIComponent {
 }
 
 @Component
-struct TitleComponent {
+struct TitleComponent7 {
   @Link message: string;
 
   build() {
     Column() {
       Text(this.message)
+        .id('text')
         .fontSize(18)
         .fontWeight(FontWeight.Bold)
         .width('100%')
@@ -73,27 +68,19 @@ interface paramsObj{
 @Entry
 @Component
 struct Page {
-  postType: number = 0;
   @State message: string = 'CreateNodeTreeOnMultiThread';
 
   aboutToAppear(): void {
-    this.postType = 2;
-    if (this.postType) {
-      this.message = 'ArkUIPostAsyncUITask';
-    } else if (this.postType == 1) {
-      this.message = 'ArkUIPostUITask'
-    } else if (this.postType == 2) {
-      this.message = 'ArkUIPostUITaskAndWait'
-    }
+    this.message = 'ArkUIPostUITaskAndWait'
   }
 
   build() {
     Flex() {
       Column() {
-        TitleComponent({message : this.message})
+        TitleComponent7({message : this.message})
           .width('100%')
           .align(Alignment.Center)
-        CAPIComponent({postType : this.postType})
+        CAPIComponent7()
           .width('100%')
       }
       .backgroundColor('#EEEEEE')

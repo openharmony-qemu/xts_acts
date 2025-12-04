@@ -96,14 +96,6 @@ SymKeySpec g_symKeyConvertData[] = {
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymKeyNapiTest, SYMKEY_TEST, ::testing::ValuesIn(g_symKeyData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0100
-* @tc.name OHCryptoFrameworkSymKeyNapiTest/SYMKEY_TEST.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0100/x
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SYMKEY_TEST, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0100, TestSize.Level0)
 {
     SymKeySpec symKeyData = GetParam();
@@ -139,14 +131,6 @@ HWTEST_P(SYMKEY_TEST, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0100, TestSi
 
 INSTANTIATE_TEST_CASE_P(OHCryptoFrameworkSymKeyConvertNapiTest, SYMKEY_CONVERT_TEST, ::testing::ValuesIn(g_symKeyConvertData));
 
-/**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0200
-* @tc.name OHCryptoFrameworkSymKeyConvertNapiTest/SYMKEY_CONVERT_TEST.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0200/x
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
 HWTEST_P(SYMKEY_CONVERT_TEST, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0200, TestSize.Level0)
 {
     SymKeySpec symKeyData = GetParam();
@@ -178,13 +162,13 @@ HWTEST_P(SYMKEY_CONVERT_TEST, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0200
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0300
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0300
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0300
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0300
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0300, TestSize.Level0)
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
@@ -197,13 +181,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0400
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0400
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0400
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0400
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0400, TestSize.Level0)
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
@@ -218,13 +202,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0500
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0500
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0500
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0500
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0500, TestSize.Level0)
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
@@ -236,13 +220,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0600
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0600
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0600
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0600
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0600, TestSize.Level0)
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
@@ -280,13 +264,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0700
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0700
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0700
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0700
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0700, TestSize.Level0)
 {
     OH_CryptoSymKeyGenerator *ctx = nullptr;
@@ -303,13 +287,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0800
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0800
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0800
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0800
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0800, TestSize.Level0)
 {
     const char *algName = "3DES192";
@@ -339,13 +323,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0900
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_0900
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_0900
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_0900
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_0900, TestSize.Level0)
 {
     const char *algName = "3DES192";
@@ -369,13 +353,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_1000
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_1000
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_1000
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_1000
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_1000, TestSize.Level0)
 {
     const char *algName = "SM4_128";
@@ -399,13 +383,13 @@ HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymK
 }
 
 /**
-* @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_1100
-* @tc.name OHCryptoFrameworkSymKeyNapiTest.SUB_Security_CryptoFramework_NAPI_SymKey_Test_1100
-* @tc.desc algorithm is Sym Key
-* @tc.size Medium
-* @tc.type Func
-* @tc.level Level0
-*/
+ * @tc.name   SUB_Security_CryptoFramework_NAPI_SymKey_Test_1100
+ * @tc.number SUB_Security_CryptoFramework_NAPI_SymKey_Test_1100
+ * @tc.desc   algorithm is Sym Key
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
 HWTEST_F(OHCryptoFrameworkSymKeyNapiTest, SUB_Security_CryptoFramework_NAPI_SymKey_Test_1100, TestSize.Level0)
 {
     const char *genAlgName = "HMAC|SHA256";

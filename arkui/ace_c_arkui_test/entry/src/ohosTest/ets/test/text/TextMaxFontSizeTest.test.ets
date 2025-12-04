@@ -26,39 +26,39 @@ export default function textMaxFontSizeTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0100
-     * @tc.name       : testTextMaxFontSize001
-     * @tc.desc       : testing maxFontSize for text with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMaxFontSize001
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0100
+     * @tc.desc   testing maxFontSize for text with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMaxFontSize001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMaxFontSize001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0200
-     * @tc.name       : testTextMaxFontSize002
-     * @tc.desc       : testing maxFontSize for text with boundary value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextMaxFontSize002
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0200
+     * @tc.desc   testing maxFontSize for text with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMaxFontSize002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMaxFontSize002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0300
-     * @tc.name       : testTextMaxFontSize003
-     * @tc.desc       : testing maxFontSize for text with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextMaxFontSize003
+     * @tc.number SUB_ARKUI_CAPI_TEXT_MAXFONTSIZE_0300
+     * @tc.desc   testing maxFontSize for text with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextMaxFontSize003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextMaxFontSize003()).assertEqual(0)

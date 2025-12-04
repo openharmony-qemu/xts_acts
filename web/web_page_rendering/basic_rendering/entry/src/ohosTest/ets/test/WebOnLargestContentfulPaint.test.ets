@@ -52,14 +52,14 @@ export default function webOnLargestContentfulPaint() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBONLARGESTCONTENTFULPAINT_0100
-    * @tc.name       : testWebOnLargestContentfulPaint001
-    * @tc.desc       : test WebOnLargestContentfulPaint
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   OnLargestContentfulPaint0100
+     * @tc.number SUB_WEB_WEBONLARGESTCONTENTFULPAINT_0100
+     * @tc.desc   test WebOnLargestContentfulPaint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('OnLargestContentfulPaint0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnLargestContentfulPaint0100", 152060)
       Utils.registerEvent("OnLargestContentfulPaint0100", true, 152070, done);
@@ -67,14 +67,14 @@ export default function webOnLargestContentfulPaint() {
       await component.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBONLARGESTCONTENTFULPAINT_0200
-    * @tc.name       : testWebOnLargestContentfulPaint002
-    * @tc.desc       : test WebOnLargestContentfulPaint
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   OnLargestContentfulPaint0200
+     * @tc.number SUB_WEB_WEBONLARGESTCONTENTFULPAINT_0200
+     * @tc.desc   test WebOnLargestContentfulPaint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('OnLargestContentfulPaint0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("OnLargestContentfulPaint0200", 152060)
       Utils.registerEvent("OnLargestContentfulPaint0200", true, 152080, done);

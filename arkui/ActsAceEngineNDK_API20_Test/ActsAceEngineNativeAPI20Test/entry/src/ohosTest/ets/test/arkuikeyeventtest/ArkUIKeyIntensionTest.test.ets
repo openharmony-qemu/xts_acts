@@ -29,12 +29,12 @@ export default function ArkUIKeyIntensionTest() {
     });
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_UNKNOWN_0100
-     * @tc.name    : testArkUIKeyIntensionUnknown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_UNKNOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionUnknown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_UNKNOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_UNKNOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionUnknown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -66,12 +66,12 @@ export default function ArkUIKeyIntensionTest() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_UP_0100
-     * @tc.name    : testArkUIKeyIntensionUp0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_UP are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionUp0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_UP_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_UP are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionUp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -89,12 +89,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_DOWN_0100
-     * @tc.name    : testArkUIKeyIntensionDown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_DOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionDown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_DOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_DOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionDown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -112,12 +112,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_LEFT_0100
-     * @tc.name    : testArkUIKeyIntensionLeft0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_LEFT are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionLeft0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_LEFT_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_LEFT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionLeft0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -135,12 +135,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_RIGHT_0100
-     * @tc.name    : testArkUIKeyIntensionRight0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_RIGHT are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionRight0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_RIGHT_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_RIGHT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionRight0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -158,12 +158,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_SELECT_0100
-     * @tc.name    : testArkUIKeyIntensionSelect0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_SELECT are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionSelect0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_SELECT_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_SELECT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionSelect0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -181,12 +181,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ESCAPE_0100
-     * @tc.name    : testArkUIKeyIntensionEscape0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_ESCAPE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionEscape0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ESCAPE_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_ESCAPE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionEscape0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -204,12 +204,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_BACK_0100
-     * @tc.name    : testArkUIKeyIntensionBack0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_BACK are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionBack0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_BACK_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_BACK are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionBack0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -227,12 +227,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_MENU_0100
-     * @tc.name    : testArkUIKeyIntensionMenu0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_MENU are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionMenu0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_MENU_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_MENU are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionMenu0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -250,12 +250,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_HOME_0100
-     * @tc.name    : testArkUIKeyIntensionHome0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_HOME are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionHome0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_HOME_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_HOME are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionHome0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -273,12 +273,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_PAGE_UP_0100
-     * @tc.name    : testArkUIKeyIntensionPageUp0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_PAGE_UP are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionPageUp0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_PAGE_UP_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_PAGE_UP are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionPageUp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -296,12 +296,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_PAGE_DOWN_0100
-     * @tc.name    : testArkUIKeyIntensionPageDown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_PAGE_DOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionPageDown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_PAGE_DOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_PAGE_DOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionPageDown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -319,12 +319,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ZOOM_OUT_0100
-     * @tc.name    : testArkUIKeyIntensionZoomOut0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_ZOOM_OUT are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionZoomOut0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ZOOM_OUT_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_ZOOM_OUT are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionZoomOut0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -342,12 +342,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ZOOM_IN_0100
-     * @tc.name    : testArkUIKeyIntensionZoomIn0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENSION_ZOOM_IN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionZoomIn0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ZOOM_IN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_ZOOM_IN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionZoomIn0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -365,12 +365,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_MEDIA_MUTE_0100
-     * @tc.name    : testArkUIKeyIntensionMediaMute0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENTION_MEDIA_MUTE are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionMediaMute0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_MEDIA_MUTE_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENTION_MEDIA_MUTE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionMediaMute0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -388,12 +388,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_VOLUME_UP_0100
-     * @tc.name    : testArkUIKeyIntensionVolumeUp0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENTION_VOLUME_UP are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionVolumeUp0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_VOLUME_UP_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENTION_VOLUME_UP are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionVolumeUp0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -412,12 +412,12 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_VOLUME_DOWN_0100
-     * @tc.name    : testArkUIKeyIntensionVolumeDown0100
-     * @tc.desc    : Test whether the key ARKUI_KEY_INTENTION_VOLUME_DOWN are working properly.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIKeyIntensionVolumeDown0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_VOLUME_DOWN_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENTION_VOLUME_DOWN are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIKeyIntensionVolumeDown0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

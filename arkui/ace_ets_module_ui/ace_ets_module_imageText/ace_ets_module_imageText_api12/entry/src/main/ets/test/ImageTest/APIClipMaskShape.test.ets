@@ -42,12 +42,12 @@ export default function APIClipMaskShape() {
       console.info("APIClipMaskShape after each called");
     });
     /**
-     * @tc.number api
      * @tc.name   APIClipMaskShape_001
+     * @tc.number api
      * @tc.desc   APIClipMaskShape_001
-     * @tc.size   APIClipMaskShape
-     * @tc.type   Attribute
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIClipMaskShape_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[APIClipMaskShape_001] START');
@@ -67,12 +67,12 @@ export default function APIClipMaskShape() {
       done();
     });
     /**
-     * @tc.number api
      * @tc.name   APIClipMaskShape_002
+     * @tc.number api
      * @tc.desc   APIClipMaskShape_002
-     * @tc.size   APIClipMaskShape
-     * @tc.type   Attribute
-     * @tc.level  2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('APIClipMaskShape_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[APIClipMaskShape_002] START');

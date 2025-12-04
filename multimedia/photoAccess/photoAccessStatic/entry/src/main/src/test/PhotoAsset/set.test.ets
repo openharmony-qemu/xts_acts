@@ -79,12 +79,12 @@ export default function setTest() {
     }
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_STATIC_0000
-      * @tc.name    set_photo_title_static_000
-      * @tc.desc    set photo title success
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   set_photo_title_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_STATIC_0000
+     * @tc.desc   set photo title success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_photo_title_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void):
       Promise<void> => {
@@ -94,12 +94,12 @@ export default function setTest() {
     });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_STATIC_0100
-      * @tc.name    set_photo_title_static_001
-      * @tc.desc    set photo title '', error code 14000014
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   set_photo_title_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_STATIC_0100
+     * @tc.desc   set photo title '', error code 14000014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('set_photo_title_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void):
       Promise<void> => {

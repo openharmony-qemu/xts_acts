@@ -126,7 +126,6 @@ export default function objectStoreTest() {
     });
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOn001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0600
      * @tc.desc   object join session and on,object can receive callback when data has been changed
@@ -166,7 +165,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOn001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOn002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0400
      * @tc.desc   object join session and no on,obejct can not receive callback when data has been changed
@@ -203,7 +201,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOn002 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOn003
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0900
      * @tc.desc   object join session and on,then object change data twice,
@@ -248,7 +245,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOn003 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOn004
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_4000
      * @tc.desc   object join session and on,then object do not change data,object can not receive callbacks
@@ -278,7 +274,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOn004 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOff001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0300
      * @tc.desc   object join session and on&off,object can not receive callback after off
@@ -330,7 +325,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOff001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOff002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0500
      * @tc.desc   object join session and off,object can not receive callback
@@ -369,7 +363,6 @@ export default function objectStoreTest() {
       objectTest.setSessionId("");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testMultiObjectOn001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0800
      * @tc.desc   two objects join session and on,then object change data,user can receive two callbacks from two objects
@@ -434,7 +427,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testMultiObjectOn001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testMultiObjectOff001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0700
      * @tc.desc   two objects join session and on&off,then two objects can not receive callbacks
@@ -522,7 +514,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testMultiObjectOff001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testChangeSession001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3900
      * @tc.desc   objects join session,then change sessionId
@@ -582,7 +573,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testChangeSession001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testUndefinedType001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0200
      * @tc.desc   object use undefined type,can not join session
@@ -607,7 +597,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testUndefinedType001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testGenSessionId001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_4100
      * @tc.desc   object generate random sessionId
@@ -628,7 +617,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testGenSessionId001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testGenSessionId002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_0100
      * @tc.desc   object generate 2 random sessionId and not equal
@@ -650,7 +638,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testGenSessionId002 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOnStatus001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3700
      * @tc.desc   object set a listener to watch another object online/offline
@@ -678,7 +665,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOnStatus001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOnStatus002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3600
      * @tc.desc   object set several listener and can unset specified listener
@@ -712,7 +698,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOnStatus002 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testOnStatus003
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3500
      * @tc.desc   object set several listener and can unWatch all watcher
@@ -744,7 +729,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testOnStatus003 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testComplex001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3800
      * @tc.desc   object can get/set complex data
@@ -790,7 +774,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testComplex001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testMaxSize001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_3400
      * @tc.desc   object can get/set data under 4MB size
@@ -828,7 +811,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testMaxSize001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testPerformance001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_4200
      * @tc.desc   performanceTest for set/get data
@@ -881,7 +863,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testPerformance001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testSave001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1300
      * @tc.desc   Save object <Promise>
@@ -918,7 +899,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testSave001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testSave002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1400
      * @tc.desc   Save object
@@ -957,7 +937,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testSave002 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testRevokeSave001
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1100
      * @tc.desc   Revoke save object <Promise>
@@ -1004,7 +983,6 @@ export default function objectStoreTest() {
       console.info(TAG + "************* testRevokeSave001 end *************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   testRevokeSave002
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_1200
      * @tc.desc   Revoke save object <Callback>

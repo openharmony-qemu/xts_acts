@@ -40,9 +40,12 @@ export default function abilityTest() {
         })
 
         /**
-         *@tc.number: ACTS_GetCurrentTopAbility_0200
-         *@tc.name: Verify the interface for obtaining the Ability of the foreground
-         *@tc.desc:Start PageAbility2,Ability1 to be tested in turn, and get the current foreground Ability (AsyncCallback)
+         * @tc.name   ACTS_GetCurrentTopAbility_0200
+         * @tc.number ACTS_GetCurrentTopAbility_0200
+         * @tc.desc   Start PageAbility2,Ability1 to be tested in turn, and get the current foreground Ability (AsyncCallback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_GetCurrentTopAbility_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_GetCurrentTopAbility_0200 --- start")
@@ -81,9 +84,12 @@ export default function abilityTest() {
         })
 
         /**
-         *@tc.number: ACTS_GetCurrentTopAbility_0500
-         *@tc.name: Verify the interface for obtaining the Ability of the foreground
-         *@tc.desc:Start PageAbility1,Ability2 to be tested in turn, and get the current foreground Ability (Promise)
+         * @tc.name   ACTS_GetCurrentTopAbility_0500
+         * @tc.number ACTS_GetCurrentTopAbility_0500
+         * @tc.desc   Start PageAbility1,Ability2 to be tested in turn, and get the current foreground Ability (Promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_GetCurrentTopAbility_0500', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_GetCurrentTopAbility_0500 --- start")

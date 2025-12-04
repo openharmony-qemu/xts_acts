@@ -31,7 +31,6 @@ export default function pasteboardTestNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   OH_Pasteboard_GetMimeTypes0100
      * @tc.number OH_Pasteboard_GetMimeTypes0100
      * @tc.desc   OH_Pasteboard_GetMimeTypes0100
@@ -48,7 +47,6 @@ export default function pasteboardTestNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   OH_Pasteboard_GetMimeTypes0200
      * @tc.number OH_Pasteboard_GetMimeTypes0200
      * @tc.desc   OH_Pasteboard_GetMimeTypes0200
@@ -65,7 +63,6 @@ export default function pasteboardTestNdkTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   OH_Pasteboard_GetMimeTypes0300
      * @tc.number OH_Pasteboard_GetMimeTypes0300
      * @tc.desc   OH_Pasteboard_GetMimeTypes0300
@@ -81,7 +78,6 @@ export default function pasteboardTestNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:55
      * @tc.name   OH_Pasteboard_GetDataWithNoProgress001
      * @tc.number SUB_DistributedData_Pasteboard_SDK_NdkApiTest_0400
      * @tc.desc   OH_Pasteboard_GetDataWithNoProgress test

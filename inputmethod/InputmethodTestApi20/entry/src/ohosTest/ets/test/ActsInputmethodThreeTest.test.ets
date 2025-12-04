@@ -32,7 +32,6 @@ export default function ActsInputmethodThreeTest() {
       await sleep1(1000);
     })
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_None_14700
      * @tc.desc   test IME_KEYBOARD_STATUS_NONE
@@ -59,7 +58,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Hide_14800
      * @tc.desc   test IME_KEYBOARD_STATUS_HIDE
@@ -86,7 +84,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_KeyBoard_Status_Show_14900
      * @tc.desc   test IME_KEYBOARD_STATUS_SHOW
@@ -113,7 +110,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Go_15000
      * @tc.desc   test IME_ENTER_KEY_GO
@@ -140,7 +136,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Search_15100
      * @tc.desc   test IME_ENTER_KEY_SEARCH
@@ -167,7 +162,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Next_15200
      * @tc.desc   test IME_ENTER_KEY_NEXT
@@ -194,7 +188,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Done_15300
      * @tc.desc   test IME_ENTER_KEY_DONE
@@ -221,7 +214,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Previous_15400
      * @tc.desc   test IME_ENTER_KEY_PREVIOUS
@@ -248,7 +240,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Enter_Key_Newline_15500
      * @tc.desc   test IME_ENTER_KEY_NEWLINE
@@ -275,7 +266,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Detached_15600
      * @tc.desc   test IME_ERR_DETACHED
@@ -302,7 +292,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Null_Pointer_15700
      * @tc.desc   test IME_ERR_NULL_POINTER
@@ -329,7 +318,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Query_Failed_15800
      * @tc.desc   test IME_ERR_QUERY_FAILED
@@ -356,7 +344,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Err_Paramcheck_15900
      * @tc.desc   test IME_ERR_PARAMCHECK
@@ -383,7 +370,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Multiline_16000
      * @tc.desc   test IME_TEXT_INPUT_TYPE_MULTILINE
@@ -410,7 +396,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_16100
      * @tc.desc   test IME_TEXT_INPUT_TYPE_NUMBER
@@ -437,7 +422,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Phone_16200
      * @tc.desc   test IME_TEXT_INPUT_TYPE_PHONE
@@ -464,7 +448,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Datetime_16300
      * @tc.desc   test IME_TEXT_INPUT_TYPE_DATETIME
@@ -491,7 +474,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Address_16400
      * @tc.desc   test IME_TEXT_INPUT_TYPE_EMAIL_ADDRESS
@@ -518,7 +500,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Url_16500
      * @tc.desc   test IME_TEXT_INPUT_TYPE_URL
@@ -545,7 +526,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Visible_Password_16600
      * @tc.desc   test IME_TEXT_INPUT_TYPE_VISIBLE_PASSWORD
@@ -572,7 +552,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Number_Password_16700
      * @tc.desc   test IME_TEXT_INPUT_TYPE_NUMBER_PASSWORD
@@ -599,7 +578,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_Screen_Lock_Password_16800
      * @tc.desc   test IME_TEXT_INPUT_TYPE_SCREEN_LOCK_PASSWORD
@@ -626,7 +604,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_User_Name_16900
      * @tc.desc   test IME_TEXT_INPUT_TYPE_USER_NAME
@@ -653,7 +630,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_New_Password_17000
      * @tc.desc   test IME_TEXT_INPUT_TYPE_NEW_PASSWORD
@@ -680,7 +656,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Text_Input_Type_One_Time_Code_17100
      * @tc.desc   test IME_TEXT_INPUT_TYPE_ONE_TIME_CODE
@@ -707,7 +682,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_None_17200
      * @tc.desc   test IME_COMMAND_VALUE_TYPE_NONE
@@ -734,7 +708,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Command_Value_Type_Bool_17300
      * @tc.desc   test IME_COMMAND_VALUE_TYPE_BOOL
@@ -761,7 +734,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400
      * @tc.number SUB_InputMethod_Imf_SDK_Ime_Direction_Up_17400
      * @tc.desc   test IME_DIRECTION_UP
@@ -790,7 +762,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_DOWN_17500
      * @tc.desc   test IME_DIRECTION_DOWN
@@ -819,7 +790,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_LEFT_17600
      * @tc.desc   test IME_DIRECTION_LEFT
@@ -848,7 +818,6 @@ export default function ActsInputmethodThreeTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700
      * @tc.number SUB_InputMethod_Imf_SDK_IME_DIRECTION_RIGHT_17700
      * @tc.desc   test IME_DIRECTION_RIGHT

@@ -62,9 +62,12 @@ protected:
 };
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0100
- * @tc.desc: 创建compilation，检查返回值为空，设置正确的cache路径，build成功，推理成功
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0100
+ * @tc.desc   创建compilation，检查返回值为空，设置正确的cache路径，build成功，推理成功
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0100,
          Function | MediumTest | Level1)
@@ -84,9 +87,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0200
- * @tc.desc: 创建compilation，检查返回值非空，不设置cache，build失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0200
+ * @tc.desc   创建compilation，检查返回值非空，不设置cache，build失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_Cache_0200,
          Function | MediumTest | Level1)
@@ -98,9 +104,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_For_
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0100
- * @tc.desc: 创建compilation，增加config，传入compilation为空，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0100
+ * @tc.desc   创建compilation，增加config，传入compilation为空，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0100,
          Function | MediumTest | Level1)
@@ -113,9 +122,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Com
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200
- * @tc.desc: 创建compilation，增加config，传入configNames为空指针，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200
+ * @tc.desc   创建compilation，增加config，传入configNames为空指针，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0200,
          Function | MediumTest | Level1)
@@ -133,9 +145,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Com
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0300
- * @tc.desc: 创建compilation，增加config，传入configNames为空字符串，报错
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0300
+ * @tc.desc   创建compilation，增加config，传入configNames为空字符串，报错
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0300,
          Function | MediumTest | Level1)
@@ -156,9 +171,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Com
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0400
- * @tc.desc: 创建compilation，增加config，传入configValues为空，报错
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0400
+ * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0400
+ * @tc.desc   创建compilation，增加config，传入configValues为空，报错
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0400,
          Function | MediumTest | Level1)
@@ -176,9 +194,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Com
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0500
- * @tc.desc: 创建compilation，增加config，传入configValueSize为0
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0500
+ * @tc.number SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0500
+ * @tc.desc   创建compilation，增加config，传入configValueSize为0
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Compilation_0500,
          Function | MediumTest | Level1)
@@ -197,9 +218,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_AddExtension_Config_To_Com
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0100
- * @tc.desc: 传入filepath为空指针，返回不支持
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0100
+ * @tc.desc   传入filepath为空指针，返回不支持
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0100,
          Function | MediumTest | Level1)
@@ -209,9 +233,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0200
- * @tc.desc: 传入合法文件，返回不支持
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0200
+ * @tc.desc   传入合法文件，返回不支持
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_OfflineModel_File_0200,
          Function | MediumTest | Level1)
@@ -227,9 +254,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0100
- * @tc.desc: 传入modelData为空指针，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0100
+ * @tc.desc   传入modelData为空指针，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0100,
          Function | MediumTest | Level1)
@@ -241,9 +271,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0200
- * @tc.desc: 传入modelData为合法离线模型buffer，返回不支持
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0200
+ * @tc.desc   传入modelData为合法离线模型buffer，返回不支持
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With_Offline_ModelBuffer_0200,
          Function | MediumTest | Level1)
@@ -257,9 +290,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Construct_Compilation_With
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0100
- * @tc.desc: 传入空指针返回失败
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0100
+ * @tc.desc   传入空指针返回失败
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0100,
          Function | MediumTest | Level1)
@@ -273,9 +309,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_T
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0200
- * @tc.desc: 参数正确，nnrt模型返回不支持
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0200
+ * @tc.desc   参数正确，nnrt模型返回不支持
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_To_Buffer_0200,
          Function | MediumTest | Level1)
@@ -297,9 +336,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Export_Compilation_Cache_T
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0100
- * @tc.desc: buffer为空，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0100
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0100
+ * @tc.desc   buffer为空，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0100,
          Function | MediumTest | Level1)
@@ -317,9 +359,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0200
- * @tc.desc: modelSize为0，返回错误
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0200
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0200
+ * @tc.desc   modelSize为0，返回错误
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0200,
          Function | MediumTest | Level1)
@@ -337,9 +382,12 @@ HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_F
 }
 
 /**
- * @tc.name: SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0300
- * @tc.desc: 参数正确，返回不支持
- * @tc.type: FUNC
+ * @tc.name   SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0300
+ * @tc.number SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0300
+ * @tc.desc   参数正确，返回不支持
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(CompilationTest, SUB_AI_NNRt_Core_Func_North_Import_Compilation_Cache_From_Buffer_0300,
          Function | MediumTest | Level1)

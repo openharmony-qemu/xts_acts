@@ -50,12 +50,12 @@ export default function composeListItemPageTest() {
     })
 
     /**
+     * @tc.name   composeListItemPageTest_0100
      * @tc.number composeListItemPageTest
-     * @tc.name composeListItemPageTest_0100
-     * @tc.desc Test composeListItemPage
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test composeListItemPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('composeListItemPageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[composeListItemPageTest_0100] START');

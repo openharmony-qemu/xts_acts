@@ -26,52 +26,52 @@ export default function customComponentMarginTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0100
-     * @tc.name       : testCustomComponentMargin001
-     * @tc.desc       : testing margin for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMargin001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0100
+     * @tc.desc   testing margin for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMargin001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMargin001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0200
-     * @tc.name       : testCustomComponentMargin002
-     * @tc.desc       : testing margin for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMargin002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0200
+     * @tc.desc   testing margin for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMargin002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMargin002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0300
-     * @tc.name       : testCustomComponentMargin003
-     * @tc.desc       : testing margin for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMargin003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0300
+     * @tc.desc   testing margin for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMargin003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMargin003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0400
-     * @tc.name       : testCustomComponentMargin004
-     * @tc.desc       : testing margin for flex with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentMargin004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_MARGIN_0400
+     * @tc.desc   testing margin for flex with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentMargin004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentMargin004()).assertEqual(0)

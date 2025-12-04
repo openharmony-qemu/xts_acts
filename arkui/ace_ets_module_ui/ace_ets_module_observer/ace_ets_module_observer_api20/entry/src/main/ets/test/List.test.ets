@@ -15,8 +15,14 @@
 
 import axisVertical from './observerTest/axisVertical.test'
 import axisHorizontal from './observerTest/axisHorizontal.test'
+import UIObserverDensityUpdateTest from './observerTest/UIObserverDensityUpdate.test';
+import UIObserverWillDrawTest from './observerTest/UIObserverWillDraw.test';
+import UIObserverDidLayoutTest from './observerTest/UIObserverDidLayout.test';
 
 export default function testsuite() {
   axisVertical()
   axisHorizontal()
+  UIObserverDensityUpdateTest();
+  UIObserverWillDrawTest();
+  UIObserverDidLayoutTest();
 }

@@ -45,9 +45,12 @@ export default function AlignStart_AddVisibility() {
       console.info("AlignStart_AddVisibility after each called");
     });
     /**
+     * @tc.name   testFlexAlignStartTextVisibilityNone
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1000
-     * @tc.name testFlexAlignStartTextVisibilityNone
-     * @tc.desc The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.desc   The subcomponent sets the visibility. None, the child components are hidden in the interface display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextVisibilityNone',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextVisibilityNone] START');
@@ -84,10 +87,12 @@ export default function AlignStart_AddVisibility() {
 
     });
     /**
+     * @tc.name   testFlexAlignStartTextVisibilityHidden
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1100
-     * @tc.name testFlexAlignStartTextVisibilityHidden
-     * @tc.desc When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
-     * position
+     * @tc.desc   When the subcomponent sets visibility.hidden, the interface of the subcomponent does not occupy the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextVisibilityHidden] START');
@@ -129,10 +134,12 @@ export default function AlignStart_AddVisibility() {
 
     });
     /**
+     * @tc.name   testFlexAlignStartTextVisibilityVisible
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1700
-     * @tc.name testFlexAlignStartTextVisibilityVisible
-     * @tc.desc The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
-     * interface display
+     * @tc.desc   The subcomponent sets the visibility. Visible, the subcomponent does not occupy a position in the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextVisibilityVisible',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextVisibilityVisible] START');

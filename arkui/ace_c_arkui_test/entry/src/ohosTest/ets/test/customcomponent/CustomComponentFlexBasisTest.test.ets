@@ -26,26 +26,26 @@ export default function customComponentFlexBasisTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXBASIS_0100
-     * @tc.name: testCustomComponentFlexBasis001
-     * @tc.desc: testing flexBasis for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testCustomComponentFlexBasis001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXBASIS_0100
+     * @tc.desc   testing flexBasis for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentFlexBasis001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentFlexBasis001()).assertEqual(0)
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXBASIS_0200
-     * @tc.name: testCustomComponentFlexBasis002
-     * @tc.desc: testing flexBasis for button with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testCustomComponentFlexBasis002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_FLEXBASIS_0200
+     * @tc.desc   testing flexBasis for button with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentFlexBasis002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentFlexBasis002()).assertEqual(0)

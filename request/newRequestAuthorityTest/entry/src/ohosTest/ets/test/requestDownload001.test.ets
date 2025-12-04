@@ -53,12 +53,12 @@ export default function requestDownloadOneJSUnitTest() {
     };
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0140
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0140
-     * @tc.desc      Create a download Task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_create_Callback_0140
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0140
+     * @tc.desc   Create a download Task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_create_Callback_0140", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -111,12 +111,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0140
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0140
-     * @tc.desc      Create a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0140
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0140
+     * @tc.desc   Create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0140", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -164,12 +164,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0160
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0160
-     * @tc.desc      Create a download Task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_create_Callback_0160
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0160
+     * @tc.desc   Create a download Task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_create_Callback_0160", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -209,12 +209,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0160
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0160
-     * @tc.desc      Create a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0160
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0160
+     * @tc.desc   Create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0160", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -250,12 +250,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0170
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0170
-     * @tc.desc      Create a download Task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_create_Callback_0170
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0170
+     * @tc.desc   Create a download Task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_create_Callback_0170", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -308,12 +308,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0170
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0170
-     * @tc.desc      Create a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0170
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0170
+     * @tc.desc   Create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0170", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -362,12 +362,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0180
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0180
-     * @tc.desc      Create a download Task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_create_Callback_0180
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0180
+     * @tc.desc   Create a download Task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_create_Callback_0180", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -405,12 +405,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0180
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0180
-     * @tc.desc      Create a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0180
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0180
+     * @tc.desc   Create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0180", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -444,12 +444,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0090
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0090
-     * @tc.desc      Create a download Task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_create_Callback_0090
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0090
+     * @tc.desc   Create a download Task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_create_Callback_0090", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -502,12 +502,12 @@ export default function requestDownloadOneJSUnitTest() {
 
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0090
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0090
-     * @tc.desc      Create a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0090
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0090
+     * @tc.desc   Create a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0090", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -558,12 +558,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Download_Callback_0050
-     * @tc.name    SUB_Misc_REQUEST_Remove_Download_Callback_0050
-     * @tc.desc      remove the download task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Download_Callback_0050
+     * @tc.number SUB_Misc_REQUEST_Remove_Download_Callback_0050
+     * @tc.desc   remove the download task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Download_Callback_0050', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Download_Callback_0050 is starting-----------------------");
@@ -609,12 +609,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Download_Promise_0050
-     * @tc.name    SUB_Misc_REQUEST_Remove_Download_Promise_0050
-     * @tc.desc      remove the download task.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Download_Promise_0050
+     * @tc.number SUB_Misc_REQUEST_Remove_Download_Promise_0050
+     * @tc.desc   remove the download task.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Download_Promise_0050', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Download_Promise_0050 is starting-----------------------");
@@ -644,12 +644,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Download_Promise_0060
-     * @tc.name    SUB_Misc_REQUEST_Remove_Download_Promise_0060
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Download_Promise_0060
+     * @tc.number SUB_Misc_REQUEST_Remove_Download_Promise_0060
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Download_Promise_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>---------------SUB_Misc_REQUEST_Remove_Download_Promise_0060 is starting-------------------");
@@ -666,12 +666,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060
-     * @tc.name    SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0060 is starting-----------------------");
@@ -693,12 +693,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070
-     * @tc.name      SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070
-     * @tc.desc      error param.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070
+     * @tc.desc   error param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_remove_callback_0070 is starting-----------------------");
@@ -722,12 +722,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Remove_Download_Promise_0070
-     * @tc.name      SUB_Misc_REQUEST_Remove_Download_Promise_0070
-     * @tc.desc      error param.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Remove_Download_Promise_0070
+     * @tc.number SUB_Misc_REQUEST_Remove_Download_Promise_0070
+     * @tc.desc   error param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Misc_REQUEST_Remove_Download_Promise_0070', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Misc_REQUEST_Remove_Download_Promise_0070 is starting-----------------------");
@@ -744,12 +744,12 @@ export default function requestDownloadOneJSUnitTest() {
     });
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0030
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0030
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0030
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0030
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0030", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -790,12 +790,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0040
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0040
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0040
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0040
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0040", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -836,12 +836,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0130
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0130
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0130
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0130
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0130", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -880,12 +880,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0060
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0060
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Callback_0060
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0060
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Callback_0060", Level.LEVEL2, async (done: Function) => {
       let config: request.agent.Config = {
@@ -925,12 +925,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0070
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0070
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Callback_0070
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0070
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Callback_0070", Level.LEVEL2, async (done: Function) => {
       let urls = 'x';
@@ -965,12 +965,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0070
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0070
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0070
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0070
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0070", Level.LEVEL2, async (done: Function) => {
       let urls = 'x';
@@ -1003,12 +1003,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0080
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0080
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Callback_0080
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0080
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Callback_0080", Level.LEVEL2, async (done: Function) => {
       let urls = 'x';
@@ -1046,12 +1046,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0080
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0080
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0080
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0080
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0080", Level.LEVEL2, async (done: Function) => {
       let urls = 'x';
@@ -1082,12 +1082,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0110
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0110
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0110
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0110
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0110", Level.LEVEL2, async (done: Function) => {
       let des = 'x';
@@ -1118,12 +1118,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0110
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0110
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Callback_0110
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0110
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Callback_0110", Level.LEVEL2, async (done: Function) => {
       let des = 'x';
@@ -1161,12 +1161,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Promise_0150
-     * @tc.name    SUB_Misc_REQUEST_Create_Promise_0150
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Promise_0150
+     * @tc.number SUB_Misc_REQUEST_Create_Promise_0150
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Promise_0150", Level.LEVEL2, async (done: Function) => {
       let tit = 'x';
@@ -1198,12 +1198,12 @@ export default function requestDownloadOneJSUnitTest() {
     })
 
     /**
-     * @tc.number    SUB_Misc_REQUEST_Create_Callback_0150
-     * @tc.name    SUB_Misc_REQUEST_Create_Callback_0150
-     * @tc.desc      remove a download session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_Misc_REQUEST_Create_Callback_0150
+     * @tc.number SUB_Misc_REQUEST_Create_Callback_0150
+     * @tc.desc   remove a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_Misc_REQUEST_Create_Callback_0150", Level.LEVEL2, async (done: Function) => {
       let tit = 'x';

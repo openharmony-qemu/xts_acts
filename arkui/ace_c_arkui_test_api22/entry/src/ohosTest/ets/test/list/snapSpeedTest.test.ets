@@ -26,13 +26,13 @@ export default function SnapSpeedTest(){
       done();
     })
 
-    /*
-     * @tc.number: snapSpeedTest001
-     * @tc.name: snapSpeedTest001
-     * @tc.desc: input ScrollSnapAnimationSpeed.NORMAL ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   snapSpeedTest001
+     * @tc.number snapSpeedTest001
+     * @tc.desc   input ScrollSnapAnimationSpeed.NORMAL ,return ScrollSnapAnimationSpeed.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('snapSpeedTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'snapSpeedTest';
@@ -49,13 +49,13 @@ export default function SnapSpeedTest(){
       done();
     });
 
-    /*
-     * @tc.number: snapSpeedTest002
-     * @tc.name: snapSpeedTest002
-     * @tc.desc: input ScrollSnapAnimationSpeed.SLOW ,return ScrollSnapAnimationSpeed.SLOW
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   snapSpeedTest002
+     * @tc.number snapSpeedTest002
+     * @tc.desc   input ScrollSnapAnimationSpeed.SLOW ,return ScrollSnapAnimationSpeed.SLOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('snapSpeedTest002', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'snapSpeedTest';
@@ -72,13 +72,13 @@ export default function SnapSpeedTest(){
       done();
     });
 
-    /*
-     * @tc.number: snapSpeedTest003
-     * @tc.name: snapSpeedTest003
-     * @tc.desc: input -1 ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   snapSpeedTest003
+     * @tc.number snapSpeedTest003
+     * @tc.desc   input -1 ,return ScrollSnapAnimationSpeed.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('snapSpeedTest003', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'snapSpeedTest';
@@ -95,13 +95,13 @@ export default function SnapSpeedTest(){
       done();
     });
 
-        /*
-     * @tc.number: snapSpeedTest004
-     * @tc.name: snapSpeedTest004
-     * @tc.desc: input undefined ,return ScrollSnapAnimationSpeed.NORMAL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   snapSpeedTest004
+     * @tc.number snapSpeedTest004
+     * @tc.desc   input undefined ,return ScrollSnapAnimationSpeed.NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('snapSpeedTest004', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'snapSpeedTest';

@@ -43,11 +43,14 @@ describe('hiSysEventBoxTest', function () {
         console.info('hiSysEventBoxTest afterEach called')
     })
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0400
-	 * @tc.name testHiSysEventBox04
-	 * @tc.desc 验证调用exportSysEvents接口，QueryRule11条，抛出错误码11200301
-	 */
+ /**
+  * @tc.name   testHiSysEventBox04
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0400
+  * @tc.desc   验证调用exportSysEvents接口，QueryRule11条，抛出错误码11200301
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox04 start')
 		try {
@@ -99,11 +102,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0500
-	 * @tc.name testHiSysEventBox05
-	 * @tc.desc 验证调用exportSysEvents接口，QueryRule-domain无效，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox05
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0500
+  * @tc.desc   验证调用exportSysEvents接口，QueryRule-domain无效，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox05 start')
 		try {
@@ -125,11 +131,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0600
-	 * @tc.name testHiSysEventBox06
-	 * @tc.desc 验证调用exportSysEvents接口，QueryRule-evetname无效，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox06
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0600
+  * @tc.desc   验证调用exportSysEvents接口，QueryRule-evetname无效，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox06 start')
 		try {
@@ -151,11 +160,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0700
-	 * @tc.name testHiSysEventBox07
-	 * @tc.desc 验证调用exportSysEvents接口，QueryRule-domain为空，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox07
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0700
+  * @tc.desc   验证调用exportSysEvents接口，QueryRule-domain为空，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox07 start')
 		try {
@@ -177,11 +189,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_0800
-	 * @tc.name testHiSysEventBox08
-	 * @tc.desc 验证调用exportSysEvents接口，QueryRule-eventname为空，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox08
+  * @tc.number DFX_DFT_HiSysevent_SandBox_0800
+  * @tc.desc   验证调用exportSysEvents接口，QueryRule-eventname为空，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL0
+  */
 	it('testHiSysEventBox08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
 		console.info('testHiSysEventBox08 start')
 		try {
@@ -203,11 +218,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1000
-	 * @tc.name testHiSysEventBox10
-	 * @tc.desc 验证设备重启后exportSysEvents接口一小时内可调用一次，QueryRule10条，返回值为调用时间戳，沙箱路径存在导出的文件
-	 */
+ /**
+  * @tc.name   testHiSysEventBox10
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1000
+  * @tc.desc   验证设备重启后exportSysEvents接口一小时内可调用一次，QueryRule10条，返回值为调用时间戳，沙箱路径存在导出的文件
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox10 start')
 		try {
@@ -287,11 +305,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-    /**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1100
-	 * @tc.name testHiSysEventBox11
-	 * @tc.desc 验证一小时内重复调用exportSysEvents的接口，抛出错误码11200304
-	 */
+ /**
+  * @tc.name   testHiSysEventBox11
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1100
+  * @tc.desc   验证一小时内重复调用exportSysEvents的接口，抛出错误码11200304
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox11 start')
 		try {
@@ -313,11 +334,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1300
-	 * @tc.name testHiSysEventBox13
-	 * @tc.desc 验证调用subscribe，30条订阅事件，其中一个domain16字节，eventname32字节，沙箱路径存在导出的文件，Hiview数据库存在uid信息
-	 */
+ /**
+  * @tc.name   testHiSysEventBox13
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1300
+  * @tc.desc   验证调用subscribe，30条订阅事件，其中一个domain16字节，eventname32字节，沙箱路径存在导出的文件，Hiview数据库存在uid信息
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox13 start')
 		let msgArray = []
@@ -366,11 +390,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1400
-	 * @tc.name testHiSysEventBox14
-	 * @tc.desc 验证调用subscribe接口订阅事件后取消订阅unsubscribe，沙箱路径存在导出的文件，Hiview数据库不存在uid信息
-	 */
+ /**
+  * @tc.name   testHiSysEventBox14
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1400
+  * @tc.desc   验证调用subscribe接口订阅事件后取消订阅unsubscribe，沙箱路径存在导出的文件，Hiview数据库不存在uid信息
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox14 start')
 		let msgArray = []
@@ -419,11 +446,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1600
-	 * @tc.name testHiSysEventBox16
-	 * @tc.desc 验证调用subscribe，31条订阅事件，抛出错误码11200301
-	 */
+ /**
+  * @tc.name   testHiSysEventBox16
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1600
+  * @tc.desc   验证调用subscribe，31条订阅事件，抛出错误码11200301
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox16 start')
 		let msgArray = []
@@ -449,11 +479,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1700
-	 * @tc.name testHiSysEventBox17
-	 * @tc.desc 验证调用subscribe接口，QueryRule-domain17字节，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox17
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1700
+  * @tc.desc   验证调用subscribe接口，QueryRule-domain17字节，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox17 start')
 		try {
@@ -471,11 +504,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1800
-	 * @tc.name testHiSysEventBox18
-	 * @tc.desc 验证调用subscribe接口，QueryRule-evetname33字节，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox18
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1800
+  * @tc.desc   验证调用subscribe接口，QueryRule-evetname33字节，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox18 start')
 		try {
@@ -493,11 +529,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_1900
-	 * @tc.name testHiSysEventBox19
-	 * @tc.desc 验证调用subscribe接口，QueryRule-domain为空，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox19
+  * @tc.number DFX_DFT_HiSysevent_SandBox_1900
+  * @tc.desc   验证调用subscribe接口，QueryRule-domain为空，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox19 start')
 		try {
@@ -515,11 +554,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2000
-	 * @tc.name testHiSysEventBox20
-	 * @tc.desc 验证调用subscribe接口，QueryRule-evetname为空，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox20
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2000
+  * @tc.desc   验证调用subscribe接口，QueryRule-evetname为空，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox20 start')
 		try {
@@ -537,11 +579,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2100
-	 * @tc.name testHiSysEventBox21
-	 * @tc.desc 验证调用subscribe接口，QueryRule-domain含有特殊字节，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox21
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2100
+  * @tc.desc   验证调用subscribe接口，QueryRule-domain含有特殊字节，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox21 start')
 		try {
@@ -559,11 +604,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2200
-	 * @tc.name testHiSysEventBox22
-	 * @tc.desc 验证调用subscribe接口，QueryRule-evetname含有特殊字节，抛出错误码11200302
-	 */
+ /**
+  * @tc.name   testHiSysEventBox22
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2200
+  * @tc.desc   验证调用subscribe接口，QueryRule-evetname含有特殊字节，抛出错误码11200302
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox22', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox22 start')
 		try {
@@ -581,11 +629,14 @@ describe('hiSysEventBoxTest', function () {
 		}
 	})
 
-	/**
-	 * @tc.number DFX_DFT_HiSysevent_SandBox_2500
-	 * @tc.name testHiSysEventBox25
-	 * @tc.desc 验证无订阅，直接调用unsubscribe取消订阅，抛出错误码11200305
-	 */
+ /**
+  * @tc.name   testHiSysEventBox25
+  * @tc.number DFX_DFT_HiSysevent_SandBox_2500
+  * @tc.desc   验证无订阅，直接调用unsubscribe取消订阅，抛出错误码11200305
+  * @tc.type   FUNCTION
+  * @tc.size   MEDIUMTEST
+  * @tc.level  LEVEL3
+  */
 	it('testHiSysEventBox25', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async function (done) {
 		console.info('testHiSysEventBox25 start')
 		try {

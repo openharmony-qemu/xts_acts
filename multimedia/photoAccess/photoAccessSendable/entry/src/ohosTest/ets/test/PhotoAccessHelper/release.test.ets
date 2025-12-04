@@ -33,12 +33,12 @@ export default function releaseTest () {
     });
 
     /**
-     * @tc.number    : Sub_Photo_Access_Sendable_Release_001
-     * @tc.name      : release_promise_000
-     * @tc.desc      : release photoAccessHelper instance
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   release_promise_000
+     * @tc.number Sub_Photo_Access_Sendable_Release_001
+     * @tc.desc   release photoAccessHelper instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'release_promise_000';

@@ -76,12 +76,12 @@ export default function assetGetPositionObjectTest() {
     //image
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_OBJECT_BY_POSITION_0000
-     * @tc.name      : getObjectByPosition_callback_000
-     * @tc.desc      : getObjectByPosition image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_OBJECT_BY_POSITION_0000
+     * @tc.desc   getObjectByPosition image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_callback_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_callback_000';
@@ -91,12 +91,12 @@ export default function assetGetPositionObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_OBJECT_BY_POSITION_0000
-     * @tc.name      : getObjectByPosition_promise_000
-     * @tc.desc      : getObjectByPosition image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_promise_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_OBJECT_BY_POSITION_0000
+     * @tc.desc   getObjectByPosition image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_promise_000', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_promise_000';
@@ -107,12 +107,12 @@ export default function assetGetPositionObjectTest() {
     //video
     //callback
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_OBJECT_BY_POSITION_0100
-     * @tc.name      : getObjectByPosition_callback_001
-     * @tc.desc      : getObjectByPosition video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_OBJECT_BY_POSITION_0100
+     * @tc.desc   getObjectByPosition video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_callback_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_callback_001';
@@ -122,12 +122,12 @@ export default function assetGetPositionObjectTest() {
 
     //promise
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_PROMISE_GET_OBJECT_BY_POSITION_0100
-     * @tc.name      : getObjectByPosition_promise_001
-     * @tc.desc      : getObjectByPosition video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getObjectByPosition_promise_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_GET_OBJECT_BY_POSITION_0100
+     * @tc.desc   getObjectByPosition video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getObjectByPosition_promise_001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'getObjectByPosition_promise_001';

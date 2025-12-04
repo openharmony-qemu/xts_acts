@@ -43,12 +43,12 @@ export default function itemInGroupError() {
     });
 
     /**
-     * @tc.number    itemInGroupError_001
-     * @tc.name      itemInGroupError_0100
-     * @tc.desc      401 error code for getItemRectInGroup.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   itemInGroupError_0100
+     * @tc.number itemInGroupError_001
+     * @tc.desc   401 error code for getItemRectInGroup.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('itemInGroupError_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[itemInGroupError_0100] START');
@@ -65,12 +65,12 @@ export default function itemInGroupError() {
     });
 
     /**
-     * @tc.number    itemInGroupError_002
-     * @tc.name      itemInGroupError_0200
-     * @tc.desc      100004 error code for getItemRectInGroup.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   itemInGroupError_0200
+     * @tc.number itemInGroupError_002
+     * @tc.desc   100004 error code for getItemRectInGroup.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('itemInGroupError_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[itemInGroupError_0200] START');
@@ -87,12 +87,12 @@ export default function itemInGroupError() {
     });
 
     /**
-     * @tc.number    itemInGroupError_003
-     * @tc.name      itemInGroupError_0300
-     * @tc.desc      401 error code for scrollToItemInGroup.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   itemInGroupError_0300
+     * @tc.number itemInGroupError_003
+     * @tc.desc   401 error code for scrollToItemInGroup.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('itemInGroupError_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[itemInGroupError_0300] START');
@@ -109,12 +109,12 @@ export default function itemInGroupError() {
     });
 
     /**
-     * @tc.number    itemInGroupError_004
-     * @tc.name      itemInGroupError_0400
-     * @tc.desc      100004 error code for scrollToItemInGroup.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   itemInGroupError_0400
+     * @tc.number itemInGroupError_004
+     * @tc.desc   100004 error code for scrollToItemInGroup.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('itemInGroupError_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[itemInGroupError_0400] START');

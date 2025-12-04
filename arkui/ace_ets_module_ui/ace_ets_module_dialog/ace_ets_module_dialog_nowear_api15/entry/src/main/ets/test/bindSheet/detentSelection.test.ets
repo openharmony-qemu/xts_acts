@@ -42,12 +42,12 @@ export default function detentSelection() {
     });
 
     /**
-     * @tc.number    detentSelection_0100
-     * @tc.name      detentSelection_0100
-     * @tc.desc      set detentSelection: -10
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   detentSelection_0100
+     * @tc.number detentSelection_0100
+     * @tc.desc   set detentSelection: -10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('detentSelection_0100', Level.LEVEL1, async (done: Function) => {
       console.info('detentSelection_0100 START');
@@ -75,12 +75,12 @@ export default function detentSelection() {
     });
 
     /**
-     * @tc.number    detentSelection_0200
-     * @tc.name      detentSelection_0200
-     * @tc.desc      set detentSelection: SheetSize.LARGE
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   detentSelection_0200
+     * @tc.number detentSelection_0200
+     * @tc.desc   set detentSelection: SheetSize.LARGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('detentSelection_0200', Level.LEVEL1, async (done: Function) => {
       console.info('detentSelection_0200 START');

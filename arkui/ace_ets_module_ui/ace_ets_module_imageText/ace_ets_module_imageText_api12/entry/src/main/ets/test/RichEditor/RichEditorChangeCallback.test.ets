@@ -47,12 +47,14 @@ export default function RichEditorChangeCallback() {
     });
 
 
-    /*
-    * @tc.number      RichEditorChangeCallback_001
-    * @tc.name        RichEditorChangeCallback_001
-    * @tc.desc        Test RichEditor, trigger onWillChange before text changes, and trigger onDidChange after text changes
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RichEditorChangeCallback_001
+     * @tc.number RichEditorChangeCallback_001
+     * @tc.desc   Test RichEditor, trigger onWillChange before text changes, and trigger onDidChange after text changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('RichEditorChangeCallback_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[RichEditorChangeCallback_001] START');
       await CommonFunc.sleep(1000);

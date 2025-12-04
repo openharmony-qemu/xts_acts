@@ -23,9 +23,12 @@ export default function wantAgentInfoTest() {
   describe('WantAgentTest',  ()=> {
 
     /**
+     * @tc.name   Acts_WantAgentInfo_0100
      * @tc.number Acts_WantAgentInfo_0100
-     * @tc.name Verify operationType properties and getOperationType properties.
-     * @tc.desc Set wantAgent.OperationType.START_ABILITY and [wantAgent.WantAgentFlags.ONE_TIME_FLAG].
+     * @tc.desc   Set wantAgent.OperationType.START_ABILITY and [wantAgent.WantAgentFlags.ONE_TIME_FLAG].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_WantAgentInfo_0100', Level.LEVEL2, async  (done:Function)=> {
       TAG = 'Acts_WantAgentInfo_0100 ==>';
@@ -77,9 +80,12 @@ export default function wantAgentInfoTest() {
     });
 
     /**
+     * @tc.name   Acts_WantAgentInfo_0200
      * @tc.number Acts_WantAgentInfo_0200
-     * @tc.name Verify operationType properties and getOperationType properties.
-     * @tc.desc Set wantAgent.OperationType.START_ABILITY and [wantAgent.WantAgentFlags.NO_BUILD_FLAG].
+     * @tc.desc   Set wantAgent.OperationType.START_ABILITY and [wantAgent.WantAgentFlags.NO_BUILD_FLAG].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_WantAgentInfo_0200', Level.LEVEL2, async  (done:Function)=> {
       TAG = 'Acts_WantAgentInfo_0200 ==>';
@@ -131,9 +137,12 @@ export default function wantAgentInfoTest() {
     });
 
     /**
+     * @tc.name   Acts_WantAgentInfo_0300
      * @tc.number Acts_WantAgentInfo_0300
-     * @tc.name Verify operationType properties and getOperationType properties.
-     * @tc.desc Set wantAgent.OperationType.START_ABILITIES and [wantAgent.WantAgentFlags.CANCEL_PRESENT_FLAG].
+     * @tc.desc   Set wantAgent.OperationType.START_ABILITIES and [wantAgent.WantAgentFlags.CANCEL_PRESENT_FLAG].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_WantAgentInfo_0300', Level.LEVEL2, async  (done:Function)=> {
       TAG = 'Acts_WantAgentInfo_0300 ==>';
@@ -185,9 +194,12 @@ export default function wantAgentInfoTest() {
     });
 
     /**
+     * @tc.name   Acts_WantAgentInfo_0400
      * @tc.number Acts_WantAgentInfo_0400
-     * @tc.name Verify operationType properties and getOperationType properties.
-     * @tc.desc Set wantAgent.OperationType.START_SERVICE and [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG].
+     * @tc.desc   Set wantAgent.OperationType.START_SERVICE and [wantAgent.WantAgentFlags.UPDATE_PRESENT_FLAG].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_WantAgentInfo_0400', Level.LEVEL2, async  (done:Function)=> {
       TAG = 'Acts_WantAgentInfo_0400 ==>';
@@ -239,9 +251,12 @@ export default function wantAgentInfoTest() {
     });
 
     /**
+     * @tc.name   Acts_WantAgentInfo_0500
      * @tc.number Acts_WantAgentInfo_0500
-     * @tc.name Verify operationType properties and getOperationType properties.
-     * @tc.desc Set wantAgent.OperationType.SEND_COMMON_EVENT and [wantAgent.WantAgentFlags.CONSTANT_FLAG].
+     * @tc.desc   Set wantAgent.OperationType.SEND_COMMON_EVENT and [wantAgent.WantAgentFlags.CONSTANT_FLAG].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_WantAgentInfo_0500', Level.LEVEL2, async  (done:Function)=> {
       TAG = 'Acts_WantAgentInfo_0500 ==>';

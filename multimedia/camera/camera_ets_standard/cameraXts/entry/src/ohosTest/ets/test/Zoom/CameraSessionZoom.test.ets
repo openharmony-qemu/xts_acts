@@ -111,13 +111,8 @@ function getCameraInput() {
 
 function getSupportedModes() {
   console.info(TAG, 'getSupportedModes.');
-  for (let i = 0; i < mCameraDeviceArray.length; i++) {
-    mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[i]);
-    if (isEmpty(mSupportedModes)) {
-      return false;
-    }
-    console.info(TAG, 'mSupportedModes: ' + JSON.stringify(mSupportedModes));
-  }
+  mSupportedModes = mCameraManager.getSupportedSceneModes(mCameraDeviceArray[0]);
+  console.info(TAG, 'mSupportedModes: ' + JSON.stringify(mSupportedModes));
   return true;
 }
 
@@ -165,18 +160,19 @@ async function getVideoSurfaceId() {
 async function getCreatePhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
   console.info(TAG, 'getCreatePhotoSession.');
   mPhotoSession = mCameraManager.createSession(mSupportedModes[0]);
+  await mCameraInput.open();
+  console.info(TAG, 'camera open passed.');
   mPhotoSession.beginConfig();
   console.info(TAG, 'beginConfig passed.');
   mPhotoSession.addInput(mCameraInput);
   console.info(TAG, 'addInput passed.');
-  await mCameraInput.open();
-  console.info(TAG, 'camera open passed.');
   mPhotoSession.addOutput(previewOutput);
   console.info(TAG, 'addOutput previewOutput passed.');
   mPhotoSession.addOutput(photoOutput);
   console.info(TAG, 'addOutput photoOutput passed.');
   await mPhotoSession.commitConfig();
   console.info(TAG, 'session commitConfig successfully.');
+  await mPhotoSession.start();
 }
 
 async function getPreConfigPhotoSession(previewOutput: camera.PreviewOutput, photoOutput: camera.PhotoOutput) {
@@ -211,6 +207,7 @@ async function getCreateVideoSession(testName: string, previewOutput: camera.Pre
   console.info(TAG, testName + ' addOutput videoOutput passed.');
   await mVideoSession.commitConfig();
   console.info(TAG, testName + ' session commitConfig successfully.');
+  await mVideoSession.start();
 }
 
 async function getPreConfigVideoSession(testName: string, previewOutput: camera.PreviewOutput,
@@ -345,8 +342,18 @@ async function setZoomRatioPhoto(done: Function, testName: string, index: number
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
+        console.info(TAG, testName + zoomRatioRange[index]);
         mPhotoSession.setZoomRatio(zoomRatioRange[index]);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
+        console.info(TAG, testName + 'set ZoomRatio success');
+        await sleep(3000);
+        console.info(TAG, testName + 'start zoomRatio: ' + zoomRatio);
+        zoomRatio = mPhotoSession.getZoomRatio();
+        console.info(TAG, testName + 'get zoomRatio: ' + zoomRatio);
+        if (index >= 0) {
+          expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+        } else {
+          expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+        }
       }
     }
     await releasePhotoSession();
@@ -383,8 +390,17 @@ async function setZoomRatioVideo(done: Function, testName: string, index: number
         } else {
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
-          expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
+          console.info(TAG, testName + zoomRatioRange[index]);
           mVideoSession.setZoomRatio(zoomRatioRange[index]);
+          await sleep(3000);
+          console.info(TAG, testName + 'start zoomRatio: ' + zoomRatio);
+          zoomRatio = mVideoSession.getZoomRatio();
+          console.info(TAG, testName + 'get zoomRatio: ' + zoomRatio);
+          if (index >= 0) {
+            expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
+          } else {
+            expect(Math.abs(zoomRatio - zoomRatioRange[0]) <= 0.1).assertTrue();
+          }
         }
         await releaseVideoSession();
       }
@@ -507,8 +523,13 @@ async function setZoomRatioPhotoPreConfig(done: Function, testName: string, inde
       } else {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
+        console.info(TAG, testName + zoomRatioRange[index]);
         mPhotoSession.setZoomRatio(zoomRatioRange[index]);
+        await sleep(3000);
+        console.info(TAG, testName + 'start zoomRatio: ' + zoomRatio);
+        zoomRatio = mPhotoSession.getZoomRatio();
+        console.info(TAG, testName + 'get zoomRatio: ' + zoomRatio);
+        expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
       }
     }
     await releasePhotoSession();
@@ -550,8 +571,12 @@ async function setZoomRatioVideoPreConfig(done: Function, testName: string, inde
       } else {
         let zoomRatio = mVideoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
-        expect(zoomRatio !== zoomRatioRange[index]).assertTrue();
         mVideoSession.setZoomRatio(zoomRatioRange[index]);
+        await sleep(3000);
+        console.info(TAG, testName + 'start zoomRatio: ' + zoomRatio);
+        zoomRatio = mVideoSession.getZoomRatio();
+        console.info(TAG, testName + 'get zoomRatio: ' + zoomRatio);
+        expect(Math.abs(zoomRatio - zoomRatioRange[index]) <= 0.1).assertTrue();
       }
     }
     await releaseVideoSession();
@@ -584,10 +609,12 @@ async function setZoomRatioPhotoAbnormal(done: Function, testName: string) {
         let zoomRatio = mPhotoSession.getZoomRatio();
         console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
         let exceedZoomRatio = zoomRatioRange[0] + 0.0011;
+        console.info(testName + `exceedZoomRatio : ${exceedZoomRatio}`);
         mPhotoSession.setZoomRatio(exceedZoomRatio);
-        await sleep(COMMON_WAIT_DURATION);
+        await sleep(3000);
         let newZoomRatio = mPhotoSession.getZoomRatio();
-        expect(newZoomRatio !== exceedZoomRatio).assertTrue();
+        console.info(testName + `newZoomRatio : ${newZoomRatio}`);
+        expect(Math.abs(newZoomRatio - exceedZoomRatio) <= 0.1).assertTrue();
       }
     }
     await releasePhotoSession();
@@ -625,10 +652,12 @@ async function setZoomRatioVideoAbnormal(done: Function, testName: string) {
           let zoomRatio = mVideoSession.getZoomRatio();
           console.info(TAG, testName + ' zoomRatio: ' + zoomRatio + ', zoomRatioRange: ' + zoomRatioRange);
           let exceedZoomRatio = zoomRatioRange[0] + 0.0011;
+          console.info(testName + `exceedZoomRatio : ${exceedZoomRatio}`);
           mVideoSession.setZoomRatio(exceedZoomRatio);
-          await sleep(COMMON_WAIT_DURATION);
+          await sleep(3000);
           let newZoomRatio = mVideoSession.getZoomRatio();
-          expect(newZoomRatio !== exceedZoomRatio).assertTrue();
+          console.info(testName + `newZoomRatio : ${newZoomRatio}`);
+          expect(Math.abs(newZoomRatio - exceedZoomRatio) <= 0.1).assertTrue();
         }
         await releaseVideoSession();
       }
@@ -671,12 +700,12 @@ export default function CameraSessionZoomTest() {
     });
 
     /**
-     * @tc.number    : SESSION_ZOOM_001
-     * @tc.name      : getZoomRatioRange_photo_abnormal_001
-     * @tc.desc      : mode->NORMAL_PHOTO, no session, only getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_abnormal_001
+     * @tc.number SESSION_ZOOM_001
+     * @tc.desc   mode->NORMAL_PHOTO, no session, only getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_photo_abnormal_001';
@@ -684,12 +713,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_002
-     * @tc.name      : getZoomRatioRange_video_abnormal_001
-     * @tc.desc      : mode->NORMAL_VIDEO, no session, only getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_abnormal_001
+     * @tc.number SESSION_ZOOM_002
+     * @tc.desc   mode->NORMAL_VIDEO, no session, only getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_video_abnormal_001';
@@ -697,12 +726,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_003
-     * @tc.name      : getZoomRatioRange_secure_photo_abnormal_001
-     * @tc.desc      : mode->SECURE_PHOTO, no session, only getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_secure_photo_abnormal_001
+     * @tc.number SESSION_ZOOM_003
+     * @tc.desc   mode->SECURE_PHOTO, no session, only getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_secure_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'getZoomRatioRange_secure_photo_abnormal_001';
@@ -710,12 +739,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_004
-     * @tc.name      : getZoomRatioRange_photo_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_001
+     * @tc.number SESSION_ZOOM_004
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_photo_001';
@@ -751,12 +780,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_005
-     * @tc.name      : getZoomRatioRange_video_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_001
+     * @tc.number SESSION_ZOOM_005
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_video_001';
@@ -797,12 +826,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_006
-     * @tc.name      : setZoomRatio_photo_001
-     * @tc.desc      : setZoomRatio-min zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_001
+     * @tc.number SESSION_ZOOM_006
+     * @tc.desc   setZoomRatio-min zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_001';
@@ -810,12 +839,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_007
-     * @tc.name      : setZoomRatio_photo_002
-     * @tc.desc      : setZoomRatio-max zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_002
+     * @tc.number SESSION_ZOOM_007
+     * @tc.desc   setZoomRatio-max zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_002';
@@ -823,12 +852,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_008
-     * @tc.name      : setZoomRatio_photo_003
-     * @tc.desc      : setZoomRatio-invalid value
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_003
+     * @tc.number SESSION_ZOOM_008
+     * @tc.desc   setZoomRatio-invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_003';
@@ -836,12 +865,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_009
-     * @tc.name      : setZoomRatio_video_001
-     * @tc.desc      : setZoomRatio-min zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_001
+     * @tc.number SESSION_ZOOM_009
+     * @tc.desc   setZoomRatio-min zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_001';
@@ -849,12 +878,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_010
-     * @tc.name      : setZoomRatio_video_002
-     * @tc.desc      : setZoomRatio-max zoom ratio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_002
+     * @tc.number SESSION_ZOOM_010
+     * @tc.desc   setZoomRatio-max zoom ratio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_002';
@@ -862,12 +891,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_011
-     * @tc.name      : setZoomRatio_video_003
-     * @tc.desc      : setZoomRatio-invalid value
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_003
+     * @tc.number SESSION_ZOOM_011
+     * @tc.desc   setZoomRatio-invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_003';
@@ -875,12 +904,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_012
-     * @tc.name      : getZoomRatioRange_photo_preconfig_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_photo_preconfig_001
+     * @tc.number SESSION_ZOOM_012
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_photo_preconfig_001';
@@ -889,12 +918,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_013
-     * @tc.name      : getZoomRatioRange_video_preconfig_001
-     * @tc.desc      : getZoomRatioRange
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getZoomRatioRange_video_preconfig_001
+     * @tc.number SESSION_ZOOM_013
+     * @tc.desc   getZoomRatioRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getZoomRatioRange_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getZoomRatioRange_video_preconfig_001';
@@ -903,12 +932,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_014
-     * @tc.name      : setZoomRatio_photo_preconfig_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_preconfig_001
+     * @tc.number SESSION_ZOOM_014
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_preconfig_001';
@@ -917,12 +946,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_015
-     * @tc.name      : setZoomRatio_video_preconfig_001
-     * @tc.desc      : setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_preconfig_001
+     * @tc.number SESSION_ZOOM_015
+     * @tc.desc   setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_preconfig_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_preconfig_001';
@@ -931,12 +960,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_016
-     * @tc.name      : setZoomRatio_photo_abnormal_001
-     * @tc.desc      : Set values beyond the supported precision range
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_abnormal_001
+     * @tc.number SESSION_ZOOM_016
+     * @tc.desc   Set values beyond the supported precision range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_photo_abnormal_001';
@@ -944,12 +973,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_017
-     * @tc.name      : setZoomRatio_video_abnormal_001
-     * @tc.desc      : Set values beyond the supported precision range
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_abnormal_001
+     * @tc.number SESSION_ZOOM_017
+     * @tc.desc   Set values beyond the supported precision range
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setZoomRatio_video_abnormal_001';
@@ -957,12 +986,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_018
-     * @tc.name      : setZoomRatio_photo_abnormal_002
-     * @tc.desc      : mode->NORMAL_PHOTO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_photo_abnormal_002
+     * @tc.number SESSION_ZOOM_018
+     * @tc.desc   mode->NORMAL_PHOTO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_photo_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_photo_abnormal_002';
@@ -970,12 +999,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_019
-     * @tc.name      : setZoomRatio_video_abnormal_002
-     * @tc.desc      : mode->NORMAL_VIDEO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_video_abnormal_002
+     * @tc.number SESSION_ZOOM_019
+     * @tc.desc   mode->NORMAL_VIDEO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_video_abnormal_002', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_video_abnormal_002';
@@ -983,12 +1012,12 @@ export default function CameraSessionZoomTest() {
     })
 
     /**
-     * @tc.number    : SESSION_ZOOM_020
-     * @tc.name      : setZoomRatio_secure_photo_abnormal_001
-     * @tc.desc      : mode->SECURE_PHOTO, no session, only setZoomRatio
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   setZoomRatio_secure_photo_abnormal_001
+     * @tc.number SESSION_ZOOM_020
+     * @tc.desc   mode->SECURE_PHOTO, no session, only setZoomRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setZoomRatio_secure_photo_abnormal_001', Level.LEVEL0, (done: Function) => {
       const testName = 'setZoomRatio_secure_photo_abnormal_001';

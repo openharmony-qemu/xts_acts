@@ -51,7 +51,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesClear0012
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2200
          * @tc.desc   clear callback interface test
@@ -70,7 +69,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesHasKey0032
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1200
          * @tc.desc   has string callback interface test
@@ -87,7 +85,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesHasKey0033
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1600
          * @tc.desc   has int callback interface test
@@ -104,7 +101,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesHasKey0034
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1500
          * @tc.desc   has float callback interface test
@@ -121,7 +117,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesHasKey0035
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1700
          * @tc.desc   has long callback interface test
@@ -138,7 +133,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesHasKey0036
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1400
          * @tc.desc   has boolean callback interface test
@@ -155,7 +149,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetDefValue0062
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2100
          * @tc.desc   get defaultValue callback interface test
@@ -172,7 +165,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetFloat0072
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1800
          * @tc.desc   get float callback interface test
@@ -190,7 +182,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetInt0082
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1900
          * @tc.desc   get int callback interface test
@@ -208,7 +199,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetLong0092
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1100
          * @tc.desc   get long callback interface test
@@ -228,7 +218,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetString102
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2000
          * @tc.desc   get String callback interface test
@@ -247,7 +236,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutBoolean0122
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0300
          * @tc.desc   put boolean callback interface test
@@ -268,7 +256,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutFloat0132
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0400
          * @tc.desc   put float callback interface test
@@ -289,7 +276,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutInt0142
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0500
          * @tc.desc   put int callback interface test
@@ -310,7 +296,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutLong0152
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1000
          * @tc.desc   put long callback interface test
@@ -332,7 +317,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutString0162
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0900
          * @tc.desc   put String callback interface test
@@ -353,7 +337,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesCallback0172
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2500
          * @tc.desc   flush String callback interface test
@@ -395,7 +378,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutStringArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0800
          * @tc.desc   put String callback interface test
@@ -417,7 +399,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutNumArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0700
          * @tc.desc   put String callback interface test
@@ -439,7 +420,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesPutBoolArray0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0600
          * @tc.desc   put String callback interface test
@@ -461,7 +441,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetAll0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2400
          * @tc.desc   getAll callback interface test
@@ -507,7 +486,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetPreferences0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_2300
          * @tc.desc   getPreferences callback interface test
@@ -530,7 +508,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesDeletePreferences0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0200
          * @tc.desc   deletePreferences callback interface test
@@ -562,7 +539,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testRemovePreferencesFromCache0001
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_0100
          * @tc.desc   removePreferencesFromCache interface test
@@ -593,7 +569,6 @@ export default function preferencesCallBackTest(){
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferencesGetDefValue0173
          * @tc.number SUB_DistributedData_Preference_SDK_PreferenceJsApiCallbackTest_1300
          * @tc.desc   get defaultValue callback interface test

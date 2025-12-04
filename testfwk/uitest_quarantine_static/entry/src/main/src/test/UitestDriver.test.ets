@@ -48,10 +48,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0001
-     * @tc.name: testMouseDrag_static
-     * @tc.desc: drag on the screen between the specified points by mouse.
+    /**
+     * @tc.name   testMouseDrag_static
+     * @tc.number uitestDriverTest_0001
+     * @tc.desc   drag on the screen between the specified points by mouse.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMouseDrag_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testMouseDrag_static start !!!!");
@@ -91,10 +94,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0002
-     * @tc.name: testFling_static
-     * @tc.desc: inject fling on the device display.
+    /**
+     * @tc.name   testFling_static
+     * @tc.number uitestDriverTest_0002
+     * @tc.desc   inject fling on the device display.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFling_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -122,10 +128,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0048
-     * @tc.name: testTriggerCombineKeys_static
-     * @tc.desc: press the specified key.
+    /**
+     * @tc.name   testTriggerCombineKeys_static
+     * @tc.number uitestDriverTest_0048
+     * @tc.desc   press the specified key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTriggerCombineKeys_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testTriggerCombineKeys_static start !!!!")
@@ -181,10 +190,13 @@ export default function uitestDriverTest() {
     })
 
 
-    /*
-     * @tc.number: uiTest_9049
-     * @tc.name: testDisplayRotation_static
-     * @tc.desc: get the rotation of the device display and set it.
+    /**
+     * @tc.name   testDisplayRotation_static
+     * @tc.number uiTest_9049
+     * @tc.desc   get the rotation of the device display and set it.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayRotation_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
@@ -235,10 +247,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0053
-     * @tc.name: testSetDisplayRotationEnabled_static
-     * @tc.desc: setDisplayRotationEnabled test.
+    /**
+     * @tc.name   testSetDisplayRotationEnabled_static
+     * @tc.number uitestDriverTest_0053
+     * @tc.desc   setDisplayRotationEnabled test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetDisplayRotationEnabled_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testSetDisplayRotationEnabled_static start`);
@@ -267,11 +282,14 @@ export default function uitestDriverTest() {
       hilog.info(domain, tag, `testSetDisplayRotationEnabled_static end`);
     })
 
-    /*
-    * @tc.number: uitestDriverTest_0004
-    * @tc.name: testPressHome_static
-    * @tc.desc: Press the BACK key.
-    */
+    /**
+     * @tc.name   testPressHome_static
+     * @tc.number uitestDriverTest_0004
+     * @tc.desc   Press the BACK key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testPressHome_static',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, "testPressHome_static Start!!!");
       try {
@@ -291,10 +309,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0034
-     * @tc.name: testDrag_static
-     * @tc.desc: drag on the screen between the specified points.
+    /**
+     * @tc.name   testDrag_static
+     * @tc.number uitestDriverTest_0034
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDrag_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -321,10 +342,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0036
-     * @tc.name: testDrag_speed_static
-     * @tc.desc: drag on the screen between the specified points.
+    /**
+     * @tc.name   testDrag_speed_static
+     * @tc.number uitestDriverTest_0036
+     * @tc.desc   drag on the screen between the specified points.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDrag_speed_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -351,10 +375,13 @@ export default function uitestDriverTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestDriverTest_0037
-     * @tc.name: testPressHomeWithId_static
-     * @tc.desc: pressHome test
+    /**
+     * @tc.name   testPressHomeWithId_static
+     * @tc.number uitestDriverTest_0037
+     * @tc.desc   pressHome test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testPressHomeWithId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testPressHomeWithId_static start`);

@@ -332,10 +332,13 @@ static BOOL SingleTaskFuncTestSuiteTearDown(void)
     return TRUE;
 }
 
-/* *
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0010
- * @tc.name      : Service with PRI_LOW priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   testSingleTask0010
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0010, Function | MediumTest | Level2)
 {
@@ -389,10 +392,13 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0010, Function | MediumTes
     TEST_ASSERT_EQUAL_INT(g_service[0].serviceCalledCount == 1, TRUE);
 };
 
-/* *
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0020
- * @tc.name      : Service with PRI_BELOW_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   testSingleTask0020
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0020, Function | MediumTest | Level2)
 {
@@ -444,10 +450,13 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0020, Function | MediumTes
     TEST_ASSERT_EQUAL_INT(g_service[1].serviceCalledCount == 1, TRUE);
 };
 
-/* *
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0030
- * @tc.name      : Service with PRI_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   testSingleTask0030
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0030, Function | MediumTest | Level2)
 {
@@ -499,10 +508,13 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0030, Function | MediumTes
     TEST_ASSERT_EQUAL_INT(g_service[INDEX2].serviceCalledCount == 1, TRUE);
 };
 
-/* *
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0040
- * @tc.name      : Service with PRI_ABOVE_NORMAL priority function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   testSingleTask0040
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0040, Function | MediumTest | Level2)
 {
@@ -554,10 +566,13 @@ LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0040, Function | MediumTes
     TEST_ASSERT_EQUAL_INT(g_service[INDEX3].serviceCalledCount == 1, TRUE);
 };
 
-/* *
- * @tc.number    : DMSLite_SAMGR_Taskpool_SingleTask_0050
- * @tc.name      : Service initialization order depends on service priority
- * @tc.desc      : [C- SOFTWARE -0200]
+/**
+ * @tc.name   testSingleTask0050
+ * @tc.number DMSLite_SAMGR_Taskpool_SingleTask_0050
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(SingleTaskFuncTestSuite, testSingleTask0050, Function | MediumTest | Level2)
 {

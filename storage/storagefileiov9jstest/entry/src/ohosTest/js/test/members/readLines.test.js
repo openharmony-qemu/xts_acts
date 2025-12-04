@@ -24,14 +24,12 @@ export default function fileIOReadLines() {
 describe('fileIO_fs_readLines', function () {
   
     /**
+     * @tc.name   fileIO_test_readLines_sync_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0100
-     * @tc.name fileIO_test_readLines_sync_001
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_001', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_001');
@@ -52,14 +50,12 @@ describe('fileIO_fs_readLines', function () {
     });
       
     /**
+     * @tc.name   fileIO_test_readLines_sync_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0200
-     * @tc.name fileIO_test_readLines_sync_002
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_002', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_002');
@@ -83,14 +79,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0300
-     * @tc.name fileIO_test_readLines_sync_003
-     * @tc.desc Test readLinesSync() interfaces.
-     * Missing parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_003', Level.LEVEL3, async function () {
 
@@ -104,14 +98,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0400
-     * @tc.name fileIO_test_readLines_sync_004
-     * @tc.desc Test readLinesSync() interfaces.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_004', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_004');
@@ -126,14 +118,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0500
-     * @tc.name fileIO_test_readLines_sync_005
-     * @tc.desc Test readLinesSync() interfaces.
-     * Undefined options arguments,use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_005', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_005');
@@ -154,14 +144,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0600
-     * @tc.name fileIO_test_readLines_sync_006
-     * @tc.desc Test readLinesSync() interfaces.
-     * Undefined encoding arguments,use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_sync_006', Level.LEVEL3, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_006');
@@ -184,14 +172,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0700
-     * @tc.name fileIO_test_readLines_sync_007
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path when encoding = 'utf-16'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_007', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_007');
@@ -210,14 +196,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_sync_008
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_0800
-     * @tc.name fileIO_test_readLines_sync_008
-     * @tc.desc Test readLinesSync() interfaces.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLinesSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_sync_008', Level.LEVEL0, async function () {
         let fpath = await nextFileName('fileIO_test_readLines_sync_008');
@@ -239,14 +223,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0100
-     * @tc.name fileIO_test_readLines_async_001
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_001', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_001');
@@ -268,14 +250,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_002
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0200
-     * @tc.name fileIO_test_readLines_async_002
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_002', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_002');
@@ -302,14 +282,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_003
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0300
-     * @tc.name fileIO_test_readLines_async_003
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_003', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_003');
@@ -333,14 +311,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_004
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0400
-     * @tc.name fileIO_test_readLines_async_004
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_004', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_004');
@@ -369,14 +345,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_005
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0500
-     * @tc.name fileIO_test_readLines_async_005
-     * @tc.desc Test readLines() interfaces. Promise.then().catch()
-     * Read file content by line through path when encoding = 'utf-8'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_005', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_005');
@@ -404,14 +378,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_006
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0600
-     * @tc.name fileIO_test_readLines_async_006
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Missing parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_006', Level.LEVEL3, async function (done) {
 
@@ -426,14 +398,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_007
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0700
-     * @tc.name fileIO_test_readLines_async_007
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Missing parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_007', Level.LEVEL3, async function (done) {
 
@@ -449,14 +419,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_008
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0800
-     * @tc.name fileIO_test_readLines_async_008
-     * @tc.desc Test readLines() interfaces. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_008', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_008');
@@ -472,14 +440,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_009
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_0900
-     * @tc.name fileIO_test_readLines_async_009
-     * @tc.desc Test readLines() interfaces. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_009', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_009');
@@ -499,14 +465,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_010
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1000
-     * @tc.name fileIO_test_readLines_async_010
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Undefined options arguments,Use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_010', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_010');
@@ -528,14 +492,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_011
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1100
-     * @tc.name fileIO_test_readLines_async_011
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Undefined options arguments,Use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_011', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_011');
@@ -562,14 +524,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_012
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1200
-     * @tc.name fileIO_test_readLines_async_012
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Undefined options arguments,Use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_012', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_012');
@@ -593,14 +553,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_013
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1300
-     * @tc.name fileIO_test_readLines_async_013
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Undefined options arguments,Use default option.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_013', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_013');
@@ -629,14 +587,12 @@ describe('fileIO_fs_readLines', function () {
     });
     
     /**
+     * @tc.name   fileIO_test_readLines_async_014
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1400
-     * @tc.name fileIO_test_readLines_async_014
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path when encoding = 'utf-16'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_014', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_014');
@@ -656,14 +612,12 @@ describe('fileIO_fs_readLines', function () {
     });
     
     /**
+     * @tc.name   fileIO_test_readLines_async_015
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1500
-     * @tc.name fileIO_test_readLines_async_015
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path when encoding = 'utf-16'.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_readLines_async_015', Level.LEVEL3, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_015');
@@ -684,14 +638,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_016
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1600
-     * @tc.name fileIO_test_readLines_async_016
-     * @tc.desc Test readLines() interfaces. Promise.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_016', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_016');
@@ -714,14 +666,12 @@ describe('fileIO_fs_readLines', function () {
     });
 
     /**
+     * @tc.name   fileIO_test_readLines_async_017
      * @tc.number SUB_BASIC_FM_FileAPI_FileIOV9_FILEIO_READLINES_ASYNC_1700
-     * @tc.name fileIO_test_readLines_async_017
-     * @tc.desc Test readLines() interfaces. Callback.
-     * Read file content by line through path, verify normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readLines() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_readLines_async_017', Level.LEVEL0, async function (done) {
         let fpath = await nextFileName('fileIO_test_readLines_async_017');

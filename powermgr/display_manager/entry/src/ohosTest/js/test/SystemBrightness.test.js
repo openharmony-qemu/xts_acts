@@ -38,7 +38,6 @@ export default function SystemBrightnessTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0010
      * @tc.desc   Get brightness success
@@ -68,7 +67,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0020
      * @tc.desc   Get brightness success
@@ -95,7 +93,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0030
      * @tc.desc   Get brightness success
@@ -116,7 +113,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0040
      * @tc.desc   Get brightness success
@@ -140,7 +136,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0050
      * @tc.desc   Get brightness success
@@ -165,7 +160,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0060
      * @tc.desc   Get brightness success
@@ -185,7 +179,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0070
      * @tc.desc   Get brightness success
@@ -204,7 +197,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0800
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0080
      * @tc.desc   Get brightness success
@@ -240,7 +232,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_0900
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0090
      * @tc.desc   Get brightness success
@@ -273,7 +264,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1000
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0100
      * @tc.desc   Get brightness success
@@ -299,7 +289,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0110
      * @tc.desc   Get brightness success
@@ -330,7 +319,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0120
      * @tc.desc   Get brightness success
@@ -356,7 +344,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0130
      * @tc.desc   Get brightness success
@@ -377,7 +364,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1310
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0131
      * @tc.desc   Set brightness success
@@ -399,7 +385,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0140
      * @tc.desc   Get brightness success
@@ -429,7 +414,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0150
      * @tc.desc   Get brightness success
@@ -456,7 +440,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0160
      * @tc.desc   Get brightness success
@@ -477,7 +460,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0170
      * @tc.desc   Get brightness success
@@ -502,7 +484,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1800
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0180
      * @tc.desc   Get brightness success
@@ -522,7 +503,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1900
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_1900
      * @tc.desc   Get brightness success
@@ -546,7 +526,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_1910
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0191
      * @tc.desc   Get brightness success
@@ -568,7 +547,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2000
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0200
      * @tc.desc   Get brightness success
@@ -603,7 +581,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2100
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0210
      * @tc.desc   Get brightness success
@@ -635,7 +612,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2200
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0220
      * @tc.desc   Get brightness success
@@ -660,7 +636,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2300
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0230
      * @tc.desc   Get brightness success
@@ -690,7 +665,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2400
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0240
      * @tc.desc   Get brightness success
@@ -716,7 +690,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2410
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0241
      * @tc.desc   Get brightness success
@@ -738,7 +711,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2500
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0250
      * @tc.desc   Get brightness success
@@ -767,7 +739,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2600
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0260
      * @tc.desc   Get brightness success
@@ -793,7 +764,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2700
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0270
      * @tc.desc   Get brightness success
@@ -819,7 +789,6 @@ export default function SystemBrightnessTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   SystemBrightnessTest_2710
      * @tc.number SUB_PowerSystem_SystemDisplay_JSTest_0271
      * @tc.desc   Get brightness success

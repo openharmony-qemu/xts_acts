@@ -41,12 +41,12 @@ export default function useSharedStorageTest() {
       done();
     });
     /**
-     * @tc.number    useSharedStorage
-     * @tc.name      useSharedStorageTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   useSharedStorageTest_0100
+     * @tc.number useSharedStorage
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('useSharedStorageTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('useSharedStorageTest_0100 START');

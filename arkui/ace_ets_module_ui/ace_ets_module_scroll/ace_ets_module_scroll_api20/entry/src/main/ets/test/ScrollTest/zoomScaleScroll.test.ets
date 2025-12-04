@@ -44,12 +44,12 @@ export default function zoomScaleScroll() {
     });
 
     /**
-     * @tc.number    zoomScaleScroll_001
-     * @tc.name      zoomScaleScroll_0100
-     * @tc.desc      Scale setting properties of Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   zoomScaleScroll_0100
+     * @tc.number zoomScaleScroll_001
+     * @tc.desc   Scale setting properties of Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomScaleScroll_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleScroll_0100] START');
@@ -70,12 +70,12 @@ export default function zoomScaleScroll() {
     });
 
     /**
-     * @tc.number    zoomScaleScroll_002
-     * @tc.name      zoomScaleScroll_0200
-     * @tc.desc      Scale attribute callback of Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   zoomScaleScroll_0200
+     * @tc.number zoomScaleScroll_002
+     * @tc.desc   Scale attribute callback of Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomScaleScroll_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleScroll_0200] START');
@@ -105,12 +105,12 @@ export default function zoomScaleScroll() {
     });
 
     /**
-     * @tc.number    zoomScaleScroll_003
-     * @tc.name      zoomScaleScroll_0300
-     * @tc.desc      Scale attribute callback of Scroll component.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   zoomScaleScroll_0300
+     * @tc.number zoomScaleScroll_003
+     * @tc.desc   Scale attribute callback of Scroll component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('zoomScaleScroll_0300', Level.LEVEL0, async (done: Function) => {
       console.info('[zoomScaleScroll_0300] START');

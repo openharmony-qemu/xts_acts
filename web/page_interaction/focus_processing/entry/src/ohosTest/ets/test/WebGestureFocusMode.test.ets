@@ -79,14 +79,14 @@ export default function webViewSrollableJsunit() {
     //   done();
     // })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBGESTUREFOCUSMODE_0100
-    * @tc.name       : testWebGestureFocusMode001
-    * @tc.desc       : testWebGestureFocusMode001
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testWebGestureFocusMode001
+     * @tc.number SUB_WEB_WEBGESTUREFOCUSMODE_0100
+     * @tc.desc   testWebGestureFocusMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testWebGestureFocusMode001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async  (done: Function) =>{
       Utils.emitEvent("testWebGestureFocusMode001", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -97,14 +97,14 @@ export default function webViewSrollableJsunit() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBGESTUREFOCUSMODE_0200
-    * @tc.name       : testWebGestureFocusMode002
-    * @tc.desc       : testWebGestureFocusMode002
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebGestureFocusMode002
+     * @tc.number SUB_WEB_WEBGESTUREFOCUSMODE_0200
+     * @tc.desc   testWebGestureFocusMode002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebGestureFocusMode002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
       Utils.emitEvent("testWebGestureFocusMode002", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;
@@ -113,14 +113,14 @@ export default function webViewSrollableJsunit() {
       await Utils.waitForExist(() => isReturn, "testWebGestureFocusMode002" + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBGESTUREFOCUSMODE_0300
-    * @tc.name       : testWebGestureFocusMode003
-    * @tc.desc       : testWebGestureFocusMode003
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebGestureFocusMode003
+     * @tc.number SUB_WEB_WEBGESTUREFOCUSMODE_0300
+     * @tc.desc   testWebGestureFocusMode003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebGestureFocusMode003',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async  (done: Function) =>{
       Utils.emitEvent("testWebGestureFocusMode003", EVENT_ID_SET_SUITE_KEY);
       let isReturn = false;

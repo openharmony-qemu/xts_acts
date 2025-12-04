@@ -62,13 +62,13 @@ class DrawingNativeColorTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0100
- * @tc.name: testColorSetArgbNormal
- * @tc.desc: test for testColorSetArgbNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testColorSetArgbNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0100
+ * @tc.desc   test for testColorSetArgbNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeColorTest, testColorSetArgbNormal, Function | SmallTest | Level0) {
     // 1
@@ -82,13 +82,13 @@ HWTEST_F(DrawingNativeColorTest, testColorSetArgbNormal, Function | SmallTest | 
     // 3 Compilation error, unable to test
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0101
- * @tc.name: testColorSetArgbNULL
- * @tc.desc: test for testColorSetArgbNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorSetArgbNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0101
+ * @tc.desc   test for testColorSetArgbNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorTest, testColorSetArgbNULL, Function | SmallTest | Level3) {
     // 1、Passing empty for the first argument of OH_Drawing_ColorSetArgb
@@ -109,13 +109,13 @@ HWTEST_F(DrawingNativeColorTest, testColorSetArgbNULL, Function | SmallTest | Le
     EXPECT_NE(color4, 0);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0102
- * @tc.name: testColorSetArgbMultipleCalls
- * @tc.desc: test for testColorSetArgbMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorSetArgbMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0102
+ * @tc.desc   test for testColorSetArgbMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorTest, testColorSetArgbMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ColorSetArgb with random numbers between 0 and 255, 10 times
@@ -126,13 +126,13 @@ HWTEST_F(DrawingNativeColorTest, testColorSetArgbMultipleCalls, Function | Small
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0103
- * @tc.name: testColorSetArgbAbnormal
- * @tc.desc: test for testColorSetArgbAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorSetArgbAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0103
+ * @tc.desc   test for testColorSetArgbAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorTest, testColorSetArgbAbnormal, Function | SmallTest | Level3) {
     // 1. The first argument of OH_Drawing_ColorSetArgb is a negative number
@@ -153,13 +153,13 @@ HWTEST_F(DrawingNativeColorTest, testColorSetArgbAbnormal, Function | SmallTest 
     EXPECT_NE(color4, 0);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0104
- * @tc.name: testColorSetArgbMaximum
- * @tc.desc: test for testColorSetArgbMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testColorSetArgbMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_COLOR_0104
+ * @tc.desc   test for testColorSetArgbMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeColorTest, testColorSetArgbMaximum, Function | SmallTest | Level3) {
     // 1

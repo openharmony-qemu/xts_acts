@@ -26,15 +26,15 @@ export default function enableDropDisallowedBadgeTest() {
       done();
     })
 
-   /*
-   * @tc.number     : SUB_ARKUI_CAPI_OH_ARKUI_ENABLEDROPDISALLOWEDBADGE_0100
-   * @tc.name       : enableDropDisallowedBadge001
-   * @tc.desc       : testing enableDropDisallowedBadge
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
-   */
 
+  /**
+   * @tc.name   enableDropDisallowedBadge001
+   * @tc.number enableDropDisallowedBadge001
+   * @tc.desc   enableDropDisallowedBadge001
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('enableDropDisallowedBadge001', Level.LEVEL1, async (done: Function) => {
     console.info('enableDropDisallowedBadge001 START');
     let PAGE_TAG = 'enableDropDisallowedBadge';

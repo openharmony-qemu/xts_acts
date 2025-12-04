@@ -49,10 +49,12 @@ export default function ParticleModifierTest() {
 
 
     /**
-     * @tc.number    ParticleModifierTest_0100
-     * @tc.name      ParticleModifierTest_0100
-     * @tc.desc      Test onSkip
-     * @tc.level     Level 0
+     * @tc.name   ParticleModifierTest_0100
+     * @tc.number ParticleModifierTest_0100
+     * @tc.desc   Test onSkip
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParticleModifierTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('ParticleModifierTest_0100 START');

@@ -66,6 +66,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
                 inData: srcData63Kb,
             };
         });
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_DH_101
+         * @tc.number Security_HUKS_Agree_API8_DH_101
+         * @tc.desc   Security_HUKS_Agree_API8_DH_101
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_DH_101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeDHSize2048Finish63KBAgreeKeyAlias_01_101';
             const srcKeyAliasSecond = 'testAgreeDHSize2048Finish63KBAgreeKeyAlias_02_101';
@@ -106,6 +114,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_DH_102
+         * @tc.number Security_HUKS_Agree_API8_DH_102
+         * @tc.desc   Security_HUKS_Agree_API8_DH_102
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_DH_102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             const srcKeyAliasFirst = 'testAgreeDHSize2048Abort63KBAgreeKeyAlias_01_101';
             const srcKeyAliasSecond = 'testAgreeDHSize2048Abort63KBAgreeKeyAlias_02_101';
@@ -129,6 +145,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1016
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1016
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1016
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1016_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1016_2';
@@ -145,6 +169,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1017
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1017
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1017
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1017_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1017_2';
@@ -160,6 +192,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1018
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1018
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1018
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1018_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1018_2';
@@ -175,6 +215,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1020
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1020
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1020
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1020_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1020_2';
@@ -193,6 +241,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1022
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1022
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1022
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1022_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1022_2';
@@ -221,6 +277,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1023
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1023
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1023
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1023_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1023_2';
@@ -239,6 +303,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1024
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1024
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1024
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1024_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1024_2';
@@ -258,6 +330,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1025
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1025
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1025
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1025_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1025_2';
@@ -277,6 +357,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1026
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1026
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1026
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1026_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1026_2';
@@ -296,6 +384,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1027
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1027
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1027
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1027_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1027_2';
@@ -314,6 +410,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1028
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1028
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1028
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1028_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1028_2';
@@ -333,6 +437,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1029
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1029
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1029
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1029_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1029_2';
@@ -352,6 +464,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1030
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1030
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1030
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1030_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1030_2';
@@ -371,6 +491,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1031
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1031
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1031
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1031_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1031_2';
@@ -388,6 +516,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1032
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1032
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1032
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1032_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1032_2';
@@ -405,6 +541,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1033
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1033
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1033
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1033_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1033_2';
@@ -423,6 +567,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1034
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1034
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1034
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1034_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1034_2';
@@ -441,6 +593,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1035
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1035
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1035
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1035_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1035_2';
@@ -459,6 +619,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1036
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1036
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1036
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1036_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1036_2';
@@ -477,6 +645,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1038
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1038
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1038
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1038_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1038_2';
@@ -498,6 +674,14 @@ export default function SecurityHuksAgreeDHPromiseJsunit() {
             done();
         });
 
+        /**
+         * @tc.name   Security_HUKS_Agree_API8_abnormal_1039
+         * @tc.number Security_HUKS_Agree_API8_abnormal_1039
+         * @tc.desc   Security_HUKS_Agree_API8_abnormal_1039
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_Agree_API8_abnormal_1039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let srcKeyAliasFirst = 'Security_HUKS_Agree_API8_abnormal_1039_1';
             let srcKeyAliasSecond = 'Security_HUKS_Agree_API8_abnormal_1039_2';

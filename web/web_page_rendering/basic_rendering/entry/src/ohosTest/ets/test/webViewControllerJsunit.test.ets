@@ -59,10 +59,13 @@ export default function webViewControllerJsunit() {
       }
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_API_0100
-     *tc.name testGetWebId
-     *tc.desc Get the WebId
+    /**
+     * @tc.name   testGetWebId
+     * @tc.number SUB_ACE_BASIC_ETS_API_0100
+     * @tc.desc   Get the WebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWebId',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitGetWebId";

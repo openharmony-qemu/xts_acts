@@ -51,9 +51,12 @@ export default function row_TextSizeTest() {
       console.info("Row_TextSizeTest after each called");
     });
     /**
+     * @tc.name   testRowTextSizeHeight
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0100
-     * @tc.name testRowTextSizeHeight
-     * @tc.desc The height of the first subcomponent changed
+     * @tc.desc   The height of the first subcomponent changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextSizeHeight',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextSizeHeight] START');
@@ -98,9 +101,12 @@ export default function row_TextSizeTest() {
       done();
     });
     /**
+     * @tc.name   testRowTextSizeWidth
      * @tc.number SUB_ACE_ROW_SUBCOMPONENTCHANGED_0200
-     * @tc.name testRowTextSizeWidth
-     * @tc.desc The width of the first subcomponent changed
+     * @tc.desc   The width of the first subcomponent changed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowTextSizeWidth',  Level.LEVEL0, async (done: Function) => {
       console.info('[testRowTextSizeWidth] START');

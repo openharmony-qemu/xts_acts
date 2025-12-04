@@ -33,10 +33,13 @@ export default function webJsunit() {
       console.info("web beforeEach start");
       done();
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_070                                                                                                                                                                   
-     *tc.name isCookieAllowed                                                                                                                                                                                                                
-     *tc.desic return whether the cookie is allowed
+    /**
+     * @tc.name   isCookieAllowed
+     * @tc.number SUB_ACE_BASIC_ETS_API_070
+     * @tc.desc   isCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isCookieAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsCookieAllowed";
@@ -44,10 +47,13 @@ export default function webJsunit() {
       Utils.registerEvent("isCookieAllowed", false, 14046, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_071                                                                                                                                                                   
-     *tc.name saveCookieAsync                                                                                                                                                                                                                
-     *tc.desic return whether the cookie is allowed
+    /**
+     * @tc.name   saveCookieAsync
+     * @tc.number SUB_ACE_BASIC_ETS_API_071
+     * @tc.desc   saveCookieAsync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('saveCookieAsync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitSaveCookieAsync";
@@ -55,10 +61,13 @@ export default function webJsunit() {
       Utils.registerEvent("saveCookieAsync", "result", 14048, done);
       sendEventByKey('webcomponent', 10, '');
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_072                                                                                                                                                                   
-     *tc.name isThirdPartyCookieAllowed                                                                                                                                                                                                                
-     *tc.desic return whether the third party cookie is allowed
+    /**
+     * @tc.name   isThirdPartyCookieAllowed
+     * @tc.number SUB_ACE_BASIC_ETS_API_072
+     * @tc.desc   isThirdPartyCookieAllowed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isThirdPartyCookieAllowed', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitIsThirdPartyCookieAllowed";

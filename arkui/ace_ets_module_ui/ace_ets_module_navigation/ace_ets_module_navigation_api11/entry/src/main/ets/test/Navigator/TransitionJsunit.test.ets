@@ -46,6 +46,14 @@ export default function transitionJsunit() {
       console.info("transition after each called");
     });
 
+    /**
+     * @tc.name   transitionTest_0100
+     * @tc.number transitionTest_0100
+     * @tc.desc   transitionTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transitionTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0100 START');
       let strJson: string = getInspectorByKey('button');
@@ -58,6 +66,14 @@ export default function transitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   transitionTest_0200
+     * @tc.number transitionTest_0200
+     * @tc.desc   transitionTest_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transitionTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0200 START');
       let indexEvent: events_emitter.InnerEvent = {
@@ -80,6 +96,14 @@ export default function transitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   transitionTest_0300
+     * @tc.number transitionTest_0300
+     * @tc.desc   transitionTest_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transitionTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0300 START');
       try {
@@ -106,6 +130,14 @@ export default function transitionJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   transitionTest_0400
+     * @tc.number transitionTest_0400
+     * @tc.desc   transitionTest_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('transitionTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('transitionTest_0400 START');
       try {

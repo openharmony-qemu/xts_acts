@@ -29,12 +29,12 @@ export default function albumGetAllObjectTest() {
     const helper = photoAccessHelper.getPhotoAccessHelper(testContext);
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_ALL_OBJECTS_STATIC_0000
-      * @tc.name    album_getAllObjects_callback_static_000
-      * @tc.desc    get all system album object
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getAllObjects_callback_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_ALL_OBJECTS_STATIC_0000
+     * @tc.desc   get all system album object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAllObjects_callback_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -77,12 +77,12 @@ export default function albumGetAllObjectTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_ALL_OBJECTS_STATIC_0300
-      * @tc.name    album_getAllObjects_callback_static_003
-      * @tc.desc    get all system album object,albumSubtype=photoAccessHelper.AlbumSubtype.IMAGE
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getAllObjects_callback_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_ALBUM_GET_ALL_OBJECTS_STATIC_0300
+     * @tc.desc   get all system album object,albumSubtype=photoAccessHelper.AlbumSubtype.IMAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAllObjects_callback_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -119,12 +119,12 @@ export default function albumGetAllObjectTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_ALL_OBJECTS_STATIC_0000
-      * @tc.name    album_getAllObjects_promise_static_000
-      * @tc.desc    get all system album object
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   album_getAllObjects_promise_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_PROMISE_ALBUM_GET_ALL_OBJECTS_STATIC_0000
+     * @tc.desc   get all system album object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('album_getAllObjects_promise_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

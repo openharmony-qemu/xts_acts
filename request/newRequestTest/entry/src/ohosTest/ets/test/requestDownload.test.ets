@@ -50,12 +50,12 @@ export default function requestDownloadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010
-     * @tc.name    SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010
-     * @tc.desc      Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_removeNormal_promise_0010 is starting-----------------------");
@@ -72,12 +72,12 @@ export default function requestDownloadJSUnit() {
     });
 
     /**
-     * @tc.number    SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010
-     * @tc.name    SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010
-     * @tc.desc      Starts a download session.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010
+     * @tc.number SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010
+     * @tc.desc   Starts a download session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_MISC_REQUEST_DOWNLOAD_removeNormal_callback_0010 is starting-----------------------");

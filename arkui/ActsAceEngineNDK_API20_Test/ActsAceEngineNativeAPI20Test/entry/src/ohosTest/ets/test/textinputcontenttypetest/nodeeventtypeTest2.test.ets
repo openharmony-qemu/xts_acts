@@ -31,14 +31,14 @@ export default function NodeEventTypeTest2() {
       await Utils.pushPage(`nodeeventtypetest/NodeEventTypeTest2`, done);
     });
 
-    /*
-       * @tc.number     : SUB_ArkUI_ACE_ENGINE_NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE_0100
-       * @tc.name       : testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100
-       * @tc.desc       : testing NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE interface
-       * @tc.size       : MediumTest
-       * @tc.type       : Function
-       * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100
+     * @tc.number SUB_ArkUI_ACE_ENGINE_NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE_0100
+     * @tc.desc   testing NODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNODE_LIST_ON_SCROLL_VISIBLE_CONTENT_CHANGE0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         try {

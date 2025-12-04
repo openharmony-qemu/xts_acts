@@ -39,15 +39,14 @@ export default function AccessibleAbilityList() {
         /* Cases SUB_BASIC_BARRIERFREE_API_AccessibleAbilityList_0100-0460 are for accessibility.getAbilityLists() API test   */
         /******************************************************************************** */
 
-        /*
-        * @tc.number  SUB_BASIC_BARRIERFREE_API_AccessibleAbilityList_0100
-        * @tc.name    test_sUB_bASIC_bARRIERFREE_aPI_accessibleAbilityList_0100
-        * @tc.desc    The parameters input are 'audible' and 'install', test the getAbilityLists() function,
-        *             and the output is the list of AccessibilityAbilityInfo
-        * @tc.size    SmallTest
-        * @tc.type    User
-        * @tc.level   Level 1
-        */
+        /**
+         * @tc.name   AccessibleAbilityList_0100
+         * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleAbilityList_0100
+         * @tc.desc   The parameters input are 'audible' and 'install', test the getAbilityLists() function,
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('AccessibleAbilityList_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
             console.info('SUB_BASIC_BARRIERFREE_API_AccessibleAbilityList_0100');
             let abilityType = 'audible';

@@ -47,12 +47,12 @@ export default function dragSpringLoadingTest() {
     });
 
     /**
-     * @tc.number    dragSpringLoadingTest_0010
-     * @tc.name      dragSpringLoadingTest_0010
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   dragSpringLoadingTest_0010
+     * @tc.number dragSpringLoadingTest_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dragSpringLoadingTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('dragSpringLoadingTest_0010 START');
@@ -99,12 +99,12 @@ export default function dragSpringLoadingTest() {
     });
 
     /**
-     * @tc.number    dragSpringLoadingTest_0020
-     * @tc.name      dragSpringLoadingTest_0020
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   dragSpringLoadingTest_0020
+     * @tc.number dragSpringLoadingTest_0020
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('dragSpringLoadingTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('dragSpringLoadingTest_0020 START');

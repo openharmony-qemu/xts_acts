@@ -39,12 +39,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0100
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0100
-     * @tc.name BuiltinsPartialUtilityTypeTest0100
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0100';
@@ -64,12 +64,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0200
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0200
-     * @tc.name BuiltinsPartialUtilityTypeTest0200
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0200';
@@ -103,12 +103,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0300
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0300
-     * @tc.name BuiltinsPartialUtilityTypeTest0300
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0300';
@@ -132,12 +132,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0400
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0400
-     * @tc.name BuiltinsPartialUtilityTypeTest0400
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0400';
@@ -157,12 +157,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0500
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0500
-     * @tc.name BuiltinsPartialUtilityTypeTest0500
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0500';
@@ -208,12 +208,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0600
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0600
-     * @tc.name BuiltinsPartialUtilityTypeTest0600
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0600';
@@ -239,12 +239,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0700
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0700
-     * @tc.name BuiltinsPartialUtilityTypeTest0700
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsPartialUtilityTypeTest0700';
@@ -269,12 +269,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0800
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0800
-     * @tc.name BuiltinsPartialUtilityTypeTest0800
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest0800';
@@ -293,12 +293,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest0900
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_0900
-     * @tc.name BuiltinsPartialUtilityTypeTest0900
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest0900';
@@ -315,12 +315,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1000
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1000
-     * @tc.name BuiltinsPartialUtilityTypeTest1000
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1000';
@@ -337,12 +337,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1100
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1100
-     * @tc.name BuiltinsPartialUtilityTypeTest1100
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1100';
@@ -359,12 +359,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1200
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1200
-     * @tc.name BuiltinsPartialUtilityTypeTest1200
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1200';
@@ -382,12 +382,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1300
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1300
-     * @tc.name BuiltinsPartialUtilityTypeTest1300
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1300';
@@ -405,12 +405,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1400
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1400
-     * @tc.name BuiltinsPartialUtilityTypeTest1400
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1400';
@@ -434,12 +434,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1500
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1500
-     * @tc.name BuiltinsPartialUtilityTypeTest1500
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1500';
@@ -457,12 +457,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1600
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1600
-     * @tc.name BuiltinsPartialUtilityTypeTest1600
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1600';
@@ -480,12 +480,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1700
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1700
-     * @tc.name BuiltinsPartialUtilityTypeTest1700
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1700';
@@ -507,12 +507,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1800
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1800
-     * @tc.name BuiltinsPartialUtilityTypeTest1800
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1800';
@@ -532,12 +532,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
       Done();
     })
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest1900
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_1900
-     * @tc.name BuiltinsPartialUtilityTypeTest1900
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest1900';
@@ -557,12 +557,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2000
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2000
-     * @tc.name BuiltinsPartialUtilityTypeTest2000
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2000';
@@ -581,12 +581,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2100
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2100
-     * @tc.name BuiltinsPartialUtilityTypeTest2100
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2100';
@@ -609,12 +609,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2200
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2200
-     * @tc.name BuiltinsPartialUtilityTypeTest2200
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2200';
@@ -636,12 +636,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2300
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2300
-     * @tc.name BuiltinsPartialUtilityTypeTest2300
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2300';
@@ -663,12 +663,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2400
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2400
-     * @tc.name BuiltinsPartialUtilityTypeTest2400
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2400';
@@ -689,12 +689,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
       Done();
     })
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2500
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2500
-     * @tc.name BuiltinsPartialUtilityTypeTest2500
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2500';
@@ -716,12 +716,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2600
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2600
-     * @tc.name BuiltinsPartialUtilityTypeTest2600
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2600';
@@ -744,12 +744,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2700
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2700
-     * @tc.name BuiltinsPartialUtilityTypeTest2700
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2700';
@@ -772,12 +772,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2800
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2800
-     * @tc.name BuiltinsPartialUtilityTypeTest2800
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2800';
@@ -800,12 +800,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest2900
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_2900
-     * @tc.name BuiltinsPartialUtilityTypeTest2900
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest2900';
@@ -827,12 +827,12 @@ export default function BuiltinsPartialUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPartialUtilityTypeTest3000
      * @tc.number SUB_BUILTINS_PARTIAL_UTILITY_TEST_3000
-     * @tc.name BuiltinsPartialUtilityTypeTest3000
-     * @tc.desc Partial Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Partial Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPartialUtilityTypeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPartialUtilityTypeTest3000';

@@ -76,15 +76,15 @@ export default function abilityTest() {
         connId = 0;
       }
     })
-    /*
-    * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0001
-    * @tc.name        SUB_WEB_WebNativeMessagingExtension_0100
-    * @tc.desc        test WebNativeMessagingExtension
-    * @tc.size        MediumTest
-    * @tc.type        Function
-    * @tc.level       Level 0
-    */
     // 拉起webNativeExtension
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0100
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_0100
+     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_WEB_WebNativeMessagingExtension_0100', Level.LEVEL0, async (done: Function) => {
       const tcNumber = `SUB_WEB_WebNativeMessagingExtension_0100`;
       hilog.info(0x0000, 'testTag', `${tcNumber} Begin`);
@@ -151,15 +151,15 @@ export default function abilityTest() {
       }
     })
 
-    /*
- * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0002
- * @tc.name        SUB_WEB_WebNativeMessagingExtension_0200
- * @tc.desc        test WebNativeMessagingExtension
- * @tc.size        MediumTest
- * @tc.type        Function
- * @tc.level       Level 0
- */
     // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_WEB_WebNativeMessagingExtension_0200', Level.LEVEL0, async (done: Function) => {
       // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
       await sleep(3000);
@@ -225,15 +225,15 @@ export default function abilityTest() {
       }
     })
 
-    /*
-      * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0003
-      * @tc.name        SUB_WEB_WebNativeMessagingExtension_0300
-      * @tc.desc        test WebNativeMessagingExtension
-      * @tc.size        MediumTest
-      * @tc.type        Function
-      * @tc.level       Level 0
-      */
     // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0300
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_0300
+     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_WEB_WebNativeMessagingExtension_0300', Level.LEVEL0, async (done: Function) => {
       // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
       await sleep(3000);
@@ -287,15 +287,15 @@ export default function abilityTest() {
     })
 
 
-    /*
-  * @tc.number      SUB_ACE_WebNativeMessagingExtension_API_0004
-  * @tc.name        SUB_WEB_WebNativeMessagingExtension_0400
-  * @tc.desc        test WebNativeMessagingExtension
-  * @tc.size        MediumTest
-  * @tc.type        Function
-  * @tc.level       Level 0
-  */
     // 拉起webNativeExtension后发送命令让其拉起他的主页面，并通过commonEvent来确认拉起结果
+    /**
+     * @tc.name   SUB_WEB_WebNativeMessagingExtension_0400
+     * @tc.number SUB_WEB_WebNativeMessagingExtension_0400
+     * @tc.desc   SUB_WEB_WebNativeMessagingExtension_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_WEB_WebNativeMessagingExtension_0400', Level.LEVEL0, async (done: Function) => {
       // 我没找到方法让每个任务间隔几秒，来保证上一次的环境已经断开销毁。。
       await sleep(3000);

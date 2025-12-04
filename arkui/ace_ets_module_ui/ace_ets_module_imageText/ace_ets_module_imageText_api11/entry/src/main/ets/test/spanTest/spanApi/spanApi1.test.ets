@@ -45,12 +45,12 @@ export default function spanApi1() {
       console.info("spanApi1 after each called");
     });
     /**
-     * @tc.number    SUB_ACE_RICHEDITOR_spanApi1_0100
-     * @tc.name      testSpan
-     * @tc.desc      set api
-     * @tc.level     Level 2
-     * @tc.type
-    * @tc.size
+     * @tc.name   spanApi1_0100
+     * @tc.number SUB_ACE_RICHEDITOR_spanApi1_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('spanApi1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[spanApi1_0100] START');

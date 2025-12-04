@@ -48,10 +48,12 @@ export default function FocusScopeId15() {
     });
 
     /**
-     * @tc.number    FocusScopeId15_0100
-     * @tc.name      FocusScopeId15_0100
-     * @tc.desc      Support cross group and circular focusing with tab keys in focus groups
-     * @tc.level     Level 2
+     * @tc.name   FocusScopeId15_0100
+     * @tc.number FocusScopeId15_0100
+     * @tc.desc   Support cross group and circular focusing with tab keys in focus groups
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FocusScopeId15_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[FocusScopeId15_0100] START');

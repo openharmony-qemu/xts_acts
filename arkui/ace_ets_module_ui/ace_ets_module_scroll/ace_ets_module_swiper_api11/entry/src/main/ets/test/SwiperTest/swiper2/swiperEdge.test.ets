@@ -42,14 +42,15 @@ export default function swiperEdgeTest() {
       console.info("swiperEdgeTest after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290
-     * @tc.desc      test left edge swipe
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
-     */
 
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290
+     * @tc.desc   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290', Level.LEVEL1, async (done: Function) => {
       console.info('[SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_UX_0290] START');
       await CommonFunc.sleep(2000);

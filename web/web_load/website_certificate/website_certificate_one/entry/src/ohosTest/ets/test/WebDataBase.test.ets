@@ -59,14 +59,14 @@ export default function webDataBase() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SAVEHTTPAUTHCREDENTIALS_0100
-    * @tc.name       : testSaveHttpAuthCredentials001
-    * @tc.desc       : test saveHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSaveHttpAuthCredentials001
+     * @tc.number SUB_WEB_SAVEHTTPAUTHCREDENTIALS_0100
+     * @tc.desc   test saveHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSaveHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSaveHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -77,14 +77,14 @@ export default function webDataBase() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_GETHTTPAUTHCREDENTIALS_0100
-    * @tc.name       : testGetHttpAuthCredentials001
-    * @tc.desc       : test getHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetHttpAuthCredentials001
+     * @tc.number SUB_WEB_GETHTTPAUTHCREDENTIALS_0100
+     * @tc.desc   test getHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -95,14 +95,14 @@ export default function webDataBase() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_EXISTHTTPAUTHCREDENTIALS_0100
-    * @tc.name       : testExistHttpAuthCredentials001
-    * @tc.desc       : test existHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testExistHttpAuthCredentials001
+     * @tc.number SUB_WEB_EXISTHTTPAUTHCREDENTIALS_0100
+     * @tc.desc   test existHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testExistHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testExistHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;
@@ -113,14 +113,14 @@ export default function webDataBase() {
       }
     })
 
-    /*
-    * @tc.number     : SUB_WEB_DELETEHTTPAUTHCREDENTIALS_0100
-    * @tc.name       : testDeleteHttpAuthCredentials001
-    * @tc.desc       : test deleteHttpAuthCredentials
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDeleteHttpAuthCredentials001
+     * @tc.number SUB_WEB_DELETEHTTPAUTHCREDENTIALS_0100
+     * @tc.desc   test deleteHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteHttpAuthCredentials001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteHttpAuthCredentials001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

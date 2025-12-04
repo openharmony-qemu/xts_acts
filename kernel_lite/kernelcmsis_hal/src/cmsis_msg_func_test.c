@@ -33,12 +33,6 @@ osMessageQueueId_t g_cmsisMessageQId;
 #define MSGQUEUE_COUNT_INDEX_2    2
 static char *g_cmsisMessageInfo[] = {"msg1", "msg2", "msg3", "msg4", "msg5", "msg6", "msg7", "msg8"};
 
-/**
- * @tc.desc      : register a test suite, this suite is used to test basic flow and interface dependency
- * @param        : subsystem name is utils
- * @param        : module name is utilsFile
- * @param        : test suit name is CmsisMsgFuncTestSuite
- */
 LITE_TEST_SUIT(Cmsis, Cmsismsg, CmsisMsgFuncTestSuite);
 
 /**
@@ -78,9 +72,12 @@ static void CmsisMessageQueueGetFunc001(void const *argument)
 }
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0100
- * @tc.name      : message queue operation for creat
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueNew001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew001, Function | MediumTest | Level1)
 {
@@ -91,9 +88,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0200
- * @tc.name      : message queue operation for creat when msg_count = 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueNew002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew002, Function | MediumTest | Level1)
 {
@@ -103,9 +103,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0300
- * @tc.name      : message queue operation for creat when msg_size = 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueNew003
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew003, Function | MediumTest | Level1)
 {
@@ -115,9 +118,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueNew003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0400
- * @tc.name      : message queue operation for delete
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueDelete001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete001, Function | MediumTest | Level1)
 {
@@ -129,9 +135,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete001, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0500
- * @tc.name      : message queue delete operation with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueDelete002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete002, Function | MediumTest | Level1)
 {
@@ -141,9 +150,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueDelete002, Function | Me
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0600
- * @tc.name      : message queue operation for put
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueuePut001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut001, Function | MediumTest | Level1)
 {
@@ -159,9 +171,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0700
- * @tc.name      : message queue put operation with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueuePut002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut002, Function | MediumTest | Level1)
 {
@@ -171,9 +186,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0800
- * @tc.name      : message queue operation for put when msg_ptr = 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueuePut003
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut003, Function | MediumTest | Level1)
 {
@@ -189,9 +207,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueuePut003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_0900
- * @tc.name      : message queue operation for get
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGet001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_0900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet001, Function | MediumTest | Level1)
 {
@@ -217,9 +238,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet001, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1000
- * @tc.name      : message queue get operation with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGet002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1000
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet002, Function | MediumTest | Level1)
 {
@@ -231,9 +255,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet002, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1100
- * @tc.name      : message queue operation for get when msg_ptr = 0
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGet003
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1100
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet003, Function | MediumTest | Level1)
 {
@@ -250,9 +277,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGet003, Function | Mediu
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1200
- * @tc.name      : message queue operation for get msg size
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetMsgSize001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1200
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize001, Function | MediumTest | Level1)
 {
@@ -268,9 +298,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize001, Function 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1300
- * @tc.name      : message queue get msg size with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetMsgSize002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1300
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize002, Function | MediumTest | Level1)
 {
@@ -280,9 +313,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetMsgSize002, Function 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1400
- * @tc.name      : message queue operation for get capacity
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetCapacity001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1400
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity001, Function | MediumTest | Level1)
 {
@@ -297,9 +333,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity001, Function
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1500
- * @tc.name      : message queue get capacity with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetCapacity002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1500
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity002, Function | MediumTest | Level1)
 {
@@ -309,9 +348,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCapacity002, Function
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1600
- * @tc.name      : message queue operation for get count
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetCount001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1600
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount001, Function | MediumTest | Level1)
 {
@@ -336,9 +378,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount001, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1700
- * @tc.name      : message queue get count with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetCount002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1700
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount002, Function | MediumTest | Level1)
 {
@@ -348,9 +393,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetCount002, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1800
- * @tc.name      : message queue operation for get space
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetSpace001
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1800
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetSpace001, Function | MediumTest | Level1)
 {
@@ -375,9 +423,12 @@ LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetSpace001, Function | 
 };
 
 /**
- * @tc.number    : SUB_KERNEL_CMSIS_MSG_OPERATION_1900
- * @tc.name      : message queue get space with mq_id = NULL
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testOsMessageQueueGetSpace002
+ * @tc.number SUB_KERNEL_CMSIS_MSG_OPERATION_1900
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(CmsisMsgFuncTestSuite, testOsMessageQueueGetSpace002, Function | MediumTest | Level1)
 {

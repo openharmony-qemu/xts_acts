@@ -41,12 +41,12 @@ export default function getChildTest() {
     });
 
     /**
-     * @tc.number    getChild
-     * @tc.name      getChildTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getChildTest_0100
+     * @tc.number getChild
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getChildTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('getChildTest_0100 START');
@@ -67,12 +67,12 @@ export default function getChildTest() {
     });
 
     /**
-     * @tc.number    getChild
-     * @tc.name      getChildTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getChildTest_0200
+     * @tc.number getChild
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getChildTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('getChildTest_0200 START');
@@ -93,12 +93,12 @@ export default function getChildTest() {
     });
 
     /**
-     * @tc.number    getChild
-     * @tc.name      getChildTest_0300
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getChildTest_0300
+     * @tc.number getChild
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getChildTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('getChildTest_0300 START');
@@ -121,12 +121,12 @@ export default function getChildTest() {
     });
     
     /**
-     * @tc.number    getChild
-     * @tc.name      getChildTest_0400
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getChildTest_0400
+     * @tc.number getChild
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getChildTest_0400', Level.LEVEL2, async (done: Function) => {
       console.info('getChildTest_0400 START');

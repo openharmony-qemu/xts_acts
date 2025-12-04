@@ -57,12 +57,12 @@ export default function bufferTest2() {
       await Utils.msSleep(20);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0100
-     * @tc.name       : testAlloc0001
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0100
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0001';
@@ -76,12 +76,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0200
-     * @tc.name       : testAlloc0002
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0200
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0002';
@@ -95,12 +95,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0300
-     * @tc.name       : testAlloc0003
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0300
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0003';
@@ -115,12 +115,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0400
-     * @tc.name       : testAlloc0004
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0400
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0004';
@@ -136,12 +136,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0500
-     * @tc.name       : testAlloc0005
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0500
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0005';
@@ -155,12 +155,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0600
-     * @tc.name       : testAlloc0006
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0600
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0006';
@@ -174,12 +174,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0700
-     * @tc.name       : testAlloc0007
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0700
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0007';
@@ -200,6 +200,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 0
     //  */
+    /**
+     * @tc.name   testBufferAlloc0008
+     * @tc.number testBufferAlloc0008
+     * @tc.desc   testBufferAlloc0008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testBufferAlloc0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     //   const TAG = 'testBufferAlloc0008';
     //   try {
@@ -219,12 +227,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0900
-     * @tc.name       : testAlloc0009
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_0900
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0009';
@@ -253,6 +261,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 0
     //  */
+    /**
+     * @tc.name   testBufferAlloc0010
+     * @tc.number testBufferAlloc0010
+     * @tc.desc   testBufferAlloc0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('testBufferAlloc0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     //   const TAG = 'testBufferAlloc0010';
     //   try {
@@ -272,12 +288,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1100
-     * @tc.name       : testAlloc0011
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1100
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0011';
@@ -292,12 +308,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1200
-     * @tc.name       : testAlloc0012
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1200
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0012';
@@ -312,12 +328,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1300
-     * @tc.name       : testAlloc0013
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1300
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0013';
@@ -330,12 +346,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1400
-     * @tc.name       : testAlloc0014
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1400
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0014';
@@ -348,12 +364,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1500
-     * @tc.name       : testAlloc0015
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1500
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       const TAG = 'testBufferAlloc0015';
@@ -366,12 +382,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1600
-     * @tc.name       : testAlloc0016
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1600
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0016';
@@ -384,12 +400,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1700
-     * @tc.name       : testAlloc0017
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1700
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0017';
@@ -402,12 +418,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1800
-     * @tc.name       : testAlloc0018
-     * @tc.desc       : Test the function of the interface Alloc.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferAlloc0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ALLOC_1800
+     * @tc.desc   Test the function of the interface Alloc.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferAlloc0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferAlloc0018';
@@ -420,12 +436,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0100
-     * @tc.name       : testByteLength0001
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0100
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0001';
@@ -439,12 +455,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0200
-     * @tc.name       : testByteLength0002
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0200
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0002';
@@ -458,12 +474,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0300 --无效
-     * @tc.name       : testByteLength0003
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0300 --无效
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0003';
@@ -477,12 +493,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0400
-     * @tc.name       : testByteLength0004
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0400
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0004';
@@ -497,12 +513,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0500
-     * @tc.name       : testByteLength0005
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0500
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0005';
@@ -516,12 +532,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0700
-     * @tc.name       : testByteLength0007
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0700
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0007';
@@ -535,12 +551,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0800
-     * @tc.name       : testByteLength0008
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0800
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0008';
@@ -554,12 +570,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0900
-     * @tc.name       : testByteLength0009
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_0900
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0009';
@@ -578,12 +594,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_1000
-     * @tc.name       : testByteLength0010
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_1000
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testBufferByteLength0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
       const TAG = 'testBufferByteLength0010';
@@ -602,12 +618,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_1100
-     * @tc.name       : testByteLength0011
-     * @tc.desc       : Test the function of the interface ByteLength.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferByteLength0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BYTE_LENGTH_1100
+     * @tc.desc   Test the function of the interface ByteLength.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferByteLength0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferByteLength0011';
@@ -626,12 +642,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0100
-     * @tc.name       : testConcat0001
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferConcat0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0100
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0001';
@@ -647,12 +663,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0200
-     * @tc.name       : testConcat0002
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testBufferConcat0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0200
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0002';
@@ -669,12 +685,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0300
-     * @tc.name       : testConcat0003
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0300
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0003';
@@ -691,12 +707,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0400
-     * @tc.name       : testConcat0004
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0400
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0004';
@@ -711,12 +727,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0500
-     * @tc.name       : testBufferConcat0005
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0500
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0005';
@@ -732,12 +748,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0600
-     * @tc.name       : testConcat0006
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0600
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       6
@@ -754,12 +770,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0700
-     * @tc.name       : testConcat0007
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0700
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0007';
@@ -776,12 +792,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0800
-     * @tc.name       : testConcat0008
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level
+     * @tc.name   testBufferConcat0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0800
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0008';
@@ -796,12 +812,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0900
-     * @tc.name       : testBufferConcat0009
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_0900
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0009';
@@ -819,12 +835,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_1000
-     * @tc.name       : testConcat0010
-     * @tc.desc       : Test the function of the interface Concat.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferConcat0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONCAT_1000
+     * @tc.desc   Test the function of the interface Concat.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferConcat0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferConcat0010';
@@ -841,12 +857,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0100
-     * @tc.name       : testFrom10001
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0100
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10001';
@@ -861,12 +877,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0300
-     * @tc.name       : testFrom10003
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0300
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10003';
@@ -880,12 +896,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0400
-     * @tc.name       : testFrom10004
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0400
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10004';
@@ -899,12 +915,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0500
-     * @tc.name       : testFrom10005
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0500
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10005';
@@ -920,12 +936,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0600
-     * @tc.name       : testFrom10006
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0600
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10006';
@@ -941,12 +957,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0700
-     * @tc.name       : testFrom10007
-     * @tc.desc       : Test the function of the interface From1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom10007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM1_0700
+     * @tc.desc   Test the function of the interface From1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom10007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom10007';
@@ -968,6 +984,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10008
+     * @tc.number testBufferFrom10008
+     * @tc.desc   testBufferFrom10008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10008';
     //   try {
@@ -987,6 +1011,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10009
+     * @tc.number testBufferFrom10009
+     * @tc.desc   testBufferFrom10009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10009';
     //   try {
@@ -1007,6 +1039,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10010
+     * @tc.number testBufferFrom10010
+     * @tc.desc   testBufferFrom10010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10010';
     //   try {
@@ -1028,6 +1068,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10011
+     * @tc.number testBufferFrom10011
+     * @tc.desc   testBufferFrom10011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10011';
     //   try {
@@ -1048,6 +1096,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10012
+     * @tc.number testBufferFrom10012
+     * @tc.desc   testBufferFrom10012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10012';
     //   try {
@@ -1068,6 +1124,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10013
+     * @tc.number testBufferFrom10013
+     * @tc.desc   testBufferFrom10013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10013';
     //   try {
@@ -1090,6 +1154,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferFrom10014
+     * @tc.number testBufferFrom10014
+     * @tc.desc   testBufferFrom10014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferFrom10014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferFrom10014';
     //   try {
@@ -1105,12 +1177,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0100
-     * @tc.name       : testFrom20001
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom20001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0100
+     * @tc.desc   Test the function of the interface From2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom20001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom20001';
@@ -1126,12 +1198,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0200
-     * @tc.name       : testFrom20002
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom20002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0200
+     * @tc.desc   Test the function of the interface From2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom20002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom20002';
@@ -1150,12 +1222,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0300
-     * @tc.name       : testFrom20003
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom20003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0300
+     * @tc.desc   Test the function of the interface From2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom20003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom20003';
@@ -1170,12 +1242,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0500
-     * @tc.name       : testFrom20005
-     * @tc.desc       : Test the function of the interface From2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom20005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM2_0500
+     * @tc.desc   Test the function of the interface From2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom20005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom20005';
@@ -1189,12 +1261,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0100
-     * @tc.name       : testFrom30001
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0100
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30001';
@@ -1208,12 +1280,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0200
-     * @tc.name       : testFrom30002
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0200
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30002';
@@ -1227,12 +1299,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0300
-     * @tc.name       : testFrom30003
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0300
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30003';
@@ -1246,12 +1318,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0400
-     * @tc.name       : testFrom30004
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0400
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30004';
@@ -1265,12 +1337,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0500
-     * @tc.name       : testFrom30005
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0500
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30005';
@@ -1284,12 +1356,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0600
-     * @tc.name       : testFrom30006
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0600
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30006';
@@ -1303,12 +1375,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0700
-     * @tc.name       : testFrom30007
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0700
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30007';
@@ -1322,12 +1394,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0800
-     * @tc.name       : testFrom30008
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0800
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30008';
@@ -1341,12 +1413,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0900
-     * @tc.name       : testBufferFrom30009
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_0900
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30009';
@@ -1364,12 +1436,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_1000
-     * @tc.name       : testFrom30010
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_1000
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30010';
@@ -1384,12 +1456,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM3_1100
-     * @tc.name       : testFrom30011
-     * @tc.desc       : Test the function of the interface From3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom30011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM3_1100
+     * @tc.desc   Test the function of the interface From3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom30011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom30011';
@@ -1404,12 +1476,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0100
-     * @tc.name       : testFrom40001
-     * @tc.desc       : Test the function of the interface From4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom40001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0100
+     * @tc.desc   Test the function of the interface From4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom40001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom40001';
@@ -1423,12 +1495,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0200
-     * @tc.name       : testFrom40002
-     * @tc.desc       : Test the function of the interface From4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom40002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0200
+     * @tc.desc   Test the function of the interface From4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom40002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom40002';
@@ -1443,12 +1515,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0300
-     * @tc.name       : testFrom40003
-     * @tc.desc       : Test the function of the interface From4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFrom40003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM4_0300
+     * @tc.desc   Test the function of the interface From4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFrom40003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFrom40003';
@@ -1462,12 +1534,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0100
-     * @tc.name       : testCompare0001
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompare0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0100
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompare0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCompare0001';
@@ -1482,12 +1554,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0200
-     * @tc.name       : testCompare0002
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompare0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0200
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompare0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCompare0002';
@@ -1502,12 +1574,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0300
-     * @tc.name       : testCompare0003
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompare0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0300
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompare0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCompare0003';
@@ -1522,12 +1594,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
-     * @tc.name       : testCompare0004
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCompare0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCompare0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCompare0004';
@@ -1544,12 +1616,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0100
-     * @tc.name       : testTranscode0001
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0100
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0001';
@@ -1564,12 +1636,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0200
-     * @tc.name       : testTranscode0002
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0200
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0002';
@@ -1584,12 +1656,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0300
-     * @tc.name       : testTranscode0003
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0300
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0003';
@@ -1604,12 +1676,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0400
-     * @tc.name       : testTranscode0004
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0400
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0004';
@@ -1624,12 +1696,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0500
-     * @tc.name       : testTranscode0005
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0500
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0005';
@@ -1643,12 +1715,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0600
-     * @tc.name       : testTranscode0006
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0600
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0006';
@@ -1663,12 +1735,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0700
-     * @tc.name       : testTranscode0007
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0700
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0007';
@@ -1682,12 +1754,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0800
-     * @tc.name       : testTranscode0008
-     * @tc.desc       : Test the function of the interface Transcode.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferTranscode0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TRANSCODE_0800
+     * @tc.desc   Test the function of the interface Transcode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferTranscode0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferTranscode0008';
@@ -1702,12 +1774,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0100
-     * @tc.name       : testFill0001
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0100
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0001';
@@ -1722,12 +1794,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0200
-     * @tc.name       : testFill0002
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0200
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0002';
@@ -1741,12 +1813,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0300
-     * @tc.name       : testFill0003
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0300
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0003';
@@ -1770,12 +1842,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0400
-     * @tc.name       : testFill0004
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0400
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0004';
@@ -1791,12 +1863,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0500
-     * @tc.name       : testFill0005
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0500
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0005';
@@ -1811,12 +1883,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0600
-     * @tc.name       : testFill0006
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0600
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0006';
@@ -1830,12 +1902,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0700
-     * @tc.name       : testFill0007
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0700
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0007';
@@ -1850,12 +1922,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0800
-     * @tc.name       : testFill0008
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0800
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0008';
@@ -1870,12 +1942,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_0900
-     * @tc.name       : testFill0009
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_0900
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0009';
@@ -1890,12 +1962,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1000
-     * @tc.name       : testFill0010
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1000
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0010';
@@ -1911,12 +1983,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1100
-     * @tc.name       : testFill0011
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1100
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0011';
@@ -1930,12 +2002,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1200
-     * @tc.name       : testFill0012
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1200
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0012';
@@ -1950,12 +2022,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1300
-     * @tc.name       : testFill0013
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1300
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0013';
@@ -1970,12 +2042,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1400
-     * @tc.name       : testFill0014
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1400
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0014';
@@ -1990,12 +2062,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1500
-     * @tc.name       : testFill0015
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1500
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0015';
@@ -2009,12 +2081,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1600
-     * @tc.name       : testFill0016
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1600
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0016';
@@ -2028,12 +2100,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_FILL_1700
-     * @tc.name       : testFill0017
-     * @tc.desc       : Test the function of the interface Fill.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferFill0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FILL_1700
+     * @tc.desc   Test the function of the interface Fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferFill0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferFill0017';
@@ -2047,12 +2119,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0100
-     * @tc.name       : testBufferCompare0001
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0100
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0001';
@@ -2066,12 +2138,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0200
-     * @tc.name       : testBufferCompare0002
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0200
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0002';
@@ -2085,12 +2157,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0300
-     * @tc.name       : testBufferCompare0003
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0300
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0003';
@@ -2105,12 +2177,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
-     * @tc.name       : testBufferBufferCompare0004
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0400
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0004';
@@ -2126,12 +2198,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0500
-     * @tc.name       : testBufferBufferCompare0005
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0500
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0005';
@@ -2146,12 +2218,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0600
-     * @tc.name       : testBufferBufferCompare0006
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0600
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0006';
@@ -2167,12 +2239,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0700
-     * @tc.name       : testBufferCompare0007
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0700
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0007';
@@ -2187,12 +2259,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0800
-     * @tc.name       : testBufferCompare0008
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0800
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0008';
@@ -2207,12 +2279,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0900
-     * @tc.name       : testBufferCompare0009
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_0900
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0009';
@@ -2229,12 +2301,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1000
-     * @tc.name       : testCompare0010
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1000
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0010';
@@ -2250,12 +2322,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1100
-     * @tc.name       : testCompare0011
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1100
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0011';
@@ -2271,12 +2343,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1200
-     * @tc.name       : testCompare0012
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1200
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0012';
@@ -2292,12 +2364,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1300
-     * @tc.name       : testCompare0013
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1300
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0013';
@@ -2312,12 +2384,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1400
-     * @tc.name       : testCompare0014
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1400
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0014';
@@ -2332,12 +2404,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1500
-     * @tc.name       : testCompare0015
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1500
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0015';
@@ -2352,12 +2424,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1600
-     * @tc.name       : testBufferBufferCompare0016
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1600
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0016';
@@ -2373,12 +2445,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1700
-     * @tc.name       : testBufferBufferCompare0017
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1700
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0017';
@@ -2393,12 +2465,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1800
-     * @tc.name       : testBufferBufferCompare0018
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1800
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0018';
@@ -2414,12 +2486,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1900
-     * @tc.name       : testCompare0019
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_1900
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0019';
@@ -2434,12 +2506,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2000
-     * @tc.name       : testCompare0020
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2000
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0020';
@@ -2454,12 +2526,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2100
-     * @tc.name       : testCompare0021
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2100
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0021';
@@ -2474,12 +2546,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2200
-     * @tc.name       : testCompare0022
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2200
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0022';
@@ -2495,12 +2567,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2300
-     * @tc.name       : testCompare0023
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2300
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0023';
@@ -2516,12 +2588,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2400
-     * @tc.name       : testCompare0024
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2400
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0024';
@@ -2537,12 +2609,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2500
-     * @tc.name       : testCompare0025
-     * @tc.desc       : Test the function of the interface Compare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferBufferCompare0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COMPARE_2500
+     * @tc.desc   Test the function of the interface Compare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferBufferCompare0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferCompare0025';
@@ -2557,12 +2629,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0100
-     * @tc.name       : testCopy0001
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0100
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0001';
@@ -2580,12 +2652,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0200
-     * @tc.name       : testCopy0002
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0200
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0002';
@@ -2605,12 +2677,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0300
-     * @tc.name       : testCopy0003
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0300
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0003';
@@ -2628,12 +2700,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0400
-     * @tc.name       : testCopy0004
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0400
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0004';
@@ -2649,12 +2721,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0500
-     * @tc.name       : testCopy0005
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0500
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0005';
@@ -2672,12 +2744,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0600
-     * @tc.name       : testCopy0006
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0600
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0006';
@@ -2696,12 +2768,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0700
-     * @tc.name       : testCopy0007
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0700
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0007';
@@ -2719,12 +2791,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0800
-     * @tc.name       : testCopy0008
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0800
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0008';
@@ -2742,12 +2814,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_0900
-     * @tc.name       : testCopy0009
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_0900
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0009';
@@ -2765,12 +2837,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1000
-     * @tc.name       : testCopy0010
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1000
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0010';
@@ -2789,12 +2861,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1100
-     * @tc.name       : testCopy0011
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1100
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0011';
@@ -2812,12 +2884,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1200
-     * @tc.name       : testCopy0012
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1200
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0012';
@@ -2836,12 +2908,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1300
-     * @tc.name       : testCopy0013
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1300
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0013';
@@ -2859,12 +2931,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1400
-     * @tc.name       : testCopy0014
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1400
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0014';
@@ -2882,12 +2954,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1500
-     * @tc.name       : testCopy0015
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1500
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0015';
@@ -2905,12 +2977,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1600
-     * @tc.name       : testCopy0016
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1600
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0016';
@@ -2929,12 +3001,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1700
-     * @tc.name       : testCopy0017
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1700
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0017';
@@ -2952,12 +3024,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1800
-     * @tc.name       : testCopy0018
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1800
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0018';
@@ -2976,12 +3048,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_1900
-     * @tc.name       : testCopy0019
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_1900
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0019';
@@ -2999,12 +3071,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_COPY_2000
-     * @tc.name       : testCopy0020
-     * @tc.desc       : Test the function of the interface Copy.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferCopy0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_COPY_2000
+     * @tc.desc   Test the function of the interface Copy.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferCopy0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferCopy0020';
@@ -3022,12 +3094,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0100
-     * @tc.name       : testEquals0001
-     * @tc.desc       : Test the function of the interface Equals.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferEquals0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0100
+     * @tc.desc   Test the function of the interface Equals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferEquals0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferEquals001';
@@ -3042,12 +3114,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0200
-     * @tc.name       : testEquals0002
-     * @tc.desc       : Test the function of the interface Equals.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferEquals0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0200
+     * @tc.desc   Test the function of the interface Equals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferEquals0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferEquals0002';
@@ -3062,12 +3134,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0300
-     * @tc.name       : testEquals0003
-     * @tc.desc       : Test the function of the interface Equals.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferEquals0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0300
+     * @tc.desc   Test the function of the interface Equals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferEquals0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferEquals0003';
@@ -3083,12 +3155,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0400
-     * @tc.name       : testEquals0004
-     * @tc.desc       : Test the function of the interface Equals.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferEquals0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_EQUALS_0400
+     * @tc.desc   Test the function of the interface Equals.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferEquals0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferEquals0004';
@@ -3104,12 +3176,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0100
-     * @tc.name       : testIncludes0001
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0100
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0001';
@@ -3123,12 +3195,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0200
-     * @tc.name       : testIncludes0002
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0200
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0002';
@@ -3142,12 +3214,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0300
-     * @tc.name       : testIncludes0003
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0300
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0003';
@@ -3162,12 +3234,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0400
-     * @tc.name       : testIncludes0004
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0400
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0004';
@@ -3182,12 +3254,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0500
-     * @tc.name       : testIncludes0005
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0500
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0005';
@@ -3201,12 +3273,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0600
-     * @tc.name       : testIncludes0006
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0600
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0006';
@@ -3220,12 +3292,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0700
-     * @tc.name       : testIncludes0007
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0700
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0007';
@@ -3238,12 +3310,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0800
-     * @tc.name       : testIncludes0008
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0800
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0008';
@@ -3256,12 +3328,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0900
-     * @tc.name       : testIncludes0009
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_0900
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferBufferIncludes0009';
@@ -3274,12 +3346,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1000
-     * @tc.name       : testIncludes0010
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1000
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0010';
@@ -3292,12 +3364,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1100
-     * @tc.name       : testIncludes0011
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1100
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0011';
@@ -3312,12 +3384,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1200
-     * @tc.name       : testIncludes0012
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1200
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0012';
@@ -3331,12 +3403,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1300
-     * @tc.name       : testIncludes0013
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1300
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0013';
@@ -3351,12 +3423,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1400
-     * @tc.name       : testIncludes0014
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1400
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0014';
@@ -3371,12 +3443,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1500
-     * @tc.name       : testIncludes0015
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1500
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0015';
@@ -3391,12 +3463,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1600
-     * @tc.name       : testIncludes0016
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1600
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0016';
@@ -3411,12 +3483,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1700
-     * @tc.name       : testIncludes0017
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1700
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0017';
@@ -3431,12 +3503,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1800
-     * @tc.name       : testIncludes0018
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1800
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0018';
@@ -3451,12 +3523,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1900
-     * @tc.name       : testIncludes0019
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_1900
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0019';
@@ -3471,12 +3543,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_2000
-     * @tc.name       : testBufferIncludes0020
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_2000
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0020';
@@ -3491,12 +3563,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_2100
-     * @tc.name       : testBufferIncludes0021
-     * @tc.desc       : Test the function of the interface Includes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIncludes0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INCLUDES_2100
+     * @tc.desc   Test the function of the interface Includes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIncludes0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIncludes0021';
@@ -3511,12 +3583,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0100
-     * @tc.name       : testIndexOf0001
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0100
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0001';
@@ -3533,12 +3605,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0200
-     * @tc.name       : testIndexOf0002
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0200
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0002';
@@ -3555,12 +3627,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0300
-     * @tc.name       : testIndexOf0003
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0300
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0003';
@@ -3575,12 +3647,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0400
-     * @tc.name       : testIndexOf0004
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0400
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0004';
@@ -3595,12 +3667,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0500
-     * @tc.name       : testIndexOf0005
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0500
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0005';
@@ -3614,12 +3686,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0600
-     * @tc.name       : testIndexOf0006
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0600
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0006';
@@ -3633,12 +3705,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0700
-     * @tc.name       : testIndexOf0007
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0700
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0007';
@@ -3655,12 +3727,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0800
-     * @tc.name       : testIndexOf0008
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0800
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0008';
@@ -3676,12 +3748,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0900
-     * @tc.name       : testIndexOf0009
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_0900
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0009';
@@ -3697,12 +3769,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1000
-     * @tc.name       : testIndexOf0010
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1000
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0010';
@@ -3717,12 +3789,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1100
-     * @tc.name       : testIndexOf0011
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1100
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0011';
@@ -3738,12 +3810,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1200
-     * @tc.name       : testIndexOf0012
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1200
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0012';
@@ -3757,12 +3829,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1300
-     * @tc.name       : testIndexOf0013
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1300
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0013';
@@ -3776,13 +3848,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1400
-     * @tc.name       : testIndexOf0014
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferIndexOf0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1400
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0014';
@@ -3796,12 +3868,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1500
-     * @tc.name       : testIndexOf0015
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1500
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0015';
@@ -3816,12 +3888,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1600
-     * @tc.name       : testIndexOf0016
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1600
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0016';
@@ -3836,12 +3908,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1700
-     * @tc.name       : testIndexOf0017
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1700
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0017';
@@ -3856,12 +3928,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1800
-     * @tc.name       : testIndexOf0018
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1800
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0018';
@@ -3876,12 +3948,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1900
-     * @tc.name       : testIndexOf0019
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_1900
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0019';
@@ -3896,12 +3968,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2000
-     * @tc.name       : testIndexOf0020
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2000
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0020';
@@ -3916,12 +3988,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2100
-     * @tc.name       : testIndexOf0021
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2100
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0021';
@@ -3936,12 +4008,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2200
-     * @tc.name       : testIndexOf0022
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2200
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0022';
@@ -3956,12 +4028,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2300
-     * @tc.name       : testIndexOf0023
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2300
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0023';
@@ -3976,12 +4048,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2400
-     * @tc.name       : testIndexOf0024
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2400
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0024';
@@ -3996,12 +4068,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2500
-     * @tc.name       : testIndexOf0025
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2500
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0025';
@@ -4016,12 +4088,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2600
-     * @tc.name       : testIndexOf0026
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level
+     * @tc.name   testBufferIndexOf0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2600
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0026';
@@ -4036,12 +4108,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2700
-     * @tc.name       : testIndexOf0027
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2700
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0027';
@@ -4056,12 +4128,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2800
-     * @tc.name       : testIndexOf0028
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2800
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0028';
@@ -4076,12 +4148,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2900
-     * @tc.name       : testIndexOf0029
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_2900
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0029';
@@ -4096,12 +4168,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3000
-     * @tc.name       : testIndexOf0030
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3000
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0030';
@@ -4116,12 +4188,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3100
-     * @tc.name       : testIndexOf0031
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3100
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0031';
@@ -4136,12 +4208,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3200
-     * @tc.name       : testIndexOf0032
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3200
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0032';
@@ -4156,12 +4228,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3300
-     * @tc.name       : testIndexOf0033
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3300
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0033';
@@ -4176,12 +4248,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3400
-     * @tc.name       : testIndexOf0034
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3400
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0034';
@@ -4196,12 +4268,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3500
-     * @tc.name       : testIndexOf0035
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3500
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0035';
@@ -4216,12 +4288,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3600
-     * @tc.name       : testIndexOf0036
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3600
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0036';
@@ -4236,12 +4308,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3700
-     * @tc.name       : testIndexOf0037
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level
+     * @tc.name   testBufferIndexOf0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3700
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0037';
@@ -4256,12 +4328,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3800
-     * @tc.name       : testIndexOf0038
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3800
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0038';
@@ -4276,12 +4348,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3900
-     * @tc.name       : testIndexOf0039
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_3900
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0039';
@@ -4296,12 +4368,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4000
-     * @tc.name       : testIndexOf0040
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4000
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0040';
@@ -4316,12 +4388,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4100
-     * @tc.name       : testIndexOf0041
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4100
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0041';
@@ -4336,12 +4408,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4200
-     * @tc.name       : testIndexOf0042
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4200
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0042';
@@ -4356,12 +4428,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4300
-     * @tc.name       : testIndexOf0043
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4300
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0043';
@@ -4376,12 +4448,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4400
-     * @tc.name       : testIndexOf0044
-     * @tc.desc       : Test the function of the interface IndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferIndexOf0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEX_OF_4400
+     * @tc.desc   Test the function of the interface IndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferIndexOf0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferIndexOf0042';
@@ -4396,12 +4468,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0100
-     * @tc.name       : testLastIndexOf0001
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0100
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0001';
@@ -4414,12 +4486,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0200
-     * @tc.name       : testLastIndexOf0002
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0200
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0002';
@@ -4432,12 +4504,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0300
-     * @tc.name       : testLastIndexOf0003
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0300
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0003';
@@ -4453,12 +4525,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0400
-     * @tc.name       : testLastIndexOf0004
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0400
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0004';
@@ -4474,12 +4546,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0500
-     * @tc.name       : testLastIndexOf0005
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0500
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0005';
@@ -4492,12 +4564,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0600
-     * @tc.name       : testLastIndexOf0006
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0600
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0006';
@@ -4510,12 +4582,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0700
-     * @tc.name       : testLastIndexOf0007
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0700
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0007';
@@ -4528,12 +4600,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0800
-     * @tc.name       : testLastIndexOf0008
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0800
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0008';
@@ -4546,12 +4618,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0900
-     * @tc.name       : testLastIndexOf0009
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_0900
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0009';
@@ -4564,12 +4636,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1000
-     * @tc.name       : testLastIndexOf0010
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1000
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0010';
@@ -4582,12 +4654,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1100
-     * @tc.name       : testLastIndexOf0011
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1100
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0011';
@@ -4601,12 +4673,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1200
-     * @tc.name       : testLastIndexOf0012
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1200
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0012';
@@ -4619,12 +4691,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1300
-     * @tc.name       : testLastIndexOf0013
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1300
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0013';
@@ -4639,12 +4711,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1400
-     * @tc.name       : testLastIndexOf0014
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1400
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0014';
@@ -4659,12 +4731,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1500
-     * @tc.name       : testLastIndexOf0015
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1500
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0015';
@@ -4679,12 +4751,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1600
-     * @tc.name       : testLastIndexOf0016
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1600
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0016';
@@ -4699,12 +4771,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1700
-     * @tc.name       : testLastIndexOf0017
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1700
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0017';
@@ -4718,14 +4790,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /*
-     *@tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1800
-     * @tc.name       : testLastIndexOf0018
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     *
+    /**
+     * @tc.name   testBufferLastIndexOf0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1800
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0018';
@@ -4740,12 +4811,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1900
-     * @tc.name       : testLastIndexOf0019
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_1900
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0019';
@@ -4760,12 +4831,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_2000
-     * @tc.name       : testLastIndexOf0020
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_2000
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0020';
@@ -4780,12 +4851,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_2100
-     * @tc.name       : testLastIndexOf0021
-     * @tc.desc       : Test the function of the interface LastIndexOf.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferLastIndexOf0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_LAST_INDEX_OF_2100
+     * @tc.desc   Test the function of the interface LastIndexOf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferLastIndexOf0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferLastIndexOf0021';
@@ -4800,12 +4871,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0100
-     * @tc.name       : testReadBigInt64BE0001
-     * @tc.desc       : Test the function of the interface readBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0100
+     * @tc.desc   Test the function of the interface readBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64BE0001';
@@ -4819,12 +4890,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0200
-     * @tc.name       : testReadBigInt64BE0002
-     * @tc.desc       : Test the function of the interface readBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0200
+     * @tc.desc   Test the function of the interface readBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64BE0002';
@@ -4838,12 +4909,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0300
-     * @tc.name       : testReadBigInt64BE0003
-     * @tc.desc       : Test the function of the interface readBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0300
+     * @tc.desc   Test the function of the interface readBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64BE0003';
@@ -4858,12 +4929,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0400
-     * @tc.name       : testReadBigInt64BE0004
-     * @tc.desc       : Test the function of the interface readBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0400
+     * @tc.desc   Test the function of the interface readBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64BE0004';
@@ -4878,12 +4949,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ READ_0500
-     * @tc.name       : testReadBigInt64LE0001
-     * @tc.desc       : Test the function of the interface ReadBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ READ_0500
+     * @tc.desc   Test the function of the interface ReadBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64LE0001';
@@ -4899,12 +4970,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0600
-     * @tc.name       : testReadBigInt64LE0002
-     * @tc.desc       : Test the function of the interface ReadBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0600
+     * @tc.desc   Test the function of the interface ReadBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64LE0002';
@@ -4918,12 +4989,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0700
-     * @tc.name       : testReadBigInt64LE0003
-     * @tc.desc       : Test the function of the interface ReadBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0700
+     * @tc.desc   Test the function of the interface ReadBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64LE0003';
@@ -4938,12 +5009,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0800
-     * @tc.name       : testReadBigInt64LE0004
-     * @tc.desc       : Test the function of the interface ReadBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigInt64LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0800
+     * @tc.desc   Test the function of the interface ReadBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigInt64LE0004';
@@ -4958,12 +5029,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_0900
-     * @tc.name       : testReadBigUInt64BE0001
-     * @tc.desc       : Test the function of the interface ReadBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_0900
+     * @tc.desc   Test the function of the interface ReadBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64BE0001';
@@ -4978,12 +5049,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1000
-     * @tc.name       : testReadBigUInt64BE0002
-     * @tc.desc       : Test the function of the interface ReadBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1000
+     * @tc.desc   Test the function of the interface ReadBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64BE0002';
@@ -4997,12 +5068,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1100
-     * @tc.name       : testReadBigUInt64BE0003
-     * @tc.desc       : Test the function of the interface ReadBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1100
+     * @tc.desc   Test the function of the interface ReadBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64BE0003';
@@ -5017,12 +5088,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1200
-     * @tc.name       : testReadBigUInt64BE0004
-     * @tc.desc       : Test the function of the interface ReadBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1200
+     * @tc.desc   Test the function of the interface ReadBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64BE0004';
@@ -5037,12 +5108,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1300
-     * @tc.name       : testReadBigUInt64LE0001
-     * @tc.desc       : Test the function of the interface ReadBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1300
+     * @tc.desc   Test the function of the interface ReadBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64LE0001';
@@ -5057,12 +5128,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1400
-     * @tc.name       : testReadBigUInt64LE0002
-     * @tc.desc       : Test the function of the interface ReadBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1400
+     * @tc.desc   Test the function of the interface ReadBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64LE0002';
@@ -5076,12 +5147,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1500
-     * @tc.name       : testReadBigUInt64LE0003
-     * @tc.desc       : Test the function of the interface ReadBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1500
+     * @tc.desc   Test the function of the interface ReadBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64LE0003';
@@ -5096,12 +5167,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1600
-     * @tc.name       : testReadBigUInt64LE0004
-     * @tc.desc       : Test the function of the interface ReadBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadBigUInt64LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1600
+     * @tc.desc   Test the function of the interface ReadBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadBigUInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadBigUInt64LE0004';
@@ -5116,12 +5187,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1700
-     * @tc.name       : testReadDoubleBE0001
-     * @tc.desc       : Test the function of the interface readDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1700
+     * @tc.desc   Test the function of the interface readDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleBE0001';
@@ -5136,12 +5207,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1800
-     * @tc.name       : testReadDoubleBE0002
-     * @tc.desc       : Test the function of the interface readDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleBE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1800
+     * @tc.desc   Test the function of the interface readDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleBE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleBE0002';
@@ -5156,12 +5227,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_1900
-     * @tc.name       : testReadDoubleBE0003
-     * @tc.desc       : Test the function of the interface readDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleBE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_1900
+     * @tc.desc   Test the function of the interface readDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleBE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleBE0003';
@@ -5177,12 +5248,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2000
-     * @tc.name       : testReadDoubleBE0004
-     * @tc.desc       : Test the function of the interface readDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleBE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2000
+     * @tc.desc   Test the function of the interface readDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleBE0004';
@@ -5197,12 +5268,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2100
-     * @tc.name       : testReadDoubleLE0001
-     * @tc.desc       : Test the function of the interface readDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2100
+     * @tc.desc   Test the function of the interface readDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleLE0001';
@@ -5216,12 +5287,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2200
-     * @tc.name       : testReadDoubleLE0002
-     * @tc.desc       : Test the function of the interface readDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleLE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2200
+     * @tc.desc   Test the function of the interface readDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleLE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleLE0002';
@@ -5236,12 +5307,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2300
-     * @tc.name       : testReadDoubleLE0003
-     * @tc.desc       : Test the function of the interface readDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleLE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2300
+     * @tc.desc   Test the function of the interface readDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleLE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleLE0003';
@@ -5255,12 +5326,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2400
-     * @tc.name       : testReadDoubleLE0004
-     * @tc.desc       : Test the function of the interface readDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadDoubleLE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2400
+     * @tc.desc   Test the function of the interface readDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadDoubleLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadDoubleLE0004';
@@ -5275,12 +5346,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2500
-     * @tc.name       : testReadFloatBE0001
-     * @tc.desc       : Test the function of the interface readFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2500
+     * @tc.desc   Test the function of the interface readFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatBE0001';
@@ -5295,12 +5366,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2600
-     * @tc.name       : testReadFloatBE0002
-     * @tc.desc       : Test the function of the interface readFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatBE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2600
+     * @tc.desc   Test the function of the interface readFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatBE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatBE0002';
@@ -5314,12 +5385,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2700
-     * @tc.name       : testReadFloatBE0003
-     * @tc.desc       : Test the function of the interface readFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatBE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2700
+     * @tc.desc   Test the function of the interface readFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatBE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatBE0003';
@@ -5335,12 +5406,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2800
-     * @tc.name       : testReadFloatBE0004
-     * @tc.desc       : Test the function of the interface readFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatBE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2800
+     * @tc.desc   Test the function of the interface readFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatBE0004';
@@ -5355,12 +5426,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_2900
-     * @tc.name       : testReadFloatLE0001
-     * @tc.desc       : Test the function of the interface readFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_2900
+     * @tc.desc   Test the function of the interface readFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatLE0001';
@@ -5375,12 +5446,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3000
-     * @tc.name       : testReadFloatLE0002
-     * @tc.desc       : Test the function of the interface readFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatLE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3000
+     * @tc.desc   Test the function of the interface readFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatLE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatLE0002';
@@ -5394,12 +5465,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3100
-     * @tc.name       : testReadFloatLE0003
-     * @tc.desc       : Test the function of the interface readFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatLE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3100
+     * @tc.desc   Test the function of the interface readFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatLE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatLE0003';
@@ -5415,12 +5486,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3200
-     * @tc.name       : testReadFloatLE0004
-     * @tc.desc       : Test the function of the interface readFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadFloatLE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3200
+     * @tc.desc   Test the function of the interface readFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadFloatLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadFloatLE0004';
@@ -5435,12 +5506,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3300
-     * @tc.name       : testReadInt80001
-     * @tc.desc       : Test the function of the interface readInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3300
+     * @tc.desc   Test the function of the interface readInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt80001';
@@ -5456,12 +5527,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3400
-     * @tc.name       : testReadInt80002
-     * @tc.desc       : Test the function of the interface readInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3400
+     * @tc.desc   Test the function of the interface readInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt80002';
@@ -5474,12 +5545,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3500
-     * @tc.name       : testReadInt80003
-     * @tc.desc       : Test the function of the interface readInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3500
+     * @tc.desc   Test the function of the interface readInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt80003';
@@ -5492,12 +5563,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3600
-     * @tc.name       : testReadInt80004
-     * @tc.desc       : Test the function of the interface readInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3600
+     * @tc.desc   Test the function of the interface readInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt80004';
@@ -5511,12 +5582,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3700
-     * @tc.name       : testReadInt16BE001
-     * @tc.desc       : Test the function of the interface readInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16BE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3700
+     * @tc.desc   Test the function of the interface readInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16BE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16BE001';
@@ -5529,12 +5600,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3800
-     * @tc.name       : testReadInt16BE002
-     * @tc.desc       : Test the function of the interface readInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16BE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3800
+     * @tc.desc   Test the function of the interface readInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16BE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16BE002';
@@ -5547,12 +5618,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_3900
-     * @tc.name       : testReadInt16BE003
-     * @tc.desc       : Test the function of the interface readInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16BE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_3900
+     * @tc.desc   Test the function of the interface readInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16BE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16BE003';
@@ -5565,12 +5636,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4000
-     * @tc.name       : testReadInt16BE004
-     * @tc.desc       : Test the function of the interface readInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16BE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4000
+     * @tc.desc   Test the function of the interface readInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16BE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16BE004';
@@ -5585,12 +5656,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4100
-     * @tc.name       : testReadInt16LE001
-     * @tc.desc       : Test the function of the interface readInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16LE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4100
+     * @tc.desc   Test the function of the interface readInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16LE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16LE001';
@@ -5604,12 +5675,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4200
-     * @tc.name       : testReadInt16LE002
-     * @tc.desc       : Test the function of the interface readInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16LE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4200
+     * @tc.desc   Test the function of the interface readInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16LE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16LE002';
@@ -5622,12 +5693,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4300
-     * @tc.name       : testReadInt16LE003
-     * @tc.desc       : Test the function of the interface readInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16LE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4300
+     * @tc.desc   Test the function of the interface readInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16LE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16LE003';
@@ -5641,12 +5712,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4400
-     * @tc.name       : testReadInt16LE004
-     * @tc.desc       : Test the function of the interface readInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt16LE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4400
+     * @tc.desc   Test the function of the interface readInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt16LE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt16LE004';
@@ -5661,12 +5732,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4500
-     * @tc.name       : testReadInt32BE001
-     * @tc.desc       : Test the function of the interface readInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32BE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4500
+     * @tc.desc   Test the function of the interface readInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32BE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32BE001';
@@ -5679,12 +5750,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4600
-     * @tc.name       : testReadInt32BE002
-     * @tc.desc       : Test the function of the interface readInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32BE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4600
+     * @tc.desc   Test the function of the interface readInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32BE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32BE002';
@@ -5699,12 +5770,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4700
-     * @tc.name       : testReadInt32BE003
-     * @tc.desc       : Test the function of the interface readInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32BE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4700
+     * @tc.desc   Test the function of the interface readInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32BE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32BE003';
@@ -5718,12 +5789,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4800
-     * @tc.name       : testReadInt32BE004
-     * @tc.desc       : Test the function of the interface readInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32BE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4800
+     * @tc.desc   Test the function of the interface readInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32BE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32BE004';
@@ -5738,12 +5809,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_4900
-     * @tc.name       : testReadInt32LE001
-     * @tc.desc       : Test the function of the interface readInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32LE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_4900
+     * @tc.desc   Test the function of the interface readInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32LE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32LE001';
@@ -5757,12 +5828,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5000
-     * @tc.name       : testReadInt32LE002
-     * @tc.desc       : Test the function of the interface readInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32LE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5000
+     * @tc.desc   Test the function of the interface readInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32LE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32LE002';
@@ -5776,12 +5847,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5100
-     * @tc.name       : testReadInt32LE003
-     * @tc.desc       : Test the function of the interface readInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32LE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5100
+     * @tc.desc   Test the function of the interface readInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32LE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32LE003';
@@ -5796,12 +5867,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5200
-     * @tc.name       : testReadInt32LE004
-     * @tc.desc       : Test the function of the interface readInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadInt32LE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5200
+     * @tc.desc   Test the function of the interface readInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadInt32LE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadInt32LE004';
@@ -5816,12 +5887,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5300
-     * @tc.name       : testReadIntBE001
-     * @tc.desc       : Test the function of the interface readIntBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt8001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5300
+     * @tc.desc   Test the function of the interface readIntBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt8001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt8001';
@@ -5835,12 +5906,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5400
-     * @tc.name       : testReadUInt8002
-     * @tc.desc       : Test the function of the interface ReadUInt8002.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt8002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5400
+     * @tc.desc   Test the function of the interface ReadUInt8002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt8002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt8002';
@@ -5854,12 +5925,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5500
-     * @tc.name       : testReadUInt8003
-     * @tc.desc       : Test the function of the interface ReadUInt8003.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt8003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5500
+     * @tc.desc   Test the function of the interface ReadUInt8003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt8003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt8003';
@@ -5872,12 +5943,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5600
-     * @tc.name       : testReadUInt8004
-     * @tc.desc       : Test the function of the interface ReadUInt8004.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt8004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5600
+     * @tc.desc   Test the function of the interface ReadUInt8004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt8004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt8004';
@@ -5892,12 +5963,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5700
-     * @tc.name       : testReadUInt16BE001
-     * @tc.desc       : Test the function of the interface ReadUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16BE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5700
+     * @tc.desc   Test the function of the interface ReadUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16BE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16BE001';
@@ -5911,12 +5982,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5800
-     * @tc.name       : testReadUInt16BE002
-     * @tc.desc       : Test the function of the interface ReadUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16BE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5800
+     * @tc.desc   Test the function of the interface ReadUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16BE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16BE002';
@@ -5930,12 +6001,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_5900
-     * @tc.name       : testReadUInt16BE003
-     * @tc.desc       : Test the function of the interface ReadUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16BE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_5900
+     * @tc.desc   Test the function of the interface ReadUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16BE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16BE003';
@@ -5949,12 +6020,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6000
-     * @tc.name       : testReadUInt16BE004
-     * @tc.desc       : Test the function of the interface ReadUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16BE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6000
+     * @tc.desc   Test the function of the interface ReadUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16BE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16BE004';
@@ -5969,12 +6040,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6100
-     * @tc.name       : testReadUInt16LE001
-     * @tc.desc       : Test the function of the interface ReadUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6100
+     * @tc.desc   Test the function of the interface ReadUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16LE0001';
@@ -5988,12 +6059,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6200
-     * @tc.name       : testReadUInt16LE002
-     * @tc.desc       : Test the function of the interface ReadUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6200
+     * @tc.desc   Test the function of the interface ReadUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16LE0002';
@@ -6007,12 +6078,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6300
-     * @tc.name       : testReadUInt16LE003
-     * @tc.desc       : Test the function of the interface ReadUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6300
+     * @tc.desc   Test the function of the interface ReadUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16LE0003';
@@ -6026,12 +6097,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6400
-     * @tc.name       : testReadUInt16LE004
-     * @tc.desc       : Test the function of the interface ReadUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt16LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6400
+     * @tc.desc   Test the function of the interface ReadUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt16LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt16LE0004';
@@ -6046,12 +6117,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6500
-     * @tc.name       : testReadUInt32BE001
-     * @tc.desc       : Test the function of the interface ReadUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32BE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6500
+     * @tc.desc   Test the function of the interface ReadUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32BE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32BE001';
@@ -6065,12 +6136,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6600
-     * @tc.name       : testReadUInt32BE002
-     * @tc.desc       : Test the function of the interface ReadUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32BE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6600
+     * @tc.desc   Test the function of the interface ReadUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32BE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32BE002';
@@ -6084,12 +6155,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6700
-     * @tc.name       : testReadUInt32BE003
-     * @tc.desc       : Test the function of the interface ReadUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32BE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6700
+     * @tc.desc   Test the function of the interface ReadUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32BE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32BE003';
@@ -6105,12 +6176,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6800
-     * @tc.name       : testReadUInt32BE004
-     * @tc.desc       : Test the function of the interface ReadUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32BE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6800
+     * @tc.desc   Test the function of the interface ReadUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32BE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32BE004';
@@ -6125,12 +6196,12 @@ export default function bufferTest2() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_6900
-     * @tc.name       : testReadUInt32LE001
-     * @tc.desc       : Test the function of the interface ReadUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32LE001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_6900
+     * @tc.desc   Test the function of the interface ReadUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32LE001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32LE001';
@@ -6144,12 +6215,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_7000
-     * @tc.name       : testReadUInt32LE002
-     * @tc.desc       : Test the function of the interface ReadUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32LE002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_7000
+     * @tc.desc   Test the function of the interface ReadUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32LE002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32LE002';
@@ -6165,12 +6236,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_7100
-     * @tc.name       : testReadUInt32LE003
-     * @tc.desc       : Test the function of the interface ReadUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32LE003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_7100
+     * @tc.desc   Test the function of the interface ReadUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32LE003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32LE003';
@@ -6185,12 +6256,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_READ_7200
-     * @tc.name       : testReadUInt32LE004
-     * @tc.desc       : Test the function of the interface ReadUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferReadUInt32LE004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_READ_7200
+     * @tc.desc   Test the function of the interface ReadUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferReadUInt32LE004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferReadUInt32LE004';
@@ -6205,12 +6276,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0100
-     * @tc.name       : testSubarray001
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0100
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0001';
@@ -6229,12 +6300,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0200
-     * @tc.name       : testSubarray0002
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0200
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0002';
@@ -6252,12 +6323,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0300
-     * @tc.name       : testSubarray003
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0300
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0003';
@@ -6276,12 +6347,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0400
-     * @tc.name       : testSubarray004
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0400
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0004';
@@ -6300,12 +6371,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0500
-     * @tc.name       : testSubarray005
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0500
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0005';
@@ -6324,12 +6395,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0600
-     * @tc.name       : testSubarray006
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0600
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0006';
@@ -6349,12 +6420,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0700
-     * @tc.name       : testSubarray007
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0700
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0007';
@@ -6373,12 +6444,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0800
-     * @tc.name       : testSubarray008
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0800
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0008';
@@ -6397,12 +6468,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0900
-     * @tc.name       : testSubarray009
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_0900
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0009';
@@ -6422,12 +6493,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1000
-     * @tc.name       : testSubarray0010
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1000
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0010';
@@ -6447,12 +6518,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1100
-     * @tc.name       : testSubarray0011
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1100
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0011';
@@ -6472,12 +6543,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1200
-     * @tc.name       : testSubarray0012
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1200
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0012';
@@ -6492,12 +6563,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1300
-     * @tc.name       : testSubarray0013
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1300
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0013';
@@ -6512,12 +6583,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1400
-     * @tc.name       : testSubarray0014
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1400
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0014';
@@ -6532,12 +6603,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1500
-     * @tc.name       : testSubarray0015
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1500
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0015';
@@ -6552,12 +6623,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1600
-     * @tc.name       : testSubarray0016
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1600
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0016';
@@ -6572,12 +6643,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1700
-     * @tc.name       : testSubarray0017
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1700
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0017';
@@ -6591,13 +6662,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1800
-     * @tc.name       : testSubarray0018
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferSubarray0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1800
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0018';
@@ -6612,12 +6683,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1900
-     * @tc.name       : testSubarray0019
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_1900
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0019';
@@ -6632,12 +6703,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2000
-     * @tc.name       : testSubarray0020
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2000
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0020';
@@ -6652,12 +6723,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2100
-     * @tc.name       : testSubarray0021
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2100
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0021';
@@ -6672,12 +6743,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2200
-     * @tc.name       : testSubarray0022
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2200
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0022';
@@ -6692,12 +6763,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2300
-     * @tc.name       : testSubarray0023
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2300
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0023';
@@ -6712,12 +6783,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2400
-     * @tc.name       : testSubarray0024
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2400
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0024';
@@ -6732,12 +6803,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2500
-     * @tc.name       : testSubarray0025
-     * @tc.desc       : Test the function of the interface Subarray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSubarray0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SUBARRAY_2500
+     * @tc.desc   Test the function of the interface Subarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSubarray0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferSubarray0025';
@@ -6752,12 +6823,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0100
-     * @tc.name       : testToString0001
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0001';
@@ -6773,12 +6844,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0200
-     * @tc.name       : testToString0002
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0002';
@@ -6794,12 +6865,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0300
-     * @tc.name       : testToString0003
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0003';
@@ -6816,12 +6887,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0400
-     * @tc.name       : testToString0004
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0004';
@@ -6838,12 +6909,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0500
-     * @tc.name       : testToString0005
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0005';
@@ -6860,12 +6931,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0600
-     * @tc.name       : testToString0006
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0006';
@@ -6883,12 +6954,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0700
-     * @tc.name       : testToString0007
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0007';
@@ -6905,12 +6976,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0800
-     * @tc.name       : testToString0008
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0008';
@@ -6927,12 +6998,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0900
-     * @tc.name       : testToString0009
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_0900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0009';
@@ -6949,12 +7020,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1000
-     * @tc.name       : testToString0010
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0010';
@@ -6971,12 +7042,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1100
-     * @tc.name       : testToString0011
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0011';
@@ -6993,12 +7064,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1200
-     * @tc.name       : testToString0012
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0012';
@@ -7015,12 +7086,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1300
-     * @tc.name       : testToString0013
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0013';
@@ -7037,13 +7108,13 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1400
-     * @tc.name       : testToString0014
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-       */
+     * @tc.name   testBufferToString0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBufferToString0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0014';
       try {
@@ -7061,12 +7132,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1500
-     * @tc.name       : testToString0015
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0015';
@@ -7084,12 +7155,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1600
-     * @tc.name       : testToString0016
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0016';
@@ -7108,12 +7179,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1700
-     * @tc.name       : testToString0017
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0017';
@@ -7129,12 +7200,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1800
-     * @tc.name       : testToString0018
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0018';
@@ -7150,12 +7221,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1900
-     * @tc.name       : testToString0019
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_1900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0019';
@@ -7171,12 +7242,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2000
-     * @tc.name       : testToString0020
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0020';
@@ -7192,12 +7263,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2100
-     * @tc.name       : testToString0021
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0021';
@@ -7213,12 +7284,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2200
-     * @tc.name       : testToString0022
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0022';
@@ -7234,12 +7305,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2300
-     * @tc.name       : testToString0023
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0023';
@@ -7255,12 +7326,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2400
-     * @tc.name       : testToString0024
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0024';
@@ -7276,12 +7347,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2500
-     * @tc.name       : testToString0025
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0025';
@@ -7297,12 +7368,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2600
-     * @tc.name       : testToString0026
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0026';
@@ -7318,12 +7389,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2700
-     * @tc.name       : testToString0027
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0027';
@@ -7339,12 +7410,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2800
-     * @tc.name       : testToString0028
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0028';
@@ -7360,12 +7431,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2900
-     * @tc.name       : testToString0029
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_2900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0029';
@@ -7381,12 +7452,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3000
-     * @tc.name       : testToString0030
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0030';
@@ -7402,12 +7473,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3100
-     * @tc.name       : testToString0031
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0031';
@@ -7423,12 +7494,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3200
-     * @tc.name       : testToString0032
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0032';
@@ -7444,12 +7515,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3300
-     * @tc.name       : testToString0033
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0033';
@@ -7465,12 +7536,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3400
-     * @tc.name       : testToString0034
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0034';
@@ -7486,12 +7557,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3500
-     * @tc.name       : testToString0035
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0035';
@@ -7507,12 +7578,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3600
-     * @tc.name       : testToString0036
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0036';
@@ -7528,12 +7599,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3700
-     * @tc.name       : testToString0037
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0037';
@@ -7549,12 +7620,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3800
-     * @tc.name       : testToString0038
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0038';
@@ -7570,12 +7641,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3900
-     * @tc.name       : testToString0039
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_3900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0039';
@@ -7591,12 +7662,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4000
-     * @tc.name       : testToString0040
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0040';
@@ -7612,12 +7683,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4100
-     * @tc.name       : testToString0041
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0041';
@@ -7633,12 +7704,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4200
-     * @tc.name       : testToString0042
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0042';
@@ -7654,12 +7725,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4300
-     * @tc.name       : testToString0043
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0043';
@@ -7675,12 +7746,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4400
-     * @tc.name       : testToString0044
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0044';
@@ -7696,12 +7767,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4500
-     * @tc.name       : testToString0045
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0045';
@@ -7717,12 +7788,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4600
-     * @tc.name       : testToString0046
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0046';
@@ -7738,12 +7809,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4700
-     * @tc.name       : testToString0047
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0047';
@@ -7759,12 +7830,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4800
-     * @tc.name       : testToString0048
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0048';
@@ -7780,12 +7851,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4900
-     * @tc.name       : testToString0049
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_4900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0049';
@@ -7801,12 +7872,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5000
-     * @tc.name       : testToString0050
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0050';
@@ -7822,12 +7893,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5100
-     * @tc.name       : testToString0051
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0051';
@@ -7843,12 +7914,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5200
-     * @tc.name       : testToString0052
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0052';
@@ -7864,12 +7935,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5300
-     * @tc.name       : testToString0053
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0053';
@@ -7884,13 +7955,13 @@ export default function bufferTest2() {
       }
     })
 
-    /*
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5400
-     * @tc.name       : testToString0054
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferToString0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0054';
@@ -7906,12 +7977,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5500
-     * @tc.name       : testToString0055
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0055';
@@ -7927,12 +7998,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5600
-     * @tc.name       : testToString0056
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0056';
@@ -7948,12 +8019,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5700
-     * @tc.name       : testToString0057
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0057';
@@ -7969,12 +8040,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5800
-     * @tc.name       : testToString0058
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0058';
@@ -7990,12 +8061,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5900
-     * @tc.name       : testToString0059
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0059
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_5900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0059';
@@ -8011,12 +8082,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6000
-     * @tc.name       : testToString0060
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0060
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0060';
@@ -8032,12 +8103,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6100
-     * @tc.name       : testToString0061
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0061
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0061';
@@ -8053,12 +8124,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6200
-     * @tc.name       : testToString0062
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0062
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0062';
@@ -8074,12 +8145,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6300
-     * @tc.name       : testToString0063
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0063
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0063';
@@ -8095,12 +8166,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6400
-     * @tc.name       : testToString0064
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0064
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0064';
@@ -8116,12 +8187,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6500
-     * @tc.name       : testToString0065
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0065
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0065';
@@ -8137,12 +8208,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6600
-     * @tc.name       : testToString0066
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0066
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0066';
@@ -8158,12 +8229,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6700
-     * @tc.name       : testToString0067
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0067
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0067';
@@ -8179,12 +8250,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6800
-     * @tc.name       : testToString0068
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0068
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0068';
@@ -8200,12 +8271,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6900
-     * @tc.name       : testToString0069
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0069
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_6900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0069';
@@ -8221,12 +8292,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7000
-     * @tc.name       : testToString0070
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0070
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0070';
@@ -8242,12 +8313,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7100
-     * @tc.name       : testToString0071
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0071
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7100
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0071';
@@ -8263,12 +8334,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7200
-     * @tc.name       : testToString0072
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0072
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7200
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0072';
@@ -8284,12 +8355,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7300
-     * @tc.name       : testToString0073
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0073
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7300
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0073';
@@ -8305,12 +8376,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7400
-     * @tc.name       : testToString0074
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0074
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7400
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0074';
@@ -8326,12 +8397,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7500
-     * @tc.name       : testToString0075
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0075
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7500
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0075';
@@ -8347,12 +8418,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7600
-     * @tc.name       : testToString0076
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0076
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7600
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0076';
@@ -8368,12 +8439,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7700
-     * @tc.name       : testToString0077
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0077
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7700
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0077';
@@ -8389,12 +8460,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7800
-     * @tc.name       : testToString0078
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0078
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7800
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0078';
@@ -8410,12 +8481,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7900
-     * @tc.name       : testToString0079
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0079
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_7900
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0079';
@@ -8431,12 +8502,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_8000
-     * @tc.name       : testToString0080
-     * @tc.desc       : Test the function of the interface toString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferToString0080
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TO_STRING_8000
+     * @tc.desc   Test the function of the interface toString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferToString0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferToString0080';
@@ -8452,12 +8523,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0100
-     * @tc.name       : testWrite0001
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0100
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0001';
@@ -8471,12 +8542,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0200
-     * @tc.name       : testWrite0002
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0200
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0002';
@@ -8489,12 +8560,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0300
-     * @tc.name       : testWrite0003
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0300
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0003';
@@ -8508,12 +8579,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0400
-     * @tc.name       : testWrite0004
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0400
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0004';
@@ -8528,12 +8599,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0500
-     * @tc.name       : testWrite0005
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0500
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0005';
@@ -8549,12 +8620,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0600
-     * @tc.name       : testWrite006
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0600
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0006';
@@ -8570,12 +8641,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0700
-     * @tc.name       : testWrite0007
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0700
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0007';
@@ -8590,12 +8661,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0800
-     * @tc.name       : testWrite0008
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0800
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0008';
@@ -8610,12 +8681,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0900
-     * @tc.name       : testWrite0009
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_0900
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0009';
@@ -8631,12 +8702,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1000
-     * @tc.name       : testWrite0010
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1000
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0010';
@@ -8651,12 +8722,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1100
-     * @tc.name       : testWrite0011
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1100
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0011';
@@ -8671,12 +8742,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1200
-     * @tc.name       : testWrite0012
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1200
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0012';
@@ -8691,12 +8762,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1300
-     * @tc.name       : testWrite0013
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1300
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0013';
@@ -8711,12 +8782,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1400
-     * @tc.name       : testWrite0014
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1400
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0014';
@@ -8731,12 +8802,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1500
-     * @tc.name       : testWrite0015
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1500
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0015';
@@ -8751,12 +8822,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1600
-     * @tc.name       : testWrite0016
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1600
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0016';
@@ -8771,12 +8842,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1700
-     * @tc.name       : testWrite0017
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1700
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0017';
@@ -8791,12 +8862,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1800
-     * @tc.name       : testWrite0018
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1800
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0018';
@@ -8811,12 +8882,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1900
-     * @tc.name       : testWrite0019
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_1900
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0019';
@@ -8830,13 +8901,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2000
-     * @tc.name       : testWrite0020
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWrite0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2000
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0020';
@@ -8851,12 +8922,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2100
-     * @tc.name       : testWrite0021
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2100
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0021';
@@ -8878,6 +8949,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWrite0022
+     * @tc.number testBufferWrite0022
+     * @tc.desc   testBufferWrite0022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWrite0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
     //   const TAG = 'testBufferWrite0022';
     //   try {
@@ -8891,12 +8970,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2300
-     * @tc.name       : testWrite0023
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2300
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0023';
@@ -8911,12 +8990,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2400
-     * @tc.name       : testWrite0024
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2400
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0024';
@@ -8931,12 +9010,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2500
-     * @tc.name       : testWrite0025
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2500
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0025';
@@ -8951,12 +9030,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2600
-     * @tc.name       : testWrite0026
-     * @tc.desc       : Test the function of the interface write.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWrite0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2600
+     * @tc.desc   Test the function of the interface write.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWrite0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWrite0026';
@@ -8971,12 +9050,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2700
-     * @tc.name       : testWriteBigInt64BE0001
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2700
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0001';
@@ -8991,12 +9070,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2800
-     * @tc.name       : testWriteBigInt64BE0002
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2800
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0002';
@@ -9011,12 +9090,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2900
-     * @tc.name       : testWriteBigInt64BE0003
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_2900
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0003';
@@ -9031,12 +9110,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3000
-     * @tc.name       : testWriteBigInt64BE0004
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3000
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0004';
@@ -9051,12 +9130,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3100
-     * @tc.name       : testWriteBigInt64BE0005
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3100
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0005';
@@ -9071,12 +9150,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3200
-     * @tc.name       : testWriteBigInt64BE0006
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3200
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0006';
@@ -9094,12 +9173,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3300
-     * @tc.name       : testWriteBigInt64BE0007
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3300
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0007';
@@ -9114,12 +9193,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3400
-     * @tc.name       : testWriteBigInt64BE0008
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3400
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0008';
@@ -9134,12 +9213,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3500
-     * @tc.name       : testWriteBigInt64BE0009
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3500
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0009';
@@ -9154,12 +9233,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3600
-     * @tc.name       : testWriteBigInt64BE0010
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3600
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64BE0010';
@@ -9172,13 +9251,13 @@ export default function bufferTest2() {
         expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3700
-     * @tc.name       : testWriteBigInt64BE0011
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteBigInt64BE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3700
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigInt64BE0011';
@@ -9194,12 +9273,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3800
-     * @tc.name       : testWriteBigInt64BE0012
-     * @tc.desc       : Test the function of the interface writeBigInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64BE0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3800
+     * @tc.desc   Test the function of the interface writeBigInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigInt64BE0012';
@@ -9214,12 +9293,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3900
-     * @tc.name       : testWriteBigInt64LE0001
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_3900
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0001';
@@ -9234,12 +9313,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4000
-     * @tc.name       : testWriteBigInt64LE0002
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4000
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0002';
@@ -9254,12 +9333,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4100
-     * @tc.name       : testWriteBigInt64LE0003
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4100
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0003';
@@ -9274,12 +9353,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4200
-     * @tc.name       : testWriteBigInt64LE0004
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4200
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0004';
@@ -9294,12 +9373,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4300
-     * @tc.name       : testWriteBigInt64LE0005
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4300
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0005';
@@ -9314,12 +9393,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4400
-     * @tc.name       : testWriteBigInt64LE0006
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4400
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0006';
@@ -9334,12 +9413,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4500
-     * @tc.name       : testWriteBigInt64LE0007
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4500
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0007';
@@ -9354,12 +9433,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4600
-     * @tc.name       : testWriteBigInt64LE0008
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4600
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0008';
@@ -9374,12 +9453,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4700
-     * @tc.name       : testWriteBigInt64LE0009
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4700
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0009';
@@ -9394,12 +9473,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4800
-     * @tc.name       : testWriteBigInt64LE0010
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4800
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0010';
@@ -9412,13 +9491,13 @@ export default function bufferTest2() {
         expect(err.message).assertEqual('The number cannot be converted to a BigInt because it is not an integer');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4900
-     * @tc.name       : testWriteBigInt64LE0011
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteBigInt64LE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_4900
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigInt64LE0011';
@@ -9433,12 +9512,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5000
-     * @tc.name       : testWriteBigInt64LE0012
-     * @tc.desc       : Test the function of the interface writeBigInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigInt64LE0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5000
+     * @tc.desc   Test the function of the interface writeBigInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigInt64LE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigInt64LE0012';
@@ -9452,12 +9531,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5100
-     * @tc.name       : testWriteBigUInt64BE0001
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5100
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0001';
@@ -9472,12 +9551,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5200
-     * @tc.name       : testWriteBigUInt64BE0002
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5200
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0002';
@@ -9492,12 +9571,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5300
-     * @tc.name       : testWriteBigUInt64BE0003
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5300
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0003';
@@ -9512,12 +9591,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5400
-     * @tc.name       : testWriteBigUInt64BE0004
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5400
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0004';
@@ -9532,12 +9611,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5500
-     * @tc.name       : testWriteBigUInt64BE0005
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5500
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0005';
@@ -9551,13 +9630,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5600
-     * @tc.name       : testWriteBigUInt64BE0006
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteBigUInt64BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5600
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0006';
@@ -9572,12 +9651,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5700
-     * @tc.name       : testWriteBigUInt64BE0007
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5700
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0007';
@@ -9592,12 +9671,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5800
-     * @tc.name       : testWriteBigUInt64BE0008
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5800
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0008';
@@ -9612,12 +9691,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5900
-     * @tc.name       : testWriteBigUInt64BE0009
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_5900
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0009';
@@ -9631,12 +9710,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6000
-     * @tc.name       : testWriteBigUInt64BE0010
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6000
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64BE0010';
@@ -9651,12 +9730,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6100
-     * @tc.name       : testWriteBigUInt64BE0011
-     * @tc.desc       : Test the function of the interface writeBigUInt64BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64BE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6100
+     * @tc.desc   Test the function of the interface writeBigUInt64BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigUInt64BE0011';
@@ -9671,12 +9750,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6200
-     * @tc.name       : testWriteBigUInt64LE0001
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6200
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0001';
@@ -9691,12 +9770,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6300
-     * @tc.name       : testWriteBigUInt64LE0002
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6300
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0002';
@@ -9711,12 +9790,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6400
-     * @tc.name       : testWriteBigUInt64LE0003
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6400
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0003';
@@ -9731,12 +9810,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6500
-     * @tc.name       : testWriteBigUInt64LE0004
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6500
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0004';
@@ -9752,12 +9831,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6600
-     * @tc.name       : testWriteBigUInt64LE0005
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64L0E005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6600
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64L0E005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0005';
@@ -9771,13 +9850,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6700
-     * @tc.name       : testWriteBigUInt64LE0006
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteBigUInt64L0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6700
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64L0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0006';
@@ -9792,12 +9871,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6800
-     * @tc.name       : testWriteBigUInt64LE0007
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6800
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0007';
@@ -9812,12 +9891,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6900
-     * @tc.name       : testWriteBigUInt64LE0008
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_6900
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0008';
@@ -9832,12 +9911,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7000
-     * @tc.name       : testWriteBigUInt64LE0009
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7000
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0009';
@@ -9851,12 +9930,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7100
-     * @tc.name       : testWriteBigUInt64LE0010
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7100
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteBigUInt64LE0010';
@@ -9871,12 +9950,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7200
-     * @tc.name       : testWriteBigUInt64LE0011
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7200
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigUInt64LE0011';
@@ -9891,12 +9970,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7300
-     * @tc.name       : testWriteBigUInt64LE0012
-     * @tc.desc       : Test the function of the interface writeBigUInt64LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteBigUInt64LE0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7300
+     * @tc.desc   Test the function of the interface writeBigUInt64LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteBigUInt64LE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteBigUInt64LE0012';
@@ -9911,12 +9990,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7400
-     * @tc.name       : testWriteDoubleBE0001
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7400
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0001';
@@ -9933,12 +10012,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7500
-     * @tc.name       : testWriteDoubleBE0002
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7500
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0002';
@@ -9954,12 +10033,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7600
-     * @tc.name       : testWriteDoubleBE0003
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7600
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0003';
@@ -9973,12 +10052,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7700
-     * @tc.name       : testWriteDoubleBE0004
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7700
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0004';
@@ -9991,12 +10070,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7800
-     * @tc.name       : testWriteDoubleBE0005
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7800
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0005';
@@ -10010,12 +10089,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7900
-     * @tc.name       : testWriteDoubleBE0006
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_7900
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0006';
@@ -10030,12 +10109,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8000
-     * @tc.name       : testWriteDoubleBE0007
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8000
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0007';
@@ -10049,12 +10128,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8100
-     * @tc.name       : testWriteDoubleBE0008
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8100
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0008';
@@ -10068,12 +10147,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8200
-     * @tc.name       : testWriteDoubleBE0009
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8200
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0009';
@@ -10087,12 +10166,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8300
-     * @tc.name       : testWriteDoubleBE0010
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8300
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleBE0010';
@@ -10106,12 +10185,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8400
-     * @tc.name       : testWriteDoubleBE0011
-     * @tc.desc       : Test the function of the interface writeDoubleBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleBE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8400
+     * @tc.desc   Test the function of the interface writeDoubleBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleBE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteDoubleBE0011';
@@ -10126,12 +10205,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8500
-     * @tc.name       : testWriteDoubleLE0001
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8500
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0001';
@@ -10146,12 +10225,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8600
-     * @tc.name       : testWriteDoubleLE0002
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8600
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0002';
@@ -10165,12 +10244,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8700
-     * @tc.name       : testWriteDoubleLE0003
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8700
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0003';
@@ -10184,12 +10263,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8800
-     * @tc.name       : testWriteDoubleLE0004
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8800
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0004';
@@ -10205,12 +10284,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8900
-     * @tc.name       : testWriteDoubleLE0005
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_8900
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0005';
@@ -10224,12 +10303,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9000
-     * @tc.name       : testWriteDoubleLE0006
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9000
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0006';
@@ -10243,12 +10322,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9100
-     * @tc.name       : testWriteDoubleLE0007
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9100
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0007';
@@ -10262,12 +10341,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9200
-     * @tc.name       : testWriteDoubleLE0008
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9200
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0008';
@@ -10281,12 +10360,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9300
-     * @tc.name       : testWriteDoubleLE0009
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9300
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0009';
@@ -10301,12 +10380,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9400
-     * @tc.name       : testWriteDoubleLE0010
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9400
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteDoubleLE0010';
@@ -10322,12 +10401,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9500
-     * @tc.name       : testWriteDoubleLE0011
-     * @tc.desc       : Test the function of the interface writeDoubleLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteDoubleLE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9500
+     * @tc.desc   Test the function of the interface writeDoubleLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteDoubleLE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteDoubleLE0011';
@@ -10343,12 +10422,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9600
-     * @tc.name       : testWriteFloatBE0001
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9600
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0001';
@@ -10362,12 +10441,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9700
-     * @tc.name       : testWriteFloatBE0002
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9700
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0002';
@@ -10381,12 +10460,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9800
-     * @tc.name       : testWriteFloatBE0003
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9800
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0003';
@@ -10400,12 +10479,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9900
-     * @tc.name       : testWriteFloatBE0004
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_9900
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0004';
@@ -10419,12 +10498,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10000
-     * @tc.name       : testWriteFloatBE0005
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10000
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0005';
@@ -10438,12 +10517,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10100
-     * @tc.name       : testWriteFloatBE0006
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10100
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0006';
@@ -10457,12 +10536,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10200
-     * @tc.name       : testWriteFloatBE0007
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10200
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0007';
@@ -10476,12 +10555,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10300
-     * @tc.name       : testWriteFloatBE0008
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10300
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0008';
@@ -10495,12 +10574,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10400
-     * @tc.name       : testWriteFloatBE0009
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10400
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0009';
@@ -10514,12 +10593,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10500
-     * @tc.name       : testWriteFloatBE0010
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10500
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatBE0010';
@@ -10533,12 +10612,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10600
-     * @tc.name       : testWriteFloatBE0011
-     * @tc.desc       : Test the function of the interface WriteFloatBE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatBE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10600
+     * @tc.desc   Test the function of the interface WriteFloatBE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatBE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteFloatBE0011';
@@ -10551,12 +10630,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10700
-     * @tc.name       : testWriteFloatLE0001
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10700
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0001';
@@ -10570,12 +10649,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10800
-     * @tc.name       : testWriteFloatLE0002
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10800
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0002';
@@ -10589,12 +10668,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10900
-     * @tc.name       : testWriteFloatLE0003
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_10900
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0003';
@@ -10608,12 +10687,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11000
-     * @tc.name       : testWriteFloatLE0004
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11000
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0004';
@@ -10627,12 +10706,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11100
-     * @tc.name       : testWriteFloatLE0005
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11100
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0005';
@@ -10646,12 +10725,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11200
-     * @tc.name       : testWriteFloatLE0006
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11200
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0006';
@@ -10665,12 +10744,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11300
-     * @tc.name       : testWriteFloatLE0007
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11300
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0007';
@@ -10684,12 +10763,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11400
-     * @tc.name       : testWriteFloatLE0008
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11400
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteFloatLE0008';
@@ -10703,12 +10782,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11500
-     * @tc.name       : testWriteFloatLE0009
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11500
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0009';
@@ -10722,12 +10801,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11600
-     * @tc.name       : testWriteFloatLE0010
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11600
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0010';
@@ -10741,12 +10820,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11700
-     * @tc.name       : testWriteFloatLE0011
-     * @tc.desc       : Test the function of the interface WriteFloatLE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteFloatLE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11700
+     * @tc.desc   Test the function of the interface WriteFloatLE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteFloatLE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteFloatLE0011';
@@ -10758,13 +10837,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11800
-     * @tc.name       : testWriteInt80001
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11800
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80001';
@@ -10779,12 +10858,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11900
-     * @tc.name       : testWriteInt80002
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_11900
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80002';
@@ -10798,12 +10877,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12000
-     * @tc.name       : testWriteInt80003
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12000
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80003';
@@ -10824,6 +10903,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteInt80004
+     * @tc.number testBufferWriteInt80004
+     * @tc.desc   testBufferWriteInt80004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteInt80004';
     //   try {
@@ -10837,13 +10924,13 @@ export default function bufferTest2() {
     //       .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 72623859790382850');
     //   }
     // })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12200
-     * @tc.name       : testWriteInt80005
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12200
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80005';
@@ -10858,12 +10945,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12300
-     * @tc.name       : testWriteInt80006
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt80006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12300
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80006';
@@ -10875,13 +10962,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12400
-     * @tc.name       : testWriteInt80007
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12400
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80007';
@@ -10895,13 +10982,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 16053919793946753000');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12500
-     * @tc.name       : testWriteInt80008
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12500
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80008';
@@ -10915,13 +11002,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -128 and <= 127. Received value is: 84281096');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12600
-     * @tc.name       : testWriteInt80009
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12600
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80009';
@@ -10936,12 +11023,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12700
-     * @tc.name       : testWriteInt80010
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt80010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12700
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80010';
@@ -10954,13 +11041,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12800
-     * @tc.name       : testWriteInt80011
-     * @tc.desc       : Test the function of the interface WriteInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt80011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12800
+     * @tc.desc   Test the function of the interface WriteInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt80011';
@@ -10975,12 +11062,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12900
-     * @tc.name       : testWriteInt16BE0001
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_12900
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0001';
@@ -10993,12 +11080,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13000
-     * @tc.name       : testWriteInt16BE0002
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13000
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0002';
@@ -11010,13 +11097,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13100
-     * @tc.name       : testWriteInt16BE0003
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13100
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0003';
@@ -11031,12 +11118,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13200
-     * @tc.name       : testWriteInt16BE0004
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13200
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0004';
@@ -11048,13 +11135,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13300
-     * @tc.name       : testWriteInt16BE0005
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13300
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0005';
@@ -11069,12 +11156,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13400
-     * @tc.name       : testWriteInt16BE0006
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13400
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0006';
@@ -11087,12 +11174,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13500
-     * @tc.name       : testWriteInt16BE0007
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13500
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0007';
@@ -11104,13 +11191,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13600
-     * @tc.name       : testWriteInt16BE0008
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13600
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0008';
@@ -11125,12 +11212,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13700
-     * @tc.name       : testWriteInt16BE0009
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13700
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0009';
@@ -11142,13 +11229,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13800
-     * @tc.name       : testWriteInt16BE0010
-     * @tc.desc       : Test the function of the interface WriteInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_13800
+     * @tc.desc   Test the function of the interface WriteInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16BE0010';
@@ -11170,6 +11257,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteInt16BE0011
+     * @tc.number testBufferWriteInt16BE0011
+     * @tc.desc   testBufferWriteInt16BE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteInt16BE0011';
     //   try {
@@ -11183,12 +11278,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14000
-     * @tc.name       : testWriteInt16LE0001
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14000
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt160001';
@@ -11200,13 +11295,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14100
-     * @tc.name       : testWriteInt16LE0002
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14100
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0002';
@@ -11220,13 +11315,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= -32768 and <= 32767. Received value is: 84281096');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14200
-     * @tc.name       : testWriteInt16LE0003
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14200
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0003';
@@ -11241,12 +11336,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14300
-     * @tc.name       : testWriteInt16LE0004
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14300
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0004';
@@ -11258,13 +11353,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14400
-     * @tc.name       : testWriteInt16LE0005
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16LE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14400
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0005';
@@ -11279,12 +11374,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14500
-     * @tc.name       : testWriteInt16LE0006
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16LE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14500
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0006';
@@ -11298,12 +11393,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14600
-     * @tc.name       : testWriteInt16LE0007
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14600
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0007';
@@ -11315,13 +11410,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14700
-     * @tc.name       : testWriteInt16LE0008
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14700
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0008';
@@ -11336,12 +11431,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14800
-     * @tc.name       : testWriteInt16LE0009
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt16LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14800
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0009';
@@ -11353,13 +11448,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14900
-     * @tc.name       : testWriteInt16LE0010
-     * @tc.desc       : Test the function of the interface WriteInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt16LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_14900
+     * @tc.desc   Test the function of the interface WriteInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt16LE0010';
@@ -11381,6 +11476,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteInt16LE0011
+     * @tc.number testBufferWriteInt16LE0011
+     * @tc.desc   testBufferWriteInt16LE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteInt16LE0011';
     //   try {
@@ -11394,12 +11497,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15100
-     * @tc.name       : testWriteInt32BE0001
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15100
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0001';
@@ -11414,12 +11517,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15200
-     * @tc.name       : testWriteInt32BE0002
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15200
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0002';
@@ -11434,12 +11537,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15300
-     * @tc.name       : testWriteInt32BE0003
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15300
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0003';
@@ -11454,12 +11557,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15400
-     * @tc.name       : testWriteInt32BE0004
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15400
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0004';
@@ -11474,12 +11577,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15500
-     * @tc.name       : testWriteInt32BE0005
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15500
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0005';
@@ -11493,13 +11596,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15600
-     * @tc.name       : testWriteInt32BE0006
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15600
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0006';
@@ -11515,12 +11618,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15700
-     * @tc.name       : testWriteInt32BE0007
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15700
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0007';
@@ -11535,12 +11638,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15800
-     * @tc.name       : testWriteInt32BE0008
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15800
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0008';
@@ -11554,13 +11657,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15900
-     * @tc.name       : testWriteInt32BE0009
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_15900
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0009';
@@ -11576,12 +11679,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16000
-     * @tc.name       : testWriteInt32BE0010
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16000
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0010';
@@ -11595,13 +11698,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16100
-     * @tc.name       : testWriteInt32BE0011
-     * @tc.desc       : Test the function of the interface writeInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32BE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16100
+     * @tc.desc   Test the function of the interface writeInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32BE0011';
@@ -11624,6 +11727,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteInt32BE0012
+     * @tc.number testBufferWriteInt32BE0012
+     * @tc.desc   testBufferWriteInt32BE0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //   it('testBufferWriteInt32BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //     const TAG = 'testBufferWriteInt32BE0012';
     //     try {
@@ -11637,12 +11748,12 @@ export default function bufferTest2() {
     //     }
     //   })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16300
-     * @tc.name       : testWriteInt32LE0001
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16300
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0001';
@@ -11657,12 +11768,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16400
-     * @tc.name       : testWriteInt32LE0002
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16400
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0002';
@@ -11677,12 +11788,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16500
-     * @tc.name       : testWriteInt32LE0003
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16500
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0003';
@@ -11697,12 +11808,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16600
-     * @tc.name       : testWriteInt32LE0004
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16600
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0004';
@@ -11716,13 +11827,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16700
-     * @tc.name       : testWriteInt32LE0005
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32LE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16700
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0005';
@@ -11739,12 +11850,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16800
-     * @tc.name       : testWriteInt32LE0006
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16800
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0006';
@@ -11759,12 +11870,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16900
-     * @tc.name       : testWriteInt32LE0007
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_16900
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0007';
@@ -11778,13 +11889,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17000
-     * @tc.name       : testWriteInt32LE0008
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17000
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0008';
@@ -11800,12 +11911,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17100
-     * @tc.name       : testWriteInt32LE0009
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteInt32LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17100
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0009';
@@ -11819,13 +11930,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17200
-     * @tc.name       : testWriteInt32LE0010
-     * @tc.desc       : Test the function of the interface writeInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteInt32LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17200
+     * @tc.desc   Test the function of the interface writeInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteInt32LE0010';
@@ -11848,6 +11959,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteInt32LE0011
+     * @tc.number testBufferWriteInt32LE0011
+     * @tc.desc   testBufferWriteInt32LE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteInt32LE0011';
     //   try {
@@ -11861,12 +11980,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17400
-     * @tc.name       : testWriteUInt80001
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17400
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80001';
@@ -11889,13 +12008,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17500
-     * @tc.name       : testWriteUInt80002
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17500
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80002';
@@ -11910,13 +12029,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 772');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17600
-     * @tc.name       : testWriteUInt80003
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17600
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80003';
@@ -11931,13 +12050,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 84281096');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17700
-     * @tc.name       : testWriteUInt80004
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17700
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80004';
@@ -11953,12 +12072,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17800
-     * @tc.name       : testWriteUInt80005
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt80005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17800
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80005';
@@ -11973,13 +12092,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17900
-     * @tc.name       : testWriteUInt80006
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_17900
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80006';
@@ -11993,13 +12112,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 255. Received value is: 4277009102');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18000
-     * @tc.name       : testWriteUInt80007
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18000
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80007';
@@ -12014,13 +12133,13 @@ export default function bufferTest2() {
     
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18100
-     * @tc.name       : testWriteUInt80008
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18100
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80008';
@@ -12036,12 +12155,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18200
-     * @tc.name       : testWriteUInt80009
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt80009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18200
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80009';
@@ -12058,13 +12177,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18300
-     * @tc.name       : testWriteUInt80010
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt80010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18300
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80010';
@@ -12086,6 +12205,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteUInt80011
+     * @tc.number testBufferWriteUInt80011
+     * @tc.desc   testBufferWriteUInt80011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteUInt80011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt80011';
     //   try {
@@ -12100,12 +12227,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18500
-     * @tc.name       : testWriteUInt80012
-     * @tc.desc       : Test the function of the interface writeUInt8.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt80012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18500
+     * @tc.desc   Test the function of the interface writeUInt8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt80012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt80012';
@@ -12121,12 +12248,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18600
-     * @tc.name       : testWriteUInt16BE0001
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18600
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0001';
@@ -12145,12 +12272,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18700
-     * @tc.name       : testWriteUInt16BE0002
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18700
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0002';
@@ -12165,13 +12292,13 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18800
-     * @tc.name       : testWriteUInt16BE0003
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18800
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0003';
@@ -12186,12 +12313,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18900
-     * @tc.name       : testWriteUInt16BE0004
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_18900
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0004';
@@ -12206,12 +12333,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19000
-     * @tc.name       : testWriteUInt16BE0005
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19000
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0005';
@@ -12225,13 +12352,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19100
-     * @tc.name       : testWriteUInt16BE0006
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19100
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0006';
@@ -12245,13 +12372,13 @@ export default function bufferTest2() {
           .assertEqual('The value of "value" is out of range. It must be >= 0 and <= 65535. Received value is: 4277009102');
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19200
-     * @tc.name       : testWriteUInt16BE0007
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19200
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0007';
@@ -12266,12 +12393,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19300
-     * @tc.name       : testWriteUInt16BE0008
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19300
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0008';
@@ -12285,13 +12412,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19400
-     * @tc.name       : testWriteUInt16BE0009
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19400
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0009';
@@ -12306,12 +12433,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19500
-     * @tc.name       : testWriteUInt16BE0010
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19500
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0010';
@@ -12329,13 +12456,13 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19600
-     * @tc.name       : testWriteUInt16BE0011
-     * @tc.desc       : Test the function of the interface writeUInt16BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16BE0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19600
+     * @tc.desc   Test the function of the interface writeUInt16BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16BE0011';
@@ -12357,6 +12484,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteUInt16BE0012
+     * @tc.number testBufferWriteUInt16BE0012
+     * @tc.desc   testBufferWriteUInt16BE0012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteUInt16BE0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt16BE0012';
     //   try {
@@ -12371,12 +12506,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19800
-     * @tc.name       : testWriteUInt16LE0001
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19800
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0001';
@@ -12390,13 +12525,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19900
-     * @tc.name       : testWriteUInt16LE0002
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_19900
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0002';
@@ -12412,12 +12547,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20000
-     * @tc.name       : testWriteUInt16LE0003
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20000
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0003';
@@ -12431,12 +12566,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20100
-     * @tc.name       : testWriteUInt16LE0004
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20100
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0004';
@@ -12449,13 +12584,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20200
-     * @tc.name       : testWriteUInt16LE0005
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16LE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20200
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0005';
@@ -12471,13 +12606,13 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20300
-     * @tc.name       : testWriteUInt16LE0006
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16LE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20300
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0006';
@@ -12492,12 +12627,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20400
-     * @tc.name       : testWriteUInt16LE0007
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20400
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0007';
@@ -12510,13 +12645,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20500
-     * @tc.name       : testWriteUInt16LE0008
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20500
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0008';
@@ -12532,12 +12667,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20600
-     * @tc.name       : testWriteUInt16LE0009
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt16LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20600
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0009';
@@ -12550,13 +12685,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20700
-     * @tc.name       : testWriteUInt16LE0010
-     * @tc.desc       : Test the function of the interface writeUInt16LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt16LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20700
+     * @tc.desc   Test the function of the interface writeUInt16LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt16LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt16LE0010';
@@ -12578,6 +12713,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteUInt16LE0011
+     * @tc.number testBufferWriteUInt16LE0011
+     * @tc.desc   testBufferWriteUInt16LE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteUInt16LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt16LE0011';
     //   try {
@@ -12591,12 +12734,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20900
-     * @tc.name       : testWriteUInt32BE0001
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_20900
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testBufferWriteUInt32BE0001';
@@ -12609,12 +12752,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21000
-     * @tc.name       : testWriteUInt32BE0002
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21000
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0002';
@@ -12628,12 +12771,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21100
-     * @tc.name       : testWriteUInt32BE0003
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21100
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0003';
@@ -12648,12 +12791,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21200
-     * @tc.name       : testWriteUInt32BE0004
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21200
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0004';
@@ -12668,12 +12811,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21300
-     * @tc.name       : testWriteUInt32BE0005
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21300
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0005';
@@ -12687,13 +12830,13 @@ export default function bufferTest2() {
       }
     })
 
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21400
-     * @tc.name       : testWriteUInt32BE0006
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt32BE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21400
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0006';
@@ -12709,12 +12852,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21500
-     * @tc.name       : testWriteUInt32BE0007
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21500
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0007';
@@ -12729,12 +12872,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21600
-     * @tc.name       : testWriteUInt32BE0008
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21600
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0008';
@@ -12749,12 +12892,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21700
-     * @tc.name       : testWriteUInt32BE0009
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21700
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0009';
@@ -12768,12 +12911,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21800
-     * @tc.name       : testWriteUInt32BE0010
-     * @tc.desc       : Test the function of the interface writeUInt32BE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32BE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_21800
+     * @tc.desc   Test the function of the interface writeUInt32BE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32BE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32BE0010';
@@ -12794,6 +12937,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteUInt32BE0011
+     * @tc.number testBufferWriteUInt32BE0011
+     * @tc.desc   testBufferWriteUInt32BE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteUInt32BE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt32BE0011';
     //   try {
@@ -12807,12 +12958,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22000
-     * @tc.name       : testWriteUInt32LE0001
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22000
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0001';
@@ -12825,12 +12976,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22100
-     * @tc.name       : testWriteUInt32LE0002
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22100
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0002';
@@ -12845,12 +12996,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22200
-     * @tc.name       : testWriteUInt32LE0003
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22200
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0003';
@@ -12865,12 +13016,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22300
-     * @tc.name       : testWriteUInt32LE0004
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22300
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0004';
@@ -12885,12 +13036,12 @@ export default function bufferTest2() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22400
-     * @tc.name       : testWriteUInt32LE0005
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22400
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0005';
@@ -12903,13 +13054,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22500
-     * @tc.name       : testWriteUInt32LE0006
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt32LE0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22500
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0006';
@@ -12926,12 +13077,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22600
-     * @tc.name       : testWriteUInt32LE0007
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22600
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0007';
@@ -12945,12 +13096,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22700
-     * @tc.name       : testWriteUInt32LE0008
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22700
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0008';
@@ -12964,12 +13115,12 @@ export default function bufferTest2() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22800
-     * @tc.name       : testWriteUInt32LE0009
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferWriteUInt32LE0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22800
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0009';
@@ -12982,13 +13133,13 @@ export default function bufferTest2() {
         expect(false).assertFail();
       }
     })
-    /** 
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22900
-     * @tc.name       : testWriteUInt32LE0010
-     * @tc.desc       : Test the function of the interface writeUInt32LE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testBufferWriteUInt32LE0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_WRITE_22900
+     * @tc.desc   Test the function of the interface writeUInt32LE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferWriteUInt32LE0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const TAG = 'testBufferWriteUInt32LE0010';
@@ -13010,6 +13161,14 @@ export default function bufferTest2() {
     //  * @tc.type       : Function
     //  * @tc.level      : Level 1
     //  */
+    /**
+     * @tc.name   testBufferWriteUInt32LE0011
+     * @tc.number testBufferWriteUInt32LE0011
+     * @tc.desc   testBufferWriteUInt32LE0011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     // it('testBufferWriteUInt32LE0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const TAG = 'testBufferWriteUInt32LE0011';
     //   try {
@@ -13023,12 +13182,12 @@ export default function bufferTest2() {
     //   }
     // })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0100
-     * @tc.name       : testSlice0001
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0100
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0001';
@@ -13050,12 +13209,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0200
-     * @tc.name       : testSlice0002
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0200
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0002';
@@ -13075,12 +13234,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0300
-     * @tc.name       : testSlice0003
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0300
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0003';
@@ -13099,12 +13258,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0400
-     * @tc.name       : testSlice0004
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0400
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0004';
@@ -13127,12 +13286,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0500
-     * @tc.name       : testSlice0005
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0500
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0005';
@@ -13156,12 +13315,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0600
-     * @tc.name       : testSlice0006
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0600
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0006';
@@ -13180,12 +13339,12 @@ export default function bufferTest2() {
       done();
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0700
-     * @tc.name       : testSlice0007
-     * @tc.desc       : Test the function of the interface slice.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testBufferSlice0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SLICE_0700
+     * @tc.desc   Test the function of the interface slice.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBufferSlice0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,  async (done: () => void): Promise<void> => {
       const TAG = 'testBufferSlice0007';

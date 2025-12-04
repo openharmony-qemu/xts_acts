@@ -44,7 +44,6 @@ export default function storageSyncTest() {
             storage.deleteStorageSync(PATH);
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testClear001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0100
          * @tc.desc   Clear test
@@ -62,7 +61,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testConstructor002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0100
          * @tc.desc   Constructor test
@@ -75,7 +73,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey003
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_2000
          * @tc.desc   put string sync interface test
@@ -89,7 +86,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey004
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1800
          * @tc.desc   put int sync interface test
@@ -103,7 +99,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey005
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1600
          * @tc.desc   put boolean sync interface test
@@ -117,7 +112,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey006
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1900
          * @tc.desc   put long sync interface test
@@ -131,7 +125,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testHasKey007
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1700
          * @tc.desc   put float sync interface test
@@ -145,7 +138,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetBoolean005
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1500
          * @tc.desc   put boolean sync interface test
@@ -159,7 +151,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue006
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0300
          * @tc.desc   get defaultValue sync interface test
@@ -177,7 +168,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetFloat007
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0400
          * @tc.desc   put float sync interface test
@@ -193,7 +183,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetInt008
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0600
          * @tc.desc   put int sync interface test
@@ -208,7 +197,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetLong009
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0800
          * @tc.desc   put long sync interface test
@@ -224,7 +212,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetString10
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1000
          * @tc.desc   put String & int sync interface test
@@ -242,7 +229,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutBoolean012
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0200
          * @tc.desc   put boolean sync interface test
@@ -259,7 +245,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutFloat013
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0500
          * @tc.desc   put float sync interface test
@@ -276,7 +261,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutInt014
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0700
          * @tc.desc   put int sync interface test
@@ -293,7 +277,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutLong015
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_0900
          * @tc.desc   put long sync interface test
@@ -310,7 +293,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPutString016
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1100
          * @tc.desc   put String sync interface test
@@ -328,7 +310,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testRegisterObserver001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1200
          * @tc.desc   put interface test
@@ -346,7 +327,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testRegisterObserver002
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1300
          * @tc.desc   repeat on interface test
@@ -366,7 +346,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testUnRegisterObserver001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiAsyncTest_1400
          * @tc.desc   off interface test
@@ -385,7 +364,6 @@ export default function storageSyncTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testGetDefValue001
          * @tc.number SUB_DistributedData_Preference_SDK_StorageJsApiCallbackTest_0600
          * @tc.desc   get defaultValue callback interface test

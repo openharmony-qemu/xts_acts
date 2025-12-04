@@ -82,12 +82,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.number    popupKeyboardAvoidMode_0100
-         * @tc.name      popupKeyboardAvoidMode_0100
-         * @tc.desc      set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
-         * @tc.level:    Level 1
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   popupKeyboardAvoidMode_0100
+         * @tc.number popupKeyboardAvoidMode_0100
+         * @tc.desc   set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("popupKeyboardAvoidMode_0100", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0100 START")
@@ -120,12 +120,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.number    popupKeyboardAvoidMode_0200
-         * @tc.name      popupKeyboardAvoidMode_0200
-         * @tc.desc      set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
-         * @tc.level:    Level 1
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   popupKeyboardAvoidMode_0200
+         * @tc.number popupKeyboardAvoidMode_0200
+         * @tc.desc   set PopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("popupKeyboardAvoidMode_0200", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0200 START")
@@ -155,12 +155,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.number    popupKeyboardAvoidMode_0300
-         * @tc.name      popupKeyboardAvoidMode_0300
-         * @tc.desc      set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
-         * @tc.level:    Level 1
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   popupKeyboardAvoidMode_0300
+         * @tc.number popupKeyboardAvoidMode_0300
+         * @tc.desc   set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.DEFAULT)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("popupKeyboardAvoidMode_0300", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0300 START")
@@ -201,12 +201,12 @@ export default function popupKeyboardAvoidMode() {
         })
 
         /**
-         * @tc.number    popupKeyboardAvoidMode_0400
-         * @tc.name      popupKeyboardAvoidMode_0400
-         * @tc.desc      set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
-         * @tc.level:    Level 1
-         * @tc.type :
-         * @tc.size :
+         * @tc.name   popupKeyboardAvoidMode_0400
+         * @tc.number popupKeyboardAvoidMode_0400
+         * @tc.desc   set customPopupOption keyboardAvoidMode:0(KeyboardAvoidMode.NONE)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("popupKeyboardAvoidMode_0400", Level.LEVEL1, async (done: Function) => {
             console.info("popupKeyboardAvoidMode_0400 START")

@@ -41,12 +41,12 @@ export default function promptTest() {
       done();
     });
     /**
-     * @tc.number    prompt
-     * @tc.name      promptTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   promptTest_0100
+     * @tc.number prompt
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('promptTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('promptTest_0100 START');

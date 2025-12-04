@@ -45,13 +45,13 @@ export default function ActsAceWebViewGetSecurityLevel() {
     });
 
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
-     *@tc.name testWebViewGetSecurityLevelNone
-     *@tc.desc test getSecurityLevel NONE 0
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 0
+    /**
+     * @tc.name   testWebViewGetSecurityLevelNone
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0001
+     * @tc.desc   test getSecurityLevel NONE 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewGetSecurityLevelNone', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewGetSecurityLevel01"
@@ -60,13 +60,13 @@ export default function ActsAceWebViewGetSecurityLevel() {
       sendEventByKey('webViewGetSecurityLevelButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0002
-     *@tc.name testWebViewGetSecurityLevelSecure
-     *@tc.desc test getSecurityLevel SECURE 1
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewGetSecurityLevelSecure
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0002
+     * @tc.desc   test getSecurityLevel SECURE 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewGetSecurityLevelSecure', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewGetSecurityLevelSecure", 160030);
@@ -76,13 +76,13 @@ export default function ActsAceWebViewGetSecurityLevel() {
       sendEventByKey('webViewGetSecurityLevelButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0003
-     *@tc.name testWebViewGetSecurityLevelWarning
-     *@tc.desc test getSecurityLevel WARNING 2
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewGetSecurityLevelWarning
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0003
+     * @tc.desc   test getSecurityLevel WARNING 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewGetSecurityLevelWarning', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewGetSecurityLevelWarning", 160030);
@@ -92,13 +92,13 @@ export default function ActsAceWebViewGetSecurityLevel() {
       sendEventByKey('webViewGetSecurityLevelButton', 10, '');
     })
 
-    /*
-     *@tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0004
-     *@tc.name testWebViewGetSecurityLevelDangerous
-     *@tc.desc test getSecurityLevel DANGEROUS 3
-     *@tc.size MediumTest
-     *@tc.type Function
-     *@tc.level Level 2
+    /**
+     * @tc.name   testWebViewGetSecurityLevelDangerous
+     * @tc.number SUB_ACE_WEB_GETSECURITYLEVEL_API_0004
+     * @tc.desc   test getSecurityLevel DANGEROUS 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWebViewGetSecurityLevelDangerous', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("testWebViewGetSecurityLevelDangerous", 160030);

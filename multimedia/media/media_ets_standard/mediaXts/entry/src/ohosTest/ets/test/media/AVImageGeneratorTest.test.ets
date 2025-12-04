@@ -325,12 +325,12 @@ export default function AVImageGeneratorTest() {
     });
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_001
-     * @tc.name      : createAVImageGenerator_callback_001
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVImageGenerator_callback_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_001
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVImageGenerator_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVImageGenerator_callback_001';
@@ -338,12 +338,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_002
-     * @tc.name      : createAVImageGenerator_promise_001
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVImageGenerator_promise_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_002
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVImageGenerator_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVImageGenerator_promise_001';
@@ -351,12 +351,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_003
-     * @tc.name      : fetchFrameByTime_callback_001
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_003
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_001';
@@ -370,12 +370,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_004
-     * @tc.name      : fetchFrameByTime_callback_002
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_004
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_002';
@@ -389,12 +389,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_005
-     * @tc.name      : fetchFrameByTime_callback_003
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_003
+     * @tc.number AV_IMAGE_GENERATOR_TEST_005
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_003';
@@ -408,12 +408,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_006
-     * @tc.name      : fetchFrameByTime_callback_004
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_004
+     * @tc.number AV_IMAGE_GENERATOR_TEST_006
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_004';
@@ -427,12 +427,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_007
-     * @tc.name      : fetchFrameByTime_promise_001
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_007
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_001';
@@ -446,12 +446,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_008
-     * @tc.name      : fetchFrameByTime_promise_002
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_008
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_002';
@@ -465,12 +465,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_009
-     * @tc.name      : fetchFrameByTime_promise_003
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_003
+     * @tc.number AV_IMAGE_GENERATOR_TEST_009
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_003';
@@ -484,12 +484,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_010
-     * @tc.name      : fetchFrameByTime_promise_004
-     * @tc.desc      : Test normal scene of screen record.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_004
+     * @tc.number AV_IMAGE_GENERATOR_TEST_010
+     * @tc.desc   Test normal scene of screen record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_004';
@@ -503,12 +503,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_011
-     * @tc.name      : fetchFrameByTime_callback_abnormal_001
-     * @tc.desc      : Not set fdSrc - 5400102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_abnormal_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_011
+     * @tc.desc   Not set fdSrc - 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_abnormal_001';
@@ -522,12 +522,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_012
-     * @tc.name      : fetchFrameByTime_callback_abnormal_002
-     * @tc.desc      : Unsupported fdSrc type - 5400106
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_callback_abnormal_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_012
+     * @tc.desc   Unsupported fdSrc type - 5400106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_callback_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_callback_abnormal_002';
@@ -542,12 +542,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_013
-     * @tc.name      : fetchFrameByTime_promise_abnormal_001
-     * @tc.desc      : Not set fdSrc - 5400102
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_abnormal_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_013
+     * @tc.desc   Not set fdSrc - 5400102
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_abnormal_001';
@@ -561,12 +561,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_014
-     * @tc.name      : fetchFrameByTime_promise_abnormal_002
-     * @tc.desc      : Unsupported fdSrc type - 5400106
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchFrameByTime_promise_abnormal_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_014
+     * @tc.desc   Unsupported fdSrc type - 5400106
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchFrameByTime_promise_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchFrameByTime_promise_abnormal_002';
@@ -581,12 +581,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_015
-     * @tc.name      : release_callback_001
-     * @tc.desc      : release callback
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_callback_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_015
+     * @tc.desc   release callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_callback_001';
@@ -594,12 +594,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_016
-     * @tc.name      : release_promise_001
-     * @tc.desc      : release promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_promise_001
+     * @tc.number AV_IMAGE_GENERATOR_TEST_016
+     * @tc.desc   release promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_promise_001';
@@ -607,12 +607,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_017
-     * @tc.name      : release_callback_002
-     * @tc.desc      : release callback-unsupported fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_callback_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_017
+     * @tc.desc   release callback-unsupported fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_callback_002';
@@ -621,12 +621,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_018
-     * @tc.name      : release_promise_002
-     * @tc.desc      : release promise-unsupported fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_promise_002
+     * @tc.number AV_IMAGE_GENERATOR_TEST_018
+     * @tc.desc   release promise-unsupported fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_promise_002';
@@ -635,12 +635,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_019
-     * @tc.name      : release_callback_003
-     * @tc.desc      : release callback-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_callback_003
+     * @tc.number AV_IMAGE_GENERATOR_TEST_019
+     * @tc.desc   release callback-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_callback_003';
@@ -648,12 +648,12 @@ export default function AVImageGeneratorTest() {
     })
 
     /**
-     * @tc.number    : AV_IMAGE_GENERATOR_TEST_020
-     * @tc.name      : release_promise_003
-     * @tc.desc      : release promise-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_promise_003
+     * @tc.number AV_IMAGE_GENERATOR_TEST_020
+     * @tc.desc   release promise-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_promise_003';

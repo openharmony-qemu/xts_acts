@@ -58,6 +58,9 @@ static napi_value TestCustomDialog002(napi_env env, napi_callback_info info)
     
     auto column2 = nodeAPI->createNode(ARKUI_NODE_COLUMN);
     auto dialog = OH_ArkUI_CustomDialog_CreateOptions(column2);
+    if (dialog == nullptr) {
+        return nullptr;
+    }
     OH_ArkUI_CustomDialog_SetBackgroundBlurStyle(dialog, ARKUI_BLUR_STYLE_REGULAR);
     ArkUI_NumberValue dialog_BlurStyleOptions_value[] = { {.i32 = ARKUI_COLOR_MODE_LIGHT},
         {.i32 = ARKUI_ADAPTIVE_COLOR_AVERAGE}, {.f32 = 1}, {.u32 = 20}, {.u32 = 20},
@@ -69,7 +72,8 @@ static napi_value TestCustomDialog002(napi_env env, napi_callback_info info)
         {.u32 = 0x66FFFFFF}, {.i32 = 0}, {.u32 = 300}, {.u32 = 300}, {.i32 = 1}, {.u32 = 0x00FF0000} };
     ArkUI_AttributeItem dialog_Effect_item = { dialog_Effect_value,
         sizeof(dialog_Effect_value) / sizeof(ArkUI_NumberValue) };
-    OH_ArkUI_CustomDialog_SetBackgroundEffect(dialog, &dialog_Effect_item);
+    auto ret_bg = OH_ArkUI_CustomDialog_SetBackgroundEffect(dialog, &dialog_Effect_item);
+    ASSERT_EQ(ret_bg, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
 }

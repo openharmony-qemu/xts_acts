@@ -79,12 +79,12 @@ export default function createSessionTest() {
     });
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_001
-     * @tc.name      : createSession_001
-     * @tc.desc      : No abnormal scenarios-sceneMode->NORMAL_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createSession_001
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_001
+     * @tc.desc   No abnormal scenarios-sceneMode->NORMAL_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSession_001', Level.LEVEL0, (done: Function) => {
       const testName = 'createSession_001';
@@ -92,12 +92,12 @@ export default function createSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_002
-     * @tc.name      : createSession_002
-     * @tc.desc      : no supported sceneMode: sceneMode->NORMAL_VIDEO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createSession_002
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_002
+     * @tc.desc   no supported sceneMode: sceneMode->NORMAL_VIDEO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSession_002', Level.LEVEL0, (done: Function) => {
       const testName = 'createSession_002';
@@ -105,12 +105,12 @@ export default function createSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_003
-     * @tc.name      : createSession_003
-     * @tc.desc      : no supported sceneMode: secure_mode->SECURE_PHOTO
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createSession_003
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_003
+     * @tc.desc   no supported sceneMode: secure_mode->SECURE_PHOTO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createSession_003', Level.LEVEL0, (done: Function) => {
       const testName = 'createSession_003';
@@ -118,12 +118,12 @@ export default function createSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_004
-     * @tc.name      : createSession_abnormal_001
-     * @tc.desc      : sceneMode->null -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createSession_abnormal_001
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_004
+     * @tc.desc   sceneMode->null -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSession_abnormal_001', Level.LEVEL2, (done: Function) => {
       const testName = 'createSession_abnormal_001';
@@ -131,12 +131,12 @@ export default function createSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_005
-     * @tc.name      : createSession_abnormal_002
-     * @tc.desc      : sceneMode->undefined -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createSession_abnormal_002
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_005
+     * @tc.desc   sceneMode->undefined -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSession_abnormal_002', Level.LEVEL2, (done: Function) => {
       const testName = 'createSession_abnormal_002';
@@ -144,12 +144,12 @@ export default function createSessionTest() {
     })
 
     /**
-     * @tc.number    : CAMERA_MANAGER_CREATE_SESSION_006
-     * @tc.name      : createSession_abnormal_003
-     * @tc.desc      : abnormal sceneMode -> error_code: 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   createSession_abnormal_003
+     * @tc.number CAMERA_MANAGER_CREATE_SESSION_006
+     * @tc.desc   abnormal sceneMode -> error_code: 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('createSession_abnormal_003', Level.LEVEL2, (done: Function) => {
       const testName = 'createSession_abnormal_003';

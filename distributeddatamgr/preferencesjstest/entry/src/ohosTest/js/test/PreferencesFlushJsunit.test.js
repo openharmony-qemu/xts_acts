@@ -50,7 +50,6 @@ export default function preferencesFlushTest(){
             await dataPreferences.deletePreferences(context, NAME);
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0100
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0100
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -99,7 +98,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0200
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0200
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -147,7 +145,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0300
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0300
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -195,7 +192,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0400
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0400
          * @tc.desc   put get flush removePreferencesFromCache get promise interface test
@@ -243,7 +239,6 @@ export default function preferencesFlushTest(){
             })
         })
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0500
          * @tc.number SUB_DistributedData_Preference_SDK_PutGetFlushRemoveJsApiTest_0500
          * @tc.desc   put get flush removePreferencesFromCacheget get promise interface test
@@ -293,7 +288,6 @@ export default function preferencesFlushTest(){
 
 
         /**
-         * @generated.time 2025-11-09 20:49:55
          * @tc.name   testPreferences_put_flush_remove_get_0600
          * @tc.number testPreferences_put_flush_remove_get_0600
          * @tc.desc   testPreferences_put_flush_remove_get_0600

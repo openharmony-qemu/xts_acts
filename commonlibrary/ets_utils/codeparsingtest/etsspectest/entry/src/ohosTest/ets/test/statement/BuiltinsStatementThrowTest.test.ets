@@ -50,12 +50,12 @@ export default function builtinsStatementThrowTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsStatementThrow0100
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0100
-     * @tc.name builtinsStatementThrow0100
-     * @tc.desc test Throw one
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Throw one
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsStatementThrow0100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0, (Done: Function) => {
       try {
@@ -70,12 +70,12 @@ export default function builtinsStatementThrowTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementThrow0200
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0200
-     * @tc.name builtinsStatementThrow0200
-     * @tc.desc test Throw multiple
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Throw multiple
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementThrow0200', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       try {
@@ -100,12 +100,12 @@ export default function builtinsStatementThrowTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementThrow0300
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0300
-     * @tc.name builtinsStatementThrow0300
-     * @tc.desc test Inside the for loop throw
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Inside the for loop throw
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementThrow0300', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       try {
@@ -131,12 +131,12 @@ export default function builtinsStatementThrowTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementThrow0400
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0400
-     * @tc.name builtinsStatementThrow0400
-     * @tc.desc test Inside the for loop throw
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Inside the for loop throw
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementThrow0400', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       try {
@@ -172,12 +172,12 @@ export default function builtinsStatementThrowTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementTry0500
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0500
-     * @tc.name builtinsStatementThrow0500
-     * @tc.desc test Uncaught exception
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Uncaught exception
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementTry0500', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       let a = Input2(1, 0);
@@ -186,12 +186,12 @@ export default function builtinsStatementThrowTest() {
     })
 
     /**
+     * @tc.name   builtinsStatementTry0600
      * @tc.number SUB_BUILTINS_STATEMENT_THROW_TEST_0600
-     * @tc.name builtinsStatementThrow0600
-     * @tc.desc test Uncaught exception
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Uncaught exception
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStatementTry0600', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async (Done: Function) => {
       try {

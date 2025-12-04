@@ -42,12 +42,12 @@ export default function ImageLoadResultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageLoadResultTest_0010
-     * @tc.name      ImageLoadResultTest_0010
-     * @tc.desc      test ImageSpan ImageLoadResult: width and height
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageLoadResultTest_0010
+     * @tc.number SUB_ACE_ImageLoadResultTest_0010
+     * @tc.desc   test ImageSpan ImageLoadResult: width and height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageLoadResultTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('ImageLoadResultTest_0010 START');
@@ -62,12 +62,12 @@ export default function ImageLoadResultTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_ImageLoadResultTest_0020
-     * @tc.name      ImageLoadResultTest_0020
-     * @tc.desc      test ImageSpan ImageLoadResult: componentWidth and componentHeight
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImageLoadResultTest_0020
+     * @tc.number SUB_ACE_ImageLoadResultTest_0020
+     * @tc.desc   test ImageSpan ImageLoadResult: componentWidth and componentHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ImageLoadResultTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[ImageLoadResultTest_0020] START');

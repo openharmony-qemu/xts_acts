@@ -115,9 +115,12 @@ static void LocalHksCurve25519Test004(void const *argument)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test001
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test001
+ * @tc.number HksCurve25519Test001
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test001, Level1)
 {   
@@ -137,9 +140,12 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test001, Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test002
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test002
+ * @tc.number HksCurve25519Test002
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test002, Level1)
 {
@@ -159,9 +165,12 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test002, Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test003
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test003
+ * @tc.number HksCurve25519Test003
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test003, Level1)
 {
@@ -181,9 +190,12 @@ LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test003, Level1)
 }
 
 /**
- * @tc.name: HksCurve25519Test.HksCurve25519Test004
- * @tc.desc: The static function will return true;
- * @tc.type: FUNC
+ * @tc.name   HksCurve25519Test004
+ * @tc.number HksCurve25519Test004
+ * @tc.desc   The static function will return true;
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 LITE_TEST_CASE(HksCurve25519Test, HksCurve25519Test004, Level1)
 {

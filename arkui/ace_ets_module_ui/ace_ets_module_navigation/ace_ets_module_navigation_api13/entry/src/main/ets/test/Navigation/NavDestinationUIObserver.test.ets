@@ -50,10 +50,12 @@ export default function NavDestinationUIObserver() {
 
 
     /**
-     * @tc.number    NavDestinationUIObserver_0100
-     * @tc.name      NavDestinationUIObserver_0100
-     * @tc.desc      Test UIObserver on_navDestinationSwitch on_navDestinationUpdate
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationUIObserver_0100
+     * @tc.number NavDestinationUIObserver_0100
+     * @tc.desc   Test UIObserver on_navDestinationSwitch on_navDestinationUpdate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationUIObserver_0100', Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationUIObserver_0100 START');
@@ -90,10 +92,12 @@ export default function NavDestinationUIObserver() {
     });
 
     /**
-     * @tc.number    NavDestinationUIObserver_0200
-     * @tc.name      NavDestinationUIObserver_0200
-     * @tc.desc      Test UIObserver off_navDestinationSwitch off_navDestinationUpdate
-     * @tc.level     Level 0
+     * @tc.name   NavDestinationUIObserver_0200
+     * @tc.number NavDestinationUIObserver_0200
+     * @tc.desc   Test UIObserver off_navDestinationSwitch off_navDestinationUpdate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavDestinationUIObserver_0200', Level.LEVEL0, async (done: Function) => {
       console.info('NavDestinationUIObserver_0200 START');

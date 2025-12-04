@@ -68,12 +68,12 @@ export default function sendableIsAfterLastTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_IS_AFTER_LAST_001
-     * @tc.name      : isAfterLast_sendable_001
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isAfterLast_sendable_001
+     * @tc.number SENDABLE_FETCH_RESULT_IS_AFTER_LAST_001
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_sendable_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isAfterLast_sendable_001';
@@ -82,12 +82,12 @@ export default function sendableIsAfterLastTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_IS_AFTER_LAST_002
-     * @tc.name      : isAfterLast_sendable_002
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isAfterLast_sendable_002
+     * @tc.number SENDABLE_FETCH_RESULT_IS_AFTER_LAST_002
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_sendable_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'isAfterLast_sendable_002';
@@ -97,12 +97,12 @@ export default function sendableIsAfterLastTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_FETCH_RESULT_IS_AFTER_LAST_003
-     * @tc.name      : isAfterLast_sendable_003
-     * @tc.desc      : isAfterLast
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   isAfterLast_sendable_003
+     * @tc.number SENDABLE_FETCH_RESULT_IS_AFTER_LAST_003
+     * @tc.desc   isAfterLast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isAfterLast_sendable_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'isAfterLast_sendable_003';

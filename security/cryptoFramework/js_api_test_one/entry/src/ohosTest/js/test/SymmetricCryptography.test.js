@@ -28,9 +28,12 @@ export default function SymmetricCryptographyJsunit() {
         });
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0100
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0100
-         * @tc.name Test AES128|GCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0100",
@@ -57,9 +60,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0200
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0200
-         * @tc.name Test AES192|GCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0200",
@@ -86,9 +92,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0300
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0300
-         * @tc.name Test AES256|GCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0300",
@@ -115,9 +124,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0400
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0400
-         * @tc.name Test AES256|ECB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0400",
@@ -144,9 +156,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0500
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0500
-         * @tc.name Test AES256|CBC|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0500",
@@ -173,9 +188,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0600
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0600
-         * @tc.name Test AES256|CTR|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0600",
@@ -202,9 +220,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0700
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0700
-         * @tc.name Test AES256|0FB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0700",
@@ -231,9 +252,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0800
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0800
-         * @tc.name Test AES256|CFB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0800",
@@ -260,9 +284,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_0900
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_0900
-         * @tc.name Test AES256|CCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_0900",
@@ -289,9 +316,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1000
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1000
-         * @tc.name Test AES256|GCM|PKCS5 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1000",
@@ -318,9 +348,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1100
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1100
-         * @tc.name Test AES256|GCM|NoPadding normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1100",
@@ -347,9 +380,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1200
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1200
-         * @tc.name Test AES256|GCM|NoPadding normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1200",
@@ -376,9 +412,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1300
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1300
-         * @tc.name Test AES256 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1300",
@@ -403,9 +442,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1400
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1400
-         * @tc.name Test AES128|NULL|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1400",
@@ -430,9 +472,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_1500
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_1500
-         * @tc.name Test AES128|GCM|NULL normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_1500",
@@ -457,9 +502,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0100
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0100
-         * @tc.name Test 3DES192|ECB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0100",
@@ -486,9 +534,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0200
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0200
-         * @tc.name Test 3DES192|CBC|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0200",
@@ -515,9 +566,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0300
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0300
-         * @tc.name Test 3DES192|OFB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0300",
@@ -544,9 +598,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0400
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0400
-         * @tc.name Test 3DES192|CFB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0400",
@@ -573,9 +630,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0500
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0500
-         * @tc.name Test 3DES192|ECB|PKCS5 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0500",
@@ -602,9 +662,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0600
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0600
-         * @tc.name Test 3DES192|ECB|NoPadding normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0600",
@@ -631,9 +694,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0700
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0700
-         * @tc.name Test 3DES192|null|PKCS7 and 3DES192|DDD|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0700",
@@ -660,9 +726,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_0800
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_0800
-         * @tc.name Test 3DES192|ECB|null and 3DES192|ECB|CCCCC normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_0800",
@@ -689,9 +758,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_2000
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_2000
-         * @tc.name Test AES256|CCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_2000",
@@ -718,9 +790,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_3000
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_3000
-         * @tc.name Test AES256|CCM|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_3000",
@@ -745,9 +820,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_2000
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_2000
-         * @tc.name Test 3DES192|ECB|PKCS7 normal encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_2000",
@@ -774,9 +852,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_2100
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_2100
-         * @tc.name Test AES128|GCM|PKCS7 convertKey encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_2100",
@@ -803,9 +884,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_2200
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_2200
-         * @tc.name Test AES192|GCM|PKCS7 convertKey encryption and decryption
-         * @tc.desc Use the Callback Style of Interface
+         * @tc.desc   Use the Callback Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_2200",
@@ -832,9 +916,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_2300
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_2300
-         * @tc.name Test AES256|GCM|PKCS7 convertKey encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_2300",
@@ -861,9 +948,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_2100
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_2100
-         * @tc.name Test 3DES192|ECB|PKCS7 convertKey encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_2100",
@@ -890,9 +980,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_3DES_2200
          * @tc.number Security_crypto_framework_Symmetric_Encryption_3DES_2200
-         * @tc.name Test 3DES192|ECB|PKCS7 convertKey encryption and decryption
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_3DES_2200",
@@ -919,9 +1012,12 @@ export default function SymmetricCryptographyJsunit() {
         );
 
         /**
+         * @tc.name   Security_crypto_framework_Symmetric_Encryption_AES_3700
          * @tc.number Security_crypto_framework_Symmetric_Encryption_AES_3700
-         * @tc.name Test clearMem interface
-         * @tc.desc Use the Promise Style of Interface
+         * @tc.desc   Use the Promise Style of Interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it(
             "Security_crypto_framework_Symmetric_Encryption_AES_3700",

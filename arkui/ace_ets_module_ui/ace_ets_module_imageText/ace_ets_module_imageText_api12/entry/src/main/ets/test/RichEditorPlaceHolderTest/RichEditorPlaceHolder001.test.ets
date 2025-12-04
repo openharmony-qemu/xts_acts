@@ -55,12 +55,12 @@ export default function RichEditorPlaceHolder001() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022
-     * @tc.desc  : Set the font size of the placeholder to test RichEditor PlaceHolder
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022
+     * @tc.desc   Set the font size of the placeholder to test RichEditor PlaceHolder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_PLACEHOLDER_0022 START');

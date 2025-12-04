@@ -31,14 +31,12 @@ export default function fileIOUnlink() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_unlink start');
 
     /**
+     * @tc.name   fileIO_test_unlink_sync_static_001
      * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0100
-     * @tc.name fileIO_test_unlink_sync_static_001
-     * @tc.desc Test unlinkSync() interfaces.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlinkSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_001 start');
@@ -54,14 +52,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_sync_static_002
      * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0200
-     * @tc.name fileIO_test_unlink_sync_static_002
-     * @tc.desc Test unlinkSync() interfaces.
-     * Delete the file by path, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test unlinkSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_002 start');
@@ -79,14 +75,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_sync_static_003
      * @tc.number SUB_DF_FILEIO_UNLINK_SYNC_0300
-     * @tc.name fileIO_test_unlink_sync_static_003
-     * @tc.desc Test unlinkSync() interfaces.
-     * The path refers to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlinkSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_sync_static_003 start');
@@ -104,14 +98,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_000
      * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0000
-     * @tc.name fileIO_test_unlink_async_static_000
-     * @tc.desc Test unlinkAsync() interfaces. Promise.
-     * Delete the file by path, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlinkAsync() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_000 start');
@@ -130,14 +122,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_001
      * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0100
-     * @tc.name fileIO_test_unlink_async_static_001
-     * @tc.desc Test unlinkAsync() interfaces. Callback.
-     * Delete the file by path, verify the normal function.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlinkAsync() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_001 start');
@@ -157,14 +147,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_002
      * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0200
-     * @tc.name fileIO_test_unlink_async_static_002
-     * @tc.desc Test unlink() interfaces. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlink() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_002 start');
@@ -185,14 +173,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_003
      * @tc.number SUB_DF_FileIO_UNLINK_ASYNC_0300
-     * @tc.name fileIO_test_unlink_async_static_003
-     * @tc.desc Test unlink() interfaces. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlink() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_003 start');
@@ -209,14 +195,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_004
      * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0400
-     * @tc.name fileIO_test_unlink_async_static_004
-     * @tc.desc Test unlink() interfaces. Promise.
-     * The path refers to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlink() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_004 start');
@@ -234,14 +218,12 @@ export default function fileIOUnlink() {
     });
 
     /**
+     * @tc.name   fileIO_test_unlink_async_static_005
      * @tc.number SUB_DF_FILEIO_UNLINK_ASYNC_0500
-     * @tc.name fileIO_test_unlink_async_static_005
-     * @tc.desc Test unlink() interfaces. Callback.
-     * The path refers to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test unlink() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_unlink_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_unlink_async_static_005 start');

@@ -102,7 +102,6 @@ export default function openSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0600
          * @tc.number SUB_Communication_NFC_secureElement_js_0600
          * @tc.desc   Obtains the reader that provides the session.
@@ -131,7 +130,6 @@ export default function openSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0700
          * @tc.number SUB_Communication_NFC_secureElement_js_0700
          * @tc.desc   Obtain the ATR of the SE.
@@ -161,7 +159,6 @@ export default function openSessionTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_Communication_NFC_secureElement_js_0800
          * @tc.number SUB_Communication_NFC_secureElement_js_0800
          * @tc.desc   Close a single session.

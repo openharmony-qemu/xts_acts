@@ -20,13 +20,13 @@ import { BusinessError } from '@ohos.base';
 
 export default function hiTraceChainJsTest() {
   describe("hiTraceChainJsTest", (): void => {
-    /*
-     * @tc.name:    testHitraceApiStatic01
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_001
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic01
+     * @tc.number DFX_DFT_Hitrace_JS_Static_001
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic01', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic01 start');
@@ -46,13 +46,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic02
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_002
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic02
+     * @tc.number DFX_DFT_Hitrace_JS_Static_002
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic02', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic02 start');
@@ -73,13 +73,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic03
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_003
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic03
+     * @tc.number DFX_DFT_Hitrace_JS_Static_003
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic03', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic03 start');
@@ -101,13 +101,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic04
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_004
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic04
+     * @tc.number DFX_DFT_Hitrace_JS_Static_004
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic04', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic04 start');
@@ -138,13 +138,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic05
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_005
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic05
+     * @tc.number DFX_DFT_Hitrace_JS_Static_005
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic05', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic05 start');
@@ -171,13 +171,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic06
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_006
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic06
+     * @tc.number DFX_DFT_Hitrace_JS_Static_006
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic06', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic06 start');
@@ -204,13 +204,13 @@ export default function hiTraceChainJsTest() {
       done();
     })
 
-    /*
-     * @tc.name:    testHitraceApiStatic07
-     * @tc.number:  DFX_DFT_Hitrace_JS_Static_007
-     * @tc.size:    MediumTest
-     * @tc.type:    Function
-     * @tc.desc:    hitrace begin interface test.
-     * @tc.level:   Level1
+    /**
+     * @tc.name   testHitraceApiStatic07
+     * @tc.number DFX_DFT_Hitrace_JS_Static_007
+     * @tc.desc   hitrace begin interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHitraceApiStatic07', Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic07 start');
@@ -239,13 +239,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic10
+     * @tc.name   testHitraceApiStatic10
      * @tc.number DFX_DFT_Hitrace_JS_Static_010
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-hitrace接口支持跨设备跟踪
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-hitrace接口支持跨设备跟踪
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic10', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic10 start');
@@ -269,13 +268,12 @@ export default function hiTraceChainJsTest() {
     });
 
     /**
-     * @tc.name testHitraceApiStatic11
+     * @tc.name   testHitraceApiStatic11
      * @tc.number DFX_DFT_Hitrace_JS_Static_011
-     * @tc.function A01011
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-hitrace接口支持跨设备跟踪
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-hitrace接口支持跨设备跟踪
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic11', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic11 start');
@@ -309,13 +307,12 @@ export default function hiTraceChainJsTest() {
     });
 
     /**
-     * @tc.name testHitraceApiStatic12
+     * @tc.name   testHitraceApiStatic12
      * @tc.number DFX_DFT_Hitrace_JS_Static_012
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-hitrace接口支持跨设备跟踪
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-hitrace接口支持跨设备跟踪
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic12', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic12 start');
@@ -338,13 +335,12 @@ export default function hiTraceChainJsTest() {
     });
 
     /**
-     * @tc.name testHitraceApiStatic15
+     * @tc.name   testHitraceApiStatic15
      * @tc.number DFX_DFT_Hitrace_JS_Static_01500
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为长度大于32位
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为长度大于32位
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic15', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic15 start');
@@ -365,13 +361,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic016
+     * @tc.name   testHitraceApiStatic016
      * @tc.number DFX_DFT_Hitrace_JS_Static_01600
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为长度大于1024位
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为长度大于1024位
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic016', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic016 start');
@@ -392,13 +387,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic017
+     * @tc.name   testHitraceApiStatic017
      * @tc.number DFX_DFT_Hitrace_JS_Static_01700
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为""
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为""
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic017', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic017 start');
@@ -419,13 +413,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic018
+     * @tc.name   testHitraceApiStatic018
      * @tc.number DFX_DFT_Hitrace_JS_Static_01800
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为" "
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为" "
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic018', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic018 start');
@@ -446,13 +439,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic019
+     * @tc.name   testHitraceApiStatic019
      * @tc.number DFX_DFT_Hitrace_JS_Static_01900
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为"default"
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为"default"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic019', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic019 start');
@@ -473,13 +465,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic020
+     * @tc.name   testHitraceApiStatic020
      * @tc.number DFX_DFT_Hitrace_JS_Static_02000
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-跟踪业务名为中文字符
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-跟踪业务名为中文字符
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic020', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic020 start');
@@ -500,13 +491,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic021
+     * @tc.name   testHitraceApiStatic021
      * @tc.number DFX_DFT_Hitrace_JS_Static_02100
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceCommunicationMode为DEFAULT
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceCommunicationMode为DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic021', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic021 start');
@@ -529,13 +519,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic022
+     * @tc.name   testHitraceApiStatic022
      * @tc.number DFX_DFT_Hitrace_JS_Static_02200
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceCommunicationMode为PROCESS
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceCommunicationMode为PROCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic022', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic022 start');
@@ -558,13 +547,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic023
+     * @tc.name   testHitraceApiStatic023
      * @tc.number DFX_DFT_Hitrace_JS_Static_02300
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceCommunicationMode为DEVICE
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceCommunicationMode为DEVICE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic023', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic023 start');
@@ -587,13 +575,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic024
+     * @tc.name   testHitraceApiStatic024
      * @tc.number DFX_DFT_Hitrace_JS_Static_02400
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceTracepointType为CS
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceTracepointType为CS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic024', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic024 start');
@@ -616,13 +603,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic025
+     * @tc.name   testHitraceApiStatic025
      * @tc.number DFX_DFT_Hitrace_JS_Static_02500
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceTracepointType为CR
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceTracepointType为CR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic025', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic025 start');
@@ -645,13 +631,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic026
+     * @tc.name   testHitraceApiStatic026
      * @tc.number DFX_DFT_Hitrace_JS_Static_02600
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceTracepointType为SR
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceTracepointType为SR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic026', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic026 start');
@@ -674,13 +659,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic027
+     * @tc.name   testHitraceApiStatic027
      * @tc.number DFX_DFT_Hitrace_JS_Static_02700
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-HiTraceTracepointType为GENERAL
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-HiTraceTracepointType为GENERAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic027', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic027 start');
@@ -704,13 +688,12 @@ export default function hiTraceChainJsTest() {
     })
 
     /**
-     * @tc.name testHitraceApiStatic028
+     * @tc.name   testHitraceApiStatic028
      * @tc.number DFX_DFT_Hitrace_JS_Static_02800
-     * @tc.function A01010
-     * @tc.feature DFX_DFT_Hitrace
-     * @tc.desc 接口测试-tracepoint接口参数msg为空
-     * @tc.level Level3
-     * @tc.type FUNC
+     * @tc.desc   接口测试-tracepoint接口参数msg为空
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHitraceApiStatic028', Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(0x0000, 'testTag', 'testHitraceApiStatic028 start');

@@ -74,6 +74,14 @@ export default function swiperItemPadMar() {
     //     * @tc.name      testSwiperItemSetPaddingMargin.
     //     * @tc.desc      Set swiper's  first item's  margin and padding both values ' 20 '.
     //     */
+    /**
+     * @tc.name   testSwiperItemSetPaddingMargin
+     * @tc.number testSwiperItemSetPaddingMargin
+     * @tc.desc   testSwiperItemSetPaddingMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwiperItemSetPaddingMargin', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwiperItemSetPaddingMargin START');
     //      await CommonFunc.sleep(1000);

@@ -24,12 +24,12 @@ const TAG: string = 'scanTestXTS';
 export default function scanTest() {
   describe('scanTest', () => {
     /**
+     * @tc.name   scan_function_0100
      * @tc.number scan_function_0100
-     * @tc.name scan_function_0100
-     * @tc.desc Verify scan initialization fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify scan initialization fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0100', Level.LEVEL1, async (done: Function) => {
       await scan.init().then(() => {
@@ -44,12 +44,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0200
      * @tc.number scan_function_0200
-     * @tc.name scan_function_0200
-     * @tc.desc Verify scan exit fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify scan exit fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0200', Level.LEVEL1, async (done: Function) => {
       await scan.exit().then(() => {
@@ -64,12 +64,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0300
      * @tc.number scan_function_0300
-     * @tc.name scan_function_0300
-     * @tc.desc Verify scanner discovery fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify scanner discovery fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0300', Level.LEVEL1, async (done: Function) => {
       await scan.startScannerDiscovery().then(() => {
@@ -84,12 +84,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0400
      * @tc.number scan_function_0400
-     * @tc.name scan_function_0400
-     * @tc.desc Verify opening a scanner fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify opening a scanner fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0400', Level.LEVEL1, async (done: Function) => {
       await scan.openScanner('test_scanner_id').then(() => {
@@ -104,12 +104,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0500
      * @tc.number scan_function_0500
-     * @tc.name scan_function_0500
-     * @tc.desc Verify closing a scanner fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify closing a scanner fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0500', Level.LEVEL1, async (done: Function) => {
       await scan.closeScanner('test_scanner_id').then(() => {
@@ -124,12 +124,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0600
      * @tc.number scan_function_0600
-     * @tc.name scan_function_0600
-     * @tc.desc Verify getting scanner parameters fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify getting scanner parameters fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0600', Level.LEVEL1, async (done: Function) => {
       await scan.getScannerParameter('test_scanner_id').then(() => {
@@ -144,12 +144,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0700
      * @tc.number scan_function_0700
-     * @tc.name scan_function_0700
-     * @tc.desc Verify setting scanner parameter fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify setting scanner parameter fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0700', Level.LEVEL1, async (done: Function) => {
       const optionValue: scan.ScannerOptionValue = {
@@ -169,12 +169,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0800
      * @tc.number scan_function_0800
-     * @tc.name scan_function_0800
-     * @tc.desc Verify setting scan auto option fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify setting scan auto option fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0800', Level.LEVEL1, async (done: Function) => {
       await scan.setScanAutoOption('test_scanner_id', 0).then(() => {
@@ -189,12 +189,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_0900
      * @tc.number scan_function_0900
-     * @tc.name scan_function_0900
-     * @tc.desc Verify getting current scanner setting fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify getting current scanner setting fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_0900', Level.LEVEL1, async (done: Function) => {
       await scan.getScannerCurrentSetting('test_scanner_id', 0).then(() => {
@@ -209,12 +209,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_1000
      * @tc.number scan_function_1000
-     * @tc.name scan_function_1000
-     * @tc.desc Verify starting scan fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify starting scan fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_1000', Level.LEVEL1, async (done: Function) => {
       await scan.startScan('test_scanner_id', false).then(() => {
@@ -229,12 +229,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_1100
      * @tc.number scan_function_1100
-     * @tc.name scan_function_1100
-     * @tc.desc Verify canceling scan fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify canceling scan fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_1100', Level.LEVEL1, async (done: Function) => {
       await scan.cancelScan('test_scanner_id').then(() => {
@@ -249,12 +249,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_1200
      * @tc.number scan_function_1200
-     * @tc.name scan_function_1200
-     * @tc.desc Verify getting picture scan progress fails with no permission
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify getting picture scan progress fails with no permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_1200', Level.LEVEL1, async (done: Function) => {
       await scan.getPictureScanProgress('test_scanner_id').then(() => {
@@ -269,12 +269,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_1300
      * @tc.number scan_function_1300
-     * @tc.name scan_function_1300
-     * @tc.desc Verify scan device sync event works
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify scan device sync event works
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_1300', Level.LEVEL1, async (done: Function) => {
       try {
@@ -292,12 +292,12 @@ export default function scanTest() {
     });
 
     /**
+     * @tc.name   scan_function_1400
      * @tc.number scan_function_1400
-     * @tc.name scan_function_1400
-     * @tc.desc Verify scan device found event works
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify scan device found event works
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('scan_function_1400', Level.LEVEL1, async (done: Function) => {
       try {

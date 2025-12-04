@@ -46,13 +46,13 @@ export default function WordBreakTest() {
       console.info("WordBreakTest after each called");
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-    * @tc.name         WordBreakTest0001
-    * @tc.desic        The WordBreak  set NORMAL
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   WordBreakTest0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   WordBreakTest0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WordBreakTest0001', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -65,13 +65,13 @@ export default function WordBreakTest() {
       done();
     });
 
-    /*
-    * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-    * @tc.name         WordBreakTest0002
-    * @tc.desic        The MaxLines  set 2.5
-    * @tc.size         MediumTest
-    * @tc.type         Function
-    * @tc.level        1
+    /**
+     * @tc.name   WordBreakTest0002
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   WordBreakTest0002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('WordBreakTest0002', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
@@ -89,14 +89,14 @@ export default function WordBreakTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0003
-   * @tc.name         WordBreakTest0003
-   * @tc.desic        The MaxLines  set 6
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
-    */
+    /**
+     * @tc.name   WordBreakTest0003
+     * @tc.number SUB_ACE_BASIC_ETS_API_0003
+     * @tc.desc   WordBreakTest0003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WordBreakTest0003', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' WordBreakTest0003 START');
@@ -113,14 +113,14 @@ export default function WordBreakTest() {
       done();
     });
 
-    /*
-   * @tc.number       SUB_ACE_BASIC_ETS_API_0004
-   * @tc.name         WordBreakTest0004
-   * @tc.desic        The MaxLines  set undefined
-   * @tc.size         MediumTest
-   * @tc.type         Function
-   * @tc.level        1
-    */
+    /**
+     * @tc.name   WordBreakTest0004
+     * @tc.number SUB_ACE_BASIC_ETS_API_0004
+     * @tc.desc   WordBreakTest0004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('WordBreakTest0004', Level.LEVEL1, async (done: Function) => {
       let driver = Driver.create();
       console.info(' WordBreakTest0004 START');

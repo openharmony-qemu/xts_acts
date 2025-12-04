@@ -36,9 +36,12 @@ export default function callJsunit() {
     console.log("==========> call Test start ==========>");
 
     /**
+     * @tc.name   Telephony_Call_HasVoiceCapability_HasVoiceCapability
      * @tc.number Telephony_Call_HasVoiceCapability_HasVoiceCapability
-     * @tc.name Checks whether a device supports voice calls.
-     * @tc.desc Return type test
+     * @tc.desc   Return type test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_Call_HasVoiceCapability_HasVoiceCapability", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName = 'Telephony_Call_HasVoiceCapability_HasVoiceCapability';
@@ -54,9 +57,12 @@ export default function callJsunit() {
       });
 
     /**
+     * @tc.name   Telephony_Call_Call_MakeCall_0100
      * @tc.number Telephony_Call_Call_MakeCall_0100
-     * @tc.name Make a call.
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Telephony_Call_Call_MakeCall_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let caseName: string = "Telephony_Call_Call_MakeCall_0100";

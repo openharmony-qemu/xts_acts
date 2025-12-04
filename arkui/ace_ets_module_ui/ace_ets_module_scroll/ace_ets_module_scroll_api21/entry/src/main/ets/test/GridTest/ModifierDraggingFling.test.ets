@@ -50,12 +50,12 @@ export default function ModifierDraggingFling() {
     });
 
     /**
-     * @tc.number    ModifierDraggingFling_001
-     * @tc.name      ModifierDraggingFling_0100
-     * @tc.desc      Callback triggered when the component scrolls using the mouse wheel.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   ModifierDraggingFling_0100
+     * @tc.number ModifierDraggingFling_001
+     * @tc.desc   Callback triggered when the component scrolls using the mouse wheel.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierDraggingFling_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierDraggingFling_0100] START');
@@ -91,12 +91,12 @@ export default function ModifierDraggingFling() {
     });
 
     /**
-     * @tc.number    ModifierDraggingFling_002
-     * @tc.name      ModifierDraggingFling_0200
-     * @tc.desc      The callback triggered when the scrolling component slides.
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   ModifierDraggingFling_0200
+     * @tc.number ModifierDraggingFling_002
+     * @tc.desc   The callback triggered when the scrolling component slides.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('ModifierDraggingFling_0200', Level.LEVEL2, async (done: Function) => {
       console.info('[ModifierDraggingFling_0200] START');

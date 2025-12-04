@@ -58,14 +58,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0100
-    * @tc.name       : testRefresh001
-    * @tc.desc       : test refresh
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRefresh001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REFRESH_0100
+     * @tc.desc   test refresh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRefresh001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRefresh001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -75,14 +75,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_0100
-    * @tc.name       : testLoadData001
-    * @tc.desc       : test loadData
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadData001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADDATA_0100
+     * @tc.desc   test loadData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadData001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -92,14 +92,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0100
-    * @tc.name       : testLoadUrl001
-    * @tc.desc       : test loadUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0100
+     * @tc.desc   test loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -109,14 +109,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0200
-    * @tc.name       : testLoadUrl002
-    * @tc.desc       : test loadUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0200
+     * @tc.desc   test loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl002", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -126,14 +126,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0300
-    * @tc.name       : testLoadUrl003
-    * @tc.desc       : test loadUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0300
+     * @tc.desc   test loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl003", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -143,14 +143,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0400
-    * @tc.name       : testLoadUrl004
-    * @tc.desc       : test loadUrl
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testLoadUrl004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_LOADURL_0400
+     * @tc.desc   test loadUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testLoadUrl004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testLoadUrl004", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -161,14 +161,14 @@ export default function webViewControllerPart2() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETUSERAGENT_0100
-    * @tc.name       : testGetUserAgent001
-    * @tc.desc       : test getUserAgent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetUserAgent001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETUSERAGENT_0100
+     * @tc.desc   test getUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetUserAgent001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -178,14 +178,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETWEBID_0100
-    * @tc.name       : testGetWebId001
-    * @tc.desc       : test getWebId
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetWebId001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETWEBID_0100
+     * @tc.desc   test getWebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetWebId001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetWebId001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -195,14 +195,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETTITLE_0100
-    * @tc.name       : testGetTitle001
-    * @tc.desc       : test getTitle
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetTitle001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETTITLE_0100
+     * @tc.desc   test getTitle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetTitle001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetTitle001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -212,14 +212,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_STOP_0100
-    * @tc.name       : testStop001
-    * @tc.desc       : test Stop
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testStop001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_STOP_0100
+     * @tc.desc   test Stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testStop001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testStop001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -229,14 +229,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_GETCUSTOMUSERAGENT_0100
-    * @tc.name       : testGetCustomUserAgent001
-    * @tc.desc       : test getCustomUserAgent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testGetCustomUserAgent001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_GETCUSTOMUSERAGENT_0100
+     * @tc.desc   test getCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testGetCustomUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testGetCustomUserAgent001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -246,14 +246,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETCUSTOMUSERAGENT_0100
-    * @tc.name       : testSetCustomUserAgent001
-    * @tc.desc       : test setCustomUserAgent
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSetCustomUserAgent001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETCUSTOMUSERAGENT_0100
+     * @tc.desc   test setCustomUserAgent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSetCustomUserAgent001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSetCustomUserAgent001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;
@@ -263,14 +263,14 @@ export default function webViewControllerPart2() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PROTECTEDRESOURCETYPE_0100
-    * @tc.name       : testProtectedResourceType001
-    * @tc.desc       : test ProtectedResourceType
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testProtectedResourceType001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PROTECTEDRESOURCETYPE_0100
+     * @tc.desc   test ProtectedResourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testProtectedResourceType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testProtectedResourceType001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

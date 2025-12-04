@@ -25,12 +25,12 @@ export default function CapabilityNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_CAPABILITY_CAPSET_0100
-     * @tc.name       : testMuslCapabilityCapset001
-     * @tc.desc       : test capset
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslCapabilityCapset001
+     * @tc.number SUB_THIRDPARTY_MUSL_CAPABILITY_CAPSET_0100
+     * @tc.desc   test capset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslCapabilityCapset001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let resultTrue = 1;

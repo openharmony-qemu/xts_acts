@@ -43,6 +43,14 @@ export default function WorkerUseCurvesTest() {
       await CommonFunc.sleep(1000);
       console.info('WorkerUseCurves after each called');
     });
+    /**
+     * @tc.name   WorkerUseCurves_0100
+     * @tc.number WorkerUseCurves_0100
+     * @tc.desc   WorkerUseCurves_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('WorkerUseCurves_0100', Level.LEVEL0, async (done: Function) => {
       console.info('WorkerUseCurves_0100 START');
       let driver = await Driver.create()

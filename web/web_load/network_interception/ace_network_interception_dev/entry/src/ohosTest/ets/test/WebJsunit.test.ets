@@ -35,10 +35,13 @@ export default function webJsunit() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_043
-     *tc.name onErrorReceive
-     *tc.desic Triggered when the web page receives a web resource loading error
+    /**
+     * @tc.name   onErrorReceive
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_043
+     * @tc.desc   onErrorReceive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onErrorReceive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnErrorReceive";
@@ -46,10 +49,13 @@ export default function webJsunit() {
       Utils.registerEvent("onErrorReceive", "http://bianixnbo.com/", 142010, done);
       Utils.waitAndClickComponent(driver, "webcomponent");
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_044
-     *tc.name onHttpErrorReceive
-     *tc.desic Triggered when the web page receives a web resource loading HTTP error
+    /**
+     * @tc.name   onHttpErrorReceive
+     * @tc.number SUB_ACE_BASIC_ETS_WEB_DEV_API_044
+     * @tc.desc   onHttpErrorReceive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('onHttpErrorReceive', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitOnHttpErrorReceive";

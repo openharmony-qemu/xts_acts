@@ -45,7 +45,6 @@ describe('ObjectStoreJsunitV9Ets', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetCommunType0100
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0100
      * @tc.desc   Test CommType Enum Value
@@ -65,7 +64,6 @@ describe('ObjectStoreJsunitV9Ets', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetCommunType0200
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
      * @tc.desc   Test commonType.Asset,Assets
@@ -105,7 +103,6 @@ describe('ObjectStoreJsunitV9Ets', function () {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetCommunType0300
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0200
      * @tc.desc   Test commonType.ValueType
@@ -152,7 +149,6 @@ describe('ObjectStoreJsunitV9Ets', function () {
     })    
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   V9testbindAssetCommunType0400
      * @tc.number SUB_DistributedData_DataObject_SDK_ObjectJsAPITest_bindAssetCommunType_0400
      * @tc.desc   Test BindInfo

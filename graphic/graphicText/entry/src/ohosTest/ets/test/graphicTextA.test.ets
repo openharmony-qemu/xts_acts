@@ -39,14 +39,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_049
-     * @tc.name      : testLoadFontSync
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_049
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testLoadFontSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "testLoadFontSync"
       console.info(msg + ' begin ');
       try {
@@ -62,14 +62,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_050
-     * @tc.name      : testTextStyle_2
-     * @tc.desc      : To test interface TextStyle, add new property: fontStyle .
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTextStyle_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_050
+     * @tc.desc   To test interface TextStyle, add new property: fontStyle .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testTextStyle_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testTextStyle_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "testTextStyle_2"
       console.info(msg + 'begin');
       let decoration : text.Decoration = {
@@ -132,14 +132,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_051
-     * @tc.name      : testGetGlobalInstance
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetGlobalInstance
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_051
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetGlobalInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetGlobalInstance', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetGlobalInstance===="
       console.info(msg + ' begin ');
       try {
@@ -158,14 +158,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_052
-     * @tc.name      : testGetActualTextRange
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetActualTextRange
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_052
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetActualTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetActualTextRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetActualTextRange===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
@@ -192,14 +192,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_053
-     * @tc.name      : testGetLineMetrics_1
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineMetrics_1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_053
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetLineMetrics_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetLineMetrics_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetLineMetrics_1===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
@@ -227,14 +227,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_054
-     * @tc.name      : testGetLineMetrics_2
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetLineMetrics_2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_054
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testGetLineMetrics_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testGetLineMetrics_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testGetLineMetrics_2===="
       console.info(msg + ' begin ');
       let myTextStyle: text.TextStyle = {
@@ -261,14 +261,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_055
-     * @tc.name      : testAddSymbol
-     * @tc.desc      : To test interface loadFontSync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testAddSymbol
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_055
+     * @tc.desc   To test interface loadFontSync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testAddSymbol', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function)=> {
+    it('testAddSymbol', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = "====testAddSymbol===="
       let myTextStyle: text.TextStyle = {
         color: { alpha: 255, red: 255, green: 0, blue: 0 },
@@ -295,14 +295,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_056
-     * @tc.name      : testLoadFontByPromiseInvalidPath01
-     * @tc.desc      : To test interface loadFont of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath01
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_056
+     * @tc.desc   To test interface loadFont of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath01"
       await loadFontByPromiseInvalidParameter(msg, "test", "", done).catch((err: BusinessError) => {
@@ -313,14 +313,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_057
-     * @tc.name      : testLoadFontByPromiseInvalidPath02
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath02
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_057
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath02"
       await loadFontByPromiseInvalidParameter(msg, 'test', 'File://', done).catch((err: BusinessError) => {
@@ -331,14 +331,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_058
-     * @tc.name      : testLoadFontByPromiseInvalidPath03
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath03
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_058
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath03"
       await loadFontByPromiseInvalidParameter(msg, 'test', '中文无效路径', done).catch((err: BusinessError) => {
@@ -349,14 +349,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_059
-     * @tc.name      : testLoadFontByPromiseInvalidPath04
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath04
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_059
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath04"
       await loadFontByPromiseInvalidParameter(msg, 'test', 'english中文无效路径$rawfile(MiSans_VF.ttf)', done).catch((err: BusinessError) => {
@@ -367,14 +367,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
-     * @tc.name      : testLoadFontByPromiseInvalidPath05
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath05
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_060
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath05"
       await loadFontByPromiseInvalidParameter(msg, 'test', 'File://', done).catch((err: BusinessError) => {
@@ -385,14 +385,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_061
-     * @tc.name      : testLoadFontByPromiseInvalidPath06
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath06
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_061
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath06"
       await loadFontByPromiseInvalidParameter(msg, "test", null, done).catch((err: BusinessError) => {
@@ -403,14 +403,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_062
-     * @tc.name      : testLoadFontByPromiseInvalidPath07
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath07
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_062
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath07"
       await loadFontByPromiseInvalidParameter(msg, "test", undefined, done).catch((err: BusinessError) => {
@@ -421,14 +421,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_063
-     * @tc.name      : testLoadFontByPromiseInvalidPath08
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidPath08
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_063
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidPath08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidPath08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidPath08"
       await loadFontByPromiseInvalidParameter(msg, "", undefined, done).catch((err: BusinessError) => {
@@ -439,14 +439,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_064
-     * @tc.name      : testLoadFontByPromiseInvalidName01
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidName01
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_064
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidName01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidName01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidName01"
       await loadFontByPromiseInvalidParameter(msg, null, 'File://', done).catch((err: BusinessError) => {
@@ -457,14 +457,14 @@ export default function graphicTextATest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_065
-     * @tc.name      : testLoadFontByPromiseInvalidName02
-     * @tc.desc      : To test interface loadFontAsync of FontCollection.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testLoadFontByPromiseInvalidName02
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICTEXT_JS_API_065
+     * @tc.desc   To test interface loadFontAsync of FontCollection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('testLoadFontByPromiseInvalidName02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+    it('testLoadFontByPromiseInvalidName02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done:Function)=> {
       let msg = "testLoadFontByPromiseInvalidName02"
       await loadFontByPromiseInvalidParameter(msg, undefined, 'File://', done).catch((err: BusinessError) => {

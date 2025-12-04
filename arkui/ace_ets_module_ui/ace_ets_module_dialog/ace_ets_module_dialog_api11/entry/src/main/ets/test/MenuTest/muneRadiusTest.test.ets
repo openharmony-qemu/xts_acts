@@ -51,12 +51,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0100
-     * @tc.name      muneRadiusTest_0100
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0100
+     * @tc.number muneRadiusTest_0100
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0100 START');
@@ -85,12 +85,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0200
-     * @tc.name      muneRadiusTest_0200
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0200
+     * @tc.number muneRadiusTest_0200
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0200 START');
@@ -118,12 +118,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0300
-     * @tc.name      muneRadiusTest_0300
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0300
+     * @tc.number muneRadiusTest_0300
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0300', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0300 START');
@@ -151,12 +151,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0400
-     * @tc.name      muneRadiusTest_0400
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0400
+     * @tc.number muneRadiusTest_0400
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0400', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0400 START');
@@ -184,12 +184,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0500
-     * @tc.name      muneRadiusTest_0500
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0500
+     * @tc.number muneRadiusTest_0500
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0500', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0500 START');
@@ -225,12 +225,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0600
-     * @tc.name      muneRadiusTest_0600
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0600
+     * @tc.number muneRadiusTest_0600
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0600', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0600 START');
@@ -258,12 +258,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0700
-     * @tc.name      muneRadiusTest_0700
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0700
+     * @tc.number muneRadiusTest_0700
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0700', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0700 START');
@@ -290,12 +290,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0800
-     * @tc.name      muneRadiusTest_0800
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0800
+     * @tc.number muneRadiusTest_0800
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0800', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0800 START');
@@ -330,12 +330,12 @@ export default function muneRadiusTest() {
     });
 
     /**
-     * @tc.number    muneRadiusTest_0900
-     * @tc.name      muneRadiusTest_0900
-     * @tc.desc      set muneRadiusTest: 20px
-     * @tc.level:    Level 1
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   muneRadiusTest_0900
+     * @tc.number muneRadiusTest_0900
+     * @tc.desc   set muneRadiusTest: 20px
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('muneRadiusTest_0900', Level.LEVEL1, async (done: Function) => {
       console.info('muneRadiusTest_0900 START');

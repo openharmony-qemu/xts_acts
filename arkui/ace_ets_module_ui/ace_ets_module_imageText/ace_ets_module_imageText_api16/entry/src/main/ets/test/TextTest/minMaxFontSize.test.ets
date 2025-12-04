@@ -45,11 +45,13 @@ export default function minMaxFontSize() {
       console.info("minMaxFontSize after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         minMaxFontSize0001
-     * @tc.desic        Set the minFontSize and maxFontSize properties of 
-                          the property string and text subcomponent
+    /**
+     * @tc.name   minMaxFontSize0001
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   minMaxFontSize0001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('minMaxFontSize0001', Level.LEVEL0, async () => {
         let driver = Driver.create();

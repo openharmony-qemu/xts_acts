@@ -31,11 +31,13 @@ export default function GetabilityInfo() {
 
     describe('GetabilityInfo', function () {
 
-        /*
-         * @tc.number: bundle_GetabilityInfo_test_0100
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level   0
+        /**
+         * @tc.name   bundle_GetabilityInfo_test_0100
+         * @tc.number bundle_GetabilityInfo_test_0100
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('bundle_GetabilityInfo_test_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let mData;
@@ -55,11 +57,13 @@ export default function GetabilityInfo() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2600
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by callback)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2600
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2600
+         * @tc.desc   Check the return value of the interface (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2600', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             let mData;
@@ -79,11 +83,13 @@ export default function GetabilityInfo() {
             });
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2660
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by callback)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2660
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2660
+         * @tc.desc   Check the return value of the interface (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2660', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async function (done) {
             await bundleManager.getAbilityInfo(BUNDLE_NAME4, ABILITY_NAME3).then(res => {
@@ -107,11 +113,13 @@ export default function GetabilityInfo() {
         });
 
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2460
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2460
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2460
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2460', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let timeOldStamp = await Utils.getNowTime();
@@ -126,11 +134,13 @@ export default function GetabilityInfo() {
             done();
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2620
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2620
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2620
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2620', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let error1;
@@ -149,11 +159,13 @@ export default function GetabilityInfo() {
             done();
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2480
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by callback)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2480
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2480
+         * @tc.desc   Check the return value of the interface (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2480', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let error
@@ -168,11 +180,13 @@ export default function GetabilityInfo() {
             console.info('[Sub_Bms_Framework_Query_AbilityInfo_2480] END');
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2640
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by promise)
-         * @tc.level   0
+        /**
+         * @tc.name   Sub_Bms_Framework_Query_AbilityInfo_2640
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2640
+         * @tc.desc   Check the return value of the interface (by promise)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('Sub_Bms_Framework_Query_AbilityInfo_2640', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let error1;
@@ -191,11 +205,13 @@ export default function GetabilityInfo() {
             done();
         });
 
-        /*
-         * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2660
-         * @tc.name: getAbilityInfo : The basic ability is enhanced to obtain the specified Ability information
-         * @tc.desc: Check the return value of the interface (by callback)
-         * @tc.level   0
+        /**
+         * @tc.name   testgetAbilityInfoUndefined
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2660
+         * @tc.desc   Check the return value of the interface (by callback)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testgetAbilityInfoUndefined', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundleManager.getAbilityInfo(undefined, undefined).then(res => {

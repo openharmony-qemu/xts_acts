@@ -43,12 +43,14 @@ export default function ListLanes04() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_041
-      * @tc.name  : ListLanes04_001
-      * @tc.desc  : set gutter to 0 and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ListLanes04_001
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_041
+     * @tc.desc   set gutter to 0 and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes04_001',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes04_001] START');
@@ -63,12 +65,14 @@ export default function ListLanes04() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_049
-      * @tc.name  : ListLanes04_002
-      * @tc.desc  : set gutter to -1 and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ListLanes04_002
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_049
+     * @tc.desc   set gutter to -1 and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes04_002',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes04_002] START');
@@ -83,12 +87,14 @@ export default function ListLanes04() {
       done();
     });
 
-    /* *
-      * @tc.number: SUB_ACE_FUNCTION_JICHU_SR000HQ76H_047
-      * @tc.name  : ListLanes04_003
-      * @tc.desc  : set gutter to 10% and listDirection to Axis.Horizontal
-      * @tc.level : Level 3
-      */
+    /**
+     * @tc.name   ListLanes04_003
+     * @tc.number SUB_ACE_FUNCTION_JICHU_SR000HQ76H_047
+     * @tc.desc   set gutter to 10% and listDirection to Axis.Horizontal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ListLanes04_003',  Level.LEVEL0, async (done: Function) => {
 
       console.info('[ListLanes04_003] START');

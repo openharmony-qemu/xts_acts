@@ -45,13 +45,12 @@ export default function maskColorTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskColor_0001
-     * @tc.name      bindMenu_maskColor_0001
-     * @tc.desc      set mask color is #809b43c9,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   bindMenu_maskColor_0001
+     * @tc.number bindMenu_maskColor_0001
+     * @tc.desc   set mask color is #809b43c9,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskColor_0001 START============================');
@@ -80,13 +79,12 @@ export default function maskColorTest() {
       done();
     });
     /**
-     * @tc.number    bindMenu_maskColor_0002
-     * @tc.name      bindMenu_maskColor_0002
-     * @tc.desc      set mask color is 0xFF6495ED,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskColor_0002
+     * @tc.number bindMenu_maskColor_0002
+     * @tc.desc   set mask color is 0xFF6495ED,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info("bindMenu_maskColor_0002 START============================");
@@ -116,13 +114,12 @@ export default function maskColorTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskColor_0003
-     * @tc.name      bindMenu_maskColor_0003
-     * @tc.desc      set mask color is Color.Blue,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskColor_0003
+     * @tc.number bindMenu_maskColor_0003
+     * @tc.desc   set mask color is Color.Blue,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskColor_0003 START============================');
@@ -152,13 +149,12 @@ export default function maskColorTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskColor_0004
-     * @tc.name      bindMenu_maskColor_0004
-     * @tc.desc      set mask color is undefined,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskColor_0004
+     * @tc.number bindMenu_maskColor_0004
+     * @tc.desc   set mask color is undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskColor_0004 START============================');
@@ -191,13 +187,12 @@ export default function maskColorTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskColor_0005
-     * @tc.name      bindMenu_maskColor_0005
-     * @tc.desc      set mask color is null,
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskColor_0005
+     * @tc.number bindMenu_maskColor_0005
+     * @tc.desc   set mask color is null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskColor_0005 START============================');
@@ -230,13 +225,12 @@ export default function maskColorTest() {
     });
 
     /**
-     * @tc.number    bindMenu_maskColor_0006
-     * @tc.name      bindMenu_maskColor_0006
-     * @tc.desc      set mask color is $r('app.color.start_window_background'),
-     *               this use case has device differentiation, and some devices do not support this feature
-     * @tc.level:    Level 2
-     * @tc.type :    TestType.FUNCTION
-     * @tc.size :    Size.MEDIUMTEST
+     * @tc.name   bindMenu_maskColor_0006
+     * @tc.number bindMenu_maskColor_0006
+     * @tc.desc   set mask color is $r('app.color.start_window_background'),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('bindMenu_maskColor_0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('bindMenu_maskColor_0006 START============================');

@@ -26,78 +26,78 @@ export default function listShadowTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0100
-     * @tc.name       : testListShadow001
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_XS
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow001
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0100
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_XS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0200
-     * @tc.name       : testListShadow002
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_SM
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow002
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0200
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0300
-     * @tc.name       : testListShadow003
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_MD
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow003
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0300
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0400
-     * @tc.name       : testListShadow004
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_LG
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow004
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0400
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_DEFAULT_LG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0500
-     * @tc.name       : testListShadow005
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_FLOATING_SM
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow005
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0500
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_FLOATING_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_SHADOW_0600
-     * @tc.name       : testListShadow006
-     * @tc.desc       : testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_FLOATING_MD
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListShadow006
+     * @tc.number SUB_ARKUI_CAPI_LIST_SHADOW_0600
+     * @tc.desc   testing shadow for list with ARKUI_SHADOW_STYLE_OUTER_FLOATING_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListShadow006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListShadow006()).assertEqual(0)

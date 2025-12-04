@@ -26,26 +26,26 @@ export default function  () {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CARETCOLOR_0100
-     * @tc.name       : testTextInputCaretColor001
-     * @tc.desc       : testing caretColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputCaretColor001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARETCOLOR_0100
+     * @tc.desc   testing caretColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretColor001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_CARETCOLOR_0200
-     * @tc.name       : testTextInputCaretColor002
-     * @tc.desc       : testing caretColor for textInput with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextInputCaretColor002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_CARETCOLOR_0200
+     * @tc.desc   testing caretColor for textInput with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextInputCaretColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextInputCaretColor002()).assertEqual(0)

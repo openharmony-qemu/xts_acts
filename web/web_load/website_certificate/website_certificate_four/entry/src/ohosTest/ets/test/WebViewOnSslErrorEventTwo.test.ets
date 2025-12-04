@@ -58,13 +58,13 @@ export default function webViewOnSslErrorEventTwo() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_WEB_ONSSLERROREVENT_CERTCHAINDATA_0100
-     * @tc.name       : testOnSslErrorEventCertChainData0100
-     * @tc.desc       : test http onSslErrorEvent certChainData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnSslErrorEventCertChainData0100
+     * @tc.number SUB_WEB_ONSSLERROREVENT_CERTCHAINDATA_0100
+     * @tc.desc   test http onSslErrorEvent certChainData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnSslErrorEventCertChainData0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnSslErrorEventCertChainData0100", EVENT_ID_SET_EMIT_KEY);
@@ -77,13 +77,13 @@ export default function webViewOnSslErrorEventTwo() {
         done();
       }
     })
-    /*
-     * @tc.number     : SUB_WEB_ONSSLERROREVENT_CERTCHAINDATA_0200
-     * @tc.name       : testOnSslErrorEventCertChainData0200
-     * @tc.desc       : test iframe onSslErrorEvent certChainData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnSslErrorEventCertChainData0200
+     * @tc.number SUB_WEB_ONSSLERROREVENT_CERTCHAINDATA_0200
+     * @tc.desc   test iframe onSslErrorEvent certChainData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnSslErrorEventCertChainData0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnSslErrorEventCertChainData0200", EVENT_ID_SET_EMIT_KEY);

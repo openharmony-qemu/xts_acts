@@ -40,13 +40,13 @@ export default function audioLoopBack() {
       console.info(TAG + 'afterEach called')
     })
 
-	  /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_STATIC_0100
-     * @tc.desc        createAudioLoopback
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_STATIC_0100
+     * @tc.desc   createAudioLoopback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_CREATEAUDIOLOOPBACK_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -69,12 +69,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100
-     * @tc.desc        setVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100
+     * @tc.desc   setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -96,12 +96,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200
-     * @tc.desc        setVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200
+     * @tc.desc   setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -123,12 +123,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300
-     * @tc.desc        setVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300
+     * @tc.desc   setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -150,12 +150,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400
-     * @tc.desc        setVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400
+     * @tc.desc   setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -177,12 +177,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500
-     * @tc.desc        setVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500
+     * @tc.desc   setVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SETVOLUME_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -204,12 +204,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100
-     * @tc.desc        getStatus
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100
+     * @tc.desc   getStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_GETSTATUS_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {
@@ -231,12 +231,12 @@ export default function audioLoopBack() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500
-     * @tc.desc        enable
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500
+     * @tc.desc   enable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_ENABLE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       if (audio.getAudioManager().getStreamManager().isAudioLoopbackSupported(audio.AudioLoopbackMode.HARDWARE)) {

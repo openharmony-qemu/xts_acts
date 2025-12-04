@@ -53,7 +53,6 @@ export default function relationalStoreDeleteTest() {
     console.info(TAG + '*************Unit Test Begin*************');
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0100
      * @tc.desc   RelationalStore delete test
@@ -106,7 +105,6 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0200
      * @tc.desc   RelationalStore delete test
@@ -160,7 +158,6 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0300
      * @tc.desc   RelationalStore delete test
@@ -218,7 +215,6 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0400
      * @tc.desc   RelationalStore delete test
@@ -272,7 +268,6 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0500
      * @tc.desc   RelationalStore delete test
@@ -327,7 +322,6 @@ export default function relationalStoreDeleteTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   testRdbStoreDelete0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DeleteEtsAPITest_0600
      * @tc.desc   RelationalStore delete test

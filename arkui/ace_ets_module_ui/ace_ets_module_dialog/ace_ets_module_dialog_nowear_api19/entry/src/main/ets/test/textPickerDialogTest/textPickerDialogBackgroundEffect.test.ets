@@ -37,12 +37,12 @@ export default function textPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBackgroundEffectTest_0100
-     * @tc.name      textPickerDialogBackgroundEffectTest_0100
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBackgroundEffectTest_0100
+     * @tc.number textPickerDialogBackgroundEffectTest_0100
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function textPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBackgroundEffectTest_0200
-     * @tc.name      textPickerDialogBackgroundEffectTest_0200
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBackgroundEffectTest_0200
+     * @tc.number textPickerDialogBackgroundEffectTest_0200
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogDialogBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function textPickerDialogBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBackgroundEffectTest_0300
-     * @tc.name      textPickerDialogBackgroundEffectTest_0300
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBackgroundEffectTest_0300
+     * @tc.number textPickerDialogBackgroundEffectTest_0300
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogBackgroundEffectTest_0300';

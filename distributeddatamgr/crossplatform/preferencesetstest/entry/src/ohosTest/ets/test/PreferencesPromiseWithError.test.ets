@@ -44,7 +44,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testPreferencesPromiseWithError0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_JSAPITest_0100
      * @tc.desc   Clear、Delete、Put、Get、Flush promise interface test
@@ -111,7 +110,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_0100
      * @tc.desc   mPreference.get promise test
@@ -141,7 +139,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetPromise0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1100
      * @tc.desc   mPreference.get promise test
@@ -173,7 +170,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetPromise0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1200
      * @tc.desc   mPreference.get promise test
@@ -204,7 +200,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetSyncWithError0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1800
      * @tc.desc   mPreference.getSync test
@@ -227,7 +222,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetSyncWithError0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1900
      * @tc.desc   mPreference.getSync test
@@ -250,7 +244,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetSyncWithError0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_2900
      * @tc.desc   mPreference.getSync test
@@ -273,7 +266,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesGetALLPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_GetJSAPITest_1300
      * @tc.desc   mPreference.getAll promise test
@@ -302,7 +294,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesHasPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0600
      * @tc.desc   mPreference.has promise test
@@ -332,7 +323,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesHasPromise0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_HasJSAPITest_0700
      * @tc.desc   mPreference.has promise test
@@ -360,7 +350,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0100
      * @tc.desc   mPreference.put promise test
@@ -390,7 +379,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutPromise0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0400
      * @tc.desc   mPreference.put promise test
@@ -422,7 +410,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutPromise0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0300
      * @tc.desc   mPreference.put promise test   space
@@ -455,7 +442,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutPromise0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0200
      * @tc.desc   mPreference.put promise test
@@ -486,7 +472,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutPromise0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_0500
      * @tc.desc   mPreference.put promise test
@@ -517,7 +502,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutSyncWithError0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1400
      * @tc.desc   mPreference.putSync test
@@ -540,7 +524,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutSyncWithError0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1700
      * @tc.desc   mPreference.putSync test
@@ -564,7 +547,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutSyncWithError0003
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1600
      * @tc.desc   mPreference.putSync test
@@ -588,7 +570,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutSyncWithError0004
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1500
      * @tc.desc   mPreference.putSync test
@@ -610,7 +591,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesPutSyncWithError0005
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_PutJSAPITest_1800
      * @tc.desc   mPreference.putSync test
@@ -632,7 +612,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesDeletePromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0100
      * @tc.desc   mPreference.delete promise test
@@ -662,7 +641,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesDeletePromise0002
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_DeleteJSAPITest_0500
      * @tc.desc   mPreference.delete promise test
@@ -690,7 +668,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesClearPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_ClearJSAPITest_0100
      * @tc.desc   mPreference.clear promise test
@@ -718,7 +695,6 @@ export default function preferencesPromiseWithErrorTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:54
      * @tc.name   testMpreferencesFlushPromise0001
      * @tc.number SUB_DistributedData_CrossPlatform_SDK_Preferences_FlushJSAPITest_0100
      * @tc.desc   mPreference.flush promise test

@@ -223,14 +223,14 @@ export default function AVPlayerMultiTrackTest() {
             setSource(avPlayer, fd);
         }
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0100
-            * @tc.name      : 001.test change default audio track
-            * @tc.desc      : test change default audio track
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0100
+         * @tc.desc   test change default audio track
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0100', Level.LEVEL0,async function (done) {
             async function preparedOperation() {
                 await getAudioTracks();
@@ -253,14 +253,14 @@ export default function AVPlayerMultiTrackTest() {
             await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0200
-            * @tc.name      : 002.test deselect default audio track
-            * @tc.desc      : test deselect default audio track
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0200
+         * @tc.desc   test deselect default audio track
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0200', Level.LEVEL0,async function (done) {
             async function preparedOperation() {
                 await getAudioTracks();
@@ -281,14 +281,14 @@ export default function AVPlayerMultiTrackTest() {
             await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0300
-            * @tc.name      : 003.test select and deselect audio track
-            * @tc.desc      : test select and deselect audio track
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0300
+         * @tc.desc   test select and deselect audio track
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0300', Level.LEVEL0,async function (done) {
             async function preparedOperation() {
                 await getAudioTracks();
@@ -313,14 +313,14 @@ export default function AVPlayerMultiTrackTest() {
             await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, undefined);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0500
-            * @tc.name      : 005.test change audio track repeatly
-            * @tc.desc      : test change audio track repeatly
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0500
+         * @tc.desc   test change audio track repeatly
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0500', Level.LEVEL0,async function (done) {
             changeRepeatly = true;
             let changeCnt = 0;
@@ -359,14 +359,14 @@ export default function AVPlayerMultiTrackTest() {
             await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, extraOperation);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0600
-            * @tc.name      : 006.test change audio track after re-prepared
-            * @tc.desc      : test change audio track after re-prepared
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0600
+         * @tc.desc   test change audio track after re-prepared
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_FUNC_0600', Level.LEVEL0,async function (done) {
             let prepareCnt = 0;
             async function preparedOperation() {
@@ -406,14 +406,14 @@ export default function AVPlayerMultiTrackTest() {
         })
 
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_0700
-            * @tc.name      : 007.test selectTrack、seek and setSpeed
-            * @tc.desc      : Local multi-audioTrack video playback control test
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_0700
+         * @tc.desc   Local multi-audioTrack video playback control test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_0700', Level.LEVEL0,async function (done) {
             let eosCnt = 0;
             async function preparedOperation() {
@@ -463,14 +463,14 @@ export default function AVPlayerMultiTrackTest() {
             await testChangeTrack(avFd, preparedOperation, playedOperation, stoppedOperation, extraOperation);
         })
 
-        /* *
-            * @tc.number    : SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_ABNORMAL_INPUT_0100
-            * @tc.name      : 008.test selectTrack/deselectTrack/getCurrentTrack invalid input
-            * @tc.desc      : test change audio track after re-prepared
-            * @tc.size      : MediumTest
-            * @tc.type      : Function test
-            * @tc.level     : Level2
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_ABNORMAL_INPUT_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_ABNORMAL_INPUT_0100
+         * @tc.desc   test change audio track after re-prepared
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_VIDEO_PLAYER_MULTI_AUDIOTRACK_ABNORMAL_INPUT_0100', Level.LEVEL0,async function (done) {
             const NOAUDIOTRACK = -1;
             let un = undefined;

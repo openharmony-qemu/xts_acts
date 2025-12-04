@@ -18,37 +18,44 @@ import commonEvent from '@ohos.commonEvent';
 import systemTime from '@ohos.systemTime';
 import { beforeAll, afterAll, beforeEach, afterEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import backgroundTaskManager from '@ohos.backgroundTaskManager';
+import { BusinessError } from '@ohos.base';
+import CommonEventManager from '@ohos.commonEventManager';
 
-const onAcquiredForm_Event = {
+interface onFormEvent {
+    events: string[];
+}
+
+const onAcquiredForm_Event: onFormEvent = {
     events: ["FMS_FormOnAcquired_commonEvent"],
 };
-const onDeletedFormEvent = {
+const onDeletedFormEvent: onFormEvent = {
     events: ["FMS_FormOnDeleted_commonEvent"],
 };
-const onReleasedFormEvent = {
+const onReleasedFormEvent: onFormEvent = {
     events: ["FMS_FormOnReleased_commonEvent"],
 };
-const onSupplyEvent = {
+const onSupplyEvent: onFormEvent = {
     events: ["FMS_FormSupply_commonEvent"],
 };
 
-const unsubscribeCallback = (tcNumber) => {
+const unsubscribeCallback = (tcNumber: string) => {
     console.info(`====>${tcNumber} unsubscribeCallback====>`);
 }
 
+
 const deleteForm_Event = "FMS_FormDelete_commonEvent";
 
-let subscriberOnAcquired;
-let subscriberOnReleased;
-let subscriberOnDeleted;
-let subscriberSupply;
-let isSupportChangeTime;
+let subscriberOnAcquired: CommonEventManager.CommonEventSubscriber;
+let subscriberOnReleased: CommonEventManager.CommonEventSubscriber;
+let subscriberOnDeleted: CommonEventManager.CommonEventSubscriber;
+let subscriberSupply: CommonEventManager.CommonEventSubscriber;
+let isSupportChangeTime: boolean;
 
 export default function test() {
     describe(`FmsDeleteFormTest`, () => {
 
-        let id = undefined;
-        beforeAll(async (done) => {
+        let id: number;
+        beforeAll(async (done: () => void) => {
             console.log("FMS_deleteForm beforeAll called");
             let myReason = 'test FaShowOnLockTest';
             let delayInfo = backgroundTaskManager.requestSuspendDelay(myReason, () => {
@@ -56,16 +63,16 @@ export default function test() {
             })
             id = delayInfo.requestId;
             console.log("FMS_deleteForm requestId is : " + id);
-            setTimeout(function () {
+            setTimeout(() => {
                 console.log("FMS_deleteForm beforeAll end");
                 done();
             }, 1000);
         })
         
-        afterAll(async (done) => {
+        afterAll(async (done: () => void) => {
             console.log("FMS_deleteForm afterAll called");
             backgroundTaskManager.cancelSuspendDelay(id);
-            setTimeout(function () {
+            setTimeout(() => {
                 console.log("FMS_deleteForm afterAll end");
                 done();
             }, 1000);
@@ -86,37 +93,24 @@ export default function test() {
         })
 
         /**
-         * @tc.name   FMS_deleteForm_0200
-         * @tc.number FMS_deleteForm_0200
+         * @tc.name   FMS_deleteForm_0100
+         * @tc.number FMS_deleteForm_0100
          * @tc.desc   1.delete the form that formID is 1
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0200`;
-            let formId;
+        it(`FMS_deleteForm_0100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0100 555555`;
+            let formId: string;
 
-            const onDeletedCallback = async (_, data) => {
-                console.info(`${tcNumber} onDeletedCallback data: ${JSON.stringify(data)}`);
-                expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
-                expect(data.data != "0").assertEqual(true);
-                commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
-                const commonEventPublishData = {
-                    data: formId
-                };
-                commonEvent.publish(deleteForm_Event, commonEventPublishData, async (err) => {
-                    console.info('FMS_deleteForm_0200 publish' + JSON.stringify(err));
-                    await sleep(3000)
-                    done()
-                });
-            };
-
-            const onAcquiredCallback = async (_, data) => {
+            const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
-                formId = data.data;
+                if(data.data){
+                    formId = data.data;
+                }
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
                 await featureAbility.startAbility({
@@ -135,18 +129,18 @@ export default function test() {
                             isCreate: false
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormOnDeleted_commonEvent', (err) => {
                         console.info(`${tcNumber} publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                    expect(res).assertEqual(0);
+                    done();
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
-
-            commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback);
             commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallback);
 
             console.info(`${tcNumber} featureAbility.startAbility start`);
@@ -164,35 +158,35 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnAcquired_commonEvent', (err) => {
                     console.info(`${tcNumber} publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0300
-         * @tc.number FMS_deleteForm_0300
+         * @tc.name   FMS_deleteForm_0200
+         * @tc.number FMS_deleteForm_0200
          * @tc.desc   1.delete the form
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0300`;
+        it(`FMS_deleteForm_0200`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0200`;
 
-            const onDeletedCallback = async (_, data) => {
+            const onDeletedCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onDeletedCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
                 expect(data.data != "0").assertEqual(true);
                 commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, async (err) => {
-                    console.info('FMS_deleteForm_0300 publish' + JSON.stringify(err));
+                    console.info(`${tcNumber} publish + ${JSON.stringify(err)}`);
                     await sleep(3000)
                     done()
                 });
@@ -216,36 +210,36 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
 
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnDeleted_commonEvent', (err) => {
                     console.info(`${tcNumber} publish` + JSON.stringify(err))})
 
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0400
-         * @tc.number FMS_deleteForm_0400
+         * @tc.name   FMS_deleteForm_0300
+         * @tc.number FMS_deleteForm_0300
          * @tc.desc   1.delete the form
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0400`;
+        it(`FMS_deleteForm_0300`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0300`;
 
-            const onDeletedCallback = async (_, data) => {
+            const onDeletedCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onDeletedCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
                 expect(data.data != "0").assertEqual(true);
                 commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, async (err) => {
-                    console.info('FMS_deleteForm_0400 publish' + JSON.stringify(err));
+                    console.info(`${tcNumber} publish + ${JSON.stringify(err)}`);
                     await sleep(3000)
                     done()
                 });
@@ -269,41 +263,41 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnDeleted_commonEvent', (err) => {
                     console.info(`${tcNumber} publish` + JSON.stringify(err))})
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0500
-         * @tc.number FMS_deleteForm_0500
+         * @tc.name   FMS_deleteForm_0400
+         * @tc.number FMS_deleteForm_0400
          * @tc.desc   1.host A create a formA
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0500`;
-            let formId;
+        it(`FMS_deleteForm_0400`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0400`;
+            let formId: number | string | undefined = undefined;
 
-            const onDeletedCallback = async (_, data) => {
+            const onDeletedCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onDeletedCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
                 expect(data.data != "0").assertEqual(true);
                 commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, async (err) => {
-                    console.info('FMS_deleteForm_0500 publish' + JSON.stringify(err));
+                    console.info(`${tcNumber} publish + ${JSON.stringify(err)}`);
                     await sleep(3000)
                     done()
                 });
             };
 
-            const onAcquiredCallback = async (_, data) => {
+            const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
@@ -326,12 +320,12 @@ export default function test() {
                             isCreate: false
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormOnDeleted_commonEvent', (err) => {
                         console.info(`${tcNumber} publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
@@ -355,37 +349,37 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnAcquired_commonEvent', (err) => {
                     console.info(`${tcNumber} publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0600
-         * @tc.number FMS_deleteForm_0600
+         * @tc.name   FMS_deleteForm_0500
+         * @tc.number FMS_deleteForm_0500
          * @tc.desc   1.host A create a normal formA
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0600`;
-            let formId;
+        it(`FMS_deleteForm_0500`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0500`;
+            let formId: number | string | undefined = undefined;
             let supplyFlag = false;
 
-            function deleteFormB() {
+            const deleteFormB = () => {
                 console.info(`${tcNumber} deleteFormB start`);
                 commonEvent.publish(deleteForm_Event, delPublishCallbackB);
                 console.info(`${tcNumber} deleteFormB end`);
             }
 
-            async function delPublishCallbackB() {
+            const delPublishCallbackB = async () => {
                 console.info(`${tcNumber} delPublishCallbackB`);
                 await sleep(2000);
                 console.info(`${tcNumber} delPublishCallbackB end`);
@@ -393,7 +387,7 @@ export default function test() {
                 done();
             }
 
-            async function delPublishCallback() {
+            const delPublishCallback = async () => {
                 console.info(`${tcNumber} delPublishCallback supplyFlag: ${supplyFlag}`);
                 await sleep(1000);
                 commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback(tcNumber));
@@ -406,14 +400,14 @@ export default function test() {
                 console.info(`${tcNumber} delPublishCallback end`);
             }
 
-            const onAcquiredCallbackB = async (_, data) => {
+            const onAcquiredCallbackB = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallbackB data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, delPublishCallback);
             };
 
-            const onAcquiredCallback = async (_, data) => {
+            const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
@@ -437,18 +431,18 @@ export default function test() {
                             isCreate: true
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormSupply_commonEvent', (err) => {
                         console.info(`${tcNumber} onAcquiredCallbackB publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
 
-            const onSupplyCallback = async (_, data) => {
+            const onSupplyCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onSupplyCallback data: ${JSON.stringify(data)}`);
                 if (data.event == "FMS_FormSupply_commonEvent") {
                     console.info(`${tcNumber} onSupplyCallback ${JSON.stringify(data)}`);
@@ -477,34 +471,34 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
 
                 commonEvent.publish('FMS_FormOnAcquired_commonEvent', (err) => {
                     console.info(`${tcNumber} publish` + JSON.stringify(err));
                 });
 
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0700
-         * @tc.number FMS_deleteForm_0700
+         * @tc.name   FMS_deleteForm_0600
+         * @tc.number FMS_deleteForm_0600
          * @tc.desc   1.host A an host B create one normal card respectively
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0700`;
-            let formId;
-            let formIdB;
+        it(`FMS_deleteForm_0600`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0600`;
+            let formId: number | string | undefined = undefined;
+            let formIdB: number | string | undefined = undefined;
             let supplyFlag = false;
 
-            async function delPublishCallback() {
+            const delPublishCallback = async () => {
                 console.info(`${tcNumber} delPublishCallback supplyFlag:${supplyFlag}`);
                 await sleep(1000);
                 commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback(tcNumber));
@@ -516,7 +510,7 @@ export default function test() {
                 console.info(`${tcNumber} delPublishCallback end`);
             }
 
-            async function delPublishCallbackB() {
+            const delPublishCallbackB = async () => {
                 console.info(`${tcNumber} delPublishCallbackB`);
                 await sleep(1000);
                 console.info(`${tcNumber} delPublishCallbackB end`);
@@ -524,13 +518,13 @@ export default function test() {
                 done();
             }
 
-            function deleteFormB() {
+            const deleteFormB = () => {
                 console.info(`${tcNumber} deleteFormB start`);
                 commonEvent.publish(deleteForm_Event, delPublishCallbackB);
                 console.info(`${tcNumber} deleteFormB end`);
             }
 
-            const onAcquiredCallbackB = async (_, data) => {
+            const onAcquiredCallbackB = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallbackB data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 formIdB = data.data;
@@ -538,7 +532,7 @@ export default function test() {
                 commonEvent.publish(deleteForm_Event, data, delPublishCallback);
             };
 
-            const onAcquiredCallback = async (_, data) => {
+            const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
@@ -562,18 +556,18 @@ export default function test() {
                             isCreate: true
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormSupply_commonEvent', (err) => {
                         console.info(`${tcNumber} onAcquiredCallbackB publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
 
-            const onSupplyCallback = async (_, data) => {
+            const onSupplyCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onSupplyCallback ${JSON.stringify(data)}`);
                 if (data.event == "FMS_FormSupply_commonEvent") {
                     supplyFlag = true;
@@ -600,30 +594,30 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnAcquired_commonEvent', (err) => {
                     console.info(`${tcNumber} onAcquiredCallback publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0700_1
-         * @tc.number FMS_deleteForm_0700_1
+         * @tc.name   FMS_deleteForm_0700
+         * @tc.number FMS_deleteForm_0700
          * @tc.desc   1.host A an host B create one normal card respectively
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0700_1`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0700_1`;
+        it(`FMS_deleteForm_0700`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0700`;
             let currentTime = new Date().getTime();
-            let formId;
-            let formIdB;
+            let formId: string;
+            let formIdB: string;
             let supplyFlag = false;
             let supplyFlagUpdate = false;
 
@@ -637,7 +631,7 @@ export default function test() {
             console.info(`${tcNumber} setTime  ${JSON.stringify(isSupportChangeTime)}`);
 
             if (isSupportChangeTime) {
-                async function delPublishCallback() {
+                const delPublishCallback = async () => {
                     console.info(`${tcNumber} delPublishCallback`);
                     await sleep(5000);
                     commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback(tcNumber));
@@ -649,27 +643,27 @@ export default function test() {
                     console.info(`${tcNumber} delPublishCallback end`);
                 }
 
-                async function delPublishCallbackB() {
+                const delPublishCallbackB = async () => {
                     console.info(`${tcNumber} delPublishCallbackB`);
                     console.info(`${tcNumber} delPublishCallbackB end`);
                     console.info(`${tcNumber} end`);
                     await systemTime.setTime(currentTime).then((data)=>{
                         console.info(`${tcNumber} setTime  ${JSON.stringify(data)}`);
                         done();
-                    }).catch((error)=>{
+                    }).catch((error: BusinessError)=>{
                         console.info(`${tcNumber} setTime  ${JSON.stringify(error)}`);
                         done();
                     })
                 }
 
-                async function deleteFormB() {
+                const deleteFormB = async () => {
                     console.info(`${tcNumber} deleteFormB start`);
                     // timer speed reset
                     commonEvent.publish(`fms.time_speed`, { code: 1 }, () => {
                         console.info(`${tcNumber} time speed up`);
                     });
                     await sleep(1000);
-                    const commonEventPublishData = {
+                    const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
                         bundleName: "com.ohos.st.formsystemhostc",
                         data: formIdB
                     };
@@ -677,23 +671,27 @@ export default function test() {
                     console.info(`${tcNumber} deleteFormB end`);
                 }
 
-                const onAcquiredCallbackB = async (_, data) => {
+                const onAcquiredCallbackB = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                     console.info(`${tcNumber} onAcquiredCallbackB data: ${JSON.stringify(data)}`);
                     expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
-                    formIdB = data.data;
+                    if(data.data){
+                        formIdB = data.data;
+                    }
                     commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
-                    const commonEventPublishData = {
+                    const commonEventPublishData: CommonEventManager.CommonEventPublishData = {
                         bundleName: "com.ohos.st.formsystemhostd",
                         data: formId
                     };
                     commonEvent.publish(deleteForm_Event, commonEventPublishData, delPublishCallback);
                 };
 
-                const onAcquiredCallback = async (_, data) => {
+                const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                     console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                     expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                     commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
-                    formId = data.data;
+                    if(data.data){
+                        formId = data.data;
+                    }
                     subscriberOnAcquired = await commonEvent.createSubscriber(onAcquiredForm_Event);
                     await sleep(1000);
                     commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallbackB);
@@ -713,9 +711,9 @@ export default function test() {
                                 isCreate: true
                             }
                         }
-                    }).then((res: any) => {
+                    }).then((res) => {
                         console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
-                    }).catch((err: any) => {
+                    }).catch((err: BusinessError) => {
                         console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                         expect().assertFail();
                         done();
@@ -724,15 +722,19 @@ export default function test() {
                 };
                 commonEvent.subscribe(subscriberOnAcquired, onAcquiredCallback);
 
-                const onSupplyCallback = async (_, data) => {
-                    if (data.parameters.kind == "onDestroy") {
+                const onSupplyCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
+                    let kind: string = ''
+                    if (data.parameters?.kind) {
+                        kind = data.parameters.kind;
+                    }
+                    if ("onDestroy" == kind) {
                         console.info(`${tcNumber} onSupplyCallback ${JSON.stringify(data)}`);
                         supplyFlag = true;
                     }
-                    if (data.parameters.kind == "onUpdate") {
-                        if (data.parameters.parameters == formId) {
+                    if ("onUpdate" == kind) {
+                        if (data.parameters?.parameters == formId) {
                             expect().assertFail();
-                        } else if (data.parameters.parameters == formIdB) {
+                        } else if (data.parameters?.parameters == formIdB) {
                             supplyFlagUpdate = true;
                         }
                     }
@@ -754,9 +756,9 @@ export default function test() {
                             isCreate: true
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                     expect().assertFail();
                     done();
@@ -770,18 +772,18 @@ export default function test() {
         });
 
         /**
-         * @tc.name   FMS_deleteForm_1000
-         * @tc.number FMS_deleteForm_1000
+         * @tc.name   FMS_deleteForm_0800
+         * @tc.number FMS_deleteForm_0800
          * @tc.desc   1.host create one normal card
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_1000`;
+        it(`FMS_deleteForm_0800`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0800`;
             let formId = '';
 
-            const onSupplyCallback = async (_, data) => {
+            const onSupplyCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onSupplyCallback ${JSON.stringify(data)}`);
                 if (data.event == "FMS_FormSupply_commonEvent") {
                     commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback(tcNumber));
@@ -792,12 +794,10 @@ export default function test() {
                 }
             };
 
-            async function onReleasedCallback(_, data) {
+            const onReleasedCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onReleasedCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnReleased_commonEvent`);
-                // expect(data.data).assertEqual(`0`);
                 commonEvent.unsubscribe(subscriberOnReleased, () => unsubscribeOnReleasedCallback(tcNumber));
-                //formId = data.parameters.formId;
 
                 console.info(`${tcNumber} featureAbility.startAbility again start`);
                 await featureAbility.startAbility({
@@ -816,12 +816,12 @@ export default function test() {
                             isCreate: false
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormSupply_commonEvent', data, (err) => {
                         console.info(`${tcNumber} onSupplyCallback publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
@@ -847,12 +847,12 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnReleased_commonEvent', (err) => {
                     console.info(`${tcNumber} onReleasedCallback publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
@@ -861,20 +861,20 @@ export default function test() {
         });
 
         /**
-         * @tc.name   FMS_deleteForm_1100
-         * @tc.number FMS_deleteForm_1100
+         * @tc.name   FMS_deleteForm_0900
+         * @tc.number FMS_deleteForm_0900
          * @tc.desc   1.host a and b create one temporary card respectively
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_1100`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_1100`;
-            let formId;
-            let formIdB;
+        it(`FMS_deleteForm_0900`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_0900`;
+            let formId: number | string | undefined = undefined;
+            let formIdB: number | string | undefined = undefined;
             let supplyFlag = false;
 
-            async function delPublishCallback() {
+            const delPublishCallback = async () => {
                 console.info(`${tcNumber} delPublishCallback supplyFlag:${supplyFlag}`);
                 await sleep(1000);
                 commonEvent.unsubscribe(subscriberSupply, () => unsubscribeSupplyCallback(tcNumber));
@@ -886,7 +886,7 @@ export default function test() {
                 console.info(`${tcNumber} delPublishCallback end`);
             }
 
-            async function delPublishCallbackB() {
+            const delPublishCallbackB = async () => {
                 console.info(`${tcNumber} delPublishCallbackB`);
                 await sleep(1000);
                 console.info(`${tcNumber} delPublishCallbackB end`);
@@ -894,20 +894,20 @@ export default function test() {
                 done();
             }
 
-            function deleteFormB() {
+            const deleteFormB = () => {
                 console.info(`${tcNumber} deleteFormB start`);
                 commonEvent.publish(deleteForm_Event, delPublishCallbackB);
                 console.info(`${tcNumber} deleteFormB end`);
             }
 
-            const onAcquiredCallbackB = async (_, data) => {
+            const onAcquiredCallbackB = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallbackB data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, delPublishCallback);
             };
 
-            const onAcquiredCallback = async (_, data) => {
+            const onAcquiredCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onAcquiredCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnAcquired_commonEvent`);
                 commonEvent.unsubscribe(subscriberOnAcquired, () => unsubscribeOnAcquiredCallback(tcNumber));
@@ -931,19 +931,19 @@ export default function test() {
                             isCreate: true
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormSupply_commonEvent', (err) => {
                         console.info(`${tcNumber} onSupplyCallback publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
             };
             
 
-            const onSupplyCallback = async (_, data) => {
+            const onSupplyCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onSupplyCallback ${JSON.stringify(data)}`);
                 if (data.event == "FMS_FormSupply_commonEvent") {
                     supplyFlag = true;
@@ -971,47 +971,47 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnAcquired_commonEvent', (err) => {
                     console.info(`${tcNumber} onAcquiredCallback publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
         });
 
         /**
-         * @tc.name   FMS_deleteForm_0900
-         * @tc.number FMS_deleteForm_0900
+         * @tc.name   FMS_deleteForm_1000
+         * @tc.number FMS_deleteForm_1000
          * @tc.desc   1.host create one normal card
          * @tc.type   FUNCTION
          * @tc.size   MEDIUMTEST
          * @tc.level  LEVEL0
          */
-        it(`FMS_deleteForm_0900`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done) => {
-            const tcNumber = `FMS_deleteForm_0900`;
-            let formId;
+        it(`FMS_deleteForm_1000`, TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            const tcNumber = `FMS_deleteForm_1000`;
+            let formId: number | string | undefined = undefined;
 
-            function onDeletedCallback2(_, data) {
+            const onDeletedCallback2 = (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onDeletedCallback2 data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
                 expect(data.data != "0").assertEqual(true);
                 console.info(`${tcNumber} failed to delete form again.`);
                 commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
                 commonEvent.publish(deleteForm_Event, data, (err) => {
-                    console.info('FMS_deleteForm_0900 publish' + JSON.stringify(err));
+                    console.info(`${tcNumber} publish + ${JSON.stringify(err)}`);
                     done()
                 });
             }
 
-            const onDeletedCallback = async (_, data) => {
+            const onDeletedCallback = async (_: BusinessError, data: CommonEventManager.CommonEventData) => {
                 console.info(`${tcNumber} onDeletedCallback data: ${JSON.stringify(data)}`);
                 expect(data.event).assertEqual(`FMS_FormOnDeleted_commonEvent`);
                 // expect(data.data).assertEqual(`0`);
                 commonEvent.unsubscribe(subscriberOnDeleted, () => unsubscribeOnDeletedCallback(tcNumber));
-                formId = data.parameters.formId;
+                formId = data.parameters?.formId;
                 subscriberOnDeleted = await commonEvent.createSubscriber(onDeletedFormEvent);
                 await sleep(1000);
                 commonEvent.subscribe(subscriberOnDeleted, onDeletedCallback2);
@@ -1033,12 +1033,12 @@ export default function test() {
                             isCreate: false
                         }
                     }
-                }).then((res: any) => {
+                }).then((res) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                     commonEvent.publish('FMS_FormOnDeleted_commonEvent', data, (err) => {
                         console.info(`${tcNumber} onDeletedCallback2 publish` + JSON.stringify(err));
                     });
-                }).catch((err: any) => {
+                }).catch((err: BusinessError) => {
                     console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
                 });
                 console.info(`${tcNumber} featureAbility.startAbility again end`);
@@ -1063,12 +1063,12 @@ export default function test() {
                         isCreate: true
                     }
                 }
-            }).then((res: any) => {
+            }).then((res) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost res: ${JSON.stringify(res)}`);
                 commonEvent.publish('FMS_FormOnDeleted_commonEvent', (err) => {
                     console.info(`${tcNumber} onDeletedCallback publish` + JSON.stringify(err));
                 });
-            }).catch((err: any) => {
+            }).catch((err: BusinessError) => {
                 console.info(`${tcNumber} featureAbility.startAbilityhost error: ${JSON.stringify(err)}`);
             });
             console.info(`${tcNumber} featureAbility.startAbility end`);
@@ -1083,7 +1083,7 @@ export default function test() {
  * @param min minute
  * @param second second
  */
-const changeTime = async (hour, min, second) => {
+const changeTime = async (hour: number, min: number, second: number) => {
     console.info(`FMS_deleteForm changeTime start`);
     const datetime = new Date();
     const year = datetime.getFullYear();
@@ -1106,7 +1106,7 @@ const changeTime = async (hour, min, second) => {
     console.info(`FMS_deleteForm changeTime end`);
 };
 
-const fill = value => {
+const fill = (value: number) => {
     return (value > 9 ? "" : "0") + value;
 };
 
@@ -1114,25 +1114,18 @@ function sleep(time: number): Promise<void> {
     return new Promise((resolve)=>setTimeout(resolve,time));
 }
 
-const delPublishCallback = async (tcNumber, done) => {
-    await sleep(1000);
-    console.info(`${tcNumber} delPublishCallback end`);
-    console.info(`${tcNumber} end`);
-    done();
-};
-
-const unsubscribeOnAcquiredCallback = (tcNumber) => {
+const unsubscribeOnAcquiredCallback = (tcNumber: string) => {
     console.info(`${tcNumber} Unsubscribe OnAcquired Callback`);
 };
 
-const unsubscribeOnDeletedCallback = (tcNumber) => {
+const unsubscribeOnDeletedCallback = (tcNumber: string) => {
     console.info(`${tcNumber} Unsubscribe OnDeleted Callback`);
 };
 
-const unsubscribeSupplyCallback = (tcNumber) => {
+const unsubscribeSupplyCallback = (tcNumber: string) => {
     console.info(`${tcNumber} Unsubscribe Supply Callback`);
 };
 
-const unsubscribeOnReleasedCallback = (tcNumber) => {
+const unsubscribeOnReleasedCallback = (tcNumber: string) => {
     console.info(`${tcNumber} Unsubscribe OnReleased Callback`);
 };

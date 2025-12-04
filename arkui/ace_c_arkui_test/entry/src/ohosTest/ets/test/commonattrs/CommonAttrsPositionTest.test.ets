@@ -26,26 +26,26 @@ export default function commonAttrsPositionTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_POSITION_0100
-     * @tc.name       : testCommonAttrsPosition001
-     * @tc.desc       : testing position for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsPosition001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_POSITION_0100
+     * @tc.desc   testing position for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsPosition001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsPosition001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_POSITION_0200
-     * @tc.name       : testCommonAttrsPosition002
-     * @tc.desc       : testing position for commonAttrs with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsPosition002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_POSITION_0200
+     * @tc.desc   testing position for commonAttrs with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsPosition002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsPosition002()).assertEqual(0)

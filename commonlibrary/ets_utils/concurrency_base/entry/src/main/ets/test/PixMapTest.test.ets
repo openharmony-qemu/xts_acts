@@ -26,13 +26,12 @@ export default function PixMapTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_001
-     * @tc.name: testPixMapWriteTask
-     * @tc.desc: checks writing to PixelMap
-     * @tc.author: oleg-ignatenko
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testPixMapWriteTask
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_001
+     * @tc.desc   checks writing to PixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testPixMapWriteTask', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result: Object = await skipConditional("testPixMapWriteTask in progress", true, testPixMapWriteTask);
@@ -41,13 +40,12 @@ export default function PixMapTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_002
-     * @tc.name: testPixMapWriteTaskGroup
-     * @tc.desc: checks writing to PixelMap in several taskpool group tasks
-     * @tc.author: oleg-ignatenko
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPixMapWriteTaskGroup
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_002
+     * @tc.desc   checks writing to PixelMap in several taskpool group tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPixMapWriteTaskGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await skipConditional(
@@ -57,13 +55,12 @@ export default function PixMapTest() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_003
-     * @tc.name: testPixMapWriteSingleTaskGroup
-     * @tc.desc: checks writing to PixelMap in single taskpool group task
-     * @tc.author: oleg-ignatenko
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testPixMapWriteSingleTaskGroup
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONCURRENCYBASE_PIXMAP_003
+     * @tc.desc   checks writing to PixelMap in single taskpool group task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPixMapWriteSingleTaskGroup', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result: Object = await skipConditional(

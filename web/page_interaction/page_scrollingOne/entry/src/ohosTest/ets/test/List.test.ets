@@ -20,11 +20,13 @@ import webNestedScrollOptionsScrollBackwardHorizontalTest
 import webNestedScrollOptionsScrollForwardHorizontalTest from './WebNestedScrollOptionsScrollForwardHorizontalTest.test'
 import webViewSrollByJsunit from './webViewSrollByJsunit.test'
 import webViewSrollToJsunit from './webViewSrollToJsunit.test'
+import WebViewSetScrollbarModeJunit from './WebViewSetScrollbarMode.test'
 export default function testsuite() {
   webNestedScrollOptionsScrollBackwardHorizontalTest()
   webNestedScrollOptionsScrollForwardHorizontalTest()
   scrollBarJsunit()
   webViewSrollByJsunit()
   webViewSrollToJsunit()
+  WebViewSetScrollbarModeJunit()
 
 }

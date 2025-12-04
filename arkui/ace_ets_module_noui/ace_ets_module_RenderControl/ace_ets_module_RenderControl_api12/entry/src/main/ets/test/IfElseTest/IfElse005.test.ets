@@ -43,12 +43,12 @@ export default function IfElse005Test() {
       done();
     });
     /**
-     * @tc.number    IfElse005Test_01
-     * @tc.name      IfElse005Test_01
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   IfElse005Test_01
+     * @tc.number IfElse005Test_01
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('IfElse005Test_01', Level.LEVEL0, async (done: Function) => {
       console.info('[IfElse005Test_01] START');

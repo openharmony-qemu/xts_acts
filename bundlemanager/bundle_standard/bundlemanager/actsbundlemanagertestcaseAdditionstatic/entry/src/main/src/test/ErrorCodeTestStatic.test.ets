@@ -9,10 +9,13 @@ export default function ErrcodeTest() {
   describe('ErrcodeTest', (): void => {
 
 
-    /*
-     * @tc.number: Sub_Bms_getBundleNameByUid_CallBack_17700021
-     * @tc.name:  getBundleNameByUidCallBack17700021
-     * @tc.desc: test errCode 17700021 when call getBundleNameByUid
+    /**
+     * @tc.name   getBundleNameByUidCallBack17700021
+     * @tc.number Sub_Bms_getBundleNameByUid_CallBack_17700021
+     * @tc.desc   test errCode 17700021 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidCallBack17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info(TAG +"getBundleNameByUidCallBack17700021 start");
@@ -35,10 +38,13 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_getBundleNameByUid_Promise_17700021
-     * @tc.name:  getBundleNameByUidPromise17700021
-     * @tc.desc: test errCode 17700021 when call getBundleNameByUid
+    /**
+     * @tc.name   getBundleNameByUidPromise17700021
+     * @tc.number Sub_Bms_getBundleNameByUid_Promise_17700021
+     * @tc.desc   test errCode 17700021 when call getBundleNameByUid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidPromise17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info(TAG + "getBundleNameByUidPromise17700021 start");
@@ -59,10 +65,13 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_getBundleNameByUidSync_17700021
-     * @tc.name:  getBundleNameByUidSync17700021
-     * @tc.desc: test errCode 401 when call getBundleNameByUidSync
+    /**
+     * @tc.name   getBundleNameByUidSync17700021
+     * @tc.number Sub_Bms_getBundleNameByUidSync_17700021
+     * @tc.desc   test errCode 401 when call getBundleNameByUidSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('getBundleNameByUidSync17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info(TAG +"getBundleNameByUidSync17700021 start");
@@ -78,11 +87,14 @@ export default function ErrcodeTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_getAppCloneIdentity_17700021
-     * @tc.name:  getAppCloneIdentity17700021
-     * @tc.desc: test errCode 17700021 when call getAppCloneIdentity
-    */
+    /**
+     * @tc.name   getAppCloneIdentity17700021
+     * @tc.number Sub_Bms_getAppCloneIdentity_17700021
+     * @tc.desc   test errCode 17700021 when call getAppCloneIdentity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('getAppCloneIdentity17700021', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       console.info(TAG + "getAppCloneIdentity17700021 start");
       try {

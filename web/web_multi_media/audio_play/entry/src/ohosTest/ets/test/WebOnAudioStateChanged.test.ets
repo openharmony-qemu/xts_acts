@@ -63,14 +63,14 @@ export default function webOnAudioStateChanged() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONAUDIOSTATECHANGED_0100
-    * @tc.name        : testOnAudioStateChanged001
-    * @tc.desc        : test onAudioStateChanged when start play audio
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnAudioStateChanged001
+     * @tc.number SUB_WEB_ONAUDIOSTATECHANGED_0100
+     * @tc.desc   test onAudioStateChanged when start play audio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnAudioStateChanged001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitAudioStatePlay", 132650)
       Utils.registerBaseEvent("testOnAudioStateChanged001", "true_true_", 132660, done,
@@ -80,14 +80,14 @@ export default function webOnAudioStateChanged() {
       await Utils.waitAndClickComponent(driver, 'WebOnAudioStateChangedTestButton');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONAUDIOSTATECHANGED_0200
-    * @tc.name        : testOnAudioStateChanged002
-    * @tc.desc        : test onAudioStateChanged when pause play audio
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 2
-    */
+    /**
+     * @tc.name   testOnAudioStateChanged002
+     * @tc.number SUB_WEB_ONAUDIOSTATECHANGED_0200
+     * @tc.desc   test onAudioStateChanged when pause play audio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testOnAudioStateChanged002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitAudioStatePause", 132650)
       Utils.registerBaseEvent("testOnAudioStateChanged002", "true_false_false_", 132670, done,

@@ -26,39 +26,39 @@ export default function listHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_HEIGHT_0100
-     * @tc.name       : testListHeight001
-     * @tc.desc       : testing height for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListHeight001
+     * @tc.number SUB_ARKUI_CAPI_LIST_HEIGHT_0100
+     * @tc.desc   testing height for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_HEIGHT_0200
-     * @tc.name       : testListHeight002
-     * @tc.desc       : testing height for list with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListHeight002
+     * @tc.number SUB_ARKUI_CAPI_LIST_HEIGHT_0200
+     * @tc.desc   testing height for list with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_HEIGHT_0300
-     * @tc.name       : testListHeight003
-     * @tc.desc       : testing height for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testListHeight003
+     * @tc.number SUB_ARKUI_CAPI_LIST_HEIGHT_0300
+     * @tc.desc   testing height for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListHeight003()).assertEqual(0)

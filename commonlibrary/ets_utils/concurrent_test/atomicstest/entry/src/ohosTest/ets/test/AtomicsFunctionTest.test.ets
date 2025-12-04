@@ -69,12 +69,12 @@ export default function AtomicsFunctionTest() {
     })
 
     /**
+     * @tc.name   AtomicsFunctionTest0100
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0100
-     * @tc.name AtomicsFunctionTest0100
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0100';
@@ -93,12 +93,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0200
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0200
-     * @tc.name AtomicsFunctionTest0200
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0200';
@@ -132,12 +132,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0300
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0300
-     * @tc.name AtomicsFunctionTest0300
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0300';
@@ -162,12 +162,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0400
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0400
-     * @tc.name AtomicsFunctionTest0400
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0400';
@@ -201,12 +201,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0500
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0500
-     * @tc.name AtomicsFunctionTest0500
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0500';
@@ -231,12 +231,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0600
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0600
-     * @tc.name AtomicsFunctionTest0600
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0600';
@@ -269,12 +269,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0700
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0700
-     * @tc.name AtomicsFunctionTest0700
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0700';
@@ -298,12 +298,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0800
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0800
-     * @tc.name AtomicsFunctionTest0800
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0800';
@@ -336,12 +336,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest0900
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_0900
-     * @tc.name AtomicsFunctionTest0900
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest0900';
@@ -376,12 +376,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1000
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1000
-     * @tc.name AtomicsFunctionTest1000
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1000';
@@ -494,12 +494,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1100
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1100
-     * @tc.name AtomicsFunctionTest1100
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1100';
@@ -538,12 +538,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1200
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1200
-     * @tc.name AtomicsFunctionTest1200
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1200';
@@ -564,12 +564,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1300
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1300
-     * @tc.name AtomicsFunctionTest1300
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1300';
@@ -644,12 +644,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1400
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1400
-     * @tc.name AtomicsFunctionTest1400
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1400';
@@ -685,12 +685,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1500
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1500
-     * @tc.name AtomicsFunctionTest1500
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1500';
@@ -727,12 +727,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1600
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1600
-     * @tc.name AtomicsFunctionTest1600
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1600';
@@ -764,12 +764,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1700
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1700
-     * @tc.name AtomicsFunctionTest1700
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1700';
@@ -811,12 +811,12 @@ export default function AtomicsFunctionTest() {
 
 
     /**
+     * @tc.name   AtomicsFunctionTest1800
      * @tc.number SUB_ATOMICS_FUNCTION_TEST_1800
-     * @tc.name AtomicsFunctionTest1800
-     * @tc.desc Test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('AtomicsFunctionTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (Done: Function) => {
       const caseName = 'AtomicsFunctionTest1800';

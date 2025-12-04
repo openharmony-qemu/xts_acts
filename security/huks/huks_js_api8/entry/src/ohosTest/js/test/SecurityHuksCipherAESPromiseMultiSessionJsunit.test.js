@@ -203,6 +203,14 @@ async function publicCipherFuncWithoutEndSession(srcKeyAlias, genHuksOptionsNONE
 
 export default function SecurityHuksCipherAESPromiseMultiSessionJsunit() {
     describe('SecurityHuksCipherAESPromiseMultiSessionJsunit', function () {
+        /**
+         * @tc.name   Security_HUKS_DFX_MultiSessionCipherAES100
+         * @tc.number Security_HUKS_DFX_MultiSessionCipherAES100
+         * @tc.desc   Security_HUKS_DFX_MultiSessionCipherAES100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+         */
         it('Security_HUKS_DFX_MultiSessionCipherAES100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
             let genHuksOptions = {
                 properties: new Array(

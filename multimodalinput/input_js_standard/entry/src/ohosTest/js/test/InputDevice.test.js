@@ -33,7 +33,6 @@ export default function InputDevice_test() {
 
     // 参数正确,返回一个数组
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceIds_test_01
      * @tc.number InputDevice_getDeviceIds_test_01
      * @tc.desc   InputDevice_getDeviceIds_test_01
@@ -62,7 +61,6 @@ export default function InputDevice_test() {
 
     // 参数正确,判断一种或多种设备
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceIds_test_02
      * @tc.number InputDevice_getDeviceIds_test_02
      * @tc.desc   InputDevice_getDeviceIds_test_02
@@ -93,7 +91,6 @@ export default function InputDevice_test() {
 
     // 参数类型错误
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceIds_test_03
      * @tc.number InputDevice_getDeviceIds_test_03
      * @tc.desc   InputDevice_getDeviceIds_test_03
@@ -114,7 +111,6 @@ export default function InputDevice_test() {
 
     // 参数数量错误
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceIds_test_04
      * @tc.number InputDevice_getDeviceIds_test_04
      * @tc.desc   InputDevice_getDeviceIds_test_04
@@ -137,7 +133,6 @@ export default function InputDevice_test() {
 
     // 无效的设备id
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDevice_test_01
      * @tc.number InputDevice_getDevice_test_01
      * @tc.desc   InputDevice_getDevice_test_01
@@ -167,7 +162,6 @@ export default function InputDevice_test() {
 
 // 参数正常,返回值正常
 /**
- * @generated.time 2025-11-09 20:53:28
  * @tc.name   InputDevice_getDevice_test_02
  * @tc.number InputDevice_getDevice_test_02
  * @tc.desc   InputDevice_getDevice_test_02
@@ -244,7 +238,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     // 参数正常,返回值正常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_supportKeys_test_01
      * @tc.number InputDevice_supportKeys_test_01
      * @tc.desc   InputDevice_supportKeys_test_01
@@ -277,7 +270,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     // 第二个参数异常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_supportKeys_test_02
      * @tc.number InputDevice_supportKeys_test_02
      * @tc.desc   InputDevice_supportKeys_test_02
@@ -300,7 +292,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     // 参数正常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getKeyboardType_test_01
      * @tc.number InputDevice_getKeyboardType_test_01
      * @tc.desc   InputDevice_getKeyboardType_test_01
@@ -333,7 +324,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     //参数异常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getKeyboardType_test_02
      * @tc.number InputDevice_getKeyboardType_test_02
      * @tc.desc   InputDevice_getKeyboardType_test_02
@@ -354,7 +344,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     // 参数正常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getKeyboardType_test_03
      * @tc.number InputDevice_getKeyboardType_test_03
      * @tc.desc   InputDevice_getKeyboardType_test_03
@@ -390,7 +379,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     //参数异常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getKeyboardTypeSync_test_04
      * @tc.number InputDevice_getKeyboardTypeSync_test_04
      * @tc.desc   InputDevice_getKeyboardTypeSync_test_04
@@ -411,7 +399,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
 
     // 参数正常
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getKeyboardTypeSync_test_05
      * @tc.number InputDevice_getKeyboardTypeSync_test_05
      * @tc.desc   InputDevice_getKeyboardTypeSync_test_05
@@ -442,7 +429,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_setKeyboardRepeatDelay_test_01
      * @tc.number InputDevice_setKeyboardRepeatDelay_test_01
      * @tc.desc   InputDevice_setKeyboardRepeatDelay_test_01
@@ -471,7 +457,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_setKeyboardRepeatDelay_test_02
      * @tc.number InputDevice_setKeyboardRepeatDelay_test_02
      * @tc.desc   InputDevice_setKeyboardRepeatDelay_test_02
@@ -498,7 +483,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_setKeyboardRepeatRate_test_01
      * @tc.number InputDevice_setKeyboardRepeatRate_test_01
      * @tc.desc   InputDevice_setKeyboardRepeatRate_test_01
@@ -527,7 +511,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_setKeyboardRepeatRate_test_02
      * @tc.number InputDevice_setKeyboardRepeatRate_test_02
      * @tc.desc   InputDevice_setKeyboardRepeatRate_test_02
@@ -554,7 +537,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_NONE_test
      * @tc.number MultimodalInputDevice_js_0010
      * @tc.desc   inputDevice.KeyboardType.NONE test
@@ -568,7 +550,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_UNKNOWN_test
      * @tc.number MultimodalInputDevice_js_0020
      * @tc.desc   inputDevice.KeyboardType.UNKNOWN test
@@ -582,7 +563,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_ALPHABETIC_KEYBOARD_test
      * @tc.number MultimodalInputDevice_js_0030
      * @tc.desc   inputDevice.KeyboardType.ALPHABETIC_KEYBOARD test
@@ -597,7 +577,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_ALPHABETIC_DIGITAL_KEYBOARD_test
      * @tc.number MultimodalInputDevice_js_0040
      * @tc.desc   inputDevice.KeyboardType.DIGITAL_KEYBOARD test
@@ -612,7 +591,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_ALPHABETIC_HANDWRITING_PEN_test
      * @tc.number MultimodalInputDevice_js_0050
      * @tc.desc   inputDevice.KeyboardType.HANDWRITING_PEN test
@@ -627,7 +605,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_KeyboardType_ALPHABETIC_REMOTE_CONTROL_test
      * @tc.number MultimodalInputDevice_js_0060
      * @tc.desc   inputDevice.KeyboardType.REMOTE_CONTROL test
@@ -642,7 +619,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceIds_Promise_test
      * @tc.number MultimodalInputDevice_js_0070
      * @tc.desc   inputdevice interface getDeviceIds & supportKeys test
@@ -679,7 +655,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDevice_Promise_test
      * @tc.number MultimodalInputDevice_js_0080
      * @tc.desc   inputdevice interface getDevice test
@@ -706,7 +681,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_on_test
      * @tc.number MultimodalInputDevice_js_0090
      * @tc.desc   inputdevice interface getDevice test
@@ -740,7 +714,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_off_test
      * @tc.number MultimodalInputDevice_js_0100
      * @tc.desc   inputdevice interface getDevice test
@@ -767,7 +740,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceList_test_01
      * @tc.number MultimodalInputDevice_js_0110
      * @tc.desc   inputdevice interface getDeviceList test
@@ -795,7 +767,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceList_test_02
      * @tc.number MultimodalInputDevice_js_0120
      * @tc.desc   inputdevice interface getDeviceList test
@@ -819,7 +790,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceInfo_test_01
      * @tc.number MultimodalInputDevice_js_0130
      * @tc.desc   inputdevice interface getDeviceInfo test
@@ -889,7 +859,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceInfoSync_test_01
      * @tc.number MultimodalInputDevice_js
      * @tc.desc   inputdevice interface getDeviceInfoSync test
@@ -940,7 +909,7 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
             expect(InputDeviceData.axisRanges[j].min).assertInstanceOf('Number');
             expect(InputDeviceData.axisRanges[j].fuzz).assertInstanceOf('Number');
             expect(InputDeviceData.axisRanges[j].flat).assertInstanceOf('Number');
-            expect(InputDeviceData.axisRanges[j].InputDeviceDataolution).assertInstanceOf('Number');
+            expect(InputDeviceData.axisRanges[j].resolution).assertInstanceOf('Number');
           }
         })
       } catch (err) {
@@ -952,7 +921,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_getDeviceInfo_test_02
      * @tc.number MultimodalInputDevice_js_0140
      * @tc.desc   inputdevice interface getDeviceInfo test
@@ -1012,7 +980,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_GetkeyboardType_Exception_test_01
      * @tc.number MultimodalInputDevice_js_0150
      * @tc.desc   inputdevice interface getKeyboardType exception test
@@ -1034,7 +1001,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_GetkeyboardType_Exception_test_02
      * @tc.number MultimodalInputDevice_js_0160
      * @tc.desc   inputdevice interface getKeyboardType exception test
@@ -1062,7 +1028,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SupportKeys_Exception_test_01
      * @tc.number MultimodalInputDevice_js_0170
      * @tc.desc   inputdevice interface supportKeys exception test
@@ -1092,7 +1057,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SupportKeys_Exception_test_02
      * @tc.number MultimodalInputDevice_js_0180
      * @tc.desc   inputdevice interface supportKeys exception test
@@ -1122,7 +1086,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SupportKeysSync_Exception_test
      * @tc.number MultimodalInputDevice_js
      * @tc.desc   inputdevice interface supportKeysSync exception test
@@ -1144,7 +1107,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_GetDeviceInfo_Exception_test_01
      * @tc.number MultimodalInputDevice_js_0190
      * @tc.desc   inputdevice interface getDeviceInfo exception test
@@ -1166,7 +1128,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_GetDeviceInfo_Exception_test_02
      * @tc.number MultimodalInputDevice_js_0200
      * @tc.desc   inputdevice interface getDeviceInfo exception test
@@ -1204,7 +1165,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_GetDeviceList_Exception_test
      * @tc.number MultimodalInputDevice_js_0210
      * @tc.desc   inputdevice interface getDeviceList exception test
@@ -1226,7 +1186,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_On_Exception_test
      * @tc.number MultimodalInputDevice_js_0220
      * @tc.desc   inputdevice interface on test
@@ -1264,7 +1223,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_Off_Exception_test
      * @tc.number MultimodalInputDevice_js_0230
      * @tc.desc   inputdevice interface off test
@@ -1294,7 +1252,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SetKeyboardRepeatDelay_Exception_test_01
      * @tc.number MultimodalInputDevice_js_0240
      * @tc.desc   inputdevice interface setKeyboardRepeatDelay exception test
@@ -1316,7 +1273,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SetKeyboardRepeatDelay_Exception_test_02
      * @tc.number MultimodalInputDevice_js_0250
      * @tc.desc   inputdevice interface setKeyboardRepeatDelay exception test
@@ -1346,7 +1302,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SetKeyboardRepeatRate_Exception_test_01
      * @tc.number MultimodalInputDevice_js_0260
      * @tc.desc   inputdevice interface setKeyboardRepeatRate exception test
@@ -1368,7 +1323,6 @@ it("InputDevice_getDevice_test_02", TestType.FUNCTION | Size.MEDIUMTEST | Level.
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:28
      * @tc.name   InputDevice_SetKeyboardRepeatRate_Exception_test_02
      * @tc.number MultimodalInputDevice_js_0270
      * @tc.desc   inputdevice interface setKeyboardRepeatRate exception test

@@ -55,12 +55,12 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
     let errMessage;
     let TAG = '';
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0010
-     * @tc.name: GetSensorListByDeviceSync_JSTest_001
-     * @tc.desc: Test getSensorListByDeviceSync with valid deviceId
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   GetSensorListByDeviceSync_JSTest_001
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0010
+     * @tc.desc   Test getSensorListByDeviceSync with valid deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetSensorListByDeviceSync_JSTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSensorListByDeviceSync_JSTest_001-------------------------");
@@ -117,12 +117,12 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0020
-     * @tc.name: GetSensorListByDeviceSync_JSTest_002
-     * @tc.desc: Test getSensorListByDeviceSync without deviceId
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   GetSensorListByDeviceSync_JSTest_002
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0020
+     * @tc.desc   Test getSensorListByDeviceSync without deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetSensorListByDeviceSync_JSTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSensorListByDeviceSync_JSTest_002-------------------------");
@@ -160,12 +160,12 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0030
-     * @tc.name: GetSensorListByDeviceSync_JSTest_003
-     * @tc.desc: Test getSensorListByDeviceSync with invalid deviceId
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   GetSensorListByDeviceSync_JSTest_003
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0030
+     * @tc.desc   Test getSensorListByDeviceSync with invalid deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetSensorListByDeviceSync_JSTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSensorListByDeviceSync_JSTest_003-------------------------");
@@ -188,12 +188,12 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_004
-     * @tc.name: GetSensorListByDeviceSync_JSTest_004
-     * @tc.desc: Test getSingleSensorByDeviceSync with invalid type
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   GetSensorListByDeviceSync_JSTest_004
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_004
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetSensorListByDeviceSync_JSTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSensorListByDeviceSync_JSTest_004-------------------------");
@@ -212,12 +212,12 @@ describe("SensorJsTest_getSensorListbyDevice", function () {
     })
 
     /**
-     * @tc.number:SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_005
-     * @tc.name: GetSensorListByDeviceSync_JSTest_005
-     * @tc.desc: Test getSingleSensorByDeviceSync with invalid type
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.name   GetSensorListByDeviceSync_JSTest_005
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_005
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('GetSensorListByDeviceSync_JSTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, function (done) {
         console.info("------------------GetSensorListByDeviceSync_JSTest_005-------------------------");

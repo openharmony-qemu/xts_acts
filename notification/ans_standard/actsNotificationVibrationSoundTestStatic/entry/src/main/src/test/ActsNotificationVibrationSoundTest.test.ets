@@ -17,7 +17,7 @@ import notificationManager from '@ohos.notificationManager'
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base'
 
-const DOMAIN = 0x0000;
+const DOMAIN: int = 0x0000;
 let TAG: string  = 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST ===>'
 
 export default function ActsNotificationVibrationSoundTest() {
@@ -26,13 +26,13 @@ export default function ActsNotificationVibrationSoundTest() {
     hilog.info(0x0000, TAG, 'SUB_NOTIFICATION_ANS_IS_VIBRATIONSOUND_ENABLED_TEST START')
 
     /**
-    * @tc.number     Sub_Ans_GetNotificationSettings_Static_0100
-    * @tc.name       Sub_Ans_GetNotificationSettings_Static_0100
-    * @tc.desc       Obtains whether the device supports VibrationSound notification
-    * @tc.size       MediumTest
-    * @tc.type       Function test
-    * @tc.level      Level0
-    */
+     * @tc.name   Sub_Ans_GetNotificationSettings_Static_0100
+     * @tc.number Sub_Ans_GetNotificationSettings_Static_0100
+     * @tc.desc   Obtains whether the device supports VibrationSound notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Ans_GetNotificationSettings_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, `${TAG} Sub_Ans_GetNotificationSettings_Static_0100 START`)

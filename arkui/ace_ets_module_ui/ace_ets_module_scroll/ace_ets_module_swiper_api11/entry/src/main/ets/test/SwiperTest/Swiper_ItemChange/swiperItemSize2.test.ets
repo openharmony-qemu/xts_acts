@@ -65,6 +65,14 @@ export default function swiperItemSize2() {
     //     * @tc.name      testSwiperItemSizeExceed.
     //     * @tc.desc      Set item's  height and width   values '350*350'.
     //     */
+    /**
+     * @tc.name   testSwiperItemSizeExceed2
+     * @tc.number testSwiperItemSizeExceed2
+     * @tc.desc   testSwiperItemSizeExceed2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     //    it('testSwiperItemSizeExceed2', Level.LEVEL1, async  (done:Function)=> {
     //      console.info('new testSwiperItemSizeExceed2 START');
     //      globalThis.value.message.notify({name:'index', value: 0});

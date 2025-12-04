@@ -90,12 +90,12 @@ export default function createPremultipliedPixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_001
-     * @tc.name      : createPremultipliedPixelMap_callback_001
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_callback_001
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_001
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPremultipliedPixelMap_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_callback_001';
@@ -116,12 +116,12 @@ export default function createPremultipliedPixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_002
-     * @tc.name      : createPremultipliedPixelMap_callback_002
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_callback_002
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_002
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPremultipliedPixelMap_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_callback_002';
@@ -142,12 +142,12 @@ export default function createPremultipliedPixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_003  //TODO  能修改optsForUnpre 里的editable 但是optsForPre editable  不能修改 （应该都不能修改
-     * @tc.name      : createPremultipliedPixelMap_callback_003
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_callback_003
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_003  //TODO  能修改optsForUnpre 里的editable 但是optsForPre editable  不能修改 （应该都不能修改
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createPremultipliedPixelMap_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_callback_003';
@@ -168,12 +168,12 @@ export default function createPremultipliedPixelMapTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_004 //TODO 错误码error而不是error.code
-     * @tc.name      : createPremultipliedPixelMap_callback_004
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_callback_004
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_004 //TODO 错误码error而不是error.code
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createPremultipliedPixelMap_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_callback_004';
@@ -194,12 +194,12 @@ export default function createPremultipliedPixelMapTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_005
-     * @tc.name      : createPremultipliedPixelMap_callback_005
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_callback_005
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_005
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPremultipliedPixelMap_callback_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_callback_005';
@@ -220,12 +220,12 @@ export default function createPremultipliedPixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_006
-     * @tc.name      : createPremultipliedPixelMap_promise_001
-     * @tc.desc      : createPremultipliedPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_promise_001
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_006
+     * @tc.desc   createPremultipliedPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPremultipliedPixelMap_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_promise_001';
@@ -246,12 +246,12 @@ export default function createPremultipliedPixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_007 //TODO 在callback返回中 异常会中断 但是在promise中会走错误断言
-     * @tc.name      : createPremultipliedPixelMap_promise_002
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_promise_002
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_007 //TODO 在callback返回中 异常会中断 但是在promise中会走错误断言
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     /*it('createPremultipliedPixelMap_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_promise_002';
@@ -272,12 +272,12 @@ export default function createPremultipliedPixelMapTest() {
     })*/
 
     /**
-     * @tc.number    : IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_008
-     * @tc.name      : createPremultipliedPixelMap_promise_003
-     * @tc.desc      : getAssets
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createPremultipliedPixelMap_promise_003
+     * @tc.number IMAGE_CREATE_PREMULTIPLIED_PIXEL_MAP_008
+     * @tc.desc   getAssets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPremultipliedPixelMap_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPremultipliedPixelMap_promise_003';

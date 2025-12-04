@@ -22,6 +22,12 @@ namespace NativeModule {
 napi_value CreateNodeArkUIPostAsyncUITask(napi_env env, napi_callback_info info);
 napi_value CreateNodeArkUIPostUITask(napi_env env, napi_callback_info info);
 napi_value CreateNodeArkUIPostUITaskAndWait(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostAsyncUITaskResultValueS(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostUITaskResultValueS(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostUITaskAndWaitResultValueS(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostAsyncUITaskResultValueF(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostUITaskResultValueF(napi_env env, napi_callback_info info);
+napi_value CreateNodeArkUIPostUITaskAndWaitResultValueF(napi_env env, napi_callback_info info);
 napi_value CreateNodeTreeOnUIThread(napi_env env, napi_callback_info info);
 napi_value DisposeNodeTree(napi_env env, napi_callback_info info);
 } // namespace NativeModule

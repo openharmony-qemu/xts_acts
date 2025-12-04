@@ -57,12 +57,14 @@ export default function GridIrregular1Jsunit() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
-    * @tc.name  : GridIrregular11Jsunit_0001
-    * @tc.desc  : irregularIndexes: [1], items with index 1 are custom dimensions
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   GridIrregular1Jsunit_0001
+     * @tc.number SUB_ACE_TS_COMPONENT_SR000IFDKV_0001
+     * @tc.desc   irregularIndexes: [1], items with index 1 are custom dimensions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GridIrregular1Jsunit_0001',  Level.LEVEL0, async (done: Function) => {
       console.info('[GridIrregular1Jsunit_0000] START');
       let GridItem1: RectValue = CommonFunc.getComponentRect('GridIrr1');

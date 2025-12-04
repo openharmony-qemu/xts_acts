@@ -65,12 +65,14 @@ export default function getGridItemRect6() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect6_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the margin of gridItem0 to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect6_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect6_0100
+     * @tc.desc   set index to 0,set the margin of gridItem0 to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect6_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect6_0100] START');
@@ -125,12 +127,14 @@ export default function getGridItemRect6() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect6_0200
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the Visibility of gridItem0 to Visibility.Visible
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect6_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect6_0200
+     * @tc.desc   set index to 0,set the Visibility of gridItem0 to Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect6_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect6_0200] START');
@@ -189,12 +193,14 @@ export default function getGridItemRect6() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect6_0300
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the Visibility of gridItem0 to Visibility.Hidden
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect6_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect6_0300
+     * @tc.desc   set index to 0,set the Visibility of gridItem0 to Visibility.Hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect6_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect6_0300] START');
@@ -249,12 +255,14 @@ export default function getGridItemRect6() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getGridItemRect6_0400
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 0,set the Visibility of gridItem0 to Visibility.None
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getGridItemRect6_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_getGridItemRect6_0400
+     * @tc.desc   set index to 0,set the Visibility of gridItem0 to Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getGridItemRect6_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getGridItemRect6_0400] START');

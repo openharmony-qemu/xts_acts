@@ -26,78 +26,78 @@ export default function customComponentBorderRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0100
-     * @tc.name       : testCustomComponentBorderRadius001
-     * @tc.desc       : testing borderRadius for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderRadius001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0100
+     * @tc.desc   testing borderRadius for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0200
-     * @tc.name       : testCustomComponentBorderRadius002
-     * @tc.desc       : testing borderRadius for customComponent with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderRadius002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0200
+     * @tc.desc   testing borderRadius for customComponent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0300
-     * @tc.name       : testCustomComponentBorderRadius003
-     * @tc.desc       : testing borderRadius for customComponent with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderRadius003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0300
+     * @tc.desc   testing borderRadius for customComponent with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0400
-     * @tc.name       : testCustomComponentBorderRadius004
-     * @tc.desc       : testing borderRadius for customComponent with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+    /**
+     * @tc.name   testCustomComponentBorderRadius004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0400
+     * @tc.desc   testing borderRadius for customComponent with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0500
-     * @tc.name       : testCustomComponentBorderRadius005
-     * @tc.desc       : testing borderRadius for customComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCustomComponentBorderRadius005
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0500
+     * @tc.desc   testing borderRadius for customComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0600
-     * @tc.name       : testCustomComponentBorderRadius006
-     * @tc.desc       : testing borderRadius for customComponent with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level2
+    /**
+     * @tc.name   testCustomComponentBorderRadius006
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_BORDERRADIUS_0600
+     * @tc.desc   testing borderRadius for customComponent with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentBorderRadius006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentBorderRadius006()).assertEqual(0)

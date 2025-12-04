@@ -43,6 +43,14 @@ export default function TextPickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextPickerJsunit_0100
+     * @tc.number TextPickerJsunit_0100
+     * @tc.desc   TextPickerJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerJsunit_0100', Level.LEVEL1, async (done: Function) => {
       // Get the information of TextPicker component
       console.info('[TextPickerJsunit_0100] START');
@@ -69,6 +77,14 @@ export default function TextPickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextPickerJsunit_0200
+     * @tc.number TextPickerJsunit_0200
+     * @tc.desc   TextPickerJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerJsunit_0200', Level.LEVEL1, async (done: Function) => {
       // Modify the attribute of TextPicker component
       console.info('[TextPickerJsunit_0200] START');
@@ -98,6 +114,14 @@ export default function TextPickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextPickerJsunit_0300
+     * @tc.number TextPickerJsunit_0300
+     * @tc.desc   TextPickerJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerJsunit_0300', Level.LEVEL1, async (done: Function) => {
       // Verify the functions of TextPicker component
       await CommonFunc.sleep(500);
@@ -120,6 +144,14 @@ export default function TextPickerJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   TextPickerJsunit_0400
+     * @tc.number TextPickerJsunit_0400
+     * @tc.desc   TextPickerJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextPickerJsunit_0400', Level.LEVEL1, async (done: Function) => {
       // Illegal modification of properties of TextPicker component
       console.info('[TextPickerJsunit_0400] START');

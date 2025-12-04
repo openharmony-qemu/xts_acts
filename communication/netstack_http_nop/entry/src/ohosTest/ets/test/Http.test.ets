@@ -55,7 +55,6 @@ export default function httpTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100
      * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Promise_100
      * @tc.desc   Using the on method without permission
@@ -89,7 +88,6 @@ export default function httpTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200
      * @tc.number SUB_Communication_NetStack_Http_RequestInStream_HttpRequestOptions_Callback_200
      * @tc.desc   Using the on method without permission
@@ -124,7 +122,6 @@ export default function httpTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_Communication_NetStack_Http_RequestInStream_Callback_300
      * @tc.number SUB_Communication_NetStack_Http_RequestInStream_Callback_300
      * @tc.desc   Using the on method without permission
@@ -154,7 +151,6 @@ export default function httpTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   SUB_Communication_NetStack_Http_Request_Callback_400
      * @tc.number SUB_Communication_NetStack_Http_Request_Callback_400
      * @tc.desc   Using the on method without permission
@@ -185,7 +181,6 @@ export default function httpTest() {
 
 
       /**
-       * @generated.time 2025-11-09 20:49:46
        * @tc.name   SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500
        * @tc.number SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Callback_500
        * @tc.desc   Using the on method without permission
@@ -220,7 +215,6 @@ export default function httpTest() {
       });
 
       /**
-       * @generated.time 2025-11-09 20:49:46
        * @tc.name   SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600
        * @tc.number SUB_Communication_NetStack_Http_Request_HttpRequestOptions_Promise_600
        * @tc.desc   Using the on method without permission

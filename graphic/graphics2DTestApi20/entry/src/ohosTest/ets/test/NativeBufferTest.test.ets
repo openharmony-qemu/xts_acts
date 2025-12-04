@@ -33,12 +33,12 @@ const success = 0;
 export default function NativeBufferTest() {
   describe('NativeBufferTest', () => {
     /**
-     * @tc.number  : SUB_OH_NativeBufferEBUFULL_0100
-     * @tc.name    : SUB_OH_NativeBufferEBUFULL_0100
-     * @tc.desc    : Test testNativeBufferEBUFULL
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferEBUFULL_0100
+     * @tc.number SUB_OH_NativeBufferEBUFULL_0100
+     * @tc.desc   Test testNativeBufferEBUFULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferEBUFULL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -55,12 +55,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferSMPTECFULL_0200
-     * @tc.name    : SUB_OH_NativeBufferSMPTECFULL_0200
-     * @tc.desc    : Test testNativeBufferSMPTECFULL
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferSMPTECFULL_0200
+     * @tc.number SUB_OH_NativeBufferSMPTECFULL_0200
+     * @tc.desc   Test testNativeBufferSMPTECFULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferSMPTECFULL_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -77,12 +77,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferEBULIMIT_0300
-     * @tc.name    : SUB_OH_NativeBufferEBULIMIT_0300
-     * @tc.desc    : Test testNativeBufferEBULIMIT
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferEBULIMIT_0300
+     * @tc.number SUB_OH_NativeBufferEBULIMIT_0300
+     * @tc.desc   Test testNativeBufferEBULIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferEBULIMIT_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -99,12 +99,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferSMPTECLIMIT_0400
-     * @tc.name    : SUB_OH_NativeBufferSMPTECLIMIT_0400
-     * @tc.desc    : Test testNativeBufferSMPTECLIMIT
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferSMPTECLIMIT_0400
+     * @tc.number SUB_OH_NativeBufferSMPTECLIMIT_0400
+     * @tc.desc   Test testNativeBufferSMPTECLIMIT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferSMPTECLIMIT_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -121,12 +121,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferADOBERGBFULL_0500
-     * @tc.name    : SUB_OH_NativeBufferADOBERGBFULL_0500
-     * @tc.desc    : Test testNativeBufferADOBERGBFULL
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferADOBERGBFULL_0500
+     * @tc.number SUB_OH_NativeBufferADOBERGBFULL_0500
+     * @tc.desc   Test testNativeBufferADOBERGBFULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferADOBERGBFULL_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -143,12 +143,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeLINEARSRGB_0600
-     * @tc.name    : SUB_OH_NativeLINEARSRGB_0600
-     * @tc.desc    : Test testNativeLINEARSRGB
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeLINEARSRGB_0600
+     * @tc.number SUB_OH_NativeLINEARSRGB_0600
+     * @tc.desc   Test testNativeLINEARSRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeLINEARSRGB_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -165,12 +165,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferLINEARBT709_0700
-     * @tc.name    : SUB_OH_NativeBufferLINEARBT709_0700
-     * @tc.desc    : Test testNativeBufferLINEARBT709
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferLINEARBT709_0700
+     * @tc.number SUB_OH_NativeBufferLINEARBT709_0700
+     * @tc.desc   Test testNativeBufferLINEARBT709
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferLINEARBT709_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -187,12 +187,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeLINEARP3_0800
-     * @tc.name    : SUB_OH_NativeLINEARP3_0800
-     * @tc.desc    : Test testNativeLINEARP3
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeLINEARP3_0800
+     * @tc.number SUB_OH_NativeLINEARP3_0800
+     * @tc.desc   Test testNativeLINEARP3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeLINEARP3_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -209,12 +209,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferLINEARBT2020_0900
-     * @tc.name    : SUB_OH_NativeBufferLINEARBT2020_0900
-     * @tc.desc    : Test testNativeBufferLINEARBT2020
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferLINEARBT2020_0900
+     * @tc.number SUB_OH_NativeBufferLINEARBT2020_0900
+     * @tc.desc   Test testNativeBufferLINEARBT2020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferLINEARBT2020_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -231,12 +231,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYSRGB_1000
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYSRGB_1000
-     * @tc.desc    : Test testNativeBufferDISPLAYSRGB
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYSRGB_1000
+     * @tc.number SUB_OH_NativeBufferDISPLAYSRGB_1000
+     * @tc.desc   Test testNativeBufferDISPLAYSRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYSRGB_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -253,12 +253,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYP3SRGB_1100
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYP3SRGB_1100
-     * @tc.desc    : Test testNativeBufferDISPLAYP3SRGB
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYP3SRGB_1100
+     * @tc.number SUB_OH_NativeBufferDISPLAYP3SRGB_1100
+     * @tc.desc   Test testNativeBufferDISPLAYP3SRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYP3SRGB_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -275,12 +275,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYP3HLG_1200
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYP3HLG_1200
-     * @tc.desc    : Test testNativeBufferDISPLAYP3HLG
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYP3HLG_1200
+     * @tc.number SUB_OH_NativeBufferDISPLAYP3HLG_1200
+     * @tc.desc   Test testNativeBufferDISPLAYP3HLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYP3HLG_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -297,12 +297,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYP3PQ_1300
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYP3PQ_1300
-     * @tc.desc    : Test testNativeBufferDISPLAYP3PQ
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYP3PQ_1300
+     * @tc.number SUB_OH_NativeBufferDISPLAYP3PQ_1300
+     * @tc.desc   Test testNativeBufferDISPLAYP3PQ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYP3PQ_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -319,12 +319,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400
-     * @tc.desc    : Test testNativeBufferDISPLAYBT2020SRGB
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400
+     * @tc.number SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400
+     * @tc.desc   Test testNativeBufferDISPLAYBT2020SRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYBT2020SRGB_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -341,12 +341,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYBT2020HLG_1500
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYBT2020HLG_1500
-     * @tc.desc    : Test testNativeBufferDISPLAYBT2020HLG
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYBT2020HLG_1500
+     * @tc.number SUB_OH_NativeBufferDISPLAYBT2020HLG_1500
+     * @tc.desc   Test testNativeBufferDISPLAYBT2020HLG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYBT2020HLG_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -363,12 +363,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBufferDISPLAYBT2020PQ_1600
-     * @tc.name    : SUB_OH_NativeBufferDISPLAYBT2020PQ_1600
-     * @tc.desc    : Test testNativeBufferDISPLAYBT2020PQ
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBufferDISPLAYBT2020PQ_1600
+     * @tc.number SUB_OH_NativeBufferDISPLAYBT2020PQ_1600
+     * @tc.desc   Test testNativeBufferDISPLAYBT2020PQ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBufferDISPLAYBT2020PQ_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -385,12 +385,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_ColorX_0100
-     * @tc.name    : SUB_OH_NativeBuffer_ColorX_0100
-     * @tc.desc    : Test ColorX
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_ColorX_0100
+     * @tc.number SUB_OH_NativeBuffer_ColorX_0100
+     * @tc.desc   Test ColorX
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_ColorX_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -407,12 +407,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_ColorY_0200
-     * @tc.name    : SUB_OH_NativeBuffer_ColorY_0200
-     * @tc.desc    : Test ColorY
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_ColorY_0200
+     * @tc.number SUB_OH_NativeBuffer_ColorY_0200
+     * @tc.desc   Test ColorY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_ColorY_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -429,12 +429,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086Red_0300
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086Red_0300
-     * @tc.desc    : Test Smpte2086Red
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086Red_0300
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086Red_0300
+     * @tc.desc   Test Smpte2086Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Smpte2086Red_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -451,12 +451,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086Green_0400
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086Green_0400
-     * @tc.desc    : Test Smpte2086Green
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086Green_0400
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086Green_0400
+     * @tc.desc   Test Smpte2086Green
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_Smpte2086Green_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -473,12 +473,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086Blue_0500
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086Blue_0500
-     * @tc.desc    : Test Smpte2086Blue
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086Blue_0500
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086Blue_0500
+     * @tc.desc   Test Smpte2086Blue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Smpte2086Blue_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -495,12 +495,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600
-     * @tc.desc    : Test Smpte2086WhitePoint
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600
+     * @tc.desc   Test Smpte2086WhitePoint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeBuffer_Smpte2086WhitePoint_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -517,12 +517,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086MaxLum_0700
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086MaxLum_0700
-     * @tc.desc    : Test Smpte2086MaxLum
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086MaxLum_0700
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086MaxLum_0700
+     * @tc.desc   Test Smpte2086MaxLum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Smpte2086MaxLum_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -539,12 +539,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086MinLum_0800
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086MinLum_0800
-     * @tc.desc    : Test Smpte2086MinLum
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086MinLum_0800
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086MinLum_0800
+     * @tc.desc   Test Smpte2086MinLum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Smpte2086MinLum_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -561,12 +561,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900
-     * @tc.name    : SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900
-     * @tc.desc    : Test Cta861MaxContentLightLevel
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900
+     * @tc.number SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900
+     * @tc.desc   Test Cta861MaxContentLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -583,12 +583,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000
-     * @tc.name    : SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000
-     * @tc.desc    : Test Cta861MaxFrameAverageLightLevel
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000
+     * @tc.number SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000
+     * @tc.desc   Test Cta861MaxFrameAverageLightLevel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Cta861_maxContentLightLevel_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -605,12 +605,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Smpte2086_1100
-     * @tc.name    : SUB_OH_NativeBuffer_Smpte2086_1100
-     * @tc.desc    : Test smpte2086
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Smpte2086_1100
+     * @tc.number SUB_OH_NativeBuffer_Smpte2086_1100
+     * @tc.desc   Test smpte2086
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Smpte2086_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -627,12 +627,12 @@ export default function NativeBufferTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeBuffer_Cta861_1200
-     * @tc.name    : SUB_OH_NativeBuffer_Cta861_1200
-     * @tc.desc    : Test cta861
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeBuffer_Cta861_1200
+     * @tc.number SUB_OH_NativeBuffer_Cta861_1200
+     * @tc.desc   Test cta861
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_NativeBuffer_Cta861_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

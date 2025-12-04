@@ -42,14 +42,15 @@ export default function RelativeGuideLine2() {
       console.info("RelativeGuideLine2 after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0040
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine2_001
+     * @tc.number RelativeGuideLine2_001
+     * @tc.desc   RelativeGuideLine2_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine2_001', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine2_001] START');
 
@@ -65,14 +66,15 @@ export default function RelativeGuideLine2() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0050
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine2_002
+     * @tc.number RelativeGuideLine2_002
+     * @tc.desc   RelativeGuideLine2_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine2_002', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine2_002] START');
       await CommonFunc.sleep(1000);
@@ -92,14 +94,15 @@ export default function RelativeGuideLine2() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0060
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine2_003
+     * @tc.number RelativeGuideLine2_003
+     * @tc.desc   RelativeGuideLine2_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine2_003', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine2_003] START');
       await CommonFunc.sleep(1000);
@@ -122,14 +125,15 @@ export default function RelativeGuideLine2() {
       done();
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_RELATIVECONTAINER_COLLABORATION_0140
-     * @tc.desc      direction and position test
-     * @tc.level     Level 3
-     * @tc.type
-    * @tc.size
-     */
 
+    /**
+     * @tc.name   RelativeGuideLine2_004
+     * @tc.number RelativeGuideLine2_004
+     * @tc.desc   RelativeGuideLine2_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('RelativeGuideLine2_004', Level.LEVEL3, async (done: Function) => {
       console.info('[RelativeGuideLine2_004] START');
       await CommonFunc.sleep(1000);

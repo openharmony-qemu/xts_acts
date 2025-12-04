@@ -28,13 +28,13 @@ export default function gestureTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LONG_PRESS_GESTURE001
-     * @tc.name       : testLongPressGesture001
-     * @tc.desc       : testing long Press 
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testLongPressGesture001
+     * @tc.number SUB_ARKUI_CAPI_LONG_PRESS_GESTURE001
+     * @tc.desc   testing long Press
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testLongPressGesture001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'LongPressGestureTest';
@@ -48,13 +48,13 @@ export default function gestureTest() {
       expect(Utils.getComponentInfoByKey('longPressID').$attrs.backgroundColor).assertEqual('#FF00FF00')
       done();
     });
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_Axis_Event_GESTURE001
-     * @tc.name       : testAxisGestureTest001
-     * @tc.desc       : test the axis event data when mouse scroll
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testAxisGestureTest001
+     * @tc.number SUB_ARKUI_CAPI_Axis_Event_GESTURE001
+     * @tc.desc   test the axis event data when mouse scroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAxisGestureTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'AxisGestureTest';
@@ -96,13 +96,13 @@ export default function gestureTest() {
       expect(router[20] <= 0).assertTrue();
       done();
     });
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_SWIPE_GESTURE001
-     * @tc.name       : testSwipeGesture001
-     * @tc.desc       : testing swipe guesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testSwipeGesture001
+     * @tc.number SUB_ARKUI_CAPI_SWIPE_GESTURE001
+     * @tc.desc   testing swipe guesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSwipeGesture001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'SwipeGestureTest';
@@ -118,13 +118,13 @@ export default function gestureTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PAN_GESTURE001
-     * @tc.name       : testPanGesture001
-     * @tc.desc       : testing pan guesture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testPanGesture001
+     * @tc.number SUB_ARKUI_CAPI_PAN_GESTURE001
+     * @tc.desc   testing pan guesture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPanGesture001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'PanGestureTest';
@@ -140,14 +140,14 @@ export default function gestureTest() {
       done();
     });
 
-  /*
-  * @tc.number     : SUB_ARKUI_CAPI_PINCH_001
-  * @tc.name       : test pinch 001
-  * @tc.desc       : test pinch
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+  /**
+   * @tc.name   testPinchGesture001
+   * @tc.number SUB_ARKUI_CAPI_PINCH_001
+   * @tc.desc   test pinch
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('testPinchGesture001', Level.LEVEL1, async (done: Function) => {
     let PAGE_TAG = 'PinchGestureTest';
     await Utils.pushPage(`gesture/${PAGE_TAG}`);    
@@ -160,14 +160,14 @@ export default function gestureTest() {
     done();
   })
 
-  /*
-  * @tc.number     : SUB_ARKUI_CAPI_ROTATE_001
-  * @tc.name       : test rotate 001
-  * @tc.desc       : test rotate
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+  /**
+   * @tc.name   testRotateGesture001
+   * @tc.number SUB_ARKUI_CAPI_ROTATE_001
+   * @tc.desc   test rotate
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('testRotateGesture001', Level.LEVEL1, async (done: Function) => {
     let PAGE_TAG = 'RotateGestureTest';
     await Utils.pushPage(`gesture/${PAGE_TAG}`);    
@@ -189,14 +189,14 @@ export default function gestureTest() {
     done();
   })
 
-  /*
-  * @tc.number     : SUB_ARKUI_CAPI_INTERRUPT_001
-  * @tc.name       : test interrupt 001
-  * @tc.desc       : test interrupt
-  * @tc.size       : MediumTest
-  * @tc.type       : Function
-  * @tc.level      : Level 1
-  */
+  /**
+   * @tc.name   testInterruptGesture001
+   * @tc.number SUB_ARKUI_CAPI_INTERRUPT_001
+   * @tc.desc   test interrupt
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
   it('testInterruptGesture001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'InterruptGestureTest';
       await Utils.pushPage(`gesture/${PAGE_TAG}`);

@@ -41,12 +41,12 @@ export default function FontDescriptorTest() {
       done();
     });
     /**
+     * @tc.name   FontDescriptorTest_0100
      * @tc.number FontDescriptor
-     * @tc.name FontDescriptorTest_0100
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('FontDescriptorTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('FontDescriptorTest_0100 START');
