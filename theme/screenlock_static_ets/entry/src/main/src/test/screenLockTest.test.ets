@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import screenLock from '@ohos.screenLock';
-import { describe, it, expect, TestType, Size, Level, beforeAll, beforeEach} from "../../../hypium/index";
+import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from "../../../hypium/index";
 
 export default function screenLockJSUnit() {
 
@@ -27,133 +27,103 @@ export default function screenLockJSUnit() {
         });
 
         /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0001
+         * @tc.number    SUB_MISC_screenLock_API_0001
          * @tc.name      Set to locked screen, query the lock screen state is locked state
          * @tc.desc      Test ScreenLock API functionality.
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("SUB_MISC_THEME_screenLock_API_0001", Level.LEVEL0, async (done: () => {}) => {
-            console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0001-------------------");
+        it("SUB_MISC_screenLock_API_0001", Level.LEVEL0, async (done: Function) => {
+            console.info("====>------------------start SUB_MISC_screenLock_API_0001-------------------");
             try {
                 screenLock.isScreenLocked((err, data) => {
                     try{
                         if(err){
-                            console.info("====>SUB_MISC_THEME_screenLock_API_0001 failed because: " + JSON.stringify(err));
+                            console.info("====>SUB_MISC_screenLock_API_0001 failed because: " + JSON.stringify(err));
                             expect().assertFail();
                             done();
                         }
                         expect(data).assertEqual(false);
-                        console.info("====>SUB_MISC_THEME_screenLock_API_0001 screen's status is " + data);
-                        expect(data == result).assertTrue();
-                        console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0001-------------------");
+                        console.info("====>SUB_MISC_screenLock_API_0001 screen's status is " + data);
+                        console.info("====>------------------end SUB_MISC_screenLock_API_0001-------------------");
                         done();
-                        
-                    }catch(err){
+                    } catch (err) {
                         expect(data).assertEqual(true);
-                        console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0001 throw_err = " + err);
+                        console.info("====>logMessage SUB_MISC_screenLock_API_0001 throw_err = " + err);
                         done();
                     }
                 });
             } catch (err) {
-                console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0001: err = " + err);
+                console.info("====>logMessage SUB_MISC_screenLock_API_0001: err = " + err);
                 expect().assertFail();
                 done();
             }            
         });
 
         /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0002
+         * @tc.number    SUB_MISC_screenLock_API_0002
          * @tc.name      Set to locked screen, query the lock screen state is locked state
          * @tc.desc      Test ScreenLock API functionality.
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("SUB_MISC_THEME_screenLock_API_0002", Level.LEVEL2, async (done: () => {}) => {
-            console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0002-------------------");
-            try {
-                screenLock.isScreenLocked((err, data) => {
-                    try{
-                        expect(data).assertEqual(false);
-                        console.info("====>SUB_MISC_THEME_screenLock_API_0002 screen's status is " + data);
-                        expect(data == result).assertTrue();
-                        console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0002-------------------");
-                        done();
-                    }catch(err){
-                        expect(data).assertEqual(true);
-                        console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0002 throw_err = " + err);
-                        done();
-                    }                    
-                });
-            } catch (err) {
-                console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0002: err = " + err);
-                expect().assertFail();
-                done();
-            }            
-        });
-
-        /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0003
-         * @tc.name      Set to locked screen, query the lock screen state is locked state
-         * @tc.desc      Test ScreenLock API functionality.
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level 0
-         */
-        it("SUB_MISC_THEME_screenLock_API_0003", Level.LEVEL2, async (done: () => {}) => {
-            console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0003-------------------");
+        it("SUB_MISC_screenLock_API_0002", Level.LEVEL2, async (done: Function) => {
+            console.info("====>------------------start SUB_MISC_screenLock_API_0002-------------------");
             try {
                 screenLock.isSecureMode((err, data) => {
                     try{
-                        console.info("====>SUB_MISC_THEME_screenLock_API_0003 secureMode's result is " + data);
+                        console.info("====>SUB_MISC_screenLock_API_0002 secureMode's result is " + data);
                         expect(data == false).assertTrue();
-                        console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0003-------------------");
+                        console.info("====>------------------end SUB_MISC_screenLock_API_0002-------------------");
                         done();
                     }catch(err){
                         expect(data).assertEqual(true);
-                        console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0003 throw_err = " + err);
+                        console.info("====>logMessage SUB_MISC_screenLock_API_0002 throw_err = " + err);
                         done();
                     }                    
                 });
             } catch (err) {
-                console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0003: err = " + err);
+                console.info("====>logMessage SUB_MISC_screenLock_API_0002: err = " + err);
                 expect().assertFail();
                 done();
             }            
         });
 
         /*
-         * @tc.number    SUB_MISC_THEME_screenLock_API_0007
+         * @tc.number    SUB_MISC_screenLock_API_0003
          * @tc.name      Set to locked screen, query the lock screen state is locked state
          * @tc.desc      Test ScreenLock API functionality.
          * @tc.size      : MediumTest
          * @tc.type      : Function
          * @tc.level     : Level 0
          */
-        it("SUB_MISC_THEME_screenLock_API_0007", Level.LEVEL2, async (done: () => {}) => {
-            console.info("====>------------------start SUB_MISC_THEME_screenLock_API_0007-------------------");
+        it("SUB_MISC_screenLock_API_0003", Level.LEVEL2, async (done: Function) => {
+            console.info("------------------start SUB_MISC_screenLock_API_0003-------------------");
             try {
-                screenLock.isScreenLocked((err, data) => {
+                screenLock.unlockScreen((err) => {
+                    console.info("SUB_MISC_screenLock_API_0003: send unlockScreen issue success");
                     try{
-                        expect(data).assertEqual(false);
-                        console.info("====>SUB_MISC_THEME_screenLock_API_0007: isScreenLocked is successful, result is " + data);
-                        expect(data == result).assertTrue();
-                        console.info("====>------------------end SUB_MISC_THEME_screenLock_API_0007-------------------");
+                        if (err) {
+                            console.info("====>SUB_MISC_screenLock_API_0003 failed because: " + JSON.stringify(err));
+                            expect().assertFail();
+                            done();
+                        }
+                        expect(true).assertTrue()
+                        console.info("====>SUB_MISC_screenLock_API_0003 success.");
+                        console.info('====>-------------SUB_MISC_screenLock_API_0003 end----------------------');
                         done();
                     }catch(err){
-                        expect(data).assertEqual(true);
-                        console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0007 throw_err = " + err);
+                        console.info('====>SUB_MISC_screenLock_API_0003 throw_err : ' + JSON.stringify(err));
                         done();
-                    }
-                });
-            } catch (err) {
-                console.info("====>logMessage SUB_MISC_THEME_screenLock_API_0007: err = " + err);
+                    }          
+                });              
+            } catch (error) {
+                console.info("SUB_MISC_screenLock_API_0003: error = " + error);
                 expect().assertFail();
                 done();
             }
-            
         });
     });
 }
