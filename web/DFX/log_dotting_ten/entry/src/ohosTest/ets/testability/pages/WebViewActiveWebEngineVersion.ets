@@ -198,9 +198,7 @@ struct Index {
                     test_ndk.IsActiveWebEngineEvergreen_c();
                     let tmp_result = test_ndk.test_ndk_getActiveWebEngineVersion();
                     console.log('emitActiveWebEngineVersion008' + tmp_result);
-                    if(tmp_result == 1) {
-                      Utils.emitEvent(true, 20251221);
-                    } else if(tmp_result == 2) {
+                    if(tmp_result == 1 || tmp_result == 2) {
                       Utils.emitEvent(true, 20251221);
                     } else {
                       Utils.emitEvent(false, 20251221);
