@@ -2744,7 +2744,7 @@ HWTEST_F(OH_Drawing_TypographyTest, OHDrawingSetTextHighContrast001, Function | 
 /**
  * @tc.name   OHDrawingSetTextHighContrast002
  * @tc.number OHDrawingSetTextHighContrast002
- * @tc.desc   test for text high contrast mode（Invalid）
+ * @tc.desc   test for text high contrast mode(Invalid)
  * @tc.type   FUNCTION
  * @tc.size   MEDIUMTEST
  * @tc.level  LEVEL1
