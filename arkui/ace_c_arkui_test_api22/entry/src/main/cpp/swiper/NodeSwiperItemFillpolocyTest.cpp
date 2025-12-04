@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 #include "common/common.h"
-#include "../manager/plugin_manager.h"
+#include "manager/PluginManagerTest.h"
 #include <arkui/native_node.h>
 #include <arkui/native_type.h>
 #include <arkui/native_animate.h>
