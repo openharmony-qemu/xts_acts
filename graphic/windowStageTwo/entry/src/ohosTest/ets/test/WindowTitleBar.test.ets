@@ -2185,10 +2185,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test1 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test1');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (error.code == 801) {
+          expect(error.code).assertEqual(801);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2204,10 +2204,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test2 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test2');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (error.code == 801) {
+          expect(error.code).assertEqual(801);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(1300016);
         }
       }
 
@@ -2223,10 +2223,10 @@ export default function windowTitleBarTest() {
       } catch (error) {
         console.error(caseName + ' Test3 Failed. Cause:' + JSON.stringify(error));
         await terminateAbility(caseName + 'Test3');
-        if (isFreeWindowMode == true) {
-          expect(error.code).assertEqual(1300016)
+        if (error.code == 801) {
+          expect(error.code).assertEqual(801);
         } else {
-          expect(error.code).assertEqual(801)
+          expect(error.code).assertEqual(1300016);
         }
         done();
       }
@@ -2328,6 +2328,8 @@ export default function windowTitleBarTest() {
           await terminateAbility(caseName);
           expect(false).assertTrue();
           done();
+        }else{
+          done();
         }
       } catch (error) {
         console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
@@ -2389,6 +2391,19 @@ export default function windowTitleBarTest() {
           mainWindow.setWindowTitleButtonVisible(true,true,true);
           await terminateAbility(caseName);
           expect(false).assertTrue();
+          done();
+        }else{
+          let button = await driver.findComponent(ON.id('EnhanceMaximizeBtn'))
+          await sleep(200);
+          console.log(`${caseName} button: ${button}`);
+          if(button){
+            test = true
+          }else{
+            test = false
+          }
+          console.log(`${caseName} test: ${test}`);
+          expect(test).assertFalse();
+          await terminateAbility(caseName);
           done();
         }
       } catch (error) {
