@@ -964,7 +964,7 @@ export default function RegExpTest002() {
      */
     it('testRegMatch0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const str = "𠀋𠀌𠀍";
-      const regex = new RegExp('[\\u{20000}-\\u{2A6DF}]', 'g');
+      const regex = new RegExp('[\\u{20000}-\\u{2A6DF}]', 'gu');
       const result = str.match(regex);
       expect(result).assertDeepEquals(["𠀋", "𠀌", "𠀍"]);
     });

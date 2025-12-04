@@ -1905,7 +1905,7 @@ export default function RegExpTest004() {
     it('testRegSplit0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const regex = new RegExp('(a|b(c|d))');
       const result = "abcd".split(regex);
-      expect(result).assertDeepEquals(["", "a", undefined, "", "bc", "c", "d"]);
+      expect(result).assertDeepEquals(["", "a", "", "", "bc", "c", "d"]);
     });
 
     /**
@@ -2321,7 +2321,7 @@ export default function RegExpTest004() {
       const str: string = "foo";
       const regex = new RegExp('foo(?<bar>z)?');
       const result: string[] = str.split(regex);
-      expect(result).assertDeepEquals(["", undefined, ""]);
+      expect(result).assertDeepEquals(["", "", ""]);
     });
 
     /**
@@ -2351,7 +2351,7 @@ export default function RegExpTest004() {
       const str: string = "X-1-Y-2";
       const regex = new RegExp('(?<letter>[A-Z])?-(\d)');
       const result: string[] = str.split(regex);
-      expect(result).assertDeepEquals(["", "X", "1", "-", "Y", "2", ""]);
+      expect(result).assertDeepEquals(["X-1-Y-2"]);
     });
 
     /**
@@ -2531,7 +2531,7 @@ export default function RegExpTest004() {
       const str: string = "x1y";
       const regex = new RegExp('(?=(\\d)?)');
       const result: string[] = str.split(regex);
-      expect(result).assertDeepEquals(["x", "1", "1", undefined, "y"]);
+      expect(result).assertDeepEquals(["x", "1", "1", "", "y"]);
     });
 
     /**
@@ -2561,7 +2561,7 @@ export default function RegExpTest004() {
       const str: string = "abc";
       const regex = new RegExp('(^a)|(c$)');
       const result: string[] = str.split(regex);
-      expect(result).assertDeepEquals(["", "a", undefined, "b", undefined, "c", ""]);
+      expect(result).assertDeepEquals(["", "a", "", "b", "", "c", ""]);
     });
 
     /**
@@ -2696,7 +2696,7 @@ export default function RegExpTest004() {
       const str: string = "foo";
       const regex = new RegExp('(bar)?');
       const result: string[] = str.split(regex);
-      expect(result).assertDeepEquals(["f", undefined, "o", undefined, "o"]);
+      expect(result).assertDeepEquals(["f", "", "o", "", "o"]);
     });
 
     /**
