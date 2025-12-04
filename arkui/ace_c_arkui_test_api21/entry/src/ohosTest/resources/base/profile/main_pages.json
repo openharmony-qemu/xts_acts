@@ -12,6 +12,7 @@
     "MainAbility/pages/list/ListWillStartDraggingTest",
     "MainAbility/pages/list/ListDidStopDraggingTest",
     "MainAbility/pages/list/ListWillStartFlingTest",
-    "MainAbility/pages/list/ListDidStopFlingTest"
+    "MainAbility/pages/list/ListDidStopFlingTest",
+    "MainAbility/pages/imageSupportSvg2/ImageSupportSvg2Page"
   ]
 }
