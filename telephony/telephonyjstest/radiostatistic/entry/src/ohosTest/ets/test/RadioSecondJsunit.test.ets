@@ -365,7 +365,7 @@ export default function radioSecondJsunit() {
 
     /**
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0700
-     * @tc.name testGetSignalInformation_0700
+     * @tc.name Telephony_NetworkSearch_getSignalInformation_Async_0700
      * @tc.desc SlotId parameter input is 0, test getSignalInformation() api by callback.
      */
     it('Telephony_NetworkSearch_getSignalInformation_Async_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
@@ -386,6 +386,7 @@ export default function radioSecondJsunit() {
     /**
      * @tc.number Telephony_NetworkSearch_getSignalInformation_Async_0600
      * @tc.desc   SlotId parameter input is 0, test getSignalInformation() api by promise.
+     * @tc.name   Telephony_NetworkSearch_getSignalInformation_Async_0600
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
