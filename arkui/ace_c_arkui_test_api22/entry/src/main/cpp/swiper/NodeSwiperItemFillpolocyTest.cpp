@@ -35,7 +35,7 @@ static napi_value NodeSwiperItemFillpolocyTest(napi_env env, napi_callback_info 
     ASSERT_EQ(ret, SUCCESS);
     ret1 = nodeAPI->getAttribute(swiper, NODE_SWIPER_ITEMFILLPOLICY);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "hzq NODE_SWIPER_ITEMFILLPOLICY ", "%{public}d",
-                ret1->value[0].i32);
+        ret1->value[0].i32);
     ASSERT_EQ(nodeAPI->getAttribute(swiper, NODE_SWIPER_ITEMFILLPOLICY)->value[PARAM_0].i32,
         PARAM_2);
     NAPI_END;
