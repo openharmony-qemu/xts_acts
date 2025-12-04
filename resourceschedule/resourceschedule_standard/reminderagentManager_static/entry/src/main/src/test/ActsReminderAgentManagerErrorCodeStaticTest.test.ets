@@ -140,7 +140,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
 
     /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
-     * @tc.name:  SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
+     * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
      * @tc.desc   Test deleteExcludeDates function errorCode is 1700003
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
