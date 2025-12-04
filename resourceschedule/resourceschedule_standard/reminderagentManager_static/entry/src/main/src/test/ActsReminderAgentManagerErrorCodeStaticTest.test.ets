@@ -40,7 +40,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
     })
 
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_003
      * @tc.desc   test cancelReminder callback function errorCode is 1700003
@@ -75,7 +75,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_004
      * @tc.desc   Test cancelReminder promise function errorCode is 1700003
@@ -106,7 +106,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_005
      * @tc.desc   Test addExcludeDate function errorCode is 1700003
@@ -138,7 +138,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
      * @tc.name:  SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_006
      * @tc.desc   Test deleteExcludeDates function errorCode is 1700003
@@ -169,7 +169,7 @@ export default function ActsReminderAgentManagerErrorCodeStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_ERR_TASK_STATIC_XTS_007
      * @tc.desc   Test getExcludeDates function errorCode is 1700003
