@@ -57,7 +57,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterAll end');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_001
      * @tc.desc   Test that publishReminder/cancelReminder callback function normal call
@@ -163,7 +163,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_002
      * @tc.desc   Test that publishReminder/cancelReminder promise function normal call
@@ -222,7 +222,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_003
      * @tc.desc   Test publishReminder promise function and getValidReminders callback function normal call
@@ -280,7 +280,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_004
      * @tc.desc   Test publishReminder promise function and getValidReminders promise function normal call
@@ -336,7 +336,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_005
      * @tc.desc   Test publishReminder promise function and cancelAllReminders callback function
@@ -396,7 +396,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_006
      * @tc.desc   Test publishReminder promise function and cancelAllReminders promise function normal call
@@ -456,7 +456,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_007
      * @tc.desc   Test addNotificationSlot callback function normal call
@@ -491,7 +491,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_008
      * @tc.desc   Test addNotificationSlot promise function normal call
@@ -524,7 +524,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_009
      * @tc.desc   Test removeNotificationSlot callback function normal call
@@ -555,7 +555,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_010
      * @tc.desc   Test removeNotificationSlot promise function normal call
@@ -584,7 +584,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_011
      * @tc.desc   Test getAllValidReminders promise function normal call
@@ -632,7 +632,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_012
      * @tc.desc   Test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestTimer
@@ -675,7 +675,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_013
      * @tc.desc   Test publishReminder/cancelAllReminders promise function and parameter is ReminderRequestCalendar
@@ -770,7 +770,7 @@ export default function ActsReminderAgentManagerStaticTest() {
         }
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014
      * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
@@ -788,7 +788,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_015
      * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of ACTION_BUTTON_TYPE_CLOSE
@@ -806,7 +806,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_014 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016
      * @tc.desc   Test that the reminderAgentManager enum ActionButtonType of REMINDER_TYPE_TIMER
@@ -824,7 +824,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_016 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017
      * @tc.desc   Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_CALENDAR
@@ -842,7 +842,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_017 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018
      * @tc.desc   Test that the reminderAgentManager enum ReminderType of REMINDER_TYPE_ALARM
@@ -860,7 +860,7 @@ export default function ActsReminderAgentManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_018 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
      * @tc.name   SUB_RESOURCESCHEDULE_REMINDER_MANAGER_STATIC_XTS_019
      * @tc.desc   Test that the addExcludeDate/getExcludeDates/deleteExcludeDates promise
