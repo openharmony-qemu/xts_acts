@@ -91,5 +91,31 @@ export default function testWaterFlower() {
       done()
     })
 
+    /**
+     * @tc.name   testWaterFlower006
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0600
+     * @tc.desc   testing waterFlowSectionOption with not nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWaterFlower006', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testWaterFlower_006()).assertEqual(0)
+      done()
+    })
+
+    /**
+     * @tc.name   testWaterFlower007
+     * @tc.number SUB_ARKUI_CAPI_WaterFlower_0700
+     * @tc.desc   testing create for waterFlower with OH_ArkUI_WaterFlowSectionOption_GetMargin
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testWaterFlower007', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testWaterFlower_007()).assertEqual(0)
+      done()
+    })
+
   })
 }

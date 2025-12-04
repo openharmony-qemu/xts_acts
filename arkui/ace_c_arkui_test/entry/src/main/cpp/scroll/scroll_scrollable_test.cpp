@@ -69,4 +69,16 @@ static napi_value TestScrollScrollAble004(napi_env env, napi_callback_info info)
     }
     NAPI_END;
 }
+
+static napi_value TestScrollScrollAble005(napi_env env, napi_callback_info info)
+{
+    NAPI_START(scroll, ARKUI_NODE_SCROLL);
+    ArkUI_NumberValue value[] = {{.i32 = ARKUI_SCROLL_DIRECTION_FREE}};
+    ArkUI_AttributeItem value_item = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
+    auto ret = nodeAPI->setAttribute(scroll, NODE_SCROLL_SCROLL_DIRECTION, &value_item);
+    ASSERT_EQ(ret, SUCCESS);
+    ASSERT_EQ(nodeAPI->getAttribute(scroll, NODE_SCROLL_SCROLL_DIRECTION)->value[PARAM_0].i32,
+              ARKUI_SCROLL_DIRECTION_FREE);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

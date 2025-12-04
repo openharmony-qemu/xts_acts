@@ -2383,6 +2383,8 @@ export const testListSwipeOption007: () => number;
 
 export const testListChildMainSize006: () => number;
 
+export const testListChildMainSize007: () => number;
+
 export const testNodeUtils010: ()=> number;
 
 export const testNodeUtils020: ()=> number;
@@ -3200,6 +3202,8 @@ export const testScrollScrollAble002: () => number;
 export const testScrollScrollAble003: () => number;
 
 export const testScrollScrollAble004: () => number;
+
+export const testScrollScrollAble005: () => number;
 
 export const testScrollScrollBarColor001: () => number;
 
@@ -5652,6 +5656,8 @@ export const testWaterFlower_002: () => number;
 export const testWaterFlower_003: () => number;
 export const testWaterFlower_004: () => number;
 export const testWaterFlower_005: () => number;
+export const testWaterFlower_006: () => number;
+export const testWaterFlower_007: () => number;
 
 export const testLayoutDirection001: () => number;
 
