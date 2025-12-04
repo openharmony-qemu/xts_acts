@@ -18,24 +18,24 @@ import { UiComponent, UiDriver, Component, Driver, ON, BY, UiDirection, } from '
 import router from '@ohos.router';
 import CommonFunc from '../../MainAbility/common/Common';
 
-export default function convertPointError25() {
-  describe('ConvertPointError2', () => {
+export default function convertPoint() {
+  describe('ConvertPointTest', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FrameNodeNew/convertPointError25',
+        url: 'MainAbility/pages/frameNode/convertPoint',
       }
       try {
         router.clear();
         let pages = router.getState();
-        console.info('get ConvertPointError2 state pages: ' + JSON.stringify(pages));
-        if (!('convertPointError25' == pages.name)) {
-          console.info('get ConvertPointError2 state pages.name: ' + JSON.stringify(pages.name));
+        console.info('get ConvertPointTest state pages: ' + JSON.stringify(pages));
+        if (!('convertPoint' == pages.name)) {
+          console.info('get ConvertPointTest state pages.name: ' + JSON.stringify(pages.name));
           let result = await router.replace(options);
           await CommonFunc.sleep(2000);
-          console.info('push ConvertPointError2 success: ' + JSON.stringify(result));
+          console.info('push ConvertPointTest success: ' + JSON.stringify(result));
         }
       } catch (err) {
-        console.error('push ConvertPointError2 page error: ' + err);
+        console.error('push ConvertPointTest page error: ' + err);
         expect().assertFail();
       }
       done();
@@ -47,26 +47,33 @@ export default function convertPointError25() {
     });
 
     /**
-     * @tc.number    ConvertPointTest_0050
-     * @tc.name      ConvertPointTest_0050
+     * @tc.number    ConvertPointTest_0010
+     * @tc.name      convertPointTest
      * @tc.desc      api axisPinch
      * @tc.level:    Level 1
      * @tc.type :
      * @tc.size :
      */
-    it('convertPointError25', Level.LEVEL1, async (done: Function) => {
+    it('convertPointTest', Level.LEVEL1, async (done: Function) => {
       let driver:Driver = Driver.create();
       let button1: Component = await driver.findComponent(ON.id('button1'));
+      let button2: Component = await driver.findComponent(ON.id('button2'));
       await button1.click();
+      await CommonFunc.sleep(1000);
+      await button2.click();
       let strJson1 = getInspectorByKey('text1');
       let strJson2 = getInspectorByKey('text2');
       let obj1: ESObject = JSON.parse(strJson1);
       let obj2: ESObject = JSON.parse(strJson2);
-      console.info('[ConvertPointTest_0050] PreDrag: ' + JSON.stringify(obj1));
-      console.info('[ConvertPointTest_0050] PreDrag: ' + JSON.stringify(obj1.$attrs));
-      expect(obj1.$attrs.content).assertEqual('100025');
+      AppStorage.setOrCreate('text1', obj1.$attrs.content)
+      AppStorage.setOrCreate('text2', obj2.$attrs.content)
+      console.info('[ConvertPointTest_0010] PreDrag: ' + JSON.stringify(obj1));
+      console.info('[ConvertPointTest_0010] PreDrag: ' + JSON.stringify(obj1.$attrs));
+      console.info('[ConvertPointTest_0010] PreDrag: ' + JSON.stringify(obj2));
+      console.info('[ConvertPointTest_0010] PreDrag: ' + JSON.stringify(obj2.$attrs));
+      expect(AppStorage.get('text1')).assertEqual(AppStorage.get('text2'));
       await CommonFunc.sleep(1000);
-      console.info('[ConvertPointTest_0050] END');
+      console.info('[ConvertPointTest_0010] END');
       done();
     });
   })

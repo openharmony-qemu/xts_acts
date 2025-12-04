@@ -22,7 +22,7 @@ export default function convertPointError24() {
   describe('ConvertPointError1', () => {
     beforeEach(async (done: Function) => {
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/FrameNodeNew/convertPointError24',
+        url: 'MainAbility/pages/frameNode/convertPointError24',
       }
       try {
         router.clear();
@@ -48,7 +48,7 @@ export default function convertPointError24() {
 
     /**
      * @tc.number    ConvertPointTest_0040
-     * @tc.name      ConvertPointTest_0040
+     * @tc.name      convertPointError24
      * @tc.desc      api axisPinch
      * @tc.level:    Level 1
      * @tc.type :
@@ -62,9 +62,10 @@ export default function convertPointError24() {
       let strJson2 = getInspectorByKey('text2');
       let obj1: ESObject = JSON.parse(strJson1);
       let obj2: ESObject = JSON.parse(strJson2);
+      AppStorage.setOrCreate('text1', obj1.$attrs.content)
       console.info('[ConvertPointTest_0040] PreDrag: ' + JSON.stringify(obj1));
       console.info('[ConvertPointTest_0040] PreDrag: ' + JSON.stringify(obj1.$attrs));
-      expect(obj1.$attrs.content).assertEqual('100024');
+      expect(AppStorage.get('text1')).assertEqual('100024');
       await CommonFunc.sleep(1000);
       console.info('[ConvertPointTest_0040] END');
       done();
