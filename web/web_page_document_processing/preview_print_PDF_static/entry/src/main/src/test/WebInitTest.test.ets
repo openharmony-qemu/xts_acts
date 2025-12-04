@@ -15,7 +15,6 @@
 
 import { beforeAll, beforeEach, describe, it, TestType, Size, Level } from '../../../hypium/index';
 import Utils from '../../src/test/Util.test';
-import { sendEventByKey } from '@internal.full.global';
 import inspector from '@ohos.arkui.inspector';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';

@@ -14,7 +14,7 @@
  */
 import { ComponentInfo, RectInfo } from './Interfaces';
 import { Driver, ON, PointerMatrix, Component } from '@ohos.UiTest';
-import { getInspectorByKey } from '@internal.full.global';
+import inspector from '@ohos.arkui.inspector';
 import emitter from '@ohos.events.emitter';
 import { expect } from "../../../hypium/index";
 import { RecordData } from '@ohos.base';
@@ -133,8 +133,8 @@ export default class Utils {
   }
 
   static getComponentRect(key: string): RectInfo {
-    // let strJson: string = inspector.getInspectorByKey(key);
-    let strJson: string = getInspectorByKey(key);
+    let strJson: string = inspector.getInspectorByKey(key);
+    //let strJson: string = getInspectorByKey(key);
     let obj: ComponentInfo = JSON.parse<ComponentInfo>(strJson, Type.of(new ComponentInfo()))!;
     console.info('[getInspectorByKey] key is: ' + key);
     return Utils.getComponentRectByObj(obj);
