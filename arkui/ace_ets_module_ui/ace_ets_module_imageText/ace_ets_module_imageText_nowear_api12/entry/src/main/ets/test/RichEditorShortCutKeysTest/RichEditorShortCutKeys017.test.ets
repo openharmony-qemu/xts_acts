@@ -89,6 +89,8 @@ export default function RichEditorShortCutKeys017() {
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_U);
       await CommonFunc.sleep(500);
+      await rich.click();
+      await CommonFunc.sleep(500);
       let getSpans = await driver.findComponent(ON.id('getSpans'));
       await getSpans.click();
       await CommonFunc.sleep(500);
