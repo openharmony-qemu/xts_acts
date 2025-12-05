@@ -43,9 +43,9 @@ export default function blendColorErrorCodeTest() {
   describe('blendColorErrorCodeTest', () => {
     beforeAll(() => {
       console.info("blendColorErrorCodeTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api16.static", "EntryAbility")
+      
     });
     beforeEach(async () => {
       console.info("blendColorErrorCodeTest beforeEach start");

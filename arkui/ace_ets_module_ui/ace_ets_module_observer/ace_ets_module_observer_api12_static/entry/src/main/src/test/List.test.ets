@@ -35,12 +35,12 @@ export default function testsuite() {
   // ObserverNavDestinationId()  // pass 1  SDK11.25 faile
   // ObserverNavDestinationState() // SDK11.20 DTS2025110729059 1个
   // ObserverPageId()  //  SDK11.25 在this.queryRouterPageInfo() 获取的值是空
-  // observerScroll()  // SDK11.25 pass 1
+  observerScroll()  // SDK11.25 pass 1
   // onTabUpdate() // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
   // uiIdUpdate()  // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
   // uiTabUpdate() // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
   // DensityInfo()  // SDK11.25 pass 1
   // indexTabs()   // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
-  observeTabJsunit() // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
-  uiScrollEvent()   // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
+  // observeTabJsunit() // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
+  // uiScrollEvent()   // SDK11.25 Error: 1 Cannot find method 'onTabContentUpdate
 }

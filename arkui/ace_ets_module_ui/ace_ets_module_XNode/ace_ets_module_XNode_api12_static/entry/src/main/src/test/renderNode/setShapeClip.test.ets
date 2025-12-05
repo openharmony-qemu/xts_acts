@@ -25,9 +25,9 @@ export default function setShapeClipTest() {
   describe('setShapeClipTest', () => {
     beforeAll(() => {
       console.info("setShapeClipTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      
     });
     beforeEach(async () : Promise<void> => {
       console.info("setShapeClipTest beforeEach start");

@@ -26,9 +26,9 @@ export default function themePageTest() {
   describe('themePageTest', () => {
     beforeAll(() => {
       console.info("themePageTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.acts.arkui.theme.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

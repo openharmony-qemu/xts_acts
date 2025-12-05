@@ -34,9 +34,9 @@ export default function lazyForEachTest() {
   describe('lazyForEachTest', () => {
     beforeAll(() => {
       console.info("lazyForEachTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api15.static", "EntryAbility")
+      
     });
     beforeEach(async () => {
       console.info("lazyForEachTest beforeEach start");

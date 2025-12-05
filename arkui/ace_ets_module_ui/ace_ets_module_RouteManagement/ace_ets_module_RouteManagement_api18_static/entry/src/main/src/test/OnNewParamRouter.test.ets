@@ -41,9 +41,9 @@ export default function OnNewParamRouter() {
   describe('OnNewParamRouter', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnNewParamRouter beforeEach start");

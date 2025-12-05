@@ -35,9 +35,9 @@ export default function HideBackButtonPage() {
   describe('HideBackButtonPage', () => {
     beforeAll(() => {
       console.info("HideBackButtonPage beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.navigation15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("HideBackButtonPage beforeEach start");

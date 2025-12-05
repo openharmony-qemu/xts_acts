@@ -33,9 +33,9 @@ export default function APIPanGestureisisBeginTest() {
   describe('APIPanGestureisisBeginTest', () => {
     beforeAll(() => {
       console.info("APIPanGestureisisBeginTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("APIPanGestureisisBeginTest beforeEach start");

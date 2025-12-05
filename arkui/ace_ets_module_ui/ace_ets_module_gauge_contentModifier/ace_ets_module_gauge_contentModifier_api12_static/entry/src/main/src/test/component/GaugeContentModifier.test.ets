@@ -29,7 +29,7 @@ export default function GaugeContentModifier() {
       console.info("GaugeContentModifier beforeAll start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
       console.info("GaugeContentModifier beforeAll startAbility");
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -38,7 +38,7 @@ export default function ModifierTextStyleTest() {
     beforeAll(() => {
       console.info("ModifierTextStyleTest beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.picker.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

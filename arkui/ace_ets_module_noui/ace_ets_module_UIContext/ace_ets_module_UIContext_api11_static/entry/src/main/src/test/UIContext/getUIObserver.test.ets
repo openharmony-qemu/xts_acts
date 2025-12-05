@@ -31,7 +31,7 @@ export default function getUIObserver() {
     beforeAll(() => {
       console.info("getUIObserver beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.UIContext.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("getUIObserver beforeEach start");
