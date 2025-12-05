@@ -1102,7 +1102,7 @@ export default function AVMetadata() {
       await avMetadataExtractor!!.fetchFrameByTime(timeUs, queryOption, param).then((pixelMap: image.PixelMap | undefined) => {
         console.info('fetchFrameByTime success');
         let pixel_map = pixelMap;
-        expect(pixel_map).not().assertNull;
+        expect(pixel_map).not().assertNull();
         console.info(TAG, `fetchFrameByTime callback success video PixelMap}`);
       }).catch((error: Error) => {
         console.error(`fetchFrameByTime catchCallback, error message:${error.message}`);
