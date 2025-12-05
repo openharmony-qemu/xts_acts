@@ -31,19 +31,18 @@ export default function WebInitTest() {
       console.log('App start')
     });
 
-
     beforeEach(async () => {
       await Utils.msSleep(2000);
       console.info('webOnFirstContFour beforeEach start');
     })
 
     /*
-        * @tc.number     : SUB_WEB_WEBCUSTOMIZESCHEMES_0100
-        * @tc.name       : testWebcustomizeSchemesStatic0100
-        * @tc.desc       : test WebcustomizeSchemes
-        * @tc.size       : MediumTest
-        * @tc.type       : Function
-        * @tc.level      : Level 3
+        * @tc.number     SUB_WEB_WEBCUSTOMIZESCHEMES_0100
+        * @tc.name       customizeSchemesStatic0100
+        * @tc.desc       test WebcustomizeSchemes
+        * @tc.size       MediumTest
+        * @tc.type       Function
+        * @tc.level      Level 3
         */
     it('customizeSchemesStatic0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -55,13 +54,14 @@ export default function WebInitTest() {
       await Utils.msSleep(2000);
       done();
     })
+
     /*
-    * @tc.number     : SUB_WEB_WEBCUSTOMIZESCHEMES_0200
-    * @tc.name       : testWebcustomizeSchemesStatic0200
-    * @tc.desc       : test WebcustomizeSchemes
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    * @tc.number     SUB_WEB_WEBCUSTOMIZESCHEMES_0200
+    * @tc.name       customizeSchemesStatic0200
+    * @tc.desc       test WebcustomizeSchemes
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 3
     */
     it('customizeSchemesStatic0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -73,13 +73,14 @@ export default function WebInitTest() {
       await Utils.msSleep(2000);
       done();
     })
+
     /*
-    * @tc.number     : SUB_WEB_EMITONSWITCHNEXTPAGE_0100
-    * @tc.name       : testemitonSwitchNextPage
-    * @tc.desc       : test emitonSwitchNextPage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
+    * @tc.number     SUB_WEB_EMITONSWITCHNEXTPAGE_0100
+    * @tc.name       emitonSwitchNextPage
+    * @tc.desc       test emitonSwitchNextPage
+    * @tc.size       MediumTest
+    * @tc.type       Function
+    * @tc.level      Level 3
     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -90,6 +91,5 @@ export default function WebInitTest() {
         await Utils.msSleep(2000);
         done();
       })
-
   })
 }
