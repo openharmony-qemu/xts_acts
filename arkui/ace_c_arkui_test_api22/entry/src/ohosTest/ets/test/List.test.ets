@@ -25,6 +25,7 @@ import textLineHeightTest from "./textLineHeight/TextLineHeightTest.test";
 import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
 import scrollBarTest from "./scrollbarTest/scrollbarTest.test";
 import ShowCounterTest from "./showCounterTest/showCounterTest.test";
+import NodeSwiperItemFillpolocyTest from "./swiper/NodeSwiperItemFillpolocy.test"
 import finishAnimationTest from "./swiper/finishAnimationTest.test";
 
 export default function testsuite() {
@@ -41,5 +42,6 @@ export default function testsuite() {
   textAreaBarStateTest();
   scrollBarTest();
   ShowCounterTest();
+  NodeSwiperItemFillpolocyTest();
   finishAnimationTest();
 }
