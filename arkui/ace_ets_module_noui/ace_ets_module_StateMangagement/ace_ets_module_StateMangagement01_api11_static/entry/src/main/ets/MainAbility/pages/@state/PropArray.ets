@@ -41,7 +41,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -51,7 +51,7 @@ import common from '@ohos.app.ability.common';
 
 @Component
 struct Child_AD {
-  @Prop Array: Array<Number> | Array<boolean> | Boolean | Array<Resource> = [1.0]
+  @PropRef Array: Array<Number> | Array<boolean> | Boolean | Array<Resource> = [1.0]
 
 
   build() {
@@ -59,7 +59,7 @@ struct Child_AD {
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
         .fontSize(9).key('PropArray').height('5%')
 
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is ")
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id)??'')
         .fontSize(9).key('PropArrayNew').height('5%')
       Text("设置变量Array<Number>类型[1]-->[10]").height('5%')
       Button('change')

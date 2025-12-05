@@ -23,7 +23,7 @@ import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
 
-class EntryAbility extends UIAbility {
+export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }

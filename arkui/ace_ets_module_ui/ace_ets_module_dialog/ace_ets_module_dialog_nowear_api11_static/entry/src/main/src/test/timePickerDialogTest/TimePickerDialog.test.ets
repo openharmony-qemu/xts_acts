@@ -39,9 +39,7 @@ export default function TimePickerDialog() {
   describe('TimePickerDialog', () => {
     beforeAll(() => {
       console.info("TimePickerDialog beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     })
 
     beforeEach(async () => {

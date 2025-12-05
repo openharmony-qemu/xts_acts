@@ -78,12 +78,25 @@ export default class CommonFunc {
     } else if ( value === null ) {
       result = '[object Null]';
     } else {
+      result =  (value as Object).toString()
       if (value instanceof Array) {
         console.log('this.Array 是数组类型');
         result = '[object Array]';
       }else if(value instanceof Boolean){
         console.log('this.Array 是布尔类型');
         result = '[object Boolean]';
+      }else if(value instanceof Date){
+        console.log('this.Array 是日期');
+        result = '[object Date]';
+      }else if(value instanceof Int){
+        console.log('this.Array 是number');
+        result = '[object Number]';
+      }else if(value instanceof String){
+        console.log('this.Array String');
+        result = '[object String]';
+      }else if(value instanceof Object){
+        console.log('this.Array Object');
+        result = '[object Object]';
       }else{
         result = '';
       }

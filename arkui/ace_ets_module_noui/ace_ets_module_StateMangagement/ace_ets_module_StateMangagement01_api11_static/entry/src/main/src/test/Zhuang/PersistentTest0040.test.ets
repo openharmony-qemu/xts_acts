@@ -53,9 +53,7 @@ export default function PersistentTest0040() {
     beforeAll(() => {
       console.info("PersistentTest0040 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

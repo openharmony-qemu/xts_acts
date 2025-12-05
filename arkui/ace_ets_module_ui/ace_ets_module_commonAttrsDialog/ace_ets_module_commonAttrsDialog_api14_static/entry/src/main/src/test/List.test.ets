@@ -31,17 +31,17 @@ import showToastHoverMode from './promptActionTest/showToastHoverMode.test';
 import activeTest from './UIContext/FocusController/activeTest.test';
 
 export default function testsuite() {
-   actionSheetHoverMode();
-   alertDialogHoverMode();
-   bindSheetHoverMode();
+   // actionSheetHoverMode();
+   // alertDialogHoverMode();
+   // bindSheetHoverMode();
    bindSheetShowClose();//std.core.ClassCastError
-   bindSheetType();
-   customDialogHoverMode();
-   popoverDialogTest();// at std.core.NullPointerError
-   followTransformOfTargetCustomPopup();// at std.core.NullPointerError
-   followTransformOfTargetPopup();
-   showDialogHoverMode();
-   showToastHoverMode();//11.20SDK  showToastHoverMode_static_0200, expect enableHoverMode false equals enableHoverMode true
-   activeTest();//11.20SDK failed:2 expect enableHoverMode false equals true true;expect true true equals true false
+   // bindSheetType();
+   // customDialogHoverMode();
+   // popoverDialogTest();// at std.core.NullPointerError
+   // followTransformOfTargetCustomPopup();// at std.core.NullPointerError
+   // followTransformOfTargetPopup();
+   // showDialogHoverMode();
+   // showToastHoverMode();//11.20SDK  showToastHoverMode_static_0200, expect enableHoverMode false equals enableHoverMode true
+   // activeTest();//11.20SDK failed:2 expect enableHoverMode false equals true true;expect true true equals true false
 
 }

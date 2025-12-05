@@ -99,9 +99,7 @@ export default function swiperJsunit2() {
     beforeAll(() => {
       console.info("swiperJsunit2 beforeAll start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

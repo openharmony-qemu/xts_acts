@@ -47,9 +47,7 @@ export default function sliderInteractionModeTest() {
   describe('sliderInteractionModeTest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("sliderInteractionModeTest beforeEach start");

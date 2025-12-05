@@ -29,7 +29,6 @@ export default function CalendarPickerDialogShadowTest() {
     beforeAll(() => {
       console.info("CalendarPickerDialogShadowTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

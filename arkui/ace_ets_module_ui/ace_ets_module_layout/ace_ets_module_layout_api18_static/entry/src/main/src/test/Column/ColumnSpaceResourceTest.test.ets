@@ -54,9 +54,7 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function ColumnSpaceResourceTest() {
   describe('ColumnSpaceResourceTest', () => {
-    await UtilsTest.msSleep(4000)
     await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
     const uiContext = AppStorage.get<UIContext>('uiContext')!;
 
     beforeAll(() => {

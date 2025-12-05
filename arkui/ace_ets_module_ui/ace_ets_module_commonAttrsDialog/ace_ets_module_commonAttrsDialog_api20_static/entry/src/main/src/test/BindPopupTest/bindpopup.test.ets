@@ -27,9 +27,7 @@ export default function BindPopupTest() {
   describe('BindPopupTest', () => {
     beforeAll(() => {
       console.info("BindPopupTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {

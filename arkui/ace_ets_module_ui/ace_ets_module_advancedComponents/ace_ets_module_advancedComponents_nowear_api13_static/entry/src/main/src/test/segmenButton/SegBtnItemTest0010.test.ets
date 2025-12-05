@@ -28,9 +28,7 @@ export default function SegBtnItemTest0010() {
 
     beforeAll(() => {
       console.info("SegBtnItemTest0010 beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

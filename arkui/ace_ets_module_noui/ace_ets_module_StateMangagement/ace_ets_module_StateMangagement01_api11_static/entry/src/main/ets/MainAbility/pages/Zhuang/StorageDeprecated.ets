@@ -74,21 +74,21 @@ struct StorageDeprecated {
   @StorageLink('ADPersistPropsA') aPerA: string = ''
   @StorageLink('ADPersistPropsAb') aPerAb: string = ''
   @StorageLink('ADPersistentStorageA') aPerC: string = ''
-  aboutToAppear(){
-    try {
-      AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
-      AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
-      Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
-      Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
-
-
-      this.deprecatedKey = AppStorage.ref<string>('ADKey')
-      this.environmentKey = AppStorage.ref<string>('languageCode')
-
-    } catch (error: Error) {
-      console.log('error ' + error);
-    }
-  }
+  // aboutToAppear(){
+  //   try {
+  //     AppStorage.setOrCreate<string>('ADKey', 'HelloArkUI')
+  //     AppStorage.setOrCreate<string>('ADKey1', 'HelloArkUI')
+  //     Environment.envProps([{key: 'languageCode', defaultValue: 'en'}])
+  //     Environment.envProps([{key: 'languageCodeA', defaultValue: 'en'}])
+  //
+  //
+  //     this.deprecatedKey = AppStorage.ref<string>('ADKey')
+  //     this.environmentKey = AppStorage.ref<string>('languageCode')
+  //
+  //   } catch (error: Error) {
+  //     console.log('error ' + error);
+  //   }
+  // }
   build() {
     Column() {
       if (AppStorage.has('ADKey')) {

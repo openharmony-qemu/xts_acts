@@ -27,9 +27,7 @@ export default function pushNamedRoute6() {
   describe('pushNamedRoute6', () => {
     beforeAll(() => {
       console.info("pushNamedRoute6 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("pushNamedRoute6 beforeEach start");

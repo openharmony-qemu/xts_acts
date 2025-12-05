@@ -55,9 +55,7 @@ export default function provideParent2() {
     beforeAll(() => {
       console.info("provideParent2 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

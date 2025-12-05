@@ -13,40 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import router from '@ohos.router';
+import { Entry, Column, Component, Flex, FlexDirection, ItemAlign, FlexAlign, Text, Button, FontWeight, ButtonType, ClickEvent, Margin} from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-import { Hypium } from '../../../../../hypium';
-import testsuite from '../../../../src/test/List.test'
-
-import {
-  Entry,
-  Column,
-  Component,
-  Button,
-  ClickEvent,
-  Text,FlexDirection,ItemAlign,Divider,$r,$$,MenuItem,BlurStyleActivePolicy,AdaptiveColor,ThemeColorMode,MenuElement,
-  Row,AlertDialogParamWithButtons,FlexOptions,ColumnOptions,RowOptions,Flex,Builder,MenuItemOptions,ResourceStr,Menu,BackgroundBlurStyleOptions,BlurStyle,
-  Scroll,FontWeight,TextAlign,ForEach,ListItem,LocalizedBorderRadiuses,$$,SheetOptions,FlexAlign,CustomDialogController,TextInput,CustomDialogControllerOptions,
-  ButtonType,Scroller,Color,Rectangle,ActionSheetOptions,ControlSize,DialogAlignment,TextInputController,Margin
-} from '@ohos.arkui.component'
-import {
-  State,
-  Link,
-  Prop,
-  Observed,
-  ObjectLink,
-} from '@ohos.arkui.stateManagement'
+import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { AppStorage } from '@ohos.arkui.stateManagement';
+import common2D from '@ohos.graphics.displaySync'
+import common from '@ohos.app.ability.common';
 
 
 @Entry
 @Component
 struct Index {
-  aboutToAppear() {
-    console.info("start run testcase!!!!")
-    let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
-    let abilityDelegatorArguments = abilityDelegatorRegistry.getArguments()
-    console.info('start run testcase!!!')
-    Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+  aboutToAppear(){
+    try {
+      let router1 = this.getUIContext().getRouter();
+      AppStorage.setOrCreate<Router>('router', router1);
+    } catch (error: Error) {
+      console.log('error ' + error);
+    }
   }
 
   build() {

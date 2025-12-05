@@ -69,8 +69,8 @@ struct provideComponent13 {
 
 @Component
 struct provideComponent12 {
-  @Provide({allowOverride : true }) reviewVotes: number = 10;
-  @Provide({allowOverride : true }) review: number = 5;
+  // @Provide({allowOverride : true }) reviewVotes: number = 10;
+  @Provide({allowOverride : true }) reviewVotes: number = 5;
   build() {
     Row() {
       provideComponent13()

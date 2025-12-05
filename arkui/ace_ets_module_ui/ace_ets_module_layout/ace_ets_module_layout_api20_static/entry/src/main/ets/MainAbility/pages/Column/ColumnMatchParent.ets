@@ -24,7 +24,7 @@ struct ColumnMatchParent {
       Column().backgroundColor(Color.Pink)
         .width(LayoutPolicy.matchParent)
         .height(LayoutPolicy.matchParent)
-        .key('ColumnMatchParentTest_0100_child')
+        .key('ColumnMatchParentTest_static_0100_child')
     }
     .width(200)
     .height(200)
@@ -32,6 +32,6 @@ struct ColumnMatchParent {
     .border({ width: 10, color: Color.Yellow })
     .safeAreaPadding(LengthMetrics.vp(10))
     .backgroundColor(Color.Red)
-    .key('ColumnMatchParentTest_0100_parent')
+    .key('ColumnMatchParentTest_static_0100_parent')
   }
 }

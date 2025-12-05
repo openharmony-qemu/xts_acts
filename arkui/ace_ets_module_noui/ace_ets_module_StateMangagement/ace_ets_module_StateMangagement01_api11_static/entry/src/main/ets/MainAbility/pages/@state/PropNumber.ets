@@ -39,7 +39,8 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
+  UIUtils
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -57,11 +58,11 @@ class Num3 {
 }
 @Component
 struct Child_AO {
-  @Prop count: number | Object | String | Date | Boolean = '';
+  @PropRef  count: number | Object | String | Date | Boolean = '';
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.count)) + " number is " + JSON.stringify(this.count))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.count)) + " number is " + JSON.stringify(UIUtils.getTarget(this.count)))
         .fontSize(9).key('PropNumber').height('5%')
 
       Text("变量赋值number类型").height('5%')

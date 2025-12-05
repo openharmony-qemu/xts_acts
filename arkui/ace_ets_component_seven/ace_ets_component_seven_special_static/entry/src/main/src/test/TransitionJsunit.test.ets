@@ -26,9 +26,7 @@ export default function transitionJsunit() {
   describe('transitionTest', () => {
     beforeAll(() => {
         console.info("transitionTest beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+        await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("text beforeEach start");

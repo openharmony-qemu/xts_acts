@@ -33,26 +33,9 @@ export default function ImageLoadResultTest() {
   describe('ImageLoadResultTest', (): void => {
     beforeAll(async (): Promise<void> => {
       console.info("ImageLoadResultTest beforeAll start");
-
-      try {
-        let p =
-          new Promise<void>((resolve: (value: PromiseLike<void>) => void, reject: (reason: Error) => void) => {
-            let timer: number;
-            timer = setTimeout(() => {
-              reject(new Error('execute timeout ' + 1000 + 'ms'));
-            }, 4000);
-          })
-        await p
-      } catch (e: Error) {
-        console.log("ImageLoadResultTest beforeAll start error " + e)
-      }
-      //
-      console.info("ImageLoadResultTest beforeAll start22");
-      // await UtilsTest.sleep(10000)
       console.info("ImageLoadResultTest beforeAll start33");
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
       console.info("ImageLoadResultTest beforeAll start44");
-      // await UtilsTest.sleep(4000)
 
     });
 
@@ -79,7 +62,7 @@ export default function ImageLoadResultTest() {
     });
 
 
-
+    
     /*
      * @tc.number   ImageLoadResultTest_static_0010
      * @tc.name     ImageLoadResultTest_static_0010
@@ -90,11 +73,11 @@ export default function ImageLoadResultTest() {
       console.info('ImageLoadResultTest_0010 START');
       await CommonFunc.sleep(500);
       console.info("[ImageLoadResultTest_0010] width:" +
-      JSON.stringify(AppStorage.get('ImageLoadResult.width')));
+      JSON.stringify(AppStorage.get<number>('ImageLoadResult.width')));
       console.info("[ImageLoadResultTest_0010] height:" +
-      JSON.stringify(AppStorage.get('ImageLoadResult.height')));
-      expect(AppStorage.get('ImageLoadResult.width'))
-        .assertEqual(AppStorage.get('ImageLoadResult.height'));
+      JSON.stringify(AppStorage.get<number>('ImageLoadResult.height')));
+      expect(AppStorage.get<number>('ImageLoadResult.width'))
+        .assertEqual(AppStorage.get<number>('ImageLoadResult.height'));
       AppStorage.delete('ImageLoadResult.width')
       AppStorage.delete('ImageLoadResult.height')
       console.info('[ImageLoadResultTest_0010] END');
@@ -102,7 +85,7 @@ export default function ImageLoadResultTest() {
     });
 
 
-
+    
     /*
      * @tc.number   ImageLoadResultTest_static_0020
      * @tc.name     ImageLoadResultTest_static_0020

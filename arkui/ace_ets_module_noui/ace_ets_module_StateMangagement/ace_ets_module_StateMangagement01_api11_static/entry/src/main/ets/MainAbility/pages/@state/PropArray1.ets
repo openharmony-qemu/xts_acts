@@ -41,7 +41,8 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
+  UIUtils
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -49,17 +50,21 @@ import inspector from '@ohos.arkui.inspector';
 import CommonFunc from '../../../MainAbility/common/Common';
 import common from '@ohos.app.ability.common';
 
+interface Num{
+  number: number
+}
+
 @Component
 struct Child_AS {
 
-  @Prop Array1: Date | Array<Length> | Array<Object>| Array<Int> | Array<Number> | Array<String> | Array<Resource> = [1.0]
+  @PropRef Array1: Date | Array<Length> | Array<Object>| Array<Int> | Array<Number> | Array<String> | Array<Resource> = [1.0]
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + JSON.stringify(this.Array1))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + JSON.stringify(UIUtils.getTarget(this.Array1)))
         .fontSize(9).key('PropArray1').height('5%')
 
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is ")
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id)??'')
         .fontSize(9).key('PropArray1New').height('5%')
 
 
@@ -90,8 +95,7 @@ struct Child_AS {
       Text("切换变量Array<Object>类型[1]-->[{number: 30}]").height('5%')
       Button('change')
         .onClick((e: ClickEvent) => {
-          // this.Array1 = [{number: 30.0}];
-          this.Array1 = [30.0];
+          this.Array1 = [{number: 30.0} as Num];
         })
         .key('state8')
         .height('5%')

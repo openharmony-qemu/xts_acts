@@ -30,7 +30,6 @@ export default function datePickerDialogModeTest() {
     beforeAll(() => {
       console.info("DatePickerDialogMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

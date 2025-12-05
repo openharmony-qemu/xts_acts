@@ -41,16 +41,16 @@ import { UtilsTest } from '../Util.test';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
-const uiContext = new UIContext();
 
 export default function FlexLayoutPolicyTest() {
   describe('FlexLayoutPolicyTest', () => {
+    await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
+    const uiContext = AppStorage.get<UIContext>('uiContext')!
+
     beforeAll(() => {
       console.info("FlexLayoutPolicyTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -102,8 +102,8 @@ it('FlexLayoutPolicyTest_static_0100', Level.LEVEL1, async (done: () => void): P
       console.log('[FlexLayoutPolicyTest_static_0100] flex_child_height is:' + flex_child_height);
 
       
-      expect(Math.floor(Math.abs(flex_parent_width - flex_child_width - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
-      expect(Math.floor(Math.abs(flex_parent_height - flex_child_height - UIContext.getFocusedUIContext()!.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flex_parent_width - flex_child_width - uiContext.vp2px(70))) <= 1).assertTrue();
+      expect(Math.floor(Math.abs(flex_parent_height - flex_child_height - uiContext.vp2px(70))) <= 1).assertTrue();
 
       console.info('[FlexLayoutPolicyTest_static_0100] END');
       done();

@@ -37,9 +37,7 @@ export default function EnableHapticFeedbackTest() {
     beforeAll(() => {
       console.info("EnableHapticFeedbackTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

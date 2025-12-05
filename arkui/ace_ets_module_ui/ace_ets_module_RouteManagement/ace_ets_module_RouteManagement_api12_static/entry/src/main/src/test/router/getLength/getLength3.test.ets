@@ -28,9 +28,7 @@ export default function getLength3() {
   describe('getLength3', () => {
     beforeAll(() => {
       console.info("getLength3 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

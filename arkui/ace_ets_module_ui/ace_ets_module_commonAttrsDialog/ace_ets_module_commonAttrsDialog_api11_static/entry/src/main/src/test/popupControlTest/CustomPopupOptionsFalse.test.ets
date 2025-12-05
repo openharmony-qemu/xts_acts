@@ -53,9 +53,7 @@ let abilityContext=AppStorage.get<common.BaseContext>("abilityContext")
 export default function CustomPopupOptionsFalse() {
   describe('CustomPopupOptionsFalse', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

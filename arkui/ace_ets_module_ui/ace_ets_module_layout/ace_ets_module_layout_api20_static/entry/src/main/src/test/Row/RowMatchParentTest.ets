@@ -52,9 +52,7 @@ export default function RowMatchParentTest() {
     beforeAll(() => {
       console.info("RowMatchParentTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RowMatchParentTest beforeEach start");

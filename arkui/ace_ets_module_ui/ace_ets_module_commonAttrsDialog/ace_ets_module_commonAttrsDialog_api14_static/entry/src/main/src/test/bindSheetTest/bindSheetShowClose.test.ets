@@ -50,9 +50,7 @@ export default function bindSheetShowClose() {
   describe('bindSheetShowClose', () => {
     beforeAll(() => {
       console.info("bindSheetShowClose beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("bindSheetShowClose beforeEach start");
@@ -93,7 +91,8 @@ export default function bindSheetShowClose() {
       console.info('[bindSheetShowClose_0100] click btn');
       await CommonFunc.sleep(1000);
       let title = await driver.findComponent(ON.id('row'));
-      let rect = await (title?.getBounds() as Promise<Rect>);
+      await CommonFunc.sleep(1000);
+      let rect = await (title!.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       let titleWidth = rect.right - rect.left
       console.info('[bindSheetShowClose_0100] titleWidth' + titleWidth);

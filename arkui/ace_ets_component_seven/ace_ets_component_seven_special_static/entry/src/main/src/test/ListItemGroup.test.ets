@@ -27,9 +27,7 @@ export default function listItemGroupJsunit() {
   describe('listItemGroupJsunit', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listItemGroupJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/listItemGroup',

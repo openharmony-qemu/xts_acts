@@ -28,9 +28,7 @@ export default function replaceUrl9() {
   describe('replaceUrl9', () => {
     beforeAll(() => {
       console.info("replaceUrl9 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

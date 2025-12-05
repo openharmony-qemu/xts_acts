@@ -48,9 +48,7 @@ export default function LayoutInspectorTest() {
     beforeAll(() => {
       console.info("GridRowNoColumnsTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("LayoutInspectorTest beforeEach start");
@@ -90,9 +88,9 @@ it('ISLAYOUT_INSPECTOR_static_0100', Level.LEVEL1, async (done: () => void): Pro
       
       let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['isLayoutInspector'])
       console.info("ISLAYOUT_INSPECTOR_0100 testStr: " + testStr);
-      console.info('ISLAYOUT_INSPECTOR_0100 content' + JSON.parseJsonElement(testStr).getString("content"));
-      
-      let isContainContent: boolean = JSON.parseJsonElement(testStr).getString("content") === undefined ? false : true
+  console.info('ISLAYOUT_INSPECTOR_0100 content' + JSON.parseJsonElement(testStr).getElement("content"));
+
+      let isContainContent: boolean = JSON.parseJsonElement(testStr).getElement("content") === undefined ? false : true
       
       expect(isContainContent).assertEqual(true);
       console.info('[ISLAYOUT_INSPECTOR_0100] END');
@@ -111,9 +109,9 @@ it('ISLAYOUT_INSPECTOR_static_0200', Level.LEVEL1, async (done: () => void): Pro
       
       let testStr: string = AppStorage.get<UIContext>("uiContext")!.getFilteredInspectorTree(['content'])
       console.info("ISLAYOUT_INSPECTOR_0200 testStr: " + testStr);
-      console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getString("content"));
+      console.info('ISLAYOUT_INSPECTOR_0200 content' + JSON.parseJsonElement(testStr).getElement("content"));
       
-      let isContainContent: boolean = JSON.parseJsonElement(testStr).getString("content") === undefined ? true : false
+      let isContainContent: boolean = JSON.parseJsonElement(testStr).getElement("content") === undefined ? true : false
       
       expect(isContainContent).assertEqual(true);
       console.info('[ISLAYOUT_INSPECTOR_0200] END');

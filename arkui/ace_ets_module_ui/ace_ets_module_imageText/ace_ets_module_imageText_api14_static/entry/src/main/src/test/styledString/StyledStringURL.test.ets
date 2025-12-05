@@ -35,9 +35,7 @@ export default function StyledStringURL() {
     beforeAll(() => {
       console.info("StyledStringURL beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("StyledStringURL beforeEach start");

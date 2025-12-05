@@ -50,9 +50,7 @@ export default function bindSheetHoverMode() {
   describe('bindSheetHoverMode', () => {
     beforeAll(() => {
       console.info("bindSheetHoverMode beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("bindSheetHoverMode beforeEach start");

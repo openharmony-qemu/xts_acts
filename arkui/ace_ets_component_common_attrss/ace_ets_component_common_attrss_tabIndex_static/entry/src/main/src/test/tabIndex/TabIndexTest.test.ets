@@ -133,21 +133,16 @@ export default function TabIndexTest() {
       setValue: -1,
       expectValue: -1,
     },
-    /* {
-describe: 'SetEqualZero',
-setValue: 0,
-expectValue: 0
-}, */
-  //   {
-  //   describe: "SetEqualOne",
-  //   setValue: 1,
-  //   expectValue: 1,
-  // },
-  //   {
-  //     describe: "SetEqualTwo",
-  //     setValue: 2,
-  //     expectValue: 2,
-  //   },
+    {
+    describe: "SetEqualOne",
+    setValue: 1,
+    expectValue: 1,
+  },
+    {
+      describe: "SetEqualTwo",
+      setValue: 2,
+      expectValue: 2,
+    },
   ]
 
   describe("TabIndexTest", () => {

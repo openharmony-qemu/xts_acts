@@ -87,9 +87,7 @@ export default function swiperTest() {
   describe('ActSwiperTest', () => {
     beforeAll(() => {
       console.info("swiperTest beforeAll start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

@@ -85,7 +85,7 @@ struct provideBrother12 {
 
 @Component
 struct provideBrother11 {
-  @Provide({allowOverride : true}) review: number = 20;
+  @Provide({allowOverride : true}) reviewVotes: number = 20;
   build() {
     Column(){
       provideBrother12()

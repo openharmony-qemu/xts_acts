@@ -55,9 +55,7 @@ export default function ProvideArray1() {
     beforeAll(() => {
       console.info("LinkArray beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {
@@ -73,7 +71,7 @@ export default function ProvideArray1() {
         if (!("LinkArray" == pages.name)) {
           console.info("get LinkArray pages.name:" + JSON.stringify(pages.name));
           //let result = routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
           // console.info("push LinkArray page result:" + JSON.stringify(result));
         }

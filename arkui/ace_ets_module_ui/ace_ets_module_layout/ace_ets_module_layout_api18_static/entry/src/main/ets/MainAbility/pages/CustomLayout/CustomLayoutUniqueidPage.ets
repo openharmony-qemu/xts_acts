@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { FrameNode, NodeController } from '@kit.ArkUI';
+import { FrameNode, NodeController } from '@ohos.arkui.node';
 import {
   Entry,
   NodeContainer,
@@ -75,7 +75,7 @@ struct CustomLayout {
 
   onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions) {
     let prev: number = 0;
-    children.forEach((child, index) => {
+    children.forEach((child:Layoutable, index:int) => {
       AppStorage.setOrCreate<long>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_' + index, child.uniqueId!)
       let pos: number = prev + 10;
       prev = pos + child.measureResult.width

@@ -52,9 +52,7 @@ export default function timePickerDialogHoverMode() {
   describe('timePickerDialogHoverMode', () => {
     beforeAll(() => {
       console.info("timePickerDialogHoverMode beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.nowear.static.api14", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.nowear.api14.static", "EntryAbility")
     });
 
     beforeEach(async (): Promise<void> => {

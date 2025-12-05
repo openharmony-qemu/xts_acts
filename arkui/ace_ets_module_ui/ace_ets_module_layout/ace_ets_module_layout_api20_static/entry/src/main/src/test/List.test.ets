@@ -27,8 +27,8 @@ import ButtonAlignTest from './BoxAlign/ButtonAlignTest';
 export default function testsuite() {
   FlexLayoutPolicyTest();
   GridRowNoColumnsTest();
-  LayoutInspectorTest()
-  ColumnMatchParentTest()
+  LayoutInspectorTest()// pass:1 failed:1
+  ColumnMatchParentTest();//pass:1
   FlexMatchParentTest()
   RowMatchParentTest()
   StackChildAlignmentTest()

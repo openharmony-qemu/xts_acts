@@ -39,9 +39,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function SheetMode() {
   describe('SheetMode', () => {
-    await UtilsTest.msSleep(4000)
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
     let abilityStage=AppStorage.get<common.BaseContext>("abilityContext")!
 
     beforeAll(() => {

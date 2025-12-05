@@ -27,9 +27,7 @@ export default function toggleJsunit() {
   describe('ToggleJsunit', () => {
     beforeAll(() => {
       console.info("ToggleJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("Toggle beforeEach start");

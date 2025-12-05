@@ -25,9 +25,7 @@ export default function RatingJsunit() {
   describe('RatingJsunit', () => {
     beforeAll(() => {
         console.info("RatingJsunit beforeEach start");
-        await UtilsTest.msSleep(4000)
-        await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+        await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("RatingJsunit beforeEach start");

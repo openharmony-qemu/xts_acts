@@ -39,7 +39,7 @@ import {
 import {
   State,
   Link,
-  Prop,Consume,Provide
+  Prop,Consume,Provide,UIUtils
 } from '@ohos.arkui.stateManagement'
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -87,7 +87,7 @@ struct Child_CA1 {
       Text("切换变量Array<Object>类型[1]-->[{number: 30}]").height('5%')
       Button('change')
         .onClick(():void => {
-          this.Array1 = [{number: 30}] as Array<Num>;
+          this.Array1 = [{number: 30} as Num];
         })
         .key('state8')
         .height('5%')
@@ -114,7 +114,7 @@ struct Ancestors_CA1 {
 
   build() {
     Column() {
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + JSON.stringify(this.Array1))
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + JSON.stringify(UIUtils.getTarget(this.Array1)))
         .fontSize(9).key('ConsumeArray1').height('5%')
 
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array1)) + " number is " + AppStorage.get<common.UIAbilityContext>('UIAbilityContext')?.resourceManager.getStringSync($r('app.string.number').id)??'')

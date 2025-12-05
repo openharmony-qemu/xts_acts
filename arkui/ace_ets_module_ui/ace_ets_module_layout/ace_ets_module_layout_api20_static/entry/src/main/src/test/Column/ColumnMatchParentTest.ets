@@ -51,9 +51,7 @@ export default function ColumnMatchParentTest() {
     beforeAll(() => {
       console.info("ColumnMatchParentTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnMatchParentTest beforeEach start");

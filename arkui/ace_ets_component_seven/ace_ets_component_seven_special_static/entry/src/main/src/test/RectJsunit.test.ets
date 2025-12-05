@@ -27,9 +27,7 @@ export default function rectJsunit() {
 
     beforeAll(async (): Promise<void> => {
       console.info("ActsAcerectTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
 
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
