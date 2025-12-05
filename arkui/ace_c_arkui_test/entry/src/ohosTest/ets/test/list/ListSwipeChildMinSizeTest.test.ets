@@ -105,6 +105,19 @@ export default function ListSwipeChildMinSizeTest() {
     })
 
     /**
+     * @tc.name   testListChildMainSize007
+     * @tc.number SUB_ARKUI_CAPI_LIST_ChildMainSize_0700
+     * @tc.desc   testing ListChildMainSize interface not nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testListChildMainSize007', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testListChildMainSize007()).assertEqual(0)
+      done()
+    })
+
+    /**
      * @tc.name   testListSwipeOption007
      * @tc.number SUB_ARKUI_CAPI_LIST_SwipeAction_0700
      * @tc.desc   testing ListSwipeAction interface
