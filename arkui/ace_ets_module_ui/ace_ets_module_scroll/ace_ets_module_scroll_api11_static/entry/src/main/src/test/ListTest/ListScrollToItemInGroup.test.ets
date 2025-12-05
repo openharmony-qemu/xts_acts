@@ -51,9 +51,9 @@ export default function ListScrollToItemInGroup() {
   describe('ListScrollToItemInGroup', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -70,7 +70,7 @@ export default function ListScrollToItemInGroup() {
           }).catch((err: Error) => {
             console.error(`${SUITE} router.pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.error(`${SUITE} beforeEach error:` + JSON.stringify(err));

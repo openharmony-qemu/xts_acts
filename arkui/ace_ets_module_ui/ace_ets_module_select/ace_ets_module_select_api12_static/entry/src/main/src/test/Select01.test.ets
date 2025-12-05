@@ -38,7 +38,7 @@ export default function select() {
     beforeAll(() => {
       console.info("select beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

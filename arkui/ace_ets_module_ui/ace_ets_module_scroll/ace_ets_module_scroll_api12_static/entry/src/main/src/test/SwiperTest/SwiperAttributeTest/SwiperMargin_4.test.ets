@@ -34,7 +34,7 @@ export default function SwiperMargin_4() {
   describe('SwiperMargin_4', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperMargin_4 beforeEach start");

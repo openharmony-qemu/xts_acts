@@ -42,7 +42,7 @@ export default function ScrollEffectEdge() {
     beforeAll(() => {
       console.info("ScrollEffectEdge beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

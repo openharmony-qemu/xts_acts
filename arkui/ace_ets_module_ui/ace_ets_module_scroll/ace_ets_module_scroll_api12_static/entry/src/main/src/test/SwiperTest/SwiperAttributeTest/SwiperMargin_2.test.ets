@@ -47,7 +47,7 @@ export default function SwiperMargin_2() {
   describe('SwiperMargin_2', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperMargin_2 beforeEach start");
@@ -61,7 +61,7 @@ export default function SwiperMargin_2() {
           router.pushUrl({
             url: "MainAbility/pages/Swiper/SwiperAttribute/SwiperMargin_2"
           })
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.error("push SwiperMargin_2 page error:" + err);

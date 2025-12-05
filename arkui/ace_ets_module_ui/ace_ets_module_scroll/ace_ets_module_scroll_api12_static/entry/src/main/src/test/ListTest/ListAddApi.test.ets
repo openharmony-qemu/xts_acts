@@ -36,7 +36,7 @@ export default function ListAddApi() {
   describe('ListAddApi', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ListAddApi beforeEach start");
@@ -48,7 +48,7 @@ export default function ListAddApi() {
         if (!("ListAddApi" == pages.name)) {
           console.info("get  Context pages.name:" + JSON.stringify(pages.name));
           router.pushUrl({ url: "MainAbility/pages/List/ListAddApi" })
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err: Error) {
         console.error("push ListAddApi page error:" + err);

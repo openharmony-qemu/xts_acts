@@ -36,9 +36,9 @@ export default function irregularAniGrid() {
     beforeAll(() => {
       console.info("irregularAniGrid beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("irregularAniGrid beforeEach start");

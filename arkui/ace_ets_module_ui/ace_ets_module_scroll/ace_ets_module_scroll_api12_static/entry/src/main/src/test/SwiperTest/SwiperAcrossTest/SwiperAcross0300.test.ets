@@ -45,9 +45,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function SwiperAcross0300() {
   describe('SwiperAcross0300', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperAcross0300 beforeEach start");

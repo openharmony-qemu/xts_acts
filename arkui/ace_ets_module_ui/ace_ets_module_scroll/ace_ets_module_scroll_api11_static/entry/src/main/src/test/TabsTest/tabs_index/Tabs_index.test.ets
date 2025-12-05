@@ -51,9 +51,9 @@ export default function tabs_IndexTest() {
   describe('Tabs_IndexTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("Tabs_IndexTest beforeEach start");

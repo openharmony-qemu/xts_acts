@@ -86,9 +86,9 @@ export default function AccessibilityTextTest() {
 beforeAll(() => {
   console.info("markAnchorTest beforeAll start");
   
-  await UtilsTest.msSleep(4000)
+  
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+  
 });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

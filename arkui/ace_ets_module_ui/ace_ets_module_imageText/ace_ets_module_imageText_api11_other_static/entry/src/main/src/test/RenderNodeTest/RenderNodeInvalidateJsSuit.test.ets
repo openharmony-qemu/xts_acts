@@ -50,9 +50,9 @@ export default function RenderNodeInvalidateJsSuit() {
     beforeAll(() => {
       console.info("RenderNodeInvalidateJsSuit beforeEach start");
 
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

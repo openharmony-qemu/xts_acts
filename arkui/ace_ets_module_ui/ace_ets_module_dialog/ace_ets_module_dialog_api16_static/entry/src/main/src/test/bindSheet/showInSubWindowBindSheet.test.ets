@@ -50,9 +50,9 @@ export default function showInSubWindowBindSheet() {
 
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.dialog.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     })
 
     beforeEach(async () => {

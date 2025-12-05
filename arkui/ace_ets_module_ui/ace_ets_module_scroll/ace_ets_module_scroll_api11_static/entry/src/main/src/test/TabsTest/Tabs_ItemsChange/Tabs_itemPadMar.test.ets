@@ -50,7 +50,7 @@ let testAbilityContext: common.UIAbilityContext;
 export default function Tabs_itemPadMar() {
   describe('Tabs_itemPadMar', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {

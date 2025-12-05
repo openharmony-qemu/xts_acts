@@ -51,7 +51,7 @@ export default function toggleThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       try {

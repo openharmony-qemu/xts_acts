@@ -53,9 +53,9 @@ export default function ObjectLinkSecJsunit() {
   describe('ObjectLinkSecJsunit', () => {
     beforeAll(() => {
       console.info("ObjectLinkSecJsunit beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -36,9 +36,9 @@ export default function tabsCallBack1() {
   describe('tabsCallBack1', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("tabsCallBack1 beforeEach start");

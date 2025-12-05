@@ -37,9 +37,9 @@ export default function listLevel1HorizontalTest() {
   describe('listLevel1HorizontalTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("listLevel1HorizontalTest beforeEach start");

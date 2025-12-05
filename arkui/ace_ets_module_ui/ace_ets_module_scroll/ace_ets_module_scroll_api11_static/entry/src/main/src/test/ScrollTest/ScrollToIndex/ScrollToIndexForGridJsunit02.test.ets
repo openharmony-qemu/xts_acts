@@ -47,9 +47,9 @@ export default function ScrollToIndexForGridJsunit02() {
   describe('ScrollToIndexForGridJsunit02', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ScrollToIndexForGrid02 beforeEach start");
@@ -65,7 +65,7 @@ export default function ScrollToIndexForGridJsunit02() {
           console.info("get ScrollToIndexForGrid02 state pages.name: " + JSON.stringify(pages.name));
           // let result = await router.pushUrl(options);
           routerAlp.pushUrl(options);
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.error("push ScrollToIndexForGrid02 page error: " + err);

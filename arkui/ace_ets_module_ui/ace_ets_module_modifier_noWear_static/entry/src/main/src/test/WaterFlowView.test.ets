@@ -47,9 +47,9 @@ export default function waterFlowView() {
   describe('waterFlowTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.open.harmony.modifiernowear.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("waterFlowViewJsunit beforeEach start");

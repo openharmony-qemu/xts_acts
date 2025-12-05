@@ -39,7 +39,7 @@ export default function selectmenuTest() {
     beforeAll(() => {
       console.info("SelectMenu beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.select.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

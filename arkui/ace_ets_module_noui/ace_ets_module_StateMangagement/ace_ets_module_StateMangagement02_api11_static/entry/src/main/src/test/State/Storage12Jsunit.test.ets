@@ -53,9 +53,9 @@ export default function Storage12Jsunit() {
   describe('Storage12Jsunit', () => {
     beforeAll(() => {
       console.info("Storage12Jsunit beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

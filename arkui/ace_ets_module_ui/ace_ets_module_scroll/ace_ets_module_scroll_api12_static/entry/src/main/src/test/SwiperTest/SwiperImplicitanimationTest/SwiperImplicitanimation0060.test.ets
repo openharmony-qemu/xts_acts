@@ -46,9 +46,9 @@ export default function SwiperImplicitanimation0060() {
   describe('SwiperImplicitanimation0060', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperImplicitanimation0060 beforeEach start");

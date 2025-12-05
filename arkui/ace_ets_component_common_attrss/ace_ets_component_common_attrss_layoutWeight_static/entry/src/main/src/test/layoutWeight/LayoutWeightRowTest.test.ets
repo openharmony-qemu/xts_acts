@@ -33,7 +33,7 @@ let testAbilityContext:common.UIAbilityContext;
 
 export default function layoutWeightRowTest() {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+  
   let supportView = [
     'AlphabetIndexer',
     'Button',
@@ -121,7 +121,7 @@ export default function layoutWeightRowTest() {
   describe('LayoutWeightRowTest', () => {
     beforeAll(() => {
       console.info("layoutWeightRowTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
 
     });
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void>=> {

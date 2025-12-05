@@ -44,9 +44,9 @@ export default function SwiperMirroring0010() {
   describe('SwiperMirroring0010', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperMirroring0010 beforeEach start");

@@ -208,7 +208,7 @@ export default function alignSelfStretchTest() {
     beforeAll(() => {
       console.info("AlignSelfStretchTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.003.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     CommonTest.initTestByContainerView(pageConfig, containerView, supportView, testValues,
       async (data: BasePageConfig): Promise<void> => {
