@@ -61,9 +61,6 @@
         "MainAbility/pages/FrameNodeNew/isTransferredTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeNullTest",
         "MainAbility/pages/FrameNodeNew/GetFrameNodeMethodNullTest",
-        "MainAbility/pages/FrameNode/frameNodeApi",
-        "MainAbility/pages/FrameNodeNew/convertPoint",
-        "MainAbility/pages/FrameNodeNew/convertPointError24",
-        "MainAbility/pages/FrameNodeNew/convertPointError25"
+        "MainAbility/pages/FrameNode/frameNodeApi"
     ]
 }
