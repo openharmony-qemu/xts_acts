@@ -768,11 +768,6 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
-     * @tc.desc      : tablet mode changed common event
-     */
     /**
      * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
      * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
