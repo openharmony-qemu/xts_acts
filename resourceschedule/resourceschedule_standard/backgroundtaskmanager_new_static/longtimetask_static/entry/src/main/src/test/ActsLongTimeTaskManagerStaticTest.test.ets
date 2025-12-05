@@ -90,7 +90,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', 'afterEach called');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
      * @tc.desc   Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
@@ -166,7 +166,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
      * @tc.desc   Test that the startBackgroundRunning callback function normal call with bgMode and stopBackgroundRunning callback function
@@ -227,7 +227,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
      * @tc.desc   Test that the startBackgroundRunning promise function normal call with bgMode and stopBackgroundRunning promise function
@@ -284,7 +284,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of DATA_TRANSFER
@@ -310,7 +310,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_PLAYBACK
@@ -336,7 +336,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_RECORDING
@@ -362,7 +362,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of LOCATION
@@ -388,7 +388,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of BLUETOOTH_INTERACTION
@@ -414,7 +414,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of MULTI_DEVICE_CONNECTION
@@ -440,7 +440,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of VOIP
@@ -466,7 +466,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of TASK_KEEPING
@@ -492,7 +492,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
@@ -518,7 +518,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
      * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
@@ -545,7 +545,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
      * @tc.desc   Test that the updateBackgroundRunning function normal
@@ -625,7 +625,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 end---');
       })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
      * @tc.desc   Test that the stopBackgroundRunning callback function and errocode is 9800005
@@ -672,7 +672,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
      * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 202
@@ -718,7 +718,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002 end---');
     })
 
-    /*
+   /**
     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
@@ -763,7 +763,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
      * @tc.desc   Test that the startBackgroundRunning promise function error call with bgModeList and errocode is 9800005
@@ -819,7 +819,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
      * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 9800005
@@ -880,7 +880,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
      * @tc.desc   Test that the updateBackgroundRunning promise function error call with bgModeList and errocode is 9800005
@@ -930,7 +930,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
      * @tc.desc   Test that the stopBackgroundRunning promise function error call and errocode is 9800005
@@ -977,7 +977,7 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007 end---');
     })
 
-    /*
+    /**
      * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
      * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
      * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 9800005
