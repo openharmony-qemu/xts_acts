@@ -37,24 +37,25 @@ export default function settingUiJsunit() {
 
   describe('appInfoTest', ()=> {
     console.log("************* settings Test start*************");
+
     /**
-     * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0100
-     * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_0100
+     * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_1100
+     * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_1100
      * @tc.desc Function test
      */
-    it('SUB_Misc_inputMethod_switchInputMethod__static_0100', Level.LEVEL2, async (done: () => void)  => {
-      hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_0100 Test start*************");
+    it('SUB_Misc_inputMethod_switchInputMethod__static_1100', Level.LEVEL2, async (done: () => void)  => {
+      hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_1100 Test start*************");
       let inputM = inputMethod.getCurrentInputMethod()
-      hilog.info(domain, tag, "SUB_Misc_inputMethod_switchInputMethod__static_0100 getCurrentInputMethod: " + JSON.stringify(inputM));
+      hilog.info(domain, tag, "SUB_Misc_inputMethod_switchInputMethod__static_1100 getCurrentInputMethod: " + JSON.stringify(inputM));
       try {
-        hilog.info(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_0100 switchInputMethod permission fail')
+        hilog.info(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_1100 switchInputMethod permission fail')
         let result = await inputMethod.switchInputMethod(inputM);
         expect(result == true).assertTrue();
         done();
-        hilog.info(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_0100 end");
+        hilog.info(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_1100 end");
       } catch (err) {
         err = err as BusinessError;
-        hilog.error(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_0100 switchInputMethod catch err' + JSON.stringify(err))
+        hilog.error(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_1100 switchInputMethod catch err' + JSON.stringify(err))
         expect().assertFail();
         done();
       }
@@ -173,9 +174,9 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_067
-     * @tc.name: settings_get_value_static_067
-     * @tc.desc: check settings get value
+     * @tc.number  settings_get_value_static_067
+     * @tc.name  settings_get_value_static_067
+     * @tc.desc  check settings get value
      */
     it('settings_get_value_static_067',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str = "settings.general.geolocation_origins_allowed"
@@ -206,7 +207,8 @@ export default function settingUiJsunit() {
       done();
     });
 
-    * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0400
+    /** 
+      * @tc.number SUB_Misc_inputMethod_showTextInput_Async_static_0400
       * @tc.name SUB_Misc_inputMethod_showTextInput_Async_static_0400
       * @tc.desc Do not bind the input method keyboard, and call the showTextInput interface in Async mode
       */
@@ -397,9 +399,9 @@ export default function settingUiJsunit() {
 
 
     /**
-     * @tc.number: settings_get_value_static_104
-     * @tc.name: settings_get_value_static_104
-     * @tc.desc: check settings get value
+     * @tc.number settings_get_value_static_104
+     * @tc.name settings_get_value_static_104
+     * @tc.desc  check settings get value
      */
     it('settings_get_value_static_104',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_dhcp_max_retry_count"
@@ -408,7 +410,7 @@ export default function settingUiJsunit() {
     });
 
 
-    /*
+    /**
       * @tc.number  SUB_Misc_inputMethod_onDeleteLeftError_static_0100
       * @tc.name    SUB_Misc_inputMethod_onDeleteLeftError_static_0100
       * @tc.desc    12800009 Function test
@@ -437,9 +439,9 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_106
-     * @tc.name: settings_get_value_static_106
-     * @tc.desc: check settings get value
+     * @tc.number settings_get_value_static_106
+     * @tc.name settings_get_value_static_106
+     * @tc.desc check settings get value
      */
     it('settings_get_value_static_106',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> => {
       let str ="settings.wireless.wifi_status"
@@ -447,7 +449,7 @@ export default function settingUiJsunit() {
       done();
     });
 
-    /*
+    /**
     * @tc.number  SUB_Misc_inputMethod_onInsertTextError_static_0100
     * @tc.name    SUB_Misc_inputMethod_onInsertTextError_static_0100
     * @tc.desc    12800009 Function test
@@ -486,7 +488,7 @@ export default function settingUiJsunit() {
       done();
     });
 
-    /*
+    /**
       * @tc.number  inputmethodNomal_test_switchInputMethod_static_002
       * @tc.name    inputmethodNomal_test_switchInputMethod_static_002
       * @tc.desc    Test Indicates the input method which will replace the current one.
@@ -530,9 +532,9 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number: settings_get_value_static_113
-     * @tc.name: settings_get_value_static_113
-     * @tc.desc: check settings get value
+     * @tc.number settings_get_value_static_113
+     * @tc.name settings_get_value_static_113
+     * @tc.desc check settings get value
      */
     it('settings_get_value_static_113',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: () => void): Promise<void> =>{
       try{console.info('test settings_get_value_static_113 start');
@@ -551,7 +553,7 @@ export default function settingUiJsunit() {
       }
     });
 
-    /*
+    /**
       * @tc.number  inputmethodNomal_test_switchInputMethod_static_001
       * @tc.name    inputmethodNomal_test_switchInputMethod_static_001
       * @tc.desc    Test Indicates the input method which will replace the current one.
@@ -758,16 +760,17 @@ export default function settingUiJsunit() {
       }
       done();
     });
-    /*
-     * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_001
-     * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_001
+
+    /**
+     * @tc.number  inputmethodNomal_test_hideSoftKeyboard_static_1100
+     * @tc.name    inputmethodNomal_test_hideSoftKeyboard_static_1100
      * @tc.desc    Test Indicates the input method which will hide softboard with calback.
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level2
      */
-    it('inputmethodNomal_test_hideSoftKeyboard_static_001', Level.LEVEL2, async (done: () => void)  => {
-      hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_001 start************");
+    it('inputmethodNomal_test_hideSoftKeyboard_static_1100', Level.LEVEL2, async (done: () => void)  => {
+      hilog.info(domain, tag, "====>*********inputmethodNomal_test_hideSoftKeyboard_static_1100 start************");
       let inputMethodCtrl = inputMethod.getController()
       const ATTRIBUTE: inputMethod.TextConfig = {
         inputAttribute: {
@@ -777,29 +780,29 @@ export default function settingUiJsunit() {
       }
       try {
         let data = await inputMethodCtrl.attach(true, ATTRIBUTE);
-        hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 execution success, data: ${JSON.stringify(data)}`);
+        hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_1100 execution success, data: ${JSON.stringify(data)}`);
       } catch (error) {
         error = error as BusinessError;
-        hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch error, error: [${error.code}, ${error.message}]`);
+        hilog.info(domain, tag, `====>inputmethodNomal_test_hideSoftKeyboard_static_1100 catch error, error: [${error.code}, ${error.message}]`);
         expect().assertFail();
         done();
       }
       inputMethodCtrl.hideSoftKeyboard((error : BusinessError | null) => {
         try {
           if (error != null) {
-            hilog.info(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_001 hideSoftKeyboard permission fail: " + JSON.stringify(error));
+            hilog.info(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_1100 hideSoftKeyboard permission fail: " + JSON.stringify(error));
             expect(error?.code == 0).assertTrue();
           } else {
-            hilog.info(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_001 success: ');
+            hilog.info(domain, tag, '====>inputmethodNomal_test_hideSoftKeyboard_static_1100 success: ');
             expect(true).assertTrue();
           }
           done();
         } catch (err) {
           err = err as BusinessError;
-          hilog.error(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_001 catch err: " + JSON.stringify(err));
+          hilog.error(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_1100 catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
-          hilog.info(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_001 end");
+          hilog.info(domain, tag, "====>inputmethodNomal_test_hideSoftKeyboard_static_1100 end");
         }
       });
     });
@@ -826,28 +829,28 @@ export default function settingUiJsunit() {
     });
 
     /**
-     * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_0200
-     * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_0200
+     * @tc.number SUB_Misc_inputMethod_switchInputMethod__static_1200
+     * @tc.name SUB_Misc_inputMethod_switchInputMethod__static_1200
      * @tc.desc Function test
      */
-    it('SUB_Misc_inputMethod_switchInputMethod__static_0200', Level.LEVEL2, async (done: () => void)  => {
-      hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_0200 Test start*************");
+    it('SUB_Misc_inputMethod_switchInputMethod__static_1200', Level.LEVEL2, async (done: () => void)  => {
+      hilog.info(domain, tag, "====>************* SUB_Misc_inputMethod_switchInputMethod__static_1200 Test start*************");
       let inputM = inputMethod.getCurrentInputMethod()
-      hilog.info(domain, tag, "SUB_Misc_inputMethod_switchInputMethod__static_0200 getCurrentInputMethod: " + JSON.stringify(inputM));
+      hilog.info(domain, tag, "SUB_Misc_inputMethod_switchInputMethod__static_1200 getCurrentInputMethod: " + JSON.stringify(inputM));
       inputMethod.switchInputMethod(inputM, (err : BusinessError | null, data : boolean | undefined) => {
         try {
           if (err != null && err.code != 0) {
-            hilog.info(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_0200 switchInputMethod permission fail: " + JSON.stringify(err));
+            hilog.info(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_1200 switchInputMethod permission fail: " + JSON.stringify(err));
             expect().assertFail();
             done();
           } else {
-            hilog.info(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_0200 success: ' + data);
+            hilog.info(domain, tag, '====>SUB_Misc_inputMethod_switchInputMethod__static_1200 success: ' + data);
             expect(data == true).assertTrue();
             done();
           }
         } catch (err) {
           err = err as BusinessError;
-          hilog.error(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_0200 catch err: " + JSON.stringify(err));
+          hilog.error(domain, tag, "====>SUB_Misc_inputMethod_switchInputMethod__static_1200 catch err: " + JSON.stringify(err));
           expect().assertFail();
           done();
         }
