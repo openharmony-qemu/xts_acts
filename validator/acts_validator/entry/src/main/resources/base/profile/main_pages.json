@@ -172,6 +172,7 @@
     "pages/ArkUI/ImageAnimationControllerPage",
     "pages/ArkUI/AnimatedDrawableDescriptorFrameDurations",
     "pages/ArkUI/GetDarkModeTest",
-    "pages/ArkUI/TabBarIndicatorPixmap"
+    "pages/ArkUI/TabBarIndicatorPixmap",
+    "pages/ArkUI/RichEditiorComponentContentKeyboard"
   ]
 }

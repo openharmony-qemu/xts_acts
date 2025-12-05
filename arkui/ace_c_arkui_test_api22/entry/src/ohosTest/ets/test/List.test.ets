@@ -26,6 +26,7 @@ import textAreaBarStateTest from "./textArea/TextAreaBarStateTest.test";
 import scrollBarTest from "./scrollbarTest/scrollbarTest.test";
 import ShowCounterTest from "./showCounterTest/showCounterTest.test";
 import NodeSwiperItemFillpolocyTest from "./swiper/NodeSwiperItemFillpolocy.test"
+import finishAnimationTest from "./swiper/finishAnimationTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -42,4 +43,5 @@ export default function testsuite() {
   scrollBarTest();
   ShowCounterTest();
   NodeSwiperItemFillpolocyTest();
+  finishAnimationTest();
 }

@@ -24,6 +24,7 @@ import ColumnFixAtiDealSizeTest from './Column/ColumnFixAtiDealSizeTest'
 import ImageContentTransitionEffectTest from './Image/ImageContentTransitionEffect.test'
 import ListDraggingEventTest from './list/ListDraggingEventTest.test'
 import ListFlingEventTest from './list/ListFlingEventTest.test'
+import ImageSupportSvg2Test from './imageSupportSvg2/ImageSupportSvg2Test.test'
 
 export default function testsuite() {
   TestInvalidateAttributes();
@@ -38,4 +39,5 @@ export default function testsuite() {
   ImageContentTransitionEffectTest();
   ListDraggingEventTest();
   ListFlingEventTest();
+  ImageSupportSvg2Test();
 }

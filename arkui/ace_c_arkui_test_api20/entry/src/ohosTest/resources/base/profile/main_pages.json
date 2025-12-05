@@ -34,6 +34,12 @@
     "MainAbility/pages/capi/ArkUIPostAsyncUITask",
     "MainAbility/pages/capi/ArkUIPostUITask",
     "MainAbility/pages/capi/ArkUIPostUITaskAndWait",
+    "MainAbility/pages/capi/ArkUIPostAsyncUITaskS",
+    "MainAbility/pages/capi/ArkUIPostUITaskS",
+    "MainAbility/pages/capi/ArkUIPostUITaskAndWaitS",
+    "MainAbility/pages/capi/ArkUIPostAsyncUITaskF",
+    "MainAbility/pages/capi/ArkUIPostUITaskF",
+    "MainAbility/pages/capi/ArkUIPostUITaskAndWaitF",
     "MainAbility/pages/scroll/ScrollZoomStartTest",
     "MainAbility/pages/scroll/ScrollZoomDidTest",
     "MainAbility/pages/scroll/ScrollZoomStopTest"

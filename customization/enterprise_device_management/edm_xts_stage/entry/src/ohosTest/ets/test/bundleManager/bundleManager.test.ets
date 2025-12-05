@@ -2619,6 +2619,343 @@ export default function bundleManagerTest() {
     })
 
     /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_006
+     * @tc.name    test_get_installed_bundle_list_006
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_006", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        });
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.name).assertEqual('');
+        expect(edmBundleInfo?.signatureInfo?.appId).assertEqual('');
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_007
+     * @tc.name    test_get_installed_bundle_list_007
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_007", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.name != '').assertTrue();
+        expect(edmBundleInfo?.signatureInfo?.appId).assertEqual('');
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_008
+     * @tc.name    test_get_installed_bundle_list_008
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_008", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_SIGNATURE_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.name).assertEqual('');
+        expect(edmBundleInfo?.signatureInfo?.appId != '').assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_009
+     * @tc.name    test_get_installed_bundle_list_009
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_009", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_ICON_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.iconData != '').assertTrue();
+        expect(edmBundleInfo?.appInfo?.name).assertEqual('');
+        expect(edmBundleInfo?.signatureInfo?.appId).assertEqual('');
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_010
+     * @tc.name    test_get_installed_bundle_list_010
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_010", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO |
+		  bundleManager.BundleInfoGetFlag.WITH_SIGNATURE_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.iconData).assertEqual('');
+        expect(edmBundleInfo?.appInfo?.name != '').assertTrue();
+        expect(edmBundleInfo?.signatureInfo?.appId != '').assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_011
+     * @tc.name    test_get_installed_bundle_list_011
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_011", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO |
+		  bundleManager.BundleInfoGetFlag.WITH_APPLICATION_ICON_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.iconData != '').assertTrue();
+        expect(edmBundleInfo?.appInfo?.name != '').assertTrue();
+        expect(edmBundleInfo?.signatureInfo?.appId).assertEqual('');
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_012
+     * @tc.name    test_get_installed_bundle_list_012
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_012", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_SIGNATURE_INFO |
+		  bundleManager.BundleInfoGetFlag.WITH_APPLICATION_ICON_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.iconData != '').assertTrue();
+        expect(edmBundleInfo?.appInfo?.name).assertEqual('');
+        expect(edmBundleInfo?.signatureInfo?.appId != '').assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_013
+     * @tc.name    test_get_installed_bundle_list_013
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_013", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.WITH_SIGNATURE_INFO |
+		  bundleManager.BundleInfoGetFlag.WITH_APPLICATION_INFO | 
+		  bundleManager.BundleInfoGetFlag.WITH_APPLICATION_ICON_INFO;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+            DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+        expect(bundleInfos.length > 0).assertTrue();
+        let edmBundleInfo = bundleInfos.find((bundleInfo) => {
+          return bundleInfo.name === 'com.edm.acts.normal';
+        })
+        expect(edmBundleInfo).not().assertUndefined();
+        expect(edmBundleInfo?.appInfo?.iconData != '').assertTrue();
+        expect(edmBundleInfo?.appInfo?.name != '').assertTrue();
+        expect(edmBundleInfo?.signatureInfo?.appId != '').assertTrue();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_014
+     * @tc.name    test_get_installed_bundle_list_014
+     * @tc.desc    test get installed bundle list method without admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_014", Level.LEVEL2, async (done: Function) => {
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200001).assertTrue();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_015
+     * @tc.name    test_get_installed_bundle_list_015
+     * @tc.desc    test get installed bundle list method with normal admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_015", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        await bundleManager.getInstalledBundleList(SELFWANT, DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 9200002).assertTrue();
+      } finally {
+        await adminManager.disableAdmin(SELFWANT);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_016
+     * @tc.name    test_get_installed_bundle_list_016
+     * @tc.desc    test get installed bundle list method unsupported accountId
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_016", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        await bundleManager.getInstalledBundleList(SELFWANT, 100000, bundleInfoGetFlag);
+        expect(false).assertTrue();
+      } catch (error) {
+        expect(error.code == 401).assertTrue();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number  SUB_CUSTOMIZATION_EDM_GET_INSTALLED_BUNDLE_LIST_017
+     * @tc.name    test_get_installed_bundle_list_017
+     * @tc.desc    test get installed bundle list method with super admin
+     * @tc.level   Level 2
+     * @tc.type    Function
+     * @tc.size    MediumTest
+     */
+    it("test_get_installed_bundle_list_017", Level.LEVEL2, async (done: Function) => {
+      await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+      try {
+        let bundleInfoGetFlag: number = bundleManager.BundleInfoGetFlag.DEFAULT;
+        let bundleInfos: bundleManager.BundleInfo[] = await bundleManager.getInstalledBundleList(SELFWANT,
+          DEFAULT_USER_ID, bundleInfoGetFlag);
+        expect(bundleInfos).not().assertUndefined();
+      } catch (error) {
+        expect().assertFail();
+      } finally {
+        await adminManager.disableSuperAdmin(SELFHAPNAME);
+      }
+      done();
+    })
+
+    /**
      * @tc.name   test_install_market_apps_001
      * @tc.number SUB_CUSTOMIZATION_EDM_INSTALL_MARKET_APPS_001
      * @tc.desc   test install market apps method without admin
