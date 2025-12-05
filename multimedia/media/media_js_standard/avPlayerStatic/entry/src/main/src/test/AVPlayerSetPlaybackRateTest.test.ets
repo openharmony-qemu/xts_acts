@@ -45,7 +45,7 @@ const AUDIO_SOURCE_AAC = "AAC_48000_32_1.aac";
 const AUDIO_SOURCE_WAV = "vorbis_48000_32_1.wav";
 
 async function sleep(delay: int): Promise<int> {
-  return new Promise((resolve, reject) => {
+  return new Promise<int>((resolve, reject) => {
     setTimeout(() => {
       resolve(0);
     }, delay);
@@ -65,7 +65,7 @@ async function handleState(state: string, operationRecord: Record<string, () => 
       if (operationRecord[INITIALIZED]) {
         await operationRecord[INITIALIZED]!();
       }
-      await avPlayer!!.prepare().then(() => {
+      avPlayer!!.prepare().then(() => {
         console.info(`case prepare called`);
       }).cache(mediaTestBase.cacheCallback);
       break;
@@ -75,7 +75,7 @@ async function handleState(state: string, operationRecord: Record<string, () => 
         await operationRecord[PREPARED]!();
       }
       console.info('case to play AVPlayer');
-      await avPlayer!!.play().then(() => {
+      avPlayer!!.play().then(() => {
         console.info(`case play AVPlayer success`);
       }).cache(mediaTestBase.cacheCallback);
       break;
@@ -172,9 +172,9 @@ export default function AVPlayerSetPlaybackRateTest() {
     afterEach(async () => {
       if (avPlayer != null) {
         try {
-          avPlayer.!!offstateChange();
-          avPlayer.!!offPlaybackRateDone();
-          avPlayer.!!offError();
+          avPlayer!!.offStateChange();
+          avPlayer!!.offPlaybackRateDone();
+          avPlayer!!.offError();
           console.info('case now stopped, to release');
           await avPlayer!!.release().then(() => {
             console.info('case release AVPlayer success');
@@ -188,7 +188,7 @@ export default function AVPlayerSetPlaybackRateTest() {
     afterAll(async () => {
       console.info('afterAll case');
       try {
-        await mediaTestBase.closeFileDescriptor(VIDEO_SOURCE_MP4)
+        await mediaTestBase.closeFdNumber(avFd.fd)
         await mediaTestBase.closeFdNumber(movFd.fd)
         await mediaTestBase.closeFdNumber(mkvFd.fd)
         await mediaTestBase.closeFdNumber(mp3Fd.fd)
@@ -401,7 +401,7 @@ export default function AVPlayerSetPlaybackRateTest() {
       operationRecord[PLAYING] = async () => {
         avPlayer!!.pause().then(() => {
           console.info(`pause AVPlayer success`)
-        }).catch(mediaTestBase.cacheCallback)
+        }).catch(mediaTestBase.catchCallback)
         await sleep(1000)
       }
       let callback: media.OnPlaybackRateDone = (rate: double) => {
@@ -430,7 +430,7 @@ export default function AVPlayerSetPlaybackRateTest() {
       operationRecord[PLAYING] = async () => {
         avPlayer!!.pause().then(() => {
           console.info(`pause AVPlayer success`)
-        }).catch(mediaTestBase.cacheCallback)
+        }).catch(mediaTestBase.catchCallback)
         await sleep(1000)
       }
       let callback: media.OnPlaybackRateDone = (rate: double) => {
