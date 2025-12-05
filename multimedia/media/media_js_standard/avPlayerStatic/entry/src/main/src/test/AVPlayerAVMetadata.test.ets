@@ -1106,7 +1106,7 @@ export default function AVMetadata() {
         console.info(TAG, `fetchFrameByTime callback success video PixelMap}`);
       }).catch((error: Error) => {
         console.error(`fetchFrameByTime catchCallback, error message:${error.message}`);
-        expect().assertFail;
+        expect().assertFail();
       });
       done();
     });
