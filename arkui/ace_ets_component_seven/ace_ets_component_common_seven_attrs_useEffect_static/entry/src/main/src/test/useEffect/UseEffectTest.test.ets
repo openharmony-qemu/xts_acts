@@ -61,10 +61,7 @@ export default function UseEffectTest() {
    */
   describe('useEffectTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
-      console.error('useEffectTest  start');
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
