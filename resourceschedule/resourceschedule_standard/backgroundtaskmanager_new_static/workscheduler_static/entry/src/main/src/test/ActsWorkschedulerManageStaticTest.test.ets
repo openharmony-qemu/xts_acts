@@ -22,13 +22,13 @@ let TAG: string = 'testTag'; //日志标识字符串,作为tag标识当前runner
 export default function WorkSchedulerJsTest() {
   describe("WorkSchedulerJsTest", () => {
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001
-     * @tc.desc:Test that the startWork/stopWork/getWorkStatus callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001
+     * @tc.desc   Test that the startWork/stopWork/getWorkStatus callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_001 begin---');
@@ -67,13 +67,13 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002
-     * @tc.desc:Test that the startWork/stopWork/getWorkStatus promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002
+     * @tc.desc   Test that the startWork/stopWork/getWorkStatus promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_002 begin---');
@@ -132,13 +132,13 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_ANY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_ANY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003 begin---');
@@ -150,13 +150,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_003 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_MOBILE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_MOBILE
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004 begin---');
@@ -168,13 +168,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_004 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_WIFI
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_WIFI
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005 begin---');
@@ -186,13 +186,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_005 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_BLUETOOTH
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_BLUETOOTH
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006 begin---');
@@ -204,13 +204,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_006 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_WIFI_P2P
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_WIFI_P2P
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007 begin---');
@@ -222,13 +222,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_007 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008
-     * @tc.desc:Test that the workScheduler enum NetworkType NETWORK_TYPE_ETHERNET
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008
+     * @tc.desc   Test that the workScheduler enum NetworkType NETWORK_TYPE_ETHERNET
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008 begin---');
@@ -240,13 +240,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_008 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009
-     * @tc.desc:Test that the workScheduler enum ChargingType CHARGING_PLUGGED_ANY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009
+     * @tc.desc   Test that the workScheduler enum ChargingType CHARGING_PLUGGED_ANY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009 begin---');
@@ -258,13 +258,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_009 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010
-     * @tc.desc:Test that the workScheduler enum ChargingType CHARGING_PLUGGED_ANY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010
+     * @tc.desc   Test that the workScheduler enum ChargingType CHARGING_PLUGGED_ANY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010 begin---');
@@ -276,13 +276,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_010 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011
-     * @tc.desc:Test that the workScheduler enum ChargingType CHARGING_PLUGGED_USB
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011
+     * @tc.desc   Test that the workScheduler enum ChargingType CHARGING_PLUGGED_USB
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011 begin---');
@@ -294,13 +294,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_011 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012
-     * @tc.desc:Test that the workScheduler enum ChargingType CHARGING_PLUGGED_WIRELESS
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012
+     * @tc.desc   Test that the workScheduler enum ChargingType CHARGING_PLUGGED_WIRELESS
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012 begin---');
@@ -312,13 +312,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_012 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013
-     * @tc.desc:Test that the workScheduler enum BatteryStatus BATTERY_STATUS_LOW
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013
+     * @tc.desc   Test that the workScheduler enum BatteryStatus BATTERY_STATUS_LOW
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013 begin---');
@@ -330,13 +330,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_013 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014
-     * @tc.desc:Test that the workScheduler enum BatteryStatus BATTERY_STATUS_OKAY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014
+     * @tc.desc   Test that the workScheduler enum BatteryStatus BATTERY_STATUS_OKAY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014 begin---');
@@ -348,13 +348,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_014 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015
-     * @tc.desc:Test that the workScheduler enum BatteryStatus BATTERY_STATUS_LOW_OR_OKAY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015
+     * @tc.desc   Test that the workScheduler enum BatteryStatus BATTERY_STATUS_LOW_OR_OKAY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015 begin---');
@@ -366,13 +366,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_015 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016
-     * @tc.desc:Test that the workScheduler enum StorageRequest STORAGE_LEVEL_LOW
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016
+     * @tc.desc   Test that the workScheduler enum StorageRequest STORAGE_LEVEL_LOW
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016 begin---');
@@ -384,13 +384,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_016 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017
-     * @tc.desc:Test that the workScheduler enum StorageRequest STORAGE_LEVEL_OKAY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017
+     * @tc.desc   Test that the workScheduler enum StorageRequest STORAGE_LEVEL_OKAY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017 begin---');
@@ -402,13 +402,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_017 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018
-     * @tc.desc:Test that the workScheduler enum StorageRequest STORAGE_LEVEL_LOW_OR_OKAY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018
+     * @tc.desc   Test that the workScheduler enum StorageRequest STORAGE_LEVEL_LOW_OR_OKAY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018 begin---');
@@ -420,13 +420,13 @@ export default function WorkSchedulerJsTest() {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_018 end---');
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019
-     * @tc.desc:Test that stopAndClearWorks and obtainAllWorks callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019
+     * @tc.desc   Test that stopAndClearWorks and obtainAllWorks callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_019 begin---');
@@ -473,13 +473,13 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020
-     * @tc.desc:Test that stopAndClearWorks and obtainAllWorks promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020
+     * @tc.desc   Test that stopAndClearWorks and obtainAllWorks promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_020 begin---');
@@ -525,13 +525,13 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021
-     * @tc.desc:Test that stopAndClearWorks and isLastWorkTimeOut callback function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021
+     * @tc.desc   Test that stopAndClearWorks and isLastWorkTimeOut callback function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_021 begin---');
@@ -574,13 +574,13 @@ export default function WorkSchedulerJsTest() {
       }
     })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022
-     * @tc.name:SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022
-     * @tc.desc:Test that stopAndClearWorks and obtainAllWorks promise function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022
+     * @tc.desc   Test that stopAndClearWorks and obtainAllWorks promise function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_WORKSCHEDULE_TASK_STATIC_XTS_022 begin---');
