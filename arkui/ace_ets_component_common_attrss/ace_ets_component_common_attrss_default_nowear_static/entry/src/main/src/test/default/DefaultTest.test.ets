@@ -43,14 +43,14 @@ export default function defaultTest() {
 
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
-    // 'Stepper',
-    // 'StepperItem',
-    'Web',
-    // 'ColumnSplit',
-    // 'RowSplit',
-    // 'FlowItem',
-    // 'SideBarContainer',
-    // 'WaterFlow'
+     'Stepper',
+     'StepperItem',
+    // 'Web',
+     'ColumnSplit',
+     'RowSplit',
+     'FlowItem',
+     'SideBarContainer',
+     'WaterFlow'
   )
 
   //Custom params.

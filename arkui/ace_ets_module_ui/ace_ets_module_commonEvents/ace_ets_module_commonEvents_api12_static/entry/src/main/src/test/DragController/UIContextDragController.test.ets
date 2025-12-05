@@ -41,9 +41,9 @@ export default function UIContextDragControllerTest() {
 
   describe('UIContextDragControllerTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async ():Promise<void> => {
       let options: router.RouterOptions = {

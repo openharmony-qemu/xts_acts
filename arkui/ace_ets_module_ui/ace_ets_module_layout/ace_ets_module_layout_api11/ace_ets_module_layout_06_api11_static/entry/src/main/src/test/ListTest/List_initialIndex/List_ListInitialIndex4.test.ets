@@ -39,9 +39,9 @@ export default function list_ListInitialIndex4Test() {
     beforeAll(() => {
       console.info("List_ListInitialIndex4Test beforeAll start");
             
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("List_ListInitialIndex4Test beforeEach start");

@@ -34,9 +34,9 @@ let testAbilityContext: common.UIAbilityContext;
 
 export default function CustomLayoutOnLayoutTest() {
 
-  await UtilsTest.msSleep(4000)
+  
   await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+  
 
   let uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
   const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;

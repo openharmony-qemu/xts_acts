@@ -17,7 +17,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import router from '@ohos.router';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import emitter from '@ohos.events.emitter';
-import { startAbility, UtilsTest } from '../Util.test';
+import { UtilsTest } from '../../test/Util.test';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -28,9 +28,9 @@ export default function animationStatusJsunit() {
 
     beforeAll(() => {
       console.info("animationStatusJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

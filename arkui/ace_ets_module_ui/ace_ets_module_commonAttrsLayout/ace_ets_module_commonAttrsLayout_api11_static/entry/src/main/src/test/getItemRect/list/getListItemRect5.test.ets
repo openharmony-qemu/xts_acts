@@ -38,9 +38,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function getListItemRect5() {
   describe('getListItemRect5', () => {
     console.info("getListItemRect5 beforeAll start");
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
     beforeAll(() => {

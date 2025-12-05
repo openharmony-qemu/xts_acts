@@ -37,9 +37,9 @@ export default function getListItemGroupRect6() {
   describe('getListItemGroupRect6', () => {
     beforeAll(() => {
       console.info("getListItemGroupRect6 beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("getListItemGroupRect6 beforeEach start");

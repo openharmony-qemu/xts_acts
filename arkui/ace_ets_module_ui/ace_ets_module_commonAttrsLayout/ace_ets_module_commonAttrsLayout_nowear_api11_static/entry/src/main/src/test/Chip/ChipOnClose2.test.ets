@@ -34,9 +34,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ChipOnClose2() {
   describe('ChipOnClose2', () => {
 
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
     const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;

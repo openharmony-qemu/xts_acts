@@ -39,9 +39,9 @@ export default function enumsCancelJsunit() {
   describe('enumsCancelTest', () => {
     beforeAll(() => {
       console.info("enumsCancelJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

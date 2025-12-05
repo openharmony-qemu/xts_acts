@@ -42,9 +42,9 @@ export default function listSwipeActionJsunit() {
   describe('listSwipeActionTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("listSwipeActionTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
 
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/ListItem_SwipeActionItem/listTest"

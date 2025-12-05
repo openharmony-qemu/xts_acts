@@ -36,9 +36,9 @@ export default function onPlaceChildren1() {
   describe('onPlaceChildren1', () => {
     beforeAll(() => {
       console.info("onPlaceChildren1 beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("onPlaceChildren1 beforeEach start");

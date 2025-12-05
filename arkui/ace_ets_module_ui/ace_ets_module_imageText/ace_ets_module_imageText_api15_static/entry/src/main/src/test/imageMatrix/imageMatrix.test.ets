@@ -34,9 +34,9 @@ export default function imageMatrix() {
   describe('imageMatrix', () => {
     beforeAll(() => {
       console.info("imageMatrix beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info('imageMatrix beforeEach start');

@@ -54,9 +54,9 @@ export default function overLayJsunit() {
   describe('overLayTest', () => {
     beforeAll(() => {
       console.info("overLayJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

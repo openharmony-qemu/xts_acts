@@ -47,9 +47,9 @@ const uiContext = new UIContext();
 export default function TapGestureBasicClickMouseTest() {
   describe('TapGestureBasicClickMouseTest', () => {
 
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!
     beforeAll(() => {

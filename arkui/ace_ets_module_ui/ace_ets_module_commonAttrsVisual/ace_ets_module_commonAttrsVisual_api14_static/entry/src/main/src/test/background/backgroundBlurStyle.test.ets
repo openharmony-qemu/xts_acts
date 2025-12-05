@@ -35,9 +35,9 @@ export default function backgroundBlurStyleTest() {
   describe('backgroundBlurStyleTest', () => {
     beforeAll(() => {
       console.info("backgroundBrightness beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

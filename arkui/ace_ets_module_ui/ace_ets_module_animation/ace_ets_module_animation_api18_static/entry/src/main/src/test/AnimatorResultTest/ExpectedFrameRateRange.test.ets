@@ -36,9 +36,9 @@ export default function ExpectedFrameRateRange() {
   describe('ExpectedFrameRateRange', () => {
     beforeAll(() => {
       console.info("ExpectedFrameRateRange beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.animation18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

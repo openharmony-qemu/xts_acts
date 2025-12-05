@@ -39,9 +39,9 @@ export default function listItemGroup_Space_Percentage() {
   describe('listItemGroup_Space_Percentage', () => {
     beforeAll(() => {
       console.log("listItemGroup_Space_Percentage beforeAll start111")
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("listItemGroup_Space_Percentage beforeEach start");

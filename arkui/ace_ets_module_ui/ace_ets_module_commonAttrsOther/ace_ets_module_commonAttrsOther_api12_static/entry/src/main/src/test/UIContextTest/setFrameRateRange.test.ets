@@ -55,9 +55,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function setFrameRateRangeTest() {
   describe('setFrameRateRangeTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
