@@ -27,9 +27,7 @@ export default function pushUrl24() {
   describe('pushUrl24', () => {
     beforeAll(() => {
       console.info("pushUrl24 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

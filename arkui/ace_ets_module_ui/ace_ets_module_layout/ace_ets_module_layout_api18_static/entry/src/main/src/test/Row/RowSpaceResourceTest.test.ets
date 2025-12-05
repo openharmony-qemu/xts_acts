@@ -57,9 +57,7 @@ export default function RowSpaceResourceTest() {
     beforeAll(() => {
       console.info("RowSpaceResourceTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

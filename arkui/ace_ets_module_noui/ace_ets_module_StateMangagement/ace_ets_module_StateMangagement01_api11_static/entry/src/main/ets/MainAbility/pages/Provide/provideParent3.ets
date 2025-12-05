@@ -69,7 +69,7 @@ struct provideParent33 {
 
 @Component
 struct provideParent32 {
-  @Provide({allowOverride : true }) review: number = 10;
+  @Provide({allowOverride : true }) reviewVotes: number = 10;
   build() {
     Row() {
       provideParent33()

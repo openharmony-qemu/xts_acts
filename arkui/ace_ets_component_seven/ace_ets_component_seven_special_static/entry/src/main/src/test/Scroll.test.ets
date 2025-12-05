@@ -27,9 +27,7 @@ export default function scrollOnScrollBeginJsunit() {
   describe('scrollTest', () => {
     beforeAll(async (): Promise<void> => {
       console.info("scrollTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
 
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/scroll',

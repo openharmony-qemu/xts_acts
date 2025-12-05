@@ -26,9 +26,7 @@ export default function back9() {
   describe('back9', () => {
     beforeAll(() => {
       console.info("back9 beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

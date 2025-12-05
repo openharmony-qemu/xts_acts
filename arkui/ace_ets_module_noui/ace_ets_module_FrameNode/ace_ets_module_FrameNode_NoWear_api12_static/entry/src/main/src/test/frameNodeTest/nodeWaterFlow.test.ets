@@ -28,7 +28,6 @@ export default function nodeWaterFlow() {
     beforeAll(() => {
       console.info("nodeWaterFlow beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.FrameNodeNoWear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

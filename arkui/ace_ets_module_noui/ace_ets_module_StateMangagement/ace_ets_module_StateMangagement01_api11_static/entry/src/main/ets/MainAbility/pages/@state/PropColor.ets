@@ -43,7 +43,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -53,7 +53,7 @@ import common from '@ohos.app.ability.common';
 
 @Component
 struct Child_AA {
-  @Prop color: undefined | ResourceColor;
+  @PropRef color: undefined | ResourceColor;
 
   build() {
     Column() {

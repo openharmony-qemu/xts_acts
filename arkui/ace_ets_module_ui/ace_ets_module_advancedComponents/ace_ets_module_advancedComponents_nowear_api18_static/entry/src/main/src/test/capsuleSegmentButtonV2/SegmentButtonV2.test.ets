@@ -28,9 +28,7 @@ export default function SegmentButtonV2Test() {
   describe('SegmentButtonV2Test', () => {
     beforeAll(() => {
       console.info("SegmentButtonV2Test beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.advanced.component.nowear.api18.static", "EntryAbility")
 
     });
 

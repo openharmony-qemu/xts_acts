@@ -17,7 +17,7 @@
 import router from '@ohos.router';
 import { AttrsManager } from './AttrsManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, SweepGradientOptions } from '@ohos.arkui.component';
+import {Color,Length, TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, SweepGradientOptions,KeyEvent,MouseEvent } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import inspector from '@ohos.arkui.inspector';
@@ -319,14 +319,14 @@ export default class Utils {
       keySource: KeySource.Keyboard,
       deviceId: 0,
       metaKey: 0,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as long,
       stopPropagation: () => {
       },
       getModifierKeyState:(keys: Array<string>):boolean => {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
-    })
+    } as KeyEvent)
     console.info('performKeyEvent result : ' + result);
     return result
   }
@@ -359,7 +359,7 @@ export default class Utils {
       y: y,
       button: button,
       action: action,
-      timestamp: new Date().getTime(),
+      timestamp: new Date().getTime() as long,
       target: {
         area: {
           width: width,
@@ -383,7 +383,7 @@ export default class Utils {
         console.info("the key 0 is :" + keys[0]);
         return true;
       }
-    })
+    } as MouseEvent)
 
     console.info('performMouseEvent result : ' + result);
 

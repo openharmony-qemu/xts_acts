@@ -26,9 +26,7 @@ export default function counterJsunit() {
   describe('ActsAceCounterTest', () => {
     beforeAll(() => {
       console.info("ActsAceCounterTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
     });
     beforeAll(async (): Promise<void> => {
       console.info("flex beforeEach start");

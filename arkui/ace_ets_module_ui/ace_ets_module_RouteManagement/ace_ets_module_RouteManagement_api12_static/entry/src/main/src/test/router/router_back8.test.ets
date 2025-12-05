@@ -26,9 +26,7 @@ export default function router_back8() {
   describe('router_back8', () => {
     beforeAll(() => {
       console.info("router_back8 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

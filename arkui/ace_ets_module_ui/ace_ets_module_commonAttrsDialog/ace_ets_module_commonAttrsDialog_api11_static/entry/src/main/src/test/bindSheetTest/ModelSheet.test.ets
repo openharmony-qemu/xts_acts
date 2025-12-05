@@ -49,7 +49,6 @@ export default function ModelSheetTest() {
   describe('ModelSheetTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

@@ -29,7 +29,6 @@ export default function TextPickerDialogBGColorTest() {
     beforeAll(() => {
       console.info("TextPickerDialogBGColorTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeAll(async () => {

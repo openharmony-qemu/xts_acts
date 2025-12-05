@@ -28,7 +28,6 @@ export default function detentSelection() {
     beforeAll(() => {
       console.info("detentSelection beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

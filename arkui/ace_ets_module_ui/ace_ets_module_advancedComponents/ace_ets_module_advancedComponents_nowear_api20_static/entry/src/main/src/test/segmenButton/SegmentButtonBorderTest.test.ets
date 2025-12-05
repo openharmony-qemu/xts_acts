@@ -32,9 +32,7 @@ export default function SegmentButtonBorderTest() {
 
     beforeAll(() => {
       console.info("SegmentButtonBorderTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

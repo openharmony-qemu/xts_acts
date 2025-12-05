@@ -29,7 +29,6 @@ export default function TimePickerDialogShadowTest() {
     beforeAll(() => {
       console.info("TimePickerDialogShadowTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

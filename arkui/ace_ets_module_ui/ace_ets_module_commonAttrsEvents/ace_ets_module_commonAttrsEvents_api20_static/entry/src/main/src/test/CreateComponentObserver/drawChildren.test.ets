@@ -35,9 +35,7 @@ export default function DrawChildrenTest() {
 
     beforeAll(() => {
       console.info("DrawChildrenTest beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

@@ -56,9 +56,7 @@ export default function swiper1() {
     beforeAll(() => {
       console.info("swiper1 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

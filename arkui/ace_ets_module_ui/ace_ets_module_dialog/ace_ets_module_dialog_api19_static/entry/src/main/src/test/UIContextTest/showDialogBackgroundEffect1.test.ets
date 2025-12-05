@@ -37,9 +37,7 @@ export default function UIShowDialogBackgroundEffectTest() {
   describe('UIShowDialogBackgroundEffectTest', () => {
     beforeAll(() => {
       console.info("UIShowDialogBackgroundEffectTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.dialog.api19.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("UIShowDialogBackgroundEffectTest beforeEach start");

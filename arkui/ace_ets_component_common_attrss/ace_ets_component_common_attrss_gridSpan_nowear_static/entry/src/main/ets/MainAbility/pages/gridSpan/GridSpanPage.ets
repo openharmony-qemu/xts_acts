@@ -15,7 +15,6 @@
  */
 
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
-import animator, { AnimatorResult, AnimatorOptions } from '@ohos.animator';
 import {ListItemGroup,BreakpointsReference,BreakPoints,GridRowOptions,GutterOption,TextTimerController,TabContent,FlowItem,ColumnOptions,SideBarContainerType,HorizontalAlign,VerticalAlign,AlignRuleOption,
   BadgeParam,BadgeStyle,GridColColumnOption,GridColOptions,GridItem,GridCol,GridRowDirection,MenuItemGroup,
   ToggleType,TimePicker,StepperItem,SliderStyle,FlexDirection,ProgressType,Divider,ScrollBar,BadgeParamWithNumber,CommonMethod,applyStyles,

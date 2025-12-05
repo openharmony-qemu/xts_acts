@@ -47,9 +47,7 @@ export default function ParagraphStyle3() {
     beforeAll(() => {
       console.info("ParagraphStyle3 beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api12.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ParagraphStyle3 beforeEach start");

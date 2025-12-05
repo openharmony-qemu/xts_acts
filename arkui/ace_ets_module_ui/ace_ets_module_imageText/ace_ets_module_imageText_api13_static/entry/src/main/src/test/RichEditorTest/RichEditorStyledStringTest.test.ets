@@ -37,9 +37,7 @@ export default function RichEditorStyledStringTest() {
     beforeAll(() => {
       console.info("RichEditorStyledStringTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

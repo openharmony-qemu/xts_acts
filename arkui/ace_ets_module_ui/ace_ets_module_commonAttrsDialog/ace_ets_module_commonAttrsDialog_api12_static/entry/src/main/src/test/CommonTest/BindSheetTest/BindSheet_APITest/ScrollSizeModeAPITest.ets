@@ -49,9 +49,7 @@ export default function ScrollSizeMode_APITest() {
   describe('ScrollSizeMode_APITest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ScrollSizeMode_APITest beforeEach start");

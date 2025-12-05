@@ -37,7 +37,6 @@ export default function selectApi1() {
     beforeAll(() => {
       console.info("selectApi1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

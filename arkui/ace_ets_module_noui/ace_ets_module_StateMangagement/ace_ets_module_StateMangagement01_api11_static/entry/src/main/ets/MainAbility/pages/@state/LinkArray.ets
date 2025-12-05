@@ -107,7 +107,7 @@ struct Index_CM {
       Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + JSON.stringify(this.Array))
         .fontSize(9).key('LinkArray').height('5%')
 
-      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " )
+      Text("count type of " + JSON.stringify(CommonFunc.getType(this.Array)) + " number is " + this.getUIContext().getHostContext()?.resourceManager.getStringSync($r('app.string.number').id))
         .fontSize(9).key('LinkArrayNew').height('5%')
 
       Child_CM({Array: this.Array})

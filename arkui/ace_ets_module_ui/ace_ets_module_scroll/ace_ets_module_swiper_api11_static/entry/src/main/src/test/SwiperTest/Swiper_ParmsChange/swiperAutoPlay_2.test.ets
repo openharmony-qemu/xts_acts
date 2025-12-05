@@ -58,9 +58,7 @@ export default function swiperAutoPlay_2() {
     beforeAll(() => {
       console.info("swiperAutoPlay_2 beforeAll start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.swiper.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

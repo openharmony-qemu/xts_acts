@@ -40,7 +40,6 @@ export default function popupKeyboardAvoidMode() {
     beforeAll(() => {
       console.info("popupKeyboardAvoidMode beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
       console.info("popupKeyboardAvoidMode beforeAll start")
       let deviceTypeInfo = deviceInfo.deviceType
       currentDeviceIsPC = deviceTypeInfo === "2in1" ? true : false

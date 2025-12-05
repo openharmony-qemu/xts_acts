@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Resource } from '@ohos.arkui.component'
+import { Entry, Column, Component, $r, ResourceColor, CalendarPickerDialog, Flex, FlexWrap, Button, Color, BlurStyle, ShadowStyle, ClickEvent, Resource, CalendarDialogOptions } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
 
 @Entry
@@ -24,7 +24,7 @@ struct CalendarPickerDialogBGColor {
       backgroundColor: (color as undefined|Color|Int|String|Resource),
       backgroundBlurStyle: BlurStyle.NONE,
       shadow: ShadowStyle.OUTER_FLOATING_SM,
-    })
+    } as CalendarDialogOptions)
   }
   build() {
     Flex({wrap: FlexWrap.Wrap}) {

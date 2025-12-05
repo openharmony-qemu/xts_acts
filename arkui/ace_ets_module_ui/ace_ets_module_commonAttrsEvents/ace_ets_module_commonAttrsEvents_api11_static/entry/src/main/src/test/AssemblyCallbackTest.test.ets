@@ -35,9 +35,7 @@ export default function assemblyCallbackTest() {
 
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

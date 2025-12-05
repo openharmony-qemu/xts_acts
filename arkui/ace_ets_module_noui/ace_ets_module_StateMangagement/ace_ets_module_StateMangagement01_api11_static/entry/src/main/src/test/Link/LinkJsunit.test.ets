@@ -65,9 +65,7 @@ export default function linkJsunit() {
     beforeAll(() => {
       console.info("linkTest_static_ beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement01.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
 
     beforeEach(async (): Promise<void> => {

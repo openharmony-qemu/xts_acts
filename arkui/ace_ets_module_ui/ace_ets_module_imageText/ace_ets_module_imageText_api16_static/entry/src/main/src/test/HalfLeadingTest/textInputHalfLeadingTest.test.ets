@@ -48,9 +48,7 @@ export default function textInputHalfLeadingTest() {
     beforeAll(() => {
       console.info("textInputHalfLeadingTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.imageText.api16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

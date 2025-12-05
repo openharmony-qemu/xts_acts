@@ -26,9 +26,7 @@ export default function router_getStateByUrl14() {
   describe('router_getStateByUrl14', () => {
     beforeAll(() => {
       console.info("router_getStateByUrl14 beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api12.static", "EntryAbility")
     });
 
     beforeEach(async () => {

@@ -29,9 +29,7 @@ export default function counterDirectionTest() {
   describe('counterDirectionTest', () => {
     beforeAll(() => {
       console.info("counterDirectionTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
 
     });
 

@@ -37,9 +37,7 @@ export default function monopolizeTest() {
 
     beforeAll(() => {
       console.info("monopolizeTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {
