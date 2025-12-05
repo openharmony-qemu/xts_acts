@@ -19,6 +19,6 @@ group("websocket") {
 "websocketalltest:ActsNetworkMgrWebsocketTest",
 "ActsNetworkMgrWebsocketTestStatic:ActsNetworkMgrWebsocketStaticTest",
 "ActsNetworkMgrWsNoPermissionTestStatic:ActsNetworkMgrWsNoPermissionStaticTest",
-"ActsNetworkMgrWebsocketCertVerifyTestStatic:ActsNetworkWebsocketCertVerifyStaticTest"
+"ActsNetworkMgrWebsocketCertVerifyTestStatic:ActsNetworkManagerWebsocketCertVerifyStaticTest"
 ]
 }
