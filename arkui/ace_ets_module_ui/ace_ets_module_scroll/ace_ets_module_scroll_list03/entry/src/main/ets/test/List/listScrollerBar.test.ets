@@ -69,7 +69,7 @@ export default function listScrollerBar() {
       console.info("[listScrollerBar_0100] component obj is: " + JSON.stringify(JSON.parse(strJson)));
       console.info("[listScrollerBar_0100] content: " + JSON.stringify(JSON.parse(strJson).$attrs.content));
       expect(JSON.parse(strJson).$attrs.content)
-        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-scrollStop3-');
+        .assertEqual('bar: reachStart3-reachStart1-scrollStart3-scrollStart1-reachEnd1-reachEnd3-scrollStop1-reachEnd3-scrollStop3-');
       console.info('[listScrollerBar_0100] END');
       done();
     });
