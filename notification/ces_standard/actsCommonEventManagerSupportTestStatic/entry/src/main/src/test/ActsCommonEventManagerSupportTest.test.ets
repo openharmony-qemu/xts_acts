@@ -773,6 +773,11 @@ export default function ActsCommonEventManagerSupportTest() {
      * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
      * @tc.desc      : tablet mode changed common event
      */
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100
+     * @tc.desc    tablet mode changed common event
+     */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       console.info(`${TAG} SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4100 START`)
@@ -781,10 +786,10 @@ export default function ActsCommonEventManagerSupportTest() {
       done()
     })
 
-    /*
-     * @tc.number    : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4200
-     * @tc.name      : SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4200
-     * @tc.desc      : lid state changed common event
+    /**
+     * @tc.number  SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4200
+     * @tc.name    SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4200
+     * @tc.desc    lid state changed common event
      */
     it('SUB_NOTIFICATION_CES_MANAGER_SUPPORT_ENUM_TEST_Static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
