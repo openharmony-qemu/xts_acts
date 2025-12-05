@@ -2041,5 +2041,40 @@ export default function EmojiFastBufferTest() {
         expect(err.message).assertFail();
       }
     });
+
+    /**
+     * @tc.name   testBufferwriteEmoji0013
+     * @tc.number SUB_COMMONLIBRARY_FASTBUFFER_BASE_BUFFER_EMOJI_13000
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testBufferwriteEmoji0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+            let str = 'hello world';
+      expect(buffer.byteLength(str, 'utf-8')).assertEqual(11);
+      expect(buffer.byteLength(str)).assertEqual(11);
+
+      let buf = buffer.from([0x62, 0x75, 0x66, 0x66, 0x65, 0x72]);
+      expect(buffer.byteLength(buf, 'utf-8')).assertEqual(6);
+      expect(buffer.byteLength(buf)).assertEqual(6);
+
+      let tArray = new Uint8Array([21, 31]);
+      expect(buffer.byteLength(tArray, 'utf-8')).assertEqual(2);
+      expect(buffer.byteLength(tArray)).assertEqual(2);
+
+      const buffer2 = new ArrayBuffer(16);
+      const view = new DataView(buffer2, 0);
+      view.setInt16(1, 42);
+      view.getInt16(1);
+      expect(buffer.byteLength(view, 'utf-8')).assertEqual(16);
+      expect(buffer.byteLength(view)).assertEqual(16);
+      expect(buffer.byteLength(buffer2, 'utf-8')).assertEqual(16);
+      expect(buffer.byteLength(buffer2)).assertEqual(16);
+
+      const sBuffer = new SharedArrayBuffer(0);
+      expect(buffer.byteLength(sBuffer, 'utf-8')).assertEqual(0);
+      expect(buffer.byteLength(sBuffer)).assertEqual(0);
+    });
   })
 }
