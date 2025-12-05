@@ -91,12 +91,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
-     * @tc.desc:Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001
+     * @tc.desc   Test that the startBackgroundRunning function normal call with bgModeList and stopBackgroundRunning function normal call
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_001 begin---');
@@ -167,12 +167,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning callback function normal call with bgMode and stopBackgroundRunning callback function
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning callback function normal call with bgMode and stopBackgroundRunning callback function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_002 begin---');
@@ -228,12 +228,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
-     * @tc.desc:Test that the startBackgroundRunning promise function normal call with bgMode and stopBackgroundRunning promise function
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014
+     * @tc.desc   Test that the startBackgroundRunning promise function normal call with bgMode and stopBackgroundRunning promise function
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_014 begin---');
@@ -285,12 +285,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of DATA_TRANSFER
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of DATA_TRANSFER
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_015 begin---');
@@ -311,12 +311,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of AUDIO_PLAYBACK
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_PLAYBACK
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_016 begin---');
@@ -337,12 +337,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of AUDIO_RECORDING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of AUDIO_RECORDING
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_017 begin---');
@@ -363,12 +363,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of LOCATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of LOCATION
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_018 begin---');
@@ -389,12 +389,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of BLUETOOTH_INTERACTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of BLUETOOTH_INTERACTION
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_019 begin---');
@@ -415,12 +415,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of MULTI_DEVICE_CONNECTION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of MULTI_DEVICE_CONNECTION
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_020 begin---');
@@ -441,12 +441,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of VOIP
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of VOIP
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_021 begin---');
@@ -467,12 +467,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundMode of TASK_KEEPING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundMode of TASK_KEEPING
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_022 begin---');
@@ -493,12 +493,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_023 begin---');
@@ -519,12 +519,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundSubMode of CAR_KEY
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_024 begin---');
@@ -546,12 +546,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
-     * @tc.desc:Test that the updateBackgroundRunning function normal
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025
+     * @tc.desc   Test that the updateBackgroundRunning function normal
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_TASK_STATIC_XTS_025 begin---');
@@ -626,12 +626,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
       })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
-     * @tc.desc:Test that the stopBackgroundRunning callback function and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001
+     * @tc.desc   Test that the stopBackgroundRunning callback function and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_001 begin---');
@@ -673,12 +673,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
-     * @tc.desc:Test that the startBackgroundRunning callback function error call with bgMode and errocode is 202
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002
+     * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 202
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_002 begin---');
@@ -719,12 +719,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-    * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
-    * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
-    * @tc.desc:Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
-    * @tc.level:Level 3
-    * @tc.type:Function
-    * @tc.size:MediumTest
+    * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
+    * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003
+    * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 202
+    * @tc.level  LEVEL0
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
     */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_003 begin---');
@@ -764,12 +764,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
 
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
-     * @tc.desc:Test that the startBackgroundRunning promise function error call with bgModeList and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgModeList and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_004 begin---');
@@ -820,12 +820,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
-     * @tc.desc:Test that the startBackgroundRunning callback function error call with bgMode and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005
+     * @tc.desc   Test that the startBackgroundRunning callback function error call with bgMode and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_005 begin---');
@@ -881,12 +881,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
-     * @tc.desc:Test that the updateBackgroundRunning promise function error call with bgModeList and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006
+     * @tc.desc   Test that the updateBackgroundRunning promise function error call with bgModeList and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_006 begin---');
@@ -931,12 +931,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
-     * @tc.desc:Test that the stopBackgroundRunning promise function error call and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007
+     * @tc.desc   Test that the stopBackgroundRunning promise function error call and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_007 begin---');
@@ -978,12 +978,12 @@ export default function ActsLongTimeTaskManagerStaticTest() {
     })
 
     /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
-     * @tc.desc:Test that the startBackgroundRunning promise function error call with bgMode and errocode is 9800005
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008
+     * @tc.desc   Test that the startBackgroundRunning promise function error call with bgMode and errocode is 9800005
+     * @tc.level  LEVEL0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
      */
     it("SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:() => void): Promise<void> => {
       hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_ERR_TASK_STATIC_XTS_008 begin---');
