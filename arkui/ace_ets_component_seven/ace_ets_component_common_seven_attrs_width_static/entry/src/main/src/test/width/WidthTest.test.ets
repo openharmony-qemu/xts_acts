@@ -53,10 +53,8 @@ export default function widthTest() {
   describe('WidthTest', () => {
     //Generate test cases (it) through a loop based on the support view * test values.
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       console.info('WidthTest  ======= start')
-      await startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Modify the target component properties.
