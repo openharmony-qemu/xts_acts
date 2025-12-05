@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,9 +31,9 @@ import { UtilsTest, startAbility } from './Util.test';
 export default function datePickerJsunit() {
   describe('datePickerTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async () => {

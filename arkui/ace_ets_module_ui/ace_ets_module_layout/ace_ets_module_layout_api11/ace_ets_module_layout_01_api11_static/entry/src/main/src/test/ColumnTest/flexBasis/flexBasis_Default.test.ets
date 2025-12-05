@@ -39,9 +39,8 @@ export default function flexBasis_Default() {
     beforeAll(() => {
       console.info("flexBasis_Default beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("flexBasis_Default beforeEach start");

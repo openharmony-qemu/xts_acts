@@ -37,7 +37,7 @@ export default function SliderAttrs() {
     beforeAll(() => {
       console.info("SliderAttrs beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("SliderAttrs beforeAll end");
     });
 

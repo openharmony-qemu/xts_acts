@@ -27,9 +27,9 @@ export default function SaveLayerTest() {
     beforeAll(() => {
       console.info("SaveLayerTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
 
     });
 

@@ -47,8 +47,9 @@ export default function testsuite() {
   SwipeGestureExample02Test();
   SwipeGestureExample01Test();
   onKeyPreImeTest();
-  SwipeGestureTemplateTest(); 
+  SwipeGestureTemplateTest();
   PanGestureUpdateTest();
   PinchGestureUpdateTest();
   RotationGestureUpdateTest();
+  APIshouldBuiltInRecognizerParallelWith()
 }

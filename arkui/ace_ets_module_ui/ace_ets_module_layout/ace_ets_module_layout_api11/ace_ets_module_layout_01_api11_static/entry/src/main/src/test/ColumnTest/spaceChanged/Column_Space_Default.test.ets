@@ -38,9 +38,8 @@ export default function Column_Space_Default() {
     beforeAll(() => {
       console.info("Column_Space_Default beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Column_Space_Default beforeEach start");

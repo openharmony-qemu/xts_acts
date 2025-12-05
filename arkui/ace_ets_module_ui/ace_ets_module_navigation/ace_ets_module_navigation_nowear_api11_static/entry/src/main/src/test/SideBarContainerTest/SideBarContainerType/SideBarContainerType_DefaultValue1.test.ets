@@ -38,7 +38,7 @@ export default function SideBarContainerType_DefaultValue1() {
     beforeAll(() => {
       console.info("SideBarContainerType_DefaultValue1 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async () => {
       console.info("SideBarContainerType_DefaultValue1 beforeEach start");

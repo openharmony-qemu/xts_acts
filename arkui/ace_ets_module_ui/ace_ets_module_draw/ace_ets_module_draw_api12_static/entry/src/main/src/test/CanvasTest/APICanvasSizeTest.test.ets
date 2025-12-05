@@ -29,9 +29,9 @@ export default function APICanvasSizeTest() {
     beforeAll(() => {
       console.info("APICanvasSizeTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
 
     });
 

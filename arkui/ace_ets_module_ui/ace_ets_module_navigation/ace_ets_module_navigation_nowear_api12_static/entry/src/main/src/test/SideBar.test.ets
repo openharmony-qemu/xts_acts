@@ -42,7 +42,7 @@ export default function sideBarShowSideBarJsunit() {
       }
       try {
         await UtilsTest.startAbility("com.arkui.ace.navigationnowear12.static", "EntryAbility")
-        await UtilsTest.msSleep(4000)
+
         const routerInstance = AppStorage.get<Router>("router") as Router
         routerInstance.clear();
         let pages = routerInstance.getState();

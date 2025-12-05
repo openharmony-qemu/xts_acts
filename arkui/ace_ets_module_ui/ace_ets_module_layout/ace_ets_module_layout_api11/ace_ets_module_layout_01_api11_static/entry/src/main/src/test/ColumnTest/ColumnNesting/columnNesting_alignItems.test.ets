@@ -39,9 +39,9 @@ export default function columnNesting_alignItems() {
     beforeAll(async () => {
       console.info("columnNesting_alignItems beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     })
     beforeEach(async (): Promise<void> =>{
       console.info("columnNesting_alignItems beforeEach start");

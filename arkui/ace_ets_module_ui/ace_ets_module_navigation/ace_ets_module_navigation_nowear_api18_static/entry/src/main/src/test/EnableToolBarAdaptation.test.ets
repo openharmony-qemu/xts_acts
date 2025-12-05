@@ -38,7 +38,7 @@ export default function EnableToolBarAdaptation() {
     beforeAll(() => {
       console.info("stepper beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear18.static", "EntryAbility")
-      
+
     });
 
     beforeEach(async () => {

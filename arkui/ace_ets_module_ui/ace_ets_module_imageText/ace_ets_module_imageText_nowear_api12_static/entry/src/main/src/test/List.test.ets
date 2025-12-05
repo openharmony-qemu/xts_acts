@@ -52,7 +52,7 @@ export default function testsuite() {
   searchTest(); // pass
   onDidIMEInputTest();
   onSelectionChange1();
-  onSelectionChange4();
+  onSelectionChange4(); // pass
   onSelectionChange5();
   onSelectionChange6();
   onSelectionChange7();

@@ -37,9 +37,7 @@ export default function ObserverApi() {
   describe('ObserverApi', () => {
     beforeAll(() => {
       console.info("ObserverApi beforeEach start");
-      
       await UtilsTest.startAbility("com.arkui.ace.observer.static", "EntryAbility");
-      
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

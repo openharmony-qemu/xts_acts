@@ -20,6 +20,5 @@ import StepperModifierPage from './StepperModifierPage.test'
 
 export default function testsuite() {
   SplitPlaceholder();
-  UIContextNavDestinationUpdate();  //Consume 用例需删除
   StepperModifierPage();
 }

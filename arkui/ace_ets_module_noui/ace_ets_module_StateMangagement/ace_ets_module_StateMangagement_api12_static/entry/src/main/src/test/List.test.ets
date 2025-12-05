@@ -186,7 +186,7 @@ import RepeatTest0400 from './RepeatTest/RepeatTest0400.test';
 
 export default function testsuite() {
   ExtendTrackTest(); //全pass 注释
-  Extend0010TestJsunit(); //一个断言失败 颜色不相等 backgroundColor 页面代码有注释
+  Extend0010TestJsunit(); //pass
 
   //全pass 注释
   Foreach1();
@@ -197,14 +197,14 @@ export default function testsuite() {
   LazyForEachDelete();  //pass
   LazyForEachMove();  //pass
   LazyForEachCacheEnhance(); //app died
-  LazyForEachVisibleAreaChange(); //expect 0 equals 2
+  LazyForEachVisibleAreaChange(); //expect 221 equals 2
   LazyForEachSingleBoolean();  //pass 注释
   LazyForEachSingleNumber();  //pass 注释
   LazyForEachSingleString();  //pass 注释
   NestTrackTest(); //全pass 注释
   StaticTrackTest(); //全pass 注释
-  getSharedLocalStorageTest(); //expect propAM:undefined equals propAM:47
-  useSharedStorageTest(); //expect propBM:0 equals propBM:40
+  getSharedLocalStorageTest(); //pass
+  useSharedStorageTest(); //pass
 
   //全pass 注释
   ObjectArrayTest();
@@ -221,9 +221,9 @@ export default function testsuite() {
   Monitor5Test();
   Monitor6Test();
 
-  RepeatEachJsunit(); //断言失败
-  RepeatForeachNumberBool(); //断言失败
-  RepeatForeachString(); //断言失败
+  RepeatEachJsunit(); //断言失败 已上报
+  RepeatForeachNumberBool(); //断言失败 已上报
+  RepeatForeachString(); //断言失败 已上报
   RepeatLazyForEachBooleanSource(); //pass 注释
   RepeatLazyForEachNumberSource(); //pass 注释
   RepeatLazyForEachStringSource(); //pass 注释
@@ -242,9 +242,9 @@ export default function testsuite() {
   RepeatV1Boolean();
   RepeatV1Object();
 
-  persistStorageATest();  //页面有注释@Entry(obj.storage)不支持
+  persistStorageATest();  // pass
   appStorageRefJsunit();   //pass 注释
-  localStorageRefJsunit();
+  localStorageRefJsunit(); //pass
 
 
   IMonitorTest();  //全pass 注释
@@ -255,8 +255,8 @@ export default function testsuite() {
   Param3Jsunit(); //全pass 注释
   Param4Jsunit(); //全pass 注释
   Monitor1Jsunit(); //全pass 注释
-  Monitor2Jsunit(); // app died
-  Monitor3Jsunit(); //await (btn?.click() as Promise<void>)空指针
+  Monitor2Jsunit(); // app died sr
+  Monitor3Jsunit(); // pass
   Monitor4Jsunit(); //全pass 注释
   repeatCountJsunit();  //全pass 注释
   repeatNoTemplateIdJsunit(); //全pass 注释
@@ -282,15 +282,15 @@ export default function testsuite() {
   getTarget6Test(); //全pass 注释
   ComputedTest(); //全pass 注释
   makeObservedTest(); //全pass 注释
-  makeObserved0020Test();  //collections.Array不存在 页面注释导致页面白屏1用例
+  makeObserved0020Test();  //collections.Array 导入不了，外领域
   makeObserved0030Test();  //pass 注释
-  makeObserved0040Test();  //collections.Set 页面注释页面未加载1用例
+  makeObserved0040Test();  //collections.Set  导入不了，外领域
   makeObserved0050Test();  // 删除用例
   makeObserved0060Test();  //pass 注释
-  makeObserved0070Test();  //页面有注释 1
+  makeObserved0070Test();  //@Concurrent装饰器 无法导入，外领域
   makeObserved0080Test(); //pass 注释
   makeObserved0110Test(); //pass 注释
-  makeObserved0120Test();  //页面有注释 1
+  makeObserved0120Test();  //pass
   makeObserved0130Test(); //强基语法中UIUtils.makeObserved入参不支持class，建议该删除用例
   makeObserved0150Test(); //pass 注释
   twoWayBindTest();//pass 注释
@@ -314,8 +314,8 @@ export default function testsuite() {
   StateSet0010TestJsunit(); //全pass 注释
   stateArr();  // pass
   Observed0060TestJsunit(); //全pass 注释
-  LocalStorageLink0310TestJsunit(); //页面有注释 2用例
-  LocalStorageProp0320TestJsunit(); //页面有注释 2用例
+  LocalStorageLink0310TestJsunit(); // fail1 json.stringify [1, true, { 'propB': 48 } as PropObject] 报错
+  LocalStorageProp0320TestJsunit(); // pass
   LocalStorageAbsTestJsunit(); //pass
   ComputedLocalTest(); // pass
   ComputedMonitorTest(); // pass
@@ -338,10 +338,10 @@ export default function testsuite() {
   MakeObservedTest0090(); //pass
   V1ToV2();  //全pass 注释
   V2ToV1(); //@BuilderParam注释导致1用例failed
-  Prefetcher1();  // 页面编译不通过 页面注释 1用例
-  Prefetcher2(); // 页面编译不通过 页面注释 1用例
-  appStorageV2(); // 页面编译不通过 页面注释 2用例
-  persistenceV2(); // 页面编译不通过 页面注释 3用例
+  Prefetcher1();  // 页面编译不通过  IDataSourcePrefetching sr 页面注释 1用例
+  Prefetcher2(); // 页面编译不通过 IDataSourcePrefetching sr 页面注释 1用例
+  appStorageV2(); // 页面编译不通过  appStorageV2 下掉，7.0上暂无 sr 页面注释 2用例
+  persistenceV2(); // 页面白屏 3用例 已上报
   StateTest0040();  //全pass 注释
   StateTest0080();  //全pass 注释
   WrapBuilder0020Test(); //全pass 注释
@@ -354,10 +354,10 @@ export default function testsuite() {
   WatchLinkTest0050(); //全pass 注释
   ProvideConsumeTest0010(); //全pass 注释
   ProviderTest0270(); //全pass 注释
-  StateUndefinedTest0010(); //页面注释导致1用例failed
+  StateUndefinedTest0010(); // pass
   AbstractPropertyRefTest();  //pass
   SubAbstractPropertyLinkTest(); //pass
-  EnvironmentTest0040();  //页面有注释
+  EnvironmentTest0040();  // fail 1
   LocalStorageDeleteTest0120(); //全pass 注释
   LazyForEachInterface(); //@Reusable生命周期函数未调用
   RepeatTest0010(); //全pass 注释
@@ -365,7 +365,7 @@ export default function testsuite() {
   RepeatTest0400(); //全pass 注释
 
 
-  FreezeV2Test03(); //代码有注释
+  FreezeV2Test03(); // pass
   makeObserved0100Test(); //pass 注释
   DataOperationTypeTest();  // pass
   lazyChangeJsunit();  //pass

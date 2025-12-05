@@ -41,9 +41,9 @@ export default function stackAlignChange() {
     beforeAll(async () => {
       console.info("stackAlignChangeTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

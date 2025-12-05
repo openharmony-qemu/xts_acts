@@ -55,9 +55,9 @@ export default function LocalStorageProp0320TestJsunit() {
     beforeAll(() => {
       console.info("LocalStorageProp0320TestJsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -126,15 +126,15 @@ export default function LocalStorageProp0320TestJsunit() {
       await CommonFunc.sleep(1000);
       let obj5 = JSON.parseJsonElement(inspector.getInspectorByKey('tv0320ChildSet'));
       console.info("[LocalStorageProp0320TestJsunit_static_001] component obj1 is: " + JSON.stringify(obj5));
-      expect(obj5.getElement('$attrs').getString('content')).assertEqual('0');
+      expect(obj5.getElement('$attrs').getString('content')).assertEqual('0,1');
       await CommonFunc.sleep(1000);
       let obj6 = JSON.parseJsonElement(inspector.getInspectorByKey('tv0320ChildMap'));
       console.info("[LocalStorageProp0320TestJsunit_static_001] component obj6 is: " + JSON.stringify(obj6));
-      expect(obj6.getElement('$attrs').getString('content')).assertEqual('value');
+      expect(obj6.getElement('$attrs').getString('content')).assertEqual('newValue');
       await CommonFunc.sleep(1000);
       let obj7 = JSON.parseJsonElement(inspector.getInspectorByKey('tv0320ChildDate'));
       console.info("[LocalStorageProp0320TestJsunit_static_001] component obj7 is: " + JSON.stringify(obj7));
-      expect(obj7.getElement('$attrs').getString('content')).assertEqual('Thu Feb 01 2024 08:09:30 GMT+0800');
+      expect(obj7.getElement('$attrs').getString('content')).assertEqual('Thu Feb 01 2024 08:09:31 GMT+0800');
       await CommonFunc.sleep(1000);
       let obj8 = JSON.parseJsonElement(inspector.getInspectorByKey('tv0320ChildUnd'));
       console.info("[LocalStorageProp0320TestJsunit_static_001] component obj8 is: " + JSON.stringify(obj8));

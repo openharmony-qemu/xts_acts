@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,9 +31,9 @@ import { UtilsTest, startAbility } from './Util.test';
 export default function radioGroupJsunit() {
   describe('radioTest', () => {
      beforeAll(() => {
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async () => {
@@ -66,7 +67,7 @@ export default function radioGroupJsunit() {
       console.info("[testRadioGroupStatic001] START");
       let strJson = inspector.getInspectorByKey('RadioOne');
       let obj = JSON.parseJsonElement(strJson);
-      console.info("[testRadioGroupStatic001] obj  is: " + JSON.stringify(obj.getElement('$attrs')));
+      console.info("[testRadioGroupStatic001] obj  is: " + JSON.stringifyJsonElement(obj.getElement('$attrs')));
 
       expect(obj.getElement('$attrs').getElement('radioStyle').getString('checkedBackgroundColor')).assertEqual('#FF147258');
       expect(obj.getElement('$attrs').getElement('radioStyle').getString('indicatorColor')).assertEqual('#FF123456');

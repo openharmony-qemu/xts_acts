@@ -49,9 +49,9 @@ export default function marqueeUIJsunit() {
   describe('marqueeUIJsunit', () => {
     beforeAll(() => {
       console.info("marqueeUIJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
       uiContext = AppStorage.get<UIContext>("uiContext")
     });
 

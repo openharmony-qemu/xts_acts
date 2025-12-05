@@ -41,9 +41,9 @@ export default function stackSizeChange() {
     beforeAll(async () => {
       console.info("stackSizeChangeTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     })
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
@@ -57,7 +57,7 @@ export default function stackSizeChange() {
         if (!("stackSizeChange" == pages?.name)) {
           console.info("get stackSizeChange state success " + JSON.stringify(pages?.name));
           routerInstance?.pushUrl(options)
-          await UtilsTest.msSleep(4000);
+
         }
       } catch (err) {
         console.error("push stackSizeChange page error " + JSON.stringify(err));

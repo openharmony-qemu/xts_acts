@@ -20,9 +20,11 @@ import window from '@ohos.window';
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
-
+import { LocalStorage } from '@ohos.arkui.stateManagement'
 
 class EntryAbility extends UIAbility {
+  private para:Record<string, number> = { 'propAM': 42 ,'propBM':40};
+  private storage: LocalStorage = new LocalStorage(this.para);
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onCreate');
   }
@@ -30,14 +32,13 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
-      windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
-        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
-        MyCallback.runCasesOfCallback();
-        if (err?.code) {
-          hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent error');
-          return;
-        }
-        hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent ok');
+      let windowClass: window.Window | undefined = undefined;
+      windowClass = windowStage.getMainWindowSync()
+      let promise = windowClass.loadContent('MainAbility/pages/index/index', this.storage);
+      promise.then(() => {
+        console.info('Succeeded in loading the content.');
+      }).catch((err) => {
+        console.error(`Failed to load the content.`);
       });
     } catch (e: Error) {
       hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent catch error：-----------' + e.message);

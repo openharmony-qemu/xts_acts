@@ -123,7 +123,7 @@ export default function testsuite() {
     textAreaInputTest() // pass 1
     stageFontTest(); // pass 5
     stageMediaquery(); // pass 13
-    richEditorApi4(); // fail 1 // JSON.stringify 相关
+    richEditorApi4(); // pass 1
     richEditorApi5(); // pass 1
     richEditorApi6(); // pass 1
     richEditorApi7(); // pass 1
@@ -134,7 +134,7 @@ export default function testsuite() {
     ImageTextTest(); //pass 7
     TextAreaCallbackTest(); //pass 1
     Image_QRCode_Api(); // pass 1
-    RichEditorApi(); // pass 2 fail 2 JSON.stringify相关
+    RichEditorApi(); // pass 5
 
 
     APIgetUIFontConfigJsunit(); // pass 1
@@ -146,8 +146,8 @@ export default function testsuite() {
     SXvalueResourceJsunit(); // pass 1
     SXSymbolGlyphSINGLE01Jsunit(); // pass 1
     textDataDataDetectorConfig() // pass 4
-    richEditorApi2()
-    richEditorApi3() // fail 1  json.stringify
+    richEditorApi2() // fail 1
+    richEditorApi3() // pass 1
     RichEditorTest() // pass 3
     spanApi1() // pass 1
     symbolGlyphApi1() // pass 1
@@ -176,7 +176,7 @@ export default function testsuite() {
     textInputJsunit(); //pass 20
     propJsunit(); // pass 2
     spanJsunit() // pass 3
-    textJsunit() // fail 4 Json.stringify() https://gitcode.com/m0_73853300/docs/blob/master/zh-cn/application-dev/reference/apis-arkts/js-apis-json.md#jsonstringify
+    textJsunit() // pass 9
     outline() // pass 4
     textAreaUxTest(); // pass 40
     search_caret(); // pass 5
@@ -197,7 +197,7 @@ export default function testsuite() {
     fontJsunit(); // pass 6
     textClockJsunit() // pass 6
     textTimerJsunit() // pass 3
-    appVersionCodeJsunit();
+    appVersionCodeJsunit(); //fail 1 app died
     colorEnumJsunit(); // pass 1
     copyOptionJsunit(); // pass 2
     TextStyle2() // pass 1
@@ -219,15 +219,15 @@ export default function testsuite() {
     searchTest(); // pass 10
 
 
-    textInputTest()
-    TextAreaTypeTest();
-    SearchTypeTest();
-    ImageSpanVisibilityTest();
-    showCounterTest();
-    UIFontAliasInfo();
-    measureOptionsTest();
-    ContainerSpanModifierTest();
-    SearchModifierTest();
-    SymbolGlyphFontWeightTest();
-    SpanTextShadowTest();
+    textInputTest() // pass 36
+    TextAreaTypeTest(); // pass 2
+    SearchTypeTest(); // pass 2
+    ImageSpanVisibilityTest(); // pass 5
+    showCounterTest(); // pass 6
+    UIFontAliasInfo(); // pass 1
+    measureOptionsTest(); // pass 1
+    ContainerSpanModifierTest(); // pass 2
+    SearchModifierTest(); // pass 2
+    SymbolGlyphFontWeightTest(); // pass 10
+    SpanTextShadowTest(); // pass 3
 }

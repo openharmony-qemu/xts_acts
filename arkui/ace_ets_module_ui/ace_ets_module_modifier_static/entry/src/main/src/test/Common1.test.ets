@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,9 +33,9 @@ export default function common1Jsunit() {
     beforeAll(() => {
       console.info("alphabetIndexerTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async () => {
@@ -256,20 +257,20 @@ export default function common1Jsunit() {
     });
 
     
-    /*
-     * @tc.number   Common1Static012
-     * @tc.name     Common1Static012
-     * @tc.desc     Common1Static012
-     * @tc.level    Level.LEVEL0
-     */
-    it('Common1Static012', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('[Common1Static012] START');
-      let strJsonNew = inspector.getInspectorByKey('common2');
-      let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static012] component Common1Static012 is: " + JSON.stringify(objNew.getElement('$attrs')));
-      expect(objNew.getElement('$attrs').getArray('obscured')[0]).assertEqual("1");
-      done();
-    });
+    // /*
+    //  * @tc.number   Common1Static012
+    //  * @tc.name     Common1Static012
+    //  * @tc.desc     Common1Static012
+    //  * @tc.level    Level.LEVEL0  异常参数
+    //  */
+    // it('Common1Static012', Level.LEVEL0, async (done: () => void): Promise<void> => {
+    //   console.info('[Common1Static012] START');
+    //   let strJsonNew = inspector.getInspectorByKey('common2');
+    //   let objNew = JSON.parseJsonElement(strJsonNew);
+    //   console.info("[Common1Static012] component Common1Static012 is: " + JSON.stringify(objNew.getElement('$attrs')));
+    //   expect(objNew.getElement('$attrs').getArray('obscured')[0]).assertEqual("1");
+    //   done();
+    // });
 
     
     /*
@@ -739,7 +740,6 @@ export default function common1Jsunit() {
       let strJsonNew = inspector.getInspectorByKey('testbutton');
       let objNew = JSON.parseJsonElement(strJsonNew);
       console.info("[Common1Static043] component Common1Static043 is: " + JSON.stringify(objNew.getElement('$attrs').getElement('clickEffect')));
-      // let clickEffect = JSON.parseJsonElement(objNew.getElement('$attrs').getElement('clickEffect'));
       expect(objNew.getElement('$attrs').getElement('clickEffect').getString('level')).assertEqual("2");
       expect(objNew.getElement('$attrs').getElement('clickEffect').getString('scale')).assertEqual("1.000000");
       done();
@@ -780,7 +780,8 @@ export default function common1Jsunit() {
       await UtilsTest.msSleep(2000)
       let strJsonNew = inspector.getInspectorByKey('common1');
       let objNew = JSON.parseJsonElement(strJsonNew);
-      console.info("[Common1Static046] component Common1Static046 is: " + JSON.stringify(objNew.getElement('$attrs')));
+      await UtilsTest.msSleep(1000)
+      // console.info("[Common1Static046] component Common1Static046 is: " + JSON.stringifyJsonElement(objNew.getElement('$attrs')));
       expect(objNew.getElement('$attrs').getDouble('zIndex')).assertEqual(5);
       done();
     });

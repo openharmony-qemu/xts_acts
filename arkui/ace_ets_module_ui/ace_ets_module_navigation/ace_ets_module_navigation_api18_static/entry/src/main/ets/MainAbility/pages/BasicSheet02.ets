@@ -22,7 +22,7 @@ import {
   List,
   ListItem,
   Resource,
-  animateTo,
+
   Curve,
   PopInfo,
   HorizontalAlign,

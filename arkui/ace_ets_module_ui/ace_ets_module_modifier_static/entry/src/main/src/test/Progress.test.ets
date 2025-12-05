@@ -1,3 +1,4 @@
+'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -33,9 +34,9 @@ export default function progressStyleJsunit() {
     beforeAll(() => {
       console.info("alphabetIndexerTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
+      await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
+
     });
 
     beforeEach(async () => {
@@ -125,7 +126,7 @@ export default function progressStyleJsunit() {
       let driver = Driver.create();
       let button =  await (driver.findComponent(ON.id('changeButton')) as Promise<Component>);
       await button.click();
-     await UtilsTest.msSleep(2000)
+      await UtilsTest.msSleep(2000)
 
       let strJsonNew = inspector.getInspectorByKey('ProgressKey1'); //测试组件的key名称
       let objNew = JSON.parseJsonElement(strJsonNew);

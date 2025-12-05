@@ -33,61 +33,54 @@ import {
   Link,Local,Trace,Track,Prop,Monitor,Computed,Param,Require,IMonitor,
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
-import { CommonModifier, TextModifier } from '@ohos.arkui.modifier'
+import { CommonModifier } from '@ohos.arkui.modifier'
 
-class MyModifier extends TextModifier {
-  applyNormalAttribute(instance: TextAttribute): void {
+class MyModifier extends CommonModifier {
+  applyNormalAttribute(instance: CommonAttribute): void {
     // super.applyNormalAttribute?.(instance);
-
   }
 
   public setGroup1(): void {
-    this.fontSize(9)
-    this.fontColor('#FFFFC0CB')
+    this.borderStyle(BorderStyle.Dotted)
+    this.borderWidth(8)
   }
 
   public setGroup2(): void {
-    this.fontWeight(300)
-    this.fontColor('#FF808080')
+    this.borderStyle(BorderStyle.Dashed)
+    this.borderWidth(8)
   }
 }
 
 @ComponentV2
 struct MyImagel {
-  @Param @Require modifier: TextModifier
+  @Param @Require modifier: CommonModifier
   index: number = 0;
 
   build() {
-    Column() {
-      // Text('Test').attributeModifier(this.modifier as MyModifier).id('textTest')
-      Button('change')
-        .onClick(():void => {
-          console.log('Modifier', 'onClick')
-          this.index++;
-          if (this.index % 2 === 1) {
-            // (this.modifier as MyModifier).setGroup1()
-            console.log('Modifier', 'setGroup1')
-          } else {
-            // (this.modifier as MyModifier).setGroup2()
-            console.log('Modifier', 'setGroup2')
-          }
-        }).id('buttonTest2')
-    }
+    Text('1111').attributeModifier(this.modifier as MyModifier).id('imageTest')
   }
 }
 
 @Entry
 @ComponentV2
 struct makeObserved0130 {
-  // @Local myModifier: TextModifier = UIUtils.makeObserved(new MyModifier().height('3%'))
-
+  @Local myModifier: CommonModifier = UIUtils.makeObserved(new MyModifier().height('3%'))
+  index: number = 0;
   build() {
     Column() {
-      // MyImagel({ modifier: this.myModifier })
-      Button('replace whole')
-        .onClick(():void => {
-          // this.myModifier = UIUtils.makeObserved(new MyModifier().fontColor('#FFFFA500'))
+      Button('change')
+        .onClick(() => {
+          console.log('Modifier', 'onClick')
+          this.index++;
+          if (this.index % 2 === 1) {
+            (this.myModifier as MyModifier).setGroup1()
+            console.log('Modifier', 'setGroup1')
+          } else {
+            (this.myModifier as MyModifier).setGroup2()
+            console.log('Modifier', 'setGroup2')
+          }
         }).id('buttonTest')
+      MyImagel({ modifier: this.myModifier })
     }
     .width('100%')
   }

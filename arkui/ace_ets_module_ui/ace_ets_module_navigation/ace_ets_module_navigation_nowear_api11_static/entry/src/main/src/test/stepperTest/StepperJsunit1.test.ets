@@ -52,7 +52,7 @@ export default function stepperJsunit1() {
     beforeAll(() => {
       console.info("stepperTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     /**
      * run after testcase

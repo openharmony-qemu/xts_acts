@@ -37,9 +37,9 @@ export default function RichEditor3() {
     beforeAll(() => {
       console.info("RichEditor3 beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+      ;
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      ;
     });
     beforeEach(async (): Promise<void> => {
       console.info("RichEditor3 beforeEach start");
@@ -101,8 +101,8 @@ export default function RichEditor3() {
       done();
     });
 
-    
-    
+
+
 /*
      * @tc.number   RichEditor3_static_0200
      * @tc.name     RichEditor3_static_0200
@@ -120,10 +120,11 @@ export default function RichEditor3() {
       console.log("========================== setContent")
 
       await CommonFunc.sleep(500);
+      console.log("========================== getSPans1")
       let getSPans = await driver.findComponent(ON.id("getSPans"));
       await CommonFunc.sleep(500);
       await (getSPans?.click() as Promise<void>)
-      console.log("========================== setContent")
+      console.log("========================== getSPans")
       await CommonFunc.sleep(500);
 
 
@@ -186,6 +187,8 @@ export default function RichEditor3() {
       let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.executeShellCommand(cmd);
+      await CommonFunc.sleep(500)
+      console.log("=============================================== findComponent(ON.text(\"全选\"))" );
       let quanxuan = await driver.findComponent(ON.text("全选"));
       await CommonFunc.sleep(500);
       await (quanxuan?.click() as Promise<void>)
@@ -246,6 +249,8 @@ export default function RichEditor3() {
       let cmd = `uinput -T -d ${point} -u ${point} -i 50 -d ${point} -u ${point}`;
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.executeShellCommand(cmd);
+      await CommonFunc.sleep(500)
+      console.log("=============================================== findComponent(ON.text(\"全选\"))" );
       let quanxuan = await driver.findComponent(ON.text("全选"));
       await CommonFunc.sleep(500);
       await (quanxuan?.click() as Promise<void>)
@@ -286,7 +291,7 @@ export default function RichEditor3() {
     });
 
     
-    
+
 /*
      * @tc.number   RichEditor3_static_0500
      * @tc.name     RichEditor3_static_0500

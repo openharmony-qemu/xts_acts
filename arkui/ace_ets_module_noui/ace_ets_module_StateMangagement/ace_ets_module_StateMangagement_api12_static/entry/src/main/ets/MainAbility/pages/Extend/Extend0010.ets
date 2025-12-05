@@ -30,7 +30,9 @@ import {
   LazyForEach,
   IDataSource,
   DataOperationType,
-  Color
+  Color,
+  TextAttribute,
+  FontStyle
 } from '@ohos.arkui.component'
 import {
   State,
@@ -46,6 +48,13 @@ import {
 //   .backgroundColor(color)
 // }
 
+function pictureRendering(this: TextAttribute, weightValue:int, color:Color): this {
+  this.fontStyle(FontStyle.Italic)
+  this.fontWeight(weightValue)
+  this.backgroundColor(color)
+  return this;
+}
+
 @Entry
 @Component
 struct FancyUse {
@@ -55,13 +64,13 @@ struct FancyUse {
     Row() {
       Text(`${this.label}`)
         .id('tv_extend0010Id')
-        // .pictureRendering(100, Color.Blue)
+        .pictureRendering(100, Color.Blue)
       Text(`${this.label}`)
         .id('tv_extend0020Id')
-        // .pictureRendering(200, Color.Pink)
+        .pictureRendering(200, Color.Pink)
       Text(`${this.label}`)
         .id('tv_extend0030Id')
-        // .pictureRendering(300, Color.Orange)
+        .pictureRendering(300, Color.Orange)
     }
   }
 }

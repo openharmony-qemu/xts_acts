@@ -38,7 +38,7 @@ import {
 @Entry
 @Component
 struct getSharedLocalStorageA {
-  localStorage: LocalStorage | undefined = this.getUIContext().getSharedLocalStorage()
+  @State localStorage: LocalStorage | undefined = this.getUIContext().getSharedLocalStorage()
   @State mes: number | undefined=0
 
   build() {
@@ -48,12 +48,15 @@ struct getSharedLocalStorageA {
         Button("Change Local Storage to 47")
           .id('getSharedLocalStorage_2')
           .onClick(():void => {
-            this.localStorage?.setOrCreate("propAM", 47)
+            console.log("============================ setOrCreate(\"propAM\", 47)" + this.localStorage)
+            const res = this.localStorage?.setOrCreate<double>("propAM", 47)
+            console.log("============================ setOrCreate(\"propAM\", 47)" + res)
           })
         Button("Get Local Storage")
           .id('getSharedLocalStorage_3')
           .onClick(():void => {
-            this.mes = this.localStorage?.get("propAM")
+            this.mes = this.localStorage?.get<double>("propAM")
+            console.log("============================ get(\"propAM\")" + this.mes)
           })
       }
       .width('100%')

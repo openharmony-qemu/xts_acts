@@ -34,9 +34,9 @@ export default function tabsDemo() {
   describe('tabsDemo', () => {
     beforeAll(() => {
       console.info("tabsDemo beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -81,11 +81,11 @@ export default function tabsDemo() {
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.text('Yellow'));
       await (btn?.click() as Promise<void>)
-      await CommonFunc.sleep(4000);
+      ;
 
       let strJson = inspector.getInspectorByKey('tabsDemo_text1');
       let obj = JSON.parseJsonElement(strJson);
-      await CommonFunc.sleep(4000);
+      await CommonFunc.sleep(1000);
       console.info("[tabsDemo_static_001] obj is: " + JSON.stringify(obj));
       expect(obj.getElement('$attrs').getString('content')).assertEqual('456');
 

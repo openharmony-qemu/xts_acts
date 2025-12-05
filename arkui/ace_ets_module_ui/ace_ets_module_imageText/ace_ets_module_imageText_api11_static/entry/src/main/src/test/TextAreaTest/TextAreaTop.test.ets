@@ -36,9 +36,9 @@ export default function textArea_top() {
   describe('textArea_top', () => {
     beforeAll(() => {
       console.info("textArea_top beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await CommonFunc.sleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

@@ -48,9 +48,9 @@ export default function DrawModifier() {
     beforeAll(() => {
       console.info("DrawModifier beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await startAbility("com.arkui.ace.drawAPI12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
 
     });
 

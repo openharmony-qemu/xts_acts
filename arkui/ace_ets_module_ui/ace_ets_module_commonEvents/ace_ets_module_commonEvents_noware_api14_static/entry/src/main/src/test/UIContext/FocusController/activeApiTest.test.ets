@@ -27,9 +27,9 @@ export default function activeApiTest() {
   describe('activeApiTest', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.open.harmony.nowearevent.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     
    /*

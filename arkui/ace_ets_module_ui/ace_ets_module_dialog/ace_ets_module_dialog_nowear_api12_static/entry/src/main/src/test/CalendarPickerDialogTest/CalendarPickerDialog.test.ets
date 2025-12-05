@@ -35,7 +35,7 @@ export default function CalendarPickerDialog() {
     beforeAll(() => {
       console.info("CalendarPickerDialog beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.nowear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async () => {

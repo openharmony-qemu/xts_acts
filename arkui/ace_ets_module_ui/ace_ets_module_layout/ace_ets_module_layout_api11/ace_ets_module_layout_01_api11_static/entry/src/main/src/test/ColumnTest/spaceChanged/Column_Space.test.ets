@@ -39,9 +39,8 @@ export default function Column_Space() {
     beforeAll(() => {
       console.info("column_SpaceTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("column_SpaceTest beforeEach start");

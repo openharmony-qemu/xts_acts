@@ -48,9 +48,9 @@ export default function WrapBuilder0020Test() {
     beforeAll(() => {
       console.info("WrapBuilder0020Test beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

@@ -35,7 +35,7 @@ export default function contentModifier() {
     beforeAll(() => {
       console.info("contentModifier beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("contentModifier beforeAll end");
     });
 

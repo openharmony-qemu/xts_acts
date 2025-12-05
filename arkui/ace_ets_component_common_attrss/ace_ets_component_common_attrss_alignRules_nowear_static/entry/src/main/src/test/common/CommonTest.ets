@@ -35,7 +35,7 @@ export default class CommonTest {
     supportView.forEach(targetView => {
 
       //Obtain the last index of cases that need to be executed.
-      let lastIndex: number = 0;
+      let lastIndex: int = 0;
       testValues.forEach((temp: TestValue, index: int) => {
           lastIndex = index;
       });
@@ -97,12 +97,11 @@ export default class CommonTest {
               } else {
                 //If there is only an assertion function, automatically modify the status value
                 console.info('[' + caseTag + '] setValue : ' + JSON.stringify(data.testValue.setValue));
-                // AppStorage.setOrCreate<AlignRuleOption>('_alignRules', data.testValue.setValue)
-                await Utils.sleep(1000);
+                AppStorage.setOrCreate<AlignRuleOption>('_alignRules', data.testValue.setValue)
+                await Utils.sleep(500);
               }
 
               //Check test result
-              await Utils.sleep(2000);
               data.viewObj = Utils.getComponentByKey(pageConfig.componentKey ?? '');
               await (functions[functions.length - 1] as CallbackWithReturn)(data);
 
@@ -130,7 +129,7 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        await Utils.back();
+        // await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);

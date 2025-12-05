@@ -41,9 +41,9 @@ import router from '@ohos.router';
 export default function ReplaceDestination2() {
   describe('ReplaceDestination2', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.navigation16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("ReplaceDestination2 beforeEach start");

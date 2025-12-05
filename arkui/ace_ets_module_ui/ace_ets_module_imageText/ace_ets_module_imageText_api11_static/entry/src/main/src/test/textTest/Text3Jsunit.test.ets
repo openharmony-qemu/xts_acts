@@ -41,9 +41,9 @@ export default function text3Jsunit() {
     beforeAll(() => {
       console.info("text3Jsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {
@@ -169,7 +169,7 @@ export default function text3Jsunit() {
       } catch (err: Error) {
         console.log("testText_static_0500 change component data error: " + err.message);
       }
-      await CommonFunc.sleep(4000);
+      ;
       let strJsonNew = inspector.getInspectorByKey('text');
 
       console.info("testText_static_0500 component JSON.parseJsonElement(strJsonNew) is: " +

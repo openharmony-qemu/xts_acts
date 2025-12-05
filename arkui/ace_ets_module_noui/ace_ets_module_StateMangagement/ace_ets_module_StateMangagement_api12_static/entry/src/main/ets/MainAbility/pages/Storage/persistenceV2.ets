@@ -1,4 +1,4 @@
-'use static';
+// 'use static';
 // /*
 //  * Copyright (c) 2025 Huawei Device Co., Ltd.
 //  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -54,7 +54,7 @@
 // @ObservedV2
 // export class PerSample {
 //   // 对于复杂对象需要@Type修饰，确保序列化成功
-//   @Type(PerSampleChild)
+//   // @Type(PerSampleChild)
 //   @Trace f: PerSampleChild = new PerSampleChild();
 // }
 //
@@ -68,7 +68,7 @@
 // struct PersistenceV2Page1 {
 //   @Local a: number = 0
 //   // 在PersistenceV2中创建一个key为PerSample的键值对（如果存在，则返回PersistenceV2中的数据），并且和prop关联
-//   @Local prop: PerSample = PersistenceV2.connect(PerSample, () => new PerSample())!;
+//   // @Local prop: PerSample = PersistenceV2.connect(Type.from<PerSample>(), () => new PerSample())!;
 //
 //   build() {
 //     Column() {
@@ -91,7 +91,7 @@
 //         .onClick(() => {
 //           // 在PersistenceV2中创建一个key为PerSample的键值对（如果存在，则返回PersistenceV2中的数据），并且和prop关联
 //           // 不建议对prop属性换connect的对象
-//           this.prop = PersistenceV2.connect(PerSample, 'PerSample', () => new PerSample())!;
+//           // this.prop = PersistenceV2.connect(Type.from<PerSample>(), 'PerSample', () => new PerSample())!;
 //         })
 //
 //       Button('remove the key PerSample')
@@ -101,7 +101,7 @@
 //         .fontSize(9)
 //         .onClick(() => {
 //           // 从PersistenceV2中删除后，prop将不会再与key为PerSample的值关联
-//           PersistenceV2.remove(PerSample);
+//           PersistenceV2.remove(Type.from<PerSample>());
 //         })
 //
 //       Button('Clear Create keys')
@@ -111,7 +111,7 @@
 //         .fontSize(9)
 //         .onClick(() => {
 //           if (PersistenceV2.keys().includes('PerSample')) {
-//             PersistenceV2.remove('PerSample')
+//             // PersistenceV2.remove('PerSample')
 //           }
 //         })
 //
@@ -122,7 +122,7 @@
 //         .fontSize(9)
 //         .onClick(() => {
 //           // 如果处于connect状态，持久化key为PerSample的键值对
-//           PersistenceV2.save(PerSample);
+//           // PersistenceV2.save(Type.from<PerSample>());
 //         })
 //
 //       Text(`prop.p1: ${this.prop.f.p1}`)
@@ -140,7 +140,7 @@
 //         .onClick(() => {
 //           //p2不是观察对象，它的变化需要save保存
 //           this.prop.f.p2++;
-//           PersistenceV2.save(PerSample);
+//           PersistenceV2.save(Type.from<PerSample>());
 //           this.a += 2
 //         })
 //

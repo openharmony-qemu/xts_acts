@@ -1,3 +1,4 @@
+'use static';
 /**
  * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,7 +14,7 @@
  * limitations under the License.
  */
 import { Entry,Component,Image,Resource,$r,TextArea,TextClockController,ButtonAttribute,TransitionType,Padding,
-  animateTo,TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,
+  TextTimerController,TextTimer,FlexAlign,TextClock,TextPicker,TextAreaController,PlaybackSpeed,$rawfile,
   Column,Margin,ColumnOptions,Text,Color,Flex,FlexDirection,ItemAlign,Row,Button,ClickEvent,Week,FontWeight,
   Axis,Margin,Swiper,ForEach,PickerTextStyle, CalendarAlign, Date, CalendarPicker,EdgeEffect,Curve,SwiperDisplayMode,
   ArrowPosition, Select,BlurStyle,MenuAlignType,TextInputController,TextAlign,AlphabetIndexer,TransitionEffect
@@ -72,7 +73,7 @@ struct TransitionTest7Example {
           } catch (err) {
             console.info("transitionTest_0200 emit action state err: " + JSON.stringify((err as Error)?.message))
           }
-          animateTo({ duration: 3000 }, () => {
+          this.getUIContext().animateTo({ duration: 3000 }, () => {
             this.btn1 = !this.btn1
             if (this.btn1) {
               this.show = "hide"

@@ -158,7 +158,6 @@ struct AlignRules {
   onPageShow() {
     console.info('[AlignRules] page show called ')
     let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
-    AppStorage.setOrCreate<AlignRuleOption>('_alignRules', routerParamOptions.view.testValue.setValue)
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""
     this.parentWidth = routerParamOptions.view.parentWidth

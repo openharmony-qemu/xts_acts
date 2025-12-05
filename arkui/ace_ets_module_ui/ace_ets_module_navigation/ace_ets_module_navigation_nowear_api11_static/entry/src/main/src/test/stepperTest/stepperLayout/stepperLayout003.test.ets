@@ -38,7 +38,7 @@ export default function stepperLayout003() {
     beforeAll(() => {
       console.info("stepperLayout003 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async () => {
       console.info("flex beforeEach start");

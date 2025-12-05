@@ -41,9 +41,8 @@ export default function column_WidthHeight_ChangeParent() {
     beforeAll(() => {
       console.info("Column_WidthHeight_ChangeParentTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Column_WidthHeight_ChangeParentTest beforeEach start");

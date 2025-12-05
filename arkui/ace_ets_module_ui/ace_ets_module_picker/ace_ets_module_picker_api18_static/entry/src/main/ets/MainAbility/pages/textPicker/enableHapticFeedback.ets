@@ -24,7 +24,7 @@ import { State } from '@ohos.arkui.stateManagement'
 struct TextPickerPage {
   @State enable: (boolean | undefined | null)[] = [true, false, undefined, null,];
   @State index: Int|Double|Array<Double> = 0; //冗餘
-  @State selectedIndex: Int|Array<Int> = 0;
+  @State selectedIndex: Int = 0;
   private select: number = 1;
   private apfruits: string[] = ['apple1', 'apple2', 'apple3', 'apple4'];
   private orfruits: string[] = ['orange1', 'orange2', 'orange3', 'orange4'];
@@ -36,14 +36,14 @@ struct TextPickerPage {
     Column() {
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        selected: this.selectedIndex,
       })
         .id('textPicker1')
         .enableHapticFeedback(true)
         .onChange((value: string | string[], index: Int | Int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
           if (typeof index === 'int') {
-            this.selectedIndex = index;
+            this.selectedIndex = index as Int;
           }
         })
         .divider({
@@ -54,14 +54,14 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        selected: this.selectedIndex,
       })
         .id('textPicker2')
         .enableHapticFeedback(false)
         .onChange((value: string | string[], index: Int | Int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
           if (typeof index === 'int') {
-            this.selectedIndex = index;
+            this.selectedIndex = index as Int;
           }
         })
         .divider({
@@ -72,14 +72,14 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        selected: this.selectedIndex,
       })
         .id('textPicker3')
         .enableHapticFeedback(undefined)
         .onChange((value: string | string[], index: Int | Int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
           if (typeof index === 'int') {
-            this.selectedIndex = index;
+            this.selectedIndex = index as Int;
           }
         })
         .divider({
@@ -90,14 +90,14 @@ struct TextPickerPage {
         } as DividerOptions);
       TextPicker({
         range: this.multi,
-        // selected: this.selectedIndex,
+        selected: this.selectedIndex,
       })
         .id('textPicker4')
         // .enableHapticFeedback(null)
         .onChange((value: string | string[], index: Int | Int[]) => {
           console.info('TextPicker 多列:onChange ' + JSON.stringify(value) + ', ' + 'index: ' + JSON.stringify(index));
           if (typeof index === 'int') {
-            this.selectedIndex = index;
+            this.selectedIndex = index as Int;
           }
         })
         .divider({

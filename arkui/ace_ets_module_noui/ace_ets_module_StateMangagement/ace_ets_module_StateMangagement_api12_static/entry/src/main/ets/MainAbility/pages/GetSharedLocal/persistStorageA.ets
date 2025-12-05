@@ -35,7 +35,7 @@ import {
   StorageLink,ObservedV2,Trace,Param,Event
 } from '@ohos.arkui.stateManagement'
 
-let param_47: Record<string, Any> = { 'PropAX': 47 }
+let param_47: Record<string, int> = { 'PropAX': 47 }
 let customStorage8: LocalStorage = new LocalStorage(param_47)
 
 interface InterfaceObj {
@@ -46,11 +46,12 @@ const obj: InterfaceObj = {
   storage: customStorage8
 }
 
-// @Entry(obj.storage)
-@Entry
+const _get_localstorage_ : () => LocalStorage = () => obj.storage
+
+@Entry({ storage: '_get_localstorage_' })
 @Component
 struct ChainCallStorage1 {
-  @LocalStorageLink('PropAX') parentLinkNumber: number = 1
+  @LocalStorageLink('PropAX') parentLinkNumber: int = 1
 
   build() {
     Column() {

@@ -38,9 +38,9 @@ export default function span3Jsunit() {
     beforeAll(() => {
       console.info("span3Jsunit beforeEach start");
 
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
 
     beforeEach(async (): Promise<void> => {

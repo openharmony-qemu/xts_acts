@@ -1,4 +1,3 @@
-
 'use static';
 /*
  * Copyright (c) 2025 Huawei Device Co., Ltd.
@@ -38,7 +37,7 @@ export default function dividerJsunit() {
     beforeAll(() => {
       console.info("dividerJsunit beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("dividerJsunit beforeAll end");
     });
 

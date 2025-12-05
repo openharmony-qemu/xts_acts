@@ -32,9 +32,7 @@ export default function bindSheetKeyboardAvoidMode() {
 
     beforeAll(() => {
       console.info("bindSheetKeyboardAvoidMode beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsDialog.nowear.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

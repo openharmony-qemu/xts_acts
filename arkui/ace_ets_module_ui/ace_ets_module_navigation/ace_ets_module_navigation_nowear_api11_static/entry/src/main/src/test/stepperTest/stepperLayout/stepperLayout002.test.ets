@@ -38,7 +38,7 @@ export default function stepperLayout002() {
     beforeAll(() => {
       console.info("stepperLayout002 beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.navigationnowear11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async () => {
               let driver: Driver = Driver.create();

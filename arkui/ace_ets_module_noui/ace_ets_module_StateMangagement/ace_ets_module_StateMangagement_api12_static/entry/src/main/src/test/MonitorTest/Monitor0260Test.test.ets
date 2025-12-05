@@ -48,9 +48,9 @@ export default function Monitor0260Test() {
     beforeAll(() => {
       console.info("Monitor0260Test beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

@@ -34,9 +34,9 @@ export default function Stack_Position_Change() {
     beforeAll(async () => {
       console.info("Stack_Position_ChangeTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+
       await UtilsTest.startAbility("com.arkui.ace.layout.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     })
     beforeEach(async (): Promise<void> => {
       console.info("Stack_Position_ChangeTest beforeEach start");
