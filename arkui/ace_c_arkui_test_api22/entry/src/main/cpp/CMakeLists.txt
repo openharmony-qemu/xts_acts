@@ -33,6 +33,7 @@ add_library(nativerender SHARED
     showCounterTest/ShowCounterTest.cpp
     component/SwiperComponentTest.cpp
     swiper/FinishAnimationTest.cpp
+    imageSpanTest/ImageSpanTest.cpp
 )
 
 add_library(nativefunc SHARED
