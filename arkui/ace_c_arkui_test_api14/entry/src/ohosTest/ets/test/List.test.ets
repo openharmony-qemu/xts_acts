@@ -23,7 +23,6 @@ import KeyEventGetPressedKeysTest from './keyEvent/KeyEventGetPressedKeysTest.te
 import KeyEventGetUnicodeTest from './keyEvent/KeyEventGetUnicodeTest.test'
 import KeyEventSetConsumedTest from './keyEvent/KeyEventSetConsumedTest.test'
 import KeyEventStopPropagationTest from './keyEvent/KeyEventStopPropagationTest.test'
-import NativeXComponent_RegisterKeyEventCallbackWithResultTest from './keyEvent/NativeXComponent_RegisterKeyEventCallbackWithResultTest.test'
 import tabStop from './tabStop/tabStop.test'
 import ScrollSizeTest from './scrollSize/ScrollSizeTest.test'
 import NodeUtilsMethodTest from './customproperty/NodeUtilsMethodTest.test'
@@ -40,7 +39,6 @@ export default function testsuite() {
   KeyEventGetKeyTextTest()
   KeyEventGetPressedKeysTest()
   KeyEventGetUnicodeTest()
-  NativeXComponent_RegisterKeyEventCallbackWithResultTest()
   tabStop()
   ScrollSizeTest()
   NodeUtilsMethodTest()

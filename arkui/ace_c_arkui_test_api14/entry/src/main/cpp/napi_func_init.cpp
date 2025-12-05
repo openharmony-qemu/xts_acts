@@ -12,7 +12,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include "xcomponent/xcomponent_test.cpp"
 #include "tabStop/tabStop.cpp"
 #include "customproperty/NodeUtilsMethodTest.cpp"
 
@@ -26,8 +25,6 @@ static napi_value Init(napi_env env, napi_value exports)
     }
 
     napi_property_descriptor desc[] = {
-        {"testNativeXComponent_RegisterKeyEventCallbackWithResult001", nullptr,
-         testNativeXComponent_RegisterKeyEventCallbackWithResult001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"tabStop_001", nullptr, tabStop_001, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"TestMethodReturnValue001", nullptr, TestMethodReturnValue001, nullptr, nullptr, nullptr, napi_default,

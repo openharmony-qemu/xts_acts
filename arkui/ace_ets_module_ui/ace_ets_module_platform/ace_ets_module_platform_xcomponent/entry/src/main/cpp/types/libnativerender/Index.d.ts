@@ -46,3 +46,5 @@ export const TestGetKeyEventCapsLockStateErrorCode_01: () => void;
 export const TestGetKeyEventCapsLockStateErrorCode_02: () => void;
 export const TestGetKeyEventScrollLockStateErrorCode_01: () => void;
 export const TestGetKeyEventScrollLockStateErrorCode_02: () => void;
+export const TestRegisterKeyEventCallbackWithResult_01: () => void;
+export const TestRegisterKeyEventCallbackWithResult_02: () => void;
