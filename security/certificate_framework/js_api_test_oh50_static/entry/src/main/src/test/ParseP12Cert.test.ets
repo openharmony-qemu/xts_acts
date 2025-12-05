@@ -345,6 +345,44 @@ export default function certFrameworkParseP12CertTestUnit() {
       }
       done();
     });
+    
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_ParseP12Cert_Func_1300
+     * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_1300
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_ParseP12Cert_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let p12_cert: Uint8Array = new Uint8Array(p12_expired_cert);
+        cert.parsePkcs12(p12_cert, '');
+      } catch (error: BusinessError) {
+        console.error(`ParseP12Cert_Func_1300 ${error}, error code: ${error.code}`);
+        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      }
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_Security_Cert_Framework_ParseP12Cert_Func_1400
+     * @tc.number SUB_Security_Cert_Framework_ParseP12Cert_Func_1400
+     * @tc.desc   The X509 Cert Format is PEM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_Security_Cert_Framework_ParseP12Cert_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        let p12_cert: Uint8Array = new Uint8Array();
+        cert.parsePkcs12(p12_cert, '123456');
+      } catch (error: BusinessError) {
+        console.error(`ParseP12Cert_Func_1300 ${error}, error code: ${error.code}`);
+        expect(error.code).assertEqual(cert.CertResult.INVALID_PARAMS);
+      }
+      done();
+    });
 
   });
 }
