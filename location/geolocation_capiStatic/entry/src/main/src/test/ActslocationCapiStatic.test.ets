@@ -1,4 +1,4 @@
-/*
+/**
  * Copyright (C) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -76,7 +76,7 @@ export default function actslocationTest() {
             }
         })
 
-        /*
+        /**
          * @tc.number  testGeolocationManagerConfig001
          * @tc.name  testGeolocationManagerConfig001
          * @tc.desc  Test Location API functionality
@@ -113,7 +113,7 @@ export default function actslocationTest() {
 
        })
 
-        /*
+        /**
          * @tc.number  Sub_Location_GetCurrentLocation_0100
          * @tc.name  Sub_Location_GetCurrentLocation_0100
          * @tc.desc  Test Location API functionality
@@ -186,7 +186,7 @@ export default function actslocationTest() {
 
             
 
-            /*
+            /**
             * @tc.number  SUB_HSS_LocationSystem_Geo_0001
             * @tc.name  SUB_HSS_LocationSystem_Geo_0001
             * @tc.desc  Test Location API functionality
@@ -228,7 +228,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_HSS_LocationSystem_Geo_2900
             * @tc.name  SUB_HSS_LocationSystem_Geo_2900
             * @tc.desc  Test Location API functionality
@@ -261,7 +261,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_HSS_LocationSystem_Geo_1200
             * @tc.name  SUB_HSS_LocationSystem_Geo_1200
             * @tc.desc  Test Location API functionality
@@ -296,7 +296,7 @@ export default function actslocationTest() {
             )
 
 
-            /*
+            /**
             * @tc.number  SUB_HSS_LocationSystem_Geo_1300
             * @tc.name  SUB_HSS_LocationSystem_Geo_1300
             * @tc.desc  Test Location API functionality
@@ -332,7 +332,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_Location_isGeocoderAvailabel_0100
             * @tc.name  SUB_Location_isGeocoderAvailabel_0100
             * @tc.desc  Test Location API functionality
@@ -352,7 +352,7 @@ export default function actslocationTest() {
                 }
             })
             
-            /*
+            /**
             * @tc.number  SUB_Location_sendCommand_0100
             * @tc.name  SUB_Location_sendCommand_0100
             * @tc.desc  Test Location API functionality
@@ -385,7 +385,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_Location_sendCommand_0200
             * @tc.name  SUB_Location_sendCommand_0200
             * @tc.desc  Test Location API functionality
@@ -414,7 +414,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_Location_isLocationEnabled_0100
             * @tc.name  SUB_Location_sendCommand_0200
             * @tc.desc  Test Location API functionality
@@ -432,7 +432,7 @@ export default function actslocationTest() {
                 }
             })
 
-            /*
+            /**
             * @tc.number  SUB_Location_getCountryCode_0100
             * @tc.name  SUB_Location_getCountryCode_0100
             * @tc.desc  Test Location API functionality
@@ -460,7 +460,7 @@ export default function actslocationTest() {
             )
 
 
-            /*
+            /**
             * @tc.number  SUB_Location_getCountryCode_0200
             * @tc.name  SUB_Location_getCountryCode_0200
             * @tc.desc  Test Location API functionality
@@ -485,7 +485,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_Location_getGeofenceSupportedCoordTypes_0100
             * @tc.name  SUB_Location_getGeofenceSupportedCoordTypes_0100
             * @tc.desc  Test Location API functionality
@@ -504,7 +504,7 @@ export default function actslocationTest() {
             })
 
 
-            /*
+            /**
             * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0100
             * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0100
             * @tc.desc  getCurrentWifiBssidForLocating(): string
@@ -530,7 +530,7 @@ export default function actslocationTest() {
             })  
             
 
-            /*
+            /**
             * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0300
             * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0300
             * @tc.desc  getCurrentWifiBssidForLocating(): string
@@ -556,7 +556,7 @@ export default function actslocationTest() {
                 }
             }) 
             
-            /*
+            /**
             * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0400
             * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0400
             * @tc.desc  getCurrentWifiBssidForLocating(): string
@@ -582,7 +582,7 @@ export default function actslocationTest() {
                 }
             }) 
             
-            /*
+            /**
             * @tc.number  SUB_Location_getCurrentWifiBssidForLocating_0500
             * @tc.name  SUB_Location_getCurrentWifiBssidForLocating_0500
             * @tc.desc  getCurrentWifiBssidForLocating(): string
@@ -608,7 +608,7 @@ export default function actslocationTest() {
                 }
             })            
             
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0100
             * @tc.name  SUB_Location_addGnssGeofence_0100
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -690,7 +690,7 @@ export default function actslocationTest() {
                 }
             )     
             
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0200
             * @tc.name  SUB_Location_addGnssGeofence_0200
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -773,7 +773,7 @@ export default function actslocationTest() {
                 }
             )              
 
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0300
             * @tc.name  SUB_Location_addGnssGeofence_0300
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -856,7 +856,7 @@ export default function actslocationTest() {
                 }
             )
 
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0400
             * @tc.name  SUB_Location_addGnssGeofence_0400
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -939,7 +939,7 @@ export default function actslocationTest() {
                 }
             )  
 
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0500
             * @tc.name  SUB_Location_addGnssGeofence_0500
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -1022,7 +1022,7 @@ export default function actslocationTest() {
                 }
             ) 
             
-            /*
+            /**
             * @tc.number  SUB_Location_addGnssGeofence_0600
             * @tc.name  SUB_Location_addGnssGeofence_0600
             * @tc.desc  addGnssGeofence(fenceRequest: GnssGeofenceRequest): Promise<number>
@@ -1105,7 +1105,7 @@ export default function actslocationTest() {
                 }
             ) 
 
-        /*
+        /**
          * @tc.number  Sub_Location_removeGnssGeofence_0100
          * @tc.name  Sub_Location_removeGnssGeofence_0100
          * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
@@ -1130,7 +1130,7 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
+        /**
          * @tc.number  Sub_Location_removeGnssGeofence_0200
          * @tc.name  Sub_Location_removeGnssGeofence_0200
          * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
@@ -1155,7 +1155,7 @@ export default function actslocationTest() {
             done();
         })         
 
-        /*
+        /**
          * @tc.number  Sub_Location_removeGnssGeofence_0300
          * @tc.name  Sub_Location_removeGnssGeofence_0300
          * @tc.desc  removeGnssGeofence(geofenceId: number): Promise<void>
@@ -1181,7 +1181,7 @@ export default function actslocationTest() {
         })          
 
 
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_1200
          * @tc.name  Sub_Location_getCurrentLocation_1200
          * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
@@ -1238,7 +1238,7 @@ export default function actslocationTest() {
             done();
         }) 
         
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_090010
          * @tc.name  Sub_Location_getCurrentLocation_090010
          * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
@@ -1270,7 +1270,7 @@ export default function actslocationTest() {
             done();
         })                          
 
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0300
          * @tc.name  Sub_Location_getCurrentLocation_0300
          * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
@@ -1302,7 +1302,7 @@ export default function actslocationTest() {
             done();
         })    
         
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0400
          * @tc.name  Sub_Location_getCurrentLocation_0400
          * @tc.desc  getCurrentLocation(request: CurrentLocationRequest | SingleLocationRequest, callback: AsyncCallback<Location>): void
@@ -1334,7 +1334,7 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0500
          * @tc.name  Sub_Location_getCurrentLocation_0500
          * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
@@ -1361,7 +1361,7 @@ export default function actslocationTest() {
             done();
         })  
         
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0600
          * @tc.name  Sub_Location_getCurrentLocation_0600
          * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
@@ -1388,7 +1388,7 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0700
          * @tc.name  Sub_Location_getCurrentLocation_0700
          * @tc.desc  getCurrentLocation(callback: AsyncCallback<Location>): void
@@ -1415,7 +1415,7 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0800
          * @tc.name  Sub_Location_getCurrentLocation_0800
          * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
@@ -1442,7 +1442,7 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_0900
          * @tc.name  Sub_Location_getCurrentLocation_0900
          * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
@@ -1469,7 +1469,7 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCurrentLocation_1000
          * @tc.name  Sub_Location_getCurrentLocation_1000
          * @tc.desc  getCurrentLocation(request?: CurrentLocationRequest | SingleLocationRequest): Promise<Location>
@@ -1496,7 +1496,7 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
+        /**
          * @tc.number  Sub_Location_isLocationEnabled_0100
          * @tc.name  Sub_Location_isLocationEnabled_0100
          * @tc.desc  isLocationEnabled
@@ -1515,7 +1515,7 @@ export default function actslocationTest() {
           await Utils.msSleep(1000)
       })   
 
-        /*
+        /**
          * @tc.number  Sub_Location_getAddressesFromLocation_0100
          * @tc.name  Sub_Location_getAddressesFromLocation_0100
          * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
@@ -1587,7 +1587,7 @@ export default function actslocationTest() {
       })
 
 
-        /*
+        /**
          * @tc.number  Sub_Location_getAddressesFromLocation_0200
          * @tc.name  Sub_Location_getAddressesFromLocation_0200
          * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
@@ -1617,7 +1617,7 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
+        /**
          * @tc.number  Sub_Location_getAddressesFromLocation_0300
          * @tc.name  Sub_Location_getAddressesFromLocation_0300
          * @tc.desc   getAddressesFromLocation(request: ReverseGeoCodeRequest): Promise<Array<GeoAddress>>
@@ -1648,7 +1648,7 @@ export default function actslocationTest() {
       })        
      
 
-        /*
+        /**
          * @tc.number  Sub_Location_getAddressesFromLocationName_0100
          * @tc.name  Sub_Location_getAddressesFromLocationName_0100
          * @tc.desc   getAddressesFromLocationName(request: GeoCodeRequest, callback: AsyncCallback<Array<GeoAddress>>): void
@@ -1676,7 +1676,7 @@ export default function actslocationTest() {
           done();
       })      
 
-        /*
+        /**
          * @tc.number  Sub_Location_getAddressesFromLocationName_0200
          * @tc.name  Sub_Location_getAddressesFromLocationName_0200
          * @tc.desc   getAddressesFromLocationName(request: GeoCodeRequest): Promise<Array<GeoAddress>>
@@ -1701,7 +1701,7 @@ export default function actslocationTest() {
           done();
       }) 
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCountryCode_0300
          * @tc.name  Sub_Location_getCountryCode_0300
          * @tc.desc   getCountryCode(callback: AsyncCallback<CountryCode>): void
@@ -1728,7 +1728,7 @@ export default function actslocationTest() {
           done();
       })    
       
-        /*
+        /**
          * @tc.number  Sub_Location_getCountryCode_0400
          * @tc.name  Sub_Location_getCountryCode_0400
          * @tc.desc   getCountryCode(): Promise<CountryCode>
@@ -1752,7 +1752,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
         * @tc.number  SUB_Location_getLastLocation_0100
         * @tc.name  SUB_Location_getLastLocation_0100
         * @tc.desc  getLastLocation(): Location
@@ -1770,7 +1770,7 @@ export default function actslocationTest() {
               }
         })      
 
-        /*
+        /**
         * @tc.number  SUB_Location_getLastLocation_0200
         * @tc.name  SUB_Location_getLastLocation_0200
         * @tc.desc  getLastLocation(): Location
@@ -1788,7 +1788,7 @@ export default function actslocationTest() {
               }
         })           
 
-        /*
+        /**
         * @tc.number  SUB_Location_getLastLocation_0300
         * @tc.name  SUB_Location_getLastLocation_0300
         * @tc.desc  getLastLocation(): Location
@@ -1806,7 +1806,7 @@ export default function actslocationTest() {
               }
         })      
         
-        /*
+        /**
         * @tc.number  SUB_Location_getLastLocation_0400
         * @tc.name  SUB_Location_getLastLocation_0400
         * @tc.desc  getLastLocation(): Location
@@ -1824,7 +1824,7 @@ export default function actslocationTest() {
               }
         }) 
 
-        /*
+        /**
          * @tc.number  Sub_Location_onLocationChange_0100
          * @tc.name  Sub_Location_onLocationChange_0100
          * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
@@ -1851,7 +1851,7 @@ export default function actslocationTest() {
           done();
       })        
         
-        /*
+        /**
          * @tc.number  Sub_Location_onLocationChange_0200
          * @tc.name  Sub_Location_onLocationChange_0200
          * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
@@ -1878,7 +1878,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
          * @tc.number  Sub_Location_onLocationChange_0300
          * @tc.name  Sub_Location_onlocationChange_0300
          * @tc.desc  onLocationChange(request: LocationRequest | ContinuousLocationRequest, callback: Callback<Location>): void
@@ -1905,7 +1905,7 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
+        /**
          * @tc.number  Sub_Location_offLocationChange_0100
          * @tc.name  Sub_Location_offLocationChange_0100
          * @tc.desc  offLocationChange(callback?: Callback<Location>): void
@@ -1936,7 +1936,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
          * @tc.number  Sub_Location_onLocationError_0100
          * @tc.name  Sub_Location_onLocationError_0100
          * @tc.desc  onLocationError(callback: Callback<LocationError>): void
@@ -1974,7 +1974,7 @@ export default function actslocationTest() {
           done();
       })     
       
-        /*
+        /**
          * @tc.number  Sub_Location_offLocationError_0100
          * @tc.name  Sub_Location_offLocationError_0100
          * @tc.desc  offLocationError(callback?: Callback<LocationError>): void
@@ -1997,7 +1997,7 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
+        /**
          * @tc.number  Sub_Location_onLocationEnabledChange_0100
          * @tc.name  Sub_Location_onLocationEnabledChange_0100
          * @tc.desc onLocationEnabledChange(callback: Callback<boolean>): void
@@ -2020,7 +2020,7 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
+        /**
          * @tc.number  Sub_Location_offLocationEnabledChange_0100
          * @tc.name  Sub_Location_offLocationEnabledChange_0100
          * @tc.desc offLocationEnabledChange(callback: Callback<boolean>): void
@@ -2044,7 +2044,7 @@ export default function actslocationTest() {
       })   
 
       
-        /*
+        /**
          * @tc.number  Sub_Location_onSatelliteStatusChange_0100
          * @tc.name  Sub_Location_onSatelliteStatusChange_0100
          * @tc.desc onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
@@ -2096,7 +2096,7 @@ export default function actslocationTest() {
           done();
       })            
 
-        /*
+        /**
          * @tc.number  Sub_Location_onSatelliteStatusChange_0200
          * @tc.name  Sub_Location_onSatelliteStatusChange_0200
          * @tc.desc onSatelliteStatusChange( callback: Callback<SatelliteStatusInfo>): void  
@@ -2148,7 +2148,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
          * @tc.number  Sub_Location_offSatelliteStatusChange_0100
          * @tc.name  Sub_Location_offSatelliteStatusChange_0100
          * @tc.desc offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
@@ -2171,7 +2171,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
          * @tc.number  Sub_Location_offSatelliteStatusChange_0200
          * @tc.name  Sub_Location_offSatelliteStatusChange_0200
          * @tc.desc offSatelliteStatusChange(callback?: Callback<SatelliteStatusInfo>): void
@@ -2194,7 +2194,7 @@ export default function actslocationTest() {
           done();
       })  
 
-        /*
+        /**
          * @tc.number  Sub_Location_onNmeaMessage_0100
          * @tc.name  Sub_Location_onNmeaMessage_0100
          * @tc.desc onNmeaMessage(callback: Callback<string>): void
@@ -2217,7 +2217,7 @@ export default function actslocationTest() {
           done();
       })      
       
-        /*
+        /**
          * @tc.number  Sub_Location_onNmeaMessage_0200
          * @tc.name  Sub_Location_onNmeaMessage_0200
          * @tc.desc onNmeaMessage(callback: Callback<string>): void
@@ -2240,7 +2240,7 @@ export default function actslocationTest() {
           done();
       })  
  
-        /*
+        /**
          * @tc.number  Sub_Location_offNmeaMessage_0100
          * @tc.name  Sub_Location_offNmeaMessage_0100
          * @tc.desc offNmeaMessage(callback: Callback<string>): void
@@ -2263,7 +2263,7 @@ export default function actslocationTest() {
           done();
       })      
       
-        /*
+        /**
          * @tc.number  Sub_Location_offNmeaMessage_0200
          * @tc.name  Sub_Location_offNmeaMessage_0200
          * @tc.desc offNmeaMessage(callback: Callback<string>): void
@@ -2287,7 +2287,7 @@ export default function actslocationTest() {
       })       
    
 
-        /*
+        /**
          * @tc.number  Sub_Location_onCountryCodeChange_0100
          * @tc.name  Sub_Location_onCountryCodeChange_0100
          * @tc.desc  onCountryCodeChange(callback: Callback<CountryCode>): void
@@ -2310,7 +2310,7 @@ export default function actslocationTest() {
           done();
       })   
       
-        /*
+        /**
          * @tc.number  Sub_Location_offCountryCodeChange_0100
          * @tc.name  Sub_Location_offCountryCodeChange_0100
          * @tc.desc  offCountryCodeChange(callback: Callback<CountryCode>): void
@@ -2333,7 +2333,7 @@ export default function actslocationTest() {
           done();
       })        
         
-        /*
+        /**
          * @tc.number  Sub_Location_onBluetoothScanResultChange_0100
          * @tc.name  Sub_Location_onBluetoothScanResultChange_0100
          * @tc.desc  onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
@@ -2356,7 +2356,7 @@ export default function actslocationTest() {
           done();
       })  
       
-        /*
+        /**
          * @tc.number  Sub_Location_onBluetoothScanResultChange_0200
          * @tc.name  Sub_Location_onBluetoothScanResultChange_0200
          * @tc.desc  onBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
@@ -2380,7 +2380,7 @@ export default function actslocationTest() {
       })  
       
       
-        /*
+        /**
          * @tc.number  Sub_Location_offBluetoothScanResultChange_0100
          * @tc.name  Sub_Location_offBluetoothScanResultChange_0100
          * @tc.desc  offBluetoothScanResultChange(callback: Callback<BluetoothScanResult>): void
