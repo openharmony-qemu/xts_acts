@@ -36,9 +36,9 @@ export default function tabsOnContentWillChangeIndex15JsunitTest() {
   describe('tabsOnContentWillChangeIndex15JsunitTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("tabsOnContentWillChangeIndex15JsunitTest beforeEach start");

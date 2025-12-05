@@ -46,7 +46,7 @@ export default function SwiperAttribute_4() {
   describe('SwiperAttribute_4', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperAttribute_4 beforeEach start");

@@ -37,9 +37,9 @@ export default function alphabetIndexerOnSelectJsunit() {
   describe('alphabetIndexerOnSelectJsunit', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeAll(async () => {
       console.info("flex beforeEach start");

@@ -46,9 +46,9 @@ export default function patternLockTest() {
   describe('ActsPatternLockInterfaceTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -63,7 +63,7 @@ export default function patternLockTest() {
         if (!("PatternLockIndex" == pages.name)) {
           console.info("get PatternLockIndex state success " + JSON.stringify(pages.name));
           router.pushUrl(options)
-          await UtilsTest.msSleep(4000)
+          
           // console.info("push PatternLockIndex page success " + JSON.stringify(result));
         }
       } catch (err: Error) {

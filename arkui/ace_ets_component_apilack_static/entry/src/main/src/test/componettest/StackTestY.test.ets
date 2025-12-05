@@ -47,9 +47,9 @@ let tag: string = 'testTag';
 export default function stackAlignContentJsunits() {
   describe('stackAlignContentTest1', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info("flex beforeEach start");

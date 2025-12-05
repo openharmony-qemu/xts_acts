@@ -46,7 +46,7 @@ export default function setDefaultThemeTest() {
     beforeAll(async () => {
       console.info('ActsSetDefaultThemeTest startAbility');
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     })
     beforeEach(() => {
       try {
@@ -60,7 +60,7 @@ export default function setDefaultThemeTest() {
             themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
             console.info(`${SUITE} router.pushUrl success`);
           });
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));

@@ -36,9 +36,9 @@ export default function gridAniTrue() {
     beforeAll(() => {
       console.info("gridAniTrue beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("gridAniTrue beforeEach start");

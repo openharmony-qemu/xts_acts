@@ -53,9 +53,9 @@ export default function CombinationState6Jsunit() {
   describe('CombinationState6Jsunit', () => {
     beforeAll(() => {
       console.info("CombinationState6Jsunit beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.StateMangagement02.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

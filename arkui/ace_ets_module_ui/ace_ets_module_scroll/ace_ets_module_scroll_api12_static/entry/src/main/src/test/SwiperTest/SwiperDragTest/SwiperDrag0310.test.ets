@@ -45,9 +45,9 @@ export default function SwiperDrag0310() {
   describe('SwiperDrag0310', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("SwiperDrag0310 beforeEach start");

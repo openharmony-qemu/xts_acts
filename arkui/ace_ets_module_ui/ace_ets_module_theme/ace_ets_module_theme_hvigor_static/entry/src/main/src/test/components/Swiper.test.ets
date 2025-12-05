@@ -45,7 +45,7 @@ export default function swiperThemeTest() {
     beforeAll(async () => {
       console.info("SwiperPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(() => {

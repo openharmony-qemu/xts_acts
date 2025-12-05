@@ -47,9 +47,9 @@ export default function SwiperOnSelectedTest() {
     beforeAll(() => {
       console.info("SwiperOnSelectedTest beforeEach start");
 
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll16.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

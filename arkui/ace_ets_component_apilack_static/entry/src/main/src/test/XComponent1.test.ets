@@ -36,7 +36,7 @@ export default function xcomponentGetXComponentContextJsunit() {
   describe('xcomponentGetXComponentContextTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info("flex beforeEach start");

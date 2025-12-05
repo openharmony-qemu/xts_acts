@@ -38,7 +38,7 @@ export default function scrollSourceDrag() {
   describe('scrollSourceDrag', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("scrollSourceDrag beforeEach start");

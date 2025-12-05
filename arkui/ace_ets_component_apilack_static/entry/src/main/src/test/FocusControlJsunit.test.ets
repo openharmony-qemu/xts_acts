@@ -34,9 +34,9 @@ import { UtilsTest } from './Util.test';
 export default function focusControlJsunit() {
   describe('focusControlTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info("focusControlTest beforeEach start");

@@ -47,9 +47,9 @@ export default function List07Test() {
   describe('List07Test', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -65,7 +65,7 @@ export default function List07Test() {
         if (!("List07" == pages.name)) {
           console.info("get list state success " + JSON.stringify(pages.name));
           router.pushUrl(options);
-          await UtilsTest.msSleep(4000)
+          
           // console.info("push list page success " + JSON.stringify(result));
         }
       } catch (err: Error) {

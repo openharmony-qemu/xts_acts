@@ -39,7 +39,7 @@ export default function web9Jsunit() {
   describe('web9Jsunit', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.open.harmony.aceEtsApiLack.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

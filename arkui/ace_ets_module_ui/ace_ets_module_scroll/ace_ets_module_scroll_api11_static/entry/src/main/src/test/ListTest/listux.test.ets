@@ -51,9 +51,9 @@ export default function listUxTest() {
 
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.scroll.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
 
       let options: router.RouterOptions = {
         url: "MainAbility/pages/List/list_ux",

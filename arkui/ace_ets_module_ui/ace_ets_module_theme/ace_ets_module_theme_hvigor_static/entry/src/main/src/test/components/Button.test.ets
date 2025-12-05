@@ -86,7 +86,7 @@ export default function buttonThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {
@@ -102,7 +102,7 @@ export default function buttonThemeTest() {
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        await UtilsTest.msSleep(4000)
+        
         colorValues = AppStorage.get<Map<string, string>>(colorValuesKey);
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));

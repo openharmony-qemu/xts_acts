@@ -74,9 +74,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function button3Jsunit() {
   describe('button3Jsunit', () => {
     beforeAll(async () => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api11.other.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("button beforeEach start");

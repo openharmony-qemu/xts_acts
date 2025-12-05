@@ -48,7 +48,7 @@ export default function scrollOffsetJsunit() {
   describe('scrollOffsetJsunit', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.arkui.ace.scroll12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("scrollOffsetJsunit beforeEach start");

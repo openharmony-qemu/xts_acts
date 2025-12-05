@@ -43,9 +43,9 @@ export default function ModelSheetTest() {
   describe('ModelSheetTest', () => {
     beforeAll(() => {
       console.info("ModelSheetTest beforeAll start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.ModelSheet.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.example.ModelSheet.static", "EntryAbility")
+      
     });
 
     beforeEach(async () => {

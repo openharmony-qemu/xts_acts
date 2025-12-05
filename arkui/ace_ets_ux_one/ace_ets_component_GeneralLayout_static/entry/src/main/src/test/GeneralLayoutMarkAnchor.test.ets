@@ -40,9 +40,9 @@ export default function GeneralLayoutMarkAnchorTest() {
 
     beforeAll(() => {
       console.info("GeneralLayoutMarkAnchorTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.example.GeneralLayout.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.example.GeneralLayout.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {
