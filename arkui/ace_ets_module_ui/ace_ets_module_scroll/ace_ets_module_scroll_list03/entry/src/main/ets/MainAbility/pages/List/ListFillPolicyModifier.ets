@@ -75,8 +75,7 @@ struct ListExample2 {
       .id('ListModifier')
       .listDirection(Axis.Vertical)
       .attributeModifier(this.modifier1)
-      .width('90%')
-      .height('50%')
+      .width('200vp').height('40%')
     }
     .width('100%')
     .height('100%')

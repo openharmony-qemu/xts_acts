@@ -43,9 +43,9 @@ import ContentOffset from './List/ContentOffset.test';
 import listDraggingFling from './List/listDraggingFling.test';
 import scrollSnapAnimationSpeedModifier from './List/scrollSnapAnimationSpeedModifier.test';
 import scrollSnapAnimationSpeed from './List/scrollSnapAnimationSpeed.test';
+import ListFillPolicyModifier from './List/ListFillPolicyModifier.test';
 import listScrollbarColor from './ListItemGroup/listScrollbarColor.test';
 import ListContentSize from './List/ListContentSize.test';
-import ListFillPolicyModifier from './List/ListFillPolicyModifier.test';
 import ListFillPolicy from './List/ListFillPolicy.test';
 
 export default function testsuite() {
@@ -78,9 +78,9 @@ export default function testsuite() {
   ContentOffset()
   listDraggingFling()
   scrollSnapAnimationSpeedModifier()
+  ListFillPolicyModifier()
   scrollSnapAnimationSpeed()
   listScrollbarColor()
   ListContentSize()
-  ListFillPolicyModifier()
   ListFillPolicy()
 }
