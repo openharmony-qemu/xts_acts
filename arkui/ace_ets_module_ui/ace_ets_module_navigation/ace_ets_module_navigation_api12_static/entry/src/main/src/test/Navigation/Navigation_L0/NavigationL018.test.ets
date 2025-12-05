@@ -31,9 +31,9 @@ export default function Navigation_L0_18() {
   describe('Navigation_L0_18', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
+      
     });
 
     beforeEach(async (): Promise<void> => {

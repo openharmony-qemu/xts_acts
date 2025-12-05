@@ -16,8 +16,7 @@
 {
   "app": {
     "signingConfigs": [
-
-    ],
+        ],
     "products": [
       {
         "name": "default",

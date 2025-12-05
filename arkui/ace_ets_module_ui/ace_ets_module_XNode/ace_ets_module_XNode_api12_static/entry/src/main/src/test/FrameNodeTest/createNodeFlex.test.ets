@@ -33,9 +33,9 @@ export default function createNodeFlex() {
   describe('createNodeFlex', () => {
     beforeAll(() => {
       console.info("createNodeFlex beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNode.api12.static", "EntryAbility")
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("createNodeFlex beforeEach start");

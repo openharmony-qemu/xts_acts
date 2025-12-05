@@ -35,7 +35,7 @@ export default function ButtonTypeTest() {
     beforeAll(() => {
       console.info("TextPickerTextStyle beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

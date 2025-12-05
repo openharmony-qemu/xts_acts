@@ -36,9 +36,9 @@ export default function APINodeContentTest() {
 
     beforeAll(() => {
       console.info("APINodeContentTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.XNodeNoWear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.XNodeNoWear.api12.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -39,8 +39,8 @@ let testAbilityContext:common.UIAbilityContext;
 export default function PaddingContainerLengthTest() {
   //A list of components that support padding attributes is required.
   let supportView: Array<string> = new Array<string>(
-    // 'GridRow',
-    // 'List',
+    'GridRow',
+    'List',
     // 'TabContent',
     // 'Flex',
     // 'GridCol',
@@ -54,7 +54,7 @@ export default function PaddingContainerLengthTest() {
     // 'Scroll',
     // 'Stack',
     // 'Swiper',
-    'Badge',  //other // 組件問題
+    // 'Badge',  //other // 組件問題
   )
 
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
@@ -144,7 +144,7 @@ export default function PaddingContainerLengthTest() {
     beforeAll(() => {
 
       // await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      // await UtilsTest.msSleep(4000)
+      // 
     });
 
     //Generate test cases (it) through a loop based on the support view * test values.

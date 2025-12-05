@@ -28,9 +28,9 @@ export default function GetWindowWidthAndHeightTest() {
 
     beforeAll(() => {
       console.info("themePageToggleTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api13.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

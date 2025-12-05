@@ -31,9 +31,9 @@ export default function Navigation_SingleInstanceJump19() {
   describe('Navigation_SingleInstanceJump19', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
+      await UtilsTest.startAbility("com.arkui.ace.navigation12.static", "EntryAbility");
+      
     });
 
     beforeEach(async (): Promise<void> => {

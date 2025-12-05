@@ -79,7 +79,7 @@ export class PageConfig {
   containerView?: string;
 
 }
-
+let viewPage:string=''
 export default class Utils {
   public static instance: Utils = new Utils();
 
@@ -107,7 +107,7 @@ export default class Utils {
     })
   }
 
-  static async pushPage(obj: PageConfig) {
+ static async pushPage(obj: PageConfig) {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
@@ -117,10 +117,19 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        await Utils.back();
-        console.log('++++++++++++++back1')
+        console.info('viewPage: ' + viewPage);
+        if(viewPage == ""){
+          viewPage = obj.targetView
+        } else if(viewPage !== "" && viewPage !== obj.targetView){
+          viewPage = obj.targetView
+          router.pushUrl({
+            url: 'MainAbility/pages/index/index',
+          });
+          await Utils.sleep(500);
+        }else{
+          router.clear()
+        }
         pages = router.getState();
-        console.log('++++++++++++++back2')
       }
 
       if (!(obj.pageName == pages.name)) {
@@ -131,16 +140,13 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        console.log('++++++++++++++pushUrl1')
-        await Utils.sleep(1000);
+        await Utils.sleep(500);
+        console.info('push ' + obj.pageName);
       }
-      console.log('++++++++++++++pushUrl2')
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);
     }
-    console.log('++++++++++++++++++pushPage123')
   }
-
   static async back() {
     const router = AppStorage.get<Router>("router") as Router
     console.log('++++++++++++++router.getState().name',router.getState().name)
@@ -150,7 +156,7 @@ export default class Utils {
     console.log('++++++++++++++++++++++1')
     AttrsManager.unRegisterDataChange();
     console.log('++++++++++++++++++++++2')
-    await Utils.sleep(1000);
+    await Utils.sleep(500);
     console.log('++++++++++++++++++++++3')
     router.clear();
     console.log('++++++++++++++++++++++4')

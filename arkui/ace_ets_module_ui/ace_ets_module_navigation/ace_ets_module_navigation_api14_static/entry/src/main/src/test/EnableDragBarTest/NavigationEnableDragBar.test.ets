@@ -36,7 +36,7 @@ export default function NavigationEnableDragBar() {
     beforeAll(() => {
       console.info("NavigationEnableDragBar beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("NavigationEnableDragBar beforeEach start");

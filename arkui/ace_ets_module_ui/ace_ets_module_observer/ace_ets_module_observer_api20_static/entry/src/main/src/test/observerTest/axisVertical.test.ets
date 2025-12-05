@@ -36,9 +36,9 @@ export default function axisVertical() {
   describe('axisVertical', () => {
     beforeAll(() => {
       console.info("axisVertical beforeEach start");
-      await UtilsTest.msSleep(4000);
+      
       await UtilsTest.startAbility("com.arkui.ace.observer20.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("axisVertical beforeEach start");

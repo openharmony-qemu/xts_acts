@@ -237,7 +237,7 @@ export default function responseRegionTest() {
     beforeAll(() => {
       console.info("ResponseRegionTest beforeEach start");
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs02.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {
       //Get the initial region information of the target component

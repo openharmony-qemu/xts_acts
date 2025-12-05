@@ -173,7 +173,7 @@ export default function paddingTestContainer1() {
   describe('PaddingContainerTest', () => {
     beforeAll(() => {
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.padding.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     //Generate test cases (it) through a loop based on the support view * test values.
     CommonTest.initTest(pageConfig, supportView, testValues,async (data: BasePageConfig): Promise<void> => {

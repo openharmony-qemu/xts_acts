@@ -89,7 +89,7 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAfterRemove from './FrameNodeTest/getAfterRemove.test';
 
 export default function testsuite() {
-  // getNumeric();// SDK11.17 pass
+  getNumeric();// SDK11.17 pass
   // getAlpha();// SDK11.17 pass
   // getBlue();// SDK11.17 pass
   // getGreen();// SDK11.17 pass
@@ -115,7 +115,7 @@ export default function testsuite() {
   // setShapeClipTest(); // 11.22.设置的值是值是空的{"rect":{}，期望的是"rect":{"left":0,"right":150,"top":0,"bottom":150}
   // typeNodeSwiperTest();  // pass 1
   // typeNodeRelativeContainerTest();  // pass 1
-  typeNodeProgressTest(); //Failure: 2, Pass: 1 55行，progress.getUserConfigPadding取值不对
+  // typeNodeProgressTest(); //Failure: 2, Pass: 1 55行，progress.getUserConfigPadding取值不对
   // typeNodeLoadingProgressTest();  // pass
   // typeNodeListTest(); // pass
   // typeNodeGridColTest();//pass

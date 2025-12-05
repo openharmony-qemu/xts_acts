@@ -37,7 +37,7 @@ export default function RouterRecoverable() {
     beforeAll(() => {
       console.info("RouterRecoverable beforeEach start");
       await UtilsTest.startAbility("com.arkui.ace.navigation14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("RouterRecoverable beforeEach start");
