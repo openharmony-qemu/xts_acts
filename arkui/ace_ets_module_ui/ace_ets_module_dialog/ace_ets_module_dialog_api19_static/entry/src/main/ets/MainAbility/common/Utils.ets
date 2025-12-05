@@ -62,17 +62,13 @@ export default class Utils {
       bottom: Utils.rect_bottom
     }
   }
-
-  static sleep(time: Int) {
-    return new Promise<string>((resolve: (value: string) => void) => {
+static sleep(count:int) : Promise<int> {
+    return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
-        resolve("ok")
-      }, time)
-    }).then(() => {
-      console.info(`sleep ${time} over...`)
+        resolve(0)
+      }, count)
     })
   }
-
 
   static async drag(downX: number, downY: number, upX: number, upY: number, steps: number) {
     console.info('start to drag')

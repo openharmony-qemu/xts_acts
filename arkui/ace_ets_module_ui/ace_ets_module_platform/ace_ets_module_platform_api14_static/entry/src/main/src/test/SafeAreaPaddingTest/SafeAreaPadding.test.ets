@@ -30,9 +30,7 @@ export default function SafeAreaPadding1() {
   describe('SafeAreaPadding1', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.platform.api14.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("SafeAreaPadding1 beforeEach start");

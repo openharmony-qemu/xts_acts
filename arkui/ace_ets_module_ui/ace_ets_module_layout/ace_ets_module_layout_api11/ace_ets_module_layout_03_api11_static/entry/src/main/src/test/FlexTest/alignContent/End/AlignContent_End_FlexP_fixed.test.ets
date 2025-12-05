@@ -40,9 +40,7 @@ export default function AlignContent_End_FlexP_fixed() {
   describe('AlignContent_End_FlexP_fixed', () => {
     beforeAll(() => {
       console.info("AlignContent_End_FlexP_fixed beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("AlignContent_End_FlexP_fixed beforeEach start");

@@ -40,9 +40,7 @@ export default function AlignEnd_AddOneWidth() {
 
     beforeAll(() => {
       console.info("AlignEnd_AddOneWidth beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

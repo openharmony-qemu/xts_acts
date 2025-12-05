@@ -63,9 +63,7 @@ export default function zIndexTest() {
     beforeAll(() => {
       console.info("beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     CommonTest.initTest(pageConfig, supportView, testValues, async (data:BasePageConfig) => {
       

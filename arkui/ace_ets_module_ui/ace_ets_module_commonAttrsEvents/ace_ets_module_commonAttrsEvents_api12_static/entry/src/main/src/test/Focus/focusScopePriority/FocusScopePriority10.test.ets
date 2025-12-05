@@ -36,9 +36,7 @@ export default function FocusScopePriority10() {
   describe('FocusScopePriority10', () => {
     beforeAll(() => {
       console.info("assemblyCallbackTest beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("FocusScopePriority10 beforeEach start");

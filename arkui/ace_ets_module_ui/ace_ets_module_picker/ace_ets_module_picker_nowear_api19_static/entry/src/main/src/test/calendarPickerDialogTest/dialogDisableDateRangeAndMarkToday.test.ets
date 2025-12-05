@@ -47,9 +47,7 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
   describe('DialogDisableDateRangeAndMarkToday', () => {
     beforeAll(() => {
       console.info("DialogDisableDateRangeAndMarkToday beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.api19.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info('DialogDisableDateRangeAndMarkToday beforeEach start');

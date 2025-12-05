@@ -33,9 +33,7 @@ export default function progressStyleJsunit() {
   describe('progressStyleTest', () => {
     beforeAll(() => {
       console.info("progressStyleTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.arkui.ace.information.api12.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

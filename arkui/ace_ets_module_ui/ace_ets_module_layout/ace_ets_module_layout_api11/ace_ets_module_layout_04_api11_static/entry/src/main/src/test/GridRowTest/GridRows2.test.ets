@@ -37,9 +37,7 @@ export default function GridRows2() {
   describe('GridRows2', () => {
     beforeAll(() => {
       console.log('GridRows2 beforeAll')
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("GridRows2 beforeEach start");

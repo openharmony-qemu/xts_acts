@@ -39,9 +39,7 @@ export default function flexAlign_SpaceBetween_fixedChildParentMarPad() {
   describe('FlexAlign_SpaceBetween_fixedChildParentMarPad', () => {
     beforeAll(() => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentMarPad beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentMarPad beforeEach start");

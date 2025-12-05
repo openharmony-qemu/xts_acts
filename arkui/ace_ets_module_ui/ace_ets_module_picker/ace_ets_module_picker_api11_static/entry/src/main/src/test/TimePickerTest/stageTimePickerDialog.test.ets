@@ -43,9 +43,7 @@ export default function stageTimePickerDialog() {
   describe('stageTimePickerDialog', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.picker.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("flex beforeEach start");

@@ -56,9 +56,7 @@ export default function SpaceMain5JustifyContentJsunit() {
     beforeAll(() => {
       console.info("SpaceMain5JustifyContentJsunit beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("SpaceMain5JustifyContentJsunit beforeEach start");

@@ -40,9 +40,7 @@ export default function flexAlign_SpaceBetween_fixedChildParentItemAlignEnd() {
   describe('FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd', () => {
     beforeAll(() => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async () => {
       console.info("FlexAlign_SpaceBetween_fixedChildParentItemAlignEnd beforeEach called");

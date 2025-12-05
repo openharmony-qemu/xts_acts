@@ -35,9 +35,7 @@ export default function Row_flexGrow_Default() {
   describe('Row_flexGrow_Default', () => {
     beforeAll(async() => {
       console.info("Row_flexGrow_Default beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_flexGrow_Default beforeEach start");

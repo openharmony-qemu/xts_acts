@@ -29,7 +29,6 @@ export default function selectNodeTest() {
     beforeAll(() => {
       console.info("selectNodeTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.picker.nowear.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async () => {

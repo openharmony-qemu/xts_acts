@@ -56,9 +56,7 @@ export default function FolderStack3ApiJsunit() {
     beforeAll(() => {
       console.info("FolderStack3ApiJsunit beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

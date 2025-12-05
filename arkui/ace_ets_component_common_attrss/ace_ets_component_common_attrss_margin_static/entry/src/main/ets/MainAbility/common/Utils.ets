@@ -192,7 +192,7 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(2000);
+        await Utils.sleep(500);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);

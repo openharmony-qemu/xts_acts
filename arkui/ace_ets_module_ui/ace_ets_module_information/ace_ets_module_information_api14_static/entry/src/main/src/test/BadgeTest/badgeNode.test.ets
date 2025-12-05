@@ -33,9 +33,7 @@ export default function BadgeNodeTest() {
   describe('BadgeNodeTest', () => {
     beforeAll(() => {
       console.info("BadgeNodeTest beforeEach start");
-      await UtilsTest.msSleep(4000);
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
     });
     beforeEach(async (): Promise<void> => {
       console.info('badgeNodeTest beforeEach start');

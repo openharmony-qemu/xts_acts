@@ -34,9 +34,7 @@ export default function navigationuxtest() {
     const SUITE = 'navigationuxtest'
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000);
-      await startAbility("com.arkui.ace.navigation.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      await UtilsTest.startAbility("com.arkui.ace.navigation.static", "EntryAbility");
     });
 
     beforeEach(async (): Promise<void> => {

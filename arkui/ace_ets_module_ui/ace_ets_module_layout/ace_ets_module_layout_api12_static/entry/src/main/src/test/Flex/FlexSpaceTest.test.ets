@@ -57,9 +57,7 @@ export default function FlexSpaceTest() {
     beforeAll(() => {
       console.info("FlexSpaceTest beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("FlexSpaceTest beforeEach start");

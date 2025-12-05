@@ -37,9 +37,7 @@ export default function direction2Jsunit() {
   describe('direction2Jsunit', () =>{
     beforeAll(() => {
       console.info("direction2Jsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {

@@ -104,13 +104,11 @@ export default function MarkAnchorTest() {
   describe('MarkAnchorTest', () => {
     beforeAll(() => {
       console.info('MarkAnchorTest beforeAll start');
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.markAnchor.nowear.test.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 afterEach(()=>{
   AppStorage.setOrCreate<Position>('_markAnchor', { x: 0, y: 0 });
-  await UtilsTest.msSleep(4000)
+  await UtilsTest.msSleep(1000)
 })
     // Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

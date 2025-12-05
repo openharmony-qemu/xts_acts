@@ -230,7 +230,7 @@ export default function marginTest() {
   describe('MarginTest', () => {
     beforeAll(() => {
       console.info("MarginTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
     });
     //Create test cases by config.
     CommonTest.initTest(pageConfig, supportView, testValues, async (data: BasePageConfig): Promise<void> => {

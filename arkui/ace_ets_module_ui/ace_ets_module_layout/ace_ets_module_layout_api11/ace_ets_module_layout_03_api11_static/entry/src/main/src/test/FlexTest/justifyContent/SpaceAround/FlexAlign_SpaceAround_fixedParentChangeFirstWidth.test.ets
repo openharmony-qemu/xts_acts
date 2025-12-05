@@ -39,9 +39,7 @@ export default function flexAlign_SpaceAround_fixedParentChangeFirstWidth() {
   describe('FlexAlign_SpaceAround_fixedParentChangeFirstWidth', () => {
     beforeAll(() => {
       console.info("flexAlign_SpaceAround_fixedParentChangeFirstWidth beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("flexAlign_SpaceAround_fixedParentChangeFirstWidth beforeEach start");

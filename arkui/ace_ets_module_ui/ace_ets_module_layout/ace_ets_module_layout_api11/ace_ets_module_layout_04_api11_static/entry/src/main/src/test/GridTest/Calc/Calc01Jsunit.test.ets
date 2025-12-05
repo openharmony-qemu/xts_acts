@@ -35,9 +35,7 @@ export default function CalcJsunit01() {
   describe('CalcJsunit01', () => {
     beforeAll(() => {
       console.info("CalcJsunit01 beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("CalcJsunit01 beforeEach start");

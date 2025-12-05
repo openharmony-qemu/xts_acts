@@ -25,9 +25,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 export default function WaterFlowSectionDemo33Jsunit() {
   describe('WaterFlowSectionDemo33Jsunit', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
       await startAbility("com.arkui.ace.scroll.nowear.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("WaterFlowSectionDemo33Jsunit beforeEach start");

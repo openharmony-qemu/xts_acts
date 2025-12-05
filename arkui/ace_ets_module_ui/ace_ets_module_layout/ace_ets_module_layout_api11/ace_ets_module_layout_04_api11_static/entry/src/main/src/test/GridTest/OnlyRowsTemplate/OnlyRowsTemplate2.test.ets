@@ -35,9 +35,7 @@ export default function OnlyRowsTemplate2() {
   describe('OnlyRowsTemplate2', () => {
     beforeAll(() => {
       console.info("OnlyRowsTemplate2 beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("OnlyRowsTemplate2 beforeEach start");

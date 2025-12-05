@@ -35,9 +35,7 @@ export default function Row_layoutWeight_Part() {
   describe('Row_layoutWeight_Part', () => {
     beforeAll(() => {
       console.info("Row_layoutWeight_Part beforeAll start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_layoutWeight_Part beforeEach start");

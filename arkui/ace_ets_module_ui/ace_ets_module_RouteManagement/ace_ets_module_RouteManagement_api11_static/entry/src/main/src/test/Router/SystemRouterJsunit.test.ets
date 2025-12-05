@@ -28,9 +28,7 @@ export default function systemRouterJsunit() {
   describe('systemRouterTest', () => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.RouteManagement.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     /*
      * @tc.number   systemRouterTest001_static

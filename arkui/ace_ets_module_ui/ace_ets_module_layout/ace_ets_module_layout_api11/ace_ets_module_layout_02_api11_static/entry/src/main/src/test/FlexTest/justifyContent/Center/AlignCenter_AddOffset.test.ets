@@ -41,9 +41,7 @@ export default function AlignCenter_AddOffset() {
   describe('AlignCenter_AddOffset', () => {
     beforeAll(() => {
       console.info("AlignCenter_AddOffset beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

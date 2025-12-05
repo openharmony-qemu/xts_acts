@@ -35,9 +35,7 @@ export default function textAreaInputTest() {
   describe('textAreaInputTest', () : void => {
     beforeAll(() => {
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.imageText.nowear.api16.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
     beforeEach(async (): Promise<void> => {

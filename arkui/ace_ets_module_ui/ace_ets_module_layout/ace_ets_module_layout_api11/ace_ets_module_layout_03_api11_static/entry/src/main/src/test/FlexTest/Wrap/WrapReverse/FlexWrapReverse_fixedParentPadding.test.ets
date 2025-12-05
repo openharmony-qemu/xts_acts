@@ -40,9 +40,7 @@ export default function flexWrapReverse_fixedParentPadding() {
   describe('FlexWrapReverse_fixedParentPadding', () => {
     beforeAll(() => {
       console.info("flexWrapReverse_fixedParentPadding beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentPadding beforeEach start");

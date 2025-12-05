@@ -38,9 +38,7 @@ export default function RelativeContainer_Vertical() {
     beforeAll(async() => {
       console.info("RelativeContainer_Vertical beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("RelativeContainer_Vertical beforeEach start");

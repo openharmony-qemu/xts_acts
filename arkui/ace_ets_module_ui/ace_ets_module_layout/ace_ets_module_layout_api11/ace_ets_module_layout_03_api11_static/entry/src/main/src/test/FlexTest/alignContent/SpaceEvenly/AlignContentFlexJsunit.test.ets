@@ -39,9 +39,7 @@ export default function AlignContentFlexJsunit() {
   describe('AlignContentFlexJsunitTest', () => {
     beforeAll(() => {
       console.info("AlignContentFlexJsunitTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("AlignContentFlexJsunitTest beforeEach start");

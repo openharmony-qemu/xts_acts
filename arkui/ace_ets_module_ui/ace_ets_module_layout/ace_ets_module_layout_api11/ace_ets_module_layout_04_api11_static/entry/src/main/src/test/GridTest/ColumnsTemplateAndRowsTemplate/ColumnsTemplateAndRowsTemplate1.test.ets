@@ -37,9 +37,7 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     beforeAll(() => {
       console.info("ColumnsTemplateAndRowsTemplate1 beforeAll start");
 
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("ColumnsTemplateAndRowsTemplate1 beforeEach start");

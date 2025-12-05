@@ -42,9 +42,7 @@ export default function AlignCenter_AddVisibility() {
 
     beforeAll(() => {
       console.info("AlignCenter_AddVisibility beforeEach start");
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split02.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
 
 

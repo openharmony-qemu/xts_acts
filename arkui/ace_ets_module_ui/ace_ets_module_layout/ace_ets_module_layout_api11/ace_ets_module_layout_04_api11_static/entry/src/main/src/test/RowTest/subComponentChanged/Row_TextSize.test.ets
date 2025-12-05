@@ -37,9 +37,7 @@ export default function row_TextSizeTest() {
     beforeAll(() => {
       console.info("Row_TextSizeTest beforeAll start");
    
-      await UtilsTest.msSleep(4000)
       await UtilsTest.startAbility("com.arkui.ace.layout.split04.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
     });
     beforeEach(async (): Promise<void> => {
       console.info("Row_TextSizeTest beforeEach start");

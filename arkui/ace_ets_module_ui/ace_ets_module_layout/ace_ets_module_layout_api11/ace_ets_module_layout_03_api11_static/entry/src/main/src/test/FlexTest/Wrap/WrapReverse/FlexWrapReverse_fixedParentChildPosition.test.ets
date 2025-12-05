@@ -40,9 +40,7 @@ export default function flexWrapReverse_fixedParentChildPosition() {
   describe('FlexWrapReverse_fixedParentChildPosition', () => {
     beforeAll(() => {
       console.info("FlexWrapReverse_fixedParentChildPosition beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+     await UtilsTest.startAbility("com.arkui.ace.layout.split03.static", "EntryAbility")
     });
     beforeEach(async (): Promise<void> => {
       console.info("FlexWrapReverse_fixedParentChildPosition beforeEach start");
