@@ -29,3 +29,20 @@ export const drawStar: (id: string) => void;
 
 export const TestSetSurfaceConfigErrorCode001: (id: string) => void;
 export const TestSetSurfaceConfigErrorCode002: (id: string) => void;
+
+export const CreateKeyMouseEventNativeRoot: (content: NodeContent, tag: string) => void;
+export const getKeyStr: () => string;
+export const getIndicatorStr: () => string;
+export const getMouseStr: () => string;
+export const TestGetExtraMouseEventInfoErrorCode_01: () => void;
+export const TestGetExtraMouseEventInfoErrorCode_02: () => void;
+export const TestGetMouseEventModifierKeyStatesErrorCode_01: () => void;
+export const TestGetMouseEventModifierKeyStatesErrorCode_02: () => void;
+export const TestGetKeyEventModifierKeyStatesErrorCode_01: () => void;
+export const TestGetKeyEventModifierKeyStatesErrorCode_02: () => void;
+export const TestGetKeyEventNumLockStateErrorCode_01: () => void;
+export const TestGetKeyEventNumLockStateErrorCode_02: () => void;
+export const TestGetKeyEventCapsLockStateErrorCode_01: () => void;
+export const TestGetKeyEventCapsLockStateErrorCode_02: () => void;
+export const TestGetKeyEventScrollLockStateErrorCode_01: () => void;
+export const TestGetKeyEventScrollLockStateErrorCode_02: () => void;

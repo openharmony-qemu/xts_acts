@@ -15,6 +15,7 @@
 #include <hilog/log.h>
 #include "common/common.h"
 #include "XComponent/XComponentSurfaceConfigTest.h"
+#include "XComponent/XComponentKeyMouseEventTest.h"
 
 namespace NativeXComponentSample {
 
@@ -45,6 +46,39 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestSetSurfaceConfigErrorCode002", nullptr, XComponentSurfaceConfigTest::TestSetSurfaceConfigErrorCode002,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+
+
+
+        {"CreateKeyMouseEventNativeRoot", nullptr, XComponentKeyMouseEventTest::CreateKeyMouseEventNativeRoot,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getKeyStr", nullptr, XComponentKeyMouseEventTest::GetKeyString, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getIndicatorStr", nullptr, XComponentKeyMouseEventTest::GetIndicatorString, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getMouseStr", nullptr, XComponentKeyMouseEventTest::GetMouseString, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetExtraMouseEventInfoErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetExtraMouseEventInfoErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetExtraMouseEventInfoErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetExtraMouseEventInfoErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetMouseEventModifierKeyStatesErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetMouseEventModifierKeyStatesErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetMouseEventModifierKeyStatesErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetMouseEventModifierKeyStatesErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventModifierKeyStatesErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventModifierKeyStatesErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventModifierKeyStatesErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventModifierKeyStatesErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventNumLockStateErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventNumLockStateErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventNumLockStateErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventNumLockStateErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventCapsLockStateErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventCapsLockStateErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventCapsLockStateErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventCapsLockStateErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventScrollLockStateErrorCode_01", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventScrollLockStateErrorCode_01,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestGetKeyEventScrollLockStateErrorCode_02", nullptr, XComponentKeyMouseEventTest::TestGetKeyEventScrollLockStateErrorCode_02,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
