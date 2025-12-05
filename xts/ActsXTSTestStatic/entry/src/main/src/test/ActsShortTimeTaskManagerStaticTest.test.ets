@@ -57,7 +57,7 @@ export default function ActsShortTimeTaskManagerStaticTest() {
             hilog.info(DOMAIN, TAG, '%{public}s',
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 cancelSuspendDelay success');
             done();
-            } catch (error: BusinessError) {
+          } catch (error: BusinessError) {
             hilog.info(DOMAIN, TAG,
               'SUB_RESOURCESCHEDULE_SHORTTIME_TASK_STATIC_XTS_001 requestSuspendDelay failed. code is: %{public}s' +
               JSON.stringify(error));
