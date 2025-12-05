@@ -17,7 +17,8 @@ group("backgroundtaskmanager_new_static_test") {
   testonly = true
   if (is_standard_system) {
     deps = [
-      "shorttimetask_static:ActsResourcescheduleShortTimeTaskStaticTest"
+      "shorttimetask_static:ActsResourcescheduleShortTimeTaskStaticTest",
+      "workscheduler_static:ActsResourcescheduleWorkschedulerStaticTest"
     ]
   }
 }
