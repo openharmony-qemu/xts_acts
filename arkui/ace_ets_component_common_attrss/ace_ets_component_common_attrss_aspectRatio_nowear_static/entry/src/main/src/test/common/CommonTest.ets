@@ -128,14 +128,14 @@ export default class CommonTest {
     if (sharePage) {
       if (currentIndex == lastIndex) {
         console.info('[' + caseTag + ']' + ' last case, close page.');
-        await Utils.back();
+        // await Utils.back();
       } else {
         console.info('[' + caseTag + ']' + ' share page.');
         await Utils.sleep(1000);
       }
     } else {
       console.info('[' + caseTag + ']' + ' close page.');
-      await Utils.back();
+      // await Utils.back();
     }
   }
 

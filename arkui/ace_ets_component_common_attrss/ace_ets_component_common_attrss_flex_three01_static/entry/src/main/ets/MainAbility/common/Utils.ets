@@ -25,6 +25,7 @@ import pointer from '@ohos.multimodalInput.pointer';
 import { sendTouchEvent, sendKeyEvent, sendMouseEvent } from  "@ohos.arkui.Test";
 import { IntentionCode } from '@ohos.multimodalInput.intentionCode';
 import { jsonx } from "std/core";
+let viewPage:string = ""
 
 export class RectValue {
   left: number = 0;
@@ -121,7 +122,7 @@ export default class Utils {
     })
   }
 
-  static async pushPage(obj: PageConfig) {
+static async pushPage(obj: PageConfig) {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
@@ -131,7 +132,18 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
         console.info('pageParams.view.targetView: ' + pageParams.view.targetView);
         console.info('targetView: ' + obj.targetView);
-        await Utils.back();
+        console.info('viewPage: ' + viewPage);
+        if(viewPage == ""){
+          viewPage = obj.targetView
+        } else if(viewPage !== "" && viewPage !== obj.targetView){
+          viewPage = obj.targetView
+          router.pushUrl({
+            url: 'MainAbility/pages/index/index',
+          });
+          await Utils.sleep(500);
+        }else{
+          router.clear()
+        }
         pages = router.getState();
       }
 
@@ -143,8 +155,8 @@ export default class Utils {
             view: obj
           } as RouterParams
         });
-        await Utils.sleep(2000);
-        console.info('push ' + obj.pageName );
+        await Utils.sleep(500);
+        console.info('push ' + obj.pageName);
       }
     } catch (err) {
       console.error('push ' + obj.pageName + ' page error:' + err);

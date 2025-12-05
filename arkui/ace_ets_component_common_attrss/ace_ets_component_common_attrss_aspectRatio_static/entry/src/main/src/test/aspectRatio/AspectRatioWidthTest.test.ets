@@ -38,7 +38,7 @@ interface Attrs{
 
 export default function aspectRatioWidthTest() {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+
   // let uiContext = AppStorage.get<UIContext>("uiContext")
   //Component to be tested
   let supportView: Array<string> = new Array<string>(

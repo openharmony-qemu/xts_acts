@@ -38,7 +38,7 @@ interface Attrs{
 
 export default function aspectRatioHeightTest() {
   await UtilsTest.startAbility("com.acts.arkui.component.common.attrs.test.static", "EntryAbility")
-  await UtilsTest.msSleep(4000)
+
   //Component to be tested
   let supportView: Array<string> = new Array<string>(
     'AlphabetIndexer',
