@@ -36,9 +36,9 @@ export default function Gutter_Length_Resource() {
     beforeAll(() => {
       console.info("Gutter_Length_Resource beforeAll start");
            
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

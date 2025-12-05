@@ -56,9 +56,9 @@ export default function imageEffectsJsunit() {
   describe('imageEffectsJsunit', () => {
     beforeAll(() => {
       console.info("hoverEffectJsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

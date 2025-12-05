@@ -41,9 +41,9 @@ export default function ListLanes() {
     beforeAll(() => {
       console.info("ListLanes beforeAll start");
             
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     })
     beforeEach(async (): Promise<void> => {
       console.info("ListLanes beforeEach start");

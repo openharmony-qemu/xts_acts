@@ -39,7 +39,7 @@ export default function enableFloatingDragBarTest() {
     beforeAll(() => {
       console.info("enableFloatingDragBarTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

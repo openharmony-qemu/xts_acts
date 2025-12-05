@@ -38,7 +38,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
-import { startAbility, UtilsTest } from '../test/Util.test'
+import { UtilsTest } from '../test/Util.test'
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -86,9 +86,9 @@ export default function animateToTest() {
 
     beforeAll(() => {
       console.info("playModeReverseTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

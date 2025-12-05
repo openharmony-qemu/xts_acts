@@ -38,9 +38,9 @@ export default function List_scrollToIndex3() {
   describe('List_scrollToIndex3', () => {
     beforeAll(() => {
       console.info("List_scrollToIndex3 beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split06.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("List_scrollToIndex3 beforeEach start");

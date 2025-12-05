@@ -37,9 +37,9 @@ export default function ParticleAttributeTest() {
     beforeAll(() => {
       console.info("ParticleAttributeTest beforeEach start");
 
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation12.static", "EntryAbility")
+      
 
     });
 

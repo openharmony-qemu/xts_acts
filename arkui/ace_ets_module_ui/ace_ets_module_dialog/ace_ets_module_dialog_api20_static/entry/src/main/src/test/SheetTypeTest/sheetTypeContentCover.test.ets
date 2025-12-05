@@ -38,7 +38,7 @@ export default function sheetTypeContentCoverTest() {
     beforeAll(() => {
       console.info("sheetTypeContentCoverTest beforeAll start");
       await UtilsTest.startAbility("com.arkui.ace.dialog.api20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       console.info('sheetTypeContentCoverTest beforeEach start');

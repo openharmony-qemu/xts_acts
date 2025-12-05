@@ -38,9 +38,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ShortcutKeyDPADRIGHTTest() {
   describe('ShortcutKeyDPADRIGHTTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async () => {
       let options: router.RouterOptions = {

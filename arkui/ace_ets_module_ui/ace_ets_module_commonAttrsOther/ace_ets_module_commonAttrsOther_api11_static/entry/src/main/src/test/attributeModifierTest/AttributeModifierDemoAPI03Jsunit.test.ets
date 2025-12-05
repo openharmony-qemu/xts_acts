@@ -49,9 +49,9 @@ export default function AttributeModifierDemoAPI03Jsunit() {
   describe('AttributeModifierDemoAPI03Jsunit', () => {
     beforeAll(() => {
       console.info("AttributeModifierDemoAPI03Jsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

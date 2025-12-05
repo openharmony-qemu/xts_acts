@@ -36,9 +36,9 @@ export default function onMeasureSize3() {
   describe('onMeasureSize3', () => {
 
     console.info("onMeasureSize3 beforeAll start");
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
     beforeAll(() => {

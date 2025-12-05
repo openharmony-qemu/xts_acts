@@ -35,9 +35,9 @@ export default function RichEditorKeyboardAppearanceTest() {
   describe('RichEditorKeyboardAppearanceTest', () => {
     beforeAll(() => {
       console.info("RichEditorKeyboardAppearanceTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

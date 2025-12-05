@@ -39,9 +39,9 @@ export default function WorkerUseCurvesTest() {
 
     beforeAll(() => {
       console.info("WorkerUseCurvesTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -36,9 +36,9 @@ export default function ParticleEmitter() {
   describe('ParticleEmitter', () => {
     beforeAll(() => {
       console.info("ParticleEmitter beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.animation20.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async () => {

@@ -53,9 +53,9 @@ export default function sheetSize1Jsunit() {
   describe('sheetSize1Jsunit', () => {
     beforeAll(() => {
       console.info("sheetSize1Jsunit beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsVisual.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

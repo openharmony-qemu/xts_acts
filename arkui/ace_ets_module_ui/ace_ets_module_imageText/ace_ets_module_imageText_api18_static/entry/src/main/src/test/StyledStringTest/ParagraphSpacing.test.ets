@@ -50,9 +50,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function ParagraphSpacingTest() {
   describe('ParagraphSpacingTest', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("ParagraphSpacingTest beforeEach start");

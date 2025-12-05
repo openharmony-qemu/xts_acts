@@ -29,9 +29,9 @@ export default function swipeActionArcList() {
 
     beforeAll(() => {
       console.info("swipeActionArcList beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.arcScroll_api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.arcScroll_api18.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -16,7 +16,7 @@
 import router from '@ohos.router';
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '../../../../hypium'
 import Utils from '../../../ets/MainAbility/common/Utils';
-import { startAbility, UtilsTest } from '../Util.test';
+import { UtilsTest } from '../../test/Util.test'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import inspector from '@ohos.arkui.inspector';
@@ -27,9 +27,9 @@ export default function remoteWindowJsunit() {
 
     beforeAll(() => {
       console.info("remoteWindowJsunit beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.animation.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.animation.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

@@ -38,9 +38,9 @@ export default function setCursorTest() {
   describe('setCursorTest', () => {
     beforeAll(() => {
       console.info("setCursorTest beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.commonAttrsEvents.nowear.api11.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.commonAttrsEvents.nowear.api11.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

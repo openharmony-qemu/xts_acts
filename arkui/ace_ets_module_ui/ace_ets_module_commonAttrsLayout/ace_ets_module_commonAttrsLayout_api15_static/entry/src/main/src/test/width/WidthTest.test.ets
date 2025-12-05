@@ -36,9 +36,9 @@ export default function WidthTest() {
   describe('WidthTest', () => {
     beforeAll(() => {
       console.info("WidthTest beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("WidthTest beforeEach start");

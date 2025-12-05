@@ -38,9 +38,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function comSizeAbilityTest_18() {
   describe('comSizeAbilityTest_18', () => {
 
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.nowear.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContent')!;
     const componentUtils1: ComponentUtils = uiContext.getComponentUtils() as ComponentUtils;
@@ -61,7 +61,7 @@ export default function comSizeAbilityTest_18() {
         if (!("comSizeAbilityTest_18" == pages.name)) {
           console.info("get comSizeAbilityTest_18 state pages.name: " + JSON.stringify(pages.name))
           routerInstance.pushUrl(options)
-          await UtilsTest.msSleep(4000)
+          
         }
       } catch (err) {
         console.error("push comSizeAbilityTest_18 page error: " + err)

@@ -35,9 +35,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function monitorInvisibleAreaTest() {
   describe('monitorInvisibleAreaTest', () => {
     beforeAll(async (): Promise<void> => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.imageText.api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info("monitorInvisibleAreaTest beforeEach start");

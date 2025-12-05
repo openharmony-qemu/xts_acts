@@ -24,22 +24,6 @@ class UtilsTest{
   static isloadAndSetUpUiTest = false;
   static isStartedAbility = false;
 
-  static async loadAndSetUpUiTest() : Promise<boolean> {
-    return new Promise<boolean>((resolve, reject) => {
-      hilog.info(domain, tag, `loadAndSetUpUiTest, isloadAndSetUpUiTest`);
-      try {
-        if (!UtilsTest.isloadAndSetUpUiTest) {
-          hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
-          UtilsTest.isloadAndSetUpUiTest = true;
-        }
-        resolve(true)
-      } catch(error: Error) {
-        hilog.info(domain, tag, `UiTestCase, start abilityFailed: ${String(error)}`);
-        reject(error)
-      }
-    })
-  }
-
   static async msSleep(count:int) : Promise<int> {
     return new Promise<int>((resolve, reject) => {
       setTimeout(() => {
@@ -54,6 +38,7 @@ class UtilsTest{
         await abilityDelegator.executeShellCommand(`aa start -b ${bundleName} -a ${abilityName}`);
         hilog.info(domain, tag, `loadAndSetUpUiTest, success`);
         UtilsTest.isStartedAbility = true;
+        await UtilsTest.msSleep(4000);
       }
       return true;
     } catch(error) {

@@ -38,9 +38,9 @@ export default function getListItemRect4() {
   describe('getListItemRect4', () => {
 
     console.info("getListItemRect4 beforeAll start");
-    await UtilsTest.msSleep(4000)
+    
     await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api11.static", "EntryAbility")
-    await UtilsTest.msSleep(4000)
+    
 
     const uiContext: UIContext = AppStorage.get<UIContext>('uiContext')!
     beforeAll(() => {

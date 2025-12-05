@@ -39,7 +39,7 @@ export default function SelectTest() {
     beforeAll(() => {
       console.info("SelectTest beforeEach start");
       await UtilsTest.startAbility("com.example.Select.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+      
     });
 
     beforeEach(async (): Promise<void> => {

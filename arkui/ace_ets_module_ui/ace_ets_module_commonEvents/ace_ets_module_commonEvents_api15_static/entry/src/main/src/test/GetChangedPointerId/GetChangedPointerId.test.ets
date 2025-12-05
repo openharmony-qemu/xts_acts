@@ -38,9 +38,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function GetChangedPointerId() {
   describe('Button', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.open.harmony.acetestcommenventapi15.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       console.info('Button beforeEach start');

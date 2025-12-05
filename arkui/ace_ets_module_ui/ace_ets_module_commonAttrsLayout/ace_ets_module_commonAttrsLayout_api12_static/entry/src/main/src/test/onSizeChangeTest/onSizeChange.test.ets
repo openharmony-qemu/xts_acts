@@ -35,9 +35,9 @@ export default function onSizeChange() {
   describe('onSizeChange', () => {
     beforeAll(() => {
       console.info("onSizeChange beforeAll start");
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsLayout.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(() => {
       console.info("onSizeChange beforeEach start");

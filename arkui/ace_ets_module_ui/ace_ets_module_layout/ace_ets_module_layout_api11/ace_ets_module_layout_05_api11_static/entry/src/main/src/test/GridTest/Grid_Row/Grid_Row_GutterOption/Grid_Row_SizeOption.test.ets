@@ -36,9 +36,9 @@ export default function Grid_Row_SizeOption() {
     beforeAll(() => {
       console.info("Grid_Row_SizeOption beforeAll start");
            
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.layout.split05.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

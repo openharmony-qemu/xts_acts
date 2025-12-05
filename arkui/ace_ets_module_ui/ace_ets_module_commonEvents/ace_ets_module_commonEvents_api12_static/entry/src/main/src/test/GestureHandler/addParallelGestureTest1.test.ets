@@ -39,9 +39,9 @@ const uiContext = new UIContext();
 export default function addParallelGestureTest1() {
   describe('addParallelGestureTest1', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonEvents.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async ():Promise<void> => {
       console.info("addParallelGestureTest1 beforeEach start");

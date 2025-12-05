@@ -28,9 +28,9 @@ export default function arcSwiperEvent() {
   describe('arcSwiperEvent', () => {
     beforeAll(() => {
       console.info("arcSwiperEvent beforeEach start");
-      await UtilsTest.msSleep(4000)
-      await startAbility("com.arkui.ace.arcScroll_api18.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
+      await UtilsTest.startAbility("com.arkui.ace.arcScroll_api18.static", "EntryAbility")
+      
     });
 
     beforeEach(async (): Promise<void> => {

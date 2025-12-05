@@ -51,9 +51,9 @@ let testAbilityContext: common.UIAbilityContext;
 export default function OverlayManagerTest_006() {
   describe('OverlayManagerTest_006', () => {
     beforeAll(() => {
-      await UtilsTest.msSleep(4000)
+      
       await UtilsTest.startAbility("com.arkui.ace.commonAttrsOther.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
 
     beforeEach(async (): Promise<void> => {

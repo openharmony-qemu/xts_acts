@@ -40,7 +40,7 @@ export default function CanvasColorTest() {
   describe('CanvasColorTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.arkui.ace.draw.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+      
     });
     beforeEach(async (): Promise<void> => {
       let options: router.RouterOptions = {
