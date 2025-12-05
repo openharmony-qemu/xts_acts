@@ -19,7 +19,9 @@ add_library(imageEffect SHARED
     utils/CommonUtilsTest.cpp
     utils/PixelmapHelperTest.cpp
     utils/GlUtilsTest.cpp
-    ImageEffectSuppTest.cpp)
+    ImageEffectSuppTest.cpp
+    AccessPixelsTest.cpp
+    OHImageErrorSuppTest.cpp)
 
 find_library(
     # Sets the name of the path variable.

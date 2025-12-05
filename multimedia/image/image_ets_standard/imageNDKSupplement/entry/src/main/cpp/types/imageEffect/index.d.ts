@@ -12,9 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { image } from '@kit.ImageKit';
 
 export const OHImageEffectCreateSupp: (a: number) => number;
 export const OHImageEffectAddFilterSupp: (a: number) => number;
 export const OHImageEffectInsertFilterSupp: (a: number) => number;
 export const OHImageEffectRemoveFilterSupp: (a: number) => number;
 export const OHImageEffectReplaceFilterSupp: (a: number) => number;
+export const OHImageAlphaTypeSupp: (a: number) => number;
+export const OHImageErrorCodeSupp: (a: number) => number;
+export const OHImageScaleModeSupp: (a: number) => number;
+export const OHImageAuxiliaryPictureSupp: (a: number) => number;
+export const add:(a: number, b: number) => image.PixelMap;
+export const transform: (a: image.PixelMap) => image.PixelMap;
+export const testGetImageInfo: (a: image.PixelMap) => image.PixelMap;
+export const testAccessPixels: (a: image.PixelMap) => image.PixelMap;
+export const testUnAccessPixels: (a: image.PixelMap) => image.PixelMap;

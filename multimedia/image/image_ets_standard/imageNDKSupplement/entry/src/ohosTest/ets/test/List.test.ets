@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import ImageEffectSuppTest from './ImageEffectSupp.test';
+import ImageErrorSuppTest from './ImageErrorSupp.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
+  ImageErrorSuppTest();
 }
