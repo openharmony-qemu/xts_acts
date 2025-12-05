@@ -1,6 +1,9 @@
 {
   "src": [
     "pages/webErrorCode",
-    "pages/webViewControllerErrorCode"
+    "pages/jsMessageExtErrorCode",
+    "pages/webViewControllerErrorCode",
+    "pages/webResourceHandlerTest",
+    "pages/webViewControllerErrorCodeSecond"
   ]
 }
