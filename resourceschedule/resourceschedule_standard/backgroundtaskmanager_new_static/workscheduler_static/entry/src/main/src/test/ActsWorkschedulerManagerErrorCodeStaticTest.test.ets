@@ -127,7 +127,7 @@ export default function ActsWorkschedulerManagerErrorCodeStaticTest() {
 
     /**
      * @tc.number SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_004
-     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_003
+     * @tc.name   SUB_RESOURCESCHEDULE_WORKSCHEDULE_ERR_TASK_STATIC_XTS_004
      * @tc.desc   Test that getWorkStatus promise function errorCode is 9700004
      * @tc.level  LEVEL0
      * @tc.type   FUNCTION
