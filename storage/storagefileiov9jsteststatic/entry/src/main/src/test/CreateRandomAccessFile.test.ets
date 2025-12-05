@@ -393,7 +393,7 @@ export default function fileIOCreateRandomAccessFile() {
           }
           const data:string = a.toString();
           let readlength = data.length;
-          expect(readlength = stat.size).assertTrue();
+          expect(readlength == stat.size).assertTrue();
           ws.write(data);
         });
        await Utils.msSleep(2000);
@@ -442,7 +442,7 @@ export default function fileIOCreateRandomAccessFile() {
           }
           const data:string = a.toString();
           let readlength = data.length;
-          expect(readlength = 2).assertTrue();
+          expect(readlength == 2).assertTrue();
           ws.write(data);
         });
         await Utils.msSleep(2000);
@@ -491,7 +491,7 @@ export default function fileIOCreateRandomAccessFile() {
           }
           const data:string = a.toString();
           let readlength = data.length;
-          expect(readlength = 8).assertTrue();
+          expect(readlength == 8).assertTrue();
           ws.write(data);
         });
         await Utils.msSleep(2000);
