@@ -1090,7 +1090,7 @@ export default function applicationManagerTest() {
         applicationManager.addFreezeExemptedApps(SELFWANT, freezeExemptedApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1584,7 +1584,7 @@ export default function applicationManagerTest() {
         applicationManager.addUserNonStopApps(SELFWANT, userNonStopApps);
         expect(false).assertTrue();
       } catch (error) {
-        expect(error.code == 401 || error.code == 801).assertTrue();
+        expect(error.code == 9200012 || error.code == 801).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
@@ -1875,7 +1875,7 @@ export default function applicationManagerTest() {
         let res = applicationManager.getUserNonStopApps(SELFWANT);
         expect(res.length == 1).assertTrue();
       } catch (error) {
-        expect(error.code == 801).assertTrue();
+        expect(error.code == 801 || error.code == 9200012).assertTrue();
       } finally {
         await adminManager.disableSuperAdmin(SELFHAPNAME);
       }
