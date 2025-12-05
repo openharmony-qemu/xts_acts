@@ -26,9 +26,9 @@ export default function sideBarShowSideBarJsunit() {
   describe('sideBarShowSideBarTest', () => {
     beforeAll(async () => {
       console.info("sideBarShowSideBarTest beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
 
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {

@@ -70,9 +70,9 @@ export default function menuDividerTest() {
   describe('ActsMenuDividerTest', () => {
     beforeAll(() => {
       console.info("ActsMenuDividerTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("ActsMenuDividerTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

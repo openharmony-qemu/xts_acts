@@ -36,9 +36,9 @@ export default function AlertDialog2() {
   describe('AlertDialog2', () => {
     beforeAll(() => {
       console.info("AlertDialog2 beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.api12.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("AlertDialog2 beforeEach start");

@@ -25,9 +25,9 @@ export default function sidebarTypeTest() {
   describe('sidebarTypeTest', () => {
     beforeAll(() => {
       console.info("sidebarTypeTest beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api11.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

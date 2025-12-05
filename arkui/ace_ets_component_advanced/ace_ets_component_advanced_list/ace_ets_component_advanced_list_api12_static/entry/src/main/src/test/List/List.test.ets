@@ -25,9 +25,9 @@ export default function ListTest() {
   describe('ListTest', () => {
     beforeAll(() => {
       console.info("ListTest beforeEach start");
-      await UtilsTest.msSleep(4000)
+
       await startAbility("com.example.myapplication.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
     });
     beforeEach(async (): Promise<void> => {
       console.info("search_caret beforeEach start");

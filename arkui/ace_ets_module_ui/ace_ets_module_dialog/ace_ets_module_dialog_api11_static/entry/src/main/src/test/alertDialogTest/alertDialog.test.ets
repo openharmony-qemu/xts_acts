@@ -51,9 +51,9 @@ export default function alertDialogCenterStartJsunit() {
   describe('alertDialogCenterStartTest', () => {
     beforeAll(() => {
       console.info("alertDialogCenterStartTest beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("alertDialogCenterStartTest  beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

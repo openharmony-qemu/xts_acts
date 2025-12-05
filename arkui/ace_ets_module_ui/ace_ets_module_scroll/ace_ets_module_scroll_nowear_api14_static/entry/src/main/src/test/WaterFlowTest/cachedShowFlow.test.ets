@@ -32,9 +32,9 @@ export default function cachedShowFlow() {
   describe('cachedShowFlow', () => {
     beforeAll(() => {
       console.info("cachedShowFlow beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api14.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {

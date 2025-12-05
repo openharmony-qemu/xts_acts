@@ -61,9 +61,9 @@ export default function ohosPromptJsunit() {
   describe('appInfoTest_four_3', () => {
     beforeAll(() => {
       console.info("appInfoTest_four_3 beforeAll start")
-      await UtilsTest.msSleep(4000)
+
       await UtilsTest.startAbility("com.arkui.ace.dialog.static", "EntryAbility")
-      await UtilsTest.msSleep(4000)
+
       console.info("appInfoTest_four_3 beforeAll end")
     })
     beforeEach(async (): Promise<void> => {

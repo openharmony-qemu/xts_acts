@@ -25,9 +25,9 @@ export default function WaterFlowBackToTopTest() {
   describe('WaterFlowBackToTopTest', () => {
     beforeAll(() => {
       console.info("WaterFlowBackToTopTest beforeEach start");
-      await UtilsTest.msSleep(4000);
+
       await startAbility("com.arkui.ace.scroll.nowear.api15.static", "EntryAbility");
-      await UtilsTest.msSleep(4000);
+
     });
 
     beforeEach(async (): Promise<void> => {
